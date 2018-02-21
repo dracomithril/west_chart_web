@@ -1,0 +1,52 @@
+{
+  "name": "west_chart_web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "web client side",
+  "proxy": "http://localhost:3001/",
+  "author": "dracomithril",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-social": "5.1.1",
+    "clipboard-copy": "1.4.1",
+    "cookies-js": "^1.2.3",
+    "history": "^4.7.2",
+    "lodash": "^4.17.5",
+    "moment": "^2.20.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-cookie-banner": "3.0.0",
+    "react-datepicker": "1.2.1",
+    "react-dom": "^16.2.0",
+    "react-facebook-login": "4.0.0",
+    "react-redux": "5.0.7",
+    "react-router": "4.2.0",
+    "react-router-dom": "4.2.2",
+    "react-router-redux": "4.0.8",
+    "react-scripts": "1.1.1",
+    "react-table": "6.7.6",
+    "redux": "3.7.2",
+    "spotify-web-api-node": "2.5.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
+    "redux-mock-store": "^1.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dracomithril/west_chart_web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dracomithril/west_chart_web/issues"
+  },
+  "homepage": "https://github.com/dracomithril/west_chart_web#readme"
+}
