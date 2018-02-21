@@ -14,7 +14,7 @@ Enzyme.configure({ adapter: new Adapter() });
 const mockStore = configureMockStore([]);
 describe('<Footer/>', () => {
   it('renders without crashing', () => {
-    process.env.npm_package_version = "0.6.3";
+    process.env.REACT_APP_VERSION = "0.6.3";
     const store = mockStore({});
     const wrapper = shallow(
       <Footer/>, {

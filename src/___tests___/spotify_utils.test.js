@@ -25,7 +25,11 @@ describe('[sp_utils]', () => {
     describe('[createPlaylistAndAddTracks]', function () {
         it('should react if no body from spotify', function (done) {
             sp_mock.createPlaylist.returns(Promise.resolve({}));
-            sp_utils.createPlaylistAndAddTracks({}, '', false, []).catch(err => {
+            sp_utils.createPlaylistAndAddTracks({}, '', false, [])
+              .then(()=>{
+                  done(new Error('Should throw error'));
+              })
+              .catch(err => {
                 expect(err.message).toBe('missing body');
                 done();
             });

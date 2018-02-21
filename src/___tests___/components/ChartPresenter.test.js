@@ -1,4 +1,4 @@
-/**
+/*
  * Created by XKTR67 on 4/19/2017.
  */
 import React from 'react';

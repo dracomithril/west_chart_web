@@ -11,7 +11,7 @@ const utils = require('../../utils/utils');
 
 import configureMockStore from "redux-mock-store";
 Enzyme.configure({ adapter: new Adapter() });
-jest.mock('./../../utils');
+jest.mock('./../../utils/utils');
 const initial_state = require('../data/initial_state.json');
 const mockStore = configureMockStore([]);
 describe('<PickYourDate/>', () => {

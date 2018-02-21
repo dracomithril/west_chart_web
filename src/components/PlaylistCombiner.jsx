@@ -186,11 +186,13 @@ export default class PlaylistCombiner extends React.Component {
                 checked={existing_checked}
                 onChange={updateSelected}
               />
-              <label htmlFor="select_user_playlist">Existing List </label>
-              <br />
-              <select id="select_user_playlist" disabled={!existing_checked}>
-                {user_playlists}
-              </select>
+              <label htmlFor="select_user_playlist">
+                Existing List
+                <br />
+                <select id="select_user_playlist" disabled={!existing_checked}>
+                  {user_playlists}
+                </select>
+              </label>
               <br />
               <input
                 type="radio"

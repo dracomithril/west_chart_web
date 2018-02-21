@@ -44,7 +44,7 @@ exports[`<Footer/> renders without crashing 1`] = `
   </span>
   <br />
   <a
-    href="/api/fb/policy"
+    href="/policy"
   >
     <i
       className="fa fa-facebook-square"

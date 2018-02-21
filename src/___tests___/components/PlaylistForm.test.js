@@ -9,7 +9,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 
-jest.mock('./../../spotify_utils');
+jest.mock('./../../utils/spotify_utils');
 Enzyme.configure({ adapter: new Adapter() });
 const initial_state = require('../data/initial_state.json');
 const data = require('../data/response.json').chart;
