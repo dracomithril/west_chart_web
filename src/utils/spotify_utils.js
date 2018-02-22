@@ -1,7 +1,8 @@
 /**
  * Created by XKTR67 on 5/11/2017.
  */
-const Spotify = require('spotify-web-api-node');
+import Spotify from 'spotify-web-api-node';
+import config from './../config';
 
 const spotifyApi = new Spotify();
 const Cookies = require('cookies-js');
@@ -163,14 +164,8 @@ const getCredentials = () => {
   return Promise.reject(new Error('No credentials found'));
 };
 
-const spotify_login_uri = '/api/spotify/login_r';
-const url =
-  process.env.NODE_ENV === 'production'
-    ? spotify_login_uri
-    : `http://localhost:3001${spotify_login_uri}`;
-
 const loginToSpotifyAlpha = () =>
-  fetch(url, {
+  fetch(config.api.spotify.login, {
     credentials: 'include',
     mode: 'no-cors',
     redirect: 'fallow',
@@ -178,7 +173,7 @@ const loginToSpotifyAlpha = () =>
   });
 
 const refresh_auth = refresh_token =>
-  fetch('/api/spotify/refresh_token', {
+  fetch(config.api.spotify.refreshToken, {
     method: 'POST',
     mode: 'cors',
     body: JSON.stringify({ refresh_token }),
