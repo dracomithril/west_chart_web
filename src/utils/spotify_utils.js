@@ -8,7 +8,7 @@ const spotifyApi = new Spotify();
 const Cookies = require('cookies-js');
 const _ = require('lodash');
 
-const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
+export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
   if (tracks.length === 0) {
     return Promise.reject(new Error('nothing was updated. Tracks count is 0'));
   } else if (tracks.length > 100) {
@@ -46,7 +46,7 @@ const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
   return spotifyApi.addTracksToPlaylist(user_id, playlist_id, tracks);
 };
 
-const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks) =>
+export const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks) =>
   spotifyApi.getPlaylist(user_id, playlist_id, { limit: 100 }).then(({ body }) => {
     // todo is there more  tracks in playlist?
     const pl_tracks = body.tracks.items.map(item => item.track.uri);
@@ -67,7 +67,12 @@ const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks) =>
  * @param isPlaylistPrivate
  * @param tracks
  */
-const createPlaylistAndAddTracks = (sp_user, sp_playlist_name, isPlaylistPrivate, tracks) => {
+export const createPlaylistAndAddTracks = (
+  sp_user,
+  sp_playlist_name,
+  isPlaylistPrivate,
+  tracks,
+) => {
   spotifyApi.setAccessToken(sp_user.access_token);
   return spotifyApi
     .createPlaylist(sp_user.id, sp_playlist_name, { public: !isPlaylistPrivate })
@@ -93,7 +98,7 @@ const createPlaylistAndAddTracks = (sp_user, sp_playlist_name, isPlaylistPrivate
     });
 };
 
-const getUserAndPlaylists = (accessToken, user) => {
+export const getUserAndPlaylists = (accessToken, user) => {
   spotifyApi.setAccessToken(accessToken);
   let new_user;
   return spotifyApi
@@ -122,7 +127,7 @@ const getUserAndPlaylists = (accessToken, user) => {
       return Promise.reject(error);
     });
 };
-const getTracks = (accessToken, user, playlist_name) => {
+export const getTracks = (accessToken, user, playlist_name) => {
   spotifyApi.setAccessToken(accessToken);
   return spotifyApi.getPlaylist(user, playlist_name).then(data => {
     const tracks = data.body.tracks.items.map(item => item.track.uri);
@@ -137,7 +142,7 @@ const getTracks = (accessToken, user, playlist_name) => {
  * @param search_id
  * @param store
  */
-const searchForMusic = ({ artist, title, search_id }, store) => {
+export const searchForMusic = ({ artist, title, search_id }, store) => {
   const { sp_user } = store.getState();
   spotifyApi.setAccessToken(sp_user.access_token);
   return spotifyApi
@@ -153,7 +158,7 @@ const searchForMusic = ({ artist, title, search_id }, store) => {
     });
 };
 
-const getCredentials = () => {
+export const getCredentials = () => {
   const ac = Cookies.get('wcs_sp_user_ac');
   const refresh_token = Cookies.get('wcs_sp_user_refresh_token');
   if (ac) {
@@ -164,7 +169,7 @@ const getCredentials = () => {
   return Promise.reject(new Error('No credentials found'));
 };
 
-const loginToSpotifyAlpha = () =>
+export const loginToSpotifyAlpha = () =>
   fetch(config.api.spotify.login, {
     credentials: 'include',
     mode: 'no-cors',
@@ -205,4 +210,4 @@ const exports = {
   getUserAndPlaylists,
   getTracks,
 };
-module.exports = exports;
+export default exports;
