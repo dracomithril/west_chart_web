@@ -10,10 +10,10 @@ const config = {
   api: {
     spotify: {
       get login() {
-        return this.hostname + loginPath;
+        return hostname + loginPath;
       },
       get refreshToken() {
-        return this.hostname + refreshTokenPath;
+        return hostname + refreshTokenPath;
       },
     },
   },
