@@ -3,9 +3,10 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import copy from 'clipboard-copy';
 import { Badge, Button } from 'react-bootstrap';
 import './components.css';
+
+const copy = require('clipboard-copy');
 // let {sorting} = require('./../utils');
 const create_print_list = (elem, index) => (
   <div key={elem.id}>
