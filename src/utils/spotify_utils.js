@@ -175,6 +175,12 @@ export const loginToSpotifyAlpha = () =>
     mode: 'no-cors',
     redirect: 'fallow',
     headers: new Headers({ 'Content-Type': 'application/json' }),
+  }).then(() => {
+    const ac = Cookies.get('wcs_sp_user_ac');
+    const refresh_token = Cookies.get('wcs_sp_user_refresh_token');
+    console.info('ac:', ac);
+    console.info('rc:', refresh_token);
+    return Promise.resolve({ accessToken: ac, refreshToken: refresh_token });
   });
 
 const refresh_auth = refresh_token =>
