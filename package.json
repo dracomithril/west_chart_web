@@ -2,6 +2,11 @@
   "name": "west_chart_web",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "8.9.1",
+    "npm": "5.5.1",
+    "yarn": "1.4.0"
+  },
   "description": "web client side",
   "proxy": "http://localhost:3001/",
   "author": "dracomithril",
