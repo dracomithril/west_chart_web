@@ -7,4 +7,4 @@ utils.subtractDaysFromDate.mockImplementationOnce((a, days) => {
   since_date.setDate(new Date(a).getDate() - days);
   return since_date;
 });
-module.exports = utils;
+export default utils;

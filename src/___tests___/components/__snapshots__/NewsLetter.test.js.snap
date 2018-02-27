@@ -65,7 +65,7 @@ exports[`<WestLetter/> renders users 1`] = `
           circle={false}
           responsive={false}
           rounded={false}
-          src="https://graph.facebook.com/v2.10/10202921980928649/picture?height=50"
+          src="https://graph.facebook.com/10202921980928649/picture?height=50"
           thumbnail={false}
         />
       </OverlayTrigger>
@@ -124,7 +124,7 @@ exports[`<WestLetter/> renders users 1`] = `
           circle={false}
           responsive={false}
           rounded={false}
-          src="https://graph.facebook.com/v2.10/10202921980928649/picture?height=50"
+          src="https://graph.facebook.com/10202921980928649/picture?height=50"
           thumbnail={false}
         />
       </OverlayTrigger>

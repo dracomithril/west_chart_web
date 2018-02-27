@@ -4,8 +4,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup, Form, FormControl, FormGroup, InputGroup } from 'react-bootstrap';
-import spotify_utils from '../utils/spotify_utils';
-import utils from '../utils/utils';
+import { searchForMusic, createPlaylistAndAddTracks } from '../utils/spotify_utils';
+import utils, { getArtist_Title } from '../utils/utils';
 
 import action_types from './../reducers/action_types';
 
@@ -24,7 +24,7 @@ export default class PlaylistForm extends Component {
     const { store } = this.context;
     const { selected } = this.props;
     const search = selected.map((elem, search_id) => {
-      const entry = utils.getArtist_Title(elem.link.title);
+      const entry = getArtist_Title(elem.link.title);
       const search_track = {
         artist: entry.artist,
         title: entry.title,
@@ -34,7 +34,7 @@ export default class PlaylistForm extends Component {
         items: [],
         selected: {},
       };
-      spotify_utils.searchForMusic(search_track, store).then(res =>
+      searchForMusic(search_track, store).then(res =>
         store.dispatch({
           type: action_types.UPDATE_SINGLE_SEARCH,
           field: 'items',
@@ -69,14 +69,12 @@ export default class PlaylistForm extends Component {
     const selected = search_list
       .map(elem => (elem.selected !== undefined ? elem.selected.uri : undefined))
       .filter(elem => elem !== undefined);
-    spotify_utils
-      .createPlaylistAndAddTracks(sp_user, sp_playlist_name, isPlaylistPrivate, selected)
-      .then(info =>
-        store.dispatch({
-          type: action_types.UPDATE_PLAYLIST_INFO,
-          value: info,
-        }),
-      );
+    createPlaylistAndAddTracks(sp_user, sp_playlist_name, isPlaylistPrivate, selected).then(info =>
+      store.dispatch({
+        type: action_types.UPDATE_PLAYLIST_INFO,
+        value: info,
+      }),
+    );
   };
 
   render() {

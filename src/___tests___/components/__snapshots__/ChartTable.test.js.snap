@@ -1258,7 +1258,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/v2.10/10202921980928649/picture?height=50"
+                              src="https://graph.facebook.com/10202921980928649/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
@@ -1268,7 +1268,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/v2.10/10202921980928649/picture?height=50"
+                                src="https://graph.facebook.com/10202921980928649/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
@@ -1599,7 +1599,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/v2.10/1663928107235442/picture?height=50"
+                              src="https://graph.facebook.com/1663928107235442/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
@@ -1609,7 +1609,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/v2.10/1663928107235442/picture?height=50"
+                                src="https://graph.facebook.com/1663928107235442/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
@@ -1906,7 +1906,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/v2.10/1533148270088505/picture?height=50"
+                              src="https://graph.facebook.com/1533148270088505/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
@@ -1916,7 +1916,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/v2.10/1533148270088505/picture?height=50"
+                                src="https://graph.facebook.com/1533148270088505/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
@@ -2213,7 +2213,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/v2.10/10213444859181757/picture?height=50"
+                              src="https://graph.facebook.com/10213444859181757/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
@@ -2223,7 +2223,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/v2.10/10213444859181757/picture?height=50"
+                                src="https://graph.facebook.com/10213444859181757/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
@@ -2520,7 +2520,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/v2.10/10208047442080192/picture?height=50"
+                              src="https://graph.facebook.com/10208047442080192/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
@@ -2530,7 +2530,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/v2.10/10208047442080192/picture?height=50"
+                                src="https://graph.facebook.com/10208047442080192/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
@@ -2797,7 +2797,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/v2.10/1242592522496562/picture?height=50"
+                              src="https://graph.facebook.com/1242592522496562/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
@@ -2807,7 +2807,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/v2.10/1242592522496562/picture?height=50"
+                                src="https://graph.facebook.com/1242592522496562/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
@@ -3104,7 +3104,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/v2.10/10154096820541759/picture?height=50"
+                              src="https://graph.facebook.com/10154096820541759/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
@@ -3114,7 +3114,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/v2.10/10154096820541759/picture?height=50"
+                                src="https://graph.facebook.com/10154096820541759/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
@@ -3411,7 +3411,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/v2.10/10208047442080192/picture?height=50"
+                              src="https://graph.facebook.com/10208047442080192/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
@@ -3421,7 +3421,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/v2.10/10208047442080192/picture?height=50"
+                                src="https://graph.facebook.com/10208047442080192/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
@@ -3688,7 +3688,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/v2.10/859129380897011/picture?height=50"
+                              src="https://graph.facebook.com/859129380897011/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
@@ -3698,7 +3698,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/v2.10/859129380897011/picture?height=50"
+                                src="https://graph.facebook.com/859129380897011/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
@@ -3995,7 +3995,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/v2.10/1574584592571204/picture?height=50"
+                              src="https://graph.facebook.com/1574584592571204/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
@@ -4005,7 +4005,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/v2.10/1574584592571204/picture?height=50"
+                                src="https://graph.facebook.com/1574584592571204/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",

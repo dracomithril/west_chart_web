@@ -9,6 +9,8 @@ const _ = require('lodash');
 
 const showDays = 7;
 
+// TODO sessionState storing of User data?
+
 const map_user = response => {
   const isGroupAdmin =
     response.groups.data.filter(
@@ -33,9 +35,8 @@ const user = (state, action) => {
     case action_types.UPDATE_USER: {
       const { response } = action;
       if (!response.error) {
-        const userData = map_user(response);
-        sessionStorage.setItem('fb_user', JSON.stringify(userData));
-        return userData;
+        // sessionStorage.setItem('fb_user', JSON.stringify(userData));
+        return map_user(response);
       }
       console.error('login error.');
       console.error(response.error);
@@ -46,19 +47,18 @@ const user = (state, action) => {
     case action_types.UPDATE_USER_LS:
       return Object.assign({}, state, action.value);
     default:
-      return state || JSON.parse(sessionStorage.getItem('fb_user')) || {};
+      return state || {};
   }
 };
 
 const sp_user = (state, action) => {
   switch (action.type) {
     case action_types.UPDATE_SP_USER: {
-      const userData = Object.assign({}, state, action.user, {
+      // sessionStorage.setItem('sp_user', JSON.stringify(userData));
+      return Object.assign({}, state, action.user, {
         access_token: action.access_token,
         refresh_token: action.refresh_token,
       });
-      sessionStorage.setItem('sp_user', JSON.stringify(userData));
-      return userData;
     }
     case action_types.SIGN_OUT_USER:
       return {};
@@ -70,8 +70,8 @@ const sp_user = (state, action) => {
     case action_types.UPDATE_SP_USER_LS:
       return Object.assign({}, state, action.value);
     default: {
-      const parse = JSON.parse(sessionStorage.getItem('sp_user'));
-      return state || parse || {};
+      // const parse = JSON.parse(sessionStorage.getItem('sp_user'));
+      return state || {};
     }
   }
 };

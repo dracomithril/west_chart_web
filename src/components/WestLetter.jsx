@@ -3,16 +3,18 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, Tooltip, OverlayTrigger } from 'react-bootstrap';
-import utils from '../utils/utils';
+import { Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import utils, { getFbPictureUrl } from '../utils/utils';
 
 export default class WestLetter extends React.Component {
   componentDidMount() {
     console.info('component WestLetter did mount');
   }
+
   componentWillUnmount() {
     console.info('component WestLetter unmounted');
   }
+
   render() {
     const westLetter = this.props.data;
     const today = new Date();
@@ -28,7 +30,7 @@ export default class WestLetter extends React.Component {
             placement="bottom"
             overlay={<Tooltip id={`tt_${elem.id}`}>{elem.from_user}</Tooltip>}
           >
-            <Image src={utils.getFbPictureUrl(elem.from.id)} />
+            <Image src={getFbPictureUrl(elem.from.id)} />
           </OverlayTrigger>
 
           <div>

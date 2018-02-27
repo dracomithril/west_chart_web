@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactTable from 'react-table';
 import { Checkbox, Image, Label, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import utils from '../utils/utils';
+import { getFbPictureUrl } from '../utils/utils';
 import './components.css';
 
 import action_types from './../reducers/action_types';
@@ -80,7 +80,7 @@ const ChartTable = ({ data }, { store }) => {
   };
   const UserInfoCell = ({ value: from }) => (
     <div style={{ textAlign: 'left' }}>
-      <Image style={{ float: 'left' }} src={utils.getFbPictureUrl(from.id)} />
+      <Image style={{ float: 'left' }} src={getFbPictureUrl(from.id)} />
       <div style={{ display: 'inline-grid' }}>
         <span style={{ paddingLeft: 10 }}>{from.first_name}</span>
         <span style={{ paddingLeft: 10 }}>{from.last_name}</span>

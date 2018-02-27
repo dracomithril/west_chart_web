@@ -9,7 +9,7 @@ import ChartTable from './ChartTable';
 import ChartHeader from './ChartHeader';
 import SpotifySearch from './SpotifySearch';
 import WestLetter from './WestLetter';
-import utils from '../utils/utils';
+import { filterChart, sorting } from '../utils/utils';
 
 const ChartPresenter = (props, { store }) => {
   const { list_sort, chart, filters, until, songs_per_day } = store.getState();
@@ -19,9 +19,9 @@ const ChartPresenter = (props, { store }) => {
     westLetters: [],
   };
   const { view_chart, error_days, westLetters } =
-    chart.length > 0 ? utils.filterChart(chart, filters, until, songs_per_day) : defaultValue;
+    chart.length > 0 ? filterChart(chart, filters, until, songs_per_day) : defaultValue;
   const selected = view_chart.filter(elem => elem.selected);
-  utils.sorting[list_sort](selected);
+  sorting[list_sort](selected);
   return (
     <div>
       <Tabs defaultActiveKey={0} id="chart_tabs">

@@ -21,7 +21,7 @@ const countDays = (elem, { valueName, until, days }) => {
  * @param days {number}
  * @returns {Date}
  */
-const subtractDaysFromDate = (until, days) => {
+export const subtractDaysFromDate = (until, days) => {
   const since_date = new Date(until);
   since_date.setDate(new Date(until).getDate() - days);
   return since_date;

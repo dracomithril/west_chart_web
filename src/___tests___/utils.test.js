@@ -3,7 +3,7 @@
  * Created by XKTR67 on 4/19/2017.
  */
 import configureMockStore from 'redux-mock-store';
-import utils from '../utils/utils'
+import utils, {filterChart, getChartFromServer, getArtist_Title, sorting } from '../utils/utils'
 jest.mock('cookies-js');
 
 const sinon = require('sinon');
@@ -58,7 +58,7 @@ describe('[utils]', () => {
     }];
     it("reaction dsc", () => {
       let array = Object.assign([], base_array);
-      utils.sorting.reaction(array);
+      sorting.reaction(array);
       expect(array[0].reactions_num).toBe(9);
       expect(array[1].reactions_num).toBe(7);
       expect(array[2].reactions_num).toBe(3);
@@ -66,7 +66,7 @@ describe('[utils]', () => {
     });
     it('who asc', function() {
       let array = Object.assign([], base_array);
-      utils.sorting.who(array);
+      sorting.who(array);
       expect(array[0].from_user).toBe("bartek");
       expect(array[1].from_user).toBe("krzys");
       expect(array[2].from_user).toBe("tomek");
@@ -75,7 +75,7 @@ describe('[utils]', () => {
     });
     it('when', function() {
       let array = Object.assign([], base_array);
-      utils.sorting.when(array);
+      sorting.when(array);
       expect(array[0].from_user).toBe("tomek");
       expect(array[0].added_time).toBeUndefined();
       expect(array[1].from_user).toBe("tomek");
@@ -85,7 +85,7 @@ describe('[utils]', () => {
     });
     it('what', function() {
       let array = Object.assign([], base_array);
-      utils.sorting.what(array);
+      sorting.what(array);
       expect(array[0].from_user).toBe("zumba");
       expect(array[1].from_user).toBe("krzys");
       expect(array[2].from_user).toBe("bartek");
@@ -108,7 +108,7 @@ describe('[utils]', () => {
       };
       resp.json.returns(Promise.resolve({ chart: ['zzz', 'bbb'], last_update: 'update' }));
       fetch.withArgs('/api/fb/get_chart?').returns(Promise.resolve(resp));
-      return utils.getChartFromServer({}, store).then((z) => {
+      return getChartFromServer({}, store).then((z) => {
         expect(store.getActions().length).toBe(0);
         expect(z.chart.length).toBe(2);
         expect(z.last_update).toBe('update');
@@ -186,52 +186,52 @@ describe('[utils]', () => {
 
 
     it('should return artist and title', function() {
-      const res1 = utils.getArtist_Title(str1.description);
+      const res1 = getArtist_Title(str1.description);
       expect(res1.artist).toBe(str1.artist);
       expect(res1.title).toBe(str1.title);
-      const res2 = utils.getArtist_Title(str2.description);
+      const res2 = getArtist_Title(str2.description);
       expect(res2.artist).toBe(str2.artist);
       expect(res2.title).toBe(str2.title);
-      const res3 = utils.getArtist_Title(str4.description);
+      const res3 = getArtist_Title(str4.description);
       expect(res3.artist).toBe(str4.artist);
       expect(res3.title).toBe(str4.title);
-      const res4 = utils.getArtist_Title(str6.description);
+      const res4 = getArtist_Title(str6.description);
       expect(res4.artist).toBe(str6.artist);
       expect(res4.title).toBe(str6.title);
-      const res5 = utils.getArtist_Title(str5.description);
+      const res5 = getArtist_Title(str5.description);
       expect(res5.artist).toBe(str5.artist);
       expect(res5.title).toBe(str5.title);
-      const res6 = utils.getArtist_Title(str3.description);
+      const res6 = getArtist_Title(str3.description);
       expect(res6.artist).toBe(str3.artist);
       expect(res6.title).toBe(str3.title);
-      const res7 = utils.getArtist_Title(str7.description);
+      const res7 = getArtist_Title(str7.description);
       expect(res7.artist).toBe(str7.artist);
       expect(res7.title).toBe(str7.title);
-      // const res8 = utils.getArtist_Title(str8.description);
+      // const res8 = getArtist_Title(str8.description);
       // expect(res8.artist).toBe(str8.artist);
       // expect(res8.title).toBe(str8.title);
-      const res9 = utils.getArtist_Title(str9.description);
+      const res9 = getArtist_Title(str9.description);
       expect(res9.artist).toBe(str9.artist);
       expect(res9.title).toBe(str9.title);
 
-      const res12 = utils.getArtist_Title(str12.description);
+      const res12 = getArtist_Title(str12.description);
       expect(res12.artist).toBe(str12.artist);
       expect(res12.title).toBe(str12.title);
-      const res13 = utils.getArtist_Title(str13.description);
+      const res13 = getArtist_Title(str13.description);
       expect(res13.artist).toBe(str13.artist);
       expect(res13.title).toBe(str13.title);
-      const res14 = utils.getArtist_Title(str14.description);
+      const res14 = getArtist_Title(str14.description);
       expect(res14.artist).toBe(str14.artist);
       expect(res14.title).toBe(str14.title);
-      const res11 = utils.getArtist_Title(str11.description);
+      const res11 = getArtist_Title(str11.description);
       expect(res11.artist).toBe(str11.artist);
       expect(res11.title).toBe(str11.title);
-      const res15 = utils.getArtist_Title(str15.description);
+      const res15 = getArtist_Title(str15.description);
       expect(res15.artist).toBe(str15.artist);
       expect(res15.title).toBe(str15.title);
     });
     it('should return title if no mach from regex', function() {
-      const res10 = utils.getArtist_Title(str10.description);
+      const res10 = getArtist_Title(str10.description);
       expect(res10.artist).toBe(str10.artist);
       expect(res10.title).toBe(str10.title);
     });
@@ -241,7 +241,8 @@ describe('[utils]', () => {
   describe('[filterChartWithStore]', function() {
     it('should be able to filter', function() {
       let getStore = {
-        chart: chart, filters: {
+        chart: chart,
+        filters: {
           add_control: { checked: false },
           create_control: { checked: false },
           update_control: { checked: false },
@@ -251,8 +252,7 @@ describe('[utils]', () => {
           westletter_control: { checked: true }
         }, until: "2017-06-16T19:54:25.672Z", songs_per_day: 3
       };
-      const store = mockStore(getStore);
-      let filtered = utils.filterChartWithStore(store);
+      const filtered =filterChart(getStore.chart, getStore.filters, getStore.until, getStore.songs_per_day);
       expect(filtered.view_chart.length).toBe(9);
     });
     it('should be able to filter when add_control', function() {
@@ -268,8 +268,7 @@ describe('[utils]', () => {
         }, until: "2017-06-16T19:54:25.672Z", songs_per_day: 3
       };
 
-      const store = mockStore(getStore);
-      let filtered = utils.filterChartWithStore(store);
+      const filtered =filterChart(getStore.chart, getStore.filters, getStore.until, getStore.songs_per_day);
       expect(filtered.view_chart.length).toBe(7);
     });
 

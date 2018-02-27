@@ -9,8 +9,7 @@ import FilteringOptions from './FilteringOptions';
 import PickYourDate from './PickYourDate';
 import './components.css';
 import action_types from './../reducers/action_types';
-
-const utils = require('../utils/utils');
+import utils, { filterChart } from '../utils/utils';
 
 const ChartButtons = ({ since, until, last_update, onGetDataClick, onQuickSummaryClick }) => {
   const options = { weekday: 'short', month: '2-digit', day: 'numeric' };
@@ -72,9 +71,7 @@ export default class ChartHeader extends React.Component {
         store.dispatch({ type: action_types.TOGGLE_FILTER, id: 'create', checked: true });
         store.dispatch({ type: action_types.UPDATE_DAYS, id: 'create', value: 5 });
         const { view_chart } =
-          chart.length > 0
-            ? utils.filterChart(chart, filters, until, songs_per_day)
-            : { view_chart: [] };
+          chart.length > 0 ? filterChart(chart, filters, until, songs_per_day) : { view_chart: [] };
         view_chart.forEach(({ id }) => {
           store.dispatch(selectedItem(id));
         });
