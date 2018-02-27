@@ -16,9 +16,9 @@ const SpotifyLogin = props => (
     className="btn btn-social btn-spotify"
     onClick={() => {
       loginToSpotifyAlpha()
-        .then(() => {
+        .then(credentials => {
           // window.location = path;
-          props.onUpdate && props.onUpdate();
+          props.onUpdate && props.onUpdate(credentials);
           window.location = props.from || '/';
         })
         .catch(err => {

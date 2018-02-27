@@ -158,9 +158,11 @@ export const searchForMusic = ({ artist, title, search_id }, store) => {
     });
 };
 
+const acToken = 'wcs_sp_user_ac';
+const rfToken = 'wcs_sp_user_refresh_token';
 export const getCredentials = () => {
-  const ac = Cookies.get('wcs_sp_user_ac');
-  const refresh_token = Cookies.get('wcs_sp_user_refresh_token');
+  const ac = Cookies.get(acToken);
+  const refresh_token = Cookies.get(rfToken);
   if (ac) {
     return validateCredentials(ac);
   } else if (refresh_token) {
@@ -169,24 +171,36 @@ export const getCredentials = () => {
   return Promise.reject(new Error('No credentials found'));
 };
 
+const headers = new Headers({
+  'Content-Type': 'application/json',
+});
 export const loginToSpotifyAlpha = () =>
   fetch(config.api.spotify.login, {
     credentials: 'include',
     mode: 'no-cors',
     redirect: 'fallow',
-    headers: new Headers({ 'Content-Type': 'application/json' }),
-  }).then(() => {
-    const ac = Cookies.get('wcs_sp_user_ac');
-    const refresh_token = Cookies.get('wcs_sp_user_refresh_token');
-    console.info('ac:', ac);
-    console.info('rc:', refresh_token);
-    return Promise.resolve({ accessToken: ac, refreshToken: refresh_token });
-  });
+    headers,
+  })
+    .then(() =>
+      fetch(config.api.spotify.obtainCredentials, {
+        credentials: 'include',
+        redirect: 'fallow',
+        // mode: 'no-cors',
+        headers,
+      }),
+    )
+    .then(response => response.json())
+    .then(body => {
+      const { access_token, refresh_token } = body;
+      Cookies.set(acToken, access_token, { expires: 360000 });
+      Cookies.set(rfToken, refresh_token);
+      return Promise.resolve({ accessToken: access_token, refreshToken: refresh_token });
+    });
 
 const refresh_auth = refresh_token =>
   fetch(config.api.spotify.refreshToken, {
     method: 'POST',
-    mode: 'cors',
+    // mode: 'cors',
     body: JSON.stringify({ refresh_token }),
     headers: new Headers({ 'Content-Type': 'application/json' }),
   })
