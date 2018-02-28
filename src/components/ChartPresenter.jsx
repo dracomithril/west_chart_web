@@ -27,6 +27,9 @@ const ChartPresenter = (props, { store }) => {
       <Tabs defaultActiveKey={0} id="chart_tabs">
         <Tab eventKey={0} title={<i className="fab fa-facebook">Posts</i>}>
           <ChartHeader error_days={error_days} view_chart={view_chart} />
+          <div>
+            We did get <span>{chart.length}</span> and filtered <span>{view_chart.length}</span>
+          </div>
           <ChartTable data={view_chart} />
         </Tab>
         <Tab

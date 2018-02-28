@@ -165,9 +165,10 @@ export const getCredentials = () => {
   const refresh_token = Cookies.get(rfToken);
   const noCredentials = new Error('No credentials found');
   if (ac) {
-    return validateCredentials(ac).catch(
-      () => (refresh_token ? refresh_auth(refresh_token) : Promise.reject(noCredentials)),
-    );
+    return validateCredentials(ac).catch(() => {
+      Cookies.expire(acToken);
+      return refresh_token ? refresh_auth(refresh_token) : Promise.reject(noCredentials);
+    });
   } else if (refresh_token) {
     return refresh_auth(refresh_token);
   }

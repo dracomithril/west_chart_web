@@ -3,8 +3,8 @@
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, ButtonGroup, Form, FormControl, FormGroup, InputGroup } from 'react-bootstrap';
-import { searchForMusic, createPlaylistAndAddTracks } from '../utils/spotify_utils';
+import { Button, ButtonGroup, FormControl, FormGroup, InputGroup } from 'react-bootstrap';
+import { createPlaylistAndAddTracks, searchForMusic } from '../utils/spotify_utils';
 import { getArtist_Title, weekInfo } from '../utils/utils';
 
 import action_types from './../reducers/action_types';
@@ -89,31 +89,33 @@ export default class PlaylistForm extends Component {
       return strLength > 5 ? 'warning' : 'error';
     };
     return (
-      <Form inline>
-        <Button onClick={this.onStartClick} id="start_sp_button" bsStyle="success">
-          Start
-        </Button>
-        <FormGroup
-          style={{ margin: '1px 5px 5px 5px' }}
-          controlId="play_list_name"
-          validationState={validatePlaylistName(sp_playlist_name.length)}
-        >
-          <InputGroup style={{ maxWidth: 250 }}>
-            <FormControl
-              type="text"
-              placeholder="playlist name"
-              value={sp_playlist_name}
-              onChange={e => {
-                store.dispatch({
-                  type: action_types.UPDATE_PLAYLIST_NAME,
-                  value: e.target.value,
-                });
-              }}
-            />
-            <FormControl.Feedback />
-            {/* <InputGroup.Addon><Glyphicon glyph="music"/></InputGroup.Addon> */}
-          </InputGroup>
-        </FormGroup>
+      <div>
+        <ButtonGroup>
+          <Button onClick={this.onStartClick} id="start_sp_button" bsStyle="success">
+            Start
+          </Button>
+          <FormGroup
+            style={{ margin: '1px' }}
+            controlId="play_list_name"
+            validationState={validatePlaylistName(sp_playlist_name.length)}
+          >
+            <InputGroup style={{ maxWidth: 250 }}>
+              <FormControl
+                type="text"
+                placeholder="playlist name"
+                value={sp_playlist_name}
+                onChange={({ target }) => {
+                  store.dispatch({
+                    type: action_types.UPDATE_PLAYLIST_NAME,
+                    value: target.value,
+                  });
+                }}
+              />
+              <FormControl.Feedback />
+              {/* <InputGroup.Addon><Glyphicon glyph="music"/></InputGroup.Addon> */}
+            </InputGroup>
+          </FormGroup>
+        </ButtonGroup>
         <ButtonGroup>
           <Button onClick={this.onGenPlaylistName} id="genName_sp_button" bsStyle="primary">
             gen. name
@@ -131,18 +133,18 @@ export default class PlaylistForm extends Component {
           <input
             type="checkbox"
             id="play_list_is_private"
-            onChange={e => {
+            onChange={({ target }) => {
               store.dispatch({
                 type: action_types.TOGGLE_IS_PRIVATE,
-                value: e.target.checked,
+                value: target.checked,
               });
             }}
             value="private"
             checked={isPlaylistPrivate}
           />
-          {'private ?'}
+          {'private'}
         </label>
-      </Form>
+      </div>
     );
   }
 }
