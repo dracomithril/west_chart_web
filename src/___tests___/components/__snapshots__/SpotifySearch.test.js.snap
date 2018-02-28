@@ -8,7 +8,7 @@ exports[`<SpotifySearch/> renders without crashing 1`] = `
     Create 
     <i
       aria-hidden="true"
-      className="fa fa-spotify"
+      className="fab fa-spotify"
     >
       Spotify playlist:
     </i>

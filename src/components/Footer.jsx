@@ -12,24 +12,24 @@ const Footer = () => (
       </a>
       repo on
       <a href="https://github.com/dracomithril/WestChart_ReactApp" target="_newtab">
-        <i className="fa fa-github" aria-hidden="true" />
+        <i className="fab fa-github" aria-hidden="true" />
         <br />
       </a>
       {` v${process.env.REACT_APP_VERSION}`}
-      <i className="fa fa-copyright" />
+      <i className="fas fa-copyright" />
       {' Copyright 2017'}
     </span>
     <br />
     <span>
       {'Any questions? '}
       <a href="mailto:dracomithril@gmail.com?subject=[WCSChartAdmin]">
-        <i className="fa fa-envelope" />
+        <i className="fas fa-envelope" />
         {' contact me'}
       </a>
     </span>
     <br />
     <a href="/policy">
-      <i className="fa fa-facebook-square" />
+      <i className="fab fa-facebook-square" />
       {' Policy'}
     </a>
   </footer>

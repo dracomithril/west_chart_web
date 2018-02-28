@@ -346,90 +346,78 @@ exports[`<ChartTable/> render with objects 1`] = `
           "show": false,
         },
         Object {
-          "Header": <small>
-            10
-      </small>,
-          "columns": Array [
-            Object {
-              "Cell": [Function],
-              "Header": [Function],
-              "accessor": "selected",
-              "resizable": false,
-              "sortable": false,
-              "width": 40,
-            },
-          ],
+          "Cell": [Function],
+          "Header": [Function],
+          "accessor": "selected",
+          "resizable": false,
+          "sortable": false,
+          "width": 40,
         },
         Object {
-          "Header": "Post Info",
-          "columns": Array [
-            Object {
-              "Cell": [Function],
-              "Header": <i
-                aria-hidden="true"
-                className="fa fa-user-circle"
-                style={
-                          Object {
-                                    "color": "green",
-                                  }
-                }
+          "Cell": [Function],
+          "Header": <i
+            aria-hidden="true"
+            className="fas fa-user-circle"
+            style={
+                  Object {
+                        "color": "green",
+                      }
+            }
       >
-                user
+            user
       </i>,
-              "accessor": "from",
-              "id": "user",
-              "maxWidth": 180,
-              "minWidth": 140,
-              "resizable": true,
-            },
-            Object {
-              "Cell": [Function],
-              "Header": <i
-                aria-hidden="true"
-                className="fa fa-info-circle"
-                style={
-                          Object {
-                                    "color": "blue",
-                                  }
-                }
+          "accessor": "from",
+          "id": "user",
+          "maxWidth": 180,
+          "minWidth": 140,
+          "resizable": true,
+        },
+        Object {
+          "Cell": [Function],
+          "Header": <i
+            aria-hidden="true"
+            className="fas fa-info-circle"
+            style={
+                  Object {
+                        "color": "blue",
+                      }
+            }
       />,
-              "accessor": [Function],
-              "id": "woc_f",
-              "maxWidth": 50,
-            },
-            Object {
-              "Cell": [Function],
-              "Header": <i
-                className="fa fa-clock-o"
+          "accessor": [Function],
+          "id": "woc_f",
+          "maxWidth": 50,
+        },
+        Object {
+          "Cell": [Function],
+          "Header": <i
+            className="far fa-clock"
       >
-                Time
+            Time
       </i>,
-              "accessor": [Function],
-              "id": "createTime",
-              "maxWidth": 200,
-              "minWidth": 150,
-              "resizable": true,
-            },
-            Object {
-              "Cell": [Function],
-              "Header": <i
-                aria-hidden="true"
-                className="fa fa-external-link"
-                style={
-                          Object {
-                                    "color": "red",
-                                  }
-                }
+          "accessor": [Function],
+          "id": "createTime",
+          "maxWidth": 200,
+          "minWidth": 150,
+          "resizable": true,
+        },
+        Object {
+          "Cell": [Function],
+          "Header": <i
+            aria-hidden="true"
+            className="fas fa-external-link-square-alt"
+            style={
+                  Object {
+                        "color": "red",
+                      }
+            }
       >
-                Link
+            Link
       </i>,
-              "accessor": [Function],
-              "id": "yt_link",
-              "maxWidth": 400,
-              "minWidth": 200,
-              "width": 300,
-            },
-          ],
+          "accessor": [Function],
+          "id": "yt_link",
+          "maxWidth": 400,
+          "minWidth": 200,
+          "width": 300,
         },
       ]
     }
@@ -815,84 +803,6 @@ exports[`<ChartTable/> render with objects 1`] = `
           className="rt-table"
         >
           <Thead
-            className="-headerGroups"
-            style={
-              Object {
-                "minWidth": "680px",
-              }
-            }
-          >
-            <div
-              className="rt-thead -headerGroups"
-              style={
-                Object {
-                  "minWidth": "680px",
-                }
-              }
-            >
-              <Tr>
-                <div
-                  className="rt-tr"
-                >
-                  <ThComponent
-                    className=""
-                    key="0-undefined"
-                    style={
-                      Object {
-                        "flex": "0 0 auto",
-                        "maxWidth": "40px",
-                        "width": "40px",
-                      }
-                    }
-                  >
-                    <div
-                      className="rt-th"
-                      onClick={[Function]}
-                      role="heading"
-                      style={
-                        Object {
-                          "flex": "0 0 auto",
-                          "maxWidth": "40px",
-                          "width": "40px",
-                        }
-                      }
-                    >
-                      <small>
-                        10
-                      </small>
-                    </div>
-                  </ThComponent>
-                  <ThComponent
-                    className=""
-                    key="1-undefined"
-                    style={
-                      Object {
-                        "flex": "340 0 auto",
-                        "maxWidth": "730px",
-                        "width": "640px",
-                      }
-                    }
-                  >
-                    <div
-                      className="rt-th"
-                      onClick={[Function]}
-                      role="heading"
-                      style={
-                        Object {
-                          "flex": "340 0 auto",
-                          "maxWidth": "730px",
-                          "width": "640px",
-                        }
-                      }
-                    >
-                      Post Info
-                    </div>
-                  </ThComponent>
-                </div>
-              </Tr>
-            </div>
-          </Thead>
-          <Thead
             className="-header"
             style={
               Object {
@@ -992,7 +902,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                       >
                         <i
                           aria-hidden="true"
-                          className="fa fa-user-circle"
+                          className="fas fa-user-circle"
                           style={
                             Object {
                               "color": "green",
@@ -1043,7 +953,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                       >
                         <i
                           aria-hidden="true"
-                          className="fa fa-info-circle"
+                          className="fas fa-info-circle"
                           style={
                             Object {
                               "color": "blue",
@@ -1081,7 +991,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                         className="rt-resizable-header-content"
                       >
                         <i
-                          className="fa fa-clock-o"
+                          className="far fa-clock"
                         >
                           Time
                         </i>
@@ -1127,7 +1037,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                       >
                         <i
                           aria-hidden="true"
-                          className="fa fa-external-link"
+                          className="fas fa-external-link-square-alt"
                           style={
                             Object {
                               "color": "red",
@@ -1397,7 +1307,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 >
                                   <i
                                     aria-hidden="true"
-                                    className="fa fa-envelope-o"
+                                    className="fas fa-envelope"
                                   />
                                 </span>
                               </Label>
@@ -1405,7 +1315,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             <div>
                               <i
                                 aria-hidden="true"
-                                className="fa fa-thumbs-o-up"
+                                className="far fa-thumbs-up"
                                 style={
                                   Object {
                                     "color": "blue",
@@ -1704,7 +1614,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 >
                                   <i
                                     aria-hidden="true"
-                                    className="fa fa-envelope-o"
+                                    className="fas fa-envelope"
                                   />
                                 </span>
                               </Label>
@@ -1712,7 +1622,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             <div>
                               <i
                                 aria-hidden="true"
-                                className="fa fa-thumbs-o-up"
+                                className="far fa-thumbs-up"
                                 style={
                                   Object {
                                     "color": "blue",
@@ -2011,7 +1921,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 >
                                   <i
                                     aria-hidden="true"
-                                    className="fa fa-envelope-o"
+                                    className="fas fa-envelope"
                                   />
                                 </span>
                               </Label>
@@ -2019,7 +1929,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             <div>
                               <i
                                 aria-hidden="true"
-                                className="fa fa-thumbs-o-up"
+                                className="far fa-thumbs-up"
                                 style={
                                   Object {
                                     "color": "blue",
@@ -2318,7 +2228,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 >
                                   <i
                                     aria-hidden="true"
-                                    className="fa fa-envelope-o"
+                                    className="fas fa-envelope"
                                   />
                                 </span>
                               </Label>
@@ -2326,7 +2236,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             <div>
                               <i
                                 aria-hidden="true"
-                                className="fa fa-thumbs-o-up"
+                                className="far fa-thumbs-up"
                                 style={
                                   Object {
                                     "color": "blue",
@@ -2596,14 +2506,14 @@ exports[`<ChartTable/> render with objects 1`] = `
                               >
                                 <i
                                   aria-hidden="true"
-                                  className="fa fa-times"
+                                  className="fas fa-times"
                                 />
                               </span>
                             </Label>
                             <div>
                               <i
                                 aria-hidden="true"
-                                className="fa fa-thumbs-o-up"
+                                className="far fa-thumbs-up"
                                 style={
                                   Object {
                                     "color": "blue",
@@ -2902,7 +2812,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 >
                                   <i
                                     aria-hidden="true"
-                                    className="fa fa-envelope-o"
+                                    className="fas fa-envelope"
                                   />
                                 </span>
                               </Label>
@@ -2910,7 +2820,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             <div>
                               <i
                                 aria-hidden="true"
-                                className="fa fa-thumbs-o-up"
+                                className="far fa-thumbs-up"
                                 style={
                                   Object {
                                     "color": "blue",
@@ -3209,7 +3119,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 >
                                   <i
                                     aria-hidden="true"
-                                    className="fa fa-envelope-o"
+                                    className="fas fa-envelope"
                                   />
                                 </span>
                               </Label>
@@ -3217,7 +3127,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             <div>
                               <i
                                 aria-hidden="true"
-                                className="fa fa-thumbs-o-up"
+                                className="far fa-thumbs-up"
                                 style={
                                   Object {
                                     "color": "blue",
@@ -3487,14 +3397,14 @@ exports[`<ChartTable/> render with objects 1`] = `
                               >
                                 <i
                                   aria-hidden="true"
-                                  className="fa fa-times"
+                                  className="fas fa-times"
                                 />
                               </span>
                             </Label>
                             <div>
                               <i
                                 aria-hidden="true"
-                                className="fa fa-thumbs-o-up"
+                                className="far fa-thumbs-up"
                                 style={
                                   Object {
                                     "color": "blue",
@@ -3793,7 +3703,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 >
                                   <i
                                     aria-hidden="true"
-                                    className="fa fa-envelope-o"
+                                    className="fas fa-envelope"
                                   />
                                 </span>
                               </Label>
@@ -3801,7 +3711,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             <div>
                               <i
                                 aria-hidden="true"
-                                className="fa fa-thumbs-o-up"
+                                className="far fa-thumbs-up"
                                 style={
                                   Object {
                                     "color": "blue",
@@ -4071,14 +3981,14 @@ exports[`<ChartTable/> render with objects 1`] = `
                               >
                                 <i
                                   aria-hidden="true"
-                                  className="fa fa-times"
+                                  className="fas fa-times"
                                 />
                               </span>
                             </Label>
                             <div>
                               <i
                                 aria-hidden="true"
-                                className="fa fa-thumbs-o-up"
+                                className="far fa-thumbs-up"
                                 style={
                                   Object {
                                     "color": "blue",
@@ -4255,21 +4165,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "headerStyle": Object {},
                 "id": "selected",
                 "minWidth": 100,
-                "parentColumn": Object {
-                  "Header": <small>
-                    10
-            </small>,
-                  "columns": Array [
-                    Object {
-                      "Cell": [Function],
-                      "Header": [Function],
-                      "accessor": "selected",
-                      "resizable": false,
-                      "sortable": false,
-                      "width": 40,
-                    },
-                  ],
-                },
                 "resizable": false,
                 "show": true,
                 "sortMethod": undefined,
@@ -4285,7 +4180,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "Footer": undefined,
                 "Header": <i
                   aria-hidden="true"
-                  className="fa fa-user-circle"
+                  className="fas fa-user-circle"
                   style={
                         Object {
                               "color": "green",
@@ -4312,77 +4207,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "user",
                 "maxWidth": 180,
                 "minWidth": 140,
-                "parentColumn": Object {
-                  "Header": "Post Info",
-                  "columns": Array [
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-user-circle"
-                        style={
-                                    Object {
-                                                "color": "green",
-                                              }
-                        }
-            >
-                        user
-            </i>,
-                      "accessor": "from",
-                      "id": "user",
-                      "maxWidth": 180,
-                      "minWidth": 140,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-info-circle"
-                        style={
-                                    Object {
-                                                "color": "blue",
-                                              }
-                        }
-            />,
-                      "accessor": [Function],
-                      "id": "woc_f",
-                      "maxWidth": 50,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        className="fa fa-clock-o"
-            >
-                        Time
-            </i>,
-                      "accessor": [Function],
-                      "id": "createTime",
-                      "maxWidth": 200,
-                      "minWidth": 150,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-external-link"
-                        style={
-                                    Object {
-                                                "color": "red",
-                                              }
-                        }
-            >
-                        Link
-            </i>,
-                      "accessor": [Function],
-                      "id": "yt_link",
-                      "maxWidth": 400,
-                      "minWidth": 200,
-                      "width": 300,
-                    },
-                  ],
-                },
                 "resizable": true,
                 "show": true,
                 "sortMethod": undefined,
@@ -4397,7 +4221,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "Footer": undefined,
                 "Header": <i
                   aria-hidden="true"
-                  className="fa fa-info-circle"
+                  className="fas fa-info-circle"
                   style={
                         Object {
                               "color": "blue",
@@ -4422,77 +4246,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "woc_f",
                 "maxWidth": 50,
                 "minWidth": 50,
-                "parentColumn": Object {
-                  "Header": "Post Info",
-                  "columns": Array [
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-user-circle"
-                        style={
-                                    Object {
-                                                "color": "green",
-                                              }
-                        }
-            >
-                        user
-            </i>,
-                      "accessor": "from",
-                      "id": "user",
-                      "maxWidth": 180,
-                      "minWidth": 140,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-info-circle"
-                        style={
-                                    Object {
-                                                "color": "blue",
-                                              }
-                        }
-            />,
-                      "accessor": [Function],
-                      "id": "woc_f",
-                      "maxWidth": 50,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        className="fa fa-clock-o"
-            >
-                        Time
-            </i>,
-                      "accessor": [Function],
-                      "id": "createTime",
-                      "maxWidth": 200,
-                      "minWidth": 150,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-external-link"
-                        style={
-                                    Object {
-                                                "color": "red",
-                                              }
-                        }
-            >
-                        Link
-            </i>,
-                      "accessor": [Function],
-                      "id": "yt_link",
-                      "maxWidth": 400,
-                      "minWidth": 200,
-                      "width": 300,
-                    },
-                  ],
-                },
                 "resizable": undefined,
                 "show": true,
                 "sortMethod": undefined,
@@ -4506,7 +4259,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "Filter": undefined,
                 "Footer": undefined,
                 "Header": <i
-                  className="fa fa-clock-o"
+                  className="far fa-clock"
             >
                   Time
             </i>,
@@ -4528,77 +4281,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "createTime",
                 "maxWidth": 200,
                 "minWidth": 150,
-                "parentColumn": Object {
-                  "Header": "Post Info",
-                  "columns": Array [
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-user-circle"
-                        style={
-                                    Object {
-                                                "color": "green",
-                                              }
-                        }
-            >
-                        user
-            </i>,
-                      "accessor": "from",
-                      "id": "user",
-                      "maxWidth": 180,
-                      "minWidth": 140,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-info-circle"
-                        style={
-                                    Object {
-                                                "color": "blue",
-                                              }
-                        }
-            />,
-                      "accessor": [Function],
-                      "id": "woc_f",
-                      "maxWidth": 50,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        className="fa fa-clock-o"
-            >
-                        Time
-            </i>,
-                      "accessor": [Function],
-                      "id": "createTime",
-                      "maxWidth": 200,
-                      "minWidth": 150,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-external-link"
-                        style={
-                                    Object {
-                                                "color": "red",
-                                              }
-                        }
-            >
-                        Link
-            </i>,
-                      "accessor": [Function],
-                      "id": "yt_link",
-                      "maxWidth": 400,
-                      "minWidth": 200,
-                      "width": 300,
-                    },
-                  ],
-                },
                 "resizable": true,
                 "show": true,
                 "sortMethod": undefined,
@@ -4613,7 +4295,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "Footer": undefined,
                 "Header": <i
                   aria-hidden="true"
-                  className="fa fa-external-link"
+                  className="fas fa-external-link-square-alt"
                   style={
                         Object {
                               "color": "red",
@@ -4640,77 +4322,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "yt_link",
                 "maxWidth": 400,
                 "minWidth": 200,
-                "parentColumn": Object {
-                  "Header": "Post Info",
-                  "columns": Array [
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-user-circle"
-                        style={
-                                    Object {
-                                                "color": "green",
-                                              }
-                        }
-            >
-                        user
-            </i>,
-                      "accessor": "from",
-                      "id": "user",
-                      "maxWidth": 180,
-                      "minWidth": 140,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-info-circle"
-                        style={
-                                    Object {
-                                                "color": "blue",
-                                              }
-                        }
-            />,
-                      "accessor": [Function],
-                      "id": "woc_f",
-                      "maxWidth": 50,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        className="fa fa-clock-o"
-            >
-                        Time
-            </i>,
-                      "accessor": [Function],
-                      "id": "createTime",
-                      "maxWidth": 200,
-                      "minWidth": 150,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-external-link"
-                        style={
-                                    Object {
-                                                "color": "red",
-                                              }
-                        }
-            >
-                        Link
-            </i>,
-                      "accessor": [Function],
-                      "id": "yt_link",
-                      "maxWidth": 400,
-                      "minWidth": 200,
-                      "width": 300,
-                    },
-                  ],
-                },
                 "resizable": undefined,
                 "show": true,
                 "sortMethod": undefined,
@@ -4746,21 +4357,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "headerStyle": Object {},
                 "id": "selected",
                 "minWidth": 100,
-                "parentColumn": Object {
-                  "Header": <small>
-                    10
-            </small>,
-                  "columns": Array [
-                    Object {
-                      "Cell": [Function],
-                      "Header": [Function],
-                      "accessor": "selected",
-                      "resizable": false,
-                      "sortable": false,
-                      "width": 40,
-                    },
-                  ],
-                },
                 "resizable": false,
                 "show": true,
                 "sortMethod": undefined,
@@ -4776,7 +4372,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "Footer": undefined,
                 "Header": <i
                   aria-hidden="true"
-                  className="fa fa-user-circle"
+                  className="fas fa-user-circle"
                   style={
                         Object {
                               "color": "green",
@@ -4803,77 +4399,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "user",
                 "maxWidth": 180,
                 "minWidth": 140,
-                "parentColumn": Object {
-                  "Header": "Post Info",
-                  "columns": Array [
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-user-circle"
-                        style={
-                                    Object {
-                                                "color": "green",
-                                              }
-                        }
-            >
-                        user
-            </i>,
-                      "accessor": "from",
-                      "id": "user",
-                      "maxWidth": 180,
-                      "minWidth": 140,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-info-circle"
-                        style={
-                                    Object {
-                                                "color": "blue",
-                                              }
-                        }
-            />,
-                      "accessor": [Function],
-                      "id": "woc_f",
-                      "maxWidth": 50,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        className="fa fa-clock-o"
-            >
-                        Time
-            </i>,
-                      "accessor": [Function],
-                      "id": "createTime",
-                      "maxWidth": 200,
-                      "minWidth": 150,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-external-link"
-                        style={
-                                    Object {
-                                                "color": "red",
-                                              }
-                        }
-            >
-                        Link
-            </i>,
-                      "accessor": [Function],
-                      "id": "yt_link",
-                      "maxWidth": 400,
-                      "minWidth": 200,
-                      "width": 300,
-                    },
-                  ],
-                },
                 "resizable": true,
                 "show": true,
                 "sortMethod": undefined,
@@ -4888,7 +4413,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "Footer": undefined,
                 "Header": <i
                   aria-hidden="true"
-                  className="fa fa-info-circle"
+                  className="fas fa-info-circle"
                   style={
                         Object {
                               "color": "blue",
@@ -4913,77 +4438,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "woc_f",
                 "maxWidth": 50,
                 "minWidth": 50,
-                "parentColumn": Object {
-                  "Header": "Post Info",
-                  "columns": Array [
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-user-circle"
-                        style={
-                                    Object {
-                                                "color": "green",
-                                              }
-                        }
-            >
-                        user
-            </i>,
-                      "accessor": "from",
-                      "id": "user",
-                      "maxWidth": 180,
-                      "minWidth": 140,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-info-circle"
-                        style={
-                                    Object {
-                                                "color": "blue",
-                                              }
-                        }
-            />,
-                      "accessor": [Function],
-                      "id": "woc_f",
-                      "maxWidth": 50,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        className="fa fa-clock-o"
-            >
-                        Time
-            </i>,
-                      "accessor": [Function],
-                      "id": "createTime",
-                      "maxWidth": 200,
-                      "minWidth": 150,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-external-link"
-                        style={
-                                    Object {
-                                                "color": "red",
-                                              }
-                        }
-            >
-                        Link
-            </i>,
-                      "accessor": [Function],
-                      "id": "yt_link",
-                      "maxWidth": 400,
-                      "minWidth": 200,
-                      "width": 300,
-                    },
-                  ],
-                },
                 "resizable": undefined,
                 "show": true,
                 "sortMethod": undefined,
@@ -4997,7 +4451,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "Filter": undefined,
                 "Footer": undefined,
                 "Header": <i
-                  className="fa fa-clock-o"
+                  className="far fa-clock"
             >
                   Time
             </i>,
@@ -5019,77 +4473,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "createTime",
                 "maxWidth": 200,
                 "minWidth": 150,
-                "parentColumn": Object {
-                  "Header": "Post Info",
-                  "columns": Array [
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-user-circle"
-                        style={
-                                    Object {
-                                                "color": "green",
-                                              }
-                        }
-            >
-                        user
-            </i>,
-                      "accessor": "from",
-                      "id": "user",
-                      "maxWidth": 180,
-                      "minWidth": 140,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-info-circle"
-                        style={
-                                    Object {
-                                                "color": "blue",
-                                              }
-                        }
-            />,
-                      "accessor": [Function],
-                      "id": "woc_f",
-                      "maxWidth": 50,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        className="fa fa-clock-o"
-            >
-                        Time
-            </i>,
-                      "accessor": [Function],
-                      "id": "createTime",
-                      "maxWidth": 200,
-                      "minWidth": 150,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-external-link"
-                        style={
-                                    Object {
-                                                "color": "red",
-                                              }
-                        }
-            >
-                        Link
-            </i>,
-                      "accessor": [Function],
-                      "id": "yt_link",
-                      "maxWidth": 400,
-                      "minWidth": 200,
-                      "width": 300,
-                    },
-                  ],
-                },
                 "resizable": true,
                 "show": true,
                 "sortMethod": undefined,
@@ -5104,7 +4487,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "Footer": undefined,
                 "Header": <i
                   aria-hidden="true"
-                  className="fa fa-external-link"
+                  className="fas fa-external-link-square-alt"
                   style={
                         Object {
                               "color": "red",
@@ -5131,77 +4514,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "yt_link",
                 "maxWidth": 400,
                 "minWidth": 200,
-                "parentColumn": Object {
-                  "Header": "Post Info",
-                  "columns": Array [
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-user-circle"
-                        style={
-                                    Object {
-                                                "color": "green",
-                                              }
-                        }
-            >
-                        user
-            </i>,
-                      "accessor": "from",
-                      "id": "user",
-                      "maxWidth": 180,
-                      "minWidth": 140,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-info-circle"
-                        style={
-                                    Object {
-                                                "color": "blue",
-                                              }
-                        }
-            />,
-                      "accessor": [Function],
-                      "id": "woc_f",
-                      "maxWidth": 50,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        className="fa fa-clock-o"
-            >
-                        Time
-            </i>,
-                      "accessor": [Function],
-                      "id": "createTime",
-                      "maxWidth": 200,
-                      "minWidth": 150,
-                      "resizable": true,
-                    },
-                    Object {
-                      "Cell": [Function],
-                      "Header": <i
-                        aria-hidden="true"
-                        className="fa fa-external-link"
-                        style={
-                                    Object {
-                                                "color": "red",
-                                              }
-                        }
-            >
-                        Link
-            </i>,
-                      "accessor": [Function],
-                      "id": "yt_link",
-                      "maxWidth": 400,
-                      "minWidth": 200,
-                      "width": 300,
-                    },
-                  ],
-                },
                 "resizable": undefined,
                 "show": true,
                 "sortMethod": undefined,
@@ -5254,90 +4566,78 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "show": false,
               },
               Object {
-                "Header": <small>
-                  10
-            </small>,
-                "columns": Array [
-                  Object {
-                    "Cell": [Function],
-                    "Header": [Function],
-                    "accessor": "selected",
-                    "resizable": false,
-                    "sortable": false,
-                    "width": 40,
-                  },
-                ],
+                "Cell": [Function],
+                "Header": [Function],
+                "accessor": "selected",
+                "resizable": false,
+                "sortable": false,
+                "width": 40,
               },
               Object {
-                "Header": "Post Info",
-                "columns": Array [
-                  Object {
-                    "Cell": [Function],
-                    "Header": <i
-                      aria-hidden="true"
-                      className="fa fa-user-circle"
-                      style={
-                                Object {
-                                          "color": "green",
-                                        }
-                      }
+                "Cell": [Function],
+                "Header": <i
+                  aria-hidden="true"
+                  className="fas fa-user-circle"
+                  style={
+                        Object {
+                              "color": "green",
+                            }
+                  }
             >
-                      user
+                  user
             </i>,
-                    "accessor": "from",
-                    "id": "user",
-                    "maxWidth": 180,
-                    "minWidth": 140,
-                    "resizable": true,
-                  },
-                  Object {
-                    "Cell": [Function],
-                    "Header": <i
-                      aria-hidden="true"
-                      className="fa fa-info-circle"
-                      style={
-                                Object {
-                                          "color": "blue",
-                                        }
-                      }
+                "accessor": "from",
+                "id": "user",
+                "maxWidth": 180,
+                "minWidth": 140,
+                "resizable": true,
+              },
+              Object {
+                "Cell": [Function],
+                "Header": <i
+                  aria-hidden="true"
+                  className="fas fa-info-circle"
+                  style={
+                        Object {
+                              "color": "blue",
+                            }
+                  }
             />,
-                    "accessor": [Function],
-                    "id": "woc_f",
-                    "maxWidth": 50,
-                  },
-                  Object {
-                    "Cell": [Function],
-                    "Header": <i
-                      className="fa fa-clock-o"
+                "accessor": [Function],
+                "id": "woc_f",
+                "maxWidth": 50,
+              },
+              Object {
+                "Cell": [Function],
+                "Header": <i
+                  className="far fa-clock"
             >
-                      Time
+                  Time
             </i>,
-                    "accessor": [Function],
-                    "id": "createTime",
-                    "maxWidth": 200,
-                    "minWidth": 150,
-                    "resizable": true,
-                  },
-                  Object {
-                    "Cell": [Function],
-                    "Header": <i
-                      aria-hidden="true"
-                      className="fa fa-external-link"
-                      style={
-                                Object {
-                                          "color": "red",
-                                        }
-                      }
+                "accessor": [Function],
+                "id": "createTime",
+                "maxWidth": 200,
+                "minWidth": 150,
+                "resizable": true,
+              },
+              Object {
+                "Cell": [Function],
+                "Header": <i
+                  aria-hidden="true"
+                  className="fas fa-external-link-square-alt"
+                  style={
+                        Object {
+                              "color": "red",
+                            }
+                  }
             >
-                      Link
+                  Link
             </i>,
-                    "accessor": [Function],
-                    "id": "yt_link",
-                    "maxWidth": 400,
-                    "minWidth": 200,
-                    "width": 300,
-                  },
-                ],
+                "accessor": [Function],
+                "id": "yt_link",
+                "maxWidth": 400,
+                "minWidth": 200,
+                "width": 300,
               },
             ]
           }
@@ -5668,560 +4968,8 @@ exports[`<ChartTable/> render with objects 1`] = `
           getTrGroupProps={[Function]}
           getTrProps={[Function]}
           groupedByPivotKey="_groupedByPivot"
-          hasHeaderGroups={true}
-          headerGroups={
-            Array [
-              Object {
-                "Aggregated": undefined,
-                "Cell": undefined,
-                "Expander": undefined,
-                "Filter": undefined,
-                "Footer": undefined,
-                "Header": <small>
-                  10
-            </small>,
-                "Pivot": undefined,
-                "PivotValue": undefined,
-                "aggregate": undefined,
-                "className": "",
-                "columns": Array [
-                  Object {
-                    "Aggregated": undefined,
-                    "Cell": [Function],
-                    "Expander": undefined,
-                    "Filter": undefined,
-                    "Footer": undefined,
-                    "Header": [Function],
-                    "Pivot": undefined,
-                    "PivotValue": undefined,
-                    "accessor": [Function],
-                    "aggregate": undefined,
-                    "className": "",
-                    "filterAll": false,
-                    "filterMethod": undefined,
-                    "filterable": undefined,
-                    "footerClassName": "",
-                    "footerStyle": Object {},
-                    "getFooterProps": [Function],
-                    "getHeaderProps": [Function],
-                    "getProps": [Function],
-                    "headerClassName": "",
-                    "headerStyle": Object {},
-                    "id": "selected",
-                    "minWidth": 100,
-                    "parentColumn": Object {
-                      "Header": <small>
-                        10
-            </small>,
-                      "columns": Array [
-                        Object {
-                          "Cell": [Function],
-                          "Header": [Function],
-                          "accessor": "selected",
-                          "resizable": false,
-                          "sortable": false,
-                          "width": 40,
-                        },
-                      ],
-                    },
-                    "resizable": false,
-                    "show": true,
-                    "sortMethod": undefined,
-                    "sortable": false,
-                    "style": Object {},
-                    "width": 40,
-                  },
-                ],
-                "filterAll": false,
-                "filterMethod": undefined,
-                "filterable": undefined,
-                "footerClassName": "",
-                "footerStyle": Object {},
-                "getFooterProps": [Function],
-                "getHeaderProps": [Function],
-                "getProps": [Function],
-                "headerClassName": "",
-                "headerStyle": Object {},
-                "minWidth": 100,
-                "resizable": undefined,
-                "show": true,
-                "sortMethod": undefined,
-                "sortable": undefined,
-                "style": Object {},
-              },
-              Object {
-                "Aggregated": undefined,
-                "Cell": undefined,
-                "Expander": undefined,
-                "Filter": undefined,
-                "Footer": undefined,
-                "Header": "Post Info",
-                "Pivot": undefined,
-                "PivotValue": undefined,
-                "aggregate": undefined,
-                "className": "",
-                "columns": Array [
-                  Object {
-                    "Aggregated": undefined,
-                    "Cell": [Function],
-                    "Expander": undefined,
-                    "Filter": undefined,
-                    "Footer": undefined,
-                    "Header": <i
-                      aria-hidden="true"
-                      className="fa fa-user-circle"
-                      style={
-                                Object {
-                                          "color": "green",
-                                        }
-                      }
-            >
-                      user
-            </i>,
-                    "Pivot": undefined,
-                    "PivotValue": undefined,
-                    "accessor": [Function],
-                    "aggregate": undefined,
-                    "className": "",
-                    "filterAll": false,
-                    "filterMethod": undefined,
-                    "filterable": undefined,
-                    "footerClassName": "",
-                    "footerStyle": Object {},
-                    "getFooterProps": [Function],
-                    "getHeaderProps": [Function],
-                    "getProps": [Function],
-                    "headerClassName": "",
-                    "headerStyle": Object {},
-                    "id": "user",
-                    "maxWidth": 180,
-                    "minWidth": 140,
-                    "parentColumn": Object {
-                      "Header": "Post Info",
-                      "columns": Array [
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-user-circle"
-                            style={
-                                            Object {
-                                                            "color": "green",
-                                                          }
-                            }
-            >
-                            user
-            </i>,
-                          "accessor": "from",
-                          "id": "user",
-                          "maxWidth": 180,
-                          "minWidth": 140,
-                          "resizable": true,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-info-circle"
-                            style={
-                                            Object {
-                                                            "color": "blue",
-                                                          }
-                            }
-            />,
-                          "accessor": [Function],
-                          "id": "woc_f",
-                          "maxWidth": 50,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            className="fa fa-clock-o"
-            >
-                            Time
-            </i>,
-                          "accessor": [Function],
-                          "id": "createTime",
-                          "maxWidth": 200,
-                          "minWidth": 150,
-                          "resizable": true,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-external-link"
-                            style={
-                                            Object {
-                                                            "color": "red",
-                                                          }
-                            }
-            >
-                            Link
-            </i>,
-                          "accessor": [Function],
-                          "id": "yt_link",
-                          "maxWidth": 400,
-                          "minWidth": 200,
-                          "width": 300,
-                        },
-                      ],
-                    },
-                    "resizable": true,
-                    "show": true,
-                    "sortMethod": undefined,
-                    "sortable": undefined,
-                    "style": Object {},
-                  },
-                  Object {
-                    "Aggregated": undefined,
-                    "Cell": [Function],
-                    "Expander": undefined,
-                    "Filter": undefined,
-                    "Footer": undefined,
-                    "Header": <i
-                      aria-hidden="true"
-                      className="fa fa-info-circle"
-                      style={
-                                Object {
-                                          "color": "blue",
-                                        }
-                      }
-            />,
-                    "Pivot": undefined,
-                    "PivotValue": undefined,
-                    "accessor": [Function],
-                    "aggregate": undefined,
-                    "className": "",
-                    "filterAll": false,
-                    "filterMethod": undefined,
-                    "filterable": undefined,
-                    "footerClassName": "",
-                    "footerStyle": Object {},
-                    "getFooterProps": [Function],
-                    "getHeaderProps": [Function],
-                    "getProps": [Function],
-                    "headerClassName": "",
-                    "headerStyle": Object {},
-                    "id": "woc_f",
-                    "maxWidth": 50,
-                    "minWidth": 50,
-                    "parentColumn": Object {
-                      "Header": "Post Info",
-                      "columns": Array [
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-user-circle"
-                            style={
-                                            Object {
-                                                            "color": "green",
-                                                          }
-                            }
-            >
-                            user
-            </i>,
-                          "accessor": "from",
-                          "id": "user",
-                          "maxWidth": 180,
-                          "minWidth": 140,
-                          "resizable": true,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-info-circle"
-                            style={
-                                            Object {
-                                                            "color": "blue",
-                                                          }
-                            }
-            />,
-                          "accessor": [Function],
-                          "id": "woc_f",
-                          "maxWidth": 50,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            className="fa fa-clock-o"
-            >
-                            Time
-            </i>,
-                          "accessor": [Function],
-                          "id": "createTime",
-                          "maxWidth": 200,
-                          "minWidth": 150,
-                          "resizable": true,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-external-link"
-                            style={
-                                            Object {
-                                                            "color": "red",
-                                                          }
-                            }
-            >
-                            Link
-            </i>,
-                          "accessor": [Function],
-                          "id": "yt_link",
-                          "maxWidth": 400,
-                          "minWidth": 200,
-                          "width": 300,
-                        },
-                      ],
-                    },
-                    "resizable": undefined,
-                    "show": true,
-                    "sortMethod": undefined,
-                    "sortable": undefined,
-                    "style": Object {},
-                  },
-                  Object {
-                    "Aggregated": undefined,
-                    "Cell": [Function],
-                    "Expander": undefined,
-                    "Filter": undefined,
-                    "Footer": undefined,
-                    "Header": <i
-                      className="fa fa-clock-o"
-            >
-                      Time
-            </i>,
-                    "Pivot": undefined,
-                    "PivotValue": undefined,
-                    "accessor": [Function],
-                    "aggregate": undefined,
-                    "className": "",
-                    "filterAll": false,
-                    "filterMethod": undefined,
-                    "filterable": undefined,
-                    "footerClassName": "",
-                    "footerStyle": Object {},
-                    "getFooterProps": [Function],
-                    "getHeaderProps": [Function],
-                    "getProps": [Function],
-                    "headerClassName": "",
-                    "headerStyle": Object {},
-                    "id": "createTime",
-                    "maxWidth": 200,
-                    "minWidth": 150,
-                    "parentColumn": Object {
-                      "Header": "Post Info",
-                      "columns": Array [
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-user-circle"
-                            style={
-                                            Object {
-                                                            "color": "green",
-                                                          }
-                            }
-            >
-                            user
-            </i>,
-                          "accessor": "from",
-                          "id": "user",
-                          "maxWidth": 180,
-                          "minWidth": 140,
-                          "resizable": true,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-info-circle"
-                            style={
-                                            Object {
-                                                            "color": "blue",
-                                                          }
-                            }
-            />,
-                          "accessor": [Function],
-                          "id": "woc_f",
-                          "maxWidth": 50,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            className="fa fa-clock-o"
-            >
-                            Time
-            </i>,
-                          "accessor": [Function],
-                          "id": "createTime",
-                          "maxWidth": 200,
-                          "minWidth": 150,
-                          "resizable": true,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-external-link"
-                            style={
-                                            Object {
-                                                            "color": "red",
-                                                          }
-                            }
-            >
-                            Link
-            </i>,
-                          "accessor": [Function],
-                          "id": "yt_link",
-                          "maxWidth": 400,
-                          "minWidth": 200,
-                          "width": 300,
-                        },
-                      ],
-                    },
-                    "resizable": true,
-                    "show": true,
-                    "sortMethod": undefined,
-                    "sortable": undefined,
-                    "style": Object {},
-                  },
-                  Object {
-                    "Aggregated": undefined,
-                    "Cell": [Function],
-                    "Expander": undefined,
-                    "Filter": undefined,
-                    "Footer": undefined,
-                    "Header": <i
-                      aria-hidden="true"
-                      className="fa fa-external-link"
-                      style={
-                                Object {
-                                          "color": "red",
-                                        }
-                      }
-            >
-                      Link
-            </i>,
-                    "Pivot": undefined,
-                    "PivotValue": undefined,
-                    "accessor": [Function],
-                    "aggregate": undefined,
-                    "className": "",
-                    "filterAll": false,
-                    "filterMethod": undefined,
-                    "filterable": undefined,
-                    "footerClassName": "",
-                    "footerStyle": Object {},
-                    "getFooterProps": [Function],
-                    "getHeaderProps": [Function],
-                    "getProps": [Function],
-                    "headerClassName": "",
-                    "headerStyle": Object {},
-                    "id": "yt_link",
-                    "maxWidth": 400,
-                    "minWidth": 200,
-                    "parentColumn": Object {
-                      "Header": "Post Info",
-                      "columns": Array [
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-user-circle"
-                            style={
-                                            Object {
-                                                            "color": "green",
-                                                          }
-                            }
-            >
-                            user
-            </i>,
-                          "accessor": "from",
-                          "id": "user",
-                          "maxWidth": 180,
-                          "minWidth": 140,
-                          "resizable": true,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-info-circle"
-                            style={
-                                            Object {
-                                                            "color": "blue",
-                                                          }
-                            }
-            />,
-                          "accessor": [Function],
-                          "id": "woc_f",
-                          "maxWidth": 50,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            className="fa fa-clock-o"
-            >
-                            Time
-            </i>,
-                          "accessor": [Function],
-                          "id": "createTime",
-                          "maxWidth": 200,
-                          "minWidth": 150,
-                          "resizable": true,
-                        },
-                        Object {
-                          "Cell": [Function],
-                          "Header": <i
-                            aria-hidden="true"
-                            className="fa fa-external-link"
-                            style={
-                                            Object {
-                                                            "color": "red",
-                                                          }
-                            }
-            >
-                            Link
-            </i>,
-                          "accessor": [Function],
-                          "id": "yt_link",
-                          "maxWidth": 400,
-                          "minWidth": 200,
-                          "width": 300,
-                        },
-                      ],
-                    },
-                    "resizable": undefined,
-                    "show": true,
-                    "sortMethod": undefined,
-                    "sortable": undefined,
-                    "style": Object {},
-                    "width": 300,
-                  },
-                ],
-                "filterAll": false,
-                "filterMethod": undefined,
-                "filterable": undefined,
-                "footerClassName": "",
-                "footerStyle": Object {},
-                "getFooterProps": [Function],
-                "getHeaderProps": [Function],
-                "getProps": [Function],
-                "headerClassName": "",
-                "headerStyle": Object {},
-                "minWidth": 100,
-                "resizable": undefined,
-                "show": true,
-                "sortMethod": undefined,
-                "sortable": undefined,
-                "style": Object {},
-              },
-            ]
-          }
+          hasHeaderGroups={false}
+          headerGroups={Array []}
           indexKey="_index"
           loading={false}
           loadingText="Loading..."
@@ -7592,88 +6340,78 @@ exports[`<ChartTable/> renders without crashing 1`] = `
         "show": false,
       },
       Object {
-        "Header": <small />,
-        "columns": Array [
-          Object {
-            "Cell": [Function],
-            "Header": [Function],
-            "accessor": "selected",
-            "resizable": false,
-            "sortable": false,
-            "width": 40,
-          },
-        ],
+        "Cell": [Function],
+        "Header": [Function],
+        "accessor": "selected",
+        "resizable": false,
+        "sortable": false,
+        "width": 40,
       },
       Object {
-        "Header": "Post Info",
-        "columns": Array [
-          Object {
-            "Cell": [Function],
-            "Header": <i
-              aria-hidden="true"
-              className="fa fa-user-circle"
-              style={
-                        Object {
-                                  "color": "green",
-                                }
-              }
+        "Cell": [Function],
+        "Header": <i
+          aria-hidden="true"
+          className="fas fa-user-circle"
+          style={
+                Object {
+                      "color": "green",
+                    }
+          }
     >
-              user
+          user
     </i>,
-            "accessor": "from",
-            "id": "user",
-            "maxWidth": 180,
-            "minWidth": 140,
-            "resizable": true,
-          },
-          Object {
-            "Cell": [Function],
-            "Header": <i
-              aria-hidden="true"
-              className="fa fa-info-circle"
-              style={
-                        Object {
-                                  "color": "blue",
-                                }
-              }
+        "accessor": "from",
+        "id": "user",
+        "maxWidth": 180,
+        "minWidth": 140,
+        "resizable": true,
+      },
+      Object {
+        "Cell": [Function],
+        "Header": <i
+          aria-hidden="true"
+          className="fas fa-info-circle"
+          style={
+                Object {
+                      "color": "blue",
+                    }
+          }
     />,
-            "accessor": [Function],
-            "id": "woc_f",
-            "maxWidth": 50,
-          },
-          Object {
-            "Cell": [Function],
-            "Header": <i
-              className="fa fa-clock-o"
+        "accessor": [Function],
+        "id": "woc_f",
+        "maxWidth": 50,
+      },
+      Object {
+        "Cell": [Function],
+        "Header": <i
+          className="far fa-clock"
     >
-              Time
+          Time
     </i>,
-            "accessor": [Function],
-            "id": "createTime",
-            "maxWidth": 200,
-            "minWidth": 150,
-            "resizable": true,
-          },
-          Object {
-            "Cell": [Function],
-            "Header": <i
-              aria-hidden="true"
-              className="fa fa-external-link"
-              style={
-                        Object {
-                                  "color": "red",
-                                }
-              }
+        "accessor": [Function],
+        "id": "createTime",
+        "maxWidth": 200,
+        "minWidth": 150,
+        "resizable": true,
+      },
+      Object {
+        "Cell": [Function],
+        "Header": <i
+          aria-hidden="true"
+          className="fas fa-external-link-square-alt"
+          style={
+                Object {
+                      "color": "red",
+                    }
+          }
     >
-              Link
+          Link
     </i>,
-            "accessor": [Function],
-            "id": "yt_link",
-            "maxWidth": 400,
-            "minWidth": 200,
-            "width": 300,
-          },
-        ],
+        "accessor": [Function],
+        "id": "yt_link",
+        "maxWidth": 400,
+        "minWidth": 200,
+        "width": 300,
       },
     ]
   }

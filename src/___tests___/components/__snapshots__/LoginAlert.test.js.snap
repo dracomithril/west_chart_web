@@ -8,7 +8,7 @@ exports[`<LoginAlert/> renders without crashing ChartPresenter 1`] = `
   <h4>
     To start working witch us you need to login to facebook and spotify.
     <i
-      className="fa fa-heart"
+      className="fas fa-heart"
     />
   </h4>
   <t
@@ -17,7 +17,7 @@ exports[`<LoginAlert/> renders without crashing ChartPresenter 1`] = `
     callback={[Function]}
     cssClass="btn btn-social btn-facebook"
     fields="id,email,name,first_name,picture,groups{administrator}"
-    icon="fa fa-facebook"
+    icon="fab fa-facebook"
     language="pl_PL"
     scope="public_profile,email,user_managed_groups"
     size="metro"

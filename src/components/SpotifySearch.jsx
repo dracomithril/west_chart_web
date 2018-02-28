@@ -27,7 +27,7 @@ export default class SpotifySearch extends React.Component {
       <div>
         <h3 id="list">
           {'Create '}
-          <i className="fa fa-spotify" aria-hidden="true">
+          <i className="fab fa-spotify" aria-hidden="true">
             Spotify playlist:
           </i>
           <PlaylistInfo info={sp_playlist_info} />

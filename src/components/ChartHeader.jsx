@@ -9,7 +9,7 @@ import FilteringOptions from './FilteringOptions';
 import PickYourDate from './PickYourDate';
 import './components.css';
 import action_types from './../reducers/action_types';
-import utils, { filterChart } from '../utils/utils';
+import { UpdateChart } from '../utils/utils';
 
 const ChartButtons = ({ since, until, last_update, onGetDataClick, onQuickSummaryClick }) => {
   const options = { weekday: 'short', month: '2-digit', day: 'numeric' };
@@ -64,15 +64,11 @@ function selectedItem(id) {
 export default class ChartHeader extends React.Component {
   quickSummary = () => {
     const { store } = this.context;
-    utils
-      .UpdateChart(store)
+    UpdateChart(store)
       .then(() => {
-        const { chart, filters, until, songs_per_day } = store.getState();
         store.dispatch({ type: action_types.TOGGLE_FILTER, id: 'create', checked: true });
         store.dispatch({ type: action_types.UPDATE_DAYS, id: 'create', value: 5 });
-        const { view_chart } =
-          chart.length > 0 ? filterChart(chart, filters, until, songs_per_day) : { view_chart: [] };
-        view_chart.forEach(({ id }) => {
+        this.props.view_chart.forEach(({ id }) => {
           store.dispatch(selectedItem(id));
         });
         // store.dispatch({type: action_types.TOGGLE_ALL});
@@ -112,7 +108,7 @@ export default class ChartHeader extends React.Component {
           last_update={last_update}
           until={until}
           onQuickSummaryClick={this.quickSummary}
-          onGetDataClick={() => utils.UpdateChart(store)}
+          onGetDataClick={() => UpdateChart(store)}
         />
         <FilteringOptions />
       </div>
@@ -124,4 +120,5 @@ ChartHeader.contextTypes = {
 };
 ChartHeader.propTypes = {
   error_days: PropTypes.array,
+  view_chart: PropTypes.array,
 };

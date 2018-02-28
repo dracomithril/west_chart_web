@@ -163,12 +163,15 @@ const rfToken = 'wcs_sp_user_refresh_token';
 export const getCredentials = () => {
   const ac = Cookies.get(acToken);
   const refresh_token = Cookies.get(rfToken);
+  const noCredentials = new Error('No credentials found');
   if (ac) {
-    return validateCredentials(ac);
+    return validateCredentials(ac).catch(
+      () => (refresh_token ? refresh_auth(refresh_token) : Promise.reject(noCredentials)),
+    );
   } else if (refresh_token) {
     return refresh_auth(refresh_token);
   }
-  return Promise.reject(new Error('No credentials found'));
+  return Promise.reject(noCredentials);
 };
 
 const headers = new Headers({
@@ -197,8 +200,9 @@ export const loginToSpotifyAlpha = () =>
       return Promise.resolve({ accessToken: access_token, refreshToken: refresh_token });
     });
 
-const refresh_auth = refresh_token =>
-  fetch(config.api.spotify.refreshToken, {
+const refresh_auth = refresh_token => {
+  console.info('refreshing token');
+  return fetch(config.api.spotify.refreshToken, {
     method: 'POST',
     // mode: 'cors',
     body: JSON.stringify({ refresh_token }),
@@ -209,7 +213,7 @@ const refresh_auth = refresh_token =>
     .catch(err => {
       console.info(err);
     });
-
+};
 /**
  * @param access_token
  */

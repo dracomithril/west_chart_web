@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup, DropdownButton, MenuItem } from 'react-bootstrap';
-import spotify_utils from '../utils/spotify_utils';
+import { searchForMusic } from '../utils/spotify_utils';
 import './components.css';
 
 import action_types from './../reducers/action_types';
@@ -23,7 +23,7 @@ const TrackPreview = props => {
         {!nolink && (
           <a href={(track.external_urls || {}).spotify} target="_newtab">
             {' go to '}
-            <i className="fa fa-spotify" aria-hidden="true" />
+            <i className="fab fa-spotify" aria-hidden="true" />
           </a>
         )}
       </span>
@@ -103,7 +103,7 @@ const RowSpotifySearch = ({ search_elem }, { store }) => {
               });
             }}
           >
-            <i className="fa fa-refresh" aria-hidden="true" />
+            <i className="fas fa-sync" aria-hidden="true" />
           </button>
           <input
             type="text"
@@ -119,7 +119,7 @@ const RowSpotifySearch = ({ search_elem }, { store }) => {
             <Button
               id={`button-${search_elem.id}`}
               onClick={() => {
-                spotify_utils.searchForMusic(search_elem, store).then(res =>
+                searchForMusic(search_elem, store).then(res =>
                   store.dispatch({
                     type: action_types.UPDATE_SINGLE_SEARCH,
                     field: 'items',

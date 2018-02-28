@@ -101,8 +101,13 @@ exports[`<PickYourDate/> renders without crashing 1`] = `
       bsClass="btn"
       bsSize="small"
       bsStyle="default"
-      className="fa fa-angle-double-down"
+      className="fas fa-angle-double-down"
       disabled={false}
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
     />
   </OverlayTrigger>
 </div>

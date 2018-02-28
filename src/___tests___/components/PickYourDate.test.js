@@ -7,9 +7,9 @@ import PickYourDate from "./../../components/PickYourDate";
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from "enzyme-to-json";
-const utils = require('../../utils/utils');
-
 import configureMockStore from "redux-mock-store";
+import { UpdateChart } from '../../utils/utils';
+
 Enzyme.configure({ adapter: new Adapter() });
 jest.mock('./../../utils/utils');
 const initial_state = require('../data/initial_state.json');
@@ -41,6 +41,6 @@ describe('<PickYourDate/>', () => {
     button.simulate('click');
     let actions = store.getActions();
     expect(actions.length).toBe(0);
-    expect(utils.UpdateChart.mock.calls.length).toBe(1);
+    expect(UpdateChart.mock.calls.length).toBe(1);
   });
 });

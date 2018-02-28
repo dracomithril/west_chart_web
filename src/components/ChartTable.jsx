@@ -43,7 +43,7 @@ const ChartTable = ({ data }, { store }) => {
     value: PropTypes.object,
   };
   const time = {
-    Header: <i className="fa fa-clock-o">Time</i>,
+    Header: <i className="far fa-clock">Time</i>,
     id: 'createTime',
     resizable: true,
     minWidth: 150,
@@ -67,7 +67,7 @@ const ChartTable = ({ data }, { store }) => {
   };
   const link = {
     Header: (
-      <i className="fa fa-external-link" style={{ color: 'red' }} aria-hidden="true">
+      <i className="fas fa-external-link-square-alt" style={{ color: 'red' }} aria-hidden="true">
         Link
       </i>
     ), // Custom header components!
@@ -100,17 +100,17 @@ const ChartTable = ({ data }, { store }) => {
             overlay={<Tooltip id="tooltip">{value.message}</Tooltip>}
           >
             <Label bsStyle="success">
-              <i className="fa fa-envelope-o" aria-hidden="true" />
+              <i className="fas fa-envelope" aria-hidden="true" />
             </Label>
           </OverlayTrigger>
         )}
         {!condition && (
           <Label bsStyle="danger">
-            <i className="fa fa-times" aria-hidden="true" />
+            <i className="fas fa-times" aria-hidden="true" />
           </Label>
         )}
         <div>
-          <i className="fa fa-thumbs-o-up" style={{ color: 'blue' }} aria-hidden="true" />
+          <i className="far fa-thumbs-up" style={{ color: 'blue' }} aria-hidden="true" />
           {value.reactions_num}
         </div>
       </div>
@@ -119,33 +119,30 @@ const ChartTable = ({ data }, { store }) => {
   ReactionCell.propTypes = {
     value: PropTypes.object,
   };
-  const post_info = {
-    Header: 'Post Info',
-    columns: [
-      {
-        Header: (
-          <i className="fa fa-user-circle" style={{ color: 'green' }} aria-hidden="true">
-            user
-          </i>
-        ),
-        resizable: true,
-        minWidth: 140,
-        maxWidth: 180,
-        id: 'user',
-        accessor: 'from', // String-based value accessors !
-        Cell: UserInfoCell,
-      },
-      {
-        Header: <i className="fa fa-info-circle" style={{ color: 'blue' }} aria-hidden="true" />,
-        accessor: ({ message, reactions_num }) => ({ message, reactions_num }),
-        id: 'woc_f',
-        maxWidth: 50,
-        Cell: ReactionCell,
-      },
-      time,
-      link,
-    ],
-  };
+  const post_info = [
+    {
+      Header: (
+        <i className="fas fa-user-circle" style={{ color: 'green' }} aria-hidden="true">
+          user
+        </i>
+      ),
+      resizable: true,
+      minWidth: 140,
+      maxWidth: 180,
+      id: 'user',
+      accessor: 'from', // String-based value accessors !
+      Cell: UserInfoCell,
+    },
+    {
+      Header: <i className="fas fa-info-circle" style={{ color: 'blue' }} aria-hidden="true" />,
+      accessor: ({ message, reactions_num }) => ({ message, reactions_num }),
+      id: 'woc_f',
+      maxWidth: 50,
+      Cell: ReactionCell,
+    },
+    time,
+    link,
+  ];
 
   const SelectCell = ({ value, row }) => (
     <Checkbox
@@ -172,27 +169,23 @@ const ChartTable = ({ data }, { store }) => {
       show: false,
       accessor: 'id',
     },
+
     {
-      Header: <small>{data.length}</small>,
-      columns: [
-        {
-          sortable: false,
-          resizable: false,
-          Header: () => (
-            <Checkbox
-              bsClass="checkbox1"
-              onClick={() => {
-                store.dispatch({ type: action_types.TOGGLE_ALL });
-              }}
-            />
-          ),
-          width: 40,
-          accessor: 'selected',
-          Cell: SelectCell,
-        },
-      ],
+      sortable: false,
+      resizable: false,
+      Header: () => (
+        <Checkbox
+          bsClass="checkbox1"
+          onClick={() => {
+            store.dispatch({ type: action_types.TOGGLE_ALL });
+          }}
+        />
+      ),
+      width: 40,
+      accessor: 'selected',
+      Cell: SelectCell,
     },
-    post_info,
+    ...post_info,
   ];
   const tableOptions = {
     filterable: false,

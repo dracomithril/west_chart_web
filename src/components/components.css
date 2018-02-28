@@ -16,6 +16,10 @@
     background-color: #ff0e10;
 }
 
+.btn2 {
+    font-weight: bold;
+}
+
 .summary {
     border: 1px solid black;
     border-radius: 10px;
@@ -54,16 +58,19 @@
     padding-left: 10px;
     border-radius: 3px;
 }
-.songsPerDay_err{
+
+.songsPerDay_err {
     color: #a94442;
     background-color: #f2dede;
     border: 1px solid #ebccd1;
 }
-.songsPerDay_good{
+
+.songsPerDay_good {
     color: #3c763d;
     background-color: #dff0d8;
     border: 1px solid #d6e9c6;
 }
+
 .dock1 {
     float: left;
     height: 100px;
@@ -110,13 +117,15 @@
     height: 250px;
     float: left;
 }
-#from_playlist{
+
+#from_playlist {
     background-color: white;
     border: 1px solid black;
     width: 700px;
     height: 250px;
     float: left;
 }
+
 #play_list_is_private {
     margin-left: 10px;
     padding-left: 5px;
@@ -126,34 +135,55 @@
     padding-left: 10px;
     color: green;
 }
+
 .less_days {
     color: blue;
     margin-left: 5px;
 }
+
 .more_days {
     color: red;
     margin-left: 5px;
 }
 
-select:disabled{
+select:disabled {
     background-color: rgb(235, 235, 228);
     color: black;
 }
-.write_your_mind{
+
+.write_your_mind {
     width: auto;
     min-width: 400px;
     height: 100px;
     resize: none;
 }
-#chart_tabs i::before{
+
+#chart_tabs i::before {
     padding-right: 3px;
 }
 
-.beta{
+.beta {
     color: firebrick;
     background-color: beige;
     border: 1px double firebrick;
 }
-.list_sum_chart{
+
+.list_sum_chart {
     font-size: 12px;
+}
+
+.policy {
+    text-align: left;
+}
+
+.policy h3 {
+    text-align: center;
+    color: cadetblue;
+}
+
+.policy h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: blue;
+    margin-bottom: 20px
 }

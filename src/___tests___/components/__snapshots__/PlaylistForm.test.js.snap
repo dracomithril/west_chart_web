@@ -77,7 +77,7 @@ exports[`<PlaylistForm/> createPlaylistAndAddTracks 1`] = `
       onClick={[Function]}
     >
       <i
-        className="fa fa-save"
+        className="fas fa-save"
       />
        Playlist
     </Button>
@@ -174,7 +174,7 @@ exports[`<PlaylistForm/> renders without crashing 1`] = `
       onClick={[Function]}
     >
       <i
-        className="fa fa-save"
+        className="fas fa-save"
       />
        Playlist
     </Button>
@@ -271,7 +271,7 @@ exports[`<PlaylistForm/> start_click 1`] = `
       onClick={[Function]}
     >
       <i
-        className="fa fa-save"
+        className="fas fa-save"
       />
        Playlist
     </Button>

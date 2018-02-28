@@ -25,7 +25,7 @@ exports[`<RowSpotifySearch/> renders without crashing 1`] = `
       >
         <i
           aria-hidden="true"
-          className="fa fa-refresh"
+          className="fas fa-sync"
         />
       </button>
       <input

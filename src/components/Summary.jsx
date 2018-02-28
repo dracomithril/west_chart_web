@@ -67,7 +67,7 @@ ${this.state.riddleUrl}`;
         <h3 id="summary">
           Summary
           <Button bsStyle="info" onClick={this.onCopyToClipboard}>
-            <i className="fa fa-clipboard" />
+            <i className="fas fa-clipboard" />
           </Button>
           <Button
             onClick={() => {
@@ -75,7 +75,7 @@ ${this.state.riddleUrl}`;
             }}
             disabled
           >
-            Publish2<i className="fa fa-facebook-official" />
+            Publish2<i className="fab fa-facebook" />
           </Button>
         </h3>
         <h6>[WCS Weekly Westletter]</h6>

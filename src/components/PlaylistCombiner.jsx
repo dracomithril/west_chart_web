@@ -174,7 +174,11 @@ export default class PlaylistCombiner extends React.Component {
                 }}
               />
             </label>
-            <Button type="submit" onClick={this.searchForUser_click} className="fa fa-search" />
+            <Button
+              type="submit"
+              onClick={this.searchForUser_click}
+              className="far fa-search btn2"
+            />
             <div className="playlists_view_conteiner">{users_playlists}</div>
           </div>
           <div id="destination_panel">

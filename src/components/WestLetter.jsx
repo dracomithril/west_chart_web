@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import utils, { getFbPictureUrl } from '../utils/utils';
+import { getFbPictureUrl, weekInfo } from '../utils/utils';
 
 export default class WestLetter extends React.Component {
   componentDidMount() {
@@ -18,10 +18,10 @@ export default class WestLetter extends React.Component {
   render() {
     const westLetter = this.props.data;
     const today = new Date();
-    const today_week = utils.weekInfo(today);
+    const today_week = weekInfo(today);
     const show = westLetter.map(elem => {
       const create_date = new Date(elem.created_time);
-      const { weekNumber } = utils.weekInfo(create_date);
+      const { weekNumber } = weekInfo(create_date);
       return (
         <div style={{ padding: 2, display: 'block', border: '1px black solid' }} key={elem.id}>
           <input type="checkbox" />

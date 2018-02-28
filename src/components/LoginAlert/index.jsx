@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { Button, Jumbotron } from 'react-bootstrap';
 import FacebookLogin from 'react-facebook-login';
+import './../bootstrap-social.css';
 import './LoginAlert.css';
 import { getCredentials, loginToSpotifyAlpha } from '../../utils/spotify_utils';
 
@@ -26,7 +27,7 @@ const SpotifyLogin = props => (
         });
     }}
   >
-    <i className="fa fa-spotify" />Login to spotify
+    <i className="fab fa-spotify" />Login to spotify
   </Button>
 );
 SpotifyLogin.propTypes = {
@@ -62,7 +63,7 @@ class LoginAlert extends React.Component {
       <Jumbotron bsClass="login-info">
         <h4>
           {'To start working witch us you need to login to facebook and spotify.'}
-          <i className="fa fa-heart" />
+          <i className="fas fa-heart" />
         </h4>
         {user.id === undefined && (
           <FacebookLogin
@@ -75,7 +76,7 @@ class LoginAlert extends React.Component {
             }}
             fields={'id,email,name,first_name,picture,groups{administrator}'}
             cssClass="btn btn-social btn-facebook"
-            icon="fa fa-facebook"
+            icon="fab fa-facebook"
           />
         )}
         {sp_user.id === undefined && <SpotifyLogin from={from} />}

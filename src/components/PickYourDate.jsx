@@ -73,7 +73,11 @@ export default class PickYourDate extends React.Component {
           placement="bottom"
           overlay={<Popover id="more_options_chose_date">{footer}</Popover>}
         >
-          <Button className="fa fa-angle-double-down" bsSize="small" />
+          <Button
+            className="fas fa-angle-double-down"
+            style={{ fontWeight: 'bold' }}
+            bsSize="small"
+          />
         </OverlayTrigger>
       </div>
     );

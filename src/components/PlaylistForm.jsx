@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup, Form, FormControl, FormGroup, InputGroup } from 'react-bootstrap';
 import { searchForMusic, createPlaylistAndAddTracks } from '../utils/spotify_utils';
-import utils, { getArtist_Title } from '../utils/utils';
+import { getArtist_Title, weekInfo } from '../utils/utils';
 
 import action_types from './../reducers/action_types';
 
@@ -49,7 +49,7 @@ export default class PlaylistForm extends Component {
 
   onGenPlaylistName = () => {
     const { store } = this.context;
-    const { monday, friday } = utils.weekInfo(new Date());
+    const { monday, friday } = weekInfo(new Date());
 
     const monday_str = monday
       .toLocaleString('en-US', { month: 'short', day: 'numeric' })
@@ -124,7 +124,7 @@ export default class PlaylistForm extends Component {
             disabled={disable_create}
             bsStyle="danger"
           >
-            <i className="fa fa-save" /> Playlist
+            <i className="fas fa-save" /> Playlist
           </Button>
         </ButtonGroup>
         <label htmlFor="play_list_is_private">

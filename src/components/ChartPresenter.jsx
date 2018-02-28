@@ -25,24 +25,24 @@ const ChartPresenter = (props, { store }) => {
   return (
     <div>
       <Tabs defaultActiveKey={0} id="chart_tabs">
-        <Tab eventKey={0} title={<i className="fa fa-facebook">Posts</i>}>
+        <Tab eventKey={0} title={<i className="fab fa-facebook">Posts</i>}>
           <ChartHeader error_days={error_days} view_chart={view_chart} />
           <ChartTable data={view_chart} />
         </Tab>
         <Tab
           eventKey={1}
           title={
-            <i className="fa fa-spotify" id="chart_playlist_tab">
+            <i className="fab fa-spotify" id="chart_playlist_tab">
               Playlist
             </i>
           }
         >
           <SpotifySearch selected={selected} />
         </Tab>
-        <Tab eventKey={2} title={<i className="fa fa-list">Summary</i>}>
+        <Tab eventKey={2} title={<i className="fas fa-list">Summary</i>}>
           <Summary selected={selected} />
         </Tab>
-        <Tab eventKey={3} title={<i className="fa fa-table">West Letters</i>}>
+        <Tab eventKey={3} title={<i className="fas fa-table">West Letters</i>}>
           <WestLetter data={westLetters} />
         </Tab>
       </Tabs>

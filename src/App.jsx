@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Nav, NavItem } from 'react-bootstrap';
 import 'react-table/react-table.css';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import ChartPresenter from './components/ChartPresenter';
 import './App.css';
 import ErrorConsole from './components/ErrorConsole';
@@ -11,6 +11,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Combiner from './components/PlaylistCombiner';
 import LoginAlert from './components/LoginAlert';
+import Policy from './components/Policy';
+import NotFound from './components/NotFound';
 
 const pathways = ['/', '/chart', '/combiner'];
 
@@ -65,10 +67,14 @@ const Navigation = () => (
         Combiner(BETA)
       </NavItem>
     </Nav>
-    <Route exact path="/" component={About} />
-    <Route path="/login" component={LoginAlert} />
-    <PrivateRoute path="/chart" exact component={ChartPresenter} />
-    <PrivateRoute path="/combiner" exact component={Combiner} />
+    <Switch>
+      <Route exact path="/" component={About} />
+      <Route path="/policy" ecact component={Policy} />
+      <Route path="/login" component={LoginAlert} />
+      <PrivateRoute path="/chart" exact component={ChartPresenter} />
+      <PrivateRoute path="/combiner" exact component={Combiner} />
+      <Route component={NotFound} />
+    </Switch>
   </div>
 );
 
@@ -77,6 +83,7 @@ class App extends React.Component {
     const { store } = this.context;
     this.unsubscribe = store.subscribe(() => this.forceUpdate());
   }
+
   componentWillUnmount() {
     this.unsubscribe();
   }

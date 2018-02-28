@@ -10,7 +10,7 @@ exports[`<ChartPresenter/> renders without crashing ChartPresenter 1`] = `
       eventKey={0}
       title={
         <i
-          className="fa fa-facebook"
+          className="fab fa-facebook"
         >
           Posts
         </i>
@@ -28,7 +28,7 @@ exports[`<ChartPresenter/> renders without crashing ChartPresenter 1`] = `
       eventKey={1}
       title={
         <i
-          className="fa fa-spotify"
+          className="fab fa-spotify"
           id="chart_playlist_tab"
         >
           Playlist
@@ -43,7 +43,7 @@ exports[`<ChartPresenter/> renders without crashing ChartPresenter 1`] = `
       eventKey={2}
       title={
         <i
-          className="fa fa-list"
+          className="fas fa-list"
         >
           Summary
         </i>
@@ -57,7 +57,7 @@ exports[`<ChartPresenter/> renders without crashing ChartPresenter 1`] = `
       eventKey={3}
       title={
         <i
-          className="fa fa-table"
+          className="fas fa-table"
         >
           West Letters
         </i>

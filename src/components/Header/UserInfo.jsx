@@ -17,7 +17,7 @@ const UserInfo = ({ fb_user, sp_user, onLogoutClick }) => (
       <br />
       {sp_user.id !== undefined && (
         <div className="spotify">
-          <i className="fa fa-spotify" />
+          <i className="fab fa-spotify" />
           <span>{sp_user.id}</span>
         </div>
       )}

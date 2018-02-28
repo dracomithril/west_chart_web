@@ -17,7 +17,7 @@ exports[`<Summary/> renders without crashing 1`] = `
       onClick={[Function]}
     >
       <i
-        className="fa fa-clipboard"
+        className="fas fa-clipboard"
       />
     </Button>
     <Button
@@ -30,7 +30,7 @@ exports[`<Summary/> renders without crashing 1`] = `
     >
       Publish2
       <i
-        className="fa fa-facebook-official"
+        className="fab fa-facebook"
       />
     </Button>
   </h3>

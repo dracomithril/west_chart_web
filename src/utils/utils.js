@@ -156,60 +156,54 @@ const weekNumber = date => {
   const onejan = new Date(date.getFullYear(), 0, 1);
   return Math.ceil(((date - onejan) / 86400000 + onejan.getDay() + 1) / 7);
 };
+/**
+ *
+ * @param date
+ * @return {{monday: Date, friday: Date, sunday: Date, weekNumber: number}}
+ */
+export const weekInfo = date => {
+  const dayOfWeek = date.getDay();
 
-export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?height=50`;
-
-class utils {
   /**
    *
-   * @param date
-   * @return {{monday: Date, friday: Date, sunday: Date, weekNumber: number}}
+   * @param dateToChange {Date}
+   * @param move {Number} how many days to add
+   * @return {Date} Date after change
    */
-  static weekInfo(date) {
-    const dayOfWeek = date.getDay();
+  const moveFor = (dateToChange, move) =>
+    new Date(new Date(dateToChange.getTime()).setDate(dateToChange.getDate() + move));
 
-    /**
-     *
-     * @param dateToChange {Date}
-     * @param move {Number} how many days to add
-     * @return {Date} Date after change
-     */
-    const moveFor = (dateToChange, move) =>
-      new Date(new Date(dateToChange.getTime()).setDate(dateToChange.getDate() + move));
+  const diff = 0 - dayOfWeek + (dayOfWeek === 0 ? -6 : 1);
+  const monday = moveFor(date, diff);
+  const friday = moveFor(monday, 4);
+  const sunday = moveFor(monday, 6);
 
-    const diff = 0 - dayOfWeek + (dayOfWeek === 0 ? -6 : 1);
-    const monday = moveFor(date, diff);
-    const friday = moveFor(monday, 4);
-    const sunday = moveFor(monday, 6);
+  return {
+    monday,
+    friday,
+    sunday,
+    weekNumber: weekNumber(date),
+  };
+};
+export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?height=50`;
 
-    return {
-      monday,
-      friday,
-      sunday,
-      weekNumber: weekNumber(date),
-    };
-  }
-
-  static UpdateChart(store) {
-    store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: true });
-    const { user, enable_until, start_date, show_last } = store.getState();
-    const query_params = getQueryParams(enable_until, start_date, show_last, user);
-    store.dispatch({ type: 'UPDATE_SINCE', date: query_params.since * 1000 });
-    store.dispatch({ type: 'UPDATE_UNTIL', date: query_params.until * 1000 });
-    return getChartFromServer(query_params)
-      .then(body => {
-        console.info(`chart list witch ${body.chart.length}`);
-        store.dispatch({ type: action_types.UPDATE_CHART, chart: body.chart });
-        store.dispatch({ type: action_types.UPDATE_LAST_UPDATE, date: body.last_update });
-        store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: false });
-        return Promise.resolve();
-      })
-      .catch(err => {
-        console.error('Error in fetch chart.');
-        store.dispatch({ type: action_types.ADD_ERROR, values: err });
-        store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: false });
-      });
-  }
-}
-
-export default utils;
+export const UpdateChart = store => {
+  store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: true });
+  const { user, enable_until, start_date, show_last } = store.getState();
+  const query_params = getQueryParams(enable_until, start_date, show_last, user);
+  store.dispatch({ type: 'UPDATE_SINCE', date: query_params.since * 1000 });
+  store.dispatch({ type: 'UPDATE_UNTIL', date: query_params.until * 1000 });
+  return getChartFromServer(query_params)
+    .then(body => {
+      console.info(`chart list witch ${body.chart.length}`);
+      store.dispatch({ type: action_types.UPDATE_CHART, chart: body.chart });
+      store.dispatch({ type: action_types.UPDATE_LAST_UPDATE, date: body.last_update });
+      store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: false });
+      return Promise.resolve();
+    })
+    .catch(err => {
+      console.error('Error in fetch chart.');
+      store.dispatch({ type: action_types.ADD_ERROR, values: err });
+      store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: false });
+    });
+};

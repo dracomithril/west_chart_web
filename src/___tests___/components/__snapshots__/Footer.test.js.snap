@@ -20,13 +20,13 @@ exports[`<Footer/> renders without crashing 1`] = `
     >
       <i
         aria-hidden="true"
-        className="fa fa-github"
+        className="fab fa-github"
       />
       <br />
     </a>
      v0.6.3
     <i
-      className="fa fa-copyright"
+      className="fas fa-copyright"
     />
      Copyright 2017
   </span>
@@ -37,7 +37,7 @@ exports[`<Footer/> renders without crashing 1`] = `
       href="mailto:dracomithril@gmail.com?subject=[WCSChartAdmin]"
     >
       <i
-        className="fa fa-envelope"
+        className="fas fa-envelope"
       />
        contact me
     </a>
@@ -47,7 +47,7 @@ exports[`<Footer/> renders without crashing 1`] = `
     href="/policy"
   >
     <i
-      className="fa fa-facebook-square"
+      className="fab fa-facebook-square"
     />
      Policy
   </a>

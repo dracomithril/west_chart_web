@@ -12,7 +12,7 @@ const PlaylistInfo = props => {
         <div className="spotify_sumary">
           <span>
             {'Created '}
-            <i className="fa fa-spotify" aria-hidden="true">
+            <i className="fab fa-spotify" aria-hidden="true">
               Spotify
             </i>
             {' playlist! name: '}

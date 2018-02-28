@@ -43,8 +43,12 @@ class UserPlaylist extends React.Component {
           </ControlLabel>
           <Badge bsStyle="warning">{total}</Badge>
           <ButtonGroup>
-            <Button className="fa fa-refresh" onClick={() => onUpdate(id)} />
-            <Button className="fa fa-minus" onClick={() => onDelete(id)} disabled={!erasable} />
+            <Button className="fas fa-sync-alt btn2" onClick={() => onUpdate(id)} />
+            <Button
+              className="fas fa-minus btn2"
+              onClick={() => onDelete(id)}
+              disabled={!erasable}
+            />
           </ButtonGroup>
         </div>
         <FormControl name={id} componentClass="select" multiple onChange={updateSelectList}>

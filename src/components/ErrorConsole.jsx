@@ -35,7 +35,7 @@ export default class ErrorConsole extends React.Component {
           <h3>
             Errors!!!
             <button
-              className="fa fa-trash-o"
+              className="fas fa-trash-o"
               onClick={() => store.dispatch({ type: action_types.CLEAR_ERRORS })}
             >
               clear
