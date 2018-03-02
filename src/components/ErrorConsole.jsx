@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import action_types from './../reducers/action_types';
+import { action_types } from './../reducers/action_types';
 
 const ConsoleLog = ({ error }) => (
   <div>{(error || {}).message || 'no message log to console logs'}</div>

@@ -3,9 +3,8 @@
 exports[`<FilteringOption/> renders without crashing ChartPresenter 1`] = `
 <Checkbox
   bsClass="checkbox"
-  checked={true}
   disabled={false}
-  id="create"
+  id="create_checkbox"
   inline={false}
   name="date_create_control"
   onChange={[Function]}
@@ -14,12 +13,11 @@ exports[`<FilteringOption/> renders without crashing ChartPresenter 1`] = `
   created in last 
   <input
     className="num_days"
-    id="create"
+    id="create_input"
     min={0}
     onChange={[Function]}
     step={1}
     type="number"
-    value={7}
   />
    days
 </Checkbox>
@@ -30,7 +28,7 @@ exports[`<FilteringOption/> should be able to change state of woc checkbox 1`] =
   bsClass="checkbox"
   checked={true}
   disabled={false}
-  id="create"
+  id="create_checkbox"
   inline={false}
   name="date_create_control"
   onChange={[Function]}
@@ -39,12 +37,11 @@ exports[`<FilteringOption/> should be able to change state of woc checkbox 1`] =
   created in last 
   <input
     className="num_days"
-    id="create"
+    id="create_input"
     min={0}
     onChange={[Function]}
     step={1}
     type="number"
-    value={7}
   />
    days
 </Checkbox>

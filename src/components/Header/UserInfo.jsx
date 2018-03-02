@@ -4,6 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Image, Well } from 'react-bootstrap';
+import './Header.css';
 // TODO save information about user to database, do it somewhere else
 // const { writeUserData } = require('./../../utils');
 

@@ -12,6 +12,12 @@
     text-align: center;
 }
 
+.datePicker {
+    padding-left: 1px;
+    padding-right: 1px;
+    display: flex;
+}
+
 .error_bg {
     background-color: #ff0e10;
 }
@@ -28,8 +34,7 @@
 }
 
 .chartHeader {
-    height: 110px;
-    max-height: 120px;
+    height: 120px;
     margin: 1px;
     padding: 2px;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -52,10 +57,10 @@
 
 #songsPerDay {
     /*float: inherit;*/
-    height: 50px;
+    height: 45px;
     width: 100%;
     text-align: center;
-    padding-left: 10px;
+    padding-left: 5px;
     border-radius: 3px;
 }
 
@@ -70,6 +75,10 @@
     background-color: #dff0d8;
     border: 1px solid #d6e9c6;
 }
+.songsPerDay_null {
+    background-color: white;
+    border: 1px solid ghostwhite;
+}
 
 .dock1 {
     float: left;
@@ -80,7 +89,7 @@
 
 #pickYourDate {
     /*float: left;*/
-    height: 50px;
+    height: 70px;
     width: inherit;
     padding-top: 10px;
     padding-left: 10px;

@@ -7,7 +7,7 @@ import { Button, ButtonGroup, DropdownButton, MenuItem } from 'react-bootstrap';
 import { searchForMusic } from '../utils/spotify_utils';
 import './components.css';
 
-import action_types from './../reducers/action_types';
+import { action_types } from './../reducers/action_types';
 
 const TrackPreview = props => {
   const { track, nolink } = props;
@@ -45,7 +45,7 @@ TrackPreview.propTypes = {
   nolink: PropTypes.bool,
 };
 
-const RowSpotifySearch = ({ search_elem }, { store }) => {
+const RowSpotifySearch = ({ search_elem = {} }, { store }) => {
   const create_menuItems = track => {
     const selectTrack = () => {
       console.info('track was selected %j', track);

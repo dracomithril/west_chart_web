@@ -60,8 +60,9 @@ ${this.state.riddleUrl}`;
 
   render() {
     const { store } = this.context;
+    const { selected } = this.props;
     const { sp_playlist_info } = store.getState();
-    const print_list = this.props.selected.map(create_print_list);
+    const print_list = (selected || []).map(create_print_list);
     return (
       <div className="summary">
         <h3 id="summary">

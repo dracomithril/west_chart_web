@@ -27,7 +27,7 @@ const ErrorDaysIndicator = ({ error_days, less }) =>
       }
     >
       <i
-        className={`fa fa-arrow-circle-down ${less ? 'less_days' : 'more_days'}`}
+        className={`fa fa-arrow-circle${less ? '-down less_days' : '-up more_days'}`}
         aria-hidden="true"
       >
         {error_days.length}
@@ -38,15 +38,21 @@ ErrorDaysIndicator.propTypes = {
   error_days: PropTypes.array,
   less: PropTypes.bool,
 };
-const SongsPerDay = ({ error_days, songs_per_day, onDaysChange }) => {
-  const err_days_less = error_days.filter(elem => elem.color === 'blue').map(DayEntry);
-  const err_days_more = error_days.filter(elem => elem.color === 'red').map(DayEntry);
+const SongsPerDay = ({ error_days = null, songs_per_day, onDaysChange }) => {
+  let err_days_less = [];
+  let err_days_more = [];
+  let style;
+  if (error_days) {
+    err_days_less = error_days.filter(elem => elem.color === 'blue').map(DayEntry);
+    err_days_more = error_days.filter(elem => elem.color === 'red').map(DayEntry);
+    style = error_days.length !== 0 ? 'songsPerDay_err' : 'songsPerDay_good';
+  } else {
+    style = 'songsPerDay_null';
+  }
+
   return (
-    <div
-      id="songsPerDay"
-      className={error_days.length !== 0 ? 'songsPerDay_err' : 'songsPerDay_good'}
-    >
-      <div style={{ width: '80%', float: 'left', paddingTop: 10 }}>
+    <div id="songsPerDay" className={style}>
+      <div style={{ width: '80%', float: 'left', paddingTop: 5 }}>
         <label
           style={{
             float: 'left',

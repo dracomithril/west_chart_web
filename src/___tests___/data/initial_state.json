@@ -3,6 +3,9 @@
     "woc_control": {"checked": true,
       "id":"woc"
     },
+    "westletter_control": {"checked": true,
+      "id":"westletter"
+    },
     "add_control": {"checked": true,
       "id": "add",
       "days": 7},

@@ -3,7 +3,7 @@
  */
 import React from "react";
 import PropTypes from "prop-types";
-import PickYourDate from "./../../components/PickYourDate";
+import PickYourDate from "../../components/Chart/PickYourDate";
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from "enzyme-to-json";

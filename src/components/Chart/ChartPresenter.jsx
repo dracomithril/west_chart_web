@@ -4,18 +4,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Tab, Tabs } from 'react-bootstrap';
-import Summary from './Summary';
+import Summary from '../Summary';
 import ChartTable from './ChartTable';
 import ChartHeader from './ChartHeader';
-import SpotifySearch from './SpotifySearch';
-import WestLetter from './WestLetter';
-import { filterChart, sorting } from '../utils/utils';
+import SpotifySearch from '../SpotifySearch';
+import WestLetter from '../WestLetter';
+import { filterChart, sorting } from '../../utils/utils';
 
 const ChartPresenter = (props, { store }) => {
   const { list_sort, chart, filters, until, songs_per_day } = store.getState();
   const defaultValue = {
     view_chart: [],
-    error_days: [],
+    error_days: null,
     westLetters: [],
   };
   const { view_chart, error_days, westLetters } =

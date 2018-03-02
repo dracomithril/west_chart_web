@@ -5,45 +5,43 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Checkbox } from 'react-bootstrap';
 
-const FilterOption = ({ control, input, description }, { store }) => {
-  const { filters } = store.getState();
-  return (
-    <Checkbox
-      {...control}
-      checked={filters[input.name].checked}
-      onChange={({ target }) => {
-        const { id, checked } = target;
-        store.dispatch({ type: 'TOGGLE_FILTER', id, checked });
-      }}
-    >
-      {description.start}
-      <input
-        className="num_days"
-        type="number"
-        min={0}
-        step={1}
-        id={control.id}
-        value={filters[input.name].days}
-        onChange={({ target }) => {
-          const { id, name, value } = target;
-          store.dispatch({
-            type: 'UPDATE_DAYS',
-            id,
-            name,
-            value: Number(value),
-          });
-        }}
-      />
-      {description.end}
-    </Checkbox>
-  );
-};
-FilterOption.contextTypes = {
-  store: PropTypes.object,
-};
+const FilterOption = ({
+  id,
+  name,
+  days,
+  checked,
+  onChange,
+  onValueChange,
+  desc_start,
+  desc_end,
+}) => (
+  <Checkbox
+    name={name}
+    id={`${id}_checkbox`}
+    checked={checked}
+    onChange={({ target }) => onChange({ checked: target.checked, id })}
+  >
+    {desc_start}
+    <input
+      className="num_days"
+      type="number"
+      min={0}
+      step={1}
+      id={`${id}_input`}
+      value={days}
+      onChange={({ target }) => onValueChange({ value: target.value, id })}
+    />
+    {desc_end}
+  </Checkbox>
+);
 FilterOption.propTypes = {
-  control: PropTypes.object,
-  input: PropTypes.object,
-  description: PropTypes.object,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
+  onValueChange: PropTypes.func,
+  days: PropTypes.number,
+  checked: PropTypes.bool,
+  desc_start: PropTypes.string,
+  desc_end: PropTypes.string,
 };
 export default FilterOption;

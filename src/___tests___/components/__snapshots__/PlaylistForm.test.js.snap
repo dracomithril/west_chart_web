@@ -1,55 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<PlaylistForm/> createPlaylistAndAddTracks 1`] = `
-<Form
-  bsClass="form"
-  componentClass="form"
-  horizontal={false}
-  inline={true}
->
-  <Button
-    active={false}
+<div>
+  <ButtonGroup
     block={false}
-    bsClass="btn"
-    bsStyle="success"
-    disabled={false}
-    id="start_sp_button"
-    onClick={[Function]}
+    bsClass="btn-group"
+    justified={false}
+    vertical={false}
   >
-    Start
-  </Button>
-  <FormGroup
-    bsClass="form-group"
-    controlId="play_list_name"
-    style={
-      Object {
-        "margin": "1px 5px 5px 5px",
-      }
-    }
-    validationState="success"
-  >
-    <InputGroup
-      bsClass="input-group"
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="success"
+      disabled={false}
+      id="start_sp_button"
+      onClick={[Function]}
+    >
+      Start
+    </Button>
+    <FormGroup
+      bsClass="form-group"
+      controlId="play_list_name"
       style={
         Object {
-          "maxWidth": 250,
+          "margin": "1px",
         }
       }
+      validationState="success"
     >
-      <FormControl
-        bsClass="form-control"
-        componentClass="input"
-        onChange={[Function]}
-        placeholder="playlist name"
-        type="text"
-        value="test_list_zzzz"
-      />
-      <FormControlFeedback
-        bsClass="form-control-feedback"
-        bsRole="feedback"
-      />
-    </InputGroup>
-  </FormGroup>
+      <InputGroup
+        bsClass="input-group"
+        style={
+          Object {
+            "maxWidth": 250,
+          }
+        }
+      >
+        <FormControl
+          bsClass="form-control"
+          componentClass="input"
+          onChange={[Function]}
+          placeholder="playlist name"
+          type="text"
+          value="test_list_zzzz"
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
+        />
+      </InputGroup>
+    </FormGroup>
+  </ButtonGroup>
   <ButtonGroup
     block={false}
     bsClass="btn-group"
@@ -92,61 +94,63 @@ exports[`<PlaylistForm/> createPlaylistAndAddTracks 1`] = `
       type="checkbox"
       value="private"
     />
-    private ?
+    private
   </label>
-</Form>
+</div>
 `;
 
 exports[`<PlaylistForm/> renders without crashing 1`] = `
-<Form
-  bsClass="form"
-  componentClass="form"
-  horizontal={false}
-  inline={true}
->
-  <Button
-    active={false}
+<div>
+  <ButtonGroup
     block={false}
-    bsClass="btn"
-    bsStyle="success"
-    disabled={false}
-    id="start_sp_button"
-    onClick={[Function]}
+    bsClass="btn-group"
+    justified={false}
+    vertical={false}
   >
-    Start
-  </Button>
-  <FormGroup
-    bsClass="form-group"
-    controlId="play_list_name"
-    style={
-      Object {
-        "margin": "1px 5px 5px 5px",
-      }
-    }
-    validationState="error"
-  >
-    <InputGroup
-      bsClass="input-group"
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="success"
+      disabled={false}
+      id="start_sp_button"
+      onClick={[Function]}
+    >
+      Start
+    </Button>
+    <FormGroup
+      bsClass="form-group"
+      controlId="play_list_name"
       style={
         Object {
-          "maxWidth": 250,
+          "margin": "1px",
         }
       }
+      validationState="error"
     >
-      <FormControl
-        bsClass="form-control"
-        componentClass="input"
-        onChange={[Function]}
-        placeholder="playlist name"
-        type="text"
-        value=""
-      />
-      <FormControlFeedback
-        bsClass="form-control-feedback"
-        bsRole="feedback"
-      />
-    </InputGroup>
-  </FormGroup>
+      <InputGroup
+        bsClass="input-group"
+        style={
+          Object {
+            "maxWidth": 250,
+          }
+        }
+      >
+        <FormControl
+          bsClass="form-control"
+          componentClass="input"
+          onChange={[Function]}
+          placeholder="playlist name"
+          type="text"
+          value=""
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
+        />
+      </InputGroup>
+    </FormGroup>
+  </ButtonGroup>
   <ButtonGroup
     block={false}
     bsClass="btn-group"
@@ -189,61 +193,63 @@ exports[`<PlaylistForm/> renders without crashing 1`] = `
       type="checkbox"
       value="private"
     />
-    private ?
+    private
   </label>
-</Form>
+</div>
 `;
 
 exports[`<PlaylistForm/> start_click 1`] = `
-<Form
-  bsClass="form"
-  componentClass="form"
-  horizontal={false}
-  inline={true}
->
-  <Button
-    active={false}
+<div>
+  <ButtonGroup
     block={false}
-    bsClass="btn"
-    bsStyle="success"
-    disabled={false}
-    id="start_sp_button"
-    onClick={[Function]}
+    bsClass="btn-group"
+    justified={false}
+    vertical={false}
   >
-    Start
-  </Button>
-  <FormGroup
-    bsClass="form-group"
-    controlId="play_list_name"
-    style={
-      Object {
-        "margin": "1px 5px 5px 5px",
-      }
-    }
-    validationState="success"
-  >
-    <InputGroup
-      bsClass="input-group"
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="success"
+      disabled={false}
+      id="start_sp_button"
+      onClick={[Function]}
+    >
+      Start
+    </Button>
+    <FormGroup
+      bsClass="form-group"
+      controlId="play_list_name"
       style={
         Object {
-          "maxWidth": 250,
+          "margin": "1px",
         }
       }
+      validationState="success"
     >
-      <FormControl
-        bsClass="form-control"
-        componentClass="input"
-        onChange={[Function]}
-        placeholder="playlist name"
-        type="text"
-        value="test_list_zzzz"
-      />
-      <FormControlFeedback
-        bsClass="form-control-feedback"
-        bsRole="feedback"
-      />
-    </InputGroup>
-  </FormGroup>
+      <InputGroup
+        bsClass="input-group"
+        style={
+          Object {
+            "maxWidth": 250,
+          }
+        }
+      >
+        <FormControl
+          bsClass="form-control"
+          componentClass="input"
+          onChange={[Function]}
+          placeholder="playlist name"
+          type="text"
+          value="test_list_zzzz"
+        />
+        <FormControlFeedback
+          bsClass="form-control-feedback"
+          bsRole="feedback"
+        />
+      </InputGroup>
+    </FormGroup>
+  </ButtonGroup>
   <ButtonGroup
     block={false}
     bsClass="btn-group"
@@ -286,7 +292,7 @@ exports[`<PlaylistForm/> start_click 1`] = `
       type="checkbox"
       value="private"
     />
-    private ?
+    private
   </label>
-</Form>
+</div>
 `;

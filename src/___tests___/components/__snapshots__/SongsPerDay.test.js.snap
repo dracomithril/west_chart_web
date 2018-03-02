@@ -9,7 +9,7 @@ exports[`<SongsPerDay/> renders without crashing 1`] = `
     style={
       Object {
         "float": "left",
-        "paddingTop": 10,
+        "paddingTop": 5,
         "width": "80%",
       }
     }

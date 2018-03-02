@@ -5,7 +5,7 @@
 import qs from 'querystring';
 import { groupBy } from 'lodash';
 
-import action_types from '../reducers/action_types';
+import { action_types } from '../reducers/action_types';
 
 import filters_def, { subtractDaysFromDate } from './filters_def';
 
@@ -133,14 +133,14 @@ export const getArtist_Title = name => {
 };
 /**
  *
- * @param enable_until {boolean}
+ * @param enable_until {null}
  * @param start_date {Date}
  * @param show_last {Number}
  * @param user {string}
  * @returns {{days: *, since: number, until: number, access_token: (string|*)}}
  */
 const getQueryParams = (enable_until, start_date, show_last, user) => {
-  const until = enable_until ? start_date.toDate() : new Date();
+  const until = start_date.toDate();
   const since = subtractDaysFromDate(until, show_last);
   const since2 = Math.round(since.getTime() / 1000.0);
   const until2 = Math.round(until.getTime() / 1000.0);
@@ -189,8 +189,8 @@ export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?h
 
 export const UpdateChart = store => {
   store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: true });
-  const { user, enable_until, start_date, show_last } = store.getState();
-  const query_params = getQueryParams(enable_until, start_date, show_last, user);
+  const { user, start_date, show_last } = store.getState();
+  const query_params = getQueryParams(null, start_date, show_last, user);
   store.dispatch({ type: 'UPDATE_SINCE', date: query_params.since * 1000 });
   store.dispatch({ type: 'UPDATE_UNTIL', date: query_params.until * 1000 });
   return getChartFromServer(query_params)

@@ -6,8 +6,7 @@ import PropTypes from 'prop-types';
 import { Button, ButtonGroup, FormControl, FormGroup, InputGroup } from 'react-bootstrap';
 import { createPlaylistAndAddTracks, searchForMusic } from '../utils/spotify_utils';
 import { getArtist_Title, weekInfo } from '../utils/utils';
-
-import action_types from './../reducers/action_types';
+import { action_types } from './../reducers/action_types';
 
 export default class PlaylistForm extends Component {
   /* istanbul ignore next */

@@ -2,7 +2,7 @@
  * Created by XKTR67 on 2017-06-26.
  */
 import reducers from "../reducers/reducers";
-import action_types from '../reducers/action_types';
+import { action_types } from '../reducers/action_types';
 
 
 beforeAll(() => {
@@ -199,10 +199,10 @@ describe('filters', function () {
     const expected = {
       "create_control": { "checked": true, "days": 7, "id": "create" },
       "less_control": { "checked": false, "days": 15, "id": "less" },
-      "more_control": { "checked": false, "days": 0, "id": "more" },
+      "more_control": { "checked": false, "days": 1, "id": "more" },
       "update_control": { "checked": false, "days": 7, "id": "update" },
-      "woc_control": { "checked": true, "id": "woc_cb" },
-      "westletter_control": { "checked": true, "id": "westletter_cb" },
+      "woc_control": { "checked": true, "id": "woc" },
+      "westletter_control": { "checked": true, "id": "westletter" },
 
     };
     expect(result).toEqual(expected);
@@ -218,10 +218,10 @@ describe('filters', function () {
     const expected = {
       "create_control": { "checked": true, "days": 7, "id": "create" },
       "less_control": { "checked": false, "days": 15, "id": "less" },
-      "more_control": { "checked": false, "days": 0, "id": "more" },
+      "more_control": { "checked": false, "days": 1, "id": "more" },
       "update_control": { "checked": false, "days": 7, "id": "update" },
-      "woc_control": { "checked": true, "id": "woc_cb" },
-      "westletter_control": { "checked": true, "id": "westletter_cb" },
+      "woc_control": { "checked": true, "id": "woc" },
+      "westletter_control": { "checked": true, "id": "westletter" },
     };
     expect(result).toEqual(expected);
   });
@@ -234,7 +234,7 @@ describe('filters', function () {
     const state = {
       "create_control": { "checked": true, "days": 7, "id": "create" },
       "less_control": { "checked": false, "days": 15, "id": "less" },
-      "more_control": { "checked": false, "days": 0, "id": "more" },
+      "more_control": { "checked": false, "days": 1, "id": "more" },
       "update_control": { "checked": false, "days": 7, "id": "update" },
       "woc_control": { "checked": true, "id": "woc_cb" },
       "westletter_control": { "checked": true, "id": "westletter_cb" },
@@ -244,7 +244,7 @@ describe('filters', function () {
     const expected = {
       "create_control": { "checked": true, "days": 7, "id": "create" },
       "less_control": { "checked": true, "days": 15, "id": "less" },
-      "more_control": { "checked": false, "days": 0, "id": "more" },
+      "more_control": { "checked": false, "days": 1, "id": "more" },
       "update_control": { "checked": false, "days": 7, "id": "update" },
       "woc_control": { "checked": true, "id": "woc_cb" },
       "westletter_control": { "checked": true, "id": "westletter_cb" },
@@ -260,9 +260,9 @@ describe('filters', function () {
     const state = {
       "create_control": { "checked": true, "days": 7, "id": "create" },
       "less_control": { "checked": false, "days": 15, "id": "less" },
-      "more_control": { "checked": false, "days": 0, "id": "more" },
+      "more_control": { "checked": false, "days": 1, "id": "more" },
       "update_control": { "checked": false, "days": 7, "id": "update" },
-      "woc_control": { "checked": true, "id": "woc_cb" },
+      "woc_control": { "checked": true, "id": "woc" },
 
     };
     Object.freeze(state);
@@ -271,10 +271,10 @@ describe('filters', function () {
     const expected = {
       "create_control": { "checked": true, "days": 7, "id": "create" },
       "less_control": { "checked": false, "days": 15, "id": "less" },
-      "more_control": { "checked": false, "days": 0, "id": "more" },
+      "more_control": { "checked": false, "days": 1, "id": "more" },
       "update_control": { "checked": false, "days": 7, "id": "update" },
-      "woc_control": { "checked": true, "id": "woc_cb" },
-      "westletter_control": { "checked": true, "id": "westletter_cb" },
+      "woc_control": { "checked": true, "id": "woc" },
+      "westletter_control": { "checked": true, "id": "westletter" },
     };
     expect(result).toEqual(expected);
   });

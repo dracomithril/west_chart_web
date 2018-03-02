@@ -26,7 +26,7 @@ class UserPlaylist extends React.Component {
 
   render() {
     const { user, onSelect, onDelete, erasable, onUpdate } = this.props;
-    const { items, id, total, pic } = user || {};
+    const { items, id = '', total, pic } = user || {};
     const userPlaylist = (items || []).map(UserPlaylist.mapUserPlaylistToOptions);
     const updateSelectList = ({ target }) => {
       const { name, selectedOptions } = target;

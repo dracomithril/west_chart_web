@@ -7,12 +7,17 @@ exports[`<ChartHeader/> renders without crashing ChartPresenter 1`] = `
   <div
     className="dock1"
   >
+    <PickYourDate
+      onChange={[Function]}
+      onDateChange={[Function]}
+      onDaysChange={[Function]}
+      show_last={31}
+    />
     <SongsPerDay
       error_days={Array []}
       onDaysChange={[Function]}
       songs_per_day={2}
     />
-    <PickYourDate />
   </div>
   <ChartButtons
     onGetDataClick={[Function]}

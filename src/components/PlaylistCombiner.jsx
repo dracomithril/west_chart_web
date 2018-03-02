@@ -13,7 +13,7 @@ import {
 import PlaylistInfo from './PlaylistInfo';
 import UserPlaylist from './UserPlaylist';
 
-import action_types from './../reducers/action_types';
+import { action_types } from './../reducers/action_types';
 
 const _ = require('lodash');
 // todo add modal to block usage of tool when playlist crating

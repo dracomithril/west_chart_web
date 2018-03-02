@@ -17,9 +17,19 @@ exports[`<ChartPresenter/> renders without crashing ChartPresenter 1`] = `
       }
     >
       <ChartHeader
-        error_days={Array []}
+        error_days={null}
         view_chart={Array []}
       />
+      <div>
+        We did get 
+        <span>
+          0
+        </span>
+         and filtered 
+        <span>
+          0
+        </span>
+      </div>
       <ChartTable
         data={Array []}
       />

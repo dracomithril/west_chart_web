@@ -210,10 +210,7 @@ const refresh_auth = refresh_token => {
     headers: new Headers({ 'Content-Type': 'application/json' }),
   })
     .then(response => response.text())
-    .then(auth_token => validateCredentials(auth_token))
-    .catch(err => {
-      console.info(err);
-    });
+    .then(auth_token => validateCredentials(auth_token));
 };
 /**
  * @param access_token

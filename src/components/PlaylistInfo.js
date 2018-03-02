@@ -4,9 +4,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PlaylistInfo = props => {
-  const spPlaylistInfo = props.info;
-  return spPlaylistInfo.url !== null ? (
+const PlaylistInfo = ({ info = {} }) =>
+  info.url !== null ? (
     <div className="spotify_sumary">
       <span>
         {'Created '}
@@ -15,18 +14,17 @@ const PlaylistInfo = props => {
         </i>
         {' playlist! name: '}
       </span>
-      <a href={spPlaylistInfo.url} target="_newtab">
-        {spPlaylistInfo.pl_name}
+      <a href={info.url} target="_newtab">
+        {info.pl_name}
       </a>
       <br />
-      <a href={spPlaylistInfo.url} target="_newtab">
-        {spPlaylistInfo.url}
+      <a href={info.url} target="_newtab">
+        {info.url}
       </a>
     </div>
   ) : (
     ''
   );
-};
 PlaylistInfo.propTypes = {
   info: PropTypes.object,
 };

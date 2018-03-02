@@ -12,130 +12,66 @@ exports[`<FilteringOptions/> renders without crashing ChartPresenter 1`] = `
     className="filter_panel"
   >
     <MessageControl
-      check={[Function]}
-      control={
-        Object {
-          "id": "woc_cb",
-          "name": "woc_text_control",
-        }
-      }
-      input={
-        Object {
-          "name": "woc_control",
-        }
-      }
+      checked={true}
+      id="woc"
       key="woc_control"
+      name="woc_text_control"
+      onChange={[Function]}
       text="wielkie ogarnianie charta"
     />
     <MessageControl
-      check={[Function]}
-      control={
-        Object {
-          "id": "westletter_cb",
-          "name": "westletter_text_control",
-        }
-      }
-      input={
-        Object {
-          "name": "westletter_control",
-        }
-      }
+      checked={true}
+      id="westletter"
       key="westletter_control"
+      name="westletter_text_control"
+      onChange={[Function]}
       text="wcs weekly westletter"
     />
     <FilterOption
-      check={[Function]}
-      control={
-        Object {
-          "id": "create",
-          "name": "date_create_control",
-        }
-      }
-      description={
-        Object {
-          "end": " days",
-          "start": "created in last ",
-        }
-      }
-      input={
-        Object {
-          "max": 31,
-          "name": "create_control",
-        }
-      }
+      checked={true}
+      days={7}
+      desc_end=" days"
+      desc_start="created in last "
+      id="create"
       key="create_control"
-      type="countDays"
-      valueName="created_time"
+      name="date_create_control"
+      onChange={[Function]}
+      onValueChange={[Function]}
     />
   </div>
   <div
     className="filter_panel"
   >
     <FilterOption
-      check={[Function]}
-      control={
-        Object {
-          "id": "update",
-          "name": "date_update_control",
-        }
-      }
-      description={
-        Object {
-          "end": " days",
-          "start": "updated in last ",
-        }
-      }
-      input={
-        Object {
-          "max": 31,
-          "name": "update_control",
-        }
-      }
+      checked={true}
+      days={7}
+      desc_end=" days"
+      desc_start="updated in last "
+      id="update"
       key="update_control"
-      type="countDays"
-      valueName="updated_time"
+      name="date_update_control"
+      onChange={[Function]}
+      onValueChange={[Function]}
     />
     <FilterOption
-      check={[Function]}
-      control={
-        Object {
-          "id": "more",
-          "name": "more_then_control",
-        }
-      }
-      description={
-        Object {
-          "start": "more then ",
-        }
-      }
-      input={
-        Object {
-          "name": "more_control",
-        }
-      }
+      checked={true}
+      days={0}
+      desc_start="more then "
+      id="more"
       key="more_control"
-      type="more"
+      name="more_then_control"
+      onChange={[Function]}
+      onValueChange={[Function]}
     />
     <FilterOption
-      check={[Function]}
-      control={
-        Object {
-          "id": "less",
-          "name": "less_then_control",
-        }
-      }
-      description={
-        Object {
-          "start": "less then ",
-        }
-      }
-      input={
-        Object {
-          "name": "less_control",
-        }
-      }
+      checked={false}
+      days={15}
+      desc_start="less then "
+      id="less"
       key="less_control"
-      type="less"
+      name="less_then_control"
+      onChange={[Function]}
+      onValueChange={[Function]}
     />
   </div>
 </div>

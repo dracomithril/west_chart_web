@@ -4,11 +4,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 import { Checkbox, Image, Label, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { getFbPictureUrl } from '../utils/utils';
-import './components.css';
-
-import action_types from './../reducers/action_types';
+import { getFbPictureUrl } from '../../utils/utils';
+import { action_types } from './../../reducers/action_types';
+import '../components.css';
+import '../../App.css';
 
 function formatDate(date) {
   const date2 = new Date(date);

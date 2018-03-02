@@ -1,4 +1,4 @@
-const action_types = {
+export const action_types = {
   ADD_ERROR: 'ADD_ERROR',
   CLEAR_ERRORS: 'CLEAR_ERRORS',
   CHANGE_SHOW_WAIT: 'CHANGE_SHOW_WAIT',

@@ -2,16 +2,13 @@
  * Created by XKTR67 on 4/19/2017.
  */
 import React from "react";
-import PropTypes from "prop-types";
-import FilteringOption from "./../../components/FilteringOptions/FilterOption";
+import FilterOption from "./../../components/FilteringOptions/FilterOption";
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from "enzyme-to-json";
-import configureMockStore from "redux-mock-store";
+import sinon from 'sinon';
 
 Enzyme.configure({ adapter: new Adapter() });
-const initial_state = require('../data/initial_state.json');
-const mockStore = configureMockStore([]);
 describe('<FilteringOption/>', () => {
   let elem = {
     control: { name: "date_create_control", id: 'create' },
@@ -21,33 +18,34 @@ describe('<FilteringOption/>', () => {
     type: 'countDays'
   };
   it('renders without crashing ChartPresenter', () => {
-    const store = mockStore(initial_state);
     const wrapper = shallow(
-      <FilteringOption {...elem} />, {
-        context: { store },
-        childContextTypes: { store: PropTypes.object }
-      }
+      <FilterOption id={elem.control.id}
+                    name={elem.control.name}
+                    desc_end={elem.description.end}
+                    desc_start={elem.description.start}
+      />,
     );
     expect(shallowToJson(wrapper)).toMatchSnapshot();
 
   });
   it('should be able to change state of woc checkbox', () => {
-    const store = mockStore(initial_state);
+    const onChange = sinon.spy();
     const wrapper = shallow(
-      <FilteringOption {...elem} />, {
-        context: { store },
-        childContextTypes: { store: PropTypes.object }
-      }
+      <FilterOption id={elem.control.id}
+                    name={elem.control.name}
+                    desc_end={elem.description.end}
+                    desc_start={elem.description.start}
+                    onChange={onChange}
+                    checked={true}
+      />
     );
     expect(shallowToJson(wrapper)).toMatchSnapshot();
-    const wocCheckbox = wrapper.findWhere(n => n.props().id === 'create').first();
-    expect(wocCheckbox.props().checked).toBeTruthy();
+    const findWhere = wrapper.findWhere(n => n.props().id === 'create_checkbox');
+    const wocCheckbox = findWhere.first();
+    const props = wocCheckbox.props();
+    expect(props.checked).toBeTruthy();
     wocCheckbox.simulate('change', { target: { id: 'create', checked: false } });
-    let actions = store.getActions();
-    expect(actions[0].type).toBe('TOGGLE_FILTER');
-    expect(actions[0].id).toBe('create');
-    expect(actions[0].checked).toBeFalsy();
-
+    sinon.assert.calledOnce(onChange);
   })
 
 });

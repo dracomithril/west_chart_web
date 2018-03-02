@@ -34,7 +34,7 @@ describe('<FilteringOptions/>', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
     let btn = wrapper.findWhere(n => n.props().id === 'bFilters').first();
     btn.simulate('click');
-    let findWhere = wrapper.findWhere(n => n.props().id === 'woc_cb');
+    let findWhere = wrapper.findWhere(n => n.props().id === 'woc_checkbox');
     const wocCheckbox = findWhere.first();
     let woc_props = wocCheckbox.props();
     expect(woc_props.checked).toBeTruthy();

@@ -8,7 +8,7 @@ import CookieBanner from 'react-cookie-banner';
 import UserInfo from './UserInfo';
 import './Header.css';
 
-import action_types from './../../reducers/action_types';
+import { action_types } from './../../reducers/action_types';
 
 export default class Header extends React.Component {
   componentDidMount() {

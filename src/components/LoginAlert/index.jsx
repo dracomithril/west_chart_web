@@ -10,7 +10,7 @@ import './../bootstrap-social.css';
 import './LoginAlert.css';
 import { getCredentials, loginToSpotifyAlpha } from '../../utils/spotify_utils';
 
-import action_types from './../../reducers/action_types';
+import { action_types } from './../../reducers/action_types';
 
 const SpotifyLogin = props => (
   <Button
@@ -55,7 +55,7 @@ class LoginAlert extends React.Component {
     const { location } = this.props;
     const { store } = this.context;
     const { user, sp_user } = store.getState();
-    const { from } = location.state || { from: { pathname: '/' } };
+    const { from } = (location || {}).state || { from: { pathname: '/' } };
     if (user.id && sp_user.id) {
       return <Redirect to={from} />;
     }

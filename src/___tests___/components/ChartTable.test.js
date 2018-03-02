@@ -7,7 +7,7 @@ import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { mountToJson, shallowToJson } from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
-import ChartTable from './../../components/ChartTable';
+import ChartTable from '../../components/Chart/ChartTable';
 
 Enzyme.configure({ adapter: new Adapter() });
 const initial_state = require('../data/initial_state.json');

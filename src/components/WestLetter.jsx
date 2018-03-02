@@ -16,10 +16,10 @@ export default class WestLetter extends React.Component {
   }
 
   render() {
-    const westLetter = this.props.data;
     const today = new Date();
     const today_week = weekInfo(today);
-    const show = westLetter.map(elem => {
+    const { data = [] } = this.props;
+    const show = data.map(elem => {
       const create_date = new Date(elem.created_time);
       const { weekNumber } = weekInfo(create_date);
       return (

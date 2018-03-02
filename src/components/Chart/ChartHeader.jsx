@@ -5,47 +5,52 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup, Label, OverlayTrigger, Popover } from 'react-bootstrap';
 import SongsPerDay from './SongsPerDay';
-import FilteringOptions from './FilteringOptions';
+import FilteringOptions from '../FilteringOptions/index';
 import PickYourDate from './PickYourDate';
-import './components.css';
-import action_types from './../reducers/action_types';
-import { UpdateChart } from '../utils/utils';
+import '../components.css';
+import { action_types } from './../../reducers/action_types';
+import { UpdateChart } from '../../utils/utils';
 
 const ChartButtons = ({ since, until, last_update, onGetDataClick, onQuickSummaryClick }) => {
-  const options = { weekday: 'short', month: '2-digit', day: 'numeric' };
+  const show_popover = until && until && last_update;
+  const PopoverInfo = () => {
+    const options = { weekday: 'short', month: '2-digit', day: 'numeric' };
+    const last_update_date = last_update
+      ? new Date(last_update).toLocaleString('pl-PL')
+      : 'No data';
+    return (
+      <Popover id="update_info">
+        <span>since: </span>
+        <Label bsStyle="success">
+          {since !== '' ? new Date(since).toLocaleDateString('pl-PL', options) : 'null'}
+        </Label>
+        <span> to </span>
+        <Label bsStyle="danger">
+          {until !== '' ? new Date(until).toLocaleDateString('pl-PL', options) : 'null'}
+        </Label>
+        <br />
+        <small id="updateDate">{` Last update: ${last_update_date}`}</small>
+      </Popover>
+    );
+  };
+  const UseOverlay = Component =>
+    show_popover ? (
+      <OverlayTrigger trigger={['hover', 'focus']} placement="bottom" overlay={<PopoverInfo />} />
+    ) : (
+      Component
+    );
   return (
     <div className="chartButtons">
-      <OverlayTrigger
-        trigger={['hover', 'focus']}
-        placement="top"
-        overlay={
-          <Popover id="update_info">
-            <span>since: </span>
-            <Label bsStyle="success">
-              {since !== '' ? new Date(since).toLocaleDateString('pl-PL', options) : 'null'}
-            </Label>
-            <span> to </span>
-            <Label bsStyle="danger">
-              {until !== '' ? new Date(until).toLocaleDateString('pl-PL', options) : 'null'}
-            </Label>
-            <br />
-            <small id="updateDate">{` Last update: ${new Date(last_update).toLocaleString(
-              'pl-PL',
-            )}`}</small>
-          </Popover>
-        }
-      >
-        <div>
-          <ButtonGroup vertical>
-            <Button id="updateChartB" onClick={onGetDataClick} bsStyle="primary">
-              Update
-            </Button>
-            <Button id="quickSummary" onClick={onQuickSummaryClick} bsStyle="success">
-              Quick summary
-            </Button>
-          </ButtonGroup>
-        </div>
-      </OverlayTrigger>
+      {UseOverlay(
+        <ButtonGroup vertical>
+          <Button id="updateChartB" onClick={onGetDataClick} bsStyle="primary">
+            Update
+          </Button>
+          <Button id="quickSummary" onClick={onQuickSummaryClick} bsStyle="success">
+            Quick summary
+          </Button>
+        </ButtonGroup>,
+      )}
     </div>
   );
 };
@@ -86,11 +91,39 @@ export default class ChartHeader extends React.Component {
 
   render() {
     const { store } = this.context;
-    const { since, until, last_update, songs_per_day } = store.getState();
+    const {
+      since,
+      until,
+      enable_until,
+      last_update,
+      songs_per_day,
+      start_date,
+      show_last,
+    } = store.getState();
     const { error_days } = this.props;
+    const onDateChange = date => {
+      store.dispatch({ type: action_types.UPDATE_START_TIME, date });
+    };
+    const onDaysChange = target => {
+      store.dispatch({ type: action_types.UPDATE_SHOW_LAST, days: Number(target.value) });
+    };
+
+    const onChange = target =>
+      store.dispatch({
+        type: action_types.TOGGLE_ENABLE_UNTIL,
+        checked: target.checked,
+      });
     return (
       <div className="chartHeader">
         <div className="dock1">
+          <PickYourDate
+            checked={enable_until}
+            start_date={start_date}
+            show_last={show_last}
+            onChange={onChange}
+            onDaysChange={onDaysChange}
+            onDateChange={onDateChange}
+          />
           <SongsPerDay
             error_days={error_days}
             songs_per_day={songs_per_day}
@@ -101,7 +134,6 @@ export default class ChartHeader extends React.Component {
               })
             }
           />
-          <PickYourDate />
         </div>
         <ChartButtons
           since={since}

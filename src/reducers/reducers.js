@@ -3,7 +3,7 @@
  */
 
 import moment from 'moment';
-import action_types from './action_types';
+import { action_types } from './action_types';
 
 const _ = require('lodash');
 
@@ -128,8 +128,10 @@ const search_list = (state = [], action) => {
  * @param action {object}
  * @returns {boolean}
  */
-const enable_until = (state = false, action) =>
-  action.type === action_types.TOGGLE_ENABLE_UNTIL ? Boolean(action.checked) : state;
+const enable_until = (state = false, action) => {
+  const b = Boolean(action.checked);
+  return action.type === action_types.TOGGLE_ENABLE_UNTIL ? b : state;
+};
 const sp_playlist_name = (state = '', action) =>
   action.type === action_types.UPDATE_PLAYLIST_NAME ? action.value : state;
 /**
@@ -140,8 +142,11 @@ const sp_playlist_name = (state = '', action) =>
  */
 const last_update = (state = '', action) =>
   action.type === action_types.UPDATE_LAST_UPDATE ? action.date : state;
-const start_date = (state = moment(), { type, date }) =>
-  type === action_types.UPDATE_START_TIME ? date : state;
+const start_date = (state = moment(), { type, date }) => {
+  console.info(type, action_types.UPDATE_START_TIME);
+  const test = type === action_types.UPDATE_START_TIME;
+  return test ? date : state;
+};
 const since = (state = 0, action) =>
   action.type === action_types.UPDATE_SINCE ? action.date : state;
 const until = (state = 0, action) =>
@@ -195,12 +200,12 @@ const filters = (state = {}, action) => ({
     action,
   ),
   more_control: control_state(
-    state.more_control || { checked: false, id: 'more', days: 0 },
+    state.more_control || { checked: false, id: 'more', days: 1 },
     action,
   ),
-  woc_control: control_state(state.woc_control || { checked: true, id: 'woc_cb' }, action),
+  woc_control: control_state(state.woc_control || { checked: true, id: 'woc' }, action),
   westletter_control: control_state(
-    state.westletter_control || { checked: true, id: 'westletter_cb' },
+    state.westletter_control || { checked: true, id: 'westletter' },
     action,
   ),
 });

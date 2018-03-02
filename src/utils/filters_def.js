@@ -64,7 +64,7 @@ const text_check = ({ message }, { text }) =>
   message !== undefined ? !message.toLowerCase().includes(text) : true;
 const text_filters = [
   {
-    control: { name: 'woc_text_control', id: 'woc_cb' },
+    control: { name: 'woc_text_control', id: 'woc' },
     input: {
       name: 'woc_control',
     },
@@ -72,7 +72,7 @@ const text_filters = [
     check: text_check,
   },
   {
-    control: { name: 'westletter_text_control', id: 'westletter_cb' },
+    control: { name: 'westletter_text_control', id: 'westletter' },
     input: {
       name: 'westletter_control',
     },

@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, NavItem } from 'react-bootstrap';
-import 'react-table/react-table.css';
-import 'react-datepicker/dist/react-datepicker.css';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import ChartPresenter from './components/ChartPresenter';
+import ChartPresenter from './components/Chart/ChartPresenter';
 import './App.css';
 import ErrorConsole from './components/ErrorConsole';
 import Header from './components/Header';
