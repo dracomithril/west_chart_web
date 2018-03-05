@@ -3,7 +3,7 @@
  */
 import reducers from "../reducers/reducers";
 import { action_types } from '../reducers/action_types';
-
+import moment from 'moment';
 
 beforeAll(() => {
   global.sessionStorage = jest.genMockFunction();
@@ -54,11 +54,11 @@ describe('show_wait', function () {
 describe('start_date', function () {
   //todo type check
   it("should replace current state by new value", function () {
-    const date = "2017-06-16T19:54:25.672Z";
+    const date = moment("2017-06-16T19:54:25.672Z");
     const state = new Date('2017-06-06');
     Object.freeze(state);
     let resp = reducers.start_date(state, { type: action_types.UPDATE_START_TIME, date: date });
-    expect(resp).toBe(date);
+    expect(resp).toEqual(date);
   });
   it('should return current state if type don\'t match', function () {
     const date = "2017-06-16T19:54:25.672Z";

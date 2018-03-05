@@ -2,78 +2,66 @@
 
 exports[`<FilteringOptions/> renders without crashing ChartPresenter 1`] = `
 <div
-  style={
-    Object {
-      "display": "-webkit-box",
-    }
-  }
+  className="filter_panel"
 >
-  <div
-    className="filter_panel"
-  >
-    <MessageControl
-      checked={true}
-      id="woc"
-      key="woc_control"
-      name="woc_text_control"
-      onChange={[Function]}
-      text="wielkie ogarnianie charta"
-    />
-    <MessageControl
-      checked={true}
-      id="westletter"
-      key="westletter_control"
-      name="westletter_text_control"
-      onChange={[Function]}
-      text="wcs weekly westletter"
-    />
-    <FilterOption
-      checked={true}
-      days={7}
-      desc_end=" days"
-      desc_start="created in last "
-      id="create"
-      key="create_control"
-      name="date_create_control"
-      onChange={[Function]}
-      onValueChange={[Function]}
-    />
-  </div>
-  <div
-    className="filter_panel"
-  >
-    <FilterOption
-      checked={true}
-      days={7}
-      desc_end=" days"
-      desc_start="updated in last "
-      id="update"
-      key="update_control"
-      name="date_update_control"
-      onChange={[Function]}
-      onValueChange={[Function]}
-    />
-    <FilterOption
-      checked={true}
-      days={0}
-      desc_start="more then "
-      id="more"
-      key="more_control"
-      name="more_then_control"
-      onChange={[Function]}
-      onValueChange={[Function]}
-    />
-    <FilterOption
-      checked={false}
-      days={15}
-      desc_start="less then "
-      id="less"
-      key="less_control"
-      name="less_then_control"
-      onChange={[Function]}
-      onValueChange={[Function]}
-    />
-  </div>
+  <MessageControl
+    checked={true}
+    id="woc"
+    key="woc_control"
+    name="woc_text_control"
+    onChange={[Function]}
+    text="wielkie ogarnianie charta"
+  />
+  <MessageControl
+    checked={true}
+    id="westletter"
+    key="westletter_control"
+    name="westletter_text_control"
+    onChange={[Function]}
+    text="wcs weekly westletter"
+  />
+  <FilterOption
+    checked={true}
+    days={7}
+    desc_end=" days"
+    desc_start="created in last "
+    id="create"
+    key="create_control"
+    name="date_create_control"
+    onChange={[Function]}
+    onValueChange={[Function]}
+  />
+  <FilterOption
+    checked={true}
+    days={7}
+    desc_end=" days"
+    desc_start="updated in last "
+    id="update"
+    key="update_control"
+    name="date_update_control"
+    onChange={[Function]}
+    onValueChange={[Function]}
+  />
+  <FilterOption
+    checked={true}
+    days={0}
+    desc_start="more then "
+    id="more"
+    key="more_control"
+    name="more_then_control"
+    onChange={[Function]}
+    onValueChange={[Function]}
+  />
+  <FilterOption
+    checked={false}
+    days={15}
+    desc_start="less then "
+    id="less"
+    key="less_control"
+    name="less_then_control"
+    onChange={[Function]}
+    onValueChange={[Function]}
+  />
 </div>
 `;
 

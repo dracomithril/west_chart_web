@@ -55,7 +55,7 @@ ${this.state.riddleText}
 
 ${this.state.riddleUrl}`;
     copy(text);
-    alert('Summary was copied to clipboard');
+    console.info('Summary was copied to clipboard');
   };
 
   render() {

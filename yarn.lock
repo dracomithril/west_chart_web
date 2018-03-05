@@ -6761,9 +6761,9 @@ react-cookie@^2.1.2:
     prop-types "^15.0.0"
     universal-cookie "^2.1.2"
 
-react-datepicker@1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-1.2.1.tgz#95866b2bb9691abb2dd7f8b141c348c1401b1f02"
+react-datepicker@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-1.2.2.tgz#7fb8d7e0f9de6a77a376291a4ccd45fdfe3ce3f5"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"

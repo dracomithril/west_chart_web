@@ -9,14 +9,14 @@ import './FilteringOptions.css';
 import filters_def from '../../utils/filters_def';
 import { action_types } from './../../reducers/action_types';
 
-const _ = require('lodash');
-
 const MessageControl = ({ id, text, name, checked, onChange }) => (
   <Checkbox
     name={name}
+    className="filter-option"
+    style={{ padding: 3 }}
     id={`${id}_checkbox`}
     checked={!checked}
-    onChange={({ target }) => onChange(target)}
+    onChange={({ target }) => onChange({ id, checked: target.checked })}
   >
     <OverlayTrigger
       placement="bottom"
@@ -83,13 +83,7 @@ const FilteringOptions = (props, { store }) => {
     />
   ));
   const combined_map = [...map_t, ...map_c];
-  const chunk_combined_map = _.chunk(combined_map, Math.floor(combined_map.length / 2));
-  return (
-    <div style={{ display: '-webkit-box' }}>
-      <div className="filter_panel">{chunk_combined_map[0]}</div>
-      <div className="filter_panel">{chunk_combined_map[1]}</div>
-    </div>
-  );
+  return <div className="filter_panel">{combined_map}</div>;
 };
 FilteringOptions.contextTypes = {
   store: PropTypes.object,

@@ -2,7 +2,7 @@
 
 exports[`<ChartHeader/> renders without crashing ChartPresenter 1`] = `
 <div
-  className="chartHeader"
+  className="chart-header"
 >
   <div
     className="dock1"
@@ -22,7 +22,6 @@ exports[`<ChartHeader/> renders without crashing ChartPresenter 1`] = `
   <ChartButtons
     onGetDataClick={[Function]}
     onQuickSummaryClick={[Function]}
-    until="2017-03-11T13:46:00.570Z"
   />
   <FilteringOptions />
 </div>

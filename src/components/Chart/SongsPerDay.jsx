@@ -45,27 +45,19 @@ const SongsPerDay = ({ error_days = null, songs_per_day, onDaysChange }) => {
   if (error_days) {
     err_days_less = error_days.filter(elem => elem.color === 'blue').map(DayEntry);
     err_days_more = error_days.filter(elem => elem.color === 'red').map(DayEntry);
-    style = error_days.length !== 0 ? 'songsPerDay_err' : 'songsPerDay_good';
+    style = error_days.length !== 0 ? 'songs-per-day--err' : 'songs-per-day--good';
   } else {
-    style = 'songsPerDay_null';
+    style = '';
   }
 
   return (
-    <div id="songsPerDay" className={style}>
-      <div style={{ width: '80%', float: 'left', paddingTop: 5 }}>
-        <label
-          style={{
-            float: 'left',
-            paddingTop: 3,
-          }}
-          htmlFor="songs_per_day"
-        >
+    <div className={`songs-per-day ${style}`}>
+      <div>
+        <label htmlFor="songs_per_day" className="songs-per-day__label">
           {'songs per day'}
           <input
             type="number"
             value={songs_per_day}
-            className="num_days"
-            style={{ width: 30 }}
             name="songs_per_day"
             id="songs_per_day"
             step={1}
@@ -77,7 +69,7 @@ const SongsPerDay = ({ error_days = null, songs_per_day, onDaysChange }) => {
           />
         </label>
       </div>
-      <div style={{ width: '20%', float: 'left', paddingTop: 5 }}>
+      <div className="songs-per-day__counters">
         <ErrorDaysIndicator error_days={err_days_less} less />
         <ErrorDaysIndicator error_days={err_days_more} />
       </div>

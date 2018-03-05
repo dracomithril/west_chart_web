@@ -2,7 +2,7 @@
 
 exports[`<PickYourDate/> renders without crashing 1`] = `
 <div
-  id="pickYourDate"
+  className="pick-your-date"
 >
   <OverlayTrigger
     defaultOverlayShown={false}
@@ -45,32 +45,12 @@ exports[`<PickYourDate/> renders without crashing 1`] = `
   </OverlayTrigger>
   <br />
   <div
-    className="datePicker"
+    className="pick-your-date__date-picker"
   >
     starting from
-    <DatePicker
-      allowSameDay={false}
-      customInput={<DateButton />}
-      dateFormat="DD/MM/YY"
-      dateFormatCalendar="MMMM YYYY"
-      disabled={false}
-      disabledKeyboardNavigation={false}
-      dropdownMode="scroll"
-      monthsShown={1}
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClickOutside={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onMonthChange={[Function]}
-      onSelect={[Function]}
-      onYearChange={[Function]}
-      preventOpenOnFocus={false}
-      shouldCloseOnSelect={true}
-      showTimeSelect={false}
-      timeCaption="Time"
-      timeIntervals={30}
-      withPortal={true}
+    <button
+      className="pick-your-date__button"
+      onClick={[Function]}
     />
   </div>
 </div>

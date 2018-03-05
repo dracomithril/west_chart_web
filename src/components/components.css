@@ -12,10 +12,10 @@
     text-align: center;
 }
 
-.datePicker {
+.pick-your-date__date-picker {
+    display: flex;
     padding-left: 1px;
     padding-right: 1px;
-    display: flex;
 }
 
 .error_bg {
@@ -33,69 +33,84 @@
     padding-bottom: 20px;
 }
 
-.chartHeader {
+.chart-header {
     height: 120px;
     margin: 1px;
     padding: 2px;
+    display: flex;
     border: 1px solid rgba(0, 0, 0, 0.1);
     /*overflow-x: scroll;*/
 }
 
-.chartHeader small {
-    float: right;
+.chart-header small {
     position: absolute;
     z-index: 9;
 }
 
 .chartButtons {
-    float: left;
+    /*float: left;*/
     margin-left: 10px;
+    margin-right: 10px;
     text-align: center;
     padding-top: 15px;
-    height: 100px;
+    /*height: 100px;*/
 }
 
-#songsPerDay {
-    /*float: inherit;*/
+.songs-per-day {
     height: 45px;
     width: 100%;
     text-align: center;
     padding-left: 5px;
     border-radius: 3px;
+    border: 1px solid ghostwhite;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-.songsPerDay_err {
+.songs-per-day--err {
     color: #a94442;
     background-color: #f2dede;
-    border: 1px solid #ebccd1;
+    border-color: #ebccd1;
 }
 
-.songsPerDay_good {
+.songs-per-day--good {
     color: #3c763d;
     background-color: #dff0d8;
-    border: 1px solid #d6e9c6;
+    border-color: #d6e9c6;
 }
-.songsPerDay_null {
-    background-color: white;
-    border: 1px solid ghostwhite;
+
+.songs-per-day__label input {
+    text-align: center;
+    margin-left: 5px;
+}
+
+.songs-per-day__counters {
+    display: flex;
+    flex-direction: column;
 }
 
 .dock1 {
-    float: left;
-    height: 100px;
+    /*float: left;*/
+    /*height: 100px;*/
     width: 200px;
     text-align: left;
 }
 
-#pickYourDate {
-    /*float: left;*/
+.pick-your-date {
     height: 70px;
     width: inherit;
     padding-top: 10px;
     padding-left: 10px;
-    /*background-color: #fcf8e3;*/
-    /*border: 1px solid #faebcc;*/
+    border: 1px solid #faebcc;
     border-radius: 3px;
+}
+
+.pick-your-date__button {
+    margin-left: 5px;
+    background-color: white;
+    border: 1px solid lightgray;
 }
 
 .playlists_view_conteiner {
@@ -169,6 +184,20 @@ select:disabled {
 
 #chart_tabs i::before {
     padding-right: 3px;
+}
+
+.update-info {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.update-info > span {
+    padding-right: 5px;
+    padding-left: 3px;
+}
+.update-info > small {
+    padding-right: 5px;
+    padding-left: 3px;
 }
 
 .beta {

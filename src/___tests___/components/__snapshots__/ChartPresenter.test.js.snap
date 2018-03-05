@@ -21,14 +21,11 @@ exports[`<ChartPresenter/> renders without crashing ChartPresenter 1`] = `
         view_chart={Array []}
       />
       <div>
-        We did get 
-        <span>
-          0
-        </span>
-         and filtered 
-        <span>
-          0
-        </span>
+        <UpdateInfo
+          filtered={0}
+          total={0}
+          until="2017-03-11T13:46:00.570Z"
+        />
       </div>
       <ChartTable
         data={Array []}

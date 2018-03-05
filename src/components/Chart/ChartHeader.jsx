@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, ButtonGroup, Label, OverlayTrigger, Popover } from 'react-bootstrap';
+import { Button, ButtonGroup } from 'react-bootstrap';
 import SongsPerDay from './SongsPerDay';
 import FilteringOptions from '../FilteringOptions/index';
 import PickYourDate from './PickYourDate';
@@ -11,53 +11,19 @@ import '../components.css';
 import { action_types } from './../../reducers/action_types';
 import { UpdateChart } from '../../utils/utils';
 
-const ChartButtons = ({ since, until, last_update, onGetDataClick, onQuickSummaryClick }) => {
-  const show_popover = until && until && last_update;
-  const PopoverInfo = () => {
-    const options = { weekday: 'short', month: '2-digit', day: 'numeric' };
-    const last_update_date = last_update
-      ? new Date(last_update).toLocaleString('pl-PL')
-      : 'No data';
-    return (
-      <Popover id="update_info">
-        <span>since: </span>
-        <Label bsStyle="success">
-          {since !== '' ? new Date(since).toLocaleDateString('pl-PL', options) : 'null'}
-        </Label>
-        <span> to </span>
-        <Label bsStyle="danger">
-          {until !== '' ? new Date(until).toLocaleDateString('pl-PL', options) : 'null'}
-        </Label>
-        <br />
-        <small id="updateDate">{` Last update: ${last_update_date}`}</small>
-      </Popover>
-    );
-  };
-  const UseOverlay = Component =>
-    show_popover ? (
-      <OverlayTrigger trigger={['hover', 'focus']} placement="bottom" overlay={<PopoverInfo />} />
-    ) : (
-      Component
-    );
-  return (
-    <div className="chartButtons">
-      {UseOverlay(
-        <ButtonGroup vertical>
-          <Button id="updateChartB" onClick={onGetDataClick} bsStyle="primary">
-            Update
-          </Button>
-          <Button id="quickSummary" onClick={onQuickSummaryClick} bsStyle="success">
-            Quick summary
-          </Button>
-        </ButtonGroup>,
-      )}
-    </div>
-  );
-};
+const ChartButtons = ({ onGetDataClick, onQuickSummaryClick }) => (
+  <div className="chartButtons">
+    <ButtonGroup vertical>
+      <Button id="updateChartB" onClick={onGetDataClick} bsStyle="primary">
+        Update
+      </Button>
+      <Button id="quickSummary" onClick={onQuickSummaryClick} bsStyle="success">
+        Quick summary
+      </Button>
+    </ButtonGroup>
+  </div>
+);
 ChartButtons.propTypes = {
-  since: PropTypes.number,
-  until: PropTypes.number,
-  last_update: PropTypes.string,
   onGetDataClick: PropTypes.func,
   onQuickSummaryClick: PropTypes.func,
 };
@@ -91,15 +57,7 @@ export default class ChartHeader extends React.Component {
 
   render() {
     const { store } = this.context;
-    const {
-      since,
-      until,
-      enable_until,
-      last_update,
-      songs_per_day,
-      start_date,
-      show_last,
-    } = store.getState();
+    const { enable_until, songs_per_day, start_date, show_last } = store.getState();
     const { error_days } = this.props;
     const onDateChange = date => {
       store.dispatch({ type: action_types.UPDATE_START_TIME, date });
@@ -114,7 +72,7 @@ export default class ChartHeader extends React.Component {
         checked: target.checked,
       });
     return (
-      <div className="chartHeader">
+      <div className="chart-header">
         <div className="dock1">
           <PickYourDate
             checked={enable_until}
@@ -136,9 +94,6 @@ export default class ChartHeader extends React.Component {
           />
         </div>
         <ChartButtons
-          since={since}
-          last_update={last_update}
-          until={until}
           onQuickSummaryClick={this.quickSummary}
           onGetDataClick={() => UpdateChart(store)}
         />

@@ -2,53 +2,27 @@
 
 exports[`<SongsPerDay/> renders without crashing 1`] = `
 <div
-  className="songsPerDay_good"
-  id="songsPerDay"
+  className="songs-per-day songs-per-day--good"
 >
-  <div
-    style={
-      Object {
-        "float": "left",
-        "paddingTop": 5,
-        "width": "80%",
-      }
-    }
-  >
+  <div>
     <label
+      className="songs-per-day__label"
       htmlFor="songs_per_day"
-      style={
-        Object {
-          "float": "left",
-          "paddingTop": 3,
-        }
-      }
     >
       songs per day
       <input
-        className="num_days"
         id="songs_per_day"
         max={10}
         min={1}
         name="songs_per_day"
         onChange={[Function]}
         step={1}
-        style={
-          Object {
-            "width": 30,
-          }
-        }
         type="number"
       />
     </label>
   </div>
   <div
-    style={
-      Object {
-        "float": "left",
-        "paddingTop": 5,
-        "width": "20%",
-      }
-    }
+    className="songs-per-day__counters"
   >
     <ErrorDaysIndicator
       error_days={Array []}

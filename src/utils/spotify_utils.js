@@ -210,7 +210,10 @@ const refresh_auth = refresh_token => {
     headers: new Headers({ 'Content-Type': 'application/json' }),
   })
     .then(response => response.text())
-    .then(auth_token => validateCredentials(auth_token));
+    .then(auth_token => {
+      Cookies.set(acToken, auth_token, { expires: 360000 });
+      return validateCredentials(auth_token);
+    });
 };
 /**
  * @param access_token

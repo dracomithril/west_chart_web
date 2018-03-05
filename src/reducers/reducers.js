@@ -142,11 +142,8 @@ const sp_playlist_name = (state = '', action) =>
  */
 const last_update = (state = '', action) =>
   action.type === action_types.UPDATE_LAST_UPDATE ? action.date : state;
-const start_date = (state = moment(), { type, date }) => {
-  console.info(type, action_types.UPDATE_START_TIME);
-  const test = type === action_types.UPDATE_START_TIME;
-  return test ? date : state;
-};
+const start_date = (state = moment(), { type, date }) =>
+  type === action_types.UPDATE_START_TIME ? moment(date) : state;
 const since = (state = 0, action) =>
   action.type === action_types.UPDATE_SINCE ? action.date : state;
 const until = (state = 0, action) =>

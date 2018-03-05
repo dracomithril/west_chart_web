@@ -18,6 +18,7 @@ const FilterOption = ({
   <Checkbox
     name={name}
     id={`${id}_checkbox`}
+    className="filter-option"
     checked={checked}
     onChange={({ target }) => onChange({ checked: target.checked, id })}
   >
