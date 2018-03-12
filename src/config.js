@@ -1,3 +1,5 @@
+import url from 'url';
+
 const loginPath = '/api/spotify/login_r';
 const refreshTokenPath = '/api/spotify/refresh_token';
 const obtainCredentialsPath = '/api/spotify/obtain_credentials';
@@ -11,13 +13,13 @@ const config = {
   api: {
     spotify: {
       get login() {
-        return loginPath;
+        return url.resolve(hostname, loginPath);
       },
       get refreshToken() {
-        return refreshTokenPath;
+        return url.resolve(hostname, refreshTokenPath);
       },
       get obtainCredentials() {
-        return obtainCredentialsPath;
+        return url.resolve(hostname, obtainCredentialsPath);
       },
     },
   },
