@@ -26,5 +26,8 @@ exports[`<SpotifySearch/> renders without crashing 1`] = `
     onCreatePlaylistClick={[Function]}
     onStartClick={[Function]}
   />
+  <div
+    className="spotify-search_list"
+  />
 </div>
 `;

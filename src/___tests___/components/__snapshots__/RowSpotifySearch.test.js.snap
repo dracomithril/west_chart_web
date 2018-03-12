@@ -2,55 +2,61 @@
 
 exports[`<RowSpotifySearch/> renders without crashing 1`] = `
 <div
-  className="spotify-search__row"
+  className="row-spotify-search__root--error"
 >
-  <span />
-  <div
-    className="spotify-search__track-search--error"
-  >
-    <label
-      htmlFor="undefined_artist"
-    >
-      artist:
-      <input
-        id="undefined_artist"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </label>
-    <label
-      htmlFor="undefined_title"
-    >
-      title:
-      <input
-        id="undefined_title"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </label>
+  <span>
+    No Title
+  </span>
+  <div>
     <div>
-      <button
-        onClick={[Function]}
-        title="swap artist with title"
+      <div
+        className="row-spotify-search__track-search--error"
       >
-        <i
-          aria-hidden="true"
-          className="fas fa-sync"
-        />
-      </button>
-      <button
-        id="button-undefined"
-        title="search for tracks"
-      >
-        <i
-          className="fas fa-search"
-        />
-      </button>
+        <label
+          htmlFor="undefined_artist"
+        >
+          artist:
+          <input
+            id="undefined_artist"
+            onChange={[Function]}
+            placeholder="artist name"
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          htmlFor="undefined_title"
+        >
+          title:
+          <input
+            id="undefined_title"
+            onChange={[Function]}
+            placeholder="song title"
+            type="text"
+            value=""
+          />
+        </label>
+        <div>
+          <button
+            onClick={[Function]}
+            title="swap artist with title"
+          >
+            <i
+              aria-hidden="true"
+              className="fas fa-sync"
+            />
+          </button>
+          <button
+            id="button-undefined"
+            title="search for tracks"
+          >
+            <i
+              className="fas fa-search"
+            />
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-  <div />
-  <div />
 </div>
 `;

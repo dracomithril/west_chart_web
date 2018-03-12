@@ -14,13 +14,17 @@
     margin-left: 5px;
 }
 
+.spotify-search_list > div + div {
+    border-top: none;
+}
+
 .playlist-form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-[class^="spotify-search__row"] {
+[class^="row-spotify-search__root"] {
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -31,37 +35,52 @@
     max-width: 700px;
 }
 
-[class^="spotify-search__row"] ol {
+[class^="row-spotify-search__root"] ol {
     list-style-type: none;
     margin-left: 5px;
+    margin-right: 5px;
     padding-left: 0;
 }
 
-[class^="spotify-search__row"] ol > li {
+[class^="row-spotify-search__root"] ol > li {
     border: 1px solid black;
     border-radius: 5px;
 }
 
-[class^="spotify-search__row"] ol > li + li {
+[class^="row-spotify-search__root"] ol > li + li {
     border-top: none;
     border-radius: 0 0 5px 5px;
 }
 
-.spotify-search_list > div + div {
-    border-top: none;
-}
-
-[class^="spotify-search__row"] ::placeholder {
+[class^="row-spotify-search__root"] ::placeholder {
     color: lightgray;
 }
 
-.spotify-search__row--good {
+.row-spotify-search__root--good {
     border: solid lightgray;
 }
 
-.spotify-search__row--error {
+.row-spotify-search__root--error {
     border: double red;
     background-color: #ffe2e7;
+}
+
+[class^="row-spotify-search__track-search"] {
+    border-radius: 10px;
+    text-align: center;
+    margin: 1px;
+    padding: 5px;
+    background-color: snow;
+    max-width: 300px;
+}
+
+.row-spotify-search__track-search--good {
+    border: 1px solid green;
+}
+
+.row-spotify-search__track-search--error {
+    /*background-color: #ff0e10;*/
+    border: 3px solid #ff0e10;
 }
 
 .track-preview {
@@ -71,48 +90,36 @@
     margin: 1px 1px 1px 1px;
     padding: 5px;
     background-color: snow;
-}
-
-[class^="spotify-search__track-search"] {
-    border-radius: 10px;
-    text-align: center;
-    margin: 1px 1px 1px 5px;
-    padding: 5px;
-    background-color: snow;
-    max-width: 300px;
-}
-
-.spotify-search__track-search--good {
-    border: 1px solid green;
-}
-
-.spotify-search__track-search--error {
-    /*background-color: #ff0e10;*/
-    border: 3px solid #ff0e10;
+    max-width: 290px;
 }
 
 .track-preview input {
     padding-right: 5px;
     text-align: center;
 }
-
-.row-spotify-search__menu-item {
-    max-width: 280px;
+.track-preview audio {
+    max-width: 270px;
 }
 
-.row-spotify-search__menu-item audio {
-    max-width: 280px;
+.row-spotify-search__track_view {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 1px;
+    align-self: flex-start;
+    background-color: snow;
 }
-.row-spotify-search__preview {
 
-}
+/*.row-spotify-search__track_view > div {*/
+/*border-radius: 10px;*/
+/*}*/
 .track-preview__artist-name {
     padding-left: 10px;
     color: green;
 }
 
 @media screen and (min-width: 700px) {
-    [class^="spotify-search__row"] > div {
+    [class^="row-spotify-search__root"] > div {
         display: flex;
         flex-direction: row;
         align-self: flex-start;

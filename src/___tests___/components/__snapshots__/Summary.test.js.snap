@@ -27,8 +27,14 @@ exports[`<Summary/> renders without crashing 1`] = `
         onClick={[Function]}
         title="copy to clipboard"
       >
+        copy
         <i
           className="fas fa-clipboard"
+          style={
+            Object {
+              "paddingLeft": 5,
+            }
+          }
         />
       </Button>
       <Button

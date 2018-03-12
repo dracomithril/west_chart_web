@@ -32,7 +32,6 @@ class RowSpotifySearch extends React.Component {
       <MenuItem
         key={track.id}
         id={`mi_select_track_${id}`}
-        class="spotify-search__menu-item"
         onClick={() => {
           onUpdateClick({ id: search_id, value: track, field: 'selected' });
           this.setState({ showList: false });
@@ -63,15 +62,19 @@ class RowSpotifySearch extends React.Component {
     };
 
     return (
-      <div className={selected_track ? 'spotify-search__row--good' : 'spotify-search__row--error'}>
+      <div
+        className={
+          selected_track ? 'row-spotify-search__root--good' : 'row-spotify-search__root--error'
+        }
+      >
         <span>{full_title || 'No Title'}</span>
         <div>
           <div>
             <div
               className={
                 haveIssue
-                  ? 'spotify-search__track-search--error'
-                  : 'spotify-search__track-search--good'
+                  ? 'row-spotify-search__track-search--error'
+                  : 'row-spotify-search__track-search--good'
               }
             >
               <label htmlFor={`${search_id}_artist`}>
@@ -121,7 +124,7 @@ class RowSpotifySearch extends React.Component {
             {this.state.showList && <ol>{tracks_list}</ol>}
           </div>
           {condition && (
-            <div className="spotify-search__track_view">
+            <div className="row-spotify-search__track_view">
               <TrackPreview
                 artists={selected_track.artists}
                 external_urls={selected_track.external_urls}
