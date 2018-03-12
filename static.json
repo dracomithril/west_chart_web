@@ -1,6 +1,9 @@
 {
   "root": "build/",
   "routes": {
+    "/icons/**": "/icons/",
+    "/manifest.json": "/manifest.json",
+    "/pic/**": "/pic/",
     "/**": "index.html"
   },
   "https_only": true,
