@@ -1,0 +1,127 @@
+{
+  "list": [
+    {
+      "artist": "PETIT BISCUIT",
+      "title": "Sunset Lover",
+      "full_title": "PETIT BISCUIT - Sunset Lover",
+      "id": "1707149242852457_2139362906297753",
+      "search_id": 0,
+      "items": [],
+      "selected": {}
+    },
+    {
+      "artist": "The Chainsmokers",
+      "title": "Sick Boy",
+      "full_title": "The Chainsmokers - Sick Boy",
+      "id": "1707149242852457_2139778686256175",
+      "search_id": 1,
+      "items": [],
+      "selected": {
+        "id": 1,
+        "preview_url": "",
+        "artists": [
+          {
+            "name": "The Chainsmokers"
+          }
+        ],
+        "external_urls": null,
+        "name": "Kiraro"
+      }
+    },
+    {
+      "artist": "Bruno Mars",
+      "title": "",
+      "full_title": "Bruno Mars - Finesse (Remix) [Feat. Cardi B] [Official Video]",
+      "id": "1707149242852457_2144671629100214",
+      "search_id": 2,
+      "items": [
+        {
+          "id": 1,
+          "artists": [
+            {
+              "name": "Albert"
+            },
+            {
+              "name": "Ryszard"
+            }
+          ],
+          "external_urls": null,
+          "preview_url": "",
+          "name": "Zocha pokaż coś"
+        },
+        {
+          "id": 2,
+          "artists": [
+            {
+              "name": "Albert"
+            },
+            {
+              "name": "Ryszard"
+            }
+          ],
+          "external_urls": "",
+          "preview_url": null,
+          "name": "Zocha pokaż coś innego"
+        }
+      ],
+      "selected": null
+    },
+    {
+      "artist": "Marshmello & Anne",
+      "title": "Marie - FRIENDS (Lyric Video) *OFFICIAL FRIENDZONE ANTHEM*",
+      "full_title": "Marshmello & Anne-Marie - FRIENDS (Lyric Video) *OFFICIAL FRIENDZONE ANTHEM*",
+      "id": "1707149242852457_2134196353481075",
+      "search_id": 3,
+      "items": [
+        {
+          "id": 1,
+          "artists": [
+            {
+              "name": "Albert"
+            },
+            {
+              "name": "Ryszard"
+            }
+          ],
+          "external_urls": null,
+          "preview_url": null,
+          "name": "Zocha pokaż coś"
+        },
+        {
+          "id": 2,
+          "artists": [
+            {
+              "name": "Albert"
+            },
+            {
+              "name": "Ryszard"
+            }
+          ],
+          "external_urls": null,
+          "preview_url": null,
+          "name": "Zocha pokaż coś innego"
+        }
+      ],
+      "selected": {
+        "id": 1,
+        "preview_url": "",
+        "artists": [
+          {
+            "name": "The Chainsmokers"
+          }
+        ],
+        "external_urls": null,
+        "name": "Kiraro"
+      }
+    },
+    {
+      "artist": "Zedd, Maren Morris, Grey",
+      "title": "The Middle",
+      "full_title": "Zedd, Maren Morris, Grey - The Middle (Lyric Video) - YouTube",
+      "id": "1707149242852457_2134266426807401",
+      "search_id": 4,
+      "items": [],
+      "selected": {}
+    }
+  ]
+}

@@ -51,9 +51,22 @@ const About = () => (
   </div>
 );
 
-const Navigation = () => (
+const Navigation = (props, { store }) => (
   <div>
-    <Nav bsStyle="tabs" activeKey={(() => pathways.indexOf(window.location.pathname))()}>
+    <Nav
+      bsStyle="tabs"
+      activeKey={(() => pathways.indexOf(window.location.pathname))()}
+      onSelect={selectedKey => {
+        const { user, sp_user } = store.getState();
+        console.info(`selected key: ${selectedKey}`);
+        if (user && user.id) {
+          sessionStorage.setItem('user', JSON.stringify(user));
+        }
+        if (sp_user && sp_user.id) {
+          sessionStorage.setItem('spotify-user', JSON.stringify(sp_user));
+        }
+      }}
+    >
       <NavItem eventKey={0} href="/">
         Info
       </NavItem>
@@ -75,6 +88,9 @@ const Navigation = () => (
     </Switch>
   </div>
 );
+Navigation.contextTypes = {
+  store: PropTypes.object,
+};
 
 class App extends React.Component {
   componentDidMount() {

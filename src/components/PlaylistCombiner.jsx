@@ -87,9 +87,10 @@ export default class PlaylistCombiner extends React.Component {
         console.debug('all done!!!');
         const flat_tracks = _.flatMap(data, n => n); // [].concat.apply([], data);
         const uniq = _.uniq(flat_tracks);
+        const { id, access_token } = sp_user;
         return createFrom === cf.existing
-          ? addTrucksToPlaylistNoRepeats(sp_user.id, createFrom_selected, uniq)
-          : createPlaylistAndAddTracks(sp_user, new_playlist, false, uniq);
+          ? addTrucksToPlaylistNoRepeats(id, createFrom_selected, uniq, access_token)
+          : createPlaylistAndAddTracks(access_token, id, new_playlist, false, uniq);
       })
       .then(d => {
         this.setState({ sp_playlist_info: d });

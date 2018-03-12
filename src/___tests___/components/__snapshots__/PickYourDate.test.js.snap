@@ -32,7 +32,7 @@ exports[`<PickYourDate/> renders without crashing 1`] = `
     >
       go back 
       <input
-        className="num_days"
+        className="filter-option__days"
         max={62}
         min={0}
         name="show_last"

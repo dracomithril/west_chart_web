@@ -1,70 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<RowSpotifySearch/> renders without crashing 1`] = `
-<tr
-  style={
-    Object {
-      "background": "red",
-    }
-  }
+<div
+  className="spotify-search__row"
 >
-  <td>
-    <div
-      className="track_view error_bg"
+  <span />
+  <div
+    className="spotify-search__track-search--error"
+  >
+    <label
+      htmlFor="undefined_artist"
     >
-      <span />
-      <br />
+      artist:
       <input
-        id={0}
+        id="undefined_artist"
         onChange={[Function]}
         type="text"
         value=""
       />
+    </label>
+    <label
+      htmlFor="undefined_title"
+    >
+      title:
+      <input
+        id="undefined_title"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <div>
       <button
         onClick={[Function]}
+        title="swap artist with title"
       >
         <i
           aria-hidden="true"
           className="fas fa-sync"
         />
       </button>
-      <input
-        id={0}
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
-  </td>
-  <td>
-    <div>
-      <ButtonGroup
-        block={false}
-        bsClass="btn-group"
-        justified={false}
-        vertical={true}
+      <button
+        id="button-undefined"
+        title="search for tracks"
       >
-        <Button
-          active={false}
-          block={false}
-          bsClass="btn"
-          bsStyle="info"
-          disabled={false}
-          id="button-0"
-          onClick={[Function]}
-        >
-          search
-        </Button>
-        <DropdownButton
-          bsStyle="warning"
-          disabled={true}
-          id="dropdown-basic-0"
-          key="0"
-          title="select"
+        <i
+          className="fas fa-search"
         />
-      </ButtonGroup>
+      </button>
     </div>
-  </td>
-  <td />
-</tr>
+  </div>
+  <div />
+  <div />
+</div>
 `;

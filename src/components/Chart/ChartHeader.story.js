@@ -10,7 +10,7 @@ const store = configureStore(state);
 addDecorator(story => <Provider store={store}>{story()}</Provider>);
 storiesOf('ChartHeader', module)
   .add('Todo[VR]', () => <ChartHeader />)
-  .add('With error days [VR]', () => (
+  .add('With error days', () => (
     <ChartHeader
       error_days={[
         { color: 'blue', org: '01/03' },

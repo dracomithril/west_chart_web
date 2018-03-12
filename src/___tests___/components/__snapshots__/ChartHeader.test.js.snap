@@ -5,7 +5,7 @@ exports[`<ChartHeader/> renders without crashing ChartPresenter 1`] = `
   className="chart-header"
 >
   <div
-    className="dock1"
+    className="chart-header__left_dock"
   >
     <PickYourDate
       onChange={[Function]}

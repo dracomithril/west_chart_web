@@ -18,5 +18,11 @@ addDecorator(story => <Provider store={store}>{story()}</Provider>);
 storiesOf('FilterOption', module)
   .add('Todo[VR]', () => <FilterOption />)
   .add('Checked[VR]', () => (
-    <FilterOption checked onChange={action('checked')} onValueChange={action('value changed')} />
+    <FilterOption
+      checked
+      onChange={action('checked')}
+      desc_start="some filter"
+      desc_end="days"
+      onValueChange={action('value changed')}
+    />
   ));

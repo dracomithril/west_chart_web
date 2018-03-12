@@ -1,0 +1,151 @@
+.chart-header {
+    min-height: 120px;
+    margin: 1px;
+    padding: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+    align-content: center;
+    /*overflow-x: scroll;*/
+}
+
+.chart-header small {
+    position: absolute;
+    z-index: 9;
+}
+
+.chart-header__group-buttons {
+    /*float: left;*/
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    padding-top: 15px;
+    /*height: 100px;*/
+}
+.chart-presenter__tab-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.songs-per-day {
+    height: 45px;
+    width: 100%;
+    text-align: center;
+    padding-left: 5px;
+    border-radius: 3px;
+    border: 1px solid ghostwhite;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.songs-per-day--err {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.songs-per-day--good {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.songs-per-day__label input {
+    text-align: center;
+    margin-left: 5px;
+}
+
+.songs-per-day__counters {
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-header__left_dock {
+    width: 200px;
+    text-align: left;
+}
+
+.pick-your-date {
+    height: 70px;
+    width: inherit;
+    padding-top: 10px;
+    padding-left: 10px;
+    border: 1px solid #faebcc;
+    border-radius: 3px;
+}
+
+.pick-your-date__button {
+    margin-left: 5px;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.update-info {
+    margin: 5px;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column;
+}
+
+.update-info__time-frame {
+    min-width: 300px;
+}
+
+.update-info__time-frame > span {
+    padding-right: 5px;
+    padding-left: 3px;
+}
+
+.update-info__time-frame > small {
+    padding-right: 5px;
+    padding-left: 3px;
+}
+
+.update-info__span {
+    color: dodgerblue;
+    margin-left: 10px;
+}
+
+.chart-table__checkbox {
+    position: relative;
+    display: block;
+    /*margin-top: 10px;*/
+    /*margin-bottom: 10px;*/
+}
+
+.chart-table__checkbox input[type=checkbox]:checked {
+    background-color: green;
+}
+
+.less_days {
+    color: blue;
+    margin-left: 5px;
+}
+
+.more_days {
+    color: red;
+    margin-left: 5px;
+}
+
+
+@media screen and (min-width: 700px) {
+    .chart-header {
+        height: 120px;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 5px;
+    }
+
+    .update-info {
+        flex-flow: row;
+    }
+    .chart-presenter__tab-content {
+     margin-left: 100px;
+        margin-right: 100px;
+        min-width: 760px;
+    }
+
+}

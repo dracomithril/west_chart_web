@@ -46,8 +46,9 @@ export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
   return spotifyApi.addTracksToPlaylist(user_id, playlist_id, tracks);
 };
 
-export const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks) =>
-  spotifyApi.getPlaylist(user_id, playlist_id, { limit: 100 }).then(({ body }) => {
+export const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks, accessToken) => {
+  spotifyApi.setAccessToken(accessToken);
+  return spotifyApi.getPlaylist(user_id, playlist_id, { limit: 100 }).then(({ body }) => {
     // todo is there more  tracks in playlist?
     const pl_tracks = body.tracks.items.map(item => item.track.uri);
     const dif_tracks = _.difference(tracks, pl_tracks);
@@ -60,22 +61,25 @@ export const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks) =>
       return Promise.resolve(playlist_info);
     });
   });
+};
 /**
  *
- * @param sp_user
+ * @param accessToken
+ * @param userId
  * @param sp_playlist_name
  * @param isPlaylistPrivate
  * @param tracks
  */
 export const createPlaylistAndAddTracks = (
-  sp_user,
+  accessToken,
+  userId,
   sp_playlist_name,
   isPlaylistPrivate,
   tracks,
 ) => {
-  spotifyApi.setAccessToken(sp_user.access_token);
+  spotifyApi.setAccessToken(accessToken);
   return spotifyApi
-    .createPlaylist(sp_user.id, sp_playlist_name, { public: !isPlaylistPrivate })
+    .createPlaylist(userId, sp_playlist_name, { public: !isPlaylistPrivate })
     .then(({ body }) => {
       if (body) {
         const spotify_url = body.external_urls.spotify;
@@ -84,7 +88,7 @@ export const createPlaylistAndAddTracks = (
         const playlist_info = { url: spotify_url, pl_name: playlist_name };
         const playlist_id = body.id;
         // todo there is some problem if there is more then 100 tracks
-        return addTrucksToPlaylist(sp_user.id, playlist_id, tracks).then(data => {
+        return addTrucksToPlaylist(userId, playlist_id, tracks).then(data => {
           console.info('Added tracks to playlist! ', data);
           return Promise.resolve(playlist_info);
         });
@@ -140,11 +144,11 @@ export const getTracks = (accessToken, user, playlist_name) => {
  * @param artist {string}
  * @param title {string}
  * @param search_id
+ * @param accessToken
  * @param store
  */
-export const searchForMusic = ({ artist, title, search_id }, store) => {
-  const { sp_user } = store.getState();
-  spotifyApi.setAccessToken(sp_user.access_token);
+export const searchForMusic = ({ artist, title, search_id }, accessToken) => {
+  spotifyApi.setAccessToken(accessToken);
   return spotifyApi
     .searchTracks(`${artist} ${title}`)
     .then(data =>

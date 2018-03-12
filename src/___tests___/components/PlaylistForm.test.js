@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import PlaylistForm from './../../components/PlaylistForm';
+import PlaylistForm from '../../components/Playlist/PlaylistForm';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';
@@ -29,11 +29,12 @@ describe('<PlaylistForm/>', () => {
   });
   it('start_click', (done) => {
     const sp_utils = require('../../utils/spotify_utils');
+    const onStart = sinon.spy();
     sp_utils.searchForMusic.mockReturnValue(Promise.resolve({ id: 'zzz', value: {} }));
     const state = Object.assign({}, initial_state, { sp_playlist_name: "test_list_zzzz" });
     const store = mockStore(state);
     const wrapper = shallow(
-      <PlaylistForm selected={data}/>, {
+      <PlaylistForm selected={data} onStartClick={onStart} />, {
         context: { store },
         childContextTypes: { store: PropTypes.object }
       }
@@ -41,16 +42,17 @@ describe('<PlaylistForm/>', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
     let start_b = wrapper.find('#start_sp_button');
     start_b.simulate('click');
-    expect(store.getActions().length).toBe(1);
+    sinon.assert.calledOnce(onStart);
     done();
   });
   it('createPlaylistAndAddTracks', () => {
     const sp_utils = require('../../utils/spotify_utils');
+    const onCreate = sinon.spy();
     sp_utils.createPlaylistAndAddTracks.mockReturnValue(Promise.resolve({ mock: 'mock' }));
     const state = Object.assign({}, initial_state, { sp_playlist_name: "test_list_zzzz" });
     const store = mockStore(state);
     const wrapper = shallow(
-      <PlaylistForm selected={data}/>, {
+      <PlaylistForm selected={data} onCreatePlaylistClick={onCreate}/>, {
         context: { store },
         childContextTypes: { store: PropTypes.object }
       }
@@ -63,7 +65,6 @@ describe('<PlaylistForm/>', () => {
     expect(shallowToJson(wrapper)).toMatchSnapshot();
     let start_b = wrapper.find('#crt_pl_button');
     start_b.simulate('click');
-    expect(store.getActions().length).toBe(0);
-    expect(sp_utils.createPlaylistAndAddTracks.mock.calls.length).toBe(1);
+    sinon.assert.calledOnce(onCreate);
   })
 });

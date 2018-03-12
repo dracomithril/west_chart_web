@@ -23,8 +23,8 @@ exports[`<FilteringOptions/> renders without crashing ChartPresenter 1`] = `
   <FilterOption
     checked={true}
     days={7}
-    desc_end=" days"
-    desc_start="created in last "
+    desc_end="days"
+    desc_start="created in last"
     id="create"
     key="create_control"
     name="date_create_control"
@@ -34,8 +34,8 @@ exports[`<FilteringOptions/> renders without crashing ChartPresenter 1`] = `
   <FilterOption
     checked={true}
     days={7}
-    desc_end=" days"
-    desc_start="updated in last "
+    desc_end="days"
+    desc_start="updated in last"
     id="update"
     key="update_control"
     name="date_update_control"
@@ -45,7 +45,7 @@ exports[`<FilteringOptions/> renders without crashing ChartPresenter 1`] = `
   <FilterOption
     checked={true}
     days={0}
-    desc_start="more then "
+    desc_start="more then"
     id="more"
     key="more_control"
     name="more_then_control"
@@ -55,7 +55,7 @@ exports[`<FilteringOptions/> renders without crashing ChartPresenter 1`] = `
   <FilterOption
     checked={false}
     days={15}
-    desc_start="less then "
+    desc_start="less then"
     id="less"
     key="less_control"
     name="less_then_control"

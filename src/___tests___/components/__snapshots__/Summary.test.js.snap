@@ -4,41 +4,61 @@ exports[`<Summary/> renders without crashing 1`] = `
 <div
   className="summary"
 >
-  <h3
-    id="summary"
+  <div
+    className="summary__header"
   >
-    Summary
-    <Button
-      active={false}
-      block={false}
-      bsClass="btn"
-      bsStyle="info"
-      disabled={false}
-      onClick={[Function]}
+    <h3
+      id="summary"
     >
-      <i
-        className="fas fa-clipboard"
-      />
-    </Button>
-    <Button
-      active={false}
+      Summary
+    </h3>
+    <ButtonGroup
       block={false}
-      bsClass="btn"
-      bsStyle="default"
-      disabled={true}
-      onClick={[Function]}
+      bsClass="btn-group"
+      justified={false}
+      vertical={false}
     >
-      Publish2
-      <i
-        className="fab fa-facebook"
-      />
-    </Button>
-  </h3>
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="info"
+        disabled={false}
+        onClick={[Function]}
+        title="copy to clipboard"
+      >
+        <i
+          className="fas fa-clipboard"
+        />
+      </Button>
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="default"
+        disabled={true}
+        onClick={[Function]}
+      >
+        <span
+          style={
+            Object {
+              "paddingRight": 3,
+            }
+          }
+        >
+          publish
+        </span>
+        <i
+          className="fab fa-facebook"
+        />
+      </Button>
+    </ButtonGroup>
+  </div>
   <h6>
     [WCS Weekly Westletter]
   </h6>
   <textarea
-    className="write_your_mind"
+    className="summary__textarea"
     defaultValue=""
     id="textarea_add"
     onChange={[Function]}
@@ -72,7 +92,7 @@ exports[`<Summary/> renders without crashing 1`] = `
     </span>
   </h6>
   <textarea
-    className="write_your_mind"
+    className="summary__textarea"
     defaultValue=""
     id="riddler"
     onChange={[Function]}
@@ -86,7 +106,13 @@ exports[`<Summary/> renders without crashing 1`] = `
     <input
       id="link2riddle"
       onChange={[Function]}
-      placeholder=" link to riddle"
+      placeholder="link to riddle"
+      style={
+        Object {
+          "marginLeft": 5,
+          "paddingLeft": 5,
+        }
+      }
       type="text"
       value=""
     />

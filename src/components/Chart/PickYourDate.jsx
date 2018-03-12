@@ -26,7 +26,7 @@ class PickYourDate extends React.Component {
           <span style={{ paddingRight: 10, paddingBottom: 5 }}>
             {'go back '}
             <input
-              className="num_days"
+              className="filter-option__days"
               type="number"
               name="show_last"
               min={0}

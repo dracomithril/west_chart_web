@@ -8,11 +8,12 @@ import SongsPerDay from './SongsPerDay';
 import FilteringOptions from '../FilteringOptions/index';
 import PickYourDate from './PickYourDate';
 import '../components.css';
+import './chart.css';
 import { action_types } from './../../reducers/action_types';
 import { UpdateChart } from '../../utils/utils';
 
 const ChartButtons = ({ onGetDataClick, onQuickSummaryClick }) => (
-  <div className="chartButtons">
+  <div className="chart-header__group-buttons">
     <ButtonGroup vertical>
       <Button id="updateChartB" onClick={onGetDataClick} bsStyle="primary">
         Update
@@ -73,7 +74,7 @@ export default class ChartHeader extends React.Component {
       });
     return (
       <div className="chart-header">
-        <div className="dock1">
+        <div className="chart-header__left_dock">
           <PickYourDate
             checked={enable_until}
             start_date={start_date}

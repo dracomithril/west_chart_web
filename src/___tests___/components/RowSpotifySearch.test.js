@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import RowSpotifySearch from './../../components/RowSpotifySearch';
+import RowSpotifySearch from '../../components/Playlist/RowSpotifySearch';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';

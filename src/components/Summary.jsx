@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Badge, Button } from 'react-bootstrap';
+import { Badge, Button, ButtonGroup } from 'react-bootstrap';
 import './components.css';
 
 const copy = require('clipboard-copy');
@@ -15,9 +15,6 @@ const create_print_list = (elem, index) => (
     <Badge bsClass="likes">{`${elem.reactions_num} likes`}</Badge>
   </div>
 );
-// const create_print_list_txt = (elem, index) => {
-//     return `${index + 1}. ${elem.link.title} ${elem.reactions_num} likes`
-// };
 export default class Summary extends React.Component {
   state = {
     introText: '',
@@ -42,19 +39,16 @@ export default class Summary extends React.Component {
     const playList = selected
       .map((elem, ind) => `${ind + 1}. ${elem.link.title} ${elem.reactions_num} likes`)
       .join('\n');
-    const text = `[WCS Weekly Westletter]
-
-${this.state.introText}
-
-${playList}
-
-${sp_playlist_info.url ? `Link to spotify playlist:${sp_playlist_info.url}` : 'No link'}
-
-Riddle:
-${this.state.riddleText}
-
-${this.state.riddleUrl}`;
-    copy(text);
+    const text = [
+      '[WCS Weekly Westletter]',
+      this.state.introText,
+      playList,
+      sp_playlist_info.url ? `Link to spotify playlist:${sp_playlist_info.url}` : 'No link',
+      'Riddle:',
+      this.state.riddleText,
+      this.state.riddleUrl,
+    ];
+    copy(text.join('\n'));
     console.info('Summary was copied to clipboard');
   };
 
@@ -65,24 +59,27 @@ ${this.state.riddleUrl}`;
     const print_list = (selected || []).map(create_print_list);
     return (
       <div className="summary">
-        <h3 id="summary">
-          Summary
-          <Button bsStyle="info" onClick={this.onCopyToClipboard}>
-            <i className="fas fa-clipboard" />
-          </Button>
-          <Button
-            onClick={() => {
-              alert('Not implemented jet.');
-            }}
-            disabled
-          >
-            Publish2<i className="fab fa-facebook" />
-          </Button>
-        </h3>
+        <div className="summary__header">
+          <h3 id="summary">Summary</h3>
+          <ButtonGroup>
+            <Button bsStyle="info" onClick={this.onCopyToClipboard} title="copy to clipboard">
+              copy<i className="fas fa-clipboard" style={{ paddingLeft: 5 }} />
+            </Button>
+            <Button
+              onClick={() => {
+                alert('Not implemented jet.');
+              }}
+              disabled
+            >
+              <span style={{ paddingRight: 3 }}>publish</span>
+              <i className="fab fa-facebook" />
+            </Button>
+          </ButtonGroup>
+        </div>
         <h6>[WCS Weekly Westletter]</h6>
         <textarea
           id="textarea_add"
-          className="write_your_mind"
+          className="summary__textarea"
           placeholder="Here write what you want"
           defaultValue={this.state.introText}
           onChange={e => {
@@ -97,8 +94,6 @@ ${this.state.riddleUrl}`;
         <div id="popover-contained" title="Print list">
           {print_list}
         </div>
-
-        {/* <textarea id="popover-contained" title="Print list" className="write_your_mind " placeholder={"Print list"} value={print_list.join('\n')}/> */}
         <h6>
           {'Link to spotify playlist: '}
           {sp_playlist_info.url && (
@@ -110,7 +105,7 @@ ${this.state.riddleUrl}`;
         </h6>
         <textarea
           id="riddler"
-          className="write_your_mind"
+          className="summary__textarea"
           placeholder="riddle that you have in mind"
           defaultValue={this.state.riddleText}
           onChange={({ target }) => {
@@ -123,7 +118,8 @@ ${this.state.riddleUrl}`;
           <input
             type="text"
             id="link2riddle"
-            placeholder=" link to riddle"
+            style={{ paddingLeft: 5, marginLeft: 5 }}
+            placeholder="link to riddle"
             value={this.state.riddleUrl}
             onChange={e => {
               this.setState({ riddleUrl: e.target.value });

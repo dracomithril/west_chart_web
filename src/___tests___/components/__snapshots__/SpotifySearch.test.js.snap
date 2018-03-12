@@ -1,27 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SpotifySearch/> renders without crashing 1`] = `
-<div>
-  <h3
-    id="list"
+<div
+  className="spotify-search"
+>
+  <div
+    className="spotify-search__header"
   >
-    Create 
+    create
     <i
       aria-hidden="true"
       className="fab fa-spotify"
-    >
-      Spotify playlist:
-    </i>
-    <PlaylistInfo
-      info={
-        Object {
-          "url": null,
-        }
+    />
+    spotify playlist:
+  </div>
+  <PlaylistInfo
+    info={
+      Object {
+        "url": null,
       }
-    />
-    <PlaylistForm
-      selected={Array []}
-    />
-  </h3>
+    }
+  />
+  <PlaylistForm
+    hasElements={false}
+    onCreatePlaylistClick={[Function]}
+    onStartClick={[Function]}
+  />
 </div>
 `;

@@ -1,9 +1,10 @@
 import React from 'react';
-import { addDecorator, storiesOf } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 // import { action } from '@storybook/addon-actions';
 import { Provider } from 'react-redux';
 import ChartTable from './ChartTable';
 import configureStore from '../../configureStore';
+import response from './../../___tests___/data/response.json';
 
 const state = {
   filters: {
@@ -11,8 +12,13 @@ const state = {
       checked: true,
     },
   },
+  show_wait: false,
+  user: {},
+  ...response,
 };
 const store = configureStore(state);
 
-addDecorator(story => <Provider store={store}>{story()}</Provider>);
-storiesOf('ChartTable', module).add('Todo[VR]', () => <ChartTable data={[]} />);
+storiesOf('ChartTable', module)
+  .addDecorator(story => <Provider store={store}>{story()}</Provider>)
+  .add('Todo[VR]', () => <ChartTable data={[]} />)
+  .add('with elements [VR]', () => <ChartTable data={response.chart} />);

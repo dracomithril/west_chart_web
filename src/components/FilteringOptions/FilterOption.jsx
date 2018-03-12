@@ -24,7 +24,7 @@ const FilterOption = ({
   >
     {desc_start}
     <input
-      className="num_days"
+      className="filter-option__days"
       type="number"
       min={0}
       step={1}

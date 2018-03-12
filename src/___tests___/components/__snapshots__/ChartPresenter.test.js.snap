@@ -16,20 +16,18 @@ exports[`<ChartPresenter/> renders without crashing ChartPresenter 1`] = `
         </i>
       }
     >
-      <ChartHeader
-        error_days={null}
-        view_chart={Array []}
-      />
-      <div>
-        <UpdateInfo
-          filtered={0}
-          total={0}
-          until="2017-03-11T13:46:00.570Z"
+      <div
+        className="chart-presenter__tab-content"
+      >
+        <ChartHeader
+          error_days={null}
+          view_chart={Array []}
+        />
+        <div />
+        <ChartTable
+          data={Array []}
         />
       </div>
-      <ChartTable
-        data={Array []}
-      />
     </Tab>
     <Tab
       eventKey={1}

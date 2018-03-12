@@ -1,156 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<PlaylistForm/> createPlaylistAndAddTracks 1`] = `
-<div>
-  <ButtonGroup
+<div
+  className="playlist-form"
+>
+  <Button
+    active={false}
     block={false}
-    bsClass="btn-group"
-    justified={false}
-    vertical={false}
+    bsClass="btn"
+    bsStyle="success"
+    disabled={false}
+    id="start_sp_button"
   >
-    <Button
-      active={false}
-      block={false}
-      bsClass="btn"
-      bsStyle="success"
-      disabled={false}
-      id="start_sp_button"
-      onClick={[Function]}
-    >
-      Start
-    </Button>
-    <FormGroup
-      bsClass="form-group"
-      controlId="play_list_name"
+    start
+  </Button>
+  <FormGroup
+    bsClass="form-group"
+    controlId="play_list_name"
+    style={
+      Object {
+        "margin": "1px",
+      }
+    }
+    validationState="error"
+  >
+    <InputGroup
+      bsClass="input-group"
       style={
         Object {
-          "margin": "1px",
+          "maxWidth": 250,
         }
       }
-      validationState="success"
     >
-      <InputGroup
-        bsClass="input-group"
-        style={
-          Object {
-            "maxWidth": 250,
-          }
-        }
-      >
-        <FormControl
-          bsClass="form-control"
-          componentClass="input"
-          onChange={[Function]}
-          placeholder="playlist name"
-          type="text"
-          value="test_list_zzzz"
-        />
-        <FormControlFeedback
-          bsClass="form-control-feedback"
-          bsRole="feedback"
-        />
-      </InputGroup>
-    </FormGroup>
-  </ButtonGroup>
-  <ButtonGroup
-    block={false}
-    bsClass="btn-group"
-    justified={false}
-    vertical={false}
-  >
-    <Button
-      active={false}
-      block={false}
-      bsClass="btn"
-      bsStyle="primary"
-      disabled={false}
-      id="genName_sp_button"
-      onClick={[Function]}
-    >
-      gen. name
-    </Button>
-    <Button
-      active={false}
-      block={false}
-      bsClass="btn"
-      bsStyle="danger"
-      disabled={false}
-      id="crt_pl_button"
-      onClick={[Function]}
-    >
-      <i
-        className="fas fa-save"
+      <FormControl
+        bsClass="form-control"
+        componentClass="input"
+        onChange={[Function]}
+        placeholder="playlist name"
+        type="text"
+        value=""
       />
-       Playlist
-    </Button>
-  </ButtonGroup>
-  <label
-    htmlFor="play_list_is_private"
-  >
-    <input
-      checked={false}
-      id="play_list_is_private"
-      onChange={[Function]}
-      type="checkbox"
-      value="private"
-    />
-    private
-  </label>
-</div>
-`;
-
-exports[`<PlaylistForm/> renders without crashing 1`] = `
-<div>
-  <ButtonGroup
-    block={false}
-    bsClass="btn-group"
-    justified={false}
-    vertical={false}
-  >
-    <Button
-      active={false}
-      block={false}
-      bsClass="btn"
-      bsStyle="success"
-      disabled={false}
-      id="start_sp_button"
-      onClick={[Function]}
-    >
-      Start
-    </Button>
-    <FormGroup
-      bsClass="form-group"
-      controlId="play_list_name"
-      style={
-        Object {
-          "margin": "1px",
-        }
-      }
-      validationState="error"
-    >
-      <InputGroup
-        bsClass="input-group"
-        style={
-          Object {
-            "maxWidth": 250,
-          }
-        }
-      >
-        <FormControl
-          bsClass="form-control"
-          componentClass="input"
-          onChange={[Function]}
-          placeholder="playlist name"
-          type="text"
-          value=""
-        />
-        <FormControlFeedback
-          bsClass="form-control-feedback"
-          bsRole="feedback"
-        />
-      </InputGroup>
-    </FormGroup>
-  </ButtonGroup>
+      <FormControlFeedback
+        bsClass="form-control-feedback"
+        bsRole="feedback"
+      />
+    </InputGroup>
+  </FormGroup>
   <ButtonGroup
     block={false}
     bsClass="btn-group"
@@ -180,7 +75,7 @@ exports[`<PlaylistForm/> renders without crashing 1`] = `
       <i
         className="fas fa-save"
       />
-       Playlist
+       save
     </Button>
   </ButtonGroup>
   <label
@@ -198,58 +93,52 @@ exports[`<PlaylistForm/> renders without crashing 1`] = `
 </div>
 `;
 
-exports[`<PlaylistForm/> start_click 1`] = `
-<div>
-  <ButtonGroup
+exports[`<PlaylistForm/> renders without crashing 1`] = `
+<div
+  className="playlist-form"
+>
+  <Button
+    active={false}
     block={false}
-    bsClass="btn-group"
-    justified={false}
-    vertical={false}
+    bsClass="btn"
+    bsStyle="success"
+    disabled={false}
+    id="start_sp_button"
   >
-    <Button
-      active={false}
-      block={false}
-      bsClass="btn"
-      bsStyle="success"
-      disabled={false}
-      id="start_sp_button"
-      onClick={[Function]}
-    >
-      Start
-    </Button>
-    <FormGroup
-      bsClass="form-group"
-      controlId="play_list_name"
+    start
+  </Button>
+  <FormGroup
+    bsClass="form-group"
+    controlId="play_list_name"
+    style={
+      Object {
+        "margin": "1px",
+      }
+    }
+    validationState="error"
+  >
+    <InputGroup
+      bsClass="input-group"
       style={
         Object {
-          "margin": "1px",
+          "maxWidth": 250,
         }
       }
-      validationState="success"
     >
-      <InputGroup
-        bsClass="input-group"
-        style={
-          Object {
-            "maxWidth": 250,
-          }
-        }
-      >
-        <FormControl
-          bsClass="form-control"
-          componentClass="input"
-          onChange={[Function]}
-          placeholder="playlist name"
-          type="text"
-          value="test_list_zzzz"
-        />
-        <FormControlFeedback
-          bsClass="form-control-feedback"
-          bsRole="feedback"
-        />
-      </InputGroup>
-    </FormGroup>
-  </ButtonGroup>
+      <FormControl
+        bsClass="form-control"
+        componentClass="input"
+        onChange={[Function]}
+        placeholder="playlist name"
+        type="text"
+        value=""
+      />
+      <FormControlFeedback
+        bsClass="form-control-feedback"
+        bsRole="feedback"
+      />
+    </InputGroup>
+  </FormGroup>
   <ButtonGroup
     block={false}
     bsClass="btn-group"
@@ -272,14 +161,108 @@ exports[`<PlaylistForm/> start_click 1`] = `
       block={false}
       bsClass="btn"
       bsStyle="danger"
-      disabled={false}
+      disabled={true}
       id="crt_pl_button"
       onClick={[Function]}
     >
       <i
         className="fas fa-save"
       />
-       Playlist
+       save
+    </Button>
+  </ButtonGroup>
+  <label
+    htmlFor="play_list_is_private"
+  >
+    <input
+      checked={false}
+      id="play_list_is_private"
+      onChange={[Function]}
+      type="checkbox"
+      value="private"
+    />
+    private
+  </label>
+</div>
+`;
+
+exports[`<PlaylistForm/> start_click 1`] = `
+<div
+  className="playlist-form"
+>
+  <Button
+    active={false}
+    block={false}
+    bsClass="btn"
+    bsStyle="success"
+    disabled={false}
+    id="start_sp_button"
+    onClick={[Function]}
+  >
+    start
+  </Button>
+  <FormGroup
+    bsClass="form-group"
+    controlId="play_list_name"
+    style={
+      Object {
+        "margin": "1px",
+      }
+    }
+    validationState="error"
+  >
+    <InputGroup
+      bsClass="input-group"
+      style={
+        Object {
+          "maxWidth": 250,
+        }
+      }
+    >
+      <FormControl
+        bsClass="form-control"
+        componentClass="input"
+        onChange={[Function]}
+        placeholder="playlist name"
+        type="text"
+        value=""
+      />
+      <FormControlFeedback
+        bsClass="form-control-feedback"
+        bsRole="feedback"
+      />
+    </InputGroup>
+  </FormGroup>
+  <ButtonGroup
+    block={false}
+    bsClass="btn-group"
+    justified={false}
+    vertical={false}
+  >
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="primary"
+      disabled={false}
+      id="genName_sp_button"
+      onClick={[Function]}
+    >
+      gen. name
+    </Button>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="danger"
+      disabled={true}
+      id="crt_pl_button"
+      onClick={[Function]}
+    >
+      <i
+        className="fas fa-save"
+      />
+       save
     </Button>
   </ButtonGroup>
   <label

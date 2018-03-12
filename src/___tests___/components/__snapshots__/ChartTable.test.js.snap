@@ -7,7 +7,9 @@ exports[`<ChartTable/> render with objects 1`] = `
       Object {
         "created_time": "2017-06-16T14:20:12+0000",
         "from": Object {
+          "first_name": "Joanna",
           "id": "10202921980928649",
+          "last_name": "Kozieńska",
           "name": "Joanna Kozieńska",
         },
         "from_user": "Joanna Kozieńska",
@@ -397,7 +399,7 @@ exports[`<ChartTable/> render with objects 1`] = `
           "accessor": [Function],
           "id": "createTime",
           "maxWidth": 200,
-          "minWidth": 150,
+          "minWidth": 100,
           "resizable": true,
         },
         Object {
@@ -426,7 +428,9 @@ exports[`<ChartTable/> render with objects 1`] = `
         Object {
           "created_time": "2017-06-16T14:20:12+0000",
           "from": Object {
+            "first_name": "Joanna",
             "id": "10202921980928649",
+            "last_name": "Kozieńska",
             "name": "Joanna Kozieńska",
           },
           "from_user": "Joanna Kozieńska",
@@ -806,7 +810,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             className="-header"
             style={
               Object {
-                "minWidth": "680px",
+                "minWidth": "630px",
               }
             }
           >
@@ -814,7 +818,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               className="rt-thead -header"
               style={
                 Object {
-                  "minWidth": "680px",
+                  "minWidth": "630px",
                 }
               }
             >
@@ -850,14 +854,14 @@ exports[`<ChartTable/> render with objects 1`] = `
                         className=""
                       >
                         <Checkbox
-                          bsClass="checkbox1"
+                          bsClass="chart-table__checkbox"
                           disabled={false}
                           inline={false}
                           onClick={[Function]}
                           title=""
                         >
                           <div
-                            className="checkbox1"
+                            className="chart-table__checkbox"
                           >
                             <label
                               title=""
@@ -968,9 +972,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                     key="3-createTime"
                     style={
                       Object {
-                        "flex": "150 0 auto",
+                        "flex": "100 0 auto",
                         "maxWidth": "200px",
-                        "width": "150px",
+                        "width": "100px",
                       }
                     }
                     toggleSort={[Function]}
@@ -981,9 +985,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                       role="heading"
                       style={
                         Object {
-                          "flex": "150 0 auto",
+                          "flex": "100 0 auto",
                           "maxWidth": "200px",
-                          "width": "150px",
+                          "width": "100px",
                         }
                       }
                     >
@@ -1057,7 +1061,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             className=""
             style={
               Object {
-                "minWidth": "680px",
+                "minWidth": "630px",
               }
             }
           >
@@ -1065,7 +1069,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               className="rt-tbody"
               style={
                 Object {
-                  "minWidth": "680px",
+                  "minWidth": "630px",
                 }
               }
             >
@@ -1105,7 +1109,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <Checkbox
-                            bsClass="checkbox1"
+                            bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
                             id={0}
@@ -1115,7 +1119,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             title=""
                           >
                             <div
-                              className="checkbox1"
+                              className="chart-table__checkbox"
                             >
                               <label
                                 title=""
@@ -1199,14 +1203,18 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Joanna
+                              </span>
                               <span
                                 style={
                                   Object {
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Kozieńska
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1288,29 +1296,21 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 ]
                               }
                             >
-                              <Label
-                                bsClass="label"
-                                bsStyle="success"
+                              <i
+                                aria-hidden="true"
+                                className="fas fa-comment"
                                 onBlur={[Function]}
                                 onClick={null}
                                 onFocus={[Function]}
                                 onMouseOut={[Function]}
                                 onMouseOver={[Function]}
-                              >
-                                <span
-                                  className="label label-success"
-                                  onBlur={[Function]}
-                                  onClick={null}
-                                  onFocus={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    className="fas fa-envelope"
-                                  />
-                                </span>
-                              </Label>
+                                style={
+                                  Object {
+                                    "color": "green",
+                                    "cursor": "pointer",
+                                  }
+                                }
+                              />
                             </OverlayTrigger>
                             <div>
                               <i
@@ -1321,6 +1321,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "color": "blue",
                                   }
                                 }
+                                title="people reactions count"
                               />
                               4
                             </div>
@@ -1333,9 +1334,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                         onClick={[Function]}
                         style={
                           Object {
-                            "flex": "150 0 auto",
+                            "flex": "100 0 auto",
                             "maxWidth": "200px",
-                            "width": "150px",
+                            "width": "100px",
                           }
                         }
                       >
@@ -1344,9 +1345,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                           onClick={[Function]}
                           style={
                             Object {
-                              "flex": "150 0 auto",
+                              "flex": "100 0 auto",
                               "maxWidth": "200px",
-                              "width": "150px",
+                              "width": "100px",
                             }
                           }
                         >
@@ -1357,9 +1358,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "red",
                                 }
                               }
+                              title="creation time: 2017-6-16 16:20:12"
                             >
-                              c: 
-                              2017 M06 16 16:20:12
+                              <i
+                                className="fas fa-caret-right"
+                              />
+                               
+                              2017-6-16
                             </span>
                             <br />
                             <span
@@ -1368,9 +1373,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "green",
                                 }
                               }
+                              title="update time: 2017-6-16 18:12:46"
                             >
-                              u: 
-                              2017 M06 16 18:12:46
+                              <i
+                                className="fas fa-caret-up"
+                              />
+                               
+                              2017-6-16
                             </span>
                           </div>
                         </div>
@@ -1446,7 +1455,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <Checkbox
-                            bsClass="checkbox1"
+                            bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
                             id={1}
@@ -1456,7 +1465,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             title=""
                           >
                             <div
-                              className="checkbox1"
+                              className="chart-table__checkbox"
                             >
                               <label
                                 title=""
@@ -1540,14 +1549,18 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Aldona
+                              </span>
                               <span
                                 style={
                                   Object {
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Bochen
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1595,29 +1608,21 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 ]
                               }
                             >
-                              <Label
-                                bsClass="label"
-                                bsStyle="success"
+                              <i
+                                aria-hidden="true"
+                                className="fas fa-comment"
                                 onBlur={[Function]}
                                 onClick={null}
                                 onFocus={[Function]}
                                 onMouseOut={[Function]}
                                 onMouseOver={[Function]}
-                              >
-                                <span
-                                  className="label label-success"
-                                  onBlur={[Function]}
-                                  onClick={null}
-                                  onFocus={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    className="fas fa-envelope"
-                                  />
-                                </span>
-                              </Label>
+                                style={
+                                  Object {
+                                    "color": "green",
+                                    "cursor": "pointer",
+                                  }
+                                }
+                              />
                             </OverlayTrigger>
                             <div>
                               <i
@@ -1628,6 +1633,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "color": "blue",
                                   }
                                 }
+                                title="people reactions count"
                               />
                               6
                             </div>
@@ -1640,9 +1646,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                         onClick={[Function]}
                         style={
                           Object {
-                            "flex": "150 0 auto",
+                            "flex": "100 0 auto",
                             "maxWidth": "200px",
-                            "width": "150px",
+                            "width": "100px",
                           }
                         }
                       >
@@ -1651,9 +1657,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                           onClick={[Function]}
                           style={
                             Object {
-                              "flex": "150 0 auto",
+                              "flex": "100 0 auto",
                               "maxWidth": "200px",
-                              "width": "150px",
+                              "width": "100px",
                             }
                           }
                         >
@@ -1664,9 +1670,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "red",
                                 }
                               }
+                              title="creation time: 2017-6-16 00:00:00"
                             >
-                              c: 
-                              2017 M06 16 00:00:00
+                              <i
+                                className="fas fa-caret-right"
+                              />
+                               
+                              2017-6-16
                             </span>
                             <br />
                             <span
@@ -1675,9 +1685,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "green",
                                 }
                               }
+                              title="update time: 2017-6-16 00:26:18"
                             >
-                              u: 
-                              2017 M06 16 00:26:18
+                              <i
+                                className="fas fa-caret-up"
+                              />
+                               
+                              2017-6-16
                             </span>
                           </div>
                         </div>
@@ -1753,7 +1767,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <Checkbox
-                            bsClass="checkbox1"
+                            bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
                             id={2}
@@ -1763,7 +1777,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             title=""
                           >
                             <div
-                              className="checkbox1"
+                              className="chart-table__checkbox"
                             >
                               <label
                                 title=""
@@ -1847,14 +1861,18 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Alin
+                              </span>
                               <span
                                 style={
                                   Object {
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Rostas
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -1902,29 +1920,21 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 ]
                               }
                             >
-                              <Label
-                                bsClass="label"
-                                bsStyle="success"
+                              <i
+                                aria-hidden="true"
+                                className="fas fa-comment"
                                 onBlur={[Function]}
                                 onClick={null}
                                 onFocus={[Function]}
                                 onMouseOut={[Function]}
                                 onMouseOver={[Function]}
-                              >
-                                <span
-                                  className="label label-success"
-                                  onBlur={[Function]}
-                                  onClick={null}
-                                  onFocus={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    className="fas fa-envelope"
-                                  />
-                                </span>
-                              </Label>
+                                style={
+                                  Object {
+                                    "color": "green",
+                                    "cursor": "pointer",
+                                  }
+                                }
+                              />
                             </OverlayTrigger>
                             <div>
                               <i
@@ -1935,6 +1945,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "color": "blue",
                                   }
                                 }
+                                title="people reactions count"
                               />
                               0
                             </div>
@@ -1947,9 +1958,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                         onClick={[Function]}
                         style={
                           Object {
-                            "flex": "150 0 auto",
+                            "flex": "100 0 auto",
                             "maxWidth": "200px",
-                            "width": "150px",
+                            "width": "100px",
                           }
                         }
                       >
@@ -1958,9 +1969,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                           onClick={[Function]}
                           style={
                             Object {
-                              "flex": "150 0 auto",
+                              "flex": "100 0 auto",
                               "maxWidth": "200px",
-                              "width": "150px",
+                              "width": "100px",
                             }
                           }
                         >
@@ -1971,9 +1982,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "red",
                                 }
                               }
+                              title="creation time: 2017-6-16 00:00:00"
                             >
-                              c: 
-                              2017 M06 16 00:00:00
+                              <i
+                                className="fas fa-caret-right"
+                              />
+                               
+                              2017-6-16
                             </span>
                             <br />
                             <span
@@ -1982,9 +1997,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "green",
                                 }
                               }
+                              title="update time: 2017-6-16 00:26:15"
                             >
-                              u: 
-                              2017 M06 16 00:26:15
+                              <i
+                                className="fas fa-caret-up"
+                              />
+                               
+                              2017-6-16
                             </span>
                           </div>
                         </div>
@@ -2060,7 +2079,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <Checkbox
-                            bsClass="checkbox1"
+                            bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
                             id={3}
@@ -2070,7 +2089,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             title=""
                           >
                             <div
-                              className="checkbox1"
+                              className="chart-table__checkbox"
                             >
                               <label
                                 title=""
@@ -2154,14 +2173,18 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Gabriela
+                              </span>
                               <span
                                 style={
                                   Object {
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Młyńska
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -2209,29 +2232,21 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 ]
                               }
                             >
-                              <Label
-                                bsClass="label"
-                                bsStyle="success"
+                              <i
+                                aria-hidden="true"
+                                className="fas fa-comment"
                                 onBlur={[Function]}
                                 onClick={null}
                                 onFocus={[Function]}
                                 onMouseOut={[Function]}
                                 onMouseOver={[Function]}
-                              >
-                                <span
-                                  className="label label-success"
-                                  onBlur={[Function]}
-                                  onClick={null}
-                                  onFocus={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    className="fas fa-envelope"
-                                  />
-                                </span>
-                              </Label>
+                                style={
+                                  Object {
+                                    "color": "green",
+                                    "cursor": "pointer",
+                                  }
+                                }
+                              />
                             </OverlayTrigger>
                             <div>
                               <i
@@ -2242,6 +2257,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "color": "blue",
                                   }
                                 }
+                                title="people reactions count"
                               />
                               7
                             </div>
@@ -2254,9 +2270,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                         onClick={[Function]}
                         style={
                           Object {
-                            "flex": "150 0 auto",
+                            "flex": "100 0 auto",
                             "maxWidth": "200px",
-                            "width": "150px",
+                            "width": "100px",
                           }
                         }
                       >
@@ -2265,9 +2281,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                           onClick={[Function]}
                           style={
                             Object {
-                              "flex": "150 0 auto",
+                              "flex": "100 0 auto",
                               "maxWidth": "200px",
-                              "width": "150px",
+                              "width": "100px",
                             }
                           }
                         >
@@ -2278,9 +2294,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "red",
                                 }
                               }
+                              title="creation time: 2017-6-13 00:00:00"
                             >
-                              c: 
-                              2017 M06 13 00:00:00
+                              <i
+                                className="fas fa-caret-right"
+                              />
+                               
+                              2017-6-13
                             </span>
                             <br />
                             <span
@@ -2289,9 +2309,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "green",
                                 }
                               }
+                              title="update time: 2017-6-15 16:11:35"
                             >
-                              u: 
-                              2017 M06 15 16:11:35
+                              <i
+                                className="fas fa-caret-up"
+                              />
+                               
+                              2017-6-15
                             </span>
                           </div>
                         </div>
@@ -2367,7 +2391,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <Checkbox
-                            bsClass="checkbox1"
+                            bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
                             id={4}
@@ -2377,7 +2401,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             title=""
                           >
                             <div
-                              className="checkbox1"
+                              className="chart-table__checkbox"
                             >
                               <label
                                 title=""
@@ -2461,14 +2485,18 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Agnieszka
+                              </span>
                               <span
                                 style={
                                   Object {
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Orzeł
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -2497,19 +2525,15 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <div>
-                            <Label
-                              bsClass="label"
-                              bsStyle="danger"
-                            >
-                              <span
-                                className="label label-danger"
-                              >
-                                <i
-                                  aria-hidden="true"
-                                  className="fas fa-times"
-                                />
-                              </span>
-                            </Label>
+                            <i
+                              className="fas fa-times-circle"
+                              style={
+                                Object {
+                                  "color": "red",
+                                  "cursor": "no-drop",
+                                }
+                              }
+                            />
                             <div>
                               <i
                                 aria-hidden="true"
@@ -2519,6 +2543,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "color": "blue",
                                   }
                                 }
+                                title="people reactions count"
                               />
                               5
                             </div>
@@ -2531,9 +2556,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                         onClick={[Function]}
                         style={
                           Object {
-                            "flex": "150 0 auto",
+                            "flex": "100 0 auto",
                             "maxWidth": "200px",
-                            "width": "150px",
+                            "width": "100px",
                           }
                         }
                       >
@@ -2542,9 +2567,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                           onClick={[Function]}
                           style={
                             Object {
-                              "flex": "150 0 auto",
+                              "flex": "100 0 auto",
                               "maxWidth": "200px",
-                              "width": "150px",
+                              "width": "100px",
                             }
                           }
                         >
@@ -2555,9 +2580,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "red",
                                 }
                               }
+                              title="creation time: 2017-6-7 00:00:00"
                             >
-                              c: 
-                              2017 M06 7 00:00:00
+                              <i
+                                className="fas fa-caret-right"
+                              />
+                               
+                              2017-6-7
                             </span>
                             <br />
                             <span
@@ -2566,9 +2595,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "green",
                                 }
                               }
+                              title="update time: 2017-6-15 12:36:54"
                             >
-                              u: 
-                              2017 M06 15 12:36:54
+                              <i
+                                className="fas fa-caret-up"
+                              />
+                               
+                              2017-6-15
                             </span>
                           </div>
                         </div>
@@ -2644,7 +2677,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <Checkbox
-                            bsClass="checkbox1"
+                            bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
                             id={5}
@@ -2654,7 +2687,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             title=""
                           >
                             <div
-                              className="checkbox1"
+                              className="chart-table__checkbox"
                             >
                               <label
                                 title=""
@@ -2738,14 +2771,18 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Adam
+                              </span>
                               <span
                                 style={
                                   Object {
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Jaskiernik
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -2793,29 +2830,21 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 ]
                               }
                             >
-                              <Label
-                                bsClass="label"
-                                bsStyle="success"
+                              <i
+                                aria-hidden="true"
+                                className="fas fa-comment"
                                 onBlur={[Function]}
                                 onClick={null}
                                 onFocus={[Function]}
                                 onMouseOut={[Function]}
                                 onMouseOver={[Function]}
-                              >
-                                <span
-                                  className="label label-success"
-                                  onBlur={[Function]}
-                                  onClick={null}
-                                  onFocus={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    className="fas fa-envelope"
-                                  />
-                                </span>
-                              </Label>
+                                style={
+                                  Object {
+                                    "color": "green",
+                                    "cursor": "pointer",
+                                  }
+                                }
+                              />
                             </OverlayTrigger>
                             <div>
                               <i
@@ -2826,6 +2855,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "color": "blue",
                                   }
                                 }
+                                title="people reactions count"
                               />
                               2
                             </div>
@@ -2838,9 +2868,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                         onClick={[Function]}
                         style={
                           Object {
-                            "flex": "150 0 auto",
+                            "flex": "100 0 auto",
                             "maxWidth": "200px",
-                            "width": "150px",
+                            "width": "100px",
                           }
                         }
                       >
@@ -2849,9 +2879,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                           onClick={[Function]}
                           style={
                             Object {
-                              "flex": "150 0 auto",
+                              "flex": "100 0 auto",
                               "maxWidth": "200px",
-                              "width": "150px",
+                              "width": "100px",
                             }
                           }
                         >
@@ -2862,9 +2892,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "red",
                                 }
                               }
+                              title="creation time: 2017-6-9 00:00:00"
                             >
-                              c: 
-                              2017 M06 9 00:00:00
+                              <i
+                                className="fas fa-caret-right"
+                              />
+                               
+                              2017-6-9
                             </span>
                             <br />
                             <span
@@ -2873,9 +2907,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "green",
                                 }
                               }
+                              title="update time: 2017-6-15 11:11:44"
                             >
-                              u: 
-                              2017 M06 15 11:11:44
+                              <i
+                                className="fas fa-caret-up"
+                              />
+                               
+                              2017-6-15
                             </span>
                           </div>
                         </div>
@@ -2951,7 +2989,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <Checkbox
-                            bsClass="checkbox1"
+                            bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
                             id={6}
@@ -2961,7 +2999,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             title=""
                           >
                             <div
-                              className="checkbox1"
+                              className="chart-table__checkbox"
                             >
                               <label
                                 title=""
@@ -3045,14 +3083,18 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Paweł
+                              </span>
                               <span
                                 style={
                                   Object {
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Zubrycki
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -3100,29 +3142,21 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 ]
                               }
                             >
-                              <Label
-                                bsClass="label"
-                                bsStyle="success"
+                              <i
+                                aria-hidden="true"
+                                className="fas fa-comment"
                                 onBlur={[Function]}
                                 onClick={null}
                                 onFocus={[Function]}
                                 onMouseOut={[Function]}
                                 onMouseOver={[Function]}
-                              >
-                                <span
-                                  className="label label-success"
-                                  onBlur={[Function]}
-                                  onClick={null}
-                                  onFocus={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    className="fas fa-envelope"
-                                  />
-                                </span>
-                              </Label>
+                                style={
+                                  Object {
+                                    "color": "green",
+                                    "cursor": "pointer",
+                                  }
+                                }
+                              />
                             </OverlayTrigger>
                             <div>
                               <i
@@ -3133,6 +3167,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "color": "blue",
                                   }
                                 }
+                                title="people reactions count"
                               />
                               2
                             </div>
@@ -3145,9 +3180,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                         onClick={[Function]}
                         style={
                           Object {
-                            "flex": "150 0 auto",
+                            "flex": "100 0 auto",
                             "maxWidth": "200px",
-                            "width": "150px",
+                            "width": "100px",
                           }
                         }
                       >
@@ -3156,9 +3191,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                           onClick={[Function]}
                           style={
                             Object {
-                              "flex": "150 0 auto",
+                              "flex": "100 0 auto",
                               "maxWidth": "200px",
-                              "width": "150px",
+                              "width": "100px",
                             }
                           }
                         >
@@ -3169,9 +3204,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "red",
                                 }
                               }
+                              title="creation time: 2017-6-14 00:00:00"
                             >
-                              c: 
-                              2017 M06 14 00:00:00
+                              <i
+                                className="fas fa-caret-right"
+                              />
+                               
+                              2017-6-14
                             </span>
                             <br />
                             <span
@@ -3180,9 +3219,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "green",
                                 }
                               }
+                              title="update time: 2017-6-15 00:13:23"
                             >
-                              u: 
-                              2017 M06 15 00:13:23
+                              <i
+                                className="fas fa-caret-up"
+                              />
+                               
+                              2017-6-15
                             </span>
                           </div>
                         </div>
@@ -3258,7 +3301,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <Checkbox
-                            bsClass="checkbox1"
+                            bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
                             id={7}
@@ -3268,7 +3311,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             title=""
                           >
                             <div
-                              className="checkbox1"
+                              className="chart-table__checkbox"
                             >
                               <label
                                 title=""
@@ -3352,14 +3395,18 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Agnieszka
+                              </span>
                               <span
                                 style={
                                   Object {
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Orzeł
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -3388,19 +3435,15 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <div>
-                            <Label
-                              bsClass="label"
-                              bsStyle="danger"
-                            >
-                              <span
-                                className="label label-danger"
-                              >
-                                <i
-                                  aria-hidden="true"
-                                  className="fas fa-times"
-                                />
-                              </span>
-                            </Label>
+                            <i
+                              className="fas fa-times-circle"
+                              style={
+                                Object {
+                                  "color": "red",
+                                  "cursor": "no-drop",
+                                }
+                              }
+                            />
                             <div>
                               <i
                                 aria-hidden="true"
@@ -3410,6 +3453,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "color": "blue",
                                   }
                                 }
+                                title="people reactions count"
                               />
                               6
                             </div>
@@ -3422,9 +3466,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                         onClick={[Function]}
                         style={
                           Object {
-                            "flex": "150 0 auto",
+                            "flex": "100 0 auto",
                             "maxWidth": "200px",
-                            "width": "150px",
+                            "width": "100px",
                           }
                         }
                       >
@@ -3433,9 +3477,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                           onClick={[Function]}
                           style={
                             Object {
-                              "flex": "150 0 auto",
+                              "flex": "100 0 auto",
                               "maxWidth": "200px",
-                              "width": "150px",
+                              "width": "100px",
                             }
                           }
                         >
@@ -3446,9 +3490,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "red",
                                 }
                               }
+                              title="creation time: 2017-6-15 00:00:00"
                             >
-                              c: 
-                              2017 M06 15 00:00:00
+                              <i
+                                className="fas fa-caret-right"
+                              />
+                               
+                              2017-6-15
                             </span>
                             <br />
                             <span
@@ -3457,9 +3505,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "green",
                                 }
                               }
+                              title="update time: 2017-6-15 00:07:11"
                             >
-                              u: 
-                              2017 M06 15 00:07:11
+                              <i
+                                className="fas fa-caret-up"
+                              />
+                               
+                              2017-6-15
                             </span>
                           </div>
                         </div>
@@ -3535,7 +3587,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <Checkbox
-                            bsClass="checkbox1"
+                            bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
                             id={8}
@@ -3545,7 +3597,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             title=""
                           >
                             <div
-                              className="checkbox1"
+                              className="chart-table__checkbox"
                             >
                               <label
                                 title=""
@@ -3629,14 +3681,18 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Przemysław
+                              </span>
                               <span
                                 style={
                                   Object {
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Przemysł
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -3684,29 +3740,21 @@ exports[`<ChartTable/> render with objects 1`] = `
                                 ]
                               }
                             >
-                              <Label
-                                bsClass="label"
-                                bsStyle="success"
+                              <i
+                                aria-hidden="true"
+                                className="fas fa-comment"
                                 onBlur={[Function]}
                                 onClick={null}
                                 onFocus={[Function]}
                                 onMouseOut={[Function]}
                                 onMouseOver={[Function]}
-                              >
-                                <span
-                                  className="label label-success"
-                                  onBlur={[Function]}
-                                  onClick={null}
-                                  onFocus={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
-                                >
-                                  <i
-                                    aria-hidden="true"
-                                    className="fas fa-envelope"
-                                  />
-                                </span>
-                              </Label>
+                                style={
+                                  Object {
+                                    "color": "green",
+                                    "cursor": "pointer",
+                                  }
+                                }
+                              />
                             </OverlayTrigger>
                             <div>
                               <i
@@ -3717,6 +3765,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "color": "blue",
                                   }
                                 }
+                                title="people reactions count"
                               />
                               1
                             </div>
@@ -3729,9 +3778,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                         onClick={[Function]}
                         style={
                           Object {
-                            "flex": "150 0 auto",
+                            "flex": "100 0 auto",
                             "maxWidth": "200px",
-                            "width": "150px",
+                            "width": "100px",
                           }
                         }
                       >
@@ -3740,9 +3789,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                           onClick={[Function]}
                           style={
                             Object {
-                              "flex": "150 0 auto",
+                              "flex": "100 0 auto",
                               "maxWidth": "200px",
-                              "width": "150px",
+                              "width": "100px",
                             }
                           }
                         >
@@ -3753,9 +3802,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "red",
                                 }
                               }
+                              title="creation time: 2017-6-15 00:00:00"
                             >
-                              c: 
-                              2017 M06 15 00:00:00
+                              <i
+                                className="fas fa-caret-right"
+                              />
+                               
+                              2017-6-15
                             </span>
                             <br />
                             <span
@@ -3764,9 +3817,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "green",
                                 }
                               }
+                              title="update time: 2017-6-15 00:07:08"
                             >
-                              u: 
-                              2017 M06 15 00:07:08
+                              <i
+                                className="fas fa-caret-up"
+                              />
+                               
+                              2017-6-15
                             </span>
                           </div>
                         </div>
@@ -3842,7 +3899,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <Checkbox
-                            bsClass="checkbox1"
+                            bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
                             id={9}
@@ -3852,7 +3909,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                             title=""
                           >
                             <div
-                              className="checkbox1"
+                              className="chart-table__checkbox"
                             >
                               <label
                                 title=""
@@ -3936,14 +3993,18 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Dariusz
+                              </span>
                               <span
                                 style={
                                   Object {
                                     "paddingLeft": 10,
                                   }
                                 }
-                              />
+                              >
+                                Winiarski
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -3972,19 +4033,15 @@ exports[`<ChartTable/> render with objects 1`] = `
                           }
                         >
                           <div>
-                            <Label
-                              bsClass="label"
-                              bsStyle="danger"
-                            >
-                              <span
-                                className="label label-danger"
-                              >
-                                <i
-                                  aria-hidden="true"
-                                  className="fas fa-times"
-                                />
-                              </span>
-                            </Label>
+                            <i
+                              className="fas fa-times-circle"
+                              style={
+                                Object {
+                                  "color": "red",
+                                  "cursor": "no-drop",
+                                }
+                              }
+                            />
                             <div>
                               <i
                                 aria-hidden="true"
@@ -3994,6 +4051,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     "color": "blue",
                                   }
                                 }
+                                title="people reactions count"
                               />
                               1
                             </div>
@@ -4006,9 +4064,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                         onClick={[Function]}
                         style={
                           Object {
-                            "flex": "150 0 auto",
+                            "flex": "100 0 auto",
                             "maxWidth": "200px",
-                            "width": "150px",
+                            "width": "100px",
                           }
                         }
                       >
@@ -4017,9 +4075,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                           onClick={[Function]}
                           style={
                             Object {
-                              "flex": "150 0 auto",
+                              "flex": "100 0 auto",
                               "maxWidth": "200px",
-                              "width": "150px",
+                              "width": "100px",
                             }
                           }
                         >
@@ -4030,9 +4088,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "red",
                                 }
                               }
+                              title="creation time: 2017-6-12 00:00:00"
                             >
-                              c: 
-                              2017 M06 12 00:00:00
+                              <i
+                                className="fas fa-caret-right"
+                              />
+                               
+                              2017-6-12
                             </span>
                             <br />
                             <span
@@ -4041,9 +4103,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   "color": "green",
                                 }
                               }
+                              title="update time: 2017-6-14 10:55:13"
                             >
-                              u: 
-                              2017 M06 14 10:55:13
+                              <i
+                                className="fas fa-caret-up"
+                              />
+                               
+                              2017-6-14
                             </span>
                           </div>
                         </div>
@@ -4280,7 +4346,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "headerStyle": Object {},
                 "id": "createTime",
                 "maxWidth": 200,
-                "minWidth": 150,
+                "minWidth": 100,
                 "resizable": true,
                 "show": true,
                 "sortMethod": undefined,
@@ -4472,7 +4538,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "headerStyle": Object {},
                 "id": "createTime",
                 "maxWidth": 200,
-                "minWidth": 150,
+                "minWidth": 100,
                 "resizable": true,
                 "show": true,
                 "sortMethod": undefined,
@@ -4617,7 +4683,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "accessor": [Function],
                 "id": "createTime",
                 "maxWidth": 200,
-                "minWidth": 150,
+                "minWidth": 100,
                 "resizable": true,
               },
               Object {
@@ -4647,7 +4713,9 @@ exports[`<ChartTable/> render with objects 1`] = `
               Object {
                 "created_time": "2017-06-16T14:20:12+0000",
                 "from": Object {
+                  "first_name": "Joanna",
                   "id": "10202921980928649",
+                  "last_name": "Kozieńska",
                   "name": "Joanna Kozieńska",
                 },
                 "from_user": "Joanna Kozieńska",
@@ -5022,7 +5090,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "_original": Object {
                   "created_time": "2017-06-16T14:20:12+0000",
                   "from": Object {
+                    "first_name": "Joanna",
                     "id": "10202921980928649",
+                    "last_name": "Kozieńska",
                     "name": "Joanna Kozieńska",
                   },
                   "from_user": "Joanna Kozieńska",
@@ -5083,7 +5153,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": 0,
                 "selected": false,
                 "user": Object {
+                  "first_name": "Joanna",
                   "id": "10202921980928649",
+                  "last_name": "Kozieńska",
                   "name": "Joanna Kozieńska",
                 },
                 "woc_f": Object {
@@ -5597,7 +5669,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "_original": Object {
                   "created_time": "2017-06-16T14:20:12+0000",
                   "from": Object {
+                    "first_name": "Joanna",
                     "id": "10202921980928649",
+                    "last_name": "Kozieńska",
                     "name": "Joanna Kozieńska",
                   },
                   "from_user": "Joanna Kozieńska",
@@ -5658,7 +5732,9 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": 0,
                 "selected": false,
                 "user": Object {
+                  "first_name": "Joanna",
                   "id": "10202921980928649",
+                  "last_name": "Kozieńska",
                   "name": "Joanna Kozieńska",
                 },
                 "woc_f": Object {
@@ -6391,7 +6467,7 @@ exports[`<ChartTable/> renders without crashing 1`] = `
         "accessor": [Function],
         "id": "createTime",
         "maxWidth": 200,
-        "minWidth": 150,
+        "minWidth": 100,
         "resizable": true,
       },
       Object {

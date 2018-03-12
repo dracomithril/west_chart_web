@@ -13,7 +13,7 @@ exports[`<FilteringOption/> renders without crashing ChartPresenter 1`] = `
 >
   created in last 
   <input
-    className="num_days"
+    className="filter-option__days"
     id="create_input"
     min={0}
     onChange={[Function]}
@@ -38,7 +38,7 @@ exports[`<FilteringOption/> should be able to change state of woc checkbox 1`] =
 >
   created in last 
   <input
-    className="num_days"
+    className="filter-option__days"
     id="create_input"
     min={0}
     onChange={[Function]}

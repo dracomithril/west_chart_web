@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<WestLetter/> renders users 1`] = `
-<div>
+<div
+  className="west-letter"
+>
   <div
-    className="beta"
+    className="west-letter__beta"
   >
     <h1>
-      This site is still in BeTa version
+      This site is still in beta version
     </h1>
-    <h2>
-      Soon we will be able to track WestLetters in each week ;)
-    </h2>
+    😃 Soon we will be able to track WestLetters in each week 😃
   </div>
   <h4>
     We have 
-    10
+    11
      week of 
     2018
   </h4>
@@ -148,20 +148,20 @@ exports[`<WestLetter/> renders users 1`] = `
 `;
 
 exports[`<WestLetter/> renders without crashing ChartPresenter 1`] = `
-<div>
+<div
+  className="west-letter"
+>
   <div
-    className="beta"
+    className="west-letter__beta"
   >
     <h1>
-      This site is still in BeTa version
+      This site is still in beta version
     </h1>
-    <h2>
-      Soon we will be able to track WestLetters in each week ;)
-    </h2>
+    😃 Soon we will be able to track WestLetters in each week 😃
   </div>
   <h4>
     We have 
-    10
+    11
      week of 
     2018
   </h4>

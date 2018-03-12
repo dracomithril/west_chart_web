@@ -44,10 +44,10 @@ export default class WestLetter extends React.Component {
       );
     });
     return (
-      <div>
-        <div className="beta">
-          <h1>This site is still in BeTa version</h1>
-          <h2>Soon we will be able to track WestLetters in each week ;)</h2>
+      <div className="west-letter">
+        <div className="west-letter__beta">
+          <h1>This site is still in beta version</h1>
+          😃 Soon we will be able to track WestLetters in each week 😃
         </div>
 
         <h4>
