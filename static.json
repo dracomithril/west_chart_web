@@ -14,7 +14,7 @@
   },
   "proxies": {
     "/api/": {
-      "origin": "https://wcs-api.herokuapp.com"
+      "origin": "https://wcs-api.herokuapp.com/api/"
     }
   }
 }
