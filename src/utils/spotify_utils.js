@@ -196,7 +196,10 @@ export const loginToSpotifyAlpha = () =>
         headers,
       }),
     )
-    .then(response => response.json())
+    .then(response => {
+      console.info('response ok:', response.ok);
+      return response.json();
+    })
     .then(body => {
       const { access_token, refresh_token } = body;
       access_token && Cookies.set(acToken, access_token, { expires: 360000 });
