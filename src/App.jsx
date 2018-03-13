@@ -81,7 +81,8 @@ const Navigation = (props, { store }) => (
     <Switch>
       <Route exact path="/" component={About} />
       <Route path="/policy" ecact component={Policy} />
-      <Route path="/login" component={LoginAlert} />
+      <Route exact path="/login" component={LoginAlert} />
+      <Route path="/login/:cred" component={LoginAlert} />
       <PrivateRoute path="/chart" exact component={ChartPresenter} />
       <PrivateRoute path="/combiner" exact component={Combiner} />
       <Route component={NotFound} />

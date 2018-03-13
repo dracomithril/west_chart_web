@@ -179,24 +179,26 @@ export const getCredentials = () => {
   return Promise.reject(noCredentials);
 };
 
-const headers = new Headers({
-  'Content-Type': 'application/json',
-});
 export const loginToSpotifyAlpha = () =>
   fetch(config.api.spotify.login, {
     credentials: 'include',
-    mode: 'no-cors',
     redirect: 'fallow',
-    headers,
+    accept: 'application/json',
   })
-    .then(() =>
-      fetch(config.api.spotify.obtainCredentials, {
-        method: 'GET',
-        credentials: 'include',
-        mode: 'no-cors',
-        headers,
-      }),
+    .then(
+      response => (response.ok ? response.text() : Promise.reject(new Error(' No url to fallow'))),
     )
+    .then(url => {
+      console.info(url);
+      return Promise.resolve(url);
+    });
+
+export const obtain_credentials = () =>
+  fetch(config.api.spotify.obtainCredentials, {
+    method: 'GET',
+    credentials: 'include',
+    accept: 'application/json',
+  })
     .then(response => {
       console.info('response ok:', response.ok);
       return response.ok
@@ -207,8 +209,6 @@ export const loginToSpotifyAlpha = () =>
       const { access_token, refresh_token } = body;
       access_token && Cookies.set(acToken, access_token, { expires: 360000 });
       refresh_token && Cookies.set(rfToken, refresh_token);
-      if (access_token || refresh_token)
-        return Promise.resolve({ accessToken: access_token, refreshToken: refresh_token });
       return Promise.resolve();
     });
 
@@ -245,5 +245,6 @@ const exports = {
   addTrucksToPlaylistNoRepeats,
   getUserAndPlaylists,
   getTracks,
+  obtain_credentials,
 };
 export default exports;

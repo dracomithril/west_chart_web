@@ -8,7 +8,7 @@ import { Button, Jumbotron } from 'react-bootstrap';
 import FacebookLogin from 'react-facebook-login';
 import './../bootstrap-social.css';
 import './LoginAlert.css';
-import { getCredentials, loginToSpotifyAlpha } from '../../utils/spotify_utils';
+import { getCredentials, loginToSpotifyAlpha, obtain_credentials } from '../../utils/spotify_utils';
 
 import { action_types } from './../../reducers/action_types';
 
@@ -17,10 +17,8 @@ const SpotifyLogin = props => (
     className="btn btn-social btn-spotify"
     onClick={() => {
       loginToSpotifyAlpha()
-        .then(credentials => {
-          // window.location = path;
-          props.onUpdate && props.onUpdate(credentials);
-          window.location = props.from || '/';
+        .then(url => {
+          window.location = url;
         })
         .catch(err => {
           console.error(err.message);
@@ -30,32 +28,37 @@ const SpotifyLogin = props => (
     <i className="fab fa-spotify" />Login to spotify
   </Button>
 );
-SpotifyLogin.propTypes = {
-  onUpdate: PropTypes.func,
-  from: PropTypes.string,
-};
+SpotifyLogin.propTypes = {};
 
 class LoginAlert extends React.Component {
   componentWillMount() {
     const { store } = this.context;
-    getCredentials()
-      .then(({ user, access_token }) => {
-        store.dispatch({
-          type: action_types.UPDATE_SP_USER,
-          user,
-          access_token,
-        });
-      })
-      .catch(err => {
-        console.error(err.message);
+    const { match, location } = this.props;
+    const { from } = (location || {}).state || { from: '/' };
+    const { cred } = match.params;
+    if (cred === 'getCredentials') {
+      obtain_credentials().then(() => {
+        window.location = from;
       });
+    } else
+      getCredentials()
+        .then(({ user, access_token }) => {
+          store.dispatch({
+            type: action_types.UPDATE_SP_USER,
+            user,
+            access_token,
+          });
+        })
+        .catch(err => {
+          console.error(err.message);
+        });
   }
 
   render() {
     const { location } = this.props;
     const { store } = this.context;
     const { user, sp_user } = store.getState();
-    const { from } = (location || {}).state || { from: { pathname: '/' } };
+    const { from } = (location || {}).state || { from: '/' };
     if (user.id && sp_user.id) {
       return <Redirect to={from} />;
     }
@@ -90,5 +93,6 @@ LoginAlert.contextTypes = {
 };
 LoginAlert.propTypes = {
   location: PropTypes.object,
+  match: PropTypes.object,
 };
 export default LoginAlert;
