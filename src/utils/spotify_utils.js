@@ -200,9 +200,11 @@ export const loginToSpotifyAlpha = () =>
     .then(response => response.json())
     .then(body => {
       const { access_token, refresh_token } = body;
-      Cookies.set(acToken, access_token, { expires: 360000 });
-      Cookies.set(rfToken, refresh_token);
-      return Promise.resolve({ accessToken: access_token, refreshToken: refresh_token });
+      access_token && Cookies.set(acToken, access_token, { expires: 360000 });
+      refresh_token && Cookies.set(rfToken, refresh_token);
+      if (access_token || refresh_token)
+        return Promise.resolve({ accessToken: access_token, refreshToken: refresh_token });
+      return Promise.resolve();
     });
 
 const refresh_auth = refresh_token => {
