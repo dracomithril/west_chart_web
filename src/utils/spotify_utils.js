@@ -191,9 +191,8 @@ export const loginToSpotifyAlpha = () =>
   })
     .then(() =>
       fetch(config.api.spotify.obtainCredentials, {
-        credentials: 'same-origin',
-        redirect: 'fallow',
-        // mode: 'no-cors',
+        credentials: 'include',
+        mode: 'no-cors',
         headers,
       }),
     )
