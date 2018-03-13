@@ -191,6 +191,7 @@ export const loginToSpotifyAlpha = () =>
   })
     .then(() =>
       fetch(config.api.spotify.obtainCredentials, {
+        method: 'GET',
         credentials: 'include',
         mode: 'cors',
         headers,
@@ -198,7 +199,9 @@ export const loginToSpotifyAlpha = () =>
     )
     .then(response => {
       console.info('response ok:', response.ok);
-      return response.json();
+      return response.ok
+        ? response.json()
+        : Promise.reject(new Error(`Error in request ${response.url}`));
     })
     .then(body => {
       const { access_token, refresh_token } = body;
