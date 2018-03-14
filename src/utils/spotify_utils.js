@@ -145,6 +145,10 @@ export const searchForMusic = ({ artist, title, search_id }, accessToken) => {
   spotifyApi.setAccessToken(accessToken);
   return spotifyApi
     .searchTracks(`${artist} ${title}`)
+    .catch(resp => {
+      Cookies.expire(acToken);
+      return Promise.reject(resp);
+    })
     .then(data =>
       Promise.resolve({
         value: data.body.tracks.items,
