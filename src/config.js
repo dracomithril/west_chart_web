@@ -5,7 +5,8 @@ const refreshTokenPath = '/api/spotify/refresh_token';
 const obtainCredentialsPath = '/api/spotify/obtain_credentials';
 const isProduction = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || 3001;
-const hostname = isProduction ? process.env.REACT_APP_API_URL : '';
+const protocol = isProduction ? 'https' : undefined;
+const hostname = isProduction ? process.env.REACT_APP_API_URL : undefined;
 const fbAppId = process.env.NODE_ENV === 'production' ? '1173483302721639' : '1173486879387948';
 const config = {
   isProduction,
@@ -17,13 +18,13 @@ const config = {
     },
     spotify: {
       get login() {
-        return url.resolve('https://', hostname, loginPath);
+        return url.format({ protocol, hostname, pathname: loginPath });
       },
       get refreshToken() {
-        return url.resolve('https://', hostname, refreshTokenPath);
+        return url.format({ protocol, hostname, pathname: refreshTokenPath });
       },
       get obtainCredentials() {
-        return url.resolve('https://', hostname, obtainCredentialsPath);
+        return url.format({ protocol, hostname, pathname: obtainCredentialsPath });
       },
     },
   },
