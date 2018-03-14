@@ -5,8 +5,9 @@ const TrackPreview = ({ artists, preview_url, external_urls, trackName, noLink }
   const artistsList = (artists || []).map(elem => elem.name).join(' & ');
   const audio =
     preview_url !== null ? (
-      <audio controls>
+      <audio controls preload="none">
         <source src={preview_url} type="audio/mpeg" />
+        Your browser does not support the audio element.
       </audio>
     ) : (
       <span style={{ color: 'red' }}>

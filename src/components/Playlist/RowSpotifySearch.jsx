@@ -36,6 +36,7 @@ class RowSpotifySearch extends React.Component {
           onUpdateClick({ id: search_id, value: track, field: 'selected' });
           this.setState({ showList: false });
         }}
+        style={{ backgroundColor: 'snow' }}
       >
         <TrackPreview
           artists={track.artists}
