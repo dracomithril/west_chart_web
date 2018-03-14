@@ -46,10 +46,7 @@ export const sorting = {
    * @param array
    */
   when: array => {
-    array.sort(
-      (a, b) =>
-        (a.added_time ? a.added_time.getTime() : 0) - (b.added_time ? b.added_time.getTime() : 0),
-    );
+    array.sort((a, b) => (a.added_time ? a.added_time.getTime() : 0) - (b.added_time ? b.added_time.getTime() : 0));
   },
   /**
    * ascending
@@ -73,10 +70,7 @@ export const sorting = {
 export const filterChart = (chart, filters, until, songs_per_day) => {
   const news_letter_filter = filters_def.text[1];
   const westLetters = chart.filter(
-    elem =>
-      elem.message !== undefined
-        ? elem.message.toLowerCase().includes(news_letter_filter.text)
-        : false,
+    elem => (elem.message !== undefined ? elem.message.toLowerCase().includes(news_letter_filter.text) : false),
   );
 
   const filters_defaults = [...filters_def.control, ...filters_def.text];

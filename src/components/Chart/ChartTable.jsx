@@ -45,18 +45,12 @@ const ChartTable = ({ data }, { store }) => {
   const { user, show_wait } = store.getState();
   const TimeCell = ({ value: time_value }) => (
     <div>
-      <span
-        style={{ color: 'red' }}
-        title={`creation time: ${fullFormatDate(time_value.created_time)}`}
-      >
+      <span style={{ color: 'red' }} title={`creation time: ${fullFormatDate(time_value.created_time)}`}>
         <i className="fas fa-caret-right" /> {formatDate(time_value.created_time)}
       </span>
       <br />
       {time_value.created_time !== time_value.updated_time && (
-        <span
-          style={{ color: 'green' }}
-          title={`update time: ${fullFormatDate(time_value.updated_time)}`}
-        >
+        <span style={{ color: 'green' }} title={`update time: ${fullFormatDate(time_value.updated_time)}`}>
           <i className="fas fa-caret-up" /> {formatDate(time_value.updated_time)}
         </span>
       )}
@@ -119,26 +113,14 @@ const ChartTable = ({ data }, { store }) => {
     return (
       <div>
         {condition ? (
-          <OverlayTrigger
-            placement="bottom"
-            overlay={<Tooltip id="tooltip">{value.message}</Tooltip>}
-          >
-            <i
-              className="fas fa-comment"
-              style={{ color: 'green', cursor: 'pointer' }}
-              aria-hidden="true"
-            />
+          <OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip">{value.message}</Tooltip>}>
+            <i className="fas fa-comment" style={{ color: 'green', cursor: 'pointer' }} aria-hidden="true" />
           </OverlayTrigger>
         ) : (
           <i className="fas fa-times-circle" style={{ color: 'red', cursor: 'no-drop' }} />
         )}
         <div>
-          <i
-            className="far fa-thumbs-up"
-            style={{ color: 'blue' }}
-            aria-hidden="true"
-            title="people reactions count"
-          />
+          <i className="far fa-thumbs-up" style={{ color: 'blue' }} aria-hidden="true" title="people reactions count" />
           {value.reactions_num}
         </div>
       </div>

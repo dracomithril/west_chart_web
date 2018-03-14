@@ -3,15 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Badge,
-  Button,
-  ButtonGroup,
-  ControlLabel,
-  FormControl,
-  FormGroup,
-  Image,
-} from 'react-bootstrap';
+import { Badge, Button, ButtonGroup, ControlLabel, FormControl, FormGroup, Image } from 'react-bootstrap';
 
 // todo add modal to block usage of tool when playlist crating
 class UserPlaylist extends React.Component {
@@ -44,11 +36,7 @@ class UserPlaylist extends React.Component {
           <Badge bsStyle="warning">{total}</Badge>
           <ButtonGroup>
             <Button className="fas fa-sync-alt btn2" onClick={() => onUpdate(id)} />
-            <Button
-              className="fas fa-minus btn2"
-              onClick={() => onDelete(id)}
-              disabled={!erasable}
-            />
+            <Button className="fas fa-minus btn2" onClick={() => onDelete(id)} disabled={!erasable} />
           </ButtonGroup>
         </div>
         <FormControl name={id} componentClass="select" multiple onChange={updateSelectList}>

@@ -29,6 +29,4 @@ storiesOf('SongsPerDay', module)
       onDaysChange={action('days changed')}
     />
   ))
-  .add('No errors', () => (
-    <SongsPerDay songs_per_day={3} error_days={[]} onDaysChange={action('days changed')} />
-  ));
+  .add('No errors', () => <SongsPerDay songs_per_day={3} error_days={[]} onDaysChange={action('days changed')} />);

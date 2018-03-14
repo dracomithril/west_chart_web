@@ -9,18 +9,11 @@ const UpdateInfo = ({ last_update, since, until, filtered, total }) => {
     <div className="update-info">
       <div id="time-frame" className="update-info__time-frame">
         <span>since: </span>
-        <Label bsStyle="success">
-          {since !== '' ? new Date(since).toLocaleDateString('pl-PL', options) : 'null'}
-        </Label>
+        <Label bsStyle="success">{since !== '' ? new Date(since).toLocaleDateString('pl-PL', options) : 'null'}</Label>
         <span> to </span>
-        <Label bsStyle="danger">
-          {until !== '' ? new Date(until).toLocaleDateString('pl-PL', options) : 'null'}
-        </Label>
+        <Label bsStyle="danger">{until !== '' ? new Date(until).toLocaleDateString('pl-PL', options) : 'null'}</Label>
       </div>
-      <span
-        id="updateDate"
-        className="update-info__span"
-      >{` Last update: ${last_update_date}`}</span>
+      <span id="updateDate" className="update-info__span">{` Last update: ${last_update_date}`}</span>
       <span className="update-info__span">
         We did get {total} and filtered {filtered}
       </span>

@@ -34,17 +34,13 @@ export default class Header extends React.Component {
     return (
       <div className="wcs_header">
         <CookieBanner
-          message={
-            "Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"
-          }
+          message={"Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"}
           onAccept={() => {}}
           cookie="user-has-accepted-cookies"
         />
 
         <PageHeader bsClass="title-header">Music Helper</PageHeader>
-        {user.name && (
-          <UserInfo fb_user={user} sp_user={sp_user} onLogoutClick={this.onLogoutClick} />
-        )}
+        {user.name && <UserInfo fb_user={user} sp_user={sp_user} onLogoutClick={this.onLogoutClick} />}
       </div>
     );
   }

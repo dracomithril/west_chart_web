@@ -19,12 +19,8 @@ export default class PlaylistForm extends Component {
   onGenPlaylistName = () => {
     const { monday, friday } = weekInfo(new Date());
 
-    const monday_str = monday
-      .toLocaleString('en-US', { month: 'short', day: 'numeric' })
-      .toUpperCase();
-    const friday_str = friday
-      .toLocaleString('en-US', { month: 'short', day: 'numeric' })
-      .toUpperCase();
+    const monday_str = monday.toLocaleString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
+    const friday_str = friday.toLocaleString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
 
     const playlist_name = `Chart_${monday_str}-${friday_str}`;
     const list = playlist_name.split(' ').join('_');
@@ -70,9 +66,7 @@ export default class PlaylistForm extends Component {
           </Button>
           <Button
             id="crt_pl_button"
-            onClick={() =>
-              onCreatePlaylistClick && onCreatePlaylistClick({ playlistName, isPrivate })
-            }
+            onClick={() => onCreatePlaylistClick && onCreatePlaylistClick({ playlistName, isPrivate })}
             disabled={disable_create}
             bsStyle="danger"
           >

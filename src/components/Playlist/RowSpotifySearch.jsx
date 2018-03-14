@@ -50,31 +50,21 @@ class RowSpotifySearch extends React.Component {
     const condition = selected_track && selected_track.preview_url !== undefined;
     const haveIssue = !artist || !title;
 
-    const ButtonSign = () => {
-      if (tracks_list.length === 0) {
-        return <i className="fas fa-minus" />;
-      }
-      return this.state.showList ? (
-        <i className="fas fa-caret-up" />
+    const ButtonSign = () =>
+      tracks_list.length === 0 ? (
+        <i className="fas fa-minus" />
       ) : (
-        <i className="fas fa-caret-down" />
+        <i className={`fas ${this.state.showList ? 'fa-caret-up' : 'fa-caret-down'}`} />
       );
-    };
 
     return (
-      <div
-        className={
-          selected_track ? 'row-spotify-search__root--good' : 'row-spotify-search__root--error'
-        }
-      >
+      <div className={selected_track ? 'row-spotify-search__root--good' : 'row-spotify-search__root--error'}>
         <span>{full_title || 'No Title'}</span>
         <div>
           <div>
             <div
               className={
-                haveIssue
-                  ? 'row-spotify-search__track-search--error'
-                  : 'row-spotify-search__track-search--good'
+                haveIssue ? 'row-spotify-search__track-search--error' : 'row-spotify-search__track-search--good'
               }
             >
               <label htmlFor={`${search_id}_artist`}>

@@ -18,10 +18,7 @@ const MessageControl = ({ id, text, name, checked, onChange }) => (
     checked={!checked}
     onChange={({ target }) => onChange({ id, checked: target.checked })}
   >
-    <OverlayTrigger
-      placement="bottom"
-      overlay={<Tooltip id={`${id}_tp`}>{`Will show all [${text}]`}</Tooltip>}
-    >
+    <OverlayTrigger placement="bottom" overlay={<Tooltip id={`${id}_tp`}>{`Will show all [${text}]`}</Tooltip>}>
       <span>[{text}]</span>
     </OverlayTrigger>
   </Checkbox>

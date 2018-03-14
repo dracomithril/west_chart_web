@@ -94,10 +94,7 @@ export default class ChartHeader extends React.Component {
             }
           />
         </div>
-        <ChartButtons
-          onQuickSummaryClick={this.quickSummary}
-          onGetDataClick={() => UpdateChart(store)}
-        />
+        <ChartButtons onQuickSummaryClick={this.quickSummary} onGetDataClick={() => UpdateChart(store)} />
         <FilteringOptions />
       </div>
     );

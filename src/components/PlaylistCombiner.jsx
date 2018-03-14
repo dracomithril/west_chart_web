@@ -132,9 +132,7 @@ export default class PlaylistCombiner extends React.Component {
         erasable={(users[user] || {}).id !== sp_user.id}
       />
     ));
-    const user_playlists = ((users[sp_user.id] || {}).items || []).map(
-      UserPlaylist.mapUserPlaylistToOptions,
-    );
+    const user_playlists = ((users[sp_user.id] || {}).items || []).map(UserPlaylist.mapUserPlaylistToOptions);
     const newList_checked = cf.new_list === createFrom;
     const existing_checked = cf.existing === createFrom;
     const updateSelected = ({ target }) => {
@@ -175,22 +173,13 @@ export default class PlaylistCombiner extends React.Component {
                 }}
               />
             </label>
-            <Button
-              type="submit"
-              onClick={this.searchForUser_click}
-              className="far fa-search btn2"
-            />
+            <Button type="submit" onClick={this.searchForUser_click} className="far fa-search btn2" />
             <div className="playlists_view_conteiner">{users_playlists}</div>
           </div>
           <div id="destination_panel">
             <h5>To:</h5>
             <div>
-              <input
-                type="radio"
-                id={cf.existing}
-                checked={existing_checked}
-                onChange={updateSelected}
-              />
+              <input type="radio" id={cf.existing} checked={existing_checked} onChange={updateSelected} />
               <label htmlFor="select_user_playlist">
                 Existing List
                 <br />
@@ -199,12 +188,7 @@ export default class PlaylistCombiner extends React.Component {
                 </select>
               </label>
               <br />
-              <input
-                type="radio"
-                id={cf.new_list}
-                checked={newList_checked}
-                onChange={updateSelected}
-              />
+              <input type="radio" id={cf.new_list} checked={newList_checked} onChange={updateSelected} />
               <label htmlFor={`${cf.new_list}_txt`}>
                 New playlist
                 <br />

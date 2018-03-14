@@ -70,13 +70,7 @@ export const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks, acces
  * @param isPlaylistPrivate
  * @param tracks
  */
-export const createPlaylistAndAddTracks = (
-  accessToken,
-  userId,
-  sp_playlist_name,
-  isPlaylistPrivate,
-  tracks,
-) => {
+export const createPlaylistAndAddTracks = (accessToken, userId, sp_playlist_name, isPlaylistPrivate, tracks) => {
   spotifyApi.setAccessToken(accessToken);
   return spotifyApi
     .createPlaylist(userId, sp_playlist_name, { public: !isPlaylistPrivate })
@@ -161,57 +155,10 @@ export const searchForMusic = ({ artist, title, search_id }, accessToken) => {
       console.error('error obtaining track', e.message);
     });
 };
-
-const acToken = 'wcs_sp_user_ac';
-const rfToken = 'wcs_sp_user_refresh_token';
-export const getCredentials = () => {
-  const ac = Cookies.get(acToken);
-  const refresh_token = Cookies.get(rfToken);
-  const noCredentials = new Error('No credentials found');
-  if (ac) {
-    return validateCredentials(ac).catch(() => {
-      Cookies.expire(acToken);
-      return refresh_token ? refresh_auth(refresh_token) : Promise.reject(noCredentials);
-    });
-  } else if (refresh_token) {
-    return refresh_auth(refresh_token);
-  }
-  return Promise.reject(noCredentials);
-};
-
-export const loginToSpotifyAlpha = () =>
-  fetch(config.api.spotify.login, {
-    credentials: 'include',
-    redirect: 'fallow',
-    accept: 'application/json',
-  })
-    .then(
-      response => (response.ok ? response.text() : Promise.reject(new Error(' No url to fallow'))),
-    )
-    .then(url => {
-      console.info(url);
-      return Promise.resolve(url);
-    });
-
-export const obtain_credentials = () =>
-  fetch(config.api.spotify.obtainCredentials, {
-    method: 'GET',
-    credentials: 'include',
-    accept: 'application/json',
-  })
-    .then(response => {
-      console.info('response ok:', response.ok);
-      return response.ok
-        ? response.json()
-        : Promise.reject(new Error(`Error in request ${response.url}`));
-    })
-    .then(body => {
-      const { access_token, refresh_token } = body;
-      access_token && Cookies.set(acToken, access_token, { expires: 360000 });
-      refresh_token && Cookies.set(rfToken, refresh_token);
-      return Promise.resolve();
-    });
-
+/**
+ * @param refresh_token
+ * @return {Promise<Spotify_credentials>}
+ */
 const refresh_auth = refresh_token => {
   console.info('refreshing token');
   return fetch(config.api.spotify.refreshToken, {
@@ -226,6 +173,78 @@ const refresh_auth = refresh_token => {
       return validateCredentials(auth_token);
     });
 };
+
+const acToken = 'client-sp_user_access_token';
+const rfToken = 'client-sp_user_refresh_token';
+const noCredentials = new Error('No credentials found');
+/**
+ * @typedef {Object} Spotify_credentials
+ * @property {String} accessToken
+ */
+/**
+ * obtains cookies for spotify
+ * @return {Promise<Spotify_credentials>}
+ */
+const getCookies = () => {
+  const accessToken = Cookies.get(acToken);
+  const refresh_token = Cookies.get(rfToken);
+  if (accessToken) {
+    return validateCredentials(accessToken).catch(() => {
+      Cookies.expire(acToken);
+      return refresh_token ? refresh_auth(refresh_token) : Promise.reject(noCredentials);
+    });
+  } else if (refresh_token) {
+    return refresh_auth(refresh_token);
+  }
+  return Promise.reject(noCredentials);
+};
+
+export const getCredentials = () =>
+  getCookies()
+    .catch(() => obtain_credentials())
+    .catch(() => Promise.reject(noCredentials))
+    .then(result =>
+      // global.FB.getLoginStatus(function(response) {
+      //   console.log(response);
+      // });
+      Promise.resolve(result),
+    );
+export const loginToSpotifyAlpha = from =>
+  fetch(config.api.spotify.login, {
+    credentials: 'include',
+    redirect: 'fallow',
+    accept: 'application/json',
+  })
+    .then(response => (response.ok ? response.text() : Promise.reject(new Error(' No url to fallow'))))
+    .then(url => {
+      console.info(url);
+      if (from)
+        Cookies.set('spotify_redirect_to', from, {
+          expires: 60000,
+          domain: config.hostname || undefined,
+        });
+      return Promise.resolve(url);
+    });
+
+export const obtain_credentials = () =>
+  fetch(config.api.spotify.obtainCredentials, {
+    method: 'GET',
+    credentials: 'include',
+    accept: 'application/json',
+  })
+    .then(response => {
+      console.info('response ok:', response.ok);
+      return response.ok ? response.json() : Promise.reject(new Error(`Error in request ${response.url}`));
+    })
+    .then(body => {
+      const { access_token, refresh_token } = body;
+      return validateCredentials(access_token).then(({ accessToken, userData }) => {
+        accessToken && Cookies.set(acToken, accessToken, { expires: 360000 });
+        refresh_token && Cookies.set(rfToken, refresh_token);
+        return Promise.resolve({ accessToken, userData });
+      });
+    });
+
 /**
  * @param access_token
  */
@@ -233,7 +252,7 @@ const validateCredentials = access_token => {
   spotifyApi.setAccessToken(access_token);
   return spotifyApi.getMe().then(data => {
     console.info('you logged as :', data.body.id);
-    return Promise.resolve({ user: data.body, access_token });
+    return Promise.resolve({ userData: data.body, accessToken: access_token });
   });
 };
 

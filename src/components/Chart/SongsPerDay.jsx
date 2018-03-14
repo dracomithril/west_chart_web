@@ -27,10 +27,7 @@ const ErrorDaysIndicator = ({ error_days, less }) =>
         </Popover>
       }
     >
-      <i
-        className={`fa fa-arrow-circle${less ? '-down less_days' : '-up more_days'}`}
-        aria-hidden="true"
-      >
+      <i className={`fa fa-arrow-circle${less ? '-down less_days' : '-up more_days'}`} aria-hidden="true">
         {error_days.length}
       </i>
     </OverlayTrigger>

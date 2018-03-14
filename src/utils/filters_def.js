@@ -60,8 +60,7 @@ const filters = [
   },
 ];
 
-const text_check = ({ message }, { text }) =>
-  message !== undefined ? !message.toLowerCase().includes(text) : true;
+const text_check = ({ message }, { text }) => (message !== undefined ? !message.toLowerCase().includes(text) : true);
 const text_filters = [
   {
     control: { name: 'woc_text_control', id: 'woc' },

@@ -5,16 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Checkbox } from 'react-bootstrap';
 
-const FilterOption = ({
-  id,
-  name,
-  days,
-  checked,
-  onChange,
-  onValueChange,
-  desc_start,
-  desc_end,
-}) => (
+const FilterOption = ({ id, name, days, checked, onChange, onValueChange, desc_start, desc_end }) => (
   <Checkbox
     name={name}
     id={`${id}_checkbox`}

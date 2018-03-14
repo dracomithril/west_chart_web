@@ -11,12 +11,18 @@ import Combiner from './components/PlaylistCombiner';
 import LoginAlert from './components/LoginAlert';
 import Policy from './components/Policy';
 import NotFound from './components/NotFound';
+import { getCredentials } from './utils/spotify_utils';
+import { action_types } from './reducers/action_types';
 
 const pathways = ['/', '/chart', '/combiner'];
 
 const PrivateRoute = ({ component: Component, ...rest }, { store }) => {
   const { user, sp_user } = store.getState();
   const isAuthenticated = !!user.id && !!sp_user.id;
+  // if (isAuthenticated) {
+  //   let result = asyncCall(store, rest.path);
+  //   console.info('is autenticated', result);
+  // }
   return (
     <Route
       {...rest}
@@ -81,8 +87,8 @@ const Navigation = (props, { store }) => (
     <Switch>
       <Route exact path="/" component={About} />
       <Route path="/policy" ecact component={Policy} />
-      <Route exact path="/login" component={LoginAlert} />
-      <Route path="/login/:cred" component={LoginAlert} />
+      <Route path="/login" component={LoginAlert} />
+      {/* <Route path="/login/:cred" component={LoginAlert} /> */}
       <PrivateRoute path="/chart" exact component={ChartPresenter} />
       <PrivateRoute path="/combiner" exact component={Combiner} />
       <Route component={NotFound} />
@@ -94,6 +100,19 @@ Navigation.contextTypes = {
 };
 
 class App extends React.Component {
+  componentWillMount() {
+    const { store } = this.context;
+    getCredentials()
+      .then(({ userData, accessToken }) => {
+        store.dispatch({
+          type: action_types.UPDATE_SP_USER,
+          user: userData,
+          access_token: accessToken,
+        });
+        return Promise.resolve(true);
+      })
+      .catch(() => Promise.resolve(false));
+  }
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe(() => this.forceUpdate());

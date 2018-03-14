@@ -90,17 +90,12 @@ class SpotifySearch extends React.Component {
       const selectedElements = search_list
         .map(elem => (elem.selected !== undefined ? elem.selected.uri : undefined))
         .filter(elem => elem !== undefined);
-      createPlaylistAndAddTracks(
-        sp_user.access_token,
-        sp_user.id,
-        playlistName,
-        isPrivate,
-        selectedElements,
-      ).then(info =>
-        store.dispatch({
-          type: action_types.UPDATE_PLAYLIST_INFO,
-          value: info,
-        }),
+      createPlaylistAndAddTracks(sp_user.access_token, sp_user.id, playlistName, isPrivate, selectedElements).then(
+        info =>
+          store.dispatch({
+            type: action_types.UPDATE_PLAYLIST_INFO,
+            value: info,
+          }),
       );
     };
     return (

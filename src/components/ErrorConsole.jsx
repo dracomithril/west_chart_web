@@ -6,9 +6,7 @@ import PropTypes from 'prop-types';
 
 import { action_types } from './../reducers/action_types';
 
-const ConsoleLog = ({ error }) => (
-  <div>{(error || {}).message || 'no message log to console logs'}</div>
-);
+const ConsoleLog = ({ error }) => <div>{(error || {}).message || 'no message log to console logs'}</div>;
 ConsoleLog.propTypes = {
   error: PropTypes.object,
 };
@@ -34,10 +32,7 @@ export default class ErrorConsole extends React.Component {
         <div className="console-log">
           <h3>
             Errors!!!
-            <button
-              className="fas fa-trash-o"
-              onClick={() => store.dispatch({ type: action_types.CLEAR_ERRORS })}
-            >
+            <button className="fas fa-trash-o" onClick={() => store.dispatch({ type: action_types.CLEAR_ERRORS })}>
               clear
             </button>
           </h3>
