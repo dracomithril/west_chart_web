@@ -17,13 +17,13 @@ const config = {
     },
     spotify: {
       get login() {
-        return url.resolve(hostname, loginPath);
+        return url.resolve('https://', hostname, loginPath);
       },
       get refreshToken() {
-        return url.resolve(hostname, refreshTokenPath);
+        return url.resolve('https://', hostname, refreshTokenPath);
       },
       get obtainCredentials() {
-        return url.resolve(hostname, obtainCredentialsPath);
+        return url.resolve('https://', hostname, obtainCredentialsPath);
       },
     },
   },
