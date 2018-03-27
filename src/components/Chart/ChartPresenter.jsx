@@ -4,6 +4,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Tab, Tabs } from 'react-bootstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faFacebook, faSpotify } from '@fortawesome/fontawesome-free-brands';
+import { faList, faTable } from '@fortawesome/fontawesome-free-solid';
+
 import Summary from '../Summary';
 import ChartTable from './ChartTable';
 import ChartHeader from './ChartHeader';
@@ -27,7 +31,14 @@ const ChartPresenter = (props, { store }) => {
   return (
     <div>
       <Tabs defaultActiveKey={0} id="chart_tabs">
-        <Tab eventKey={0} title={<i className="fab fa-facebook">Posts</i>}>
+        <Tab
+          eventKey={0}
+          title={
+            <div>
+              <FontAwesomeIcon icon={faFacebook} />Posts
+            </div>
+          }
+        >
           <div className="chart-presenter__tab-content">
             <ChartHeader error_days={error_days} view_chart={view_chart} />
             <div>
@@ -47,17 +58,32 @@ const ChartPresenter = (props, { store }) => {
         <Tab
           eventKey={1}
           title={
-            <i className="fab fa-spotify" id="chart_playlist_tab">
+            <div id="chart_playlist_tab">
+              <FontAwesomeIcon icon={faSpotify} />
               Playlist
-            </i>
+            </div>
           }
         >
           <SpotifySearch selected={selected} />
         </Tab>
-        <Tab eventKey={2} title={<i className="fas fa-list">Summary</i>}>
+        <Tab
+          eventKey={2}
+          title={
+            <div>
+              <FontAwesomeIcon icon={faList} />Summary
+            </div>
+          }
+        >
           <Summary selected={selected} />
         </Tab>
-        <Tab eventKey={3} title={<i className="fas fa-table">West Letters</i>}>
+        <Tab
+          eventKey={3}
+          title={
+            <div>
+              <FontAwesomeIcon icon={faTable} />West Letters
+            </div>
+          }
+        >
           <WestLetter data={westLetters} />
         </Tab>
       </Tabs>

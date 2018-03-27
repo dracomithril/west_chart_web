@@ -3,15 +3,15 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 
 const PlaylistInfo = ({ info = {} }) =>
   info.url !== null ? (
     <div className="spotify_sumary">
       <span>
         {'Created '}
-        <i className="fab fa-spotify" aria-hidden="true">
-          Spotify
-        </i>
+        <FontAwesomeIcon icon={faSpotify}>Spotify</FontAwesomeIcon>
         {' playlist! name: '}
       </span>
       <a href={info.url} target="_newtab">

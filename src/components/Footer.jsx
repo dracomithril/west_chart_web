@@ -2,6 +2,9 @@
  * Created by Gryzli on 12.02.2017.
  */
 import React from 'react';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faFacebookSquare, faGithub } from '@fortawesome/fontawesome-free-brands';
+import { faEnvelope, faCopyright } from '@fortawesome/fontawesome-free-solid';
 
 const Footer = () => (
   <footer className="footer">
@@ -12,24 +15,24 @@ const Footer = () => (
       </a>
       repo on
       <a href="https://github.com/dracomithril/WestChart_ReactApp" target="_newtab">
-        <i className="fab fa-github" aria-hidden="true" />
+        <FontAwesomeIcon icon={faGithub} />
         <br />
       </a>
       {` v${process.env.REACT_APP_VERSION}`}
-      <i className="fas fa-copyright" />
+      <FontAwesomeIcon icon={faCopyright} />
       {' Copyright 2017'}
     </span>
     <br />
     <span>
       {'Any questions? '}
       <a href="mailto:dracomithril@gmail.com?subject=[WCSChartAdmin]">
-        <i className="fas fa-envelope" />
+        <FontAwesomeIcon icon={faEnvelope} />
         {' contact me'}
       </a>
     </span>
     <br />
     <a href="/policy">
-      <i className="fab fa-facebook-square" />
+      <FontAwesomeIcon icon={faFacebookSquare} />
       {' Policy'}
     </a>
   </footer>

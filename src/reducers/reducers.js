@@ -81,8 +81,11 @@ const chart = (state = [], action) => {
     case action_types.TOGGLE_SELECTED: {
       const l = _.clone(state);
       const findIndex = l.findIndex(elem => elem.id === action.id);
-      l[findIndex].selected = action.checked;
-      return l;
+      if (findIndex >= 0) {
+        l[findIndex].selected = action.checked;
+        return l;
+      }
+      return state;
     }
     case action_types.TOGGLE_ALL:
       return state.map(elem => {
@@ -99,6 +102,12 @@ const search_list = (state = [], action) => {
   switch (action.type) {
     case action_types.UPDATE_SEARCH:
       return action.search;
+    case action_types.CLEAR_SELECTED: {
+      const entry = _.clone(state);
+      const entry2 = entry[action.id];
+      delete entry2.selected;
+      return entry;
+    }
     case action_types.UPDATE_SINGLE_SEARCH: {
       const entry = _.clone(state);
       const entry2 = entry[action.id];

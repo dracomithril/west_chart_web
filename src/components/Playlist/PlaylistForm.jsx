@@ -4,6 +4,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonGroup, FormControl, FormGroup, InputGroup } from 'react-bootstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faSave } from '@fortawesome/fontawesome-free-solid';
 import { weekInfo } from '../../utils/utils';
 import './playlist.css';
 
@@ -70,7 +72,7 @@ export default class PlaylistForm extends Component {
             disabled={disable_create}
             bsStyle="danger"
           >
-            <i className="fas fa-save" /> save
+            <FontAwesomeIcon icon={faSave} /> save
           </Button>
         </ButtonGroup>
         <label htmlFor="play_list_is_private">

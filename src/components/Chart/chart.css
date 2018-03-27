@@ -27,6 +27,7 @@
 .chart-presenter__tab-content {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
 }
 
 .songs-per-day {
@@ -116,10 +117,6 @@
     /*margin-bottom: 10px;*/
 }
 
-.chart-table__checkbox input[type=checkbox]:checked {
-    background-color: green;
-}
-
 .less_days {
     color: blue;
     margin-left: 5px;
@@ -128,6 +125,10 @@
 .more_days {
     color: red;
     margin-left: 5px;
+}
+
+.chart-table {
+
 }
 
 @media screen and (min-width: 700px) {
@@ -142,8 +143,14 @@
         flex-flow: row;
     }
 
+    .chart-table {
+        min-width: 700px;
+        align-self: stretch;
+    }
+
     .chart-presenter__tab-content {
-        min-width: 760px;
+        min-width: 700px;
+        align-items: center;
     }
 
 }

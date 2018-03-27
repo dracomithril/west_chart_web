@@ -4,6 +4,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faArrowCircleDown, faArrowCircleUp } from '@fortawesome/fontawesome-free-solid';
 import './chart.css';
 
 const DayEntry = ({ org, color }) => (
@@ -27,9 +29,9 @@ const ErrorDaysIndicator = ({ error_days, less }) =>
         </Popover>
       }
     >
-      <i className={`fa fa-arrow-circle${less ? '-down less_days' : '-up more_days'}`} aria-hidden="true">
+      <FontAwesomeIcon icon={less ? faArrowCircleDown : faArrowCircleUp} className={less ? 'less_days' : 'more_days'}>
         {error_days.length}
-      </i>
+      </FontAwesomeIcon>
     </OverlayTrigger>
   );
 ErrorDaysIndicator.propTypes = {

@@ -4,6 +4,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MenuItem } from 'react-bootstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faCaretDown, faCaretUp, faMinus, faSearch, faSync, faTimes } from '@fortawesome/fontawesome-free-solid';
 import './playlist.css';
 import TrackPreview from './TrackPreview';
 
@@ -27,6 +29,7 @@ class RowSpotifySearch extends React.Component {
       onSwap,
       onUpdateClick,
       onSearchClick,
+      onClearClick,
     } = this.props;
     const tracks_list = (items || []).map(track => (
       <MenuItem
@@ -50,13 +53,6 @@ class RowSpotifySearch extends React.Component {
 
     const condition = selected_track && selected_track.preview_url !== undefined;
     const haveIssue = !artist || !title;
-
-    const ButtonSign = () =>
-      tracks_list.length === 0 ? (
-        <i className="fas fa-minus" />
-      ) : (
-        <i className={`fas ${this.state.showList ? 'fa-caret-up' : 'fa-caret-down'}`} />
-      );
 
     return (
       <div className={selected_track ? 'row-spotify-search__root--good' : 'row-spotify-search__root--error'}>
@@ -87,18 +83,21 @@ class RowSpotifySearch extends React.Component {
                   id={`${search_id}_title`}
                   value={title || ''}
                   placeholder="song title"
-                  onChange={({ target }) => {
-                    onUpdateClick({ id: search_id, value: target.value, field: 'title' });
-                  }}
+                  onChange={({ target }) =>
+                    onUpdateClick && onUpdateClick({ id: search_id, value: target.value, field: 'title' })
+                  }
                 />
               </label>
 
               <div>
-                <button onClick={() => onSwap(search_id)} title="swap artist with title">
-                  <i className="fas fa-sync" aria-hidden="true" />
+                <button onClick={() => onSwap && onSwap(search_id)} title="swap artist with title">
+                  <FontAwesomeIcon icon={faSync} />
                 </button>
-                <button id={`button-${id}`} onClick={onSearchClick} title="search for tracks">
-                  <i className="fas fa-search" />
+                <button id={`button-${id}`} onClick={() => onSearchClick && onSearchClick()} title="search for tracks">
+                  <FontAwesomeIcon icon={faSearch} />
+                </button>
+                <button title="clear selected" onClick={() => onClearClick && onClearClick({ id: search_id })}>
+                  <FontAwesomeIcon icon={faTimes} />
                 </button>
                 {tracks_list.length !== 0 && (
                   <button
@@ -107,7 +106,11 @@ class RowSpotifySearch extends React.Component {
                     }}
                     title="show/hide found tracks"
                   >
-                    <ButtonSign />
+                    {tracks_list.length === 0 ? (
+                      <FontAwesomeIcon icon={faMinus} />
+                    ) : (
+                      <FontAwesomeIcon icon={this.state.showList ? faCaretUp : faCaretDown} />
+                    )}
                   </button>
                 )}
               </div>
@@ -144,5 +147,6 @@ RowSpotifySearch.propTypes = {
   selected: PropTypes.object,
   onUpdateClick: PropTypes.func,
   onSearchClick: PropTypes.func,
+  onClearClick: PropTypes.func,
 };
 export default RowSpotifySearch;

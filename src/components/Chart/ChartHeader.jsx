@@ -51,7 +51,7 @@ export default class ChartHeader extends React.Component {
         start_bt.click();
         const gen_bt = document.getElementById('genName_sp_button');
         gen_bt.click();
-        const tab = document.getElementById('chart_playlist_tab');
+        const tab = document.getElementById('chart_tabs-tab-1');
         tab.click();
       });
   };

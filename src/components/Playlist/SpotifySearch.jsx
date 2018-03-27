@@ -3,6 +3,8 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 import PlaylistForm from './PlaylistForm';
 import RowSpotifySearch from './RowSpotifySearch';
 import PlaylistInfo from './../PlaylistInfo';
@@ -39,8 +41,14 @@ class SpotifySearch extends React.Component {
         id: target.id,
       });
     };
+    const onClearHandler = target => {
+      store.dispatch({
+        type: action_types.CLEAR_SELECTED,
+        id: target.id,
+      });
+    };
 
-    const search_list_view = search_list.map((search_elem, index, array) => (
+    const search_list_view = search_list.map(search_elem => (
       <RowSpotifySearch
         items={search_elem.items}
         selected={search_elem.selected}
@@ -57,6 +65,7 @@ class SpotifySearch extends React.Component {
             updateSingleSearch({ id, value, field: 'items' });
           });
         }}
+        onClearClick={onClearHandler}
       />
     ));
     const onStartClickHandler = () => {
@@ -102,7 +111,7 @@ class SpotifySearch extends React.Component {
       <div className="spotify-search">
         <div className="spotify-search__header">
           create
-          <i className="fab fa-spotify" aria-hidden="true" />
+          <FontAwesomeIcon icon={faSpotify} />
           spotify playlist:
         </div>
         <PlaylistInfo info={sp_playlist_info} />

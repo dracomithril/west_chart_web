@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { Button, Jumbotron } from 'react-bootstrap';
 import FacebookLogin from 'react-facebook-login';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 import './../bootstrap-social.css';
 import './LoginAlert.css';
 import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
@@ -25,7 +27,8 @@ const SpotifyLogin = ({ from }) => (
         });
     }}
   >
-    <i className="fab fa-spotify" />Login to spotify
+    <FontAwesomeIcon icon={faSpotify} style={{ paddingTop: 5 }} />
+    <span>Login to spotify</span>
   </Button>
 );
 SpotifyLogin.propTypes = {
@@ -42,8 +45,12 @@ const LoginAlert = (props, { store }) => {
   return (
     <Jumbotron bsClass="login-info">
       <h4>
-        {'To start working witch us you need to login to facebook and spotify.'}
-        <i className="fas fa-heart" />
+        <span role="img" aria-label="heart">
+          ❤️❤️❤️
+        </span>️ To start working witch us you need to login to facebook and spotify.
+        <span role="img" aria-label="heart">
+          ❤️❤️❤️
+        </span>️
       </h4>
       {user.id === undefined && (
         <FacebookLogin

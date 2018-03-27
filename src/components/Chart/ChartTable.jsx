@@ -4,6 +4,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactTable from 'react-table';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import {
+  faCaretRight,
+  faCaretUp,
+  faClock,
+  faComment,
+  faExternalLinkSquareAlt,
+  faInfoCircle,
+  faThumbsUp,
+  faTimesCircle,
+  faUserCircle,
+} from '@fortawesome/fontawesome-free-solid';
 import 'react-table/react-table.css';
 import { Checkbox, Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { getFbPictureUrl } from '../../utils/utils';
@@ -46,12 +58,12 @@ const ChartTable = ({ data }, { store }) => {
   const TimeCell = ({ value: time_value }) => (
     <div>
       <span style={{ color: 'red' }} title={`creation time: ${fullFormatDate(time_value.created_time)}`}>
-        <i className="fas fa-caret-right" /> {formatDate(time_value.created_time)}
+        <FontAwesomeIcon icon={faCaretRight} /> {formatDate(time_value.created_time)}
       </span>
       <br />
       {time_value.created_time !== time_value.updated_time && (
         <span style={{ color: 'green' }} title={`update time: ${fullFormatDate(time_value.updated_time)}`}>
-          <i className="fas fa-caret-up" /> {formatDate(time_value.updated_time)}
+          <FontAwesomeIcon icon={faCaretUp} /> {formatDate(time_value.updated_time)}
         </span>
       )}
     </div>
@@ -59,18 +71,6 @@ const ChartTable = ({ data }, { store }) => {
 
   TimeCell.propTypes = {
     value: PropTypes.object,
-  };
-  const time = {
-    Header: <i className="far fa-clock">Time</i>,
-    id: 'createTime',
-    resizable: true,
-    minWidth: 100,
-    maxWidth: 200,
-    accessor: d => ({
-      created_time: getTime(d.created_time),
-      updated_time: getTime(d.updated_time),
-    }),
-    Cell: TimeCell,
   };
   const videoLinkCell = ({ value }) =>
     value.url === undefined ? (
@@ -82,19 +82,6 @@ const ChartTable = ({ data }, { store }) => {
     );
   videoLinkCell.propTypes = {
     value: PropTypes.object,
-  };
-  const link = {
-    Header: (
-      <i className="fas fa-external-link-square-alt" style={{ color: 'red' }} aria-hidden="true">
-        Link
-      </i>
-    ), // Custom header components!
-    accessor: d => d.link,
-    minWidth: 200,
-    width: 300,
-    maxWidth: 400,
-    id: 'yt_link',
-    Cell: videoLinkCell,
   };
   const UserInfoCell = ({ value: from }) => (
     <div style={{ textAlign: 'left' }}>
@@ -114,13 +101,13 @@ const ChartTable = ({ data }, { store }) => {
       <div>
         {condition ? (
           <OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip">{value.message}</Tooltip>}>
-            <i className="fas fa-comment" style={{ color: 'green', cursor: 'pointer' }} aria-hidden="true" />
+            <FontAwesomeIcon icon={faComment} style={{ color: 'green', cursor: 'pointer' }} />
           </OverlayTrigger>
         ) : (
-          <i className="fas fa-times-circle" style={{ color: 'red', cursor: 'no-drop' }} />
+          <FontAwesomeIcon icon={faTimesCircle} style={{ color: 'red', cursor: 'no-drop' }} />
         )}
         <div>
-          <i className="far fa-thumbs-up" style={{ color: 'blue' }} aria-hidden="true" title="people reactions count" />
+          <FontAwesomeIcon icon={faThumbsUp} style={{ color: 'blue' }} title="people reactions count" />
           {value.reactions_num}
         </div>
       </div>
@@ -129,32 +116,7 @@ const ChartTable = ({ data }, { store }) => {
   ReactionCell.propTypes = {
     value: PropTypes.object,
   };
-  const post_info = [
-    {
-      Header: (
-        <i className="fas fa-user-circle" style={{ color: 'green' }} aria-hidden="true">
-          user
-        </i>
-      ),
-      resizable: true,
-      minWidth: 140,
-      maxWidth: 180,
-      id: 'user',
-      accessor: 'from',
-      Cell: UserInfoCell,
-    },
-    {
-      Header: <i className="fas fa-info-circle" style={{ color: 'blue' }} aria-hidden="true" />,
-      accessor: ({ message, reactions_num }) => ({ message, reactions_num }),
-      id: 'woc_f',
-      maxWidth: 50,
-      Cell: ReactionCell,
-    },
-    time,
-    link,
-  ];
-
-  const SelectCell = ({ value, row, onChange }) => (
+  const SelectCell = ({ value, row }) => (
     <Checkbox
       bsClass="chart-table__checkbox"
       checked={value}
@@ -172,7 +134,6 @@ const ChartTable = ({ data }, { store }) => {
   SelectCell.propTypes = {
     value: PropTypes.object,
     row: PropTypes.object,
-    onChange: PropTypes.func,
   };
   const columns = [
     {
@@ -180,7 +141,6 @@ const ChartTable = ({ data }, { store }) => {
       show: false,
       accessor: 'id',
     },
-
     {
       sortable: false,
       resizable: false,
@@ -196,19 +156,63 @@ const ChartTable = ({ data }, { store }) => {
       accessor: 'selected',
       Cell: SelectCell,
     },
-    ...post_info,
+    {
+      Header: (
+        <div>
+          <FontAwesomeIcon icon={faUserCircle} style={{ color: 'green' }} />
+          user
+        </div>
+      ),
+      resizable: true,
+      minWidth: 140,
+      maxWidth: 180,
+      id: 'user',
+      accessor: 'from',
+      Cell: UserInfoCell,
+    },
+    {
+      Header: <FontAwesomeIcon icon={faInfoCircle} style={{ color: 'blue' }} />,
+      accessor: ({ message, reactions_num }) => ({ message, reactions_num }),
+      id: 'woc_f',
+      maxWidth: 50,
+      Cell: ReactionCell,
+    },
+    {
+      Header: (
+        <div>
+          <FontAwesomeIcon icon={faClock} />Time
+        </div>
+      ),
+      id: 'createTime',
+      resizable: true,
+      minWidth: 100,
+      maxWidth: 200,
+      accessor: d => ({
+        created_time: getTime(d.created_time),
+        updated_time: getTime(d.updated_time),
+      }),
+      Cell: TimeCell,
+    },
+    {
+      Header: (
+        <div>
+          <FontAwesomeIcon icon={faExternalLinkSquareAlt} style={{ color: 'red' }} />
+          Link
+        </div>
+      ), // Custom header components!
+      accessor: d => d.link,
+      minWidth: 200,
+      id: 'yt_link',
+      Cell: videoLinkCell,
+    },
   ];
-  const tableOptions = {
-    filterable: false,
-    // filtered:[{id:'woc_f'},{id:'user'}],
-    resizable: false,
-    pageSizeOptions: [20, 50, 100],
-  };
   return (
     <ReactTable
       data={data}
-      className="-striped -highlight"
-      {...tableOptions}
+      className="-striped -highlight chart-table"
+      filterable={false}
+      resizable={false}
+      pageSizeOptions={[20, 50, 100]}
       columns={columns}
       defaultPageSize={20}
       minRows={10}

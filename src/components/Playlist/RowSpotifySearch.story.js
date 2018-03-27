@@ -26,6 +26,7 @@ storiesOf('RowSpotifySearch', module)
       onUpdateClick={action('Update click')}
       onSwap={action('Swap action')}
       onSearchClick={action('searchClick')}
+      onClearClick={action('clearClick')}
       search_id={1}
       selected={{
         preview_url: '',

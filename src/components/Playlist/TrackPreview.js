@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 
 const TrackPreview = ({ artists, preview_url, external_urls, trackName, noLink }) => {
   const artistsList = (artists || []).map(elem => elem.name).join(' & ');
@@ -15,7 +17,7 @@ const TrackPreview = ({ artists, preview_url, external_urls, trackName, noLink }
         {!noLink && (
           <a href={(external_urls || {}).spotify} target="_newtab">
             {' go to '}
-            <i className="fab fa-spotify" aria-hidden="true" />
+            <FontAwesomeIcon icon={faSpotify} aria-hidden="true" />
           </a>
         )}
       </span>

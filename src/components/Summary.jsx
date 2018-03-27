@@ -4,6 +4,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Badge, Button, ButtonGroup } from 'react-bootstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/fontawesome-free-brands';
+import { faClipboard } from '@fortawesome/fontawesome-free-solid';
 import './components.css';
 
 const copy = require('clipboard-copy');
@@ -63,16 +66,16 @@ export default class Summary extends React.Component {
           <h3 id="summary">Summary</h3>
           <ButtonGroup>
             <Button bsStyle="info" onClick={this.onCopyToClipboard} title="copy to clipboard">
-              copy<i className="fas fa-clipboard" style={{ paddingLeft: 5 }} />
+              <FontAwesomeIcon icon={faClipboard} /> copy
             </Button>
             <Button
               onClick={() => {
-                alert('Not implemented jet.');
+                console.info('Not implemented jet.');
               }}
               disabled
             >
-              <span style={{ paddingRight: 3 }}>publish</span>
-              <i className="fab fa-facebook" />
+              <FontAwesomeIcon icon={faFacebook} />
+              <span> publish</span>
             </Button>
           </ButtonGroup>
         </div>

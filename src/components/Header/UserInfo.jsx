@@ -4,6 +4,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Image, Well } from 'react-bootstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 import './Header.css';
 // TODO save information about user to database, do it somewhere else
 // const { writeUserData } = require('./../../utils');
@@ -18,7 +20,7 @@ const UserInfo = ({ fb_user, sp_user, onLogoutClick }) => (
       <br />
       {sp_user.id !== undefined && (
         <div className="spotify">
-          <i className="fab fa-spotify" />
+          <FontAwesomeIcon icon={faSpotify} />
           <span>{sp_user.id}</span>
         </div>
       )}
