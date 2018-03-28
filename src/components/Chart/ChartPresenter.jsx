@@ -9,7 +9,7 @@ import { faFacebook, faSpotify } from '@fortawesome/fontawesome-free-brands';
 import { faList, faTable } from '@fortawesome/fontawesome-free-solid';
 
 import Summary from '../Summary';
-import ChartTable from './ChartTable';
+import ChartTable from './ChartTable2';
 import ChartHeader from './ChartHeader';
 import SpotifySearch from '../Playlist/SpotifySearch';
 import WestLetter from '../WestLetter';
