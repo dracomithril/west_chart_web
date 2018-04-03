@@ -5,7 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MenuItem } from 'react-bootstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretUp, faMinus, faSearch, faSync, faTimes } from '@fortawesome/fontawesome-free-solid';
+import { faCaretDown, faCaretUp, faSearch, faSync, faTimes } from '@fortawesome/fontawesome-free-solid';
 import './playlist.css';
 import TrackPreview from './TrackPreview';
 
@@ -89,7 +89,7 @@ class RowSpotifySearch extends React.Component {
                 />
               </label>
 
-              <div>
+              <div className="row-spotify-search__button-group">
                 <button onClick={() => onSwap && onSwap(search_id)} title="swap artist with title">
                   <FontAwesomeIcon icon={faSync} />
                 </button>
@@ -106,9 +106,7 @@ class RowSpotifySearch extends React.Component {
                     }}
                     title="show/hide found tracks"
                   >
-                    {tracks_list.length === 0 ? (
-                      <FontAwesomeIcon icon={faMinus} />
-                    ) : (
+                    {tracks_list.length !== 0 && (
                       <FontAwesomeIcon icon={this.state.showList ? faCaretUp : faCaretDown} />
                     )}
                   </button>

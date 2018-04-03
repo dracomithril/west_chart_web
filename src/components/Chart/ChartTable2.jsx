@@ -46,7 +46,17 @@ const ChartTable = ({ data }, { store }) => {
       {ChartRows}
     </div>
   ) : (
-    <div style={{ textAlign: 'center' }}>No data</div>
+    <div
+      style={{
+        textAlign: 'center',
+        justifyContent: 'center',
+        minHeight: 300,
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      No data
+    </div>
   );
 };
 

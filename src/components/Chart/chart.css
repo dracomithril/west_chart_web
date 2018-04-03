@@ -16,12 +16,8 @@
 }
 
 .chart-header__group-buttons {
-    /*float: left;*/
-    margin-left: 10px;
-    margin-right: 10px;
     text-align: center;
     padding-top: 15px;
-    /*height: 100px;*/
 }
 
 .chart-presenter__tab-content {
@@ -175,6 +171,7 @@
 .chart-row__link {
     display: flex;
     flex-grow: 2;
+    min-width: 200px;
     border: 2px solid lightblue;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -212,6 +209,12 @@
 
 .checkbox-one {
     margin: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: unset;
+}
+.checkbox-one__input {
+    margin-right: 5px;
 }
 @media screen and (min-width: 375px){
     .chart-row__user-info__name {
@@ -220,7 +223,7 @@
 }
 @media screen and (min-width: 700px) {
     .chart-header {
-        height: 120px;
+        /*height: 120px;*/
         align-items: center;
         justify-content: flex-start;
         padding-left: 5px;
@@ -228,6 +231,11 @@
 
     .update-info {
         flex-flow: row;
+    }
+    .chart-row__link {
+        min-width: 300px;
+        max-width: 400px;
+
     }
 
     .chart-table {
@@ -238,6 +246,9 @@
     .chart-presenter__tab-content {
         min-width: 700px;
         align-items: center;
+    }
+    .chart-row__user-info__name {
+        min-width: 100px;
     }
 
 }

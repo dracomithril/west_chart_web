@@ -3,15 +3,19 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Checkbox } from 'react-bootstrap';
+// import { Checkbox } from 'react-bootstrap';
+import Checkbox from '../universal/Checkbox';
 
 const FilterOption = ({ id, name, days, checked, onChange, onValueChange, desc_start, desc_end }) => (
   <Checkbox
+    color="cornflowerblue"
     name={name}
     id={`${id}_checkbox`}
     className="filter-option"
     checked={checked}
-    onChange={({ target }) => onChange({ checked: target.checked, id })}
+    onChange={target => {
+      onChange({ checked: target.checked, id });
+    }}
   >
     {desc_start}
     <input

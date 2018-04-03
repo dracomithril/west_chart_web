@@ -11,7 +11,9 @@ import {
 } from '@fortawesome/fontawesome-free-solid';
 import Checkbox from '../universal/Checkbox';
 
-function formatDate(date) {
+const dateToLocaleString = (date, options) => date.toLocaleString(navigator.language || 'pl-PL', options);
+
+function shortFormatDate(date) {
   if (date) {
     const date2 = new Date(date);
     const yearNow = new Date().getFullYear();
@@ -20,31 +22,26 @@ function formatDate(date) {
       month: 'numeric',
     };
     if (yearNow === date2.getFullYear()) {
-      return date2.toLocaleString('pl-PL', options);
+      return dateToLocaleString(date2, options);
     }
-    return date2.toLocaleString('pl-PL', { year: 'numeric', ...options });
+    return dateToLocaleString(date2, { year: '2-digit', ...options });
   }
   return '';
 }
 
-function fullFormatDate(date) {
+const fullFormatDate = date => {
   if (date) {
-    const date2 = new Date(date);
-    const yearNow = new Date().getFullYear();
-    const options = {
+    return dateToLocaleString(new Date(date), {
       day: 'numeric',
       month: 'numeric',
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-    };
-    if (yearNow === date2.getFullYear()) {
-      return date2.toLocaleString('pl-PL', options);
-    }
-    return date2.toLocaleString('pl-PL', { year: 'numeric', ...options });
+      year: 'numeric',
+    });
   }
   return '';
-}
+};
 
 const ChartRow = ({ from = {}, link = {}, checked, created_time, onChange, updated_time, ...props }) => {
   const showUpdateTime = updated_time && updated_time !== created_time;
@@ -79,18 +76,22 @@ const ChartRow = ({ from = {}, link = {}, checked, created_time, onChange, updat
           </span>
         </div>
         <div className="chart-row__time-info">
-          <FontAwesomeIcon icon={faClock} />
-          {created_time && (
+          <FontAwesomeIcon icon={faClock} color="black" style={{ marginBottom: 5 }} />
+          {created_time ? (
             <span style={{ color: 'red' }} title={`creation time: ${fullFormatDate(created_time)}`}>
-              <FontAwesomeIcon icon={faCaretRight} /> {formatDate(created_time)}
+              <FontAwesomeIcon icon={faCaretRight} /> {shortFormatDate(created_time)}
             </span>
+          ) : (
+            <span
+              style={{ minWidth: 40, display: 'block', minHeight: 10, backgroundColor: 'lightgray', marginBottom: 5 }}
+            />
           )}
           {showUpdateTime && (
             <span style={{ color: 'green' }} title={`update time: ${fullFormatDate(updated_time)}`}>
-              <FontAwesomeIcon icon={faCaretUp} /> {formatDate(updated_time)}
+              <FontAwesomeIcon icon={faCaretUp} /> {shortFormatDate(updated_time)}
             </span>
           )}
-        </div>{' '}
+        </div>
       </div>
       <div className="chart-row__link">
         <FontAwesomeIcon icon={faExternalLinkSquareAlt} style={{ color: 'red' }} />

@@ -40,7 +40,14 @@ export default class Header extends React.Component {
         />
 
         <PageHeader bsClass="title-header">Music Helper</PageHeader>
-        {user.name && <UserInfo fb_user={user} sp_user={sp_user} onLogoutClick={this.onLogoutClick} />}
+        <UserInfo
+          fb_user={user}
+          sp_user={sp_user}
+          onLogoutClick={this.onLogoutClick}
+          onFbLogin={response => {
+            store.dispatch({ type: action_types.UPDATE_USER, response });
+          }}
+        />
       </div>
     );
   }

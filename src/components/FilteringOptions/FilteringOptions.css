@@ -1,7 +1,10 @@
 .filter-option {
-    padding: 3px;
+    padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
     margin-top: unset;
     margin-bottom: unset;
+    margin-left: unset;
 }
 
 .filter-option__days {
@@ -10,43 +13,86 @@
     margin-right: 3px;
     margin-bottom: 5px;
     text-align: right;
-    max-width: 30px;
+    max-width: 40px;
     border: 1px solid lightgray;
 }
 
-.filter_panel {
+.filter-panel {
+    margin-top: 3px;
     display: flex;
     flex-direction: column;
-    height: calc(100% - 5px);
-    flex-basis: 100px;
+    /*flex-basis: 100px;*/
     align-items: baseline;
-    flex-wrap: wrap;
+    align-content: center;
+    /*flex-wrap: wrap;*/
     flex-grow: 2;
-    justify-content: space-around;
     padding-top: 5px;
-    border: 1px solid #bce8f1;
     padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid #bce8f1;
     font-size: smaller;
     /*overflow-y: scroll;*/
     border-radius: 3px;
-    max-height: 100px;
+    height: calc(100% - 5px);
+    min-width: 310px;
 }
 
-@media screen and (min-width: 470px) {
-    .filter_panel {
-        min-width: 320px;
+.filter-panel__header {
+    border-bottom: 1px solid lightblue;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-panel__containers_base {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.filter-panel__containers_additional {
+    display: flex;
+}
+
+.filter-panel__containers {
+
+}
+
+@media screen and (min-width: 374px) {
+    .filter-panel__containers_base {
+        max-height: 90px;
     }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 470px) {
+    .filter-panel__containers_base {
+        max-height: 80px;
+    }
+}
+
+@media screen and (min-width: 600px) {
     .filter-option__days {
         max-width: 50px;
         min-width: 20px;
         border-color: revert;
     }
 
-    .filter_panel {
-        max-width: 400px;
-        min-width: 380px;
+    .filter-panel__containers {
+        display: flex;
+        flex-flow: row wrap;
+        /*align-items: stretch;*/
+        align-self: stretch;
+    }
+
+    .filter-panel {
+        min-width: 415px;
+    }
+    .filter-panel__containers_base{
+        min-width: 100%;
+    }
+
+    .filter-panel__containers_additional {
+        display: flex;
+        flex-direction: row;
     }
 }

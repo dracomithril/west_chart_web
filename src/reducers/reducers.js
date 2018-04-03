@@ -183,13 +183,22 @@ const control_state = (control, action) => {
   }
 };
 const filters = (state = {}, action) => ({
-  create_control: control_state(state.create_control || { checked: true, id: 'create', days: showDays }, action),
-  update_control: control_state(state.update_control || { checked: false, id: 'update', days: showDays }, action),
+  create_control: control_state(
+    state.create_control || { checked: true, id: 'create', days: showDays, type: 'counter' },
+    action,
+  ),
+  update_control: control_state(
+    state.update_control || { checked: false, id: 'update', days: showDays, type: 'counter' },
+    action,
+  ),
   // todo less & more should be count or value it shows how many reaction was for post
-  less_control: control_state(state.less_control || { checked: false, id: 'less', days: 15 }, action),
-  more_control: control_state(state.more_control || { checked: false, id: 'more', days: 1 }, action),
-  woc_control: control_state(state.woc_control || { checked: true, id: 'woc' }, action),
-  westletter_control: control_state(state.westletter_control || { checked: true, id: 'westletter' }, action),
+  less_control: control_state(state.less_control || { checked: false, id: 'less', days: 15, type: 'counter' }, action),
+  more_control: control_state(state.more_control || { checked: false, id: 'more', days: 1, type: 'counter' }, action),
+  woc_control: control_state(state.woc_control || { checked: false, id: 'woc', type: 'text' }, action),
+  westletter_control: control_state(
+    state.westletter_control || { checked: false, id: 'westletter', type: 'text' },
+    action,
+  ),
 });
 const errors = (state = [], action) => {
   switch (action.type) {

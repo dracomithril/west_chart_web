@@ -74,9 +74,11 @@ export const filterChart = (chart, filters, until, songs_per_day) => {
   );
 
   const filters_defaults = [...filters_def.control, ...filters_def.text];
-  const filtersToUse = filters_defaults
-    .filter(({ input }) => filters[input.name].checked)
-    .map(e => ({ ...e, days: filters[e.input.name].days, until }));
+  const filtersToUse = filters_defaults.map(e => {
+    const filter = filters[e.input.name];
+    return { check: e.check, valueName: e.valueName, until, ...filter };
+  });
+
   const view_chart = chart.filter(elem => filtersToUse.every(filter => filter.check(elem, filter)));
   const songs_per_day2 = groupBy(view_chart, elem => new Date(elem.created_time).toDateString());
   const error_days = Object.keys(songs_per_day2)

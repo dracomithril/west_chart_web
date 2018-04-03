@@ -9,10 +9,13 @@ const woc_string = 'Wielkie Ogarnianie Charta';
  * @param elem
  * @param filter
  */
-const countDays = (elem, { valueName, until, days }) => {
-  const date = elem[valueName];
-  const cIn1 = new Date(date).getTime();
-  return cIn1 - subtractDaysFromDate(until, days).getTime() > 0;
+const countDays = (elem, { valueName, until, days, checked }) => {
+  if (checked) {
+    const date = elem[valueName];
+    const cIn1 = new Date(date).getTime();
+    return cIn1 - subtractDaysFromDate(until, days).getTime() > 0;
+  }
+  return true;
 };
 
 /**
@@ -49,18 +52,32 @@ const filters = [
     input: { name: 'more_control' },
     description: { start: 'more then' },
     type: 'more',
-    check: ({ reactions_num }, { days }) => reactions_num > days,
+    check: ({ reactions_num }, { days, checked }) => (checked ? reactions_num > days : true),
   },
   {
     control: { name: 'less_then_control', id: 'less' },
     input: { name: 'less_control' },
     description: { start: 'less then' },
     type: 'less',
-    check: ({ reactions_num }, { days }) => reactions_num < days,
+    check: ({ reactions_num }, { days, checked }) => (checked ? reactions_num < days : true),
   },
 ];
 
 const text_check = ({ message }, { text }) => (message !== undefined ? !message.toLowerCase().includes(text) : true);
+
+/**
+ * Check for text
+ * table of truth
+ * checked | valid | show
+ * 0       | 0     | true
+ * 0       | 1     | false
+ * 1       | 0     | true
+ * 1       | 1     | true
+ * @param regex
+ * @return {function({message?: *}, *): boolean}
+ */
+const textCheck = regex => ({ message }, filter) => (filter.checked ? true : !regex.test(message));
+const regexWestletter = /WCS\s?Weekly[\Wa-z0-9\s;()]*Westletter/gi;
 const text_filters = [
   {
     control: { name: 'woc_text_control', id: 'woc' },
@@ -76,7 +93,7 @@ const text_filters = [
       name: 'westletter_control',
     },
     text: westletter.toLowerCase(),
-    check: text_check,
+    check: textCheck(regexWestletter),
   },
 ];
 const exp = {

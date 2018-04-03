@@ -26,8 +26,17 @@ storiesOf('ChartRow', module)
       reactions_num={3}
       userImage="/pic/concerned_deadpool.jpg"
       from={{ first_name: 'Captain', last_name: 'Deadpool' }}
-      link={{ url: 'my_link', title: 'song title' }}
+      link={{ url: 'my_link', title: 'really long song title' }}
       created_time="03/16/2018"
+    />
+  ))
+  .add('props one date, no message, last year', () => (
+    <ChartRow
+      reactions_num={3}
+      userImage="/pic/concerned_deadpool.jpg"
+      from={{ first_name: 'Captain', last_name: 'Deadpool' }}
+      link={{ url: 'my_link', title: 'really long song title' }}
+      created_time="03/16/2017"
     />
   ))
   .add('props two dates', () => (
