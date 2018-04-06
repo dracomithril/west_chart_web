@@ -5,21 +5,27 @@ exports[`<UserInfo/> renders without crashing 1`] = `
   bsClass="logged"
 >
   <div>
-    <Image
-      bsClass="img"
-      circle={true}
-      responsive={false}
-      rounded={false}
-      thumbnail={false}
-    />
     <span>
-      Hi, undefined
+      Hi, stranger
     </span>
     <br />
     <span>
       it is nice to see you again.
     </span>
     <br />
+    <t
+      appId="1173486879387948"
+      autoLoad={true}
+      callback={[Function]}
+      cssClass="kep-login-facebook"
+      fields="id,email,name,first_name,picture,groups{administrator}"
+      language="pl_PL"
+      scope="public_profile,email,user_managed_groups"
+      size="metro"
+      tag="button"
+      textButton="Login with Facebook"
+      typeButton="button"
+    />
     <div
       style={
         Object {

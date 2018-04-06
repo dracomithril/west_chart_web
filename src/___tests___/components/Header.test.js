@@ -13,7 +13,7 @@ Enzyme.configure({ adapter: new Adapter() });
 const initial_state = require('../data/initial_state.json');
 const mockStore = configureMockStore([]);
 describe('<Header/>', () => {
-  it('renders without crashing ChartPresenter', () => {
+  xit('renders without crashing ChartPresenter', () => {
     const store = mockStore(initial_state);
     const wrapper = mount(
       <Header/>, {

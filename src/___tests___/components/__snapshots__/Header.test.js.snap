@@ -36,6 +36,7 @@ exports[`<Header/> render user info 1`] = `
         "name": "Simba",
       }
     }
+    onFbLogin={[Function]}
     onLogoutClick={[Function]}
     sp_user={Object {}}
   />

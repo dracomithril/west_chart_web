@@ -11,7 +11,7 @@ import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 import './../bootstrap-social.css';
 import './LoginAlert.css';
 import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
-import config from './../../config';
+import { api } from './../../config';
 import { action_types } from './../../reducers/action_types';
 
 const SpotifyLogin = ({ from }) => (
@@ -54,7 +54,7 @@ const LoginAlert = (props, { store }) => {
       </h4>
       {user.id === undefined && (
         <FacebookLogin
-          appId={config.api.fb.apiId}
+          appId={api.fb.apiId}
           language="pl_PL"
           autoLoad
           scope="public_profile,email,user_managed_groups"

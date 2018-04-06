@@ -197,13 +197,12 @@ describe('filters', function () {
     const state = undefined;
     const result = reducers.filters(state, action);
     const expected = {
-      "create_control": { "checked": true, "days": 7, "id": "create" },
-      "less_control": { "checked": false, "days": 15, "id": "less" },
-      "more_control": { "checked": false, "days": 1, "id": "more" },
-      "update_control": { "checked": false, "days": 7, "id": "update" },
-      "woc_control": { "checked": true, "id": "woc" },
-      "westletter_control": { "checked": true, "id": "westletter" },
-
+      "create_control": { "checked": true, "days": 7, "id": "create", "type": "counter" },
+      "less_control": { "checked": false, "days": 15, "id": "less", "type": "counter" },
+      "more_control": { "checked": false, "days": 1, "id": "more", "type": "counter" },
+      "update_control": { "checked": false, "days": 7, "id": "update", "type": "counter" },
+      "westletter_control": { "checked": false, "id": "westletter", "type": "text" },
+      "woc_control": { "checked": false, "id": "woc", "type": "text" },
     };
     expect(result).toEqual(expected);
   });
@@ -216,12 +215,12 @@ describe('filters', function () {
     const state = undefined;
     const result = reducers.filters(state, action);
     const expected = {
-      "create_control": { "checked": true, "days": 7, "id": "create" },
-      "less_control": { "checked": false, "days": 15, "id": "less" },
-      "more_control": { "checked": false, "days": 1, "id": "more" },
-      "update_control": { "checked": false, "days": 7, "id": "update" },
-      "woc_control": { "checked": true, "id": "woc" },
-      "westletter_control": { "checked": true, "id": "westletter" },
+      "create_control": { "checked": true, "days": 7, "id": "create", "type": "counter" },
+      "less_control": { "checked": false, "days": 15, "id": "less", "type": "counter" },
+      "more_control": { "checked": false, "days": 1, "id": "more", "type": "counter" },
+      "update_control": { "checked": false, "days": 7, "id": "update", "type": "counter" },
+      "westletter_control": { "checked": false, "id": "westletter", "type": "text" },
+      "woc_control": { "checked": false, "id": "woc", "type": "text" },
     };
     expect(result).toEqual(expected);
   });
@@ -273,8 +272,8 @@ describe('filters', function () {
       "less_control": { "checked": false, "days": 15, "id": "less" },
       "more_control": { "checked": false, "days": 1, "id": "more" },
       "update_control": { "checked": false, "days": 7, "id": "update" },
+      "westletter_control": { "checked": false, "id": "westletter", "type": "text" },
       "woc_control": { "checked": true, "id": "woc" },
-      "westletter_control": { "checked": true, "id": "westletter" },
     };
     expect(result).toEqual(expected);
   });

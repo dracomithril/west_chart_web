@@ -97,11 +97,30 @@ export const filterChart = (chart, filters, until, songs_per_day) => {
 export const getChartFromServer = query_params => {
   const url = `/api/fb/get_chart?${qs.stringify(query_params)}`;
   console.time('client-obtain-chart');
-  return fetch(url).then(resp => {
-    console.info('obtained chart list');
-    console.timeEnd('client-obtain-chart');
-    return resp.status === 200 ? resp.json() : Promise.reject(resp);
-  });
+  return fetch(url)
+    .then(resp => {
+      console.info('obtained chart list');
+      console.timeEnd('client-obtain-chart');
+      return resp.status === 200 ? resp.json() : Promise.reject(resp);
+    })
+    .then(({ chart, ...other }) =>
+      Promise.resolve({
+        ...other,
+        chart: chart.map(chartEntry => {
+          const entry = getArtist_Title(chartEntry.link.title);
+          return {
+            ...chartEntry,
+            search: {
+              artist: entry.artist,
+              title: entry.title,
+              full_title: chartEntry.link.title,
+              items: [],
+              selected: {},
+            },
+          };
+        }),
+      }),
+    );
 };
 
 export const getArtist_Title = name => {

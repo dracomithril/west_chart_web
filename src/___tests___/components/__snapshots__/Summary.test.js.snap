@@ -27,15 +27,36 @@ exports[`<Summary/> renders without crashing 1`] = `
         onClick={[Function]}
         title="copy to clipboard"
       >
-        copy
-        <i
-          className="fas fa-clipboard"
-          style={
+        <FontAwesomeIcon$1
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
             Object {
-              "paddingLeft": 5,
+              "icon": Array [
+                384,
+                512,
+                Array [],
+                "f328",
+                "M384 112v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h80c0-35.29 28.71-64 64-64s64 28.71 64 64h80c26.51 0 48 21.49 48 48zM192 40c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m96 114v-20a6 6 0 0 0-6-6H102a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h180a6 6 0 0 0 6-6z",
+              ],
+              "iconName": "clipboard",
+              "prefix": "fas",
             }
           }
+          listItem={false}
+          mask={null}
+          name=""
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          transform={null}
         />
+         copy
       </Button>
       <Button
         active={false}
@@ -45,18 +66,38 @@ exports[`<Summary/> renders without crashing 1`] = `
         disabled={true}
         onClick={[Function]}
       >
-        <span
-          style={
+        <FontAwesomeIcon$1
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon={
             Object {
-              "paddingRight": 3,
+              "icon": Array [
+                448,
+                512,
+                Array [],
+                "f09a",
+                "M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z",
+              ],
+              "iconName": "facebook",
+              "prefix": "fab",
             }
           }
-        >
-          publish
-        </span>
-        <i
-          className="fab fa-facebook"
+          listItem={false}
+          mask={null}
+          name=""
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          symbol={false}
+          transform={null}
         />
+        <span>
+           publish
+        </span>
       </Button>
     </ButtonGroup>
   </div>

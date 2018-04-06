@@ -6,10 +6,20 @@ exports[`<LoginAlert/> renders without crashing ChartPresenter 1`] = `
   componentClass="div"
 >
   <h4>
-    To start working witch us you need to login to facebook and spotify.
-    <i
-      className="fas fa-heart"
-    />
+    <span
+      aria-label="heart"
+      role="img"
+    >
+      ❤️❤️❤️
+    </span>
+    ️ To start working witch us you need to login to facebook and spotify.
+    <span
+      aria-label="heart"
+      role="img"
+    >
+      ❤️❤️❤️
+    </span>
+    ️
   </h4>
   <t
     appId="1173486879387948"

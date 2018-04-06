@@ -2,14 +2,11 @@
 
 exports[`<FilteringOption/> renders without crashing ChartPresenter 1`] = `
 <Checkbox
-  bsClass="checkbox"
   className="filter-option"
-  disabled={false}
+  color="cornflowerblue"
   id="create_checkbox"
-  inline={false}
   name="date_create_control"
   onChange={[Function]}
-  title=""
 >
   created in last 
   <input
@@ -26,15 +23,12 @@ exports[`<FilteringOption/> renders without crashing ChartPresenter 1`] = `
 
 exports[`<FilteringOption/> should be able to change state of woc checkbox 1`] = `
 <Checkbox
-  bsClass="checkbox"
   checked={true}
   className="filter-option"
-  disabled={false}
+  color="cornflowerblue"
   id="create_checkbox"
-  inline={false}
   name="date_create_control"
   onChange={[Function]}
-  title=""
 >
   created in last 
   <input

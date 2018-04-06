@@ -20,12 +20,11 @@ class RowSpotifySearch extends React.Component {
   render() {
     const {
       id,
-      search_id,
       artist,
       title,
       full_title,
       selected: selected_track,
-      items,
+      items = [],
       onSwap,
       onUpdateClick,
       onSearchClick,
@@ -36,7 +35,7 @@ class RowSpotifySearch extends React.Component {
         key={track.id}
         id={`mi_select_track_${id}`}
         onClick={() => {
-          onUpdateClick({ id: search_id, value: track, field: 'selected' });
+          onUpdateClick({ id, value: track, field: 'selected' });
           this.setState({ showList: false });
         }}
         style={{ backgroundColor: 'snow' }}
@@ -64,39 +63,37 @@ class RowSpotifySearch extends React.Component {
                 haveIssue ? 'row-spotify-search__track-search--error' : 'row-spotify-search__track-search--good'
               }
             >
-              <label htmlFor={`${search_id}_artist`}>
+              <label htmlFor={`${id}_artist`}>
                 artist:
                 <input
                   type="text"
-                  id={`${search_id}_artist`}
+                  id={`${id}_artist`}
                   value={artist || ''}
                   placeholder="artist name"
                   onChange={({ target }) => {
-                    onUpdateClick({ id: search_id, value: target.value, field: 'artist' });
+                    onUpdateClick({ id, value: target.value, field: 'artist' });
                   }}
                 />
               </label>
-              <label htmlFor={`${search_id}_title`}>
+              <label htmlFor={`${id}_title`}>
                 title:
                 <input
                   type="text"
-                  id={`${search_id}_title`}
+                  id={`${id}_title`}
                   value={title || ''}
                   placeholder="song title"
-                  onChange={({ target }) =>
-                    onUpdateClick && onUpdateClick({ id: search_id, value: target.value, field: 'title' })
-                  }
+                  onChange={({ target }) => onUpdateClick && onUpdateClick({ id, value: target.value, field: 'title' })}
                 />
               </label>
 
               <div className="row-spotify-search__button-group">
-                <button onClick={() => onSwap && onSwap(search_id)} title="swap artist with title">
+                <button onClick={() => onSwap && onSwap(id)} title="swap artist with title">
                   <FontAwesomeIcon icon={faSync} />
                 </button>
                 <button id={`button-${id}`} onClick={() => onSearchClick && onSearchClick()} title="search for tracks">
                   <FontAwesomeIcon icon={faSearch} />
                 </button>
-                <button title="clear selected" onClick={() => onClearClick && onClearClick({ id: search_id })}>
+                <button title="clear selected" onClick={() => onClearClick && onClearClick({ id })}>
                   <FontAwesomeIcon icon={faTimes} />
                 </button>
                 {tracks_list.length !== 0 && (
@@ -138,7 +135,6 @@ RowSpotifySearch.propTypes = {
   onSwap: PropTypes.func,
   id: PropTypes.string,
   items: PropTypes.array,
-  search_id: PropTypes.number,
   artist: PropTypes.string,
   title: PropTypes.string,
   full_title: PropTypes.string,

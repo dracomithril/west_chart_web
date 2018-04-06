@@ -88,6 +88,7 @@
     display: flex;
     justify-content: center;
 }
+
 .row-spotify-search__button-group button {
     border: 1px solid lightgrey;
     min-width: 50px;
@@ -108,6 +109,7 @@
     padding-right: 5px;
     text-align: center;
 }
+
 .track-preview audio {
     max-width: 270px;
 }
@@ -117,7 +119,7 @@
     border-radius: 10px;
     padding: 5px;
     margin: 1px;
-    align-self: flex-start;
+    align-self: stretch;
     background-color: #d1eec7;
 }
 
@@ -135,6 +137,10 @@
         flex-direction: row;
         align-self: flex-start;
         /*min-width: 650px;*/
+    }
+
+    .row-spotify-search__track_view {
+
     }
 
     .spotify-search {

@@ -13,7 +13,10 @@ const countDays = (elem, { valueName, until, days, checked }) => {
   if (checked) {
     const date = elem[valueName];
     const cIn1 = new Date(date).getTime();
-    return cIn1 - subtractDaysFromDate(until, days).getTime() > 0;
+    const time = subtractDaysFromDate(until, days).getTime();
+    const timeLeft = cIn1 - time;
+    // what if its newer then until
+    return timeLeft > 0;
   }
   return true;
 };
@@ -63,7 +66,7 @@ const filters = [
   },
 ];
 
-const text_check = ({ message }, { text }) => (message !== undefined ? !message.toLowerCase().includes(text) : true);
+const text_check = text => ({ message }) => (message !== undefined ? !message.toLowerCase().includes(text) : true);
 
 /**
  * Check for text
@@ -85,7 +88,7 @@ const text_filters = [
       name: 'woc_control',
     },
     text: woc_string.toLowerCase(),
-    check: text_check,
+    check: text_check(woc_string.toLowerCase()),
   },
   {
     control: { name: 'westletter_text_control', id: 'westletter' },

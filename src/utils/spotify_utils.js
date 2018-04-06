@@ -2,7 +2,7 @@
  * Created by XKTR67 on 5/11/2017.
  */
 import Spotify from 'spotify-web-api-node';
-import config from './../config';
+import { api, hostname } from './../config';
 
 const spotifyApi = new Spotify();
 const Cookies = require('cookies-js');
@@ -139,9 +139,8 @@ export const getTracks = (accessToken, user, playlist_name) => {
  * @param title {string}
  * @param search_id
  * @param accessToken
- * @param store
  */
-export const searchForMusic = ({ artist, title, search_id }, accessToken) => {
+export const searchForMusic = ({ artist, title, id }, accessToken) => {
   spotifyApi.setAccessToken(accessToken);
   return spotifyApi
     .searchTracks(`${artist} ${title}`)
@@ -152,7 +151,7 @@ export const searchForMusic = ({ artist, title, search_id }, accessToken) => {
     .then(data =>
       Promise.resolve({
         value: data.body.tracks.items,
-        id: search_id,
+        id,
       }),
     )
     .catch(e => {
@@ -165,7 +164,7 @@ export const searchForMusic = ({ artist, title, search_id }, accessToken) => {
  */
 const refresh_auth = refresh_token => {
   console.info('refreshing token');
-  return fetch(config.api.spotify.refreshToken, {
+  return fetch(api.spotify.refreshToken, {
     method: 'POST',
     // mode: 'cors',
     body: JSON.stringify({ refresh_token }),
@@ -214,7 +213,7 @@ export const getCredentials = () =>
       Promise.resolve(result),
     );
 export const loginToSpotifyAlpha = from =>
-  fetch(config.api.spotify.login, {
+  fetch(api.spotify.login, {
     credentials: 'include',
     redirect: 'fallow',
     accept: 'application/json',
@@ -225,13 +224,13 @@ export const loginToSpotifyAlpha = from =>
       if (from)
         Cookies.set('spotify_redirect_to', from, {
           expires: 60000,
-          domain: config.hostname || undefined,
+          domain: hostname || undefined,
         });
       return Promise.resolve(url);
     });
 
 export const obtain_credentials = () =>
-  fetch(config.api.spotify.obtainCredentials, {
+  fetch(api.spotify.obtainCredentials, {
     method: 'GET',
     credentials: 'include',
     accept: 'application/json',
@@ -268,6 +267,5 @@ const exports = {
   addTrucksToPlaylistNoRepeats,
   getUserAndPlaylists,
   getTracks,
-  obtain_credentials,
 };
 export default exports;

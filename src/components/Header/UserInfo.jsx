@@ -9,7 +9,7 @@ import FacebookLogin from 'react-facebook-login';
 import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 import './../bootstrap-social.css';
 import './Header.css';
-import config from '../../config';
+import { api } from '../../config';
 // TODO save information about user to database, do it somewhere else
 
 const UserInfo = ({ fb_user, sp_user, onLogoutClick, onFbLogin }) => (
@@ -22,7 +22,7 @@ const UserInfo = ({ fb_user, sp_user, onLogoutClick, onFbLogin }) => (
       <br />
       {fb_user.id === undefined ? (
         <FacebookLogin
-          appId={config.api.fb.apiId}
+          appId={api.fb.apiId}
           language="pl_PL"
           autoLoad
           scope="public_profile,email,user_managed_groups"

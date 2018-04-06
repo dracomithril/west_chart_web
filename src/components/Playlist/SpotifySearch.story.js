@@ -7,7 +7,6 @@ import configureStore from '../../configureStore';
 import selected from './../../___tests___/data/serach-list.json';
 
 const state = {
-  search_list: selected.list,
   sp_playlist_info: {
     url: null,
     preview_url: null,
@@ -29,4 +28,4 @@ storiesOf('SpotifySearch', module)
     </Provider>
   ))
   .addDecorator(story => <Provider store={store}>{story()}</Provider>)
-  .add('More elements', () => <SpotifySearch selected={[]} />);
+  .add('More elements', () => <SpotifySearch selected={selected.list} />);
