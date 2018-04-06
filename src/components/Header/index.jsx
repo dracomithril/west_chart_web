@@ -9,6 +9,7 @@ import UserInfo from './UserInfo';
 import './Header.css';
 
 import { action_types } from './../../reducers/action_types';
+import { mapUser } from '../../utils/utils';
 
 export default class Header extends React.Component {
   componentDidMount() {
@@ -23,8 +24,6 @@ export default class Header extends React.Component {
   onLogoutClick = () => {
     const { store } = this.context;
     store.dispatch({ type: action_types.SIGN_OUT_USER });
-    sessionStorage.removeItem('fb_user');
-    sessionStorage.removeItem('sp_user');
     window.location = '/';
   };
 
@@ -45,7 +44,12 @@ export default class Header extends React.Component {
           sp_user={sp_user}
           onLogoutClick={this.onLogoutClick}
           onFbLogin={response => {
-            store.dispatch({ type: action_types.UPDATE_USER, response });
+            if (!response.error) {
+              store.dispatch({ type: action_types.UPDATE_USER, value: mapUser(response) });
+            } else {
+              console.error('login error.');
+              console.error(response.error);
+            }
           }}
         />
       </div>

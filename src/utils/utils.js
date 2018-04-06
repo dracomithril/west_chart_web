@@ -93,6 +93,17 @@ export const filterChart = (chart, filters, until, songs_per_day) => {
     });
   return { view_chart, error_days, westLetters };
 };
+export const mapUser = (response = {}) => ({
+  accessToken: response.accessToken,
+  email: response.email,
+  first_name: response.first_name,
+  expiresIn: response.expiresIn,
+  id: response.id,
+  name: response.name,
+  signedRequest: response.signedRequest,
+  userID: response.userID,
+  picture_url: ((response.picture || {}).data || {}).url,
+});
 
 export const getChartFromServer = query_params => {
   const url = `/api/fb/get_chart?${qs.stringify(query_params)}`;
@@ -218,7 +229,7 @@ export const UpdateChart = store => {
     })
     .catch(err => {
       console.error('Error in fetch chart.');
-      store.dispatch({ type: action_types.ADD_ERROR, values: err });
+      store.dispatch({ type: action_types.ADD_ERROR, value: err });
       store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: false });
     });
 };

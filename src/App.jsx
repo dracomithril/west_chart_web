@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Nav, NavItem } from 'react-bootstrap';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import ChartPresenter from './components/Chart/ChartPresenter';
 import './App.css';
+import ChartPresenter from './components/Chart/ChartPresenter';
 import ErrorConsole from './components/ErrorConsole';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -12,17 +12,13 @@ import LoginAlert from './components/LoginAlert';
 import Policy from './components/Policy';
 import NotFound from './components/NotFound';
 import { getCredentials } from './utils/spotify_utils';
-import { action_types } from './reducers/action_types';
+import { action_types } from './reducers';
 
 const pathways = ['/', '/chart', '/combiner'];
 
 const PrivateRoute = ({ component: Component, ...rest }, { store }) => {
-  const { user, sp_user } = store.getState();
-  const isAuthenticated = !!user.id && !!sp_user.id;
-  // if (isAuthenticated) {
-  //   let result = asyncCall(store, rest.path);
-  //   console.info('is autenticated', result);
-  // }
+  const { user } = store.getState();
+  const isAuthenticated = !!user.id;
   return (
     <Route
       {...rest}
@@ -57,44 +53,38 @@ const About = () => (
   </div>
 );
 
-const Navigation = (props, { store }) => (
-  <div>
-    <Nav
-      bsStyle="tabs"
-      activeKey={(() => pathways.indexOf(window.location.pathname))()}
-      onSelect={selectedKey => {
-        const { user, sp_user } = store.getState();
-        console.info(`selected key: ${selectedKey}`);
-        if (user && user.id) {
-          sessionStorage.setItem('user', JSON.stringify(user));
-        }
-        if (sp_user && sp_user.id) {
-          sessionStorage.setItem('spotify-user', JSON.stringify(sp_user));
-        }
-      }}
-    >
-      <NavItem eventKey={0} href="/">
-        Info
-      </NavItem>
-
-      <NavItem eventKey={1} href="/chart">
-        Chart
-      </NavItem>
-      <NavItem eventKey={2} href="/combiner">
-        Combiner(BETA)
-      </NavItem>
-    </Nav>
-    <Switch>
-      <Route exact path="/" component={About} />
-      <Route path="/policy" ecact component={Policy} />
-      <Route path="/login" component={LoginAlert} />
-      {/* <Route path="/login/:cred" component={LoginAlert} /> */}
-      <PrivateRoute path="/chart" exact component={ChartPresenter} />
-      <PrivateRoute path="/combiner" exact component={Combiner} />
-      <Route component={NotFound} />
-    </Switch>
-  </div>
-);
+const Navigation = (props, { store }) => {
+  const { sp_user } = store.getState();
+  return (
+    <div>
+      <Nav
+        bsStyle="tabs"
+        activeKey={(() => pathways.indexOf(window.location.pathname))()}
+        onSelect={selectedKey => {
+          console.info(`selected key: ${selectedKey}`);
+        }}
+      >
+        <NavItem eventKey={0} href="/">
+          Info
+        </NavItem>
+        <NavItem eventKey={1} href="/chart">
+          Chart
+        </NavItem>
+        <NavItem eventKey={2} href="/combiner">
+          Combiner(BETA)
+        </NavItem>
+      </Nav>
+      <Switch>
+        <Route exact path="/" component={About} />
+        <Route path="/policy" ecact component={Policy} />
+        <Route path="/login" component={LoginAlert} />
+        <PrivateRoute path="/chart" exact component={ChartPresenter} />
+        {sp_user.id && <PrivateRoute path="/combiner" exact component={Combiner} />}
+        <Route component={NotFound} />
+      </Switch>
+    </div>
+  );
+};
 Navigation.contextTypes = {
   store: PropTypes.object,
 };
@@ -113,6 +103,7 @@ class App extends React.Component {
       })
       .catch(() => Promise.resolve(false));
   }
+
   componentDidMount() {
     const { store } = this.context;
     this.unsubscribe = store.subscribe(() => this.forceUpdate());
@@ -126,7 +117,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <ErrorConsole />
         <Navigation />
         <Footer />
       </div>

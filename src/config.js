@@ -8,6 +8,7 @@ const port = process.env.PORT || 3001;
 const protocol = isProduction ? 'https' : undefined;
 export const hostname = isProduction ? process.env.REACT_APP_API_URL : undefined;
 const fbAppId = process.env.NODE_ENV === 'production' ? '1173483302721639' : '1173486879387948';
+export const facebookGroup = '1707149242852457';
 export const api = {
   fb: {
     apiId: fbAppId,

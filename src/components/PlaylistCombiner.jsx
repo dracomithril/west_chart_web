@@ -58,8 +58,6 @@ export default class PlaylistCombiner extends React.Component {
         .catch(e => {
           store.dispatch({ type: action_types.ADD_ERROR, value: e });
           store.dispatch({ type: action_types.SIGN_OUT_USER });
-          sessionStorage.removeItem('fb_user');
-          sessionStorage.removeItem('sp_user');
           return Promise.resolve();
         });
     }

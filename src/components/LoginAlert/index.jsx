@@ -11,6 +11,7 @@ import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 import './../bootstrap-social.css';
 import './LoginAlert.css';
 import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
+import { mapUser } from '../../utils/utils';
 import { api } from './../../config';
 import { action_types } from './../../reducers/action_types';
 
@@ -59,7 +60,12 @@ const LoginAlert = (props, { store }) => {
           autoLoad
           scope="public_profile,email,user_managed_groups"
           callback={response => {
-            store.dispatch({ type: action_types.UPDATE_USER, response });
+            if (!response.error) {
+              store.dispatch({ type: action_types.UPDATE_USER, value: mapUser(response) });
+            } else {
+              console.error('login error.');
+              console.error(response.error);
+            }
           }}
           fields={'id,email,name,first_name,picture,groups{administrator}'}
           cssClass="btn btn-social btn-facebook"

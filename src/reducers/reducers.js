@@ -9,36 +9,11 @@ const _ = require('lodash');
 
 const showDays = 7;
 
-// TODO sessionState storing of User data?
-
-const map_user = response => {
-  const isGroupAdmin =
-    response.groups.data.filter(elem => elem.id === '1707149242852457' && elem.administrator === true).length > 0;
-  return {
-    accessToken: response.accessToken,
-    email: response.email,
-    first_name: response.first_name,
-    expiresIn: response.expiresIn,
-    id: response.id,
-    name: response.name,
-    signedRequest: response.signedRequest,
-    userID: response.userID,
-    picture_url: response.picture.data.url,
-    isGroupAdmin,
-  };
-};
-
 const user = (state, action) => {
   switch (action.type) {
     case action_types.UPDATE_USER: {
-      const { response } = action;
-      if (!response.error) {
-        // sessionStorage.setItem('fb_user', JSON.stringify(userData));
-        return map_user(response);
-      }
-      console.error('login error.');
-      console.error(response.error);
-      return state;
+      const { value } = action;
+      return value || state;
     }
     case action_types.SIGN_OUT_USER:
       return {};
@@ -52,7 +27,6 @@ const user = (state, action) => {
 const sp_user = (state, action) => {
   switch (action.type) {
     case action_types.UPDATE_SP_USER: {
-      // sessionStorage.setItem('sp_user', JSON.stringify(userData));
       return Object.assign({}, state, action.user, {
         access_token: action.access_token,
         refresh_token: action.refresh_token,
@@ -68,7 +42,6 @@ const sp_user = (state, action) => {
     case action_types.UPDATE_SP_USER_LS:
       return Object.assign({}, state, action.value);
     default: {
-      // const parse = JSON.parse(sessionStorage.getItem('sp_user'));
       return state || {};
     }
   }
@@ -300,7 +273,7 @@ const isPlaylistPrivate = (state = false, action) =>
 const sp_playlist_info = (state = { url: null, pl_name: '' }, action) =>
   action.type === action_types.UPDATE_PLAYLIST_INFO ? action.value : state;
 const hasAcCookie = (state = false, action) => (action.type === action_types.TOGGLE_HAS_COOKIE ? action.value : state);
-const reducers = {
+export const reducers = {
   filters,
   user,
   chart,
