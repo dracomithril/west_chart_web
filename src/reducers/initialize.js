@@ -14,7 +14,7 @@ function getFacebookUser() {
 
 function getStartDate() {
   const untilDate = moment();
-  const sinceDate = untilDate.subtract(31, 'days');
+  const sinceDate = moment(untilDate).subtract(14, 'days');
   return {
     start_date: moment(),
     untilDate,

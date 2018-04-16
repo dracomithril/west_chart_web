@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import SongsPerDay from './SongsPerDay';
 import FilteringOptions from '../FilteringOptions/index';
-import PickYourDate from './PickYourDate';
+import PickYourDate from './PickYourDate2';
 import '../components.css';
 import './chart.css';
 import { action_types } from './../../reducers/action_types';
@@ -34,6 +34,24 @@ function selectedItem(id) {
 }
 
 export default class ChartHeader extends React.Component {
+  onDateChange = actionType => date => {
+    const { store } = this.context;
+    store.dispatch({ type: actionType, date });
+  };
+
+  onDaysChange = target => {
+    const { store } = this.context;
+    store.dispatch({ type: action_types.UPDATE_SHOW_LAST, days: Number(target.value) });
+  };
+
+  onChange = target => {
+    const { store } = this.context;
+    store.dispatch({
+      type: action_types.TOGGLE_ENABLE_UNTIL,
+      checked: target.checked,
+    });
+  };
+
   quickSummary = () => {
     const { store } = this.context;
     UpdateChart(store)
@@ -55,33 +73,21 @@ export default class ChartHeader extends React.Component {
         tab.click();
       });
   };
-
   render() {
     const { store } = this.context;
-    const { enable_until, songs_per_day, start_date, show_last } = store.getState();
+    const { enable_until, songs_per_day, sinceDate, untilDate } = store.getState();
     const { error_days } = this.props;
-    const onDateChange = date => {
-      store.dispatch({ type: action_types.UPDATE_START_TIME, date });
-    };
-    const onDaysChange = target => {
-      store.dispatch({ type: action_types.UPDATE_SHOW_LAST, days: Number(target.value) });
-    };
-
-    const onChange = target =>
-      store.dispatch({
-        type: action_types.TOGGLE_ENABLE_UNTIL,
-        checked: target.checked,
-      });
     return (
       <div className="chart-header">
         <div className="chart-header__left_dock">
           <PickYourDate
+            since={sinceDate}
+            until={untilDate}
             checked={enable_until}
-            start_date={start_date}
-            show_last={show_last}
-            onChange={onChange}
-            onDaysChange={onDaysChange}
-            onDateChange={onDateChange}
+            onChange={this.onChange}
+            onDaysChange={this.onDaysChange}
+            onSinceDateChange={this.onDateChange(action_types.UPDATE_SINCE_DATE)}
+            onUntilDateChange={this.onDateChange(action_types.UPDATE_UNTIL_DATE)}
           />
           <SongsPerDay
             error_days={error_days}

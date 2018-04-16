@@ -276,7 +276,7 @@ const control_state = (control, action) => {
 };
 const filters = (state = {}, action) => ({
   create_control: control_state(
-    state.create_control || { checked: true, id: 'create', days: showDays, type: 'counter' },
+    state.create_control || { checked: false, id: 'create', days: showDays, type: 'counter' },
     action,
   ),
   update_control: control_state(

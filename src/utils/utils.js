@@ -169,6 +169,18 @@ const getQueryParams = (enable_until, start_date, show_last, user) => {
   };
 };
 
+/**
+ * @returns {{days: *, since: number, until: number, access_token: (string|*)}}
+ * @param since
+ * @param until
+ * @param accessToken
+ */
+const getQueryParams2 = (since, until, accessToken) => ({
+  since: since.unix(),
+  until: until.unix(),
+  access_token: accessToken,
+});
+
 const weekNumber = date => {
   const onejan = new Date(date.getFullYear(), 0, 1);
   return Math.ceil(((date - onejan) / 86400000 + onejan.getDay() + 1) / 7);
@@ -206,10 +218,8 @@ export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?h
 
 export const UpdateChart = store => {
   store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: true });
-  const { user, start_date, show_last } = store.getState();
-  const query_params = getQueryParams(null, start_date, show_last, user);
-  store.dispatch({ type: 'UPDATE_SINCE', date: query_params.since * 1000 });
-  store.dispatch({ type: 'UPDATE_UNTIL', date: query_params.until * 1000 });
+  const { user, sinceDate, untilDate } = store.getState();
+  const query_params = getQueryParams2(sinceDate, untilDate, user.accessToken);
   return getChartFromServer(query_params)
     .then(body => {
       console.info(`chart list witch ${body.chart.length}`);
