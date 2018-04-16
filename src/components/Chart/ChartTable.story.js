@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Provider } from 'react-redux';
 import ChartTable from './ChartTable';
 import configureStore from '../../configureStore';
-import response from './../../___tests___/data/response.json';
+import response from './../../___data___/chartData';
 
 const state = {
   filters: {
@@ -14,11 +14,11 @@ const state = {
   },
   show_wait: false,
   user: {},
-  ...response,
+  chart: response,
 };
 const store = configureStore(state);
 
 storiesOf('ChartTable', module)
   .addDecorator(story => <Provider store={store}>{story()}</Provider>)
   .add('Todo[VR]', () => <ChartTable data={[]} />)
-  .add('with elements [VR]', () => <ChartTable data={response.chart} />);
+  .add('with elements [VR]', () => <ChartTable data={response} />);

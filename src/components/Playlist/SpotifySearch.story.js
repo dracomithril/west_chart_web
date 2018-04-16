@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Provider } from 'react-redux';
 import SpotifySearch from './SpotifySearch';
 import configureStore from '../../configureStore';
-import selected from './../../___tests___/data/serach-list.json';
+import selected from './../../___tests___/___data___/serach-list.json';
 
 const state = {
   sp_playlist_info: {

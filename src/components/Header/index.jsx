@@ -3,13 +3,11 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PageHeader } from 'react-bootstrap';
 import CookieBanner from 'react-cookie-banner';
 import UserInfo from './UserInfo';
 import './Header.css';
 
 import { action_types } from './../../reducers/action_types';
-import { mapUser } from '../../utils/utils';
 
 export default class Header extends React.Component {
   componentDidMount() {
@@ -37,21 +35,7 @@ export default class Header extends React.Component {
           onAccept={() => {}}
           cookie="user-has-accepted-cookies"
         />
-
-        <PageHeader bsClass="title-header">Music Helper</PageHeader>
-        <UserInfo
-          fb_user={user}
-          sp_user={sp_user}
-          onLogoutClick={this.onLogoutClick}
-          onFbLogin={response => {
-            if (!response.error) {
-              store.dispatch({ type: action_types.UPDATE_USER, value: mapUser(response) });
-            } else {
-              console.error('login error.');
-              console.error(response.error);
-            }
-          }}
-        />
+        <UserInfo fb_user={user} sp_user={sp_user} onLogoutClick={this.onLogoutClick} />
       </div>
     );
   }

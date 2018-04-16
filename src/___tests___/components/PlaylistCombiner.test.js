@@ -12,7 +12,7 @@ import configureMockStore from "redux-mock-store";
 Enzyme.configure({ adapter: new Adapter() });
 // const sinon = require('sinon');
 jest.mock('./../../utils/spotify_utils');
-const initial_state = require('../data/initial_state.json');
+const initial_state = require('../___data___/initial_state.json');
 const mockStore = configureMockStore([]);
 xdescribe('<PlaylistCombiner/>', () => {
   it('renders without crashing ChartPresenter', (done) => {

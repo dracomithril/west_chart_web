@@ -6,12 +6,8 @@ import { action_types } from '../reducers/action_types';
 import moment from 'moment';
 
 beforeAll(() => {
-  global.sessionStorage = jest.genMockFunction();
-  global.sessionStorage.setItem = jest.genMockFunction();
-  global.sessionStorage.getItem = jest.genMockFunction();
 });
 afterAll(() => {
-  delete global.sessionStorage;
   jest.unmock('moment');
 });
 beforeEach(function () {
@@ -141,7 +137,7 @@ describe('user', function () {
       error: { message: 'error' },
     };
     Object.freeze(state);
-    let resp = reducers.user(state, { type: action_types.UPDATE_USER, response: user });
+    let resp = reducers.user(state, { type: action_types.UPDATE_USER, value: user });
     expect(resp).toBe(state);
   });
   it("should return current state if different type used", function () {
@@ -150,7 +146,7 @@ describe('user', function () {
       error: { message: 'error' },
     };
     Object.freeze(state);
-    let resp = reducers.user(state, { type: action_types.UPDATE_SHOW_LAST, response: user });
+    let resp = reducers.user(state, { type: action_types.UPDATE_SHOW_LAST, value: user });
     expect(resp).toBe(state);
   });
   it("should return updated user", function () {
@@ -159,36 +155,18 @@ describe('user', function () {
       accessToken: 'zzzzz',
       email: 'email',
       first_name: 'Zuza',
-      expiresIn: 'some date',
+      last_name: 'Graba',
+      expiresIn: 34567,
       id: 'zzzz1',
-      name: 'Graba',
+      name: 'Zuza Graba',
       signedRequest: 'dgaskdashd',
-      userID: 'zzzz1',
-      picture: { data: { url: 'http://zzzz1' } },
-      groups: {
-        data: [
-          {
-            id: '1707149242852457',
-            administrator: true,
-          },
-        ],
-      },
-    };
-    const result = {
-      accessToken: 'zzzzz',
-      email: 'email',
-      first_name: 'Zuza',
-      expiresIn: 'some date',
-      id: 'zzzz1',
-      name: 'Graba',
-      signedRequest: 'dgaskdashd',
-      userID: 'zzzz1',
+      userID: "zzzzz",
       picture_url: 'http://zzzz1',
-      isGroupAdmin: true,
     };
     Object.freeze(state);
-    let resp = reducers.user(state, { type: action_types.UPDATE_USER, response: user });
-    expect(resp).toEqual(result);
+    const { userID, signedRequest, ...expected } = user;
+    let resp = reducers.user(state, { type: action_types.UPDATE_USER, value: user });
+    expect(resp).toEqual(expected);
   });
 });
 describe('filters', function () {

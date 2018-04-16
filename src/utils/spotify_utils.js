@@ -140,9 +140,9 @@ export const getTracks = (accessToken, user, playlist_name) => {
  * @param search_id
  * @param accessToken
  */
-export const searchForMusic = ({ artist, title, id }, accessToken) => {
-  spotifyApi.setAccessToken(accessToken);
-  return spotifyApi
+export const searchForMusic = ({ artist, title, id }, accessToken) =>
+  // spotifyApi.setAccessToken(accessToken);
+  spotifyApi
     .searchTracks(`${artist} ${title}`)
     .catch(resp => {
       Cookies.expire(acToken);
@@ -157,7 +157,6 @@ export const searchForMusic = ({ artist, title, id }, accessToken) => {
     .catch(e => {
       console.error('error obtaining track', e.message);
     });
-};
 /**
  * @param refresh_token
  * @return {Promise<Spotify_credentials>}

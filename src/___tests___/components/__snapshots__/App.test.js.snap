@@ -5,7 +5,6 @@ exports[`<App/> renders without crashing 1`] = `
   className="App"
 >
   <Header />
-  <ErrorConsole />
   <Navigation />
   <Footer />
 </div>

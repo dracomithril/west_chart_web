@@ -36,8 +36,8 @@ export const sorting = {
    */
   who: array => {
     array.sort((a, b) => {
-      if (a.from_user < b.from_user) return -1;
-      if (a.from_user > b.from_user) return 1;
+      if (a.from.name < b.from.name) return -1;
+      if (a.from.name > b.from.name) return 1;
       return 0;
     });
   },
@@ -46,7 +46,9 @@ export const sorting = {
    * @param array
    */
   when: array => {
-    array.sort((a, b) => (a.added_time ? a.added_time.getTime() : 0) - (b.added_time ? b.added_time.getTime() : 0));
+    array.sort(
+      (a, b) => (a.created_time ? a.created_time.getTime() : 0) - (b.created_time ? b.created_time.getTime() : 0),
+    );
   },
   /**
    * ascending
@@ -65,7 +67,7 @@ export const sorting = {
  * @param filters
  * @param until
  * @param songs_per_day
- * @return {{view_chart, error_days: any[], westLetters}}
+ * @return {{view_chart: any[], error_days: any[], westLetters: any[]}}
  */
 export const filterChart = (chart, filters, until, songs_per_day) => {
   const news_letter_filter = filters_def.text[1];
@@ -93,17 +95,6 @@ export const filterChart = (chart, filters, until, songs_per_day) => {
     });
   return { view_chart, error_days, westLetters };
 };
-export const mapUser = (response = {}) => ({
-  accessToken: response.accessToken,
-  email: response.email,
-  first_name: response.first_name,
-  expiresIn: response.expiresIn,
-  id: response.id,
-  name: response.name,
-  signedRequest: response.signedRequest,
-  userID: response.userID,
-  picture_url: ((response.picture || {}).data || {}).url,
-});
 
 export const getChartFromServer = query_params => {
   const url = `/api/fb/get_chart?${qs.stringify(query_params)}`;

@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Nav, NavItem } from 'react-bootstrap';
+import { Nav, NavItem, Navbar } from 'react-bootstrap';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import ChartPresenter from './components/Chart/ChartPresenter';
-import ErrorConsole from './components/ErrorConsole';
 import Header from './components/Header';
+
 import Footer from './components/Footer';
 import Combiner from './components/PlaylistCombiner';
 import LoginAlert from './components/LoginAlert';
+import About from './components/About';
 import Policy from './components/Policy';
+import Demo from './components/Demo';
 import NotFound from './components/NotFound';
 import { getCredentials } from './utils/spotify_utils';
 import { action_types } from './reducers';
 
-const pathways = ['/', '/chart', '/combiner'];
+const pathways = ['/', '/chart', '/combiner', '/demo'];
 
 const PrivateRoute = ({ component: Component, ...rest }, { store }) => {
   const { user } = store.getState();
@@ -45,41 +47,45 @@ PrivateRoute.contextTypes = {
   store: PropTypes.object,
 };
 
-const About = () => (
-  <div>
-    <h2>Hi That will be introduction</h2>
-    <h3 style={{ color: 'red' }}>Creation in progress</h3>
-    <h4 style={{ color: 'gray' }}>Nothing is true everything is permitted</h4>
-  </div>
-);
-
 const Navigation = (props, { store }) => {
   const { sp_user } = store.getState();
   return (
     <div>
-      <Nav
-        bsStyle="tabs"
-        activeKey={(() => pathways.indexOf(window.location.pathname))()}
-        onSelect={selectedKey => {
-          console.info(`selected key: ${selectedKey}`);
-        }}
-      >
-        <NavItem eventKey={0} href="/">
-          Info
-        </NavItem>
-        <NavItem eventKey={1} href="/chart">
-          Chart
-        </NavItem>
-        <NavItem eventKey={2} href="/combiner">
-          Combiner(BETA)
-        </NavItem>
-      </Nav>
+      <Navbar collapseOnSelect>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <a href="/">Music Helper</a>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav>
+            <NavItem eventKey={0} href="/">
+              Info
+            </NavItem>
+            <NavItem eventKey={1} href="/chart">
+              Chart
+            </NavItem>
+            {sp_user.id && (
+              <NavItem eventKey={2} href="/combiner">
+                Combiner(BETA)
+              </NavItem>
+            )}
+            {window.location.pathname === '/demo' && (
+              <NavItem eventKey={2} href="/demo">
+                Demo
+              </NavItem>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
       <Switch>
         <Route exact path="/" component={About} />
-        <Route path="/policy" ecact component={Policy} />
+        <Route path="/policy" exact component={Policy} />
         <Route path="/login" component={LoginAlert} />
         <PrivateRoute path="/chart" exact component={ChartPresenter} />
         {sp_user.id && <PrivateRoute path="/combiner" exact component={Combiner} />}
+        <Route path="/demo" component={Demo} />
         <Route component={NotFound} />
       </Switch>
     </div>

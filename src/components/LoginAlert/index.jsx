@@ -11,7 +11,7 @@ import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 import './../bootstrap-social.css';
 import './LoginAlert.css';
 import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
-import { mapUser } from '../../utils/utils';
+import { getFbPictureUrl } from '../../utils/utils';
 import { api } from './../../config';
 import { action_types } from './../../reducers/action_types';
 
@@ -61,13 +61,19 @@ const LoginAlert = (props, { store }) => {
           scope="public_profile,email,user_managed_groups"
           callback={response => {
             if (!response.error) {
-              store.dispatch({ type: action_types.UPDATE_USER, value: mapUser(response) });
+              store.dispatch({
+                type: action_types.UPDATE_USER,
+                value: {
+                  ...response,
+                  picture_url: getFbPictureUrl(response.id),
+                },
+              });
             } else {
               console.error('login error.');
               console.error(response.error);
             }
           }}
-          fields={'id,email,name,first_name,picture,groups{administrator}'}
+          fields="id,email,name,first_name,last_name"
           cssClass="btn btn-social btn-facebook"
           icon="fab fa-facebook"
         />

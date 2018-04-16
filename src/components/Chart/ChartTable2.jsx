@@ -4,7 +4,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'react-table/react-table.css';
-import { getFbPictureUrl } from '../../utils/utils';
 import '../components.css';
 import '../../App.css';
 import ChartRow from './ChartRow';
@@ -21,7 +20,6 @@ const ChartTable = ({ data }, { store }) => {
       link={entry.link}
       from={entry.from}
       key={entry.id}
-      userImage={getFbPictureUrl(entry.from.id)}
       reactions_num={entry.reactions_num}
       message={entry.message}
       onChange={({ checked, id }) => {

@@ -102,19 +102,14 @@ class SpotifySearch extends React.Component {
           <FontAwesomeIcon icon={faSpotify} />
           spotify playlist:
         </div>
-        {sp_user.id && <PlaylistInfo info={sp_playlist_info} />}
-        {sp_user.id && (
-          <PlaylistForm
-            onCreatePlaylistClick={onCratePlaylistClick}
-            onStartClick={onStartClickHandler}
-            hasElements={(selected || []).length > 0}
-          />
-        )}
-        {!sp_user.id && (
-          <div>
-            <span>Sorry you need to be logged to spotify to be able to add playlist</span>
-          </div>
-        )}
+        <PlaylistInfo info={sp_playlist_info} />
+
+        <PlaylistForm
+          onCreatePlaylistClick={onCratePlaylistClick}
+          onStartClick={onStartClickHandler}
+          hasElements={(selected || []).length > 0}
+          isUserLogged={Boolean(sp_user.id)}
+        />
         <div className="spotify-search_list">{search_list_view.length > 0 && search_list_view}</div>
       </div>
     );

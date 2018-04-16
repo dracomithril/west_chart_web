@@ -30,9 +30,9 @@ export default class PlaylistForm extends Component {
   };
 
   render() {
-    const { onCreatePlaylistClick, onStartClick, hasElements } = this.props;
+    const { onCreatePlaylistClick, onStartClick, hasElements, isUserLogged } = this.props;
     const { playlistName, isPrivate } = this.state;
-    const disable_create = !(playlistName.length > 5 && hasElements);
+    const disable_create = !(playlistName.length > 5 && hasElements && isUserLogged);
     const validatePlaylistName = strLength => {
       if (strLength > 8) {
         return 'success';
@@ -70,7 +70,8 @@ export default class PlaylistForm extends Component {
             id="crt_pl_button"
             onClick={() => onCreatePlaylistClick && onCreatePlaylistClick({ playlistName, isPrivate })}
             disabled={disable_create}
-            bsStyle="danger"
+            bsStyle={disable_create ? 'info' : 'danger'}
+            title={disable_create ? 'Sorry you need to be logged to spotify to be able to add playlist' : ''}
           >
             <FontAwesomeIcon icon={faSave} /> save
           </Button>
@@ -96,6 +97,7 @@ PlaylistForm.contextTypes = {
 };
 PlaylistForm.propTypes = {
   hasElements: PropTypes.bool,
+  isUserLogged: PropTypes.bool,
   onStartClick: PropTypes.func,
   onCreatePlaylistClick: PropTypes.func,
 };

@@ -5,15 +5,44 @@
 import moment from 'moment';
 import { action_types } from './action_types';
 
+const Joi = require('joi-browser');
+
 const _ = require('lodash');
 
 const showDays = 7;
+const userSchema = Joi.object().keys({
+  id: Joi.string(),
+  email: Joi.string(),
+  name: Joi.string(),
+  first_name: Joi.string(),
+  accessToken: Joi.string(),
+  expiresIn: Joi.number(),
+  signedRequest: Joi.string().strip(),
+  last_name: Joi.string(),
+  picture_url: Joi.string(),
+  userID: Joi.any().strip(),
+});
 
+/**
+ * @typedef {Object} FacebookUserObject
+ * @property {string} id
+ * @property {string} email
+ * @property {string} accessToken
+ * @property {String} name
+ * @property {String} first_name
+ * @property {String} last_name
+ * @property {String} picture_url
+ */
+/**
+ * @param {FacebookUserObject} state
+ * @param action
+ * @returns {*}
+ */
 const user = (state, action) => {
   switch (action.type) {
     case action_types.UPDATE_USER: {
-      const { value } = action;
-      return value || state;
+      const { error, value } = Joi.validate(action.value, userSchema);
+      return error === null ? value : state;
     }
     case action_types.SIGN_OUT_USER:
       return {};
@@ -54,7 +83,7 @@ const sp_user = (state, action) => {
  * @property {String} from.last_name
  * @property {String} from.name
  * @property {String} from.id
- * @property {String} from_user
+ * @property {String} from.picture_url
  * @property {String} full_picture
  * @property {String} id
  * @property {Number} likes_num
@@ -84,7 +113,6 @@ const sp_user = (state, action) => {
         "name": "Christian Kaller",
         "id": "10154923867264727"
       },
-      "from_user": "Christian Kaller",
       "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQBhzCxlqHvNUO8L&w=1920&h=1080&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FqdXihu6qB1s%2Fmaxresdefault.jpg&crop&_nc_hash=AQBh_gQc8-zL-A-a",
       "id": "1707149242852457_2147664518800925",
       "likes_num": 3,
@@ -206,6 +234,13 @@ const sp_playlist_name = (state = '', action) =>
 const last_update = (state = '', action) => (action.type === action_types.UPDATE_LAST_UPDATE ? action.date : state);
 const start_date = (state = moment(), { type, date }) =>
   type === action_types.UPDATE_START_TIME ? moment(date) : state;
+
+const sinceDate = (state = moment(), { type, date }) =>
+  type === action_types.UPDATE_SINCE_DATE ? moment(date) : state;
+
+const untilDate = (state = moment(), { type, date }) =>
+  type === action_types.UPDATE_UNTIL_DATE ? moment(date) : state;
+
 const since = (state = 0, action) => (action.type === action_types.UPDATE_SINCE ? action.date : state);
 const until = (state = 0, action) => (action.type === action_types.UPDATE_UNTIL ? action.date : state);
 const show_wait = (state = false, action) => (action.type === action_types.CHANGE_SHOW_WAIT ? action.show : state);
@@ -282,7 +317,9 @@ export const reducers = {
   start_date,
   show_last,
   since,
+  sinceDate,
   until,
+  untilDate,
   list_sort,
   songs_per_day,
   sp_user,

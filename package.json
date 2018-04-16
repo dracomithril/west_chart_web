@@ -24,6 +24,7 @@
     "clipboard-copy": "2.0.0",
     "cookies-js": "^1.2.3",
     "history": "^4.7.2",
+    "joi-browser": "^13.0.1",
     "lodash": "^4.17.5",
     "moment": "^2.21.0",
     "prop-types": "^15.6.1",

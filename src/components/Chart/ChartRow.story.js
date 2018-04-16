@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 // import { Provider } from 'react-redux';
 import ChartRow from './ChartRow';
 // import configureStore from '../../configureStore';
+import { user1, user2 } from '../../___data___/chartData';
 
 // const state = {};
 // const store = configureStore(state);
@@ -14,8 +15,7 @@ storiesOf('ChartRow', module)
   .add('props one date', () => (
     <ChartRow
       reactions_num={3}
-      userImage="/pic/concerned_deadpool.jpg"
-      from={{ first_name: 'Captain', last_name: 'Deadpool' }}
+      from={user1}
       message="sdfsjdgcvgjdcjads"
       link={{ url: 'my_link', title: 'song title' }}
       created_time="03/16/2018"
@@ -24,8 +24,7 @@ storiesOf('ChartRow', module)
   .add('props one date, no message', () => (
     <ChartRow
       reactions_num={3}
-      userImage="/pic/concerned_deadpool.jpg"
-      from={{ first_name: 'Captain', last_name: 'Deadpool' }}
+      from={user2}
       link={{ url: 'my_link', title: 'really long song title' }}
       created_time="03/16/2018"
     />
@@ -33,8 +32,7 @@ storiesOf('ChartRow', module)
   .add('props one date, no message, last year', () => (
     <ChartRow
       reactions_num={3}
-      userImage="/pic/concerned_deadpool.jpg"
-      from={{ first_name: 'Captain', last_name: 'Deadpool' }}
+      from={user1}
       link={{ url: 'my_link', title: 'really long song title' }}
       created_time="03/16/2017"
     />
@@ -42,8 +40,7 @@ storiesOf('ChartRow', module)
   .add('props two dates', () => (
     <ChartRow
       reactions_num={3}
-      userImage="/pic/concerned_deadpool.jpg"
-      from={{ first_name: 'Captain', last_name: 'Deadpool' }}
+      from={user2}
       message="sdfsjdgcvgjdcjads"
       link={{ url: '#', title: 'song title' }}
       checked={checkedState}

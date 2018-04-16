@@ -26,7 +26,7 @@ export default class WestLetter extends React.Component {
         <div style={{ padding: 2, display: 'block', border: '1px black solid' }} key={elem.id}>
           <input type="checkbox" />
           <span hidden>{elem.id}</span>
-          <OverlayTrigger placement="bottom" overlay={<Tooltip id={`tt_${elem.id}`}>{elem.from_user}</Tooltip>}>
+          <OverlayTrigger placement="bottom" overlay={<Tooltip id={`tt_${elem.id}`}>{elem.from.name}</Tooltip>}>
             <Image src={getFbPictureUrl(elem.from.id)} />
           </OverlayTrigger>
 

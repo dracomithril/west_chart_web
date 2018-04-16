@@ -7,12 +7,11 @@ exports[`<ChartTable/> render with objects 1`] = `
       Object {
         "created_time": "2018-03-16T00:12:32+0000",
         "from": Object {
-          "first_name": "Kasia",
+          "first_name": "Absolutio",
           "id": "10156642943243502",
-          "last_name": "Stepek",
-          "name": "Kasia Stepek",
+          "last_name": "Messor",
+          "name": "Absolutio Messor",
         },
-        "from_user": "Kasia Stepek",
         "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDZ0dej7pLhmYRk&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FALIBUPY_UEc%2Fmaxresdefault.jpg&crop&_nc_hash=AQC0Z3Iw50mcYpnM",
         "id": "1707149242852457_2150864795147564",
         "likes_num": 4,
@@ -22,8 +21,7 @@ exports[`<ChartTable/> render with objects 1`] = `
           "type": "share",
           "url": "https://www.youtube.com/watch?v=ALIBUPY_UEc",
         },
-        "message": "Cover trochę już znienawidzonej przeze mnie piosenki :D
-    ",
+        "message": "Ship of a black madness, trade the power! ",
         "reactions_num": 4,
         "selected": true,
         "source": "https://www.youtube.com/embed/ALIBUPY_UEc?autoplay=1",
@@ -33,10 +31,10 @@ exports[`<ChartTable/> render with objects 1`] = `
       Object {
         "created_time": "2018-03-16T00:12:59+0000",
         "from": Object {
-          "first_name": "Agnieszka",
+          "first_name": "Gabalium ",
           "id": "10208047442080192",
-          "last_name": "Orzeł",
-          "name": "Agnieszka Orzeł",
+          "last_name": "Tunał",
+          "name": "Gabalium Orzeł",
         },
         "from_user": "Agnieszka Orzeł",
         "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDHJdA9ezDN2Zwr&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FrLKreFwTSYs%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCLSz6tWONEcLHh",
@@ -243,6 +241,31 @@ exports[`<ChartTable/> render with objects 1`] = `
         "link": Object {
           "name": "Years and Years - Sanctify (Lyrics)",
           "title": "Years and Years - Sanctify (Lyrics)",
+          "type": "share",
+          "url": "https://youtu.be/6aN4MJs8VEI",
+        },
+        "message": "https://youtu.be/6aN4MJs8VEI",
+        "reactions_num": 7,
+        "selected": false,
+        "source": "https://www.youtube.com/embed/6aN4MJs8VEI?autoplay=1",
+        "type": "video",
+        "updated_time": "2018-03-14T10:04:49+0000",
+      },
+      Object {
+        "created_time": "2018-03-14T10:04:49+0000",
+        "from": Object {
+          "first_name": "Andrei-Sebastian",
+          "id": "1395869030465760",
+          "last_name": "Petrescu asdfjhjldfadsafhljkadsfjl",
+          "name": "Andrei-Sebastian Petrescu",
+        },
+        "from_user": "Andrei-Sebastian Petrescu",
+        "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQCgDACAKPQ2hvZ4&w=480&h=360&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F6aN4MJs8VEI%2Fhqdefault.jpg&crop&sx=0&sy=0&sw=480&sh=360&_nc_hash=AQBPTMH0M3wCxcaL",
+        "id": "1707149242852457_2148796622021048asdsada",
+        "likes_num": 7,
+        "link": Object {
+          "name": "All About That Bass - Postmodern Jukebox European Tour Version",
+          "title": "All About That Bass - Postmodern Jukebox European Tour Version",
           "type": "share",
           "url": "https://youtu.be/6aN4MJs8VEI",
         },
@@ -869,12 +892,11 @@ exports[`<ChartTable/> render with objects 1`] = `
         Object {
           "created_time": "2018-03-16T00:12:32+0000",
           "from": Object {
-            "first_name": "Kasia",
+            "first_name": "Absolutio",
             "id": "10156642943243502",
-            "last_name": "Stepek",
-            "name": "Kasia Stepek",
+            "last_name": "Messor",
+            "name": "Absolutio Messor",
           },
-          "from_user": "Kasia Stepek",
           "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDZ0dej7pLhmYRk&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FALIBUPY_UEc%2Fmaxresdefault.jpg&crop&_nc_hash=AQC0Z3Iw50mcYpnM",
           "id": "1707149242852457_2150864795147564",
           "likes_num": 4,
@@ -884,8 +906,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             "type": "share",
             "url": "https://www.youtube.com/watch?v=ALIBUPY_UEc",
           },
-          "message": "Cover trochę już znienawidzonej przeze mnie piosenki :D
-      ",
+          "message": "Ship of a black madness, trade the power! ",
           "reactions_num": 4,
           "selected": true,
           "source": "https://www.youtube.com/embed/ALIBUPY_UEc?autoplay=1",
@@ -895,10 +916,10 @@ exports[`<ChartTable/> render with objects 1`] = `
         Object {
           "created_time": "2018-03-16T00:12:59+0000",
           "from": Object {
-            "first_name": "Agnieszka",
+            "first_name": "Gabalium ",
             "id": "10208047442080192",
-            "last_name": "Orzeł",
-            "name": "Agnieszka Orzeł",
+            "last_name": "Tunał",
+            "name": "Gabalium Orzeł",
           },
           "from_user": "Agnieszka Orzeł",
           "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDHJdA9ezDN2Zwr&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FrLKreFwTSYs%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCLSz6tWONEcLHh",
@@ -1105,6 +1126,31 @@ exports[`<ChartTable/> render with objects 1`] = `
           "link": Object {
             "name": "Years and Years - Sanctify (Lyrics)",
             "title": "Years and Years - Sanctify (Lyrics)",
+            "type": "share",
+            "url": "https://youtu.be/6aN4MJs8VEI",
+          },
+          "message": "https://youtu.be/6aN4MJs8VEI",
+          "reactions_num": 7,
+          "selected": false,
+          "source": "https://www.youtube.com/embed/6aN4MJs8VEI?autoplay=1",
+          "type": "video",
+          "updated_time": "2018-03-14T10:04:49+0000",
+        },
+        Object {
+          "created_time": "2018-03-14T10:04:49+0000",
+          "from": Object {
+            "first_name": "Andrei-Sebastian",
+            "id": "1395869030465760",
+            "last_name": "Petrescu asdfjhjldfadsafhljkadsfjl",
+            "name": "Andrei-Sebastian Petrescu",
+          },
+          "from_user": "Andrei-Sebastian Petrescu",
+          "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQCgDACAKPQ2hvZ4&w=480&h=360&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F6aN4MJs8VEI%2Fhqdefault.jpg&crop&sx=0&sy=0&sw=480&sh=360&_nc_hash=AQBPTMH0M3wCxcaL",
+          "id": "1707149242852457_2148796622021048asdsada",
+          "likes_num": 7,
+          "link": Object {
+            "name": "All About That Bass - Postmodern Jukebox European Tour Version",
+            "title": "All About That Bass - Postmodern Jukebox European Tour Version",
             "type": "share",
             "url": "https://youtu.be/6aN4MJs8VEI",
           },
@@ -2147,20 +2193,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10156642943243502/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10156642943243502/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -2179,7 +2225,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   }
                                 }
                               >
-                                Kasia
+                                Absolutio
                               </span>
                               <span
                                 style={
@@ -2188,7 +2234,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   }
                                 }
                               >
-                                Stepek
+                                Messor
                               </span>
                             </div>
                           </div>
@@ -2227,8 +2273,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   id="tooltip"
                                   placement="right"
                                 >
-                                  Cover trochę już znienawidzonej przeze mnie piosenki :D
-                                  
+                                  Ship of a black madness, trade the power! 
                                 </Tooltip>
                               }
                               placement="bottom"
@@ -2652,20 +2697,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10208047442080192/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10208047442080192/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -2684,7 +2729,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   }
                                 }
                               >
-                                Agnieszka
+                                Gabalium 
                               </span>
                               <span
                                 style={
@@ -2693,7 +2738,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                                   }
                                 }
                               >
-                                Orzeł
+                                Tunał
                               </span>
                             </div>
                           </div>
@@ -3069,20 +3114,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10154096820541759/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10154096820541759/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -3573,20 +3618,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10157624978443868/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10157624978443868/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -4020,20 +4065,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10157624978443868/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10157624978443868/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -4524,20 +4569,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/859129380897011/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/859129380897011/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -4971,20 +5016,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10208047442080192/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10208047442080192/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -5388,20 +5433,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/845939125553137/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/845939125553137/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -5835,20 +5880,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10211953265977773/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10211953265977773/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -6339,20 +6384,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/1395869030465760/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/1395869030465760/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -6725,6 +6770,453 @@ exports[`<ChartTable/> render with objects 1`] = `
                             bsClass="chart-table__checkbox"
                             checked={false}
                             disabled={false}
+                            id="1707149242852457_2148796622021048asdsada"
+                            inline={false}
+                            name="selected"
+                            onChange={[Function]}
+                            title=""
+                          >
+                            <div
+                              className="chart-table__checkbox"
+                            >
+                              <label
+                                title=""
+                              >
+                                <input
+                                  checked={false}
+                                  disabled={false}
+                                  id="1707149242852457_2148796622021048asdsada"
+                                  name="selected"
+                                  onChange={[Function]}
+                                  type="checkbox"
+                                />
+                              </label>
+                            </div>
+                          </Checkbox>
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="1-user"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "flex": "140 0 auto",
+                            "maxWidth": "180px",
+                            "width": "140px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "140 0 auto",
+                              "maxWidth": "180px",
+                              "width": "140px",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "textAlign": "left",
+                              }
+                            }
+                          >
+                            <Image
+                              bsClass="img"
+                              circle={false}
+                              responsive={false}
+                              rounded={false}
+                              style={
+                                Object {
+                                  "float": "left",
+                                  "height": 50,
+                                }
+                              }
+                              thumbnail={false}
+                            >
+                              <img
+                                className=""
+                                style={
+                                  Object {
+                                    "float": "left",
+                                    "height": 50,
+                                  }
+                                }
+                              />
+                            </Image>
+                            <div
+                              style={
+                                Object {
+                                  "display": "inline-grid",
+                                }
+                              }
+                            >
+                              <span
+                                style={
+                                  Object {
+                                    "paddingLeft": 10,
+                                  }
+                                }
+                              >
+                                Andrei-Sebastian
+                              </span>
+                              <span
+                                style={
+                                  Object {
+                                    "paddingLeft": 10,
+                                  }
+                                }
+                              >
+                                Petrescu asdfjhjldfadsafhljkadsfjl
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="2-woc_f"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "flex": "50 0 auto",
+                            "maxWidth": "50px",
+                            "width": "50px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "50 0 auto",
+                              "maxWidth": "50px",
+                              "width": "50px",
+                            }
+                          }
+                        >
+                          <div>
+                            <OverlayTrigger
+                              defaultOverlayShown={false}
+                              overlay={
+                                <Tooltip
+                                  bsClass="tooltip"
+                                  id="tooltip"
+                                  placement="right"
+                                >
+                                  https://youtu.be/6aN4MJs8VEI
+                                </Tooltip>
+                              }
+                              placement="bottom"
+                              trigger={
+                                Array [
+                                  "hover",
+                                  "focus",
+                                ]
+                              }
+                            >
+                              <FontAwesomeIcon$1
+                                border={false}
+                                className=""
+                                fixedWidth={false}
+                                flip={null}
+                                icon={
+                                  Object {
+                                    "icon": Array [
+                                      576,
+                                      512,
+                                      Array [],
+                                      "f075",
+                                      "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
+                                    ],
+                                    "iconName": "comment",
+                                    "prefix": "fas",
+                                  }
+                                }
+                                listItem={false}
+                                mask={null}
+                                name=""
+                                onBlur={[Function]}
+                                onClick={null}
+                                onFocus={[Function]}
+                                onMouseOut={[Function]}
+                                onMouseOver={[Function]}
+                                pull={null}
+                                pulse={false}
+                                rotation={null}
+                                size={null}
+                                spin={false}
+                                style={
+                                  Object {
+                                    "color": "green",
+                                    "cursor": "pointer",
+                                  }
+                                }
+                                symbol={false}
+                                transform={null}
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-comment fa-w-18 "
+                                  data-icon="comment"
+                                  data-prefix="fas"
+                                  onBlur={[Function]}
+                                  onClick={null}
+                                  onFocus={[Function]}
+                                  onMouseOut={[Function]}
+                                  onMouseOver={[Function]}
+                                  role="img"
+                                  style={
+                                    Object {
+                                      "color": "green",
+                                      "cursor": "pointer",
+                                    }
+                                  }
+                                  viewBox="0 0 576 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                              </FontAwesomeIcon$1>
+                            </OverlayTrigger>
+                            <div>
+                              <FontAwesomeIcon$1
+                                border={false}
+                                className=""
+                                fixedWidth={false}
+                                flip={null}
+                                icon={
+                                  Object {
+                                    "icon": Array [
+                                      512,
+                                      512,
+                                      Array [],
+                                      "f164",
+                                      "M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z",
+                                    ],
+                                    "iconName": "thumbs-up",
+                                    "prefix": "fas",
+                                  }
+                                }
+                                listItem={false}
+                                mask={null}
+                                name=""
+                                pull={null}
+                                pulse={false}
+                                rotation={null}
+                                size={null}
+                                spin={false}
+                                style={
+                                  Object {
+                                    "color": "blue",
+                                  }
+                                }
+                                symbol={false}
+                                title="people reactions count"
+                                transform={null}
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-thumbs-up fa-w-16 "
+                                  data-icon="thumbs-up"
+                                  data-prefix="fas"
+                                  role="img"
+                                  style={
+                                    Object {
+                                      "color": "blue",
+                                    }
+                                  }
+                                  title="people reactions count"
+                                  viewBox="0 0 512 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                              </FontAwesomeIcon$1>
+                              7
+                            </div>
+                          </div>
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="3-createTime"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "flex": "100 0 auto",
+                            "maxWidth": "200px",
+                            "width": "100px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "100 0 auto",
+                              "maxWidth": "200px",
+                              "width": "100px",
+                            }
+                          }
+                        >
+                          <div>
+                            <span
+                              style={
+                                Object {
+                                  "color": "red",
+                                }
+                              }
+                              title="creation time: 03-14 11:04:49"
+                            >
+                              <FontAwesomeIcon$1
+                                border={false}
+                                className=""
+                                fixedWidth={false}
+                                flip={null}
+                                icon={
+                                  Object {
+                                    "icon": Array [
+                                      192,
+                                      512,
+                                      Array [],
+                                      "f0da",
+                                      "M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z",
+                                    ],
+                                    "iconName": "caret-right",
+                                    "prefix": "fas",
+                                  }
+                                }
+                                listItem={false}
+                                mask={null}
+                                name=""
+                                pull={null}
+                                pulse={false}
+                                rotation={null}
+                                size={null}
+                                spin={false}
+                                symbol={false}
+                                transform={null}
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-caret-right fa-w-6 "
+                                  data-icon="caret-right"
+                                  data-prefix="fas"
+                                  role="img"
+                                  style={Object {}}
+                                  viewBox="0 0 192 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                              </FontAwesomeIcon$1>
+                               
+                              03-14
+                            </span>
+                            <br />
+                          </div>
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="4-yt_link"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "flex": "200 0 auto",
+                            "maxWidth": null,
+                            "width": "200px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "200 0 auto",
+                              "maxWidth": null,
+                              "width": "200px",
+                            }
+                          }
+                        >
+                          <a
+                            href="https://youtu.be/6aN4MJs8VEI"
+                            target="_newtab"
+                          >
+                            All About That Bass - Postmodern Jukebox European Tour Version
+                          </a>
+                        </div>
+                      </TdComponent>
+                    </div>
+                  </TrComponent>
+                </div>
+              </TrGroupComponent>
+              <TrGroupComponent
+                key="11"
+              >
+                <div
+                  className="rt-tr-group"
+                  role="rowgroup"
+                >
+                  <TrComponent
+                    className="-even"
+                  >
+                    <div
+                      className="rt-tr -even"
+                      role="row"
+                    >
+                      <TdComponent
+                        className=""
+                        key="0-selected"
+                        onClick={[Function]}
+                        style={
+                          Object {
+                            "flex": "40 0 auto",
+                            "maxWidth": "40px",
+                            "width": "40px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "40 0 auto",
+                              "maxWidth": "40px",
+                              "width": "40px",
+                            }
+                          }
+                        >
+                          <Checkbox
+                            bsClass="chart-table__checkbox"
+                            checked={false}
+                            disabled={false}
                             id="1707149242852457_2148584382042272"
                             inline={false}
                             name="selected"
@@ -6786,20 +7278,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/1772238849454824/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/1772238849454824/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -7132,17 +7624,17 @@ exports[`<ChartTable/> render with objects 1`] = `
                 </div>
               </TrGroupComponent>
               <TrGroupComponent
-                key="11"
+                key="12"
               >
                 <div
                   className="rt-tr-group"
                   role="rowgroup"
                 >
                   <TrComponent
-                    className="-even"
+                    className="-odd"
                   >
                     <div
-                      className="rt-tr -even"
+                      className="rt-tr -odd"
                       role="row"
                     >
                       <TdComponent
@@ -7234,20 +7726,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10213444859181757/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10213444859181757/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -7579,17 +8071,17 @@ exports[`<ChartTable/> render with objects 1`] = `
                 </div>
               </TrGroupComponent>
               <TrGroupComponent
-                key="12"
+                key="13"
               >
                 <div
                   className="rt-tr-group"
                   role="rowgroup"
                 >
                   <TrComponent
-                    className="-odd"
+                    className="-even"
                   >
                     <div
-                      className="rt-tr -odd"
+                      className="rt-tr -even"
                       role="row"
                     >
                       <TdComponent
@@ -7681,20 +8173,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/1388556494497508/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/1388556494497508/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -8084,17 +8576,17 @@ exports[`<ChartTable/> render with objects 1`] = `
                 </div>
               </TrGroupComponent>
               <TrGroupComponent
-                key="13"
+                key="14"
               >
                 <div
                   className="rt-tr-group"
                   role="rowgroup"
                 >
                   <TrComponent
-                    className="-even"
+                    className="-odd"
                   >
                     <div
-                      className="rt-tr -even"
+                      className="rt-tr -odd"
                       role="row"
                     >
                       <TdComponent
@@ -8186,20 +8678,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/1200728876676632/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/1200728876676632/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -8528,17 +9020,17 @@ exports[`<ChartTable/> render with objects 1`] = `
                 </div>
               </TrGroupComponent>
               <TrGroupComponent
-                key="14"
+                key="15"
               >
                 <div
                   className="rt-tr-group"
                   role="rowgroup"
                 >
                   <TrComponent
-                    className="-odd"
+                    className="-even"
                   >
                     <div
-                      className="rt-tr -odd"
+                      className="rt-tr -even"
                       role="row"
                     >
                       <TdComponent
@@ -8630,20 +9122,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10212221778208692/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10212221778208692/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -9032,17 +9524,17 @@ exports[`<ChartTable/> render with objects 1`] = `
                 </div>
               </TrGroupComponent>
               <TrGroupComponent
-                key="15"
+                key="16"
               >
                 <div
                   className="rt-tr-group"
                   role="rowgroup"
                 >
                   <TrComponent
-                    className="-even"
+                    className="-odd"
                   >
                     <div
-                      className="rt-tr -even"
+                      className="rt-tr -odd"
                       role="row"
                     >
                       <TdComponent
@@ -9134,20 +9626,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10211316159556733/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10211316159556733/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -9480,17 +9972,17 @@ exports[`<ChartTable/> render with objects 1`] = `
                 </div>
               </TrGroupComponent>
               <TrGroupComponent
-                key="16"
+                key="17"
               >
                 <div
                   className="rt-tr-group"
                   role="rowgroup"
                 >
                   <TrComponent
-                    className="-odd"
+                    className="-even"
                   >
                     <div
-                      className="rt-tr -odd"
+                      className="rt-tr -even"
                       role="row"
                     >
                       <TdComponent
@@ -9582,20 +10074,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10211953265977773/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10211953265977773/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -9984,17 +10476,17 @@ exports[`<ChartTable/> render with objects 1`] = `
                 </div>
               </TrGroupComponent>
               <TrGroupComponent
-                key="17"
+                key="18"
               >
                 <div
                   className="rt-tr-group"
                   role="rowgroup"
                 >
                   <TrComponent
-                    className="-even"
+                    className="-odd"
                   >
                     <div
-                      className="rt-tr -even"
+                      className="rt-tr -odd"
                       role="row"
                     >
                       <TdComponent
@@ -10086,20 +10578,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10208047442080192/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10208047442080192/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -10458,17 +10950,17 @@ exports[`<ChartTable/> render with objects 1`] = `
                 </div>
               </TrGroupComponent>
               <TrGroupComponent
-                key="18"
+                key="19"
               >
                 <div
                   className="rt-tr-group"
                   role="rowgroup"
                 >
                   <TrComponent
-                    className="-odd"
+                    className="-even"
                   >
                     <div
-                      className="rt-tr -odd"
+                      className="rt-tr -even"
                       role="row"
                     >
                       <TdComponent
@@ -10560,20 +11052,20 @@ exports[`<ChartTable/> render with objects 1`] = `
                               circle={false}
                               responsive={false}
                               rounded={false}
-                              src="https://graph.facebook.com/10211236160004958/picture?height=50"
                               style={
                                 Object {
                                   "float": "left",
+                                  "height": 50,
                                 }
                               }
                               thumbnail={false}
                             >
                               <img
                                 className=""
-                                src="https://graph.facebook.com/10211236160004958/picture?height=50"
                                 style={
                                   Object {
                                     "float": "left",
+                                    "height": 50,
                                   }
                                 }
                               />
@@ -10868,509 +11360,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                           >
                             G-Eazy & Halsey - Him & I (Official Video)
                           </a>
-                        </div>
-                      </TdComponent>
-                    </div>
-                  </TrComponent>
-                </div>
-              </TrGroupComponent>
-              <TrGroupComponent
-                key="19"
-              >
-                <div
-                  className="rt-tr-group"
-                  role="rowgroup"
-                >
-                  <TrComponent
-                    className="-even"
-                  >
-                    <div
-                      className="rt-tr -even"
-                      role="row"
-                    >
-                      <TdComponent
-                        className=""
-                        key="0-selected"
-                        onClick={[Function]}
-                        style={
-                          Object {
-                            "flex": "40 0 auto",
-                            "maxWidth": "40px",
-                            "width": "40px",
-                          }
-                        }
-                      >
-                        <div
-                          className="rt-td"
-                          onClick={[Function]}
-                          role="gridcell"
-                          style={
-                            Object {
-                              "flex": "40 0 auto",
-                              "maxWidth": "40px",
-                              "width": "40px",
-                            }
-                          }
-                        >
-                          <Checkbox
-                            bsClass="chart-table__checkbox"
-                            checked={false}
-                            disabled={false}
-                            id="1707149242852457_2144393255794718"
-                            inline={false}
-                            name="selected"
-                            onChange={[Function]}
-                            title=""
-                          >
-                            <div
-                              className="chart-table__checkbox"
-                            >
-                              <label
-                                title=""
-                              >
-                                <input
-                                  checked={false}
-                                  disabled={false}
-                                  id="1707149242852457_2144393255794718"
-                                  name="selected"
-                                  onChange={[Function]}
-                                  type="checkbox"
-                                />
-                              </label>
-                            </div>
-                          </Checkbox>
-                        </div>
-                      </TdComponent>
-                      <TdComponent
-                        className=""
-                        key="1-user"
-                        onClick={[Function]}
-                        style={
-                          Object {
-                            "flex": "140 0 auto",
-                            "maxWidth": "180px",
-                            "width": "140px",
-                          }
-                        }
-                      >
-                        <div
-                          className="rt-td"
-                          onClick={[Function]}
-                          role="gridcell"
-                          style={
-                            Object {
-                              "flex": "140 0 auto",
-                              "maxWidth": "180px",
-                              "width": "140px",
-                            }
-                          }
-                        >
-                          <div
-                            style={
-                              Object {
-                                "textAlign": "left",
-                              }
-                            }
-                          >
-                            <Image
-                              bsClass="img"
-                              circle={false}
-                              responsive={false}
-                              rounded={false}
-                              src="https://graph.facebook.com/1545550658796200/picture?height=50"
-                              style={
-                                Object {
-                                  "float": "left",
-                                }
-                              }
-                              thumbnail={false}
-                            >
-                              <img
-                                className=""
-                                src="https://graph.facebook.com/1545550658796200/picture?height=50"
-                                style={
-                                  Object {
-                                    "float": "left",
-                                  }
-                                }
-                              />
-                            </Image>
-                            <div
-                              style={
-                                Object {
-                                  "display": "inline-grid",
-                                }
-                              }
-                            >
-                              <span
-                                style={
-                                  Object {
-                                    "paddingLeft": 10,
-                                  }
-                                }
-                              >
-                                Anca
-                              </span>
-                              <span
-                                style={
-                                  Object {
-                                    "paddingLeft": 10,
-                                  }
-                                }
-                              >
-                                Lasc
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </TdComponent>
-                      <TdComponent
-                        className=""
-                        key="2-woc_f"
-                        onClick={[Function]}
-                        style={
-                          Object {
-                            "flex": "50 0 auto",
-                            "maxWidth": "50px",
-                            "width": "50px",
-                          }
-                        }
-                      >
-                        <div
-                          className="rt-td"
-                          onClick={[Function]}
-                          role="gridcell"
-                          style={
-                            Object {
-                              "flex": "50 0 auto",
-                              "maxWidth": "50px",
-                              "width": "50px",
-                            }
-                          }
-                        >
-                          <div>
-                            <OverlayTrigger
-                              defaultOverlayShown={false}
-                              overlay={
-                                <Tooltip
-                                  bsClass="tooltip"
-                                  id="tooltip"
-                                  placement="right"
-                                >
-                                  Can't find the song on youtube, sorry. 
-                                  Don't bring me down :-D 
-                                  https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR
-                                </Tooltip>
-                              }
-                              placement="bottom"
-                              trigger={
-                                Array [
-                                  "hover",
-                                  "focus",
-                                ]
-                              }
-                            >
-                              <FontAwesomeIcon$1
-                                border={false}
-                                className=""
-                                fixedWidth={false}
-                                flip={null}
-                                icon={
-                                  Object {
-                                    "icon": Array [
-                                      576,
-                                      512,
-                                      Array [],
-                                      "f075",
-                                      "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
-                                    ],
-                                    "iconName": "comment",
-                                    "prefix": "fas",
-                                  }
-                                }
-                                listItem={false}
-                                mask={null}
-                                name=""
-                                onBlur={[Function]}
-                                onClick={null}
-                                onFocus={[Function]}
-                                onMouseOut={[Function]}
-                                onMouseOver={[Function]}
-                                pull={null}
-                                pulse={false}
-                                rotation={null}
-                                size={null}
-                                spin={false}
-                                style={
-                                  Object {
-                                    "color": "green",
-                                    "cursor": "pointer",
-                                  }
-                                }
-                                symbol={false}
-                                transform={null}
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  className="svg-inline--fa fa-comment fa-w-18 "
-                                  data-icon="comment"
-                                  data-prefix="fas"
-                                  onBlur={[Function]}
-                                  onClick={null}
-                                  onFocus={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseOver={[Function]}
-                                  role="img"
-                                  style={
-                                    Object {
-                                      "color": "green",
-                                      "cursor": "pointer",
-                                    }
-                                  }
-                                  viewBox="0 0 576 512"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
-                                    fill="currentColor"
-                                    style={Object {}}
-                                  />
-                                </svg>
-                              </FontAwesomeIcon$1>
-                            </OverlayTrigger>
-                            <div>
-                              <FontAwesomeIcon$1
-                                border={false}
-                                className=""
-                                fixedWidth={false}
-                                flip={null}
-                                icon={
-                                  Object {
-                                    "icon": Array [
-                                      512,
-                                      512,
-                                      Array [],
-                                      "f164",
-                                      "M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z",
-                                    ],
-                                    "iconName": "thumbs-up",
-                                    "prefix": "fas",
-                                  }
-                                }
-                                listItem={false}
-                                mask={null}
-                                name=""
-                                pull={null}
-                                pulse={false}
-                                rotation={null}
-                                size={null}
-                                spin={false}
-                                style={
-                                  Object {
-                                    "color": "blue",
-                                  }
-                                }
-                                symbol={false}
-                                title="people reactions count"
-                                transform={null}
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  className="svg-inline--fa fa-thumbs-up fa-w-16 "
-                                  data-icon="thumbs-up"
-                                  data-prefix="fas"
-                                  role="img"
-                                  style={
-                                    Object {
-                                      "color": "blue",
-                                    }
-                                  }
-                                  title="people reactions count"
-                                  viewBox="0 0 512 512"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"
-                                    fill="currentColor"
-                                    style={Object {}}
-                                  />
-                                </svg>
-                              </FontAwesomeIcon$1>
-                              5
-                            </div>
-                          </div>
-                        </div>
-                      </TdComponent>
-                      <TdComponent
-                        className=""
-                        key="3-createTime"
-                        onClick={[Function]}
-                        style={
-                          Object {
-                            "flex": "100 0 auto",
-                            "maxWidth": "200px",
-                            "width": "100px",
-                          }
-                        }
-                      >
-                        <div
-                          className="rt-td"
-                          onClick={[Function]}
-                          role="gridcell"
-                          style={
-                            Object {
-                              "flex": "100 0 auto",
-                              "maxWidth": "200px",
-                              "width": "100px",
-                            }
-                          }
-                        >
-                          <div>
-                            <span
-                              style={
-                                Object {
-                                  "color": "red",
-                                }
-                              }
-                              title="creation time: 03-12 10:49:46"
-                            >
-                              <FontAwesomeIcon$1
-                                border={false}
-                                className=""
-                                fixedWidth={false}
-                                flip={null}
-                                icon={
-                                  Object {
-                                    "icon": Array [
-                                      192,
-                                      512,
-                                      Array [],
-                                      "f0da",
-                                      "M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z",
-                                    ],
-                                    "iconName": "caret-right",
-                                    "prefix": "fas",
-                                  }
-                                }
-                                listItem={false}
-                                mask={null}
-                                name=""
-                                pull={null}
-                                pulse={false}
-                                rotation={null}
-                                size={null}
-                                spin={false}
-                                symbol={false}
-                                transform={null}
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  className="svg-inline--fa fa-caret-right fa-w-6 "
-                                  data-icon="caret-right"
-                                  data-prefix="fas"
-                                  role="img"
-                                  style={Object {}}
-                                  viewBox="0 0 192 512"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"
-                                    fill="currentColor"
-                                    style={Object {}}
-                                  />
-                                </svg>
-                              </FontAwesomeIcon$1>
-                               
-                              03-12
-                            </span>
-                            <br />
-                            <span
-                              style={
-                                Object {
-                                  "color": "green",
-                                }
-                              }
-                              title="update time: 03-12 10:49:47"
-                            >
-                              <FontAwesomeIcon$1
-                                border={false}
-                                className=""
-                                fixedWidth={false}
-                                flip={null}
-                                icon={
-                                  Object {
-                                    "icon": Array [
-                                      320,
-                                      512,
-                                      Array [],
-                                      "f0d8",
-                                      "M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z",
-                                    ],
-                                    "iconName": "caret-up",
-                                    "prefix": "fas",
-                                  }
-                                }
-                                listItem={false}
-                                mask={null}
-                                name=""
-                                pull={null}
-                                pulse={false}
-                                rotation={null}
-                                size={null}
-                                spin={false}
-                                symbol={false}
-                                transform={null}
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  className="svg-inline--fa fa-caret-up fa-w-10 "
-                                  data-icon="caret-up"
-                                  data-prefix="fas"
-                                  role="img"
-                                  style={Object {}}
-                                  viewBox="0 0 320 512"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M288.662 352H31.338c-17.818 0-26.741-21.543-14.142-34.142l128.662-128.662c7.81-7.81 20.474-7.81 28.284 0l128.662 128.662c12.6 12.599 3.676 34.142-14.142 34.142z"
-                                    fill="currentColor"
-                                    style={Object {}}
-                                  />
-                                </svg>
-                              </FontAwesomeIcon$1>
-                               
-                              03-12
-                            </span>
-                          </div>
-                        </div>
-                      </TdComponent>
-                      <TdComponent
-                        className=""
-                        key="4-yt_link"
-                        onClick={[Function]}
-                        style={
-                          Object {
-                            "flex": "200 0 auto",
-                            "maxWidth": null,
-                            "width": "200px",
-                          }
-                        }
-                      >
-                        <div
-                          className="rt-td"
-                          onClick={[Function]}
-                          role="gridcell"
-                          style={
-                            Object {
-                              "flex": "200 0 auto",
-                              "maxWidth": null,
-                              "width": "200px",
-                            }
-                          }
-                        >
-                          <span>
-                            Don't Bring Me Down, a song by Nickless on Spotify
-                          </span>
                         </div>
                       </TdComponent>
                     </div>
@@ -12247,12 +12236,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               Object {
                 "created_time": "2018-03-16T00:12:32+0000",
                 "from": Object {
-                  "first_name": "Kasia",
+                  "first_name": "Absolutio",
                   "id": "10156642943243502",
-                  "last_name": "Stepek",
-                  "name": "Kasia Stepek",
+                  "last_name": "Messor",
+                  "name": "Absolutio Messor",
                 },
-                "from_user": "Kasia Stepek",
                 "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDZ0dej7pLhmYRk&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FALIBUPY_UEc%2Fmaxresdefault.jpg&crop&_nc_hash=AQC0Z3Iw50mcYpnM",
                 "id": "1707149242852457_2150864795147564",
                 "likes_num": 4,
@@ -12262,8 +12250,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                   "type": "share",
                   "url": "https://www.youtube.com/watch?v=ALIBUPY_UEc",
                 },
-                "message": "Cover trochę już znienawidzonej przeze mnie piosenki :D
-            ",
+                "message": "Ship of a black madness, trade the power! ",
                 "reactions_num": 4,
                 "selected": true,
                 "source": "https://www.youtube.com/embed/ALIBUPY_UEc?autoplay=1",
@@ -12273,10 +12260,10 @@ exports[`<ChartTable/> render with objects 1`] = `
               Object {
                 "created_time": "2018-03-16T00:12:59+0000",
                 "from": Object {
-                  "first_name": "Agnieszka",
+                  "first_name": "Gabalium ",
                   "id": "10208047442080192",
-                  "last_name": "Orzeł",
-                  "name": "Agnieszka Orzeł",
+                  "last_name": "Tunał",
+                  "name": "Gabalium Orzeł",
                 },
                 "from_user": "Agnieszka Orzeł",
                 "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDHJdA9ezDN2Zwr&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FrLKreFwTSYs%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCLSz6tWONEcLHh",
@@ -12483,6 +12470,31 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "link": Object {
                   "name": "Years and Years - Sanctify (Lyrics)",
                   "title": "Years and Years - Sanctify (Lyrics)",
+                  "type": "share",
+                  "url": "https://youtu.be/6aN4MJs8VEI",
+                },
+                "message": "https://youtu.be/6aN4MJs8VEI",
+                "reactions_num": 7,
+                "selected": false,
+                "source": "https://www.youtube.com/embed/6aN4MJs8VEI?autoplay=1",
+                "type": "video",
+                "updated_time": "2018-03-14T10:04:49+0000",
+              },
+              Object {
+                "created_time": "2018-03-14T10:04:49+0000",
+                "from": Object {
+                  "first_name": "Andrei-Sebastian",
+                  "id": "1395869030465760",
+                  "last_name": "Petrescu asdfjhjldfadsafhljkadsfjl",
+                  "name": "Andrei-Sebastian Petrescu",
+                },
+                "from_user": "Andrei-Sebastian Petrescu",
+                "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQCgDACAKPQ2hvZ4&w=480&h=360&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F6aN4MJs8VEI%2Fhqdefault.jpg&crop&sx=0&sy=0&sw=480&sh=360&_nc_hash=AQBPTMH0M3wCxcaL",
+                "id": "1707149242852457_2148796622021048asdsada",
+                "likes_num": 7,
+                "link": Object {
+                  "name": "All About That Bass - Postmodern Jukebox European Tour Version",
+                  "title": "All About That Bass - Postmodern Jukebox European Tour Version",
                   "type": "share",
                   "url": "https://youtu.be/6aN4MJs8VEI",
                 },
@@ -12963,12 +12975,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "_original": Object {
                   "created_time": "2018-03-16T00:12:32+0000",
                   "from": Object {
-                    "first_name": "Kasia",
+                    "first_name": "Absolutio",
                     "id": "10156642943243502",
-                    "last_name": "Stepek",
-                    "name": "Kasia Stepek",
+                    "last_name": "Messor",
+                    "name": "Absolutio Messor",
                   },
-                  "from_user": "Kasia Stepek",
                   "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDZ0dej7pLhmYRk&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FALIBUPY_UEc%2Fmaxresdefault.jpg&crop&_nc_hash=AQC0Z3Iw50mcYpnM",
                   "id": "1707149242852457_2150864795147564",
                   "likes_num": 4,
@@ -12978,8 +12989,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "type": "share",
                     "url": "https://www.youtube.com/watch?v=ALIBUPY_UEc",
                   },
-                  "message": "Cover trochę już znienawidzonej przeze mnie piosenki :D
-            ",
+                  "message": "Ship of a black madness, trade the power! ",
                   "reactions_num": 4,
                   "selected": true,
                   "source": "https://www.youtube.com/embed/ALIBUPY_UEc?autoplay=1",
@@ -12994,14 +13004,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "1707149242852457_2150864795147564",
                 "selected": true,
                 "user": Object {
-                  "first_name": "Kasia",
+                  "first_name": "Absolutio",
                   "id": "10156642943243502",
-                  "last_name": "Stepek",
-                  "name": "Kasia Stepek",
+                  "last_name": "Messor",
+                  "name": "Absolutio Messor",
                 },
                 "woc_f": Object {
-                  "message": "Cover trochę już znienawidzonej przeze mnie piosenki :D
-            ",
+                  "message": "Ship of a black madness, trade the power! ",
                   "reactions_num": 4,
                 },
                 "yt_link": Object {
@@ -13017,10 +13026,10 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "_original": Object {
                   "created_time": "2018-03-16T00:12:59+0000",
                   "from": Object {
-                    "first_name": "Agnieszka",
+                    "first_name": "Gabalium ",
                     "id": "10208047442080192",
-                    "last_name": "Orzeł",
-                    "name": "Agnieszka Orzeł",
+                    "last_name": "Tunał",
+                    "name": "Gabalium Orzeł",
                   },
                   "from_user": "Agnieszka Orzeł",
                   "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDHJdA9ezDN2Zwr&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FrLKreFwTSYs%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCLSz6tWONEcLHh",
@@ -13046,10 +13055,10 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "1707149242852457_2139869112913799",
                 "selected": false,
                 "user": Object {
-                  "first_name": "Agnieszka",
+                  "first_name": "Gabalium ",
                   "id": "10208047442080192",
-                  "last_name": "Orzeł",
-                  "name": "Agnieszka Orzeł",
+                  "last_name": "Tunał",
+                  "name": "Gabalium Orzeł",
                 },
                 "woc_f": Object {
                   "message": undefined,
@@ -13481,6 +13490,58 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "_index": 10,
                 "_nestingLevel": 0,
                 "_original": Object {
+                  "created_time": "2018-03-14T10:04:49+0000",
+                  "from": Object {
+                    "first_name": "Andrei-Sebastian",
+                    "id": "1395869030465760",
+                    "last_name": "Petrescu asdfjhjldfadsafhljkadsfjl",
+                    "name": "Andrei-Sebastian Petrescu",
+                  },
+                  "from_user": "Andrei-Sebastian Petrescu",
+                  "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQCgDACAKPQ2hvZ4&w=480&h=360&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F6aN4MJs8VEI%2Fhqdefault.jpg&crop&sx=0&sy=0&sw=480&sh=360&_nc_hash=AQBPTMH0M3wCxcaL",
+                  "id": "1707149242852457_2148796622021048asdsada",
+                  "likes_num": 7,
+                  "link": Object {
+                    "name": "All About That Bass - Postmodern Jukebox European Tour Version",
+                    "title": "All About That Bass - Postmodern Jukebox European Tour Version",
+                    "type": "share",
+                    "url": "https://youtu.be/6aN4MJs8VEI",
+                  },
+                  "message": "https://youtu.be/6aN4MJs8VEI",
+                  "reactions_num": 7,
+                  "selected": false,
+                  "source": "https://www.youtube.com/embed/6aN4MJs8VEI?autoplay=1",
+                  "type": "video",
+                  "updated_time": "2018-03-14T10:04:49+0000",
+                },
+                "_subRows": undefined,
+                "createTime": Object {
+                  "created_time": 1521021889000,
+                  "updated_time": 1521021889000,
+                },
+                "id": "1707149242852457_2148796622021048asdsada",
+                "selected": false,
+                "user": Object {
+                  "first_name": "Andrei-Sebastian",
+                  "id": "1395869030465760",
+                  "last_name": "Petrescu asdfjhjldfadsafhljkadsfjl",
+                  "name": "Andrei-Sebastian Petrescu",
+                },
+                "woc_f": Object {
+                  "message": "https://youtu.be/6aN4MJs8VEI",
+                  "reactions_num": 7,
+                },
+                "yt_link": Object {
+                  "name": "All About That Bass - Postmodern Jukebox European Tour Version",
+                  "title": "All About That Bass - Postmodern Jukebox European Tour Version",
+                  "type": "share",
+                  "url": "https://youtu.be/6aN4MJs8VEI",
+                },
+              },
+              Object {
+                "_index": 11,
+                "_nestingLevel": 0,
+                "_original": Object {
                   "created_time": "2018-03-14T10:04:45+0000",
                   "from": Object {
                     "first_name": "Ulrike",
@@ -13532,7 +13593,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 11,
+                "_index": 12,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-14T10:04:37+0000",
@@ -13584,7 +13645,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 12,
+                "_index": 13,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-13T06:40:04+0000",
@@ -13638,7 +13699,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 13,
+                "_index": 14,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-13T06:40:08+0000",
@@ -13684,7 +13745,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 14,
+                "_index": 15,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-13T06:39:57+0000",
@@ -13736,7 +13797,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 15,
+                "_index": 16,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-13T06:39:53+0000",
@@ -13790,7 +13851,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 16,
+                "_index": 17,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-09T09:22:13+0000",
@@ -13842,7 +13903,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 17,
+                "_index": 18,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-12T09:49:36+0000",
@@ -13893,7 +13954,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 18,
+                "_index": 19,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-12T09:50:00+0000",
@@ -13944,7 +14005,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 19,
+                "_index": 20,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-12T09:49:46+0000",
@@ -13994,7 +14055,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 20,
+                "_index": 21,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-12T09:49:38+0000",
@@ -14046,7 +14107,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 21,
+                "_index": 22,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-09T09:21:49+0000",
@@ -14098,58 +14159,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 22,
-                "_nestingLevel": 0,
-                "_original": Object {
-                  "created_time": "2018-03-09T09:21:51+0000",
-                  "from": Object {
-                    "first_name": "Paweł",
-                    "id": "10154096820541759",
-                    "last_name": "Zubrycki",
-                    "name": "Paweł Zubrycki",
-                  },
-                  "from_user": "Paweł Zubrycki",
-                  "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQClLxKiuxhw0BiC&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fuq4hVC13Y64%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCBhlDKwRLPuIMN",
-                  "id": "1707149242852457_2147684745465569",
-                  "likes_num": 6,
-                  "link": Object {
-                    "name": "Maggie Lindemann - Obsessed [Official Lyric Video]",
-                    "title": "Maggie Lindemann - Obsessed [Official Lyric Video]",
-                    "type": "share",
-                    "url": "https://youtu.be/uq4hVC13Y64",
-                  },
-                  "message": "https://youtu.be/uq4hVC13Y64",
-                  "reactions_num": 6,
-                  "selected": false,
-                  "source": "https://www.youtube.com/embed/uq4hVC13Y64?autoplay=1",
-                  "type": "video",
-                  "updated_time": "2018-03-09T18:59:36+0000",
-                },
-                "_subRows": undefined,
-                "createTime": Object {
-                  "created_time": 1520587311000,
-                  "updated_time": 1520621976000,
-                },
-                "id": "1707149242852457_2147684745465569",
-                "selected": false,
-                "user": Object {
-                  "first_name": "Paweł",
-                  "id": "10154096820541759",
-                  "last_name": "Zubrycki",
-                  "name": "Paweł Zubrycki",
-                },
-                "woc_f": Object {
-                  "message": "https://youtu.be/uq4hVC13Y64",
-                  "reactions_num": 6,
-                },
-                "yt_link": Object {
-                  "name": "Maggie Lindemann - Obsessed [Official Lyric Video]",
-                  "title": "Maggie Lindemann - Obsessed [Official Lyric Video]",
-                  "type": "share",
-                  "url": "https://youtu.be/uq4hVC13Y64",
-                },
-              },
-              Object {
                 "_index": 23,
                 "_nestingLevel": 0,
                 "_original": Object {
@@ -14170,6 +14179,58 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "type": "share",
                     "url": "https://youtu.be/uq4hVC13Y64",
                   },
+                  "message": "https://youtu.be/uq4hVC13Y64",
+                  "reactions_num": 6,
+                  "selected": false,
+                  "source": "https://www.youtube.com/embed/uq4hVC13Y64?autoplay=1",
+                  "type": "video",
+                  "updated_time": "2018-03-09T18:59:36+0000",
+                },
+                "_subRows": undefined,
+                "createTime": Object {
+                  "created_time": 1520587311000,
+                  "updated_time": 1520621976000,
+                },
+                "id": "1707149242852457_2147684745465569",
+                "selected": false,
+                "user": Object {
+                  "first_name": "Paweł",
+                  "id": "10154096820541759",
+                  "last_name": "Zubrycki",
+                  "name": "Paweł Zubrycki",
+                },
+                "woc_f": Object {
+                  "message": "https://youtu.be/uq4hVC13Y64",
+                  "reactions_num": 6,
+                },
+                "yt_link": Object {
+                  "name": "Maggie Lindemann - Obsessed [Official Lyric Video]",
+                  "title": "Maggie Lindemann - Obsessed [Official Lyric Video]",
+                  "type": "share",
+                  "url": "https://youtu.be/uq4hVC13Y64",
+                },
+              },
+              Object {
+                "_index": 24,
+                "_nestingLevel": 0,
+                "_original": Object {
+                  "created_time": "2018-03-09T09:21:51+0000",
+                  "from": Object {
+                    "first_name": "Paweł",
+                    "id": "10154096820541759",
+                    "last_name": "Zubrycki",
+                    "name": "Paweł Zubrycki",
+                  },
+                  "from_user": "Paweł Zubrycki",
+                  "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQClLxKiuxhw0BiC&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fuq4hVC13Y64%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCBhlDKwRLPuIMN",
+                  "id": "1707149242852457_2147684745465569",
+                  "likes_num": 6,
+                  "link": Object {
+                    "name": "Maggie Lindemann - Obsessed [Official Lyric Video]",
+                    "title": "Maggie Lindemann - Obsessed [Official Lyric Video]",
+                    "type": "share",
+                    "url": "https://youtu.be/uq4hVC13Y64",
+                  },
                   "message": "[Wielkie Ogarnianie Charta] some random text?",
                   "reactions_num": 6,
                   "selected": false,
@@ -14202,7 +14263,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 24,
+                "_index": 25,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-09T09:21:51+0000",
@@ -14272,12 +14333,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "_original": Object {
                   "created_time": "2018-03-16T00:12:32+0000",
                   "from": Object {
-                    "first_name": "Kasia",
+                    "first_name": "Absolutio",
                     "id": "10156642943243502",
-                    "last_name": "Stepek",
-                    "name": "Kasia Stepek",
+                    "last_name": "Messor",
+                    "name": "Absolutio Messor",
                   },
-                  "from_user": "Kasia Stepek",
                   "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDZ0dej7pLhmYRk&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FALIBUPY_UEc%2Fmaxresdefault.jpg&crop&_nc_hash=AQC0Z3Iw50mcYpnM",
                   "id": "1707149242852457_2150864795147564",
                   "likes_num": 4,
@@ -14287,8 +14347,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "type": "share",
                     "url": "https://www.youtube.com/watch?v=ALIBUPY_UEc",
                   },
-                  "message": "Cover trochę już znienawidzonej przeze mnie piosenki :D
-            ",
+                  "message": "Ship of a black madness, trade the power! ",
                   "reactions_num": 4,
                   "selected": true,
                   "source": "https://www.youtube.com/embed/ALIBUPY_UEc?autoplay=1",
@@ -14303,14 +14362,13 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "1707149242852457_2150864795147564",
                 "selected": true,
                 "user": Object {
-                  "first_name": "Kasia",
+                  "first_name": "Absolutio",
                   "id": "10156642943243502",
-                  "last_name": "Stepek",
-                  "name": "Kasia Stepek",
+                  "last_name": "Messor",
+                  "name": "Absolutio Messor",
                 },
                 "woc_f": Object {
-                  "message": "Cover trochę już znienawidzonej przeze mnie piosenki :D
-            ",
+                  "message": "Ship of a black madness, trade the power! ",
                   "reactions_num": 4,
                 },
                 "yt_link": Object {
@@ -14326,10 +14384,10 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "_original": Object {
                   "created_time": "2018-03-16T00:12:59+0000",
                   "from": Object {
-                    "first_name": "Agnieszka",
+                    "first_name": "Gabalium ",
                     "id": "10208047442080192",
-                    "last_name": "Orzeł",
-                    "name": "Agnieszka Orzeł",
+                    "last_name": "Tunał",
+                    "name": "Gabalium Orzeł",
                   },
                   "from_user": "Agnieszka Orzeł",
                   "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQDHJdA9ezDN2Zwr&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FrLKreFwTSYs%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCLSz6tWONEcLHh",
@@ -14355,10 +14413,10 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "id": "1707149242852457_2139869112913799",
                 "selected": false,
                 "user": Object {
-                  "first_name": "Agnieszka",
+                  "first_name": "Gabalium ",
                   "id": "10208047442080192",
-                  "last_name": "Orzeł",
-                  "name": "Agnieszka Orzeł",
+                  "last_name": "Tunał",
+                  "name": "Gabalium Orzeł",
                 },
                 "woc_f": Object {
                   "message": undefined,
@@ -14790,6 +14848,58 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "_index": 10,
                 "_nestingLevel": 0,
                 "_original": Object {
+                  "created_time": "2018-03-14T10:04:49+0000",
+                  "from": Object {
+                    "first_name": "Andrei-Sebastian",
+                    "id": "1395869030465760",
+                    "last_name": "Petrescu asdfjhjldfadsafhljkadsfjl",
+                    "name": "Andrei-Sebastian Petrescu",
+                  },
+                  "from_user": "Andrei-Sebastian Petrescu",
+                  "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQCgDACAKPQ2hvZ4&w=480&h=360&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2F6aN4MJs8VEI%2Fhqdefault.jpg&crop&sx=0&sy=0&sw=480&sh=360&_nc_hash=AQBPTMH0M3wCxcaL",
+                  "id": "1707149242852457_2148796622021048asdsada",
+                  "likes_num": 7,
+                  "link": Object {
+                    "name": "All About That Bass - Postmodern Jukebox European Tour Version",
+                    "title": "All About That Bass - Postmodern Jukebox European Tour Version",
+                    "type": "share",
+                    "url": "https://youtu.be/6aN4MJs8VEI",
+                  },
+                  "message": "https://youtu.be/6aN4MJs8VEI",
+                  "reactions_num": 7,
+                  "selected": false,
+                  "source": "https://www.youtube.com/embed/6aN4MJs8VEI?autoplay=1",
+                  "type": "video",
+                  "updated_time": "2018-03-14T10:04:49+0000",
+                },
+                "_subRows": undefined,
+                "createTime": Object {
+                  "created_time": 1521021889000,
+                  "updated_time": 1521021889000,
+                },
+                "id": "1707149242852457_2148796622021048asdsada",
+                "selected": false,
+                "user": Object {
+                  "first_name": "Andrei-Sebastian",
+                  "id": "1395869030465760",
+                  "last_name": "Petrescu asdfjhjldfadsafhljkadsfjl",
+                  "name": "Andrei-Sebastian Petrescu",
+                },
+                "woc_f": Object {
+                  "message": "https://youtu.be/6aN4MJs8VEI",
+                  "reactions_num": 7,
+                },
+                "yt_link": Object {
+                  "name": "All About That Bass - Postmodern Jukebox European Tour Version",
+                  "title": "All About That Bass - Postmodern Jukebox European Tour Version",
+                  "type": "share",
+                  "url": "https://youtu.be/6aN4MJs8VEI",
+                },
+              },
+              Object {
+                "_index": 11,
+                "_nestingLevel": 0,
+                "_original": Object {
                   "created_time": "2018-03-14T10:04:45+0000",
                   "from": Object {
                     "first_name": "Ulrike",
@@ -14841,7 +14951,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 11,
+                "_index": 12,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-14T10:04:37+0000",
@@ -14893,7 +15003,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 12,
+                "_index": 13,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-13T06:40:04+0000",
@@ -14947,7 +15057,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 13,
+                "_index": 14,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-13T06:40:08+0000",
@@ -14993,7 +15103,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 14,
+                "_index": 15,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-13T06:39:57+0000",
@@ -15045,7 +15155,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 15,
+                "_index": 16,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-13T06:39:53+0000",
@@ -15099,7 +15209,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 16,
+                "_index": 17,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-09T09:22:13+0000",
@@ -15151,7 +15261,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 17,
+                "_index": 18,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-12T09:49:36+0000",
@@ -15202,7 +15312,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 18,
+                "_index": 19,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-12T09:50:00+0000",
@@ -15253,7 +15363,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 19,
+                "_index": 20,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-12T09:49:46+0000",
@@ -15303,7 +15413,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 20,
+                "_index": 21,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-12T09:49:38+0000",
@@ -15355,7 +15465,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 21,
+                "_index": 22,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-09T09:21:49+0000",
@@ -15407,58 +15517,6 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 22,
-                "_nestingLevel": 0,
-                "_original": Object {
-                  "created_time": "2018-03-09T09:21:51+0000",
-                  "from": Object {
-                    "first_name": "Paweł",
-                    "id": "10154096820541759",
-                    "last_name": "Zubrycki",
-                    "name": "Paweł Zubrycki",
-                  },
-                  "from_user": "Paweł Zubrycki",
-                  "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQClLxKiuxhw0BiC&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fuq4hVC13Y64%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCBhlDKwRLPuIMN",
-                  "id": "1707149242852457_2147684745465569",
-                  "likes_num": 6,
-                  "link": Object {
-                    "name": "Maggie Lindemann - Obsessed [Official Lyric Video]",
-                    "title": "Maggie Lindemann - Obsessed [Official Lyric Video]",
-                    "type": "share",
-                    "url": "https://youtu.be/uq4hVC13Y64",
-                  },
-                  "message": "https://youtu.be/uq4hVC13Y64",
-                  "reactions_num": 6,
-                  "selected": false,
-                  "source": "https://www.youtube.com/embed/uq4hVC13Y64?autoplay=1",
-                  "type": "video",
-                  "updated_time": "2018-03-09T18:59:36+0000",
-                },
-                "_subRows": undefined,
-                "createTime": Object {
-                  "created_time": 1520587311000,
-                  "updated_time": 1520621976000,
-                },
-                "id": "1707149242852457_2147684745465569",
-                "selected": false,
-                "user": Object {
-                  "first_name": "Paweł",
-                  "id": "10154096820541759",
-                  "last_name": "Zubrycki",
-                  "name": "Paweł Zubrycki",
-                },
-                "woc_f": Object {
-                  "message": "https://youtu.be/uq4hVC13Y64",
-                  "reactions_num": 6,
-                },
-                "yt_link": Object {
-                  "name": "Maggie Lindemann - Obsessed [Official Lyric Video]",
-                  "title": "Maggie Lindemann - Obsessed [Official Lyric Video]",
-                  "type": "share",
-                  "url": "https://youtu.be/uq4hVC13Y64",
-                },
-              },
-              Object {
                 "_index": 23,
                 "_nestingLevel": 0,
                 "_original": Object {
@@ -15479,6 +15537,58 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "type": "share",
                     "url": "https://youtu.be/uq4hVC13Y64",
                   },
+                  "message": "https://youtu.be/uq4hVC13Y64",
+                  "reactions_num": 6,
+                  "selected": false,
+                  "source": "https://www.youtube.com/embed/uq4hVC13Y64?autoplay=1",
+                  "type": "video",
+                  "updated_time": "2018-03-09T18:59:36+0000",
+                },
+                "_subRows": undefined,
+                "createTime": Object {
+                  "created_time": 1520587311000,
+                  "updated_time": 1520621976000,
+                },
+                "id": "1707149242852457_2147684745465569",
+                "selected": false,
+                "user": Object {
+                  "first_name": "Paweł",
+                  "id": "10154096820541759",
+                  "last_name": "Zubrycki",
+                  "name": "Paweł Zubrycki",
+                },
+                "woc_f": Object {
+                  "message": "https://youtu.be/uq4hVC13Y64",
+                  "reactions_num": 6,
+                },
+                "yt_link": Object {
+                  "name": "Maggie Lindemann - Obsessed [Official Lyric Video]",
+                  "title": "Maggie Lindemann - Obsessed [Official Lyric Video]",
+                  "type": "share",
+                  "url": "https://youtu.be/uq4hVC13Y64",
+                },
+              },
+              Object {
+                "_index": 24,
+                "_nestingLevel": 0,
+                "_original": Object {
+                  "created_time": "2018-03-09T09:21:51+0000",
+                  "from": Object {
+                    "first_name": "Paweł",
+                    "id": "10154096820541759",
+                    "last_name": "Zubrycki",
+                    "name": "Paweł Zubrycki",
+                  },
+                  "from_user": "Paweł Zubrycki",
+                  "full_picture": "https://external.xx.fbcdn.net/safe_image.php?d=AQClLxKiuxhw0BiC&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fuq4hVC13Y64%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCBhlDKwRLPuIMN",
+                  "id": "1707149242852457_2147684745465569",
+                  "likes_num": 6,
+                  "link": Object {
+                    "name": "Maggie Lindemann - Obsessed [Official Lyric Video]",
+                    "title": "Maggie Lindemann - Obsessed [Official Lyric Video]",
+                    "type": "share",
+                    "url": "https://youtu.be/uq4hVC13Y64",
+                  },
                   "message": "[Wielkie Ogarnianie Charta] some random text?",
                   "reactions_num": 6,
                   "selected": false,
@@ -15511,7 +15621,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 },
               },
               Object {
-                "_index": 24,
+                "_index": 25,
                 "_nestingLevel": 0,
                 "_original": Object {
                   "created_time": "2018-03-09T09:21:51+0000",

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Provider } from 'react-redux';
 import ChartPresenter from './ChartPresenter';
 import configureStore from '../../configureStore';
-import response from './../../___tests___/data/response.json';
+import response from './../../___data___/chartData';
 
 const state = {
   filters: {
@@ -14,7 +14,7 @@ const state = {
   },
   show_wait: false,
   user: {},
-  ...response,
+  chart: response,
 };
 const state2 = {
   filters: {

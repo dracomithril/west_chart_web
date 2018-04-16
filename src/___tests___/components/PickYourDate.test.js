@@ -12,7 +12,7 @@ import { UpdateChart } from '../../utils/utils';
 
 Enzyme.configure({ adapter: new Adapter() });
 jest.mock('./../../utils/utils');
-const initial_state = require('../data/initial_state.json');
+const initial_state = require('../___data___/initial_state.json');
 const mockStore = configureMockStore([]);
 describe('<PickYourDate/>', () => {
   afterAll(() => {

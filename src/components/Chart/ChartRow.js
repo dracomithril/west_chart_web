@@ -58,7 +58,7 @@ const ChartRow = ({ from = {}, link = {}, checked, created_time, onChange, updat
       <Checkbox id={props.id} checked={checked} onChange={onChange} />
       <div className="chart-row__user-info">
         <picture>
-          <img src={props.userImage} alt="profilePic" />
+          <img src={from.picture_url} alt="profilePic" />
         </picture>
         <div className="chart-row__user-info__name">
           <span>{from.first_name}</span>
@@ -112,8 +112,8 @@ ChartRow.propTypes = {
   from: PropTypes.shape({
     first_name: PropTypes.string,
     last_name: PropTypes.string,
+    picture_url: PropTypes.string,
   }),
-  userImage: PropTypes.string,
   checked: PropTypes.bool,
   created_time: PropTypes.string,
   updated_time: PropTypes.string,

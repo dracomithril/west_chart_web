@@ -10,8 +10,8 @@ import configureMockStore from 'redux-mock-store';
 import ChartTable from '../../components/Chart/ChartTable';
 
 Enzyme.configure({ adapter: new Adapter() });
-const initial_state = require('../data/initial_state.json');
-const data = require('../data/response.json').chart;
+const initial_state = require('../___data___/initial_state.json');
+const data = require('../___data___/response.json').chart;
 const mockStore = configureMockStore([]);
 
 describe('<ChartTable/>', () => {

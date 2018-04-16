@@ -9,8 +9,8 @@ import { shallowToJson } from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import NewsLetter from "../../components/WestLetter";
 
-const initial_state = require('../data/initial_state.json');
-const westletters_state = require('../data/WestLetter.json');
+const initial_state = require('../___data___/initial_state.json');
+const westletters_state = require('../___data___/WestLetter.json');
 
 Enzyme.configure({ adapter: new Adapter() });
 const mockStore = configureMockStore([]);

@@ -68,15 +68,17 @@ export default class Summary extends React.Component {
             <Button bsStyle="info" onClick={this.onCopyToClipboard} title="copy to clipboard">
               <FontAwesomeIcon icon={faClipboard} /> copy
             </Button>
-            <Button
-              onClick={() => {
-                console.info('Not implemented jet.');
-              }}
-              disabled
-            >
-              <FontAwesomeIcon icon={faFacebook} />
-              <span> publish</span>
-            </Button>
+            {false && (
+              <Button
+                onClick={() => {
+                  console.info('Not implemented jet.');
+                }}
+                disabled
+              >
+                <FontAwesomeIcon icon={faFacebook} />
+                <span> publish</span>
+              </Button>
+            )}
           </ButtonGroup>
         </div>
         <h6>[WCS Weekly Westletter]</h6>

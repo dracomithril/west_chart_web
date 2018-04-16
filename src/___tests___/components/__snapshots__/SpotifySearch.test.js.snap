@@ -39,18 +39,11 @@ exports[`<SpotifySearch/> renders without crashing 1`] = `
     />
     spotify playlist:
   </div>
-  <PlaylistInfo
-    info={
-      Object {
-        "url": null,
-      }
-    }
-  />
-  <PlaylistForm
-    hasElements={false}
-    onCreatePlaylistClick={[Function]}
-    onStartClick={[Function]}
-  />
+  <div>
+    <span>
+      Sorry you need to be logged to spotify to be able to add playlist
+    </span>
+  </div>
   <div
     className="spotify-search_list"
   />

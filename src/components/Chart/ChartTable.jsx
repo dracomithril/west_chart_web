@@ -18,7 +18,6 @@ import {
 } from '@fortawesome/fontawesome-free-solid';
 import 'react-table/react-table.css';
 import { Checkbox, Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { getFbPictureUrl } from '../../utils/utils';
 import { action_types } from './../../reducers/action_types';
 import '../components.css';
 import '../../App.css';
@@ -85,7 +84,7 @@ const ChartTable = ({ data }, { store }) => {
   };
   const UserInfoCell = ({ value: from }) => (
     <div style={{ textAlign: 'left' }}>
-      <Image style={{ float: 'left' }} src={getFbPictureUrl(from.id)} />
+      <Image style={{ float: 'left', height: 50 }} src={from.picture_url} />
       <div style={{ display: 'inline-grid' }}>
         <span style={{ paddingLeft: 10 }}>{from.first_name || from.name.split(' ')[0]}</span>
         <span style={{ paddingLeft: 10 }}>{from.last_name || from.name.split(' ')[1]}</span>
