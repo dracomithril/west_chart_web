@@ -7,6 +7,7 @@ import { OverlayTrigger, Popover } from 'react-bootstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faArrowCircleDown, faArrowCircleUp } from '@fortawesome/fontawesome-free-solid';
 import './chart.css';
+import { errorDaysObjectProps } from './../typeDefinitions';
 
 const DayEntry = ({ org, color }) => (
   <div key={org}>
@@ -35,7 +36,7 @@ const ErrorDaysIndicator = ({ error_days, less }) =>
     </OverlayTrigger>
   );
 ErrorDaysIndicator.propTypes = {
-  error_days: PropTypes.array,
+  error_days: PropTypes.arrayOf(errorDaysObjectProps),
   less: PropTypes.bool,
 };
 const SongsPerDay = ({ error_days = null, songs_per_day, onDaysChange }) => {
@@ -77,7 +78,7 @@ const SongsPerDay = ({ error_days = null, songs_per_day, onDaysChange }) => {
   );
 };
 SongsPerDay.propTypes = {
-  error_days: PropTypes.array,
+  error_days: PropTypes.arrayOf(errorDaysObjectProps),
   songs_per_day: PropTypes.number,
   onDaysChange: PropTypes.func,
 };

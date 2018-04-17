@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import 'react-table/react-table.css';
 import '../components.css';
 import '../../App.css';
+import { chartObjectProps } from './../typeDefinitions';
 import ChartRow from './ChartRow';
 import Checkbox from '../universal/Checkbox';
 import { action_types } from './../../reducers/action_types';
@@ -62,6 +63,7 @@ ChartTable.contextTypes = {
   store: PropTypes.object,
 };
 ChartTable.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.arrayOf(chartObjectProps),
 };
+
 export default ChartTable;

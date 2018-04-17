@@ -8,6 +8,10 @@ const spotifyApi = new Spotify();
 const Cookies = require('cookies-js');
 const _ = require('lodash');
 
+const acToken = 'client-sp_user_access_token';
+const rfToken = 'client-sp_user_refresh_token';
+const noCredentials = new Error('No credentials found');
+
 export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
   if (tracks.length === 0) {
     return Promise.reject(new Error('nothing was updated. Tracks count is 0'));
@@ -44,6 +48,17 @@ export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
   }
 
   return spotifyApi.addTracksToPlaylist(user_id, playlist_id, tracks);
+};
+
+/**
+ * @param access_token
+ */
+const validateCredentials = access_token => {
+  spotifyApi.setAccessToken(access_token);
+  return spotifyApi.getMe().then(data => {
+    console.info('you logged as :', data.body.id);
+    return Promise.resolve({ userData: data.body, accessToken: access_token });
+  });
 };
 
 export const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks, accessToken) => {
@@ -138,10 +153,8 @@ export const getTracks = (accessToken, user, playlist_name) => {
  * @param artist {string}
  * @param title {string}
  * @param search_id
- * @param accessToken
  */
-export const searchForMusic = ({ artist, title, id }, accessToken) =>
-  // spotifyApi.setAccessToken(accessToken);
+export const searchForMusic = ({ artist, title, id }) =>
   spotifyApi
     .searchTracks(`${artist} ${title}`)
     .catch(resp => {
@@ -176,9 +189,6 @@ const refresh_auth = refresh_token => {
     });
 };
 
-const acToken = 'client-sp_user_access_token';
-const rfToken = 'client-sp_user_refresh_token';
-const noCredentials = new Error('No credentials found');
 /**
  * @typedef {Object} Spotify_credentials
  * @property {String} accessToken
@@ -201,16 +211,6 @@ const getCookies = () => {
   return Promise.reject(noCredentials);
 };
 
-export const getCredentials = () =>
-  getCookies()
-    .catch(() => obtain_credentials())
-    .catch(() => Promise.reject(noCredentials))
-    .then(result =>
-      // global.FB.getLoginStatus(function(response) {
-      //   console.log(response);
-      // });
-      Promise.resolve(result),
-    );
 export const loginToSpotifyAlpha = from =>
   fetch(api.spotify.login, {
     credentials: 'include',
@@ -247,16 +247,16 @@ export const obtain_credentials = () =>
       });
     });
 
-/**
- * @param access_token
- */
-const validateCredentials = access_token => {
-  spotifyApi.setAccessToken(access_token);
-  return spotifyApi.getMe().then(data => {
-    console.info('you logged as :', data.body.id);
-    return Promise.resolve({ userData: data.body, accessToken: access_token });
-  });
-};
+export const getCredentials = () =>
+  getCookies()
+    .catch(() => obtain_credentials())
+    .catch(() => Promise.reject(noCredentials))
+    .then(result =>
+      // global.FB.getLoginStatus(function(response) {
+      //   console.log(response);
+      // });
+      Promise.resolve(result),
+    );
 
 const exports = {
   createPlaylistAndAddTracks,

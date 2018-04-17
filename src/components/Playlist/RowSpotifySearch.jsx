@@ -16,7 +16,6 @@ class RowSpotifySearch extends React.Component {
       showList: false,
     };
   }
-
   render() {
     const {
       id,
@@ -30,7 +29,7 @@ class RowSpotifySearch extends React.Component {
       onSearchClick,
       onClearClick,
     } = this.props;
-    const tracks_list = (items || []).map(track => (
+    const tracks_list = items.map(track => (
       <MenuItem
         key={track.id}
         id={`mi_select_track_${id}`}
@@ -85,7 +84,6 @@ class RowSpotifySearch extends React.Component {
                   onChange={({ target }) => onUpdateClick && onUpdateClick({ id, value: target.value, field: 'title' })}
                 />
               </label>
-
               <div className="row-spotify-search__button-group">
                 <button onClick={() => onSwap && onSwap(id)} title="swap artist with title">
                   <FontAwesomeIcon icon={faSync} />
@@ -131,16 +129,28 @@ class RowSpotifySearch extends React.Component {
 RowSpotifySearch.contextTypes = {
   store: PropTypes.object,
 };
+
+const trackProps = PropTypes.shape({
+  id: PropTypes.string,
+  artist: PropTypes.string,
+  preview_url: PropTypes.string,
+  external_urls: PropTypes.object,
+  name: PropTypes.string,
+});
+
 RowSpotifySearch.propTypes = {
   onSwap: PropTypes.func,
   id: PropTypes.string,
-  items: PropTypes.array,
+  items: PropTypes.arrayOf(trackProps),
   artist: PropTypes.string,
   title: PropTypes.string,
   full_title: PropTypes.string,
-  selected: PropTypes.object,
+  selected: trackProps,
   onUpdateClick: PropTypes.func,
   onSearchClick: PropTypes.func,
   onClearClick: PropTypes.func,
+};
+RowSpotifySearch.defaultProps = {
+  items: [],
 };
 export default RowSpotifySearch;

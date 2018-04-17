@@ -5,6 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { getFbPictureUrl, weekInfo } from '../utils/utils';
+import { chartObjectProps } from './typeDefinitions';
 
 export default class WestLetter extends React.Component {
   componentDidMount() {
@@ -56,7 +57,7 @@ export default class WestLetter extends React.Component {
   }
 }
 WestLetter.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.arrayOf(chartObjectProps),
 };
 WestLetter.contextTypes = {
   store: PropTypes.object,

@@ -75,6 +75,31 @@ const sp_user = (state, action) => {
     }
   }
 };
+const updateSearch = (searchElem = {}, action) => {
+  const search = { ...searchElem };
+  switch (action.type) {
+    case action_types.CLEAR_SELECTED: {
+      delete search.selected;
+      return search;
+    }
+    case action_types.UPDATE_SINGLE_SEARCH: {
+      search[action.field] = action.value;
+      if (action.field === 'items') {
+        search.selected = [...action.value].shift();
+      }
+      return search;
+    }
+    case action_types.SWAP_FIELDS: {
+      const { artist, title } = searchElem;
+      search.artist = title;
+      search.title = artist;
+      return search;
+    }
+    default: {
+      return searchElem;
+    }
+  }
+};
 /**
  * @typedef {Object} ChartEntry
  * @property {String} created_time
@@ -185,31 +210,6 @@ const chart = (state = [], action) => {
     }
     default:
       return state;
-  }
-};
-const updateSearch = (searchElem = {}, action) => {
-  const search = { ...searchElem };
-  switch (action.type) {
-    case action_types.CLEAR_SELECTED: {
-      delete search.selected;
-      return search;
-    }
-    case action_types.UPDATE_SINGLE_SEARCH: {
-      search[action.field] = action.value;
-      if (action.field === 'items') {
-        search.selected = [...action.value].shift();
-      }
-      return search;
-    }
-    case action_types.SWAP_FIELDS: {
-      const { artist, title } = searchElem;
-      search.artist = title;
-      search.title = artist;
-      return search;
-    }
-    default: {
-      return searchElem;
-    }
   }
 };
 const list_sort = (state = 'reaction', action) => (action.type === action_types.UPDATE_LIST_SORT ? action.sort : state);

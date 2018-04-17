@@ -5,6 +5,18 @@ const westletter = 'WCS Weekly Westletter';
 const woc_string = 'Wielkie Ogarnianie Charta';
 /**
  *
+ * @param until {Date}
+ * @param days {number}
+ * @returns {Date}
+ */
+export const subtractDaysFromDate = (until, days) => {
+  const since_date = new Date(until);
+  since_date.setDate(new Date(until).getDate() - days);
+  return since_date;
+};
+
+/**
+ *
  * @returns {boolean}
  * @param elem
  * @param filter
@@ -19,18 +31,6 @@ const countDays = (elem, { valueName, until, days, checked }) => {
     return timeLeft > 0;
   }
   return true;
-};
-
-/**
- *
- * @param until {Date}
- * @param days {number}
- * @returns {Date}
- */
-export const subtractDaysFromDate = (until, days) => {
-  const since_date = new Date(until);
-  since_date.setDate(new Date(until).getDate() - days);
-  return since_date;
 };
 
 const filters = [

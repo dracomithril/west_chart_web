@@ -82,7 +82,6 @@ export default class PlaylistCombiner extends React.Component {
     const actions = array.map(el => getTracks(sp_user.access_token, ...el));
     Promise.all(actions)
       .then(data => {
-        console.debug('all done!!!');
         const flat_tracks = _.flatMap(data, n => n); // [].concat.apply([], data);
         const uniq = _.uniq(flat_tracks);
         const { id, access_token } = sp_user;
@@ -152,7 +151,7 @@ export default class PlaylistCombiner extends React.Component {
             number that is hard to obtain. Sorry we will work on it.`}
           </span>
         </div>
-        <PlaylistInfo info={sp_playlist_info} />
+        <PlaylistInfo {...sp_playlist_info} />
         <div style={{ display: 'inline-block' }}>
           <div id="from_playlist">
             <label htmlFor="user_id_input">

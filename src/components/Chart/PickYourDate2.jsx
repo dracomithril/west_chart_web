@@ -3,9 +3,9 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import moment from 'moment';
 
 class PickYourDate extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class PickYourDate extends React.Component {
           <button
             className="pick-your-date__button"
             onClick={e => {
-              e && e.preventDefault();
+              e.preventDefault();
               this.setState({ isOpenUntil: !this.state.isOpenUntil });
             }}
           >
@@ -48,7 +48,7 @@ class PickYourDate extends React.Component {
           <button
             className="pick-your-date__button"
             onClick={e => {
-              e && e.preventDefault();
+              e.preventDefault();
               this.setState({ isOpenSince: !this.state.isOpenSince });
             }}
           >
@@ -72,8 +72,8 @@ class PickYourDate extends React.Component {
 }
 
 PickYourDate.propTypes = {
-  since: PropTypes.object,
-  until: PropTypes.object,
+  since: PropTypes.instanceOf(moment),
+  until: PropTypes.instanceOf(moment),
   onSinceDateChange: PropTypes.func,
   onUntilDateChange: PropTypes.func,
 };

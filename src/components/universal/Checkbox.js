@@ -12,19 +12,20 @@ class Checkbox extends React.Component {
   }
 
   handleChange = ({ target }) => {
-    if (this.props.checked === undefined) {
+    const { checked, onChange } = this.props;
+    if (checked === undefined) {
       this.setState({ checked: !this.state.checked });
     }
-    this.props.onChange && this.props.onChange({ checked: target.checked, id: target.id });
+    onChange({ checked: target.checked, id: target.id });
   };
 
   render() {
-    const { id = 'checkbox-alfa', checked, color, disabled, className, style, ...props } = this.props;
+    const { id = 'checkbox-alfa', checked, color, disabled, className, children, ...props } = this.props;
     const isChecked = checked !== undefined ? checked : this.state.checked;
     const isOn = isChecked ? color || 'green' : 'black';
     const useColor = disabled ? 'lightgray' : isOn;
     return (
-      <label htmlFor={id} className={`checkbox-one ${className}`} style={style}>
+      <label htmlFor={id} className={`checkbox-one ${className}`} {...props}>
         <input type="checkbox" id={id} hidden checked={isChecked} onChange={this.handleChange} disabled={disabled} />
         <FontAwesomeIcon
           className="checkbox-one__input"
@@ -32,7 +33,7 @@ class Checkbox extends React.Component {
           color={useColor}
           size="2x"
         />
-        {props.children}
+        {children}
       </label>
     );
   }
@@ -43,7 +44,7 @@ Checkbox.propTypes = {
   checked: PropTypes.bool,
   className: PropTypes.string,
   onChange: PropTypes.func,
-  style: PropTypes.object,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   color: PropTypes.string,
   disabled: PropTypes.bool,
 };

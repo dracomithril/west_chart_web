@@ -17,9 +17,6 @@ class Demo extends React.Component {
   }
 
   render() {
-    const { store } = this.context;
-    const { chart } = store.getState();
-    console.log('Demo');
     return <ChartPresenter />;
   }
 }

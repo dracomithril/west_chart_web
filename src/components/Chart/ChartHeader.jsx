@@ -11,23 +11,7 @@ import '../components.css';
 import './chart.css';
 import { action_types } from './../../reducers/action_types';
 import { UpdateChart } from '../../utils/utils';
-
-const ChartButtons = ({ onGetDataClick, onQuickSummaryClick }) => (
-  <div className="chart-header__group-buttons">
-    <ButtonGroup vertical>
-      <Button id="updateChartB" onClick={onGetDataClick} bsStyle="primary">
-        Update
-      </Button>
-      <Button id="quickSummary" onClick={onQuickSummaryClick} bsStyle="success">
-        Quick summary
-      </Button>
-    </ButtonGroup>
-  </div>
-);
-ChartButtons.propTypes = {
-  onGetDataClick: PropTypes.func,
-  onQuickSummaryClick: PropTypes.func,
-};
+import { chartObjectProps, errorDaysObjectProps } from './../typeDefinitions';
 
 function selectedItem(id) {
   return { type: action_types.TOGGLE_SELECTED, id, checked: true };
@@ -73,6 +57,7 @@ export default class ChartHeader extends React.Component {
         tab.click();
       });
   };
+
   render() {
     const { store } = this.context;
     const { enable_until, songs_per_day, sinceDate, untilDate } = store.getState();
@@ -100,7 +85,22 @@ export default class ChartHeader extends React.Component {
             }
           />
         </div>
-        <ChartButtons onQuickSummaryClick={this.quickSummary} onGetDataClick={() => UpdateChart(store)} />
+        <div className="chart-header__group-buttons">
+          <ButtonGroup vertical>
+            <Button
+              id="updateChartB"
+              onClick={() => {
+                UpdateChart(store);
+              }}
+              bsStyle="primary"
+            >
+              Update
+            </Button>
+            <Button id="quickSummary" onClick={this.quickSummary} bsStyle="success">
+              Quick summary
+            </Button>
+          </ButtonGroup>
+        </div>
         <FilteringOptions />
       </div>
     );
@@ -109,7 +109,8 @@ export default class ChartHeader extends React.Component {
 ChartHeader.contextTypes = {
   store: PropTypes.object,
 };
+
 ChartHeader.propTypes = {
-  error_days: PropTypes.array,
-  view_chart: PropTypes.array,
+  error_days: PropTypes.arrayOf(errorDaysObjectProps),
+  view_chart: PropTypes.arrayOf(chartObjectProps),
 };

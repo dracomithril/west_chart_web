@@ -48,7 +48,12 @@ class UserPlaylist extends React.Component {
 }
 
 UserPlaylist.propTypes = {
-  user: PropTypes.object,
+  user: PropTypes.shape({
+    items: PropTypes.array,
+    id: PropTypes.string,
+    total: PropTypes.number,
+    pic: PropTypes.string,
+  }),
   onUpdate: PropTypes.func,
   onDelete: PropTypes.func,
   onSelect: PropTypes.func,

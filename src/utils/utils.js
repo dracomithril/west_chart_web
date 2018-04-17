@@ -96,6 +96,30 @@ export const filterChart = (chart, filters, until, songs_per_day) => {
   return { view_chart, error_days, westLetters };
 };
 
+export const getArtist_Title = name => {
+  // const regex_drop_trash = /^(.*?)(?:[.\s][([](?:[A-Za-z,\s]*)[)\]])?(?:\sft.\s[a-zA-Z\s]*)?(?:[-\sa-zA-Z]*)$/g;
+  const sp_regex = /^(.*?)(?:,\s.*s.*by)\s(.*?)(?:\son.*[Ss]potify)$/g;
+  const split_track = /^(.*?)\s?[-|]+\s?(.*?)$/g;
+  const clean_up_req = /^([\dA-Za-z'\s-]*)(?:.[([](?:[A-Za-z,\s]*)[)\]])?(?:\sft.\s[a-zA-Z\s]*)?(?:[-\sa-zA-Z]*)$/g;
+  const sp = sp_regex.exec(name);
+  const def_ret = { artist: null, title: name };
+  if (sp && sp[1] && sp[2]) {
+    return { title: sp[1], artist: sp[2] };
+  }
+  const z = split_track.exec(name);
+  if (z && z[1] && z[2]) {
+    return {
+      artist: z[1],
+      title: (track => {
+        const t = clean_up_req.exec(track);
+        return t && t[1] !== '' ? t[1] : track;
+      })(z[2]),
+    };
+  }
+
+  return def_ret;
+};
+
 export const getChartFromServer = query_params => {
   const url = `/api/fb/get_chart?${qs.stringify(query_params)}`;
   console.time('client-obtain-chart');
@@ -125,57 +149,13 @@ export const getChartFromServer = query_params => {
     );
 };
 
-export const getArtist_Title = name => {
-  // const regex_drop_trash = /^(.*?)(?:[.\s][([](?:[A-Za-z,\s]*)[)\]])?(?:\sft.\s[a-zA-Z\s]*)?(?:[-\sa-zA-Z]*)$/g;
-  const sp_regex = /^(.*?)(?:,\s.*s.*by)\s(.*?)(?:\son.*[Ss]potify)$/g;
-  const split_track = /^(.*?)\s?[-|]+\s?(.*?)$/g;
-  const clean_up_req = /^([\dA-Za-z'\s-]*)(?:.[([](?:[A-Za-z,\s]*)[)\]])?(?:\sft.\s[a-zA-Z\s]*)?(?:[-\sa-zA-Z]*)$/g;
-  const sp = sp_regex.exec(name);
-  const def_ret = { artist: null, title: name };
-  if (sp && sp[1] && sp[2]) {
-    return { title: sp[1], artist: sp[2] };
-  }
-  const z = split_track.exec(name);
-  if (z && z[1] && z[2]) {
-    return {
-      artist: z[1],
-      title: (track => {
-        const t = clean_up_req.exec(track);
-        return t && t[1] !== '' ? t[1] : track;
-      })(z[2]),
-    };
-  }
-
-  return def_ret;
-};
-/**
- *
- * @param enable_until {null}
- * @param start_date {Date}
- * @param show_last {Number}
- * @param user {string}
- * @returns {{days: *, since: number, until: number, access_token: (string|*)}}
- */
-const getQueryParams = (enable_until, start_date, show_last, user) => {
-  const until = start_date.toDate();
-  const since = subtractDaysFromDate(until, show_last);
-  const since2 = Math.round(since.getTime() / 1000.0);
-  const until2 = Math.round(until.getTime() / 1000.0);
-  return {
-    days: show_last,
-    since: since2,
-    until: until2,
-    access_token: user.accessToken,
-  };
-};
-
 /**
  * @returns {{days: *, since: number, until: number, access_token: (string|*)}}
  * @param since
  * @param until
  * @param accessToken
  */
-const getQueryParams2 = (since, until, accessToken) => ({
+const getQueryParams = (since, until, accessToken) => ({
   since: since.unix(),
   until: until.unix(),
   access_token: accessToken,
@@ -219,7 +199,7 @@ export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?h
 export const UpdateChart = store => {
   store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: true });
   const { user, sinceDate, untilDate } = store.getState();
-  const query_params = getQueryParams2(sinceDate, untilDate, user.accessToken);
+  const query_params = getQueryParams(sinceDate, untilDate, user.accessToken);
   return getChartFromServer(query_params)
     .then(body => {
       console.info(`chart list witch ${body.chart.length}`);

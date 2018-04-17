@@ -8,6 +8,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faFacebook } from '@fortawesome/fontawesome-free-brands';
 import { faClipboard } from '@fortawesome/fontawesome-free-solid';
 import './components.css';
+import { chartObjectProps } from './typeDefinitions';
 
 const copy = require('clipboard-copy');
 // let {sorting} = require('./../utils');
@@ -139,5 +140,5 @@ Summary.contextTypes = {
   store: PropTypes.object,
 };
 Summary.propTypes = {
-  selected: PropTypes.array,
+  selected: PropTypes.arrayOf(chartObjectProps),
 };

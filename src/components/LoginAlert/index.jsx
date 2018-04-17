@@ -87,6 +87,10 @@ LoginAlert.contextTypes = {
   store: PropTypes.object,
 };
 LoginAlert.propTypes = {
-  location: PropTypes.object,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      from: PropTypes.string,
+    }),
+  }),
 };
 export default LoginAlert;
