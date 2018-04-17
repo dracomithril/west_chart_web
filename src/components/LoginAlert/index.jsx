@@ -4,40 +4,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import { Button, Jumbotron } from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap';
 import FacebookLogin from 'react-facebook-login';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faSpotify } from '@fortawesome/fontawesome-free-brands';
+import SpotifyLogin from './SpotifyLogin';
 import './../bootstrap-social.css';
 import './LoginAlert.css';
-import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
 import { getFbPictureUrl } from '../../utils/utils';
 import { api } from './../../config';
 import { action_types } from './../../reducers/action_types';
 
-const SpotifyLogin = ({ from }) => (
-  <Button
-    className="btn btn-social btn-spotify"
-    onClick={() => {
-      loginToSpotifyAlpha(from)
-        .then(url => {
-          window.location = url;
-        })
-        .catch(err => {
-          console.error(err.message);
-        });
-    }}
-  >
-    <FontAwesomeIcon icon={faSpotify} style={{ paddingTop: 5 }} />
-    <span>Login to spotify</span>
-  </Button>
-);
-SpotifyLogin.propTypes = {
-  from: PropTypes.string,
-};
-
-const LoginAlert = (props, { store }) => {
-  const { location } = props;
+const LoginAlert = ({ location }, { store }) => {
   const { user, sp_user } = store.getState();
   const { from } = (location || {}).state || { from: '/' };
   if (user.id && sp_user.id) {

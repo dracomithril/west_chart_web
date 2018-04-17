@@ -4,23 +4,21 @@ import { faToggleOff, faToggleOn } from '@fortawesome/fontawesome-free-solid/ind
 import PropTypes from 'prop-types';
 
 class Checkbox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: false,
-    };
-  }
+  state = {
+    checked: false,
+  };
 
-  handleChange = ({ target }) => {
+  handleChange = e => {
+    const { target } = e;
     const { checked, onChange } = this.props;
     if (checked === undefined) {
       this.setState({ checked: !this.state.checked });
     }
-    onChange({ checked: target.checked, id: target.id });
+    onChange && onChange({ checked: target.checked, id: target.id });
   };
 
   render() {
-    const { id = 'checkbox-alfa', checked, color, disabled, className, children, ...props } = this.props;
+    const { id = 'checkbox-alfa', checked, color, disabled, className, children, onChange, ...props } = this.props;
     const isChecked = checked !== undefined ? checked : this.state.checked;
     const isOn = isChecked ? color || 'green' : 'black';
     const useColor = disabled ? 'lightgray' : isOn;

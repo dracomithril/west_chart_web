@@ -3,38 +3,13 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import FontAwesome from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/fontawesome-free-solid';
-import Checkbox from '../universal/Checkbox';
 import FilterOption from './FilterOption';
 import './FilteringOptions.css';
 import filters_def from '../../utils/filters_def';
 import { action_types } from './../../reducers/action_types';
-
-const MessageControl = ({ id, text, name, checked, onChange }) => (
-  <Checkbox
-    name={name}
-    color="cornflowerblue"
-    className="filter-option"
-    id={`${id}_checkbox`}
-    checked={checked}
-    onChange={target => {
-      onChange({ id, checked: target.checked });
-    }}
-  >
-    <OverlayTrigger placement="bottom" overlay={<Tooltip id={`${id}_tp`}>{`Will show all [${text}]`}</Tooltip>}>
-      <span>[{text}]</span>
-    </OverlayTrigger>
-  </Checkbox>
-);
-MessageControl.propTypes = {
-  id: PropTypes.string,
-  checked: PropTypes.bool,
-  text: PropTypes.string,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-};
+import MessageControl from './MessageControl';
 
 class FilteringOptions extends React.Component {
   state = {

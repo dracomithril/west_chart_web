@@ -20,9 +20,13 @@
     }],
     "no-param-reassign": "off",
     "no-unused-expressions": ["error",{ "allowShortCircuit": true }],
-    "import/no-extraneous-dependencies": "off",
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "**/*.story.jsx"
+      ],
+      "optionalDependencies": false
+    }],
     "jsx-a11y/no-noninteractive-tabindex": "warn",
-    "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/media-has-caption": "off",
     "react/require-default-props": "off"
   },

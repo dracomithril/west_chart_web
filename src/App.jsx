@@ -1,47 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './App.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header';
 
 import Footer from './components/Footer';
 import Navigation from './Navigation';
-import { getCredentials } from './utils/spotify_utils';
-import { action_types } from './reducers';
 
-class App extends React.Component {
-  componentWillMount() {
-    const { store } = this.context;
-    getCredentials()
-      .then(({ userData, accessToken }) => {
-        store.dispatch({
-          type: action_types.UPDATE_SP_USER,
-          user: userData,
-          access_token: accessToken,
-        });
-        return Promise.resolve(true);
-      })
-      .catch(() => Promise.resolve(false));
-  }
+import createStore from './configureStore';
 
-  componentDidMount() {
-    const { store } = this.context;
-    this.unsubscribe = store.subscribe(() => this.forceUpdate());
-  }
+const store = createStore();
 
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  render() {
-    return (
+const App = () => (
+  <Provider store={store}>
+    <Router>
       <div className="App">
         <Header />
         <Navigation />
         <Footer />
       </div>
-    );
-  }
-}
+    </Router>
+  </Provider>
+);
 
 App.contextTypes = {
   store: PropTypes.object,

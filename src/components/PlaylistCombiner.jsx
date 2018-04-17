@@ -151,7 +151,7 @@ export default class PlaylistCombiner extends React.Component {
             number that is hard to obtain. Sorry we will work on it.`}
           </span>
         </div>
-        <PlaylistInfo {...sp_playlist_info} />
+        {sp_playlist_info.url !== null && <PlaylistInfo {...sp_playlist_info} />}
         <div style={{ display: 'inline-block' }}>
           <div id="from_playlist">
             <label htmlFor="user_id_input">

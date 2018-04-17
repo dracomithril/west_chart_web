@@ -127,6 +127,33 @@ select:disabled {
     margin-bottom: 20px
 }
 
+.spotify_sumary {
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 4px;
+    margin: 4px;
+}
+
+.spotify_sumary span {
+    color: darkgreen;
+    font-size: medium;
+}
+
+.likes {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #337ab7;
+    border-radius: 10px;
+}
+
 @media screen {
 
 }

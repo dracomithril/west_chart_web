@@ -19,7 +19,7 @@ export const chartObjectProps = PropTypes.shape({
 export const errorDaysObjectProps = PropTypes.shape({
   count: PropTypes.number,
   color: PropTypes.string,
-  org: PropTypes.object,
+  org: PropTypes.string,
 });
 
 export default { chartObjectProps, errorDaysObjectProps };

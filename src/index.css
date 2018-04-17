@@ -14,3 +14,9 @@ body {
 .footer i {
     padding-left: 3px;
 }
+.App {
+    text-align: center;
+    /*min-width: 760px;*/
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

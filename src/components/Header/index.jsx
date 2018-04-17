@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import CookieBanner from 'react-cookie-banner';
 import UserInfo from './UserInfo';
 import './Header.css';
-
 import { action_types } from './../../reducers/action_types';
 
 export default class Header extends React.Component {
@@ -32,7 +31,6 @@ export default class Header extends React.Component {
       <div className="wcs_header">
         <CookieBanner
           message={"Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"}
-          onAccept={() => {}}
           cookie="user-has-accepted-cookies"
         />
         <UserInfo fb_user={user} sp_user={sp_user} onLogoutClick={this.onLogoutClick} />

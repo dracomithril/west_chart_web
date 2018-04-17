@@ -17,7 +17,7 @@ function selectedItem(id) {
   return { type: action_types.TOGGLE_SELECTED, id, checked: true };
 }
 
-export default class ChartHeader extends React.Component {
+class ChartHeader extends React.Component {
   onDateChange = actionType => date => {
     const { store } = this.context;
     store.dispatch({ type: actionType, date });
@@ -106,6 +106,7 @@ export default class ChartHeader extends React.Component {
     );
   }
 }
+
 ChartHeader.contextTypes = {
   store: PropTypes.object,
 };
@@ -114,3 +115,10 @@ ChartHeader.propTypes = {
   error_days: PropTypes.arrayOf(errorDaysObjectProps),
   view_chart: PropTypes.arrayOf(chartObjectProps),
 };
+
+ChartHeader.defaultProps = {
+  error_days: [],
+  view_chart: [],
+};
+
+export default ChartHeader;

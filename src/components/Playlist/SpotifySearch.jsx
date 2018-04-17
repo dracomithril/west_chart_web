@@ -114,7 +114,7 @@ class SpotifySearch extends React.Component {
           <FontAwesomeIcon icon={faSpotify} />
           spotify playlist:
         </div>
-        <PlaylistInfo info={sp_playlist_info} />
+        {sp_playlist_info.url !== null && <PlaylistInfo {...sp_playlist_info} />}
 
         <PlaylistForm
           onCreatePlaylistClick={this.onCratePlaylistClick}

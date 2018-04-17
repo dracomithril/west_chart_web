@@ -184,7 +184,7 @@ const chart = (state = [], action) => {
     case action_types.TOGGLE_ALL:
       return state.map(elem => {
         const copy = _.clone(elem);
-        copy.selected = !elem.selected;
+        copy.selected = action.value;
         return copy;
       });
     case action_types.CLEAR_SELECTED: {

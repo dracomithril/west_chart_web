@@ -5,7 +5,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import 'react-table/react-table.css';
 import '../components.css';
-import '../../App.css';
 import { chartObjectProps } from './../typeDefinitions';
 import ChartRow from './ChartRow';
 import Checkbox from '../universal/Checkbox';
@@ -36,11 +35,11 @@ const ChartTable = ({ data }, { store }) => {
     <div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Checkbox
-          id="toggleAll"
-          onChange={() => {
-            store.dispatch({ type: action_types.TOGGLE_ALL });
+          id="selectAll"
+          onChange={({ checked }) => {
+            store.dispatch({ type: action_types.TOGGLE_ALL, value: checked });
           }}
-        />toggle all
+        />select all
       </div>
       {ChartRows}
     </div>

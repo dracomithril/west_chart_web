@@ -108,21 +108,21 @@ const ChartRow = ({ from = {}, link = {}, checked, created_time, onChange, updat
 };
 
 ChartRow.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   from: PropTypes.shape({
     first_name: PropTypes.string,
     last_name: PropTypes.string,
     picture_url: PropTypes.string,
-  }),
-  checked: PropTypes.bool,
-  created_time: PropTypes.string,
+  }).isRequired,
+  checked: PropTypes.bool.isRequired,
+  created_time: PropTypes.string.isRequired,
   updated_time: PropTypes.string,
   message: PropTypes.string,
   reactions_num: PropTypes.number,
   link: PropTypes.shape({
     title: PropTypes.string,
     url: PropTypes.string,
-  }),
+  }).isRequired,
   onChange: PropTypes.func,
 };
 
