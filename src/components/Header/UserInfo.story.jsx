@@ -9,4 +9,4 @@ const facebookUser = {
   picture_url: '/pic/concerned_deadpool.jpg',
   first_name: 'Deadpool',
 };
-storiesOf('UserInfo', module).add('Todo[VR]', () => <UserInfo sp_user={spotifyUser} fb_user={facebookUser} />);
+storiesOf('UserInfo', module).add('Todo[VR]', () => <UserInfo spotifyUser={spotifyUser} fb_user={facebookUser} />);

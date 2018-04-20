@@ -54,7 +54,7 @@ const chart = [
     selected: true,
     source: 'https://www.youtube.com/embed/ALIBUPY_UEc?autoplay=1',
     type: 'video',
-    updated_time: '2018-03-16T00:16:21+0000',
+    updatedTime: '2018-03-16T00:16:21+0000',
   },
   {
     created_time: '2018-03-16T00:12:59+0000',
@@ -80,7 +80,7 @@ const chart = [
     selected: false,
     source: 'https://www.youtube.com/embed/rLKreFwTSYs?autoplay=1',
     type: 'video',
-    updated_time: '2018-03-16T00:12:59+0000',
+    updatedTime: '2018-03-16T00:12:59+0000',
   },
   {
     created_time: '2018-03-16T00:12:39+0000',
@@ -107,7 +107,7 @@ const chart = [
     selected: false,
     source: 'https://www.youtube.com/embed/LxoGNkLpgZk?autoplay=1',
     type: 'video',
-    updated_time: '2018-03-16T00:12:40+0000',
+    updatedTime: '2018-03-16T00:12:40+0000',
   },
   {
     created_time: '2018-03-16T00:12:36+0000',
@@ -135,10 +135,10 @@ const chart = [
     selected: false,
     source: 'https://www.youtube.com/embed/WX_0qCyFaeM?autoplay=1',
     type: 'video',
-    updated_time: '2018-03-16T00:12:36+0000',
+    updatedTime: '2018-03-16T00:12:36+0000',
   },
   {
-    created_time: '2018-03-14T23:10:55+0000',
+    createdTime: '2018-03-14T23:10:55+0000',
     from: user2,
     full_picture:
       'https://external.xx.fbcdn.net/safe_image.php?d=AQCizBHoFFafMMhU&w=480&h=360&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FLwDMFOLIHxU%2Fhqdefault.jpg&crop&sx=0&sy=0&sw=480&sh=360&_nc_hash=AQC_8OnCPCT4pFr4',
@@ -162,7 +162,7 @@ const chart = [
     selected: false,
     source: 'https://www.youtube.com/embed/LwDMFOLIHxU?autoplay=1',
     type: 'video',
-    updated_time: '2018-03-14T23:47:48+0000',
+    updatedTime: '2018-03-14T23:47:48+0000',
   },
 ];
 export default chart;

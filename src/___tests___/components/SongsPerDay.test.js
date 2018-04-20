@@ -17,7 +17,7 @@ describe('<SongsPerDay/>', () => {
   it('renders without crashing', () => {
     const store = mockStore(initial_state);
     const wrapper = shallow(
-      <SongsPerDay error_days={[]}/>, {
+      <SongsPerDay errorDays={[]}/>, {
         context: { store },
         childContextTypes: { store: PropTypes.object }
       }

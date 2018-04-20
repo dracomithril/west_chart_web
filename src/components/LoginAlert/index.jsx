@@ -11,12 +11,12 @@ import './../bootstrap-social.css';
 import './LoginAlert.css';
 import { getFbPictureUrl } from '../../utils/utils';
 import { api } from './../../config';
-import { action_types } from './../../reducers/action_types';
+import { actionTypes } from './../../reducers/actionTypes';
 
 const LoginAlert = ({ location }, { store }) => {
-  const { user, sp_user } = store.getState();
+  const { user, spotifyUser } = store.getState();
   const { from } = (location || {}).state || { from: '/' };
-  if (user.id && sp_user.id) {
+  if (user.id && spotifyUser.id) {
     return <Redirect to={from} />;
   }
   return (
@@ -38,7 +38,7 @@ const LoginAlert = ({ location }, { store }) => {
           callback={response => {
             if (!response.error) {
               store.dispatch({
-                type: action_types.UPDATE_USER,
+                type: actionTypes.UPDATE_USER,
                 value: {
                   ...response,
                   picture_url: getFbPictureUrl(response.id),
@@ -54,7 +54,7 @@ const LoginAlert = ({ location }, { store }) => {
           icon="fab fa-facebook"
         />
       )}
-      {sp_user.id === undefined && <SpotifyLogin from={from} />}
+      {spotifyUser.id === undefined && <SpotifyLogin from={from} />}
     </Jumbotron>
   );
 };

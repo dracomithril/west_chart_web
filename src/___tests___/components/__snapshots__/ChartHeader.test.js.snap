@@ -8,21 +8,48 @@ exports[`<ChartHeader/> renders without crashing ChartPresenter 1`] = `
     className="chart-header__left_dock"
   >
     <PickYourDate
-      onChange={[Function]}
-      onDateChange={[Function]}
-      onDaysChange={[Function]}
-      show_last={31}
+      onSinceDateChange={[Function]}
+      onUntilDateChange={[Function]}
     />
     <SongsPerDay
-      error_days={Array []}
+      errorDays={Array []}
       onDaysChange={[Function]}
-      songs_per_day={2}
+      songsPerDay={2}
     />
   </div>
-  <ChartButtons
-    onGetDataClick={[Function]}
-    onQuickSummaryClick={[Function]}
-  />
+  <div
+    className="chart-header__group-buttons"
+  >
+    <ButtonGroup
+      block={false}
+      bsClass="btn-group"
+      justified={false}
+      vertical={true}
+    >
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="primary"
+        disabled={false}
+        id="updateChartB"
+        onClick={[Function]}
+      >
+        Update
+      </Button>
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="success"
+        disabled={false}
+        id="quickSummary"
+        onClick={[Function]}
+      >
+        Quick summary
+      </Button>
+    </ButtonGroup>
+  </div>
   <FilteringOptions />
 </div>
 `;

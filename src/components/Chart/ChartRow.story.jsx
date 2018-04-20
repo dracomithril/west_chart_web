@@ -45,7 +45,7 @@ storiesOf('ChartRow', module)
       link={{ url: '#', title: 'song title' }}
       checked={checkedState}
       created_time="03/16/2018"
-      updated_time="03/17/2018"
+      updatedTime="03/17/2018"
       onChange={target => {
         checkedState = target.checked;
         action('select toggled');

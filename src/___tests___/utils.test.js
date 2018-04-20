@@ -30,28 +30,28 @@ describe('[utils]', () => {
     }, {
       from: { name: "bartek" },
       reactions_num: 3,
-      created_time: new Date('2017-03-16'),
+      createdTime: new Date('2017-03-16'),
       link: {
         name: 'acbaa',
       },
     }, {
       from: { name: "zumba" },
       reactions_num: 9,
-      created_time: new Date('2017-04-14'),
+      createdTime: new Date('2017-04-14'),
       link: {
         name: 'aabcaa',
       },
     }, {
       from: { name: 'tomek' },
       reactions_num: 0,
-      created_time: undefined,
+      createdTime: undefined,
       link: {
         name: 'zzzaaaa',
       },
     }, {
       from: { name: 'tomek' },
       reactions_num: 1,
-      created_time: new Date('2017-02-19'),
+      createdTime: new Date('2017-02-19'),
       link: {
         name: 'tttaaaa',
       },
@@ -77,7 +77,7 @@ describe('[utils]', () => {
       let array = Object.assign([], base_array);
       sorting.when(array);
       expect(array[0].from.name).toBe("tomek");
-      expect(array[0].created_time).toBeUndefined();
+      expect(array[0].createdTime).toBeUndefined();
       expect(array[1].from.name).toBe("tomek");
       expect(array[2].from.name).toBe("krzys");
       expect(array[3].from.name).toBe("bartek");
@@ -91,7 +91,7 @@ describe('[utils]', () => {
       expect(array[2].from.name).toBe("bartek");
       expect(array[3].from.name).toBe("tomek");
       expect(array[4].from.name).toBe("tomek");
-      expect(array[4].created_time).toBeUndefined();
+      expect(array[4].createdTime).toBeUndefined();
     });
 
   });
@@ -106,12 +106,12 @@ describe('[utils]', () => {
         json: sinon.stub(),
         status: 200,
       };
-      resp.json.returns(Promise.resolve({ chart: ['zzz', 'bbb'], last_update: 'update' }));
+      resp.json.returns(Promise.resolve({ chart: ['zzz', 'bbb'], lastUpdateDate: 'update' }));
       fetch.withArgs('/api/fb/get_chart?').returns(Promise.resolve(resp));
       return getChartFromServer({}, store).then((z) => {
         expect(store.getActions().length).toBe(0);
         expect(z.chart.length).toBe(2);
-        expect(z.last_update).toBe('update');
+        expect(z.lastUpdateDate).toBe('update');
         window.fetch.restore();
       });
     });
@@ -250,10 +250,10 @@ describe('[utils]', () => {
           more_control: { checked: false },
           woc_control: { checked: false },
           westletter_control: { checked: false },
-        }, until: "2018-03-16T19:54:25.672Z", songs_per_day: 3,
+        }, until: "2018-03-16T19:54:25.672Z", songsPerDay: 3,
       };
-      const filtered = filterChart(getStore.chart, getStore.filters, getStore.until, getStore.songs_per_day);
-      expect(filtered.view_chart.length).toBe(24);
+      const filtered = filterChart(getStore.chart, getStore.filters, getStore.until, getStore.songsPerDay);
+      expect(filtered.viewChart.length).toBe(24);
     });
     it('should be able to filter when add_control', function () {
       let getStore = {
@@ -265,11 +265,11 @@ describe('[utils]', () => {
           more_control: { checked: false },
           woc_control: { checked: false },
           westletter_control: { checked: true },
-        }, until: "2018-03-21T19:54:25.672Z", songs_per_day: 3,
+        }, until: "2018-03-21T19:54:25.672Z", songsPerDay: 3,
       };
 
-      const filtered = filterChart(getStore.chart, getStore.filters, getStore.until, getStore.songs_per_day);
-      expect(filtered.view_chart.length).toBe(8);
+      const filtered = filterChart(getStore.chart, getStore.filters, getStore.until, getStore.songsPerDay);
+      expect(filtered.viewChart.length).toBe(8);
     });
 
   });

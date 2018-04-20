@@ -11,7 +11,7 @@ import LoginAlert from './components/LoginAlert';
 import Demo from './components/Demo';
 import PrivateRoute from './PrivateRoute';
 import { getCredentials } from './utils/spotify_utils';
-import { action_types } from './reducers/action_types';
+import { actionTypes } from './reducers/actionTypes';
 
 class Navigation extends React.Component {
   componentWillMount() {
@@ -19,7 +19,7 @@ class Navigation extends React.Component {
     getCredentials()
       .then(({ userData, accessToken }) => {
         store.dispatch({
-          type: action_types.UPDATE_SP_USER,
+          type: actionTypes.UPDATE_SP_USER,
           user: userData,
           access_token: accessToken,
         });
@@ -39,7 +39,7 @@ class Navigation extends React.Component {
 
   render() {
     const { store } = this.context;
-    const { sp_user } = store.getState();
+    const { spotifyUser } = store.getState();
     return (
       <div>
         <Navbar collapseOnSelect>
@@ -57,7 +57,7 @@ class Navigation extends React.Component {
               <NavItem eventKey={1} href="/chart">
                 Chart
               </NavItem>
-              {sp_user.id && (
+              {spotifyUser.id && (
                 <NavItem eventKey={2} href="/combiner">
                   Combiner(BETA)
                 </NavItem>
@@ -75,7 +75,7 @@ class Navigation extends React.Component {
           <Route path="/policy" exact component={Policy} />
           <Route path="/login" component={LoginAlert} />
           <PrivateRoute path="/chart" exact component={ChartPresenter} />
-          {sp_user.id && <PrivateRoute path="/combiner" exact component={Combiner} />}
+          {spotifyUser.id && <PrivateRoute path="/combiner" exact component={Combiner} />}
           <Route path="/demo" component={Demo} />
           <Route component={NotFound} />
         </Switch>

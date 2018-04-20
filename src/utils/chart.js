@@ -90,7 +90,7 @@ function filterChartAndMap(body) {
         selected: false,
         source: elem.source,
         type: elem.type,
-        updated_time: elem.updated_time,
+        updatedTime: elem.updatedTime,
       };
     });
     resolve(map);
@@ -111,7 +111,7 @@ function UpdateChart(show_days, since, until, access_token, groupId) {
     .then(body => {
       const cache = {
         chart: body,
-        last_update: new Date().toISOString(),
+        lastUpdateDate: new Date().toISOString(),
       };
       return Promise.resolve(cache);
     });

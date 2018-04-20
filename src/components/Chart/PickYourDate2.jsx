@@ -3,78 +3,64 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
+import { withStyles } from 'material-ui/styles';
+import TextField from 'material-ui/TextField';
 
-class PickYourDate extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpenSince: false,
-      isOpenUntil: false,
-    };
-  }
-
-  render() {
-    const { since, until, onSinceDateChange, onUntilDateChange } = this.props;
-    return (
-      <div className="pick-your-date">
-        <div className="pick-your-date__date-picker">
-          starting from
-          <button
-            className="pick-your-date__button"
-            onClick={e => {
-              e.preventDefault();
-              this.setState({ isOpenUntil: !this.state.isOpenUntil });
-            }}
-          >
-            {since && since.format('DD/MM/YY')}
-          </button>
-          {this.state.isOpenUntil && (
-            <DatePicker
-              selected={since}
-              onChange={date => {
-                this.setState({ isOpenUntil: !this.state.isOpenUntil });
-                onSinceDateChange(date);
-              }}
-              withPortal
-              inline
-            />
-          )}
-        </div>
-        <div className="pick-your-date__date-picker">
-          until
-          <button
-            className="pick-your-date__button"
-            onClick={e => {
-              e.preventDefault();
-              this.setState({ isOpenSince: !this.state.isOpenSince });
-            }}
-          >
-            {until && until.format('DD/MM/YY')}
-          </button>
-          {this.state.isOpenSince && (
-            <DatePicker
-              selected={until}
-              onChange={date => {
-                this.setState({ isOpenSince: !this.state.isOpenSince });
-                onUntilDateChange(date);
-              }}
-              withPortal
-              inline
-            />
-          )}
-        </div>
-      </div>
-    );
-  }
-}
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 200,
+  },
+});
+const PickYourDate = ({ since, until, onSinceDateChange, onUntilDateChange, classes }) => {
+  const sinceFormat = since.format('YYYY-MM-DD');
+  const untilFormat = until.format('YYYY-MM-DD');
+  return (
+    <div className="pick-your-date">
+      <TextField
+        id="date"
+        label="starting from"
+        type="date"
+        defaultValue="2017-05-24"
+        value={sinceFormat}
+        className={classes.textField}
+        InputLabelProps={{
+          shrink: true,
+        }}
+        onChange={({ target }) => {
+          onSinceDateChange(moment(target.value));
+        }}
+      />
+      <TextField
+        id="date"
+        label="until"
+        type="date"
+        defaultValue="2017-05-24"
+        className={classes.textField}
+        value={untilFormat}
+        InputLabelProps={{
+          shrink: true,
+        }}
+        onChange={({ target }) => {
+          onUntilDateChange(moment(target.value));
+        }}
+      />
+    </div>
+  );
+};
 
 PickYourDate.propTypes = {
+  classes: PropTypes.shape().isRequired,
   since: PropTypes.instanceOf(moment),
   until: PropTypes.instanceOf(moment),
   onSinceDateChange: PropTypes.func,
   onUntilDateChange: PropTypes.func,
 };
-export default PickYourDate;
+
+export default withStyles(styles)(PickYourDate);

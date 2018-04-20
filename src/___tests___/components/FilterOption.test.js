@@ -13,7 +13,7 @@ describe('<FilteringOption/>', () => {
   let elem = {
     control: { name: "date_create_control", id: 'create' },
     input: { max: 31, name: "create_control" },
-    valueName: "created_time",
+    valueName: "createdTime",
     description: { start: 'created in last ', end: ' days' },
     type: 'countDays'
   };
@@ -21,8 +21,8 @@ describe('<FilteringOption/>', () => {
     const wrapper = shallow(
       <FilterOption id={elem.control.id}
                     name={elem.control.name}
-                    desc_end={elem.description.end}
-                    desc_start={elem.description.start}
+                    descEnd={elem.description.end}
+                    descStart={elem.description.start}
       />,
     );
     expect(shallowToJson(wrapper)).toMatchSnapshot();
@@ -33,8 +33,8 @@ describe('<FilteringOption/>', () => {
     const wrapper = shallow(
       <FilterOption id={elem.control.id}
                     name={elem.control.name}
-                    desc_end={elem.description.end}
-                    desc_start={elem.description.start}
+                    descEnd={elem.description.end}
+                    descStart={elem.description.start}
                     onChange={onChange}
                     checked={true}
       />

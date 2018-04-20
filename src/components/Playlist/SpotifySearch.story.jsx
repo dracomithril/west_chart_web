@@ -11,7 +11,7 @@ const state = {
     url: null,
     preview_url: null,
   },
-  sp_user: {
+  spotifyUser: {
     id: 'draco',
     access_token: 'what_eva',
   },

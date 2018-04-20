@@ -10,7 +10,7 @@ const store = configureStore({
     name: 'Deadpool',
     first_name: 'Wade',
   },
-  sp_user: {
+  spotifyUser: {
     id: 'unicorn',
   },
 });

@@ -1,4 +1,4 @@
-export const action_types = {
+export const actionTypes = {
   ADD_ERROR: 'ADD_ERROR',
   CLEAR_ERRORS: 'CLEAR_ERRORS',
   CLEAR_SELECTED: 'CLEAR_SELECTED',
@@ -6,7 +6,6 @@ export const action_types = {
   SIGN_OUT_USER: 'SIGN_OUT_USER',
   SWAP_FIELDS: 'SWAP_FIELDS',
   TOGGLE_ALL: 'TOGGLE_ALL',
-  TOGGLE_ENABLE_UNTIL: 'TOGGLE_ENABLE_UNTIL',
   TOGGLE_FILTER: 'TOGGLE_FILTER',
   TOGGLE_IS_PRIVATE: 'TOGGLE_IS_PRIVATE',
   TOGGLE_HAS_COOKIE: 'TOGGLE_HAS_COOKIE',
@@ -32,4 +31,4 @@ export const action_types = {
   UPDATE_SONGS_PER_DAY: 'UPDATE_SONGS_PER_DAY',
   UPDATE_SHOW_LAST: 'UPDATE_SHOW_LAST',
 };
-export default action_types;
+export default actionTypes;

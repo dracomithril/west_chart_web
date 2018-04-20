@@ -8,7 +8,7 @@ import { faCaretDown, faCaretUp } from '@fortawesome/fontawesome-free-solid';
 import FilterOption from './FilterOption';
 import './FilteringOptions.css';
 import filters_def from '../../utils/filters_def';
-import { action_types } from './../../reducers/action_types';
+import { actionTypes } from './../../reducers/actionTypes';
 import MessageControl from './MessageControl';
 
 class FilteringOptions extends React.Component {
@@ -27,12 +27,12 @@ class FilteringOptions extends React.Component {
           days={days}
           name={control.name}
           checked={checked}
-          desc_start={description.start}
-          desc_end={description.end}
+          descStart={description.start}
+          descEnd={description.end}
           key={input.name}
           onChange={target => {
             store.dispatch({
-              type: action_types.TOGGLE_FILTER,
+              type: actionTypes.TOGGLE_FILTER,
               id: target.id,
               checked: target.checked,
             });
@@ -40,7 +40,7 @@ class FilteringOptions extends React.Component {
           onValueChange={target => {
             const { id, name, value } = target;
             store.dispatch({
-              type: action_types.UPDATE_DAYS,
+              type: actionTypes.UPDATE_DAYS,
               id,
               name,
               value: Number(value),
@@ -58,7 +58,7 @@ class FilteringOptions extends React.Component {
         key={input.name}
         onChange={target => {
           store.dispatch({
-            type: action_types.TOGGLE_FILTER,
+            type: actionTypes.TOGGLE_FILTER,
             id: target.id,
             checked: target.checked,
           });

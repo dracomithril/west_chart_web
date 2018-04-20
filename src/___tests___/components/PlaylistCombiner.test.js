@@ -18,7 +18,7 @@ xdescribe('<PlaylistCombiner/>', () => {
   it('renders without crashing ChartPresenter', (done) => {
     // let sp = require('./../../src/front/spotify_utils');
     // let stub = sinon.stub();
-    initial_state.sp_user.id = 'smoczek';
+    initial_state.spotifyUser.id = 'smoczek';
     const store = mockStore(initial_state);
 
     const wrapper = shallow(

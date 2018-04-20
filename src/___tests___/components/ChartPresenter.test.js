@@ -17,7 +17,7 @@ describe('<ChartPresenter/>', () => {
   it('renders without crashing ChartPresenter', () => {
     const store = mockStore(initial_state);
     const wrapper = shallow(
-      <ChartPresenter view_chart={[]} />, {
+      <ChartPresenter viewChart={[]} />, {
         context: { store },
         childContextTypes: { store: PropTypes.object },
       },

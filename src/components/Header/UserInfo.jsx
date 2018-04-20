@@ -10,16 +10,16 @@ import './../bootstrap-social.css';
 import './Header.css';
 // TODO save information about user to database, do it somewhere else
 
-const UserInfo = ({ fb_user, sp_user, onLogoutClick }) => (
+const UserInfo = ({ fb_user, spotifyUser, onLogoutClick }) => (
   <div className="logged">
     <div>
       {fb_user.picture_url && <Image src={fb_user.picture_url} circle bsClass="logged__image" />}
       <span>{`Hi, ${fb_user.first_name || 'stranger'}`}</span>
       <span className="logged--hide">{" it's"} nice to see you again.</span>
     </div>
-    <div className="logged--hide spotify" title={sp_user.id || ''}>
+    <div className="logged--hide spotify" title={spotifyUser.id || ''}>
       <FontAwesomeIcon icon={faSpotify} />
-      {sp_user ? <span>{sp_user.id}</span> : <a href="/login">Login to</a>}
+      {spotifyUser ? <span>{spotifyUser.id}</span> : <a href="/login">Login to</a>}
     </div>
     <div className="logged--hide" style={{ textAlign: 'center' }}>
       <Button bsStyle="warning" onClick={onLogoutClick}>
@@ -34,7 +34,7 @@ UserInfo.propTypes = {
     first_name: PropTypes.string,
     picture_url: PropTypes.string,
   }),
-  sp_user: PropTypes.shape({
+  spotifyUser: PropTypes.shape({
     id: PropTypes.string,
   }),
   onLogoutClick: PropTypes.func,

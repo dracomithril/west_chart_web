@@ -19,34 +19,34 @@ DayEntry.propTypes = {
   color: PropTypes.string,
 };
 
-const ErrorDaysIndicator = ({ error_days, less }) =>
-  error_days.length > 0 && (
+const ErrorDaysIndicator = ({ errorDays, less }) =>
+  errorDays.length > 0 && (
     <OverlayTrigger
       trigger={['hover', 'focus']}
       placement="bottom"
       overlay={
         <Popover id="haveMoreOrLessDays" title={`${less ? 'less' : 'more'} then expected`}>
-          {error_days}
+          {errorDays}
         </Popover>
       }
     >
       <FontAwesomeIcon icon={less ? faArrowCircleDown : faArrowCircleUp} className={less ? 'less_days' : 'more_days'}>
-        {error_days.length}
+        {errorDays.length}
       </FontAwesomeIcon>
     </OverlayTrigger>
   );
 ErrorDaysIndicator.propTypes = {
-  error_days: PropTypes.arrayOf(errorDaysObjectProps),
+  errorDays: PropTypes.arrayOf(errorDaysObjectProps),
   less: PropTypes.bool,
 };
-const SongsPerDay = ({ error_days = null, songs_per_day, onDaysChange }) => {
-  let err_days_less = [];
-  let err_days_more = [];
+const SongsPerDay = ({ errorDays = null, songsPerDay, onDaysChange }) => {
+  let errorDaysLess = [];
+  let errorDaysMore = [];
   let style;
-  if (error_days) {
-    err_days_less = error_days.filter(elem => elem.color === 'blue').map(DayEntry);
-    err_days_more = error_days.filter(elem => elem.color === 'red').map(DayEntry);
-    style = error_days.length !== 0 ? 'songs-per-day--err' : 'songs-per-day--good';
+  if (errorDays) {
+    errorDaysLess = errorDays.filter(elem => elem.color === 'blue').map(DayEntry);
+    errorDaysMore = errorDays.filter(elem => elem.color === 'red').map(DayEntry);
+    style = errorDays.length !== 0 ? 'songs-per-day--err' : 'songs-per-day--good';
   } else {
     style = '';
   }
@@ -58,7 +58,7 @@ const SongsPerDay = ({ error_days = null, songs_per_day, onDaysChange }) => {
           {'songs per day'}
           <input
             type="number"
-            value={songs_per_day}
+            value={songsPerDay}
             name="songs_per_day"
             id="songs_per_day"
             step={1}
@@ -71,15 +71,15 @@ const SongsPerDay = ({ error_days = null, songs_per_day, onDaysChange }) => {
         </label>
       </div>
       <div className="songs-per-day__counters">
-        <ErrorDaysIndicator error_days={err_days_less} less />
-        <ErrorDaysIndicator error_days={err_days_more} />
+        <ErrorDaysIndicator errorDays={errorDaysLess} less />
+        <ErrorDaysIndicator errorDays={errorDaysMore} />
       </div>
     </div>
   );
 };
 SongsPerDay.propTypes = {
-  error_days: PropTypes.arrayOf(errorDaysObjectProps),
-  songs_per_day: PropTypes.number,
+  errorDays: PropTypes.arrayOf(errorDaysObjectProps),
+  songsPerDay: PropTypes.number,
   onDaysChange: PropTypes.func,
 };
 

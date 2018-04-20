@@ -67,10 +67,11 @@ exports[`<PlaylistForm/> createPlaylistAndAddTracks 1`] = `
       active={false}
       block={false}
       bsClass="btn"
-      bsStyle="danger"
+      bsStyle="info"
       disabled={true}
       id="crt_pl_button"
       onClick={[Function]}
+      title="Sorry you need to be logged to spotify to be able to add playlist"
     >
       <FontAwesomeIcon$1
         border={false}
@@ -186,10 +187,11 @@ exports[`<PlaylistForm/> renders without crashing 1`] = `
       active={false}
       block={false}
       bsClass="btn"
-      bsStyle="danger"
+      bsStyle="info"
       disabled={true}
       id="crt_pl_button"
       onClick={[Function]}
+      title="Sorry you need to be logged to spotify to be able to add playlist"
     >
       <FontAwesomeIcon$1
         border={false}
@@ -306,10 +308,11 @@ exports[`<PlaylistForm/> start_click 1`] = `
       active={false}
       block={false}
       bsClass="btn"
-      bsStyle="danger"
+      bsStyle="info"
       disabled={true}
       id="crt_pl_button"
       onClick={[Function]}
+      title="Sorry you need to be logged to spotify to be able to add playlist"
     >
       <FontAwesomeIcon$1
         border={false}

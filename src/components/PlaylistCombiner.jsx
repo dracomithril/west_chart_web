@@ -13,7 +13,7 @@ import {
 import PlaylistInfo from './PlaylistInfo';
 import UserPlaylist from './UserPlaylist';
 
-import { action_types } from './../reducers/action_types';
+import { actionTypes } from './../reducers/actionTypes';
 
 const _ = require('lodash');
 // todo add modal to block usage of tool when playlist crating
@@ -35,29 +35,29 @@ export default class PlaylistCombiner extends React.Component {
 
   componentDidMount() {
     const { store } = this.context;
-    const { sp_user } = store.getState();
-    this.getUserInformation(sp_user.id);
+    const { spotifyUser } = store.getState();
+    this.getUserInformation(spotifyUser.id);
   }
 
   getUserInformation = user => {
     if (user) {
       const { state, context: { store } } = this;
-      const { sp_user } = store.getState();
+      const { spotifyUser } = store.getState();
       const updateUsers = (users, new_user) => {
         const newUsers = {
           [new_user.id]: Object.assign({}, users[new_user.id], new_user),
         };
         return { users: Object.assign({}, users, newUsers) };
       };
-      return getUserAndPlaylists(sp_user.access_token, user)
+      return getUserAndPlaylists(spotifyUser.access_token, user)
         .then(new_user => {
           this.setState(updateUsers(state.users, new_user));
           console.info('Retrieved playlists ', new_user);
           return Promise.resolve(new_user.id);
         })
         .catch(e => {
-          store.dispatch({ type: action_types.ADD_ERROR, value: e });
-          store.dispatch({ type: action_types.SIGN_OUT_USER });
+          store.dispatch({ type: actionTypes.ADD_ERROR, value: e });
+          store.dispatch({ type: actionTypes.SIGN_OUT_USER });
           return Promise.resolve();
         });
     }
@@ -75,27 +75,27 @@ export default class PlaylistCombiner extends React.Component {
     // todo check if playlist exists
     const { store } = this.context;
     const createFrom_selected = document.getElementById('select_user_playlist').value;
-    const { sp_user } = store.getState();
+    const { spotifyUser } = store.getState();
     const { selected, new_playlist, createFrom } = this.state;
     const array = _.flatMap(selected, n => n);
 
-    const actions = array.map(el => getTracks(sp_user.access_token, ...el));
+    const actions = array.map(el => getTracks(spotifyUser.access_token, ...el));
     Promise.all(actions)
       .then(data => {
         const flat_tracks = _.flatMap(data, n => n); // [].concat.apply([], data);
         const uniq = _.uniq(flat_tracks);
-        const { id, access_token } = sp_user;
+        const { id, access_token } = spotifyUser;
         return createFrom === cf.existing
           ? addTrucksToPlaylistNoRepeats(id, createFrom_selected, uniq, access_token)
           : createPlaylistAndAddTracks(access_token, id, new_playlist, false, uniq);
       })
       .then(d => {
         this.setState({ sp_playlist_info: d });
-        this.getUserInformation(sp_user.id);
+        this.getUserInformation(spotifyUser.id);
         this.forceUpdate();
       })
       .catch(e => {
-        store.dispatch({ type: action_types.ADD_ERROR, value: e });
+        store.dispatch({ type: actionTypes.ADD_ERROR, value: e });
       });
   };
 
@@ -117,7 +117,7 @@ export default class PlaylistCombiner extends React.Component {
   };
 
   render() {
-    const { sp_user } = this.context.store.getState();
+    const { spotifyUser } = this.context.store.getState();
     const { userField, users, sp_playlist_info, createFrom } = this.state;
     const users_playlists = Object.keys(users).map(user => (
       <UserPlaylist
@@ -126,10 +126,10 @@ export default class PlaylistCombiner extends React.Component {
         onUpdate={this.getUserInformation}
         onDelete={this.deleteUserPlaylist}
         onSelect={this.updateSelectedPlaylist}
-        erasable={(users[user] || {}).id !== sp_user.id}
+        erasable={(users[user] || {}).id !== spotifyUser.id}
       />
     ));
-    const user_playlists = ((users[sp_user.id] || {}).items || []).map(UserPlaylist.mapUserPlaylistToOptions);
+    const user_playlists = ((users[spotifyUser.id] || {}).items || []).map(UserPlaylist.mapUserPlaylistToOptions);
     const newList_checked = cf.new_list === createFrom;
     const existing_checked = cf.existing === createFrom;
     const updateSelected = ({ target }) => {

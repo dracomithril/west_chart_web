@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import CookieBanner from 'react-cookie-banner';
 import UserInfo from './UserInfo';
 import './Header.css';
-import { action_types } from './../../reducers/action_types';
+import { actionTypes } from './../../reducers/actionTypes';
 
 export default class Header extends React.Component {
   componentDidMount() {
@@ -20,20 +20,20 @@ export default class Header extends React.Component {
 
   onLogoutClick = () => {
     const { store } = this.context;
-    store.dispatch({ type: action_types.SIGN_OUT_USER });
+    store.dispatch({ type: actionTypes.SIGN_OUT_USER });
     window.location = '/';
   };
 
   render() {
     const { store } = this.context;
-    const { user, sp_user } = store.getState();
+    const { user, spotifyUser } = store.getState();
     return (
       <div className="wcs_header">
         <CookieBanner
           message={"Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"}
           cookie="user-has-accepted-cookies"
         />
-        <UserInfo fb_user={user} sp_user={sp_user} onLogoutClick={this.onLogoutClick} />
+        <UserInfo fb_user={user} spotifyUser={spotifyUser} onLogoutClick={this.onLogoutClick} />
       </div>
     );
   }

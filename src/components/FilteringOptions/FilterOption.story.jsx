@@ -21,8 +21,8 @@ storiesOf('FilterOption', module)
     <FilterOption
       checked
       onChange={action('checked')}
-      desc_start="some filter"
-      desc_end="days"
+      descStart="some filter"
+      descEnd="days"
       onValueChange={action('value changed')}
     />
   ));

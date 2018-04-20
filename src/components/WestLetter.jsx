@@ -21,7 +21,7 @@ export default class WestLetter extends React.Component {
     const today_week = weekInfo(today);
     const { data = [] } = this.props;
     const show = data.map(elem => {
-      const create_date = new Date(elem.created_time);
+      const create_date = new Date(elem.createdTime);
       const { weekNumber } = weekInfo(create_date);
       return (
         <div style={{ padding: 2, display: 'block', border: '1px black solid' }} key={elem.id}>

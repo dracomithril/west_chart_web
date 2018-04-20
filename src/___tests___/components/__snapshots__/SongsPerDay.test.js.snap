@@ -25,11 +25,11 @@ exports[`<SongsPerDay/> renders without crashing 1`] = `
     className="songs-per-day__counters"
   >
     <ErrorDaysIndicator
-      error_days={Array []}
+      errorDays={Array []}
       less={true}
     />
     <ErrorDaysIndicator
-      error_days={Array []}
+      errorDays={Array []}
     />
   </div>
 </div>

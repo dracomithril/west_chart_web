@@ -25,7 +25,7 @@ const state2 = {
   show_wait: false,
   user: {},
   chart: [],
-  last_update: '2017-06-16T19:54:25.672Z',
+  lastUpdateDate: '2017-06-16T19:54:25.672Z',
 };
 
 const storeNo = configureStore(state2);

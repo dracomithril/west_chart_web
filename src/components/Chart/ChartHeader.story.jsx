@@ -12,7 +12,7 @@ storiesOf('ChartHeader', module)
   .add('Todo[VR]', () => <ChartHeader />)
   .add('With error days', () => (
     <ChartHeader
-      error_days={[
+      errorDays={[
         { color: 'blue', org: '01/03' },
         { color: 'blue', org: '02/03' },
         { color: 'red', org: '03/03' },

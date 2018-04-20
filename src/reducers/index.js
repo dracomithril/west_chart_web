@@ -1,4 +1,4 @@
-export { action_types } from './action_types';
+export { actionTypes } from './actionTypes';
 export { initialize } from './initialize';
 export { middleware } from './middleware';
 export { reducers } from './reducers';

@@ -1,22 +1,21 @@
 import moment from 'moment';
 
 function getFacebookUser() {
-  const facebookUserString = sessionStorage.getItem('facebook_user');
-  let facebookUser;
+  if (!window.sessionStorage) return {};
   try {
+    const facebookUserString = window.sessionStorage.getItem('facebook_user');
     const user = JSON.parse(facebookUserString);
-    facebookUser = user ? { user } : {};
+    return user ? { user } : {};
   } catch (e) {
-    facebookUser = {};
+    return {};
   }
-  return facebookUser;
 }
 
 function getStartDate() {
   const untilDate = moment();
   const sinceDate = moment(untilDate).subtract(14, 'days');
   return {
-    start_date: moment(),
+    startDate: moment(),
     untilDate,
     sinceDate,
   };

@@ -43,8 +43,8 @@ const fullFormatDate = date => {
   return '';
 };
 
-const ChartRow = ({ from = {}, link = {}, checked, created_time, onChange, updated_time, ...props }) => {
-  const showUpdateTime = updated_time && updated_time !== created_time;
+const ChartRow = ({ from = {}, link = {}, checked, createdTime, onChange, updatedTime, ...props }) => {
+  const showUpdateTime = updatedTime && updatedTime !== createdTime;
   const withMessage = {
     icon: faComment,
     size: '2x',
@@ -77,9 +77,9 @@ const ChartRow = ({ from = {}, link = {}, checked, created_time, onChange, updat
         </div>
         <div className="chart-row__time-info">
           <FontAwesomeIcon icon={faClock} color="black" style={{ marginBottom: 5 }} />
-          {created_time ? (
-            <span style={{ color: 'red' }} title={`creation time: ${fullFormatDate(created_time)}`}>
-              <FontAwesomeIcon icon={faCaretRight} /> {shortFormatDate(created_time)}
+          {createdTime ? (
+            <span style={{ color: 'red' }} title={`creation time: ${fullFormatDate(createdTime)}`}>
+              <FontAwesomeIcon icon={faCaretRight} /> {shortFormatDate(createdTime)}
             </span>
           ) : (
             <span
@@ -87,8 +87,8 @@ const ChartRow = ({ from = {}, link = {}, checked, created_time, onChange, updat
             />
           )}
           {showUpdateTime && (
-            <span style={{ color: 'green' }} title={`update time: ${fullFormatDate(updated_time)}`}>
-              <FontAwesomeIcon icon={faCaretUp} /> {shortFormatDate(updated_time)}
+            <span style={{ color: 'green' }} title={`update time: ${fullFormatDate(updatedTime)}`}>
+              <FontAwesomeIcon icon={faCaretUp} /> {shortFormatDate(updatedTime)}
             </span>
           )}
         </div>
@@ -115,8 +115,8 @@ ChartRow.propTypes = {
     picture_url: PropTypes.string,
   }).isRequired,
   checked: PropTypes.bool.isRequired,
-  created_time: PropTypes.string.isRequired,
-  updated_time: PropTypes.string,
+  createdTime: PropTypes.string.isRequired,
+  updatedTime: PropTypes.string,
   message: PropTypes.string,
   reactions_num: PropTypes.number,
   link: PropTypes.shape({

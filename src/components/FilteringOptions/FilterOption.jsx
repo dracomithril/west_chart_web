@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 // import { Checkbox } from 'react-bootstrap';
 import Checkbox from '../universal/Checkbox';
 
-const FilterOption = ({ id, name, days, checked, onChange, onValueChange, desc_start, desc_end }) => (
+const FilterOption = ({ id, name, days, checked, onChange, onValueChange, descStart, descEnd }) => (
   <Checkbox
     color="cornflowerblue"
     name={name}
@@ -17,7 +17,7 @@ const FilterOption = ({ id, name, days, checked, onChange, onValueChange, desc_s
       onChange({ checked: target.checked, id });
     }}
   >
-    {desc_start}
+    {descStart}
     <input
       className="filter-option__days"
       type="number"
@@ -27,7 +27,7 @@ const FilterOption = ({ id, name, days, checked, onChange, onValueChange, desc_s
       value={days}
       onChange={({ target }) => onValueChange({ value: target.value, id })}
     />
-    {desc_end}
+    {descEnd}
   </Checkbox>
 );
 FilterOption.propTypes = {
@@ -37,7 +37,7 @@ FilterOption.propTypes = {
   onValueChange: PropTypes.func,
   days: PropTypes.number,
   checked: PropTypes.bool,
-  desc_start: PropTypes.string,
-  desc_end: PropTypes.string,
+  descStart: PropTypes.string,
+  descEnd: PropTypes.string,
 };
 export default FilterOption;

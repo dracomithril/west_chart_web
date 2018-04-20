@@ -8,7 +8,7 @@ import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 import PlaylistForm from './PlaylistForm';
 import RowSpotifySearch from './RowSpotifySearch';
 import PlaylistInfo from './../PlaylistInfo';
-import { action_types } from '../../reducers/action_types';
+import { actionTypes } from '../../reducers/actionTypes';
 import { createPlaylistAndAddTracks, searchForMusic } from '../../utils/spotify_utils';
 import { chartObjectProps } from './../typeDefinitions';
 
@@ -25,7 +25,7 @@ class SpotifySearch extends React.Component {
   onClearHandler = target => {
     const { store } = this.context;
     store.dispatch({
-      type: action_types.CLEAR_SELECTED,
+      type: actionTypes.CLEAR_SELECTED,
       id: target.id,
     });
   };
@@ -33,21 +33,21 @@ class SpotifySearch extends React.Component {
   onSwap = search_id => {
     const { store } = this.context;
     store.dispatch({
-      type: action_types.SWAP_FIELDS,
+      type: actionTypes.SWAP_FIELDS,
       id: search_id,
     });
   };
 
   onStartClickHandler = () => {
     const { store } = this.context;
-    const { sp_user } = store.getState();
+    const { spotifyUser } = store.getState();
     const { selected, onStartClick } = this.props;
     selected.forEach(elem => {
-      searchForMusic({ ...elem.search, id: elem.id }, sp_user.access_token).then(
+      searchForMusic({ ...elem.search, id: elem.id }, spotifyUser.access_token).then(
         res =>
           res &&
           store.dispatch({
-            type: action_types.UPDATE_SINGLE_SEARCH,
+            type: actionTypes.UPDATE_SINGLE_SEARCH,
             field: 'items',
             value: res.value,
             id: res.id,
@@ -59,14 +59,20 @@ class SpotifySearch extends React.Component {
 
   onCratePlaylistClick = ({ playlistName, isPrivate }) => {
     const { store } = this.context;
-    const { sp_user } = store.getState();
+    const { spotifyUser } = store.getState();
     const { selected } = this.props;
     const selectedElements = selected
       .map(({ search }) => (search.selected !== undefined ? search.selected.uri : undefined))
       .filter(elem => elem !== undefined);
-    createPlaylistAndAddTracks(sp_user.access_token, sp_user.id, playlistName, isPrivate, selectedElements).then(info =>
+    createPlaylistAndAddTracks(
+      spotifyUser.access_token,
+      spotifyUser.id,
+      playlistName,
+      isPrivate,
+      selectedElements,
+    ).then(info =>
       store.dispatch({
-        type: action_types.UPDATE_PLAYLIST_INFO,
+        type: actionTypes.UPDATE_PLAYLIST_INFO,
         value: info,
       }),
     );
@@ -75,7 +81,7 @@ class SpotifySearch extends React.Component {
   updateSingleSearch = target => {
     const { store } = this.context;
     store.dispatch({
-      type: action_types.UPDATE_SINGLE_SEARCH,
+      type: actionTypes.UPDATE_SINGLE_SEARCH,
       field: target.field,
       value: target.value,
       id: target.id,
@@ -84,7 +90,7 @@ class SpotifySearch extends React.Component {
 
   render() {
     const { store } = this.context;
-    const { sp_playlist_info, sp_user } = store.getState();
+    const { sp_playlist_info, spotifyUser } = store.getState();
     const { selected } = this.props;
 
     const search_list_view = selected.map(({ search = {}, id }) => (
@@ -99,7 +105,7 @@ class SpotifySearch extends React.Component {
         onSwap={this.onSwap}
         onUpdateClick={this.updateSingleSearch}
         onSearchClick={() => {
-          searchForMusic({ ...search, id }, sp_user.access_token).then(({ id: searchId, value }) => {
+          searchForMusic({ ...search, id }, spotifyUser.access_token).then(({ id: searchId, value }) => {
             this.updateSingleSearch({ id: searchId, value, field: 'items' });
           });
         }}
@@ -120,7 +126,7 @@ class SpotifySearch extends React.Component {
           onCreatePlaylistClick={this.onCratePlaylistClick}
           onStartClick={this.onStartClickHandler}
           hasElements={(selected || []).length > 0}
-          isUserLogged={Boolean(sp_user.id)}
+          isUserLogged={Boolean(spotifyUser.id)}
         />
         <div className="spotify-search_list">{search_list_view.length > 0 && search_list_view}</div>
       </div>

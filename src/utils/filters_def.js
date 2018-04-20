@@ -10,9 +10,9 @@ const woc_string = 'Wielkie Ogarnianie Charta';
  * @returns {Date}
  */
 export const subtractDaysFromDate = (until, days) => {
-  const since_date = new Date(until);
-  since_date.setDate(new Date(until).getDate() - days);
-  return since_date;
+  const sinceDate = new Date(until);
+  sinceDate.setDate(new Date(until).getDate() - days);
+  return sinceDate;
 };
 
 /**
@@ -37,7 +37,7 @@ const filters = [
   {
     control: { name: 'date_create_control', id: 'create' },
     input: { max: 31, name: 'create_control' },
-    valueName: 'created_time',
+    valueName: 'createdTime',
     description: { start: 'created in last', end: 'days' },
     type: 'countDays',
     check: countDays,
@@ -45,7 +45,7 @@ const filters = [
   {
     control: { name: 'date_update_control', id: 'update' },
     input: { max: 31, name: 'update_control' },
-    valueName: 'updated_time',
+    valueName: 'updatedTime',
     description: { start: 'updated in last', end: 'days' },
     type: 'countDays',
     check: countDays,

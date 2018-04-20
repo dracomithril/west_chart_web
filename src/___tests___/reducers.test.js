@@ -2,7 +2,7 @@
  * Created by XKTR67 on 2017-06-26.
  */
 import reducers from "../reducers/reducers";
-import { action_types } from '../reducers/action_types';
+import { actionTypes } from '../reducers/actionTypes';
 import moment from 'moment';
 
 beforeAll(() => {
@@ -14,19 +14,19 @@ beforeEach(function () {
 });
 afterEach(function () {
 });
-describe('last_update', function () {
+describe('lastUpdateDate', function () {
   it("should replace current state by new value", function () {
     const date = "2017-06-16T19:54:25.672Z";
     const state = '';
     Object.freeze(state);
-    let resp = reducers.last_update(state, { type: action_types.UPDATE_LAST_UPDATE, date: date });
+    let resp = reducers.lastUpdateDate(state, { type: actionTypes.UPDATE_LAST_UPDATE, date: date });
     expect(resp).toBe(date);
   });
   it('should return current state if type don\'t match', function () {
     const date = "2017-06-16T19:54:25.672Z";
     const state = undefined;
     Object.freeze(state);
-    let resp = reducers.last_update(state, { type: action_types.TOGGLE_HAS_COOKIE, date: date });
+    let resp = reducers.lastUpdateDate(state, { type: actionTypes.TOGGLE_HAS_COOKIE, date: date });
     expect(resp).toBe('');
   });
   //todo  improve to check if it's date string
@@ -36,31 +36,31 @@ describe('show_wait', function () {
     const show_wait = false;
     const state = true;
     Object.freeze(state);
-    let resp = reducers.show_wait(state, { type: action_types.CHANGE_SHOW_WAIT, show: show_wait });
+    let resp = reducers.show_wait(state, { type: actionTypes.CHANGE_SHOW_WAIT, show: show_wait });
     expect(resp).toBe(show_wait);
   });
   it('should return current state if type don\'t match', function () {
     const date = "zzz";
     const state = undefined;
     Object.freeze(state);
-    let resp = reducers.show_wait(state, { type: action_types.TOGGLE_HAS_COOKIE, show: date });
+    let resp = reducers.show_wait(state, { type: actionTypes.TOGGLE_HAS_COOKIE, show: date });
     expect(resp).toBe(false);
   });
 });
-describe('start_date', function () {
+describe('startDate', function () {
   //todo type check
   it("should replace current state by new value", function () {
     const date = moment("2017-06-16T19:54:25.672Z");
     const state = new Date('2017-06-06');
     Object.freeze(state);
-    let resp = reducers.start_date(state, { type: action_types.UPDATE_START_TIME, date: date });
+    let resp = reducers.startDate(state, { type: actionTypes.UPDATE_START_TIME, date: date });
     expect(resp).toEqual(date);
   });
   it('should return current state if type don\'t match', function () {
     const date = "2017-06-16T19:54:25.672Z";
     const state = new Date('2017-06-06');
     Object.freeze(state);
-    let resp = reducers.start_date(state, { type: action_types.TOGGLE_HAS_COOKIE, date: date });
+    let resp = reducers.startDate(state, { type: actionTypes.TOGGLE_HAS_COOKIE, date: date });
     expect(resp).toBe(state);
   });
 });
@@ -69,14 +69,14 @@ describe('since', function () {
     const date = "2017-06-16T19:54:25.672Z";
     const state = '';
     Object.freeze(state);
-    let resp = reducers.since(state, { type: action_types.UPDATE_SINCE, date: date });
+    let resp = reducers.since(state, { type: actionTypes.UPDATE_SINCE, date: date });
     expect(resp).toBe(date);
   });
   it('should return current state if type don\'t match', function () {
     const date = "2017-06-16T19:54:25.672Z";
     const state = undefined;
     Object.freeze(state);
-    let resp = reducers.since(state, { type: action_types.TOGGLE_HAS_COOKIE, date: date });
+    let resp = reducers.since(state, { type: actionTypes.TOGGLE_HAS_COOKIE, date: date });
     expect(resp).toBe(0);
   });
   //todo  improve to check if it's date string
@@ -86,46 +86,46 @@ describe('until', function () {
     const date = "2017-06-16T19:54:25.672Z";
     const state = '';
     Object.freeze(state);
-    let resp = reducers.until(state, { type: action_types.UPDATE_UNTIL, date: date });
+    let resp = reducers.until(state, { type: actionTypes.UPDATE_UNTIL, date: date });
     expect(resp).toBe(date);
   });
   it('should return current state if type don\'t match', function () {
     const date = "2017-06-16T19:54:25.672Z";
     const state = undefined;
     Object.freeze(state);
-    let resp = reducers.until(state, { type: action_types.TOGGLE_HAS_COOKIE, date: date });
+    let resp = reducers.until(state, { type: actionTypes.TOGGLE_HAS_COOKIE, date: date });
     expect(resp).toBe(0);
   });
   //todo  improve to check if it's date string
 });
-describe('songs_per_day', function () {
+describe('songsPerDay', function () {
   it("should replace current state by new value", function () {
     const state = '';
     Object.freeze(state);
-    let resp = reducers.songs_per_day(state, { type: action_types.UPDATE_SONGS_PER_DAY, days: 3 });
+    let resp = reducers.songsPerDay(state, { type: actionTypes.UPDATE_SONGS_PER_DAY, days: 3 });
     expect(resp).toBe(3);
   });
   it('should return current state if type don\'t match', function () {
 
     const state = undefined;
     Object.freeze(state);
-    let resp = reducers.songs_per_day(state, { type: action_types.TOGGLE_HAS_COOKIE, days: 3 });
+    let resp = reducers.songsPerDay(state, { type: actionTypes.TOGGLE_HAS_COOKIE, days: 3 });
     expect(resp).toBe(3);
   });
   //todo  improve to check if it's date string
 });
-describe('show_last', function () {
+describe('showLast', function () {
   it("should replace current state by new value", function () {
     const state = 20;
     Object.freeze(state);
-    let resp = reducers.show_last(state, { type: action_types.UPDATE_SHOW_LAST, days: 33 });
+    let resp = reducers.showLast(state, { type: actionTypes.UPDATE_SHOW_LAST, days: 33 });
     expect(resp).toBe(33);
   });
   it('should return current state if type don\'t match', function () {
 
     const state = undefined;
     Object.freeze(state);
-    let resp = reducers.show_last(state, { type: action_types.TOGGLE_HAS_COOKIE, days: 3 });
+    let resp = reducers.showLast(state, { type: actionTypes.TOGGLE_HAS_COOKIE, days: 3 });
     expect(resp).toBe(31);
   });
   //todo  improve to check if it's date string
@@ -137,7 +137,7 @@ describe('user', function () {
       error: { message: 'error' },
     };
     Object.freeze(state);
-    let resp = reducers.user(state, { type: action_types.UPDATE_USER, value: user });
+    let resp = reducers.user(state, { type: actionTypes.UPDATE_USER, value: user });
     expect(resp).toBe(state);
   });
   it("should return current state if different type used", function () {
@@ -146,7 +146,7 @@ describe('user', function () {
       error: { message: 'error' },
     };
     Object.freeze(state);
-    let resp = reducers.user(state, { type: action_types.UPDATE_SHOW_LAST, value: user });
+    let resp = reducers.user(state, { type: actionTypes.UPDATE_SHOW_LAST, value: user });
     expect(resp).toBe(state);
   });
   it("should return updated user", function () {
@@ -165,7 +165,7 @@ describe('user', function () {
     };
     Object.freeze(state);
     const { userID, signedRequest, ...expected } = user;
-    let resp = reducers.user(state, { type: action_types.UPDATE_USER, value: user });
+    let resp = reducers.user(state, { type: actionTypes.UPDATE_USER, value: user });
     expect(resp).toEqual(expected);
   });
 });
@@ -175,7 +175,7 @@ describe('filters', function () {
     const state = undefined;
     const result = reducers.filters(state, action);
     const expected = {
-      "create_control": { "checked": true, "days": 7, "id": "create", "type": "counter" },
+      "create_control": { "checked": false, "days": 7, "id": "create", "type": "counter" },
       "less_control": { "checked": false, "days": 15, "id": "less", "type": "counter" },
       "more_control": { "checked": false, "days": 1, "id": "more", "type": "counter" },
       "update_control": { "checked": false, "days": 7, "id": "update", "type": "counter" },
@@ -186,14 +186,14 @@ describe('filters', function () {
   });
   it('should only change selected action control [UPDATE_DAYS]', function () {
     const action = {
-      type: action_types.UPDATE_DAYS,
+      type: actionTypes.UPDATE_DAYS,
       id: "add",
       value: 9,
     };
     const state = undefined;
     const result = reducers.filters(state, action);
     const expected = {
-      "create_control": { "checked": true, "days": 7, "id": "create", "type": "counter" },
+      "create_control": { "checked": false, "days": 7, "id": "create", "type": "counter" },
       "less_control": { "checked": false, "days": 15, "id": "less", "type": "counter" },
       "more_control": { "checked": false, "days": 1, "id": "more", "type": "counter" },
       "update_control": { "checked": false, "days": 7, "id": "update", "type": "counter" },
@@ -204,7 +204,7 @@ describe('filters', function () {
   });
   it('should only change selected action control [TOGGLE_FILTER]', function () {
     const action = {
-      type: action_types.TOGGLE_FILTER,
+      type: actionTypes.TOGGLE_FILTER,
       id: "less",
       checked: true,
     };
@@ -230,7 +230,7 @@ describe('filters', function () {
   });
   it('should return current state if type don\'t match', function () {
     const action = {
-      type: action_types.UPDATE_USER,
+      type: actionTypes.UPDATE_USER,
       id: "less",
       checked: true,
     };
@@ -256,12 +256,12 @@ describe('filters', function () {
     expect(result).toEqual(expected);
   });
 });
-describe('sp_user', function () {
-  it('should be able to update sp_user', function () {
+describe('spotifyUser', function () {
+  it('should be able to update spotifyUser', function () {
     const state = {};
     Object.freeze(state);
     const action = {
-      type: action_types.UPDATE_SP_USER,
+      type: actionTypes.UPDATE_SP_USER,
       access_token: 'asdf',
       refresh_token: 'qwer',
       user: {
@@ -270,7 +270,7 @@ describe('sp_user', function () {
       },
     };
 
-    const result = reducers.sp_user(state, action);
+    const result = reducers.spotifyUser(state, action);
 
     const expected = {
       access_token: 'asdf',
@@ -280,7 +280,7 @@ describe('sp_user', function () {
     };
     expect(result).toEqual(expected);
   });
-  it('should be able to update sp_user playlist', function () {
+  it('should be able to update spotifyUser playlist', function () {
     const state = {
       access_token: 'asdf',
       refresh_token: 'qwer',
@@ -289,11 +289,11 @@ describe('sp_user', function () {
     };
     Object.freeze(state);
     const action = {
-      type: action_types.UPDATE_SP_USER_PLAYLIST,
+      type: actionTypes.UPDATE_SP_USER_PLAYLIST,
       playlists: [{}, {}],
     };
 
-    const result = reducers.sp_user(state, action);
+    const result = reducers.spotifyUser(state, action);
 
     const expected = {
       access_token: 'asdf',
@@ -310,7 +310,7 @@ describe('errors', function () {
     const state = undefined;
     Object.freeze(state);
     const action = {
-      type: action_types.ADD_ERROR,
+      type: actionTypes.ADD_ERROR,
       value: "NEW_ERROR",
     };
 
@@ -323,7 +323,7 @@ describe('errors', function () {
     const state = ["Error_1", "Error_2"];
     Object.freeze(state);
     const action = {
-      type: action_types.CLEAR_ERRORS,
+      type: actionTypes.CLEAR_ERRORS,
     };
 
     const result = reducers.errors(state, action);
@@ -335,7 +335,7 @@ describe('errors', function () {
     const state = ["Error_1", "Error_2"];
     Object.freeze(state);
     const action = {
-      type: action_types.TOGGLE_FILTER,
+      type: actionTypes.TOGGLE_FILTER,
     };
 
     const result = reducers.errors(state, action);
@@ -350,14 +350,14 @@ describe('isPlaylistPrivate', function () {
 
     const state = undefined;
     Object.freeze(state);
-    const action = { type: action_types.TOGGLE_IS_PRIVATE, value: true };
+    const action = { type: actionTypes.TOGGLE_IS_PRIVATE, value: true };
     let resp = reducers.isPlaylistPrivate(state, action);
     expect(resp).toBe(true);
   });
   it('should return current state if type don\'t match', function () {
     const state = false;
     Object.freeze(state);
-    const action = { type: action_types.TOGGLE_FILTER, value: true };
+    const action = { type: actionTypes.TOGGLE_FILTER, value: true };
     let resp = reducers.isPlaylistPrivate(state, action);
     expect(resp).toBe(state);
   });
@@ -367,14 +367,14 @@ describe('sp_playlist_info', function () {
 
     const state = undefined;
     Object.freeze(state);
-    const action = { type: action_types.UPDATE_PLAYLIST_INFO, value: { url: "new_url", pl_name: "new_playlist" } };
+    const action = { type: actionTypes.UPDATE_PLAYLIST_INFO, value: { url: "new_url", pl_name: "new_playlist" } };
     let resp = reducers.sp_playlist_info(state, action);
     expect(resp).toBe(action.value);
   });
   it('should return current state if type don\'t match', function () {
     const state = { url: "url", pl_name: "playlist" };
     Object.freeze(state);
-    const action = { type: action_types.TOGGLE_FILTER, value: true };
+    const action = { type: actionTypes.TOGGLE_FILTER, value: true };
     let resp = reducers.sp_playlist_info(state, action);
     expect(resp).toBe(state);
   });
@@ -384,66 +384,50 @@ describe('hasAcCookie', function () {
 
     const state = undefined;
     Object.freeze(state);
-    const action = { type: action_types.TOGGLE_HAS_COOKIE, value: true };
+    const action = { type: actionTypes.TOGGLE_HAS_COOKIE, value: true };
     let resp = reducers.hasAcCookie(state, action);
     expect(resp).toBe(true);
   });
   it('should return current state if type don\'t match', function () {
     const state = false;
     Object.freeze(state);
-    const action = { type: action_types.TOGGLE_FILTER, value: true };
+    const action = { type: actionTypes.TOGGLE_FILTER, value: true };
     let resp = reducers.hasAcCookie(state, action);
     expect(resp).toBe(state);
   });
 });
-describe('enable_until', function () {
-  it("should replace current state by new value", function () {
 
-    const state = undefined;
-    Object.freeze(state);
-    const action = { type: action_types.TOGGLE_ENABLE_UNTIL, checked: true };
-    let resp = reducers.enable_until(state, action);
-    expect(resp).toBe(true);
-  });
-  it('should return current state if type don\'t match', function () {
-    const state = false;
-    Object.freeze(state);
-    const action = { type: action_types.TOGGLE_FILTER, value: true };
-    let resp = reducers.enable_until(state, action);
-    expect(resp).toBe(state);
-  });
-});
 describe('sp_playlist_name', function () {
   it("should replace current state by new value", function () {
 
     const state = undefined;
     Object.freeze(state);
-    const action = { type: action_types.UPDATE_PLAYLIST_NAME, value: "new_Name" };
+    const action = { type: actionTypes.UPDATE_PLAYLIST_NAME, value: "new_Name" };
     let resp = reducers.sp_playlist_name(state, action);
     expect(resp).toBe(action.value);
   });
   it('should return current state if type don\'t match', function () {
     const state = "name1";
     Object.freeze(state);
-    const action = { type: action_types.TOGGLE_FILTER, value: "zebra" };
+    const action = { type: actionTypes.TOGGLE_FILTER, value: "zebra" };
     let resp = reducers.sp_playlist_name(state, action);
     expect(resp).toBe(state);
   });
 });
-describe('list_sort', function () {
+describe('listSort', function () {
   it("should replace current state by new value", function () {
 
     const state = undefined;
     Object.freeze(state);
-    const action = { type: action_types.UPDATE_LIST_SORT, sort: "new_Name" };
-    let resp = reducers.list_sort(state, action);
+    const action = { type: actionTypes.UPDATE_LIST_SORT, sort: "new_Name" };
+    let resp = reducers.listSort(state, action);
     expect(resp).toBe(action.sort);
   });
   it('should return current state if type don\'t match', function () {
     const state = "reaction";
     Object.freeze(state);
-    const action = { type: action_types.TOGGLE_FILTER, value: "zebra" };
-    let resp = reducers.list_sort(state, action);
+    const action = { type: actionTypes.TOGGLE_FILTER, value: "zebra" };
+    let resp = reducers.listSort(state, action);
     expect(resp).toBe(state);
   });
 });

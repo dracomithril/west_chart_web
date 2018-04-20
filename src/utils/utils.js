@@ -5,7 +5,7 @@
 import qs from 'querystring';
 import { groupBy } from 'lodash';
 
-import { action_types } from '../reducers/action_types';
+import { actionTypes } from '../reducers/actionTypes';
 
 import filters_def, { subtractDaysFromDate } from './filters_def';
 
@@ -18,7 +18,7 @@ Object.freeze(cookies_name);
 /**
  *
  * @param store
- * @returns {{view_chart: (*), error_days: Array.<*>}}
+ * @returns {{viewChart: (*), errorDays: Array.<*>}}
  * @private
  */
 
@@ -46,9 +46,7 @@ export const sorting = {
    * @param array
    */
   when: array => {
-    array.sort(
-      (a, b) => (a.created_time ? a.created_time.getTime() : 0) - (b.created_time ? b.created_time.getTime() : 0),
-    );
+    array.sort((a, b) => (a.createdTime ? a.createdTime.getTime() : 0) - (b.createdTime ? b.createdTime.getTime() : 0));
   },
   /**
    * ascending
@@ -66,10 +64,10 @@ export const sorting = {
  * @param chart {Array}
  * @param filters
  * @param until
- * @param songs_per_day
- * @return {{view_chart: any[], error_days: any[], westLetters: any[]}}
+ * @param songsPerDay
+ * @return {{viewChart: any[], errorDays: any[], westLetters: any[]}}
  */
-export const filterChart = (chart, filters, until, songs_per_day) => {
+export const filterChart = (chart, filters, until, songsPerDay) => {
   const news_letter_filter = filters_def.text[1];
   const westLetters = chart.filter(
     elem => (elem.message !== undefined ? elem.message.toLowerCase().includes(news_letter_filter.text) : false),
@@ -81,19 +79,19 @@ export const filterChart = (chart, filters, until, songs_per_day) => {
     return { check: e.check, valueName: e.valueName, until, ...filter };
   });
 
-  const view_chart = chart.filter(elem => filtersToUse.every(filter => filter.check(elem, filter)));
-  const songs_per_day2 = groupBy(view_chart, elem => new Date(elem.created_time).toDateString());
-  const error_days = Object.keys(songs_per_day2)
-    .filter(elem => songs_per_day2[elem].length !== songs_per_day)
+  const viewChart = chart.filter(elem => filtersToUse.every(filter => filter.check(elem, filter)));
+  const songsPerDay2 = groupBy(viewChart, elem => new Date(elem.createdTime).toDateString());
+  const errorDays = Object.keys(songsPerDay2)
+    .filter(elem => songsPerDay2[elem].length !== songsPerDay)
     .map(elem => {
-      const { length } = songs_per_day2[elem];
+      const { length } = songsPerDay2[elem];
       return {
         count: length,
-        color: length > songs_per_day ? 'red' : 'blue',
+        color: length > songsPerDay ? 'red' : 'blue',
         org: elem,
       };
     });
-  return { view_chart, error_days, westLetters };
+  return { viewChart, errorDays, westLetters };
 };
 
 export const getArtist_Title = name => {
@@ -197,20 +195,20 @@ export const weekInfo = date => {
 export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?height=50`;
 
 export const UpdateChart = store => {
-  store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: true });
+  store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: true });
   const { user, sinceDate, untilDate } = store.getState();
   const query_params = getQueryParams(sinceDate, untilDate, user.accessToken);
   return getChartFromServer(query_params)
     .then(body => {
       console.info(`chart list witch ${body.chart.length}`);
-      store.dispatch({ type: action_types.UPDATE_CHART, chart: body.chart });
-      store.dispatch({ type: action_types.UPDATE_LAST_UPDATE, date: body.last_update });
-      store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: false });
+      store.dispatch({ type: actionTypes.UPDATE_CHART, chart: body.chart });
+      store.dispatch({ type: actionTypes.UPDATE_LAST_UPDATE, date: body.lastUpdateDate });
+      store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
       return Promise.resolve();
     })
     .catch(err => {
       console.error('Error in fetch chart.');
-      store.dispatch({ type: action_types.ADD_ERROR, value: err });
-      store.dispatch({ type: action_types.CHANGE_SHOW_WAIT, show: false });
+      store.dispatch({ type: actionTypes.ADD_ERROR, value: err });
+      store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
     });
 };

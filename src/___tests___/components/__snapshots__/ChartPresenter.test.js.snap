@@ -47,8 +47,8 @@ exports[`<ChartPresenter/> renders without crashing ChartPresenter 1`] = `
         className="chart-presenter__tab-content"
       >
         <ChartHeader
-          error_days={null}
-          view_chart={Array []}
+          errorDays={null}
+          viewChart={Array []}
         />
         <div />
         <ChartTable

@@ -8,7 +8,7 @@ import '../components.css';
 import { chartObjectProps } from './../typeDefinitions';
 import ChartRow from './ChartRow';
 import Checkbox from '../universal/Checkbox';
-import { action_types } from './../../reducers/action_types';
+import { actionTypes } from './../../reducers/actionTypes';
 
 const ChartTable = ({ data }, { store }) => {
   const ChartRows = data.map(entry => (
@@ -37,7 +37,7 @@ const ChartTable = ({ data }, { store }) => {
         <Checkbox
           id="selectAll"
           onChange={({ checked }) => {
-            store.dispatch({ type: action_types.TOGGLE_ALL, value: checked });
+            store.dispatch({ type: actionTypes.TOGGLE_ALL, value: checked });
           }}
         />select all
       </div>

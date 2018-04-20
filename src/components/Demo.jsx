@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChartData from './../___data___/chartData';
-import { action_types } from './../reducers/action_types';
+import { actionTypes } from './../reducers/actionTypes';
 import ChartPresenter from './Chart/ChartPresenter';
 
 class Demo extends React.Component {
@@ -10,7 +10,7 @@ class Demo extends React.Component {
     const { chart } = store.getState();
     if (chart.length === 0) {
       store.dispatch({
-        type: action_types.UPDATE_CHART,
+        type: actionTypes.UPDATE_CHART,
         chart: ChartData,
       });
     }
