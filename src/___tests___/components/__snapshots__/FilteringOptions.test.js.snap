@@ -1,108 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FilteringOptions/> renders without crashing ChartPresenter 1`] = `
-<div
-  className="filter-panel"
->
-  <div
-    className="filter-panel__header"
-  >
-    <h4>
-      filters
-    </h4>
-    <button
-      onClick={[Function]}
-      style={
-        Object {
-          "border": " none",
-        }
-      }
-    >
-      <FontAwesomeIcon$1
-        border={false}
-        className=""
-        fixedWidth={false}
-        flip={null}
-        icon={
-          Object {
-            "icon": Array [
-              320,
-              512,
-              Array [],
-              "f0d7",
-              "M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z",
-            ],
-            "iconName": "caret-down",
-            "prefix": "fas",
-          }
-        }
-        listItem={false}
-        mask={null}
-        name=""
-        pull={null}
-        pulse={false}
-        rotation={null}
-        size="2x"
-        spin={false}
-        symbol={false}
-        transform={null}
-      />
-    </button>
-  </div>
-  <div
-    className="filter-panel__containers"
-  >
-    <div
-      className="filter-panel__containers_base"
-    >
-      <FilterOption
-        checked={true}
-        days={7}
-        descEnd="days"
-        descStart="created in last"
-        id="create"
-        key="create_control"
-        name="date_create_control"
-        onChange={[Function]}
-        onValueChange={[Function]}
-      />
-      <FilterOption
-        checked={true}
-        days={7}
-        descEnd="days"
-        descStart="updated in last"
-        id="update"
-        key="update_control"
-        name="date_update_control"
-        onChange={[Function]}
-        onValueChange={[Function]}
-      />
-      <FilterOption
-        checked={true}
-        days={0}
-        descStart="more then"
-        id="more"
-        key="more_control"
-        name="more_then_control"
-        onChange={[Function]}
-        onValueChange={[Function]}
-      />
-      <FilterOption
-        checked={false}
-        days={15}
-        descStart="less then"
-        id="less"
-        key="less_control"
-        name="less_then_control"
-        onChange={[Function]}
-        onValueChange={[Function]}
-      />
-    </div>
-    <div
-      className="filter-panel__containers_additional"
-    />
-  </div>
-</div>
+<FilteringOptions
+  classes={
+    Object {
+      "button": "FilteringOptions-button-1",
+    }
+  }
+/>
 `;
 
 exports[`<FilteringOptions/> should be able to change state of woc checkbox 1`] = `

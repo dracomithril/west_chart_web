@@ -1,15 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-// import { Provider } from 'react-redux';
 import ChartRow from './ChartRow';
-// import configureStore from '../../configureStore';
 import { user1, user2 } from '../../___data___/chartData';
 
-// const state = {};
-// const store = configureStore(state);
 let checkedState = true;
-// addDecorator(story => <Provider store={store}>{story()}</Provider>);
+
 storiesOf('ChartRow', module)
   .add('no props', () => <ChartRow />)
   .add('props one date', () => (
@@ -32,6 +28,7 @@ storiesOf('ChartRow', module)
   .add('props one date, no message, last year', () => (
     <ChartRow
       reactions_num={3}
+      checked={false}
       from={user1}
       link={{ url: 'my_link', title: 'really long song title' }}
       created_time="03/16/2017"

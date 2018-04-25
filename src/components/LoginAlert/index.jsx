@@ -4,7 +4,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import { Jumbotron } from 'react-bootstrap';
 import FacebookLogin from 'react-facebook-login';
 import SpotifyLogin from './SpotifyLogin';
 import './../bootstrap-social.css';
@@ -20,7 +19,7 @@ const LoginAlert = ({ location }, { store }) => {
     return <Redirect to={from} />;
   }
   return (
-    <Jumbotron bsClass="login-info">
+    <div className="login-info">
       <h4>
         <span role="img" aria-label="heart">
           ❤️❤️❤️
@@ -55,7 +54,7 @@ const LoginAlert = ({ location }, { store }) => {
         />
       )}
       {spotifyUser.id === undefined && <SpotifyLogin from={from} />}
-    </Jumbotron>
+    </div>
   );
 };
 

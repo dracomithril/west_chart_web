@@ -1,7 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
-import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import { withStyles } from 'material-ui/styles';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
+import IconButton from 'material-ui/IconButton';
+import Avatar from 'material-ui/Avatar';
+import MenuIcon from '@material-ui/icons/Menu';
+import Menu, { MenuItem } from 'material-ui/Menu';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 import Policy from './components/Policy';
 import About from './components/About';
 import Combiner from './components/PlaylistCombiner';
@@ -13,7 +22,35 @@ import PrivateRoute from './PrivateRoute';
 import { getCredentials } from './utils/spotify_utils';
 import { actionTypes } from './reducers/actionTypes';
 
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+  flex: {
+    flex: 1,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+};
+
+const ITEM_HEIGHT = 48;
+
+const options = [
+  { name: 'Info', href: '/' },
+  { name: 'Chart', href: '/chart' },
+  { name: 'Combiner(BETA)', href: '/combiner' },
+  { name: 'Demo', href: '/demo' },
+];
+
 class Navigation extends React.Component {
+  state = {
+    // auth: true,
+    anchorEl: null,
+    anchorEl2: null,
+  };
+
   componentWillMount() {
     const { store } = this.context;
     getCredentials()
@@ -37,39 +74,108 @@ class Navigation extends React.Component {
     this.unsubscribe();
   }
 
+  // handleChange = (event, checked) => {
+  //   this.setState({ auth: checked });
+  // };
+  onLogoutClick = () => {
+    this.setState({ anchorEl: null });
+    const { store } = this.context;
+    store.dispatch({ type: actionTypes.SIGN_OUT_USER });
+    window.location = '/';
+  };
+  handleMenu = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+  handleClick = event => {
+    this.setState({ anchorEl2: event.currentTarget });
+  };
+
+  handleClose = name => href => () => {
+    this.setState({ [name]: null });
+    if (href) window.location = href;
+  };
+
   render() {
     const { store } = this.context;
-    const { spotifyUser } = store.getState();
+    const { classes } = this.props;
+    const { anchorEl, anchorEl2 } = this.state;
+    const { spotifyUser, user } = store.getState();
+    const open = Boolean(anchorEl);
     return (
-      <div>
-        <Navbar collapseOnSelect>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="/">Music Helper</a>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-          </Navbar.Header>
-          <Navbar.Collapse>
-            <Nav>
-              <NavItem eventKey={0} href="/">
-                Info
-              </NavItem>
-              <NavItem eventKey={1} href="/chart">
-                Chart
-              </NavItem>
-              {spotifyUser.id && (
-                <NavItem eventKey={2} href="/combiner">
-                  Combiner(BETA)
-                </NavItem>
-              )}
-              {window.location.pathname === '/demo' && (
-                <NavItem eventKey={2} href="/demo">
-                  Demo
-                </NavItem>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              className={classes.menuButton}
+              aria-label="Menu"
+              aria-owns={anchorEl2 ? 'long-menu' : null}
+              aria-haspopup="true"
+              onClick={this.handleClick}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="long-menu"
+              anchorEl={anchorEl2}
+              open={Boolean(anchorEl2)}
+              onClose={this.handleClose('anchorEl2')()}
+              PaperProps={{
+                style: {
+                  maxHeight: ITEM_HEIGHT * 4.5,
+                  width: 200,
+                },
+              }}
+            >
+              {options.map(option => (
+                <MenuItem
+                  key={option.name}
+                  selected={option === 'Pyxis'}
+                  onClick={this.handleClose('anchorEl2')(option.href)}
+                >
+                  {option.name}
+                </MenuItem>
+              ))}
+            </Menu>
+            <Typography variant="title" color="inherit" className={classes.flex}>
+              WCS Music Chart
+            </Typography>
+            {user.id && (
+              <div>
+                <IconButton
+                  aria-owns={open ? 'menu-appbar' : null}
+                  aria-haspopup="true"
+                  onClick={this.handleMenu}
+                  color="inherit"
+                >
+                  <Avatar alt={user.name} src={user.picture_url} />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  open={open}
+                  onClose={this.handleClose('anchorEl')()}
+                >
+                  <div>{`Hi, ${user.first_name}`}</div>
+                  <div>
+                    <FontAwesomeIcon icon={faSpotify} />
+                    {spotifyUser.id}
+                  </div>
+                  <MenuItem onClick={this.handleClose('anchorEl')()}>Profile</MenuItem>
+                  <MenuItem onClick={this.onLogoutClick}>Logout</MenuItem>
+                </Menu>
+              </div>
+            )}
+          </Toolbar>
+        </AppBar>
         <Switch>
           <Route exact path="/" component={About} />
           <Route path="/policy" exact component={Policy} />
@@ -87,5 +193,12 @@ class Navigation extends React.Component {
 Navigation.contextTypes = {
   store: PropTypes.object,
 };
+Navigation.propTypes = {
+  classes: PropTypes.shape({
+    root: PropTypes.string,
+    flex: PropTypes.string,
+    menuButton: PropTypes.string,
+  }).isRequired,
+};
 
-export default Navigation;
+export default withStyles(styles)(Navigation);

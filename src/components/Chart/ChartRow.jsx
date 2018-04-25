@@ -9,7 +9,7 @@ import {
   faExternalLinkSquareAlt,
   faTimesCircle,
 } from '@fortawesome/fontawesome-free-solid';
-import Checkbox from '../universal/Checkbox';
+import Checkbox from 'material-ui/Checkbox';
 
 const dateToLocaleString = (date, options) => date.toLocaleString(navigator.language || 'pl-PL', options);
 
@@ -55,7 +55,15 @@ const ChartRow = ({ from = {}, link = {}, checked, createdTime, onChange, update
   const messageProps = props.message ? withMessage : noMessage;
   return (
     <div className="chart-row">
-      <Checkbox id={props.id} checked={checked} onChange={onChange} />
+      <Checkbox
+        id={props.id}
+        checked={checked}
+        onChange={({ target }) => {
+          onChange && onChange(target);
+        }}
+        value={props.id}
+        color="primary"
+      />
       <div className="chart-row__user-info">
         <picture>
           <img src={from.picture_url} alt="profilePic" />

@@ -1,23 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
-import Checkbox from '../universal/Checkbox';
+import Checkbox from 'material-ui/Checkbox';
 
 const MessageControl = ({ id, text, name, checked, onChange }) => (
-  <Checkbox
-    name={name}
-    color="cornflowerblue"
-    className="filter-option"
-    id={`${id}_checkbox`}
-    checked={checked}
-    onChange={target => {
-      onChange({ id, checked: target.checked });
-    }}
-  >
-    <OverlayTrigger placement="bottom" overlay={<Tooltip id={`${id}_tp`}>{`Will show all [${text}]`}</Tooltip>}>
-      <span>[{text}]</span>
-    </OverlayTrigger>
-  </Checkbox>
+  <div>
+    <Checkbox
+      name={name}
+      color="primary"
+      className="filter-option"
+      id={`${id}_checkbox`}
+      checked={checked}
+      onChange={target => {
+        onChange({ id, checked: target.checked });
+      }}
+    />
+    <span title={`Will show all [${text}]`}>[{text}]</span>
+  </div>
 );
 MessageControl.propTypes = {
   id: PropTypes.string,

@@ -36,7 +36,11 @@ const TrackPreview = ({ artists, preview_url, external_urls, trackName, noLink }
 };
 TrackPreview.propTypes = {
   noLink: PropTypes.bool,
-  artists: PropTypes.arrayOf(PropTypes.string),
+  artists: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+    }),
+  ),
   preview_url: PropTypes.string,
   external_urls: PropTypes.shape({
     spotify: PropTypes.string,

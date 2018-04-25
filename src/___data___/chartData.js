@@ -30,7 +30,7 @@ export const user4 = {
 
 const chart = [
   {
-    created_time: '2018-03-16T00:12:32+0000',
+    createdTime: '2018-03-16T00:12:32+0000',
     from: user1,
     full_picture:
       'https://external.xx.fbcdn.net/safe_image.php?d=AQDZ0dej7pLhmYRk&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FALIBUPY_UEc%2Fmaxresdefault.jpg&crop&_nc_hash=AQC0Z3Iw50mcYpnM',
@@ -57,7 +57,7 @@ const chart = [
     updatedTime: '2018-03-16T00:16:21+0000',
   },
   {
-    created_time: '2018-03-16T00:12:59+0000',
+    createdTime: '2018-03-16T00:12:59+0000',
     from: user2,
     full_picture:
       'https://external.xx.fbcdn.net/safe_image.php?d=AQDHJdA9ezDN2Zwr&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FrLKreFwTSYs%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCLSz6tWONEcLHh',
@@ -83,7 +83,7 @@ const chart = [
     updatedTime: '2018-03-16T00:12:59+0000',
   },
   {
-    created_time: '2018-03-16T00:12:39+0000',
+    createdTime: '2018-03-16T00:12:39+0000',
     from: user3,
     full_picture:
       'https://external.xx.fbcdn.net/safe_image.php?d=AQBdnS9HWW55rNBm&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FLxoGNkLpgZk%2Fmaxresdefault.jpg&crop&_nc_hash=AQB4mqreOgYAeS8d',
@@ -110,7 +110,7 @@ const chart = [
     updatedTime: '2018-03-16T00:12:40+0000',
   },
   {
-    created_time: '2018-03-16T00:12:36+0000',
+    createdTime: '2018-03-16T00:12:36+0000',
     from: user4,
     from_user: 'Joanna Brud',
     full_picture:

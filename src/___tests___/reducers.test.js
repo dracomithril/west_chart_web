@@ -179,7 +179,7 @@ describe('filters', function () {
       "less_control": { "checked": false, "days": 15, "id": "less", "type": "counter" },
       "more_control": { "checked": false, "days": 1, "id": "more", "type": "counter" },
       "update_control": { "checked": false, "days": 7, "id": "update", "type": "counter" },
-      "westletter_control": { "checked": false, "id": "westletter", "type": "text" },
+      "westletter_control": { "checked": false, "id": "westLetter", "type": "text" },
       "woc_control": { "checked": false, "id": "woc", "type": "text" },
     };
     expect(result).toEqual(expected);
@@ -197,7 +197,7 @@ describe('filters', function () {
       "less_control": { "checked": false, "days": 15, "id": "less", "type": "counter" },
       "more_control": { "checked": false, "days": 1, "id": "more", "type": "counter" },
       "update_control": { "checked": false, "days": 7, "id": "update", "type": "counter" },
-      "westletter_control": { "checked": false, "id": "westletter", "type": "text" },
+      "westletter_control": { "checked": false, "id": "westLetter", "type": "text" },
       "woc_control": { "checked": false, "id": "woc", "type": "text" },
     };
     expect(result).toEqual(expected);
@@ -250,7 +250,7 @@ describe('filters', function () {
       "less_control": { "checked": false, "days": 15, "id": "less" },
       "more_control": { "checked": false, "days": 1, "id": "more" },
       "update_control": { "checked": false, "days": 7, "id": "update" },
-      "westletter_control": { "checked": false, "id": "westletter", "type": "text" },
+      "westletter_control": { "checked": false, "id": "westLetter", "type": "text" },
       "woc_control": { "checked": true, "id": "woc" },
     };
     expect(result).toEqual(expected);

@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import RowSpotifySearch from './RowSpotifySearch';
+import items from '../../___data___/spotifySearchData';
 
 storiesOf('RowSpotifySearch', module)
   .add('No props', () => <RowSpotifySearch />)
@@ -28,41 +29,7 @@ storiesOf('RowSpotifySearch', module)
       onSearchClick={action('searchClick')}
       onClearClick={action('clearClick')}
       search_id={1}
-      selected={{
-        preview_url: '',
-        artists: [{ name: 'Albert' }, { name: 'Ryszard' }],
-        external_urls: null,
-        name: 'Zocha poaż coś',
-      }}
-      items={[
-        {
-          id: 1,
-          artists: [
-            {
-              name: 'Albert',
-            },
-            {
-              name: 'Ryszard',
-            },
-          ],
-          external_urls: null,
-          preview_url: '',
-          name: 'Zocha pokaż coś',
-        },
-        {
-          id: 2,
-          artists: [
-            {
-              name: 'Albert',
-            },
-            {
-              name: 'Ryszard',
-            },
-          ],
-          external_urls: '',
-          preview_url: null,
-          name: 'Zocha pokaż coś innego',
-        },
-      ]}
+      selected={items[1]}
+      items={items}
     />
   ));

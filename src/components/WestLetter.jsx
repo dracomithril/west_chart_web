@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import Avatar from 'material-ui/Avatar';
 import { getFbPictureUrl, weekInfo } from '../utils/utils';
 import { chartObjectProps } from './typeDefinitions';
 
@@ -27,10 +27,7 @@ export default class WestLetter extends React.Component {
         <div style={{ padding: 2, display: 'block', border: '1px black solid' }} key={elem.id}>
           <input type="checkbox" />
           <span hidden>{elem.id}</span>
-          <OverlayTrigger placement="bottom" overlay={<Tooltip id={`tt_${elem.id}`}>{elem.from.name}</Tooltip>}>
-            <Image src={getFbPictureUrl(elem.from.id)} />
-          </OverlayTrigger>
-
+          <Avatar title={elem.from.name} src={getFbPictureUrl(elem.from.id)} />
           <div>
             <span>{create_date.toLocaleDateString()}</span>
             <br />

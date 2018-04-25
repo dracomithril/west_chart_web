@@ -3,9 +3,12 @@
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, ButtonGroup, FormControl, FormGroup, InputGroup } from 'react-bootstrap';
+import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
+import Checkbox from 'material-ui/Checkbox';
+import { FormControlLabel } from 'material-ui/Form';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faSave } from '@fortawesome/fontawesome-free-solid';
+import { faSave, faLightbulb } from '@fortawesome/fontawesome-free-solid';
 import { weekInfo } from '../../utils/utils';
 import './playlist.css';
 
@@ -33,61 +36,47 @@ export default class PlaylistForm extends Component {
     const { onCreatePlaylistClick, onStartClick, hasElements, isUserLogged } = this.props;
     const { playlistName, isPrivate } = this.state;
     const disable_create = !(playlistName.length > 5 && hasElements && isUserLogged);
-    const validatePlaylistName = strLength => {
-      if (strLength > 8) {
-        return 'success';
-      }
-      return strLength > 5 ? 'warning' : 'error';
-    };
+    const validatePlaylistName = (str = '') => str.length > 7;
+    const isNameValid = validatePlaylistName(playlistName);
     return (
       <div className="playlist-form">
-        <Button onClick={onStartClick} id="start_sp_button" bsStyle="success">
+        <Button variant="raised" color="primary" onClick={onStartClick} id="start_sp_button">
           start
         </Button>
-        <FormGroup
-          style={{ margin: '1px' }}
-          controlId="play_list_name"
-          validationState={validatePlaylistName((playlistName || {}).length)}
+        <TextField
+          error={!isNameValid}
+          value={playlistName}
+          placeholder="playlist name"
+          onChange={({ target }) => {
+            this.setState({ playlistName: target.value });
+          }}
+        />
+        <Button variant="fab" color="secondary" onClick={this.onGenPlaylistName} id="genName_sp_button">
+          <FontAwesomeIcon icon={faLightbulb} />
+        </Button>
+        <Button
+          variant="fab"
+          id="crt_pl_button"
+          onClick={() => onCreatePlaylistClick && onCreatePlaylistClick({ playlistName, isPrivate })}
+          disabled={!isNameValid}
+          title={disable_create ? 'Sorry you need to be logged to spotify to be able to add playlist' : ''}
         >
-          <InputGroup style={{ maxWidth: 250 }}>
-            <FormControl
-              type="text"
-              placeholder="playlist name"
-              value={playlistName}
+          <FontAwesomeIcon icon={faSave} />
+        </Button>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="play_list_is_private"
+              value="private"
+              color="primary"
+              checked={isPrivate}
               onChange={({ target }) => {
-                this.setState({ playlistName: target.value });
+                this.setState({ isPrivate: target.checked });
               }}
             />
-            <FormControl.Feedback />
-            {/* <InputGroup.Addon><Glyphicon glyph="music"/></InputGroup.Addon> */}
-          </InputGroup>
-        </FormGroup>
-        <ButtonGroup>
-          <Button onClick={this.onGenPlaylistName} id="genName_sp_button" bsStyle="primary">
-            gen. name
-          </Button>
-          <Button
-            id="crt_pl_button"
-            onClick={() => onCreatePlaylistClick && onCreatePlaylistClick({ playlistName, isPrivate })}
-            disabled={disable_create}
-            bsStyle={disable_create ? 'info' : 'danger'}
-            title={disable_create ? 'Sorry you need to be logged to spotify to be able to add playlist' : ''}
-          >
-            <FontAwesomeIcon icon={faSave} /> save
-          </Button>
-        </ButtonGroup>
-        <label htmlFor="play_list_is_private">
-          <input
-            type="checkbox"
-            id="play_list_is_private"
-            onChange={({ target }) => {
-              this.setState({ isPrivate: target.checked });
-            }}
-            value="private"
-            checked={isPrivate}
-          />
-          {'private'}
-        </label>
+          }
+          label="private"
+        />
       </div>
     );
   }

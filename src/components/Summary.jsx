@@ -3,9 +3,8 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Badge, Button, ButtonGroup } from 'react-bootstrap';
+import Button from 'material-ui/Button';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faFacebook } from '@fortawesome/fontawesome-free-brands';
 import { faClipboard } from '@fortawesome/fontawesome-free-solid';
 import './components.css';
 import { chartObjectProps } from './typeDefinitions';
@@ -13,11 +12,7 @@ import { chartObjectProps } from './typeDefinitions';
 const copy = require('clipboard-copy');
 // let {sorting} = require('./../utils');
 const create_print_list = (elem, index) => (
-  <div key={elem.id}>
-    <span>{index + 1}</span>
-    {`. ${elem.link.title} `}
-    <Badge bsClass="likes">{`${elem.reactions_num} likes`}</Badge>
-  </div>
+  <div key={elem.id}>{`${index + 1}. ${elem.link.title} ${elem.reactions_num} likes`}</div>
 );
 export default class Summary extends React.Component {
   state = {
@@ -65,22 +60,9 @@ export default class Summary extends React.Component {
       <div className="summary">
         <div className="summary__header">
           <h3 id="summary">Summary</h3>
-          <ButtonGroup>
-            <Button bsStyle="info" onClick={this.onCopyToClipboard} title="copy to clipboard">
-              <FontAwesomeIcon icon={faClipboard} /> copy
-            </Button>
-            {false && (
-              <Button
-                onClick={() => {
-                  console.info('Not implemented jet.');
-                }}
-                disabled
-              >
-                <FontAwesomeIcon icon={faFacebook} />
-                <span> publish</span>
-              </Button>
-            )}
-          </ButtonGroup>
+          <Button onClick={this.onCopyToClipboard} title="copy to clipboard">
+            <FontAwesomeIcon icon={faClipboard} /> copy
+          </Button>
         </div>
         <h6>[WCS Weekly Westletter]</h6>
         <textarea

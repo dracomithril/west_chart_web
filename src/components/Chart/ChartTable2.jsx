@@ -3,11 +3,11 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'react-table/react-table.css';
+import Checkbox from 'material-ui/Checkbox';
+import { FormControlLabel } from 'material-ui/Form';
 import '../components.css';
 import { chartObjectProps } from './../typeDefinitions';
 import ChartRow from './ChartRow';
-import Checkbox from '../universal/Checkbox';
 import { actionTypes } from './../../reducers/actionTypes';
 
 const ChartTable = ({ data }, { store }) => {
@@ -15,8 +15,8 @@ const ChartTable = ({ data }, { store }) => {
     <ChartRow
       id={entry.id}
       checked={entry.selected}
-      created_time={entry.created_time}
-      updated_time={entry.updated_time}
+      createdTime={entry.createdTime}
+      updatedTime={entry.updatedTime}
       link={entry.link}
       from={entry.from}
       key={entry.id}
@@ -34,12 +34,19 @@ const ChartTable = ({ data }, { store }) => {
   return ChartRows.length > 0 ? (
     <div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Checkbox
-          id="selectAll"
-          onChange={({ checked }) => {
-            store.dispatch({ type: actionTypes.TOGGLE_ALL, value: checked });
-          }}
-        />select all
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="selectAll"
+              value="selectAll"
+              color="primary"
+              onChange={({ target: { checked } }) => {
+                store.dispatch({ type: actionTypes.TOGGLE_ALL, value: checked });
+              }}
+            />
+          }
+          label="select all"
+        />
       </div>
       {ChartRows}
     </div>

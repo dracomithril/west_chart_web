@@ -1,55 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ChartHeader/> renders without crashing ChartPresenter 1`] = `
-<div
-  className="chart-header"
->
-  <div
-    className="chart-header__left_dock"
-  >
-    <PickYourDate
-      onSinceDateChange={[Function]}
-      onUntilDateChange={[Function]}
-    />
-    <SongsPerDay
-      errorDays={Array []}
-      onDaysChange={[Function]}
-      songsPerDay={2}
-    />
-  </div>
-  <div
-    className="chart-header__group-buttons"
-  >
-    <ButtonGroup
-      block={false}
-      bsClass="btn-group"
-      justified={false}
-      vertical={true}
-    >
-      <Button
-        active={false}
-        block={false}
-        bsClass="btn"
-        bsStyle="primary"
-        disabled={false}
-        id="updateChartB"
-        onClick={[Function]}
-      >
-        Update
-      </Button>
-      <Button
-        active={false}
-        block={false}
-        bsClass="btn"
-        bsStyle="success"
-        disabled={false}
-        id="quickSummary"
-        onClick={[Function]}
-      >
-        Quick summary
-      </Button>
-    </ButtonGroup>
-  </div>
-  <FilteringOptions />
-</div>
+<ChartHeader
+  classes={
+    Object {
+      "button": "ChartHeader-button-1",
+      "container": "ChartHeader-container-2",
+      "textField": "ChartHeader-textField-3",
+    }
+  }
+  errorDays={Array []}
+  viewChart={Array []}
+/>
 `;

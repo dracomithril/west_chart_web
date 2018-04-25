@@ -1,11 +1,4 @@
-.filter-option {
-    padding-top: 3px;
-    padding-right: 3px;
-    padding-bottom: 3px;
-    margin-top: unset;
-    margin-bottom: unset;
-    margin-left: unset;
-}
+
 
 .filter-option__days {
     padding-left: 5px;
@@ -34,43 +27,26 @@
     /*overflow-y: scroll;*/
     border-radius: 3px;
     height: calc(100% - 5px);
-    min-width: 310px;
-}
-
-.filter-panel__header {
-    border-bottom: 1px solid lightblue;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.filter-panel__header button {
-    background-color: transparent;
-}
-
-.filter-panel__containers_base {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.filter-panel__containers_additional {
-    display: flex;
 }
 
 .filter-panel__containers {
-
+    border-top: 1px solid lightblue;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: flex-start;
 }
 
 @media screen and (min-width: 374px) {
-    .filter-panel__containers_base {
+    .filter-panel__containers {
         max-height: 90px;
     }
 }
 
 @media screen and (min-width: 470px) {
-    .filter-panel__containers_base {
-        max-height: 80px;
+    .filter-panel__containers {
+        max-height: 145px;
     }
 }
 
@@ -78,7 +54,6 @@
     .filter-option__days {
         max-width: 50px;
         min-width: 20px;
-        border-color: revert;
     }
 
     .filter-panel__containers {
@@ -86,18 +61,10 @@
         flex-flow: row wrap;
         /*align-items: stretch;*/
         align-self: stretch;
+        min-width: 100%;
     }
 
     .filter-panel {
         min-width: 415px;
-    }
-
-    .filter-panel__containers_base {
-        min-width: 100%;
-    }
-
-    .filter-panel__containers_additional {
-        display: flex;
-        flex-direction: row;
     }
 }

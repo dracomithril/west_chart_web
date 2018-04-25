@@ -91,7 +91,7 @@ const text_filters = [
     check: text_check(woc_string.toLowerCase()),
   },
   {
-    control: { name: 'westletter_text_control', id: 'westletter' },
+    control: { name: 'westletter_text_control', id: 'westLetter' },
     input: {
       name: 'westletter_control',
     },

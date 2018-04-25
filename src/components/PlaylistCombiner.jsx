@@ -2,8 +2,8 @@
  * Created by Gryzli on 05.06.2017.
  */
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { PropTypes } from 'prop-types';
+import Button from 'material-ui/Button';
+import PropTypes from 'prop-types';
 import {
   addTrucksToPlaylistNoRepeats,
   createPlaylistAndAddTracks,

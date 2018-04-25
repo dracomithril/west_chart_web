@@ -12,53 +12,41 @@ exports[`<Summary/> renders without crashing 1`] = `
     >
       Summary
     </h3>
-    <ButtonGroup
-      block={false}
-      bsClass="btn-group"
-      justified={false}
-      vertical={false}
+    <WithStyles(Button)
+      onClick={[Function]}
+      title="copy to clipboard"
     >
-      <Button
-        active={false}
-        block={false}
-        bsClass="btn"
-        bsStyle="info"
-        disabled={false}
-        onClick={[Function]}
-        title="copy to clipboard"
-      >
-        <FontAwesomeIcon$1
-          border={false}
-          className=""
-          fixedWidth={false}
-          flip={null}
-          icon={
-            Object {
-              "icon": Array [
-                384,
-                512,
-                Array [],
-                "f328",
-                "M384 112v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h80c0-35.29 28.71-64 64-64s64 28.71 64 64h80c26.51 0 48 21.49 48 48zM192 40c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m96 114v-20a6 6 0 0 0-6-6H102a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h180a6 6 0 0 0 6-6z",
-              ],
-              "iconName": "clipboard",
-              "prefix": "fas",
-            }
+      <FontAwesomeIcon$1
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              384,
+              512,
+              Array [],
+              "f328",
+              "M384 112v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h80c0-35.29 28.71-64 64-64s64 28.71 64 64h80c26.51 0 48 21.49 48 48zM192 40c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m96 114v-20a6 6 0 0 0-6-6H102a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h180a6 6 0 0 0 6-6z",
+            ],
+            "iconName": "clipboard",
+            "prefix": "fas",
           }
-          listItem={false}
-          mask={null}
-          name=""
-          pull={null}
-          pulse={false}
-          rotation={null}
-          size={null}
-          spin={false}
-          symbol={false}
-          transform={null}
-        />
-         copy
-      </Button>
-    </ButtonGroup>
+        }
+        listItem={false}
+        mask={null}
+        name=""
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        transform={null}
+      />
+       copy
+    </WithStyles(Button)>
   </div>
   <h6>
     [WCS Weekly Westletter]

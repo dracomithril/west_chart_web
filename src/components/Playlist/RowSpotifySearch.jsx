@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MenuItem } from 'react-bootstrap';
+import { MenuItem } from 'material-ui/Menu';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp, faSearch, faSync, faTimes } from '@fortawesome/fontawesome-free-solid';
 import './playlist.css';
@@ -37,7 +37,7 @@ class RowSpotifySearch extends React.Component {
           onUpdateClick({ id, value: track, field: 'selected' });
           this.setState({ showList: false });
         }}
-        style={{ backgroundColor: 'snow' }}
+        style={{ backgroundColor: 'snow', height: 'unset' }}
       >
         <TrackPreview
           artists={track.artists}

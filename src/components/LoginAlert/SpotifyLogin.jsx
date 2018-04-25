@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
+import Button from 'material-ui/Button';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/fontawesome-free-brands/index';
 import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
 
 const SpotifyLogin = ({ from }) => (
   <Button
-    className="btn btn-social btn-spotify"
     onClick={() => {
       loginToSpotifyAlpha(from)
         .then(url => {

@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FilteringOption/> renders without crashing ChartPresenter 1`] = `
-<Checkbox
-  className="filter-option"
-  color="cornflowerblue"
-  id="create_checkbox"
-  name="date_create_control"
-  onChange={[Function]}
->
+<div>
+  <WithStyles(Checkbox)
+    color="primary"
+    id="create_checkbox"
+    name="date_create_control"
+    onChange={[Function]}
+  />
   created in last 
   <input
     className="filter-option__days"
@@ -18,18 +18,18 @@ exports[`<FilteringOption/> renders without crashing ChartPresenter 1`] = `
     type="number"
   />
    days
-</Checkbox>
+</div>
 `;
 
 exports[`<FilteringOption/> should be able to change state of woc checkbox 1`] = `
-<Checkbox
-  checked={true}
-  className="filter-option"
-  color="cornflowerblue"
-  id="create_checkbox"
-  name="date_create_control"
-  onChange={[Function]}
->
+<div>
+  <WithStyles(Checkbox)
+    checked={true}
+    color="primary"
+    id="create_checkbox"
+    name="date_create_control"
+    onChange={[Function]}
+  />
   created in last 
   <input
     className="filter-option__days"
@@ -40,5 +40,5 @@ exports[`<FilteringOption/> should be able to change state of woc checkbox 1`] =
     type="number"
   />
    days
-</Checkbox>
+</div>
 `;

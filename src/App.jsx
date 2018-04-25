@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Header from './components/Header';
+import CookieBanner from 'react-cookie-banner';
 
 import Footer from './components/Footer';
 import Navigation from './Navigation';
-
 import createStore from './configureStore';
 
 const store = createStore();
@@ -15,7 +14,13 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <div className="App">
-        <Header />
+        <div className="wcs_header">
+          <img src="/pic/baner.png" alt="header logo" style={{ width: '100%' }} />
+          <CookieBanner
+            message={"Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"}
+            cookie="user-has-accepted-cookies"
+          />
+        </div>
         <Navigation />
         <Footer />
       </div>

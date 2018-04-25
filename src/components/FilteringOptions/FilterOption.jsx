@@ -3,20 +3,19 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Checkbox } from 'react-bootstrap';
-import Checkbox from '../universal/Checkbox';
+import Checkbox from 'material-ui/Checkbox';
 
 const FilterOption = ({ id, name, days, checked, onChange, onValueChange, descStart, descEnd }) => (
-  <Checkbox
-    color="cornflowerblue"
-    name={name}
-    id={`${id}_checkbox`}
-    className="filter-option"
-    checked={checked}
-    onChange={target => {
-      onChange({ checked: target.checked, id });
-    }}
-  >
+  <div>
+    <Checkbox
+      color="primary"
+      name={name}
+      id={`${id}_checkbox`}
+      checked={checked}
+      onChange={target => {
+        onChange({ checked: target.checked, id });
+      }}
+    />
     {descStart}
     <input
       className="filter-option__days"
@@ -28,7 +27,7 @@ const FilterOption = ({ id, name, days, checked, onChange, onValueChange, descSt
       onChange={({ target }) => onValueChange({ value: target.value, id })}
     />
     {descEnd}
-  </Checkbox>
+  </div>
 );
 FilterOption.propTypes = {
   id: PropTypes.string,

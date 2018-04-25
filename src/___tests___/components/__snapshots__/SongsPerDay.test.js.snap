@@ -1,36 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SongsPerDay/> renders without crashing 1`] = `
-<div
-  className="songs-per-day songs-per-day--good"
->
-  <div>
-    <label
-      className="songs-per-day__label"
-      htmlFor="songs_per_day"
-    >
-      songs per day
-      <input
-        id="songs_per_day"
-        max={10}
-        min={1}
-        name="songs_per_day"
-        onChange={[Function]}
-        step={1}
-        type="number"
-      />
-    </label>
-  </div>
-  <div
-    className="songs-per-day__counters"
-  >
-    <ErrorDaysIndicator
-      errorDays={Array []}
-      less={true}
-    />
-    <ErrorDaysIndicator
-      errorDays={Array []}
-    />
-  </div>
-</div>
+<SongsPerDay
+  classes={
+    Object {
+      "button": "SongsPerDay-button-1",
+      "label": "SongsPerDay-label-3",
+      "typography": "SongsPerDay-typography-2",
+    }
+  }
+  errorDays={Array []}
+/>
 `;

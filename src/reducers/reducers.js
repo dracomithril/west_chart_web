@@ -276,7 +276,7 @@ const filters = (state = {}, action) => ({
   more_control: control_state(state.more_control || { checked: false, id: 'more', days: 1, type: 'counter' }, action),
   woc_control: control_state(state.woc_control || { checked: false, id: 'woc', type: 'text' }, action),
   westletter_control: control_state(
-    state.westletter_control || { checked: false, id: 'westletter', type: 'text' },
+    state.westletter_control || { checked: false, id: 'westLetter', type: 'text' },
     action,
   ),
 });

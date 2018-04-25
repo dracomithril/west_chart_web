@@ -4,6 +4,7 @@
     padding: 2px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.1);
     justify-content: space-around;
     align-content: center;
@@ -27,8 +28,6 @@
 }
 
 .songs-per-day {
-    /*height: 45px;*/
-    /*width: 100%;*/
     text-align: center;
     padding-left: 5px;
     border-radius: 3px;
@@ -61,15 +60,11 @@
     flex-direction: column;
 }
 
-.chart-header__left_dock {
-    /*width: 200px;*/
-    text-align: left;
-}
-
 .pick-your-date {
-    height: 70px;
     padding-top: 10px;
     padding-left: 10px;
+    display: flex;
+    flex-direction: column;
     border: 1px solid #faebcc;
     border-radius: 3px;
 }
@@ -115,12 +110,12 @@
 
 .less_days {
     color: blue;
-    margin-left: 5px;
+    /*margin-left: 5px;*/
 }
 
 .more_days {
     color: red;
-    margin-left: 5px;
+    /*margin-left: 5px;*/
 }
 
 .chart-table {

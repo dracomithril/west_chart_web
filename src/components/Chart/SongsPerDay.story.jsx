@@ -21,10 +21,10 @@ storiesOf('SongsPerDay', module)
     <SongsPerDay
       songsPerDay={3}
       errorDays={[
-        { color: 'blue', org: '01/03' },
-        { color: 'blue', org: '02/03' },
-        { color: 'red', org: '03/03' },
-        { color: 'red', org: '04/03' },
+        { color: 'blue', org: '01/03/2018' },
+        { color: 'blue', org: '02/03/2018' },
+        { color: 'red', org: '03/03/2018' },
+        { color: 'red', org: '04/03/2018' },
       ]}
       onDaysChange={action('days changed')}
     />

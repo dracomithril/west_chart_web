@@ -3,21 +3,28 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import FontAwesome from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretUp } from '@fortawesome/fontawesome-free-solid';
+import Button from 'material-ui/Button';
+import { withStyles } from 'material-ui/styles';
 import FilterOption from './FilterOption';
 import './FilteringOptions.css';
 import filters_def from '../../utils/filters_def';
 import { actionTypes } from './../../reducers/actionTypes';
 import MessageControl from './MessageControl';
 
+const styles = {
+  button: {
+    alignSelf: 'stretch',
+  },
+};
+
 class FilteringOptions extends React.Component {
   state = {
-    more: false,
+    show: false,
   };
 
   render() {
     const { store } = this.context;
+    const { classes } = this.props;
     const { filters } = store.getState();
     const map_c = filters_def.control.map(({ input, description, control }) => {
       const { days, checked } = filters[input.name] || {};
@@ -33,7 +40,7 @@ class FilteringOptions extends React.Component {
           onChange={target => {
             store.dispatch({
               type: actionTypes.TOGGLE_FILTER,
-              id: target.id,
+              id: target.value,
               checked: target.checked,
             });
           }}
@@ -59,7 +66,7 @@ class FilteringOptions extends React.Component {
         onChange={target => {
           store.dispatch({
             type: actionTypes.TOGGLE_FILTER,
-            id: target.id,
+            id: target.value,
             checked: target.checked,
           });
         }}
@@ -67,16 +74,20 @@ class FilteringOptions extends React.Component {
     ));
     return (
       <div className="filter-panel">
-        <div className="filter-panel__header">
-          <h4>filters</h4>
-          <button style={{ border: ' none' }} onClick={() => this.setState({ more: !this.state.more })}>
-            <FontAwesome size="2x" icon={this.state.more ? faCaretUp : faCaretDown} />
-          </button>
-        </div>
-        <div className="filter-panel__containers">
-          <div className="filter-panel__containers_base">{map_c}</div>
-          <div className="filter-panel__containers_additional">{this.state.more && map_t}</div>
-        </div>
+        <Button
+          className={classes.button}
+          onClick={() => {
+            this.setState({ show: !this.state.show });
+          }}
+        >
+          filters
+        </Button>
+        {this.state.show && (
+          <div className="filter-panel__containers">
+            {map_c}
+            {map_t}
+          </div>
+        )}
       </div>
     );
   }
@@ -85,4 +96,10 @@ class FilteringOptions extends React.Component {
 FilteringOptions.contextTypes = {
   store: PropTypes.object,
 };
-export default FilteringOptions;
+FilteringOptions.propTypes = {
+  classes: PropTypes.shape({
+    button: PropTypes.string,
+  }).isRequired,
+};
+
+export default withStyles(styles)(FilteringOptions);

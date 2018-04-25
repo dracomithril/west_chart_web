@@ -54,7 +54,7 @@ class SpotifySearch extends React.Component {
           }),
       );
     });
-    onStartClick();
+    onStartClick && onStartClick();
   };
 
   onCratePlaylistClick = ({ playlistName, isPrivate }) => {

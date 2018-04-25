@@ -3,7 +3,10 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Badge, Button, ButtonGroup, ControlLabel, FormControl, FormGroup, Image } from 'react-bootstrap';
+import Button from 'material-ui/Button';
+import Avatar from 'material-ui/Avatar';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faSyncAlt, faMinus } from '@fortawesome/fontawesome-free-solid';
 
 // todo add modal to block usage of tool when playlist crating
 class UserPlaylist extends React.Component {
@@ -15,34 +18,38 @@ class UserPlaylist extends React.Component {
       </option>
     );
   }
-
+  updateSelectList = ({ target }) => {
+    const { name, selectedOptions } = target;
+    const { onSelect } = this.props;
+    const sel = Array.from(selectedOptions).map(({ value }) => [name, value]);
+    onSelect(name, sel);
+  };
   render() {
-    const { user, onSelect, onDelete, erasable, onUpdate } = this.props;
+    const { user, onDelete, erasable, onUpdate } = this.props;
     const { items, id = '', total, pic } = user || {};
     const userPlaylist = (items || []).map(UserPlaylist.mapUserPlaylistToOptions);
-    const updateSelectList = ({ target }) => {
-      const { name, selectedOptions } = target;
-      const sel = Array.from(selectedOptions).map(({ value }) => [name, value]);
-      onSelect(name, sel);
-    };
+
     return (
-      <FormGroup controlId={`${id}_playlist`} bsClass="playlists_view form-group">
+      <div id={`${id}_playlist`} className="playlists_view form-group">
         <div>
-          <ControlLabel>
-            {' '}
-            <Image src={pic} rounded />
+          <div>
+            <Avatar src={pic} />
             <span>{id.length > 12 ? `${id.substr(0, 9)}...` : id}</span>
-          </ControlLabel>
-          <Badge bsStyle="warning">{total}</Badge>
-          <ButtonGroup>
-            <Button className="fas fa-sync-alt btn2" onClick={() => onUpdate(id)} />
-            <Button className="fas fa-minus btn2" onClick={() => onDelete(id)} disabled={!erasable} />
-          </ButtonGroup>
+          </div>
+          <span>{total}</span>
+          <div>
+            <Button onClick={() => onUpdate(id)}>
+              <FontAwesomeIcon icon={faSyncAlt} />
+            </Button>
+            <Button onClick={() => onDelete(id)} disabled={!erasable}>
+              <FontAwesomeIcon icon={faMinus} />
+            </Button>
+          </div>
         </div>
-        <FormControl name={id} componentClass="select" multiple onChange={updateSelectList}>
+        <select name={id} multiple onChange={this.updateSelectList}>
           {userPlaylist}
-        </FormControl>
-      </FormGroup>
+        </select>
+      </div>
     );
   }
 }

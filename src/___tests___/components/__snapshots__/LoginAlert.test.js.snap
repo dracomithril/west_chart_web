@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<LoginAlert/> renders without crashing ChartPresenter 1`] = `
-<Jumbotron
-  bsClass="login-info"
-  componentClass="div"
+<div
+  className="login-info"
 >
   <h4>
     <span
@@ -36,5 +35,5 @@ exports[`<LoginAlert/> renders without crashing ChartPresenter 1`] = `
     typeButton="button"
   />
   <SpotifyLogin />
-</Jumbotron>
+</div>
 `;

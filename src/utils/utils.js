@@ -194,10 +194,10 @@ export const weekInfo = date => {
 };
 export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?height=50`;
 
-export const UpdateChart = store => {
+export const UpdateChart = (store, since, until) => {
   store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: true });
-  const { user, sinceDate, untilDate } = store.getState();
-  const query_params = getQueryParams(sinceDate, untilDate, user.accessToken);
+  const { user } = store.getState();
+  const query_params = getQueryParams(since, until, user.accessToken);
   return getChartFromServer(query_params)
     .then(body => {
       console.info(`chart list witch ${body.chart.length}`);
