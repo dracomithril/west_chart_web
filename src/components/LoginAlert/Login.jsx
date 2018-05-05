@@ -5,14 +5,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login';
-import SpotifyLogin from './SpotifyLogin';
-import './../bootstrap-social.css';
+import Button from 'material-ui/Button';
+import { faFacebookF, faSpotify } from '@fortawesome/fontawesome-free-brands/index';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
 import './LoginAlert.css';
 import { getFbPictureUrl } from '../../utils/utils';
 import { api } from './../../config';
 import { actionTypes } from './../../reducers/actionTypes';
 
-const LoginAlert = ({ location }, { store }) => {
+const Login = ({ location }, { store }) => {
   const { user, spotifyUser } = store.getState();
   const { from } = (location || {}).state || { from: '/' };
   if (user.id && spotifyUser.id) {
@@ -33,7 +35,9 @@ const LoginAlert = ({ location }, { store }) => {
           appId={api.fb.apiId}
           language="pl_PL"
           autoLoad
-          scope="public_profile,email,user_managed_groups"
+          scope="public_profile,email,user_managed_groups,groups_access_member_info,publish_to_groups"
+          buttonStyle={{ width: '100%', height: 48 }}
+          icon={<FontAwesomeIcon icon={faFacebookF} style={{ paddingRight: 5 }} />}
           callback={response => {
             if (!response.error) {
               store.dispatch({
@@ -44,28 +48,42 @@ const LoginAlert = ({ location }, { store }) => {
                 },
               });
             } else {
-              console.error('login error.');
-              console.error(response.error);
+              console.error('login error.', response.error);
             }
           }}
           fields="id,email,name,first_name,last_name"
-          cssClass="btn btn-social btn-facebook"
-          icon="fab fa-facebook"
         />
       )}
-      {spotifyUser.id === undefined && <SpotifyLogin from={from} />}
+      {spotifyUser.id === undefined && (
+        <Button
+          variant="raised"
+          style={{ backgroundColor: 'green', height: 48, width: '100%', color: 'white' }}
+          onClick={() => {
+            loginToSpotifyAlpha(from)
+              .then(url => {
+                window.location = url;
+              })
+              .catch(err => {
+                console.error(err.message);
+              });
+          }}
+        >
+          <FontAwesomeIcon icon={faSpotify} style={{ paddingRight: 5 }} />
+          Login to spotify
+        </Button>
+      )}
     </div>
   );
 };
 
-LoginAlert.contextTypes = {
+Login.contextTypes = {
   store: PropTypes.object,
 };
-LoginAlert.propTypes = {
+Login.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.shape({
       from: PropTypes.string,
     }),
   }),
 };
-export default LoginAlert;
+export default Login;

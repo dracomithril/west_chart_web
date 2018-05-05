@@ -109,7 +109,6 @@ const updateSearch = (searchElem = {}, action) => {
  * @property {String} from.name
  * @property {String} from.id
  * @property {String} from.picture_url
- * @property {String} full_picture
  * @property {String} id
  * @property {Number} likes_num
  * @property {Object} link
@@ -118,7 +117,7 @@ const updateSearch = (searchElem = {}, action) => {
  * @property {String} link.title
  * @property {String} link.type
  * @property {String} message
- * @property {Number} reactions_num
+ * @property {Number} reactionsNum
  * @property {Boolean} selected
  * @property {String} source
  * @property {String} type
@@ -148,7 +147,7 @@ const updateSearch = (searchElem = {}, action) => {
         "type": "share"
       },
       "message": "https://www.youtube.com/watch?v=qdXihu6qB1s",
-      "reactions_num": 3,
+      "reactionsNum": 3,
       "selected": false,
       "source": "https://www.youtube.com/embed/qdXihu6qB1s?autoplay=1",
       "type": "video",

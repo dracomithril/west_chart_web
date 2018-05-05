@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Provider } from 'react-redux';
-import LoginAlerts from './index';
+import Login from './Login';
 import configureStore from '../../configureStore';
 
 const store = configureStore();
 
-storiesOf('LoginAlerts', module)
+storiesOf('Login', module)
   .addDecorator(story => <Provider store={store}>{story()}</Provider>)
-  .add('Todo[VR]', () => <LoginAlerts from="/" />);
+  .add('Todo[VR]', () => <Login from="/" />);

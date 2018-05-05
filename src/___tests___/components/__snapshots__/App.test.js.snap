@@ -19,6 +19,15 @@ exports[`<App/> renders without crashing 1`] = `
       <div
         className="wcs_header"
       >
+        <img
+          alt="header logo"
+          src="/pic/baner.png"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
         <CookieBanner
           buttonMessage="Got it"
           cookie="user-has-accepted-cookies"

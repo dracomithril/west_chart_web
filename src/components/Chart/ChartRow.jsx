@@ -10,6 +10,7 @@ import {
   faTimesCircle,
 } from '@fortawesome/fontawesome-free-solid';
 import Checkbox from 'material-ui/Checkbox';
+import Avatar from 'material-ui/Avatar';
 
 const dateToLocaleString = (date, options) => date.toLocaleString(navigator.language || 'pl-PL', options);
 
@@ -43,15 +44,14 @@ const fullFormatDate = date => {
   return '';
 };
 
-const ChartRow = ({ from = {}, link = {}, checked, createdTime, onChange, updatedTime, ...props }) => {
+const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime, story, ...props }) => {
   const showUpdateTime = updatedTime && updatedTime !== createdTime;
   const withMessage = {
     icon: faComment,
-    size: '2x',
     color: 'green',
     style: { cursor: 'pointer' },
   };
-  const noMessage = { icon: faTimesCircle, size: '2x', color: 'red', style: { cursor: 'np-drop' } };
+  const noMessage = { icon: faTimesCircle, color: 'red', style: { cursor: 'np-drop' } };
   const messageProps = props.message ? withMessage : noMessage;
   return (
     <div className="chart-row">
@@ -64,36 +64,30 @@ const ChartRow = ({ from = {}, link = {}, checked, createdTime, onChange, update
         value={props.id}
         color="primary"
       />
-      <div className="chart-row__user-info">
-        <picture>
-          <img src={from.picture_url} alt="profilePic" />
-        </picture>
-        <div className="chart-row__user-info__name">
-          <span>{from.first_name}</span>
-          <span>{from.last_name}</span>
+      {typeof from === 'object' ? (
+        <div className="chart-row__user-info">
+          <Avatar src={from.picture_url} />
+          <div className="chart-row__user-info__name">
+            <span>{from.first_name}</span>
+            <span>{from.last_name}</span>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div>{story}</div>
+      )}
       <div style={{ display: 'flex' }}>
         <div className="chart-row__post-info">
+          <FontAwesomeIcon icon="thumbs-up" color="blue" />
+          {props.reactionsNum}
           <div title={props.message}>
             <FontAwesomeIcon {...messageProps} />
           </div>
-          <span className="fa-layers fa-fw fa-2x" title="people reactions count">
-            <FontAwesomeIcon icon="thumbs-up" color="blue" />
-            <span className="fa-layers-counter fa-lg">{props.reactions_num}</span>
-          </span>
         </div>
         <div className="chart-row__time-info">
           <FontAwesomeIcon icon={faClock} color="black" style={{ marginBottom: 5 }} />
-          {createdTime ? (
-            <span style={{ color: 'red' }} title={`creation time: ${fullFormatDate(createdTime)}`}>
-              <FontAwesomeIcon icon={faCaretRight} /> {shortFormatDate(createdTime)}
-            </span>
-          ) : (
-            <span
-              style={{ minWidth: 40, display: 'block', minHeight: 10, backgroundColor: 'lightgray', marginBottom: 5 }}
-            />
-          )}
+          <span style={{ color: 'red' }} title={`creation time: ${fullFormatDate(createdTime)}`}>
+            <FontAwesomeIcon icon={faCaretRight} /> {shortFormatDate(createdTime)}
+          </span>
           {showUpdateTime && (
             <span style={{ color: 'green' }} title={`update time: ${fullFormatDate(updatedTime)}`}>
               <FontAwesomeIcon icon={faCaretUp} /> {shortFormatDate(updatedTime)}
@@ -121,12 +115,13 @@ ChartRow.propTypes = {
     first_name: PropTypes.string,
     last_name: PropTypes.string,
     picture_url: PropTypes.string,
-  }).isRequired,
-  checked: PropTypes.bool.isRequired,
+  }),
+  story: PropTypes.string,
+  checked: PropTypes.bool,
   createdTime: PropTypes.string.isRequired,
   updatedTime: PropTypes.string,
   message: PropTypes.string,
-  reactions_num: PropTypes.number,
+  reactionsNum: PropTypes.number,
   link: PropTypes.shape({
     title: PropTypes.string,
     url: PropTypes.string,

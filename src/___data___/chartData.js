@@ -43,7 +43,7 @@ const chart = [
       type: 'share',
     },
     message: 'Ship of a black madness, trade the power! ',
-    reactions_num: 4,
+    reactionsNum: 4,
     search: {
       artist: 'EZA',
       title: 'Shape of You',
@@ -58,18 +58,17 @@ const chart = [
   },
   {
     createdTime: '2018-03-16T00:12:59+0000',
-    from: user2,
     full_picture:
       'https://external.xx.fbcdn.net/safe_image.php?d=AQDHJdA9ezDN2Zwr&w=1280&h=720&url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FrLKreFwTSYs%2Fmaxresdefault.jpg&crop&sx=0&sy=0&sw=1280&sh=720&_nc_hash=AQCLSz6tWONEcLHh',
     id: 'LOTUS9',
-    likes_num: 0,
     link: {
       url: 'https://www.youtube.com/watch?v=rLKreFwTSYs',
       name: 'Sam Smith - Too Good At Goodbyes (Sofia Karlberg Cover)',
       title: 'Sam Smith - Too Good At Goodbyes (Sofia Karlberg Cover)',
       type: 'share',
     },
-    reactions_num: 0,
+    story: 'gkasdgfhk afhgkshfgka hfkagfkaghfkjdsf',
+    reactionsNum: 0,
     search: {
       artist: 'Sam Smith',
       title: 'Too Good At Goodbyes',
@@ -96,7 +95,7 @@ const chart = [
       type: 'share',
     },
     message: 'https://youtu.be/LxoGNkLpgZk',
-    reactions_num: 2,
+    reactionsNum: 2,
     search: {
       artist: 'Iggy Azalea',
       title: 'Savior',
@@ -124,7 +123,7 @@ const chart = [
       type: 'share',
     },
     message: 'https://www.youtube.com/watch?v=WX_0qCyFaeM',
-    reactions_num: 3,
+    reactionsNum: 3,
     search: {
       artist: 'Calum Scott',
       title: 'Only You (Audio)',
@@ -151,7 +150,7 @@ const chart = [
       type: 'share',
     },
     message: 'https://www.youtube.com/watch?v=LwDMFOLIHxU',
-    reactions_num: 1,
+    reactionsNum: 1,
     search: {
       artist: 'Dolly Parton',
       title: 'Nine to Five',

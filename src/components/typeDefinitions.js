@@ -8,7 +8,7 @@ export const chartObjectProps = PropTypes.shape({
   likes_num: PropTypes.number,
   link: PropTypes.object,
   message: PropTypes.string,
-  reactions_num: PropTypes.number,
+  reactionsNum: PropTypes.number,
   selected: PropTypes.bool,
   source: PropTypes.string,
   type: PropTypes.string,

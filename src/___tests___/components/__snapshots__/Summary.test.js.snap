@@ -14,6 +14,12 @@ exports[`<Summary/> renders without crashing 1`] = `
     </h3>
     <WithStyles(Button)
       onClick={[Function]}
+      style={
+        Object {
+          "minWidth": 44,
+          "padding": "unset",
+        }
+      }
       title="copy to clipboard"
     >
       <FontAwesomeIcon$1
@@ -45,7 +51,6 @@ exports[`<Summary/> renders without crashing 1`] = `
         symbol={false}
         transform={null}
       />
-       copy
     </WithStyles(Button)>
   </div>
   <h6>

@@ -16,7 +16,6 @@ import ChartHeader from './ChartHeader';
 import SpotifySearch from '../Playlist/SpotifySearch';
 import WestLetter from '../WestLetter';
 import { filterChart, sorting } from '../../utils/utils';
-import UpdateInfo from './UpdateInfo';
 
 const styles = theme => ({
   root: {
@@ -37,7 +36,7 @@ function TabContainer(props) {
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
-const options = {
+const tabOptions = {
   posts: 'posts',
   playlist: 'playlist',
   summary: 'summary',
@@ -46,29 +45,34 @@ const options = {
 const tabs = [
   {
     label: 'Posts',
-    value: options.posts,
+    value: tabOptions.posts,
     icon: <FontAwesomeIcon icon={faFacebook} />,
   },
   {
     label: 'Playlist',
-    value: options.playlist,
+    value: tabOptions.playlist,
     icon: <FontAwesomeIcon icon={faSpotify} />,
   },
   {
     label: 'Summary',
-    value: options.summary,
+    value: tabOptions.summary,
     icon: <FontAwesomeIcon icon={faList} />,
   },
   {
     label: 'West Letter',
-    value: options.westLetter,
+    value: tabOptions.westLetter,
     icon: <FontAwesomeIcon icon={faTable} />,
   },
 ];
-
+const options = { weekday: 'short', month: '2-digit', day: 'numeric' };
+const defaultValue = {
+  viewChart: [],
+  errorDays: [],
+  westLetters: [],
+};
 class ChartPresenter extends React.Component {
   state = {
-    value: options.posts,
+    value: tabOptions.posts,
   };
   handleChange = (event, value) => {
     this.setState({ value });
@@ -79,17 +83,14 @@ class ChartPresenter extends React.Component {
     const { value } = this.state;
 
     const { listSort, chart, filters, until, songsPerDay, since, lastUpdateDate } = store.getState();
-    const defaultValue = {
-      viewChart: [],
-      errorDays: null,
-      westLetters: [],
-    };
+
     const tabsView = tabs.map(elem => <BottomNavigationAction key={elem.label} {...elem} />);
     const { viewChart, errorDays, westLetters } =
       chart.length > 0 ? filterChart(chart, filters, until, songsPerDay) : defaultValue;
     const selected = viewChart.filter(elem => elem.selected);
     sorting[listSort](selected);
     const show = !!lastUpdateDate && !!since && !!until;
+    const lastUpdateDateString = lastUpdateDate ? new Date(lastUpdateDate).toLocaleString('pl-PL', options) : 'No data';
     return (
       <div className={this.props.classes.root}>
         <div style={{ borderBottom: '1px solid' }}>
@@ -97,34 +98,43 @@ class ChartPresenter extends React.Component {
             {tabsView}
           </BottomNavigation>
         </div>
-        {value === options.posts && (
+        {value === tabOptions.posts && (
           <TabContainer>
             <div className="chart-presenter__tab-content">
               <ChartHeader errorDays={errorDays} viewChart={viewChart} />
               {show && (
-                <UpdateInfo
-                  lastUpdateDate={lastUpdateDate}
-                  until={until}
-                  since={since}
-                  total={chart.length}
-                  filtered={viewChart.length}
-                />
+                <div className="update-info">
+                  <div id="time-frame" className="update-info__time-frame">
+                    {'since: '}
+                    <span style={{ color: 'blue' }}>
+                      {since !== '' ? new Date(since).toLocaleDateString('pl-PL', options) : 'null'}
+                    </span>
+                    {' to '}
+                    <span style={{ color: 'red' }}>
+                      {until !== '' ? new Date(until).toLocaleDateString('pl-PL', options) : 'null'}
+                    </span>
+                  </div>
+                  <span id="updateDate" className="update-info__span">{` Last update: ${lastUpdateDateString}`}</span>
+                  <span className="update-info__span">
+                    We did get {chart.length} and filtered {viewChart.length}
+                  </span>
+                </div>
               )}
               <ChartTable data={viewChart} />
             </div>
           </TabContainer>
         )}
-        {value === options.playlist && (
+        {value === tabOptions.playlist && (
           <TabContainer>
             <SpotifySearch selected={selected} />
           </TabContainer>
         )}
-        {value === options.summary && (
+        {value === tabOptions.summary && (
           <TabContainer>
             <Summary selected={selected} />
           </TabContainer>
         )}
-        {value === options.westLetter && (
+        {value === tabOptions.westLetter && (
           <TabContainer>
             <WestLetter data={westLetters} />
           </TabContainer>

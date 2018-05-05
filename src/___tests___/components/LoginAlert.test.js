@@ -12,15 +12,7 @@ import configureMockStore from 'redux-mock-store';
 Enzyme.configure({ adapter: new Adapter() });
 const initial_state = require('../___data___/initial_state.json');
 const mockStore = configureMockStore([]);
-describe('<LoginAlert/>', () => {
-  beforeAll(() => {
-    global.sessionStorage = jest.genMockFunction();
-    global.sessionStorage.setItem = jest.genMockFunction();
-    global.sessionStorage.getItem = jest.genMockFunction();
-  });
-  afterAll(() => {
-    delete global.sessionStorage;
-  });
+describe('<Login/>', () => {
   it('renders without crashing ChartPresenter', () => {
     const store = mockStore(initial_state);
     const wrapper = shallow(
@@ -30,7 +22,5 @@ describe('<LoginAlert/>', () => {
       }
     );
     expect(shallowToJson(wrapper)).toMatchSnapshot();
-
   });
-
 });

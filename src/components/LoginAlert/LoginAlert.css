@@ -20,6 +20,8 @@
 .login-info {
     text-align: center;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 40px;
     border-radius: 4px;
     color: #a94442;

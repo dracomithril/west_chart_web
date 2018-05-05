@@ -22,35 +22,35 @@ describe('[utils]', () => {
   describe('[sorting]', () => {
     let base_array = [{
       from: { name: "krzys" },
-      reactions_num: 7,
+      reactionsNum: 7,
       crated_time: new Date('2017-03-14'),
       link: {
         name: 'acbaa',
       },
     }, {
       from: { name: "bartek" },
-      reactions_num: 3,
+      reactionsNum: 3,
       createdTime: new Date('2017-03-16'),
       link: {
         name: 'acbaa',
       },
     }, {
       from: { name: "zumba" },
-      reactions_num: 9,
+      reactionsNum: 9,
       createdTime: new Date('2017-04-14'),
       link: {
         name: 'aabcaa',
       },
     }, {
       from: { name: 'tomek' },
-      reactions_num: 0,
+      reactionsNum: 0,
       createdTime: undefined,
       link: {
         name: 'zzzaaaa',
       },
     }, {
       from: { name: 'tomek' },
-      reactions_num: 1,
+      reactionsNum: 1,
       createdTime: new Date('2017-02-19'),
       link: {
         name: 'tttaaaa',
@@ -59,10 +59,10 @@ describe('[utils]', () => {
     it("reaction dsc", () => {
       let array = Object.assign([], base_array);
       sorting.reaction(array);
-      expect(array[0].reactions_num).toBe(9);
-      expect(array[1].reactions_num).toBe(7);
-      expect(array[2].reactions_num).toBe(3);
-      expect(array[3].reactions_num).toBe(1);
+      expect(array[0].reactionsNum).toBe(9);
+      expect(array[1].reactionsNum).toBe(7);
+      expect(array[2].reactionsNum).toBe(3);
+      expect(array[3].reactionsNum).toBe(1);
     });
     it('who asc', function () {
       let array = Object.assign([], base_array);
@@ -106,11 +106,11 @@ describe('[utils]', () => {
         json: sinon.stub(),
         status: 200,
       };
-      resp.json.returns(Promise.resolve({ chart: ['zzz', 'bbb'], lastUpdateDate: 'update' }));
+      resp.json.returns(Promise.resolve({ chart: chart, lastUpdateDate: 'update' }));
       fetch.withArgs('/api/fb/get_chart?').returns(Promise.resolve(resp));
       return getChartFromServer({}, store).then((z) => {
         expect(store.getActions().length).toBe(0);
-        expect(z.chart.length).toBe(2);
+        expect(z.chart.length).toBe(26);
         expect(z.lastUpdateDate).toBe('update');
         window.fetch.restore();
       });
@@ -123,7 +123,7 @@ describe('[utils]', () => {
     };
     const str2 = {
       description: "Chet Faker - 1998 ft Banks",
-      artist: "Chet Faker", title: "1998 ft Banks", ft: "Banks",
+      artist: "Chet Faker", title: "1998", ft: "Banks",
     };
     const str4 = {
       description: "X Ambassadors - Unsteady (Erich Lee Gravity Remix)",
@@ -181,7 +181,7 @@ describe('[utils]', () => {
     };
     const str15 = {
       description: "Shania Twain - Ka-Ching! (Red Version)",
-      artist: "Shania Twain", title: "Ka-Ching! (Red Version)",
+      artist: "Shania Twain", title: "Ka-Ching!",
     };
 
 

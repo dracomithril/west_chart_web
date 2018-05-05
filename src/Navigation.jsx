@@ -6,6 +6,7 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
+import Button from 'material-ui/Button';
 import Avatar from 'material-ui/Avatar';
 import MenuIcon from '@material-ui/icons/Menu';
 import Menu, { MenuItem } from 'material-ui/Menu';
@@ -140,7 +141,7 @@ class Navigation extends React.Component {
             <Typography variant="title" color="inherit" className={classes.flex}>
               WCS Music Chart
             </Typography>
-            {user.id && (
+            {user.id ? (
               <div>
                 <IconButton
                   aria-owns={open ? 'menu-appbar' : null}
@@ -173,6 +174,10 @@ class Navigation extends React.Component {
                   <MenuItem onClick={this.onLogoutClick}>Logout</MenuItem>
                 </Menu>
               </div>
+            ) : (
+              <Button color="inherit" href="/login">
+                Login
+              </Button>
             )}
           </Toolbar>
         </AppBar>

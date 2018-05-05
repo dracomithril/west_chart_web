@@ -17,17 +17,17 @@ export default class WestLetter extends React.Component {
   }
 
   render() {
-    const today = new Date();
-    const today_week = weekInfo(today);
+    const todayWeek = weekInfo();
     const { data = [] } = this.props;
     const show = data.map(elem => {
       const create_date = new Date(elem.createdTime);
-      const { weekNumber } = weekInfo(create_date);
+      const { from } = elem;
+      const { weekNumber } = weekInfo();
       return (
         <div style={{ padding: 2, display: 'block', border: '1px black solid' }} key={elem.id}>
           <input type="checkbox" />
           <span hidden>{elem.id}</span>
-          <Avatar title={elem.from.name} src={getFbPictureUrl(elem.from.id)} />
+          {from ? <Avatar title={from.name} src={getFbPictureUrl(from.id)} /> : <div>{elem.story}</div>}
           <div>
             <span>{create_date.toLocaleDateString()}</span>
             <br />
@@ -46,7 +46,7 @@ export default class WestLetter extends React.Component {
         </div>
 
         <h4>
-          We have {today_week.weekNumber} week of {today.getFullYear()}
+          We have {todayWeek.weekNumber} week of {todayWeek.year}
         </h4>
         <div style={{ display: 'inline-flex' }}>{show}</div>
       </div>

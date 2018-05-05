@@ -8,11 +8,11 @@ import { withStyles } from 'material-ui/styles';
 import TextField from 'material-ui/TextField';
 import moment from 'moment/moment';
 import SongsPerDay from './SongsPerDay';
-import FilteringOptions from '../FilteringOptions/index';
+import FilteringOptions from '../FilteringOptions';
 import '../components.css';
 import './chart.css';
 import { actionTypes } from './../../reducers/actionTypes';
-import { UpdateChart } from '../../utils/utils';
+import { UpdateChart, weekInfo } from '../../utils/utils';
 import { chartObjectProps, errorDaysObjectProps } from './../typeDefinitions';
 
 function selectedItem(id) {
@@ -30,18 +30,16 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 200,
   },
 });
 
 class ChartHeader extends React.Component {
   constructor(props) {
     super(props);
-    const until = moment();
-    const since = moment(until).subtract(14, 'days');
+    const { monday, friday } = weekInfo();
     this.state = {
-      since,
-      until,
+      since: monday,
+      until: friday,
     };
   }
 
@@ -78,7 +76,7 @@ class ChartHeader extends React.Component {
     const { errorDays, classes } = this.props;
     return (
       <div className="chart-header">
-        <div className="pick-your-date">
+        <div style={{ display: 'flex' }}>
           <TextField
             id="date"
             label="starting from"
@@ -106,16 +104,6 @@ class ChartHeader extends React.Component {
             }}
           />
         </div>
-        <SongsPerDay
-          errorDays={errorDays}
-          songsPerDay={songsPerDay}
-          onDaysChange={days =>
-            store.dispatch({
-              type: 'UPDATE_SONGS_PER_DAY',
-              days,
-            })
-          }
-        />
         <div className={classes.container}>
           <Button
             id="updateChartB"
@@ -139,6 +127,16 @@ class ChartHeader extends React.Component {
           </Button>
         </div>
         <FilteringOptions />
+        <SongsPerDay
+          errorDays={errorDays}
+          songsPerDay={songsPerDay}
+          onDaysChange={days =>
+            store.dispatch({
+              type: 'UPDATE_SONGS_PER_DAY',
+              days,
+            })
+          }
+        />
       </div>
     );
   }

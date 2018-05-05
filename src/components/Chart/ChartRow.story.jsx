@@ -10,38 +10,44 @@ storiesOf('ChartRow', module)
   .add('no props', () => <ChartRow />)
   .add('props one date', () => (
     <ChartRow
-      reactions_num={3}
+      id="abcd"
+      checked={false}
+      reactionsNum={3}
       from={user1}
       message="sdfsjdgcvgjdcjads"
       link={{ url: 'my_link', title: 'song title' }}
-      created_time="03/16/2018"
+      createdTime="03/16/2018"
     />
   ))
   .add('props one date, no message', () => (
     <ChartRow
-      reactions_num={3}
+      id="abcd1"
+      checked={false}
+      reactionsNum={3}
       from={user2}
       link={{ url: 'my_link', title: 'really long song title' }}
-      created_time="03/16/2018"
+      createdTime="03/16/2018"
     />
   ))
   .add('props one date, no message, last year', () => (
     <ChartRow
-      reactions_num={3}
+      id="abcd2"
+      reactionsNum={3}
       checked={false}
       from={user1}
       link={{ url: 'my_link', title: 'really long song title' }}
-      created_time="03/16/2017"
+      createdTime="03/16/2018"
     />
   ))
   .add('props two dates', () => (
     <ChartRow
-      reactions_num={3}
+      id="abcd4"
+      reactionsNum={3}
       from={user2}
+      checked={checkedState}
       message="sdfsjdgcvgjdcjads"
       link={{ url: '#', title: 'song title' }}
-      checked={checkedState}
-      created_time="03/16/2018"
+      createdTime="03/16/2018"
       updatedTime="03/17/2018"
       onChange={target => {
         checkedState = target.checked;

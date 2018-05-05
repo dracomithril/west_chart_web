@@ -19,8 +19,9 @@ const ChartTable = ({ data }, { store }) => {
       updatedTime={entry.updatedTime}
       link={entry.link}
       from={entry.from}
+      story={entry.story}
       key={entry.id}
-      reactions_num={entry.reactions_num}
+      reactionsNum={entry.reactionsNum}
       message={entry.message}
       onChange={({ checked, id }) => {
         store.dispatch({

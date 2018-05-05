@@ -55,14 +55,14 @@ const filters = [
     input: { name: 'more_control' },
     description: { start: 'more then' },
     type: 'more',
-    check: ({ reactions_num }, { days, checked }) => (checked ? reactions_num > days : true),
+    check: ({ reactionsNum }, { days, checked }) => (checked ? reactionsNum > days : true),
   },
   {
     control: { name: 'less_then_control', id: 'less' },
     input: { name: 'less_control' },
     description: { start: 'less then' },
     type: 'less',
-    check: ({ reactions_num }, { days, checked }) => (checked ? reactions_num < days : true),
+    check: ({ reactionsNum }, { days, checked }) => (checked ? reactionsNum < days : true),
   },
 ];
 

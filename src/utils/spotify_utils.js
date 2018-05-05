@@ -116,21 +116,17 @@ export const getUserAndPlaylists = (accessToken, user) => {
   let new_user;
   return spotifyApi
     .getUser(user)
-    .then(data => {
-      const user_id = (data.body || {}).id;
+    .then(({ body: userInfo = {} }) => {
       new_user = {
-        pic: (data.body.images[0] || {}).url,
-        id: user_id,
+        pic: (userInfo.images[0] || {}).url,
+        id: userInfo.id,
       };
-      // that.setState({users: updateUsers(user_id, new_user)});
-      return spotifyApi.getUserPlaylists(user_id, { limit: 50 });
+      return spotifyApi.getUserPlaylists(userInfo.id, { limit: 50 });
     })
-    .then(playlist_data => {
-      new_user.items = playlist_data.body.items.filter(el => el.owner.id === new_user.id);
-      new_user.total = playlist_data.body.total;
-      const message = `user: ${new_user.id} have ${new_user.items.length}(his own)/ total ${
-        playlist_data.body.items.length
-      }`;
+    .then(({ body }) => {
+      new_user.items = body.items.filter(el => el.owner.id === new_user.id);
+      new_user.total = body.total;
+      const message = `user: ${new_user.id} have ${new_user.items.length}(his own)/ total ${body.items.length}`;
       console.info(message);
       return Promise.resolve(new_user);
     })

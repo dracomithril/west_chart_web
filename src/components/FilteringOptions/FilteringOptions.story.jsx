@@ -1,7 +1,7 @@
 import React from 'react';
 import { addDecorator, storiesOf } from '@storybook/react';
 import { Provider } from 'react-redux';
-import FilteringOptions from './index';
+import FilteringOptions from './FilteringOptions';
 import configureStore from '../../configureStore';
 
 const state = {

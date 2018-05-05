@@ -1,13 +1,15 @@
 /*
  * Created by Gryzli on 24.01.2017.
  */
-import { URL } from 'url';
 import path from 'path';
 import querystring from 'querystring';
+import { getArtist_Title } from './utils';
+import { facebookGroup } from './../config';
 
-const apiVer = process.env.FB_API_VERSION || '';
+const url = require('url');
+
+const apiVer = process.env.FB_API_VERSION || 'v3.0';
 const limit = 100;
-// let EventEmitter = require('events').EventEmitter;
 const fieldsArr = [
   'story',
   'from{first_name,last_name,name,id}',
@@ -39,74 +41,78 @@ const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?height=5
  * @param accessToken {string}
  */
 function obtainList(since, until, groupId, accessToken) {
-  return new Promise((resolve, reject) => {
-    const address = 'https://graph.facebook.com';
+  const address = 'https://graph.facebook.com';
 
-    const query = {
-      fields,
-      limit,
-      access_token: accessToken,
-      since,
-      until,
-    };
-    const pathname = path.resolve('/', apiVer, groupId, 'feed');
+  const query = {
+    fields,
+    limit,
+    access_token: accessToken,
+    since,
+    until,
+  };
+  const pathname = path.resolve('/', apiVer, groupId, 'feed');
+  const addr = url.resolve(address, pathname);
+  const urlObject = url.parse(addr);
+  urlObject.port = '443';
+  urlObject.protocol = 'https';
+  urlObject.search = querystring.stringify(query);
 
-    const urlObject = new URL(pathname, address);
-    urlObject.port = '443';
-    urlObject.protocol = 'https';
-    urlObject.search = querystring.stringify(query);
-
-    // todo modify to use reject errors resolveWithFullResponse: false
-    fetch(urlObject.toString())
-      .then(resolve)
-      .catch(err => {
-        console.error(`error obtaining chart list. statusCode: ${err.statusCode} body: ${err.sub_error}`);
-        reject(err);
-      });
-  });
+  // todo modify to use reject errors resolveWithFullResponse: false
+  return fetch(url.format(urlObject))
+    .then(res => (res.ok ? res.json() : { body: { data: [] } }))
+    .catch(err => {
+      console.error(`error obtaining chart list. statusCode: ${err.statusCode} body: ${err.sub_error}`);
+      return Promise.reject(err);
+    });
 }
 
-function filterChartAndMap(body) {
-  return new Promise(resolve => {
-    const map = body.map(elem => {
-      const attachment = ((elem.attachments || {}).data || []).length > 0 ? elem.attachments.data[0] : {};
+function filterChartAndMap({ data }) {
+  return data.map(elem => {
+    const attachment = ((elem.attachments || {}).data || []).length > 0 ? elem.attachments.data[0] : {};
+    let from;
+    if (elem.from) {
+      const { id } = elem.from;
+      from = { ...elem.from, picture_url: getFbPictureUrl(id) };
+    }
 
-      const link = {
-        url: elem.link,
-        name: elem.name,
-        title: attachment.type === 'music_aggregation' ? attachment.description : attachment.title,
-        type: attachment.type,
-      };
-      const from = { ...elem.from, picture_url: getFbPictureUrl(elem.from.id) };
-      return {
-        created_time: elem.created_time,
-        from,
-        full_picture: elem.full_picture,
-        id: elem.id,
-        likes_num: elem.likes.summary.total_count,
-        link,
-        message: elem.message,
-        reactions_num: elem.reactions.summary.total_count,
-        selected: false,
-        source: elem.source,
-        type: elem.type,
-        updatedTime: elem.updatedTime,
-      };
-    });
-    resolve(map);
+    const link = {
+      url: elem.link,
+      name: elem.name,
+      title: attachment.type === 'music_aggregation' ? attachment.description : attachment.title,
+      type: attachment.type,
+    };
+    const entry = getArtist_Title(link.title);
+    return {
+      createdTime: elem.created_time,
+      from,
+      story: elem.story,
+      id: elem.id,
+      link,
+      message: elem.message,
+      reactionsNum: elem.reactions.summary.total_count,
+      selected: false,
+      source: elem.source,
+      type: elem.type,
+      updatedTime: elem.updated_time,
+      search: {
+        artist: entry.artist,
+        title: entry.title,
+        full_title: link.title,
+        items: [],
+        selected: {},
+      },
+    };
   });
 }
 
 /**
  *
- * @param show_days {number}
  * @param since {string}
  * @param until {string}
  * @param access_token {string}
- * @param groupId {string}
  */
-function UpdateChart(show_days, since, until, access_token, groupId) {
-  return obtainList(since, until, groupId, access_token)
+function UpdateChart(since, until, access_token) {
+  return obtainList(since, until, facebookGroup, access_token)
     .then(filterChartAndMap)
     .then(body => {
       const cache = {
@@ -117,4 +123,4 @@ function UpdateChart(show_days, since, until, access_token, groupId) {
     });
 }
 
-module.exports = UpdateChart;
+export default UpdateChart;

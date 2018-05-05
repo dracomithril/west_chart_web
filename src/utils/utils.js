@@ -4,9 +4,10 @@
 
 import qs from 'querystring';
 import { groupBy } from 'lodash';
+import moment from 'moment';
 
 import { actionTypes } from '../reducers/actionTypes';
-
+import fbChart from './chart';
 import filters_def, { subtractDaysFromDate } from './filters_def';
 
 export { subtractDaysFromDate };
@@ -28,7 +29,7 @@ export const sorting = {
    * @param array
    */
   reaction: array => {
-    array.sort((a, b) => b.reactions_num - a.reactions_num);
+    array.sort((a, b) => b.reactionsNum - a.reactionsNum);
   },
   /**
    * ascending
@@ -95,27 +96,22 @@ export const filterChart = (chart, filters, until, songsPerDay) => {
 };
 
 export const getArtist_Title = name => {
-  // const regex_drop_trash = /^(.*?)(?:[.\s][([](?:[A-Za-z,\s]*)[)\]])?(?:\sft.\s[a-zA-Z\s]*)?(?:[-\sa-zA-Z]*)$/g;
-  const sp_regex = /^(.*?)(?:,\s.*s.*by)\s(.*?)(?:\son.*[Ss]potify)$/g;
-  const split_track = /^(.*?)\s?[-|]+\s?(.*?)$/g;
-  const clean_up_req = /^([\dA-Za-z'\s-]*)(?:.[([](?:[A-Za-z,\s]*)[)\]])?(?:\sft.\s[a-zA-Z\s]*)?(?:[-\sa-zA-Z]*)$/g;
-  const sp = sp_regex.exec(name);
-  const def_ret = { artist: null, title: name };
-  if (sp && sp[1] && sp[2]) {
+  const spRegex = /^(.*?)(?:,\s.*s.*by)\s(.*?)(?:\son.*[Ss]potify)$/g;
+  const removeBrackets = /\W?[([].*[)\]]\W?/g;
+  const splitTrack = /^(.*?)\s?[-|]+\s?(.*?)\s?(?:\.?)?\s?(?:ft\.?\s)?(\w+\s?\w+)?$/g;
+  const noBrackets = name.replace(removeBrackets, ' ');
+  const sp = spRegex.exec(name);
+  if (sp !== null) {
     return { title: sp[1], artist: sp[2] };
   }
-  const z = split_track.exec(name);
-  if (z && z[1] && z[2]) {
+  const z = splitTrack.exec(noBrackets);
+  if (z && z[1] && (z[2] || z[3])) {
     return {
-      artist: z[1],
-      title: (track => {
-        const t = clean_up_req.exec(track);
-        return t && t[1] !== '' ? t[1] : track;
-      })(z[2]),
+      artist: z[1].trim(),
+      title: z[2].trim() || z[3].trim(),
     };
   }
-
-  return def_ret;
+  return { artist: null, title: name };
 };
 
 export const getChartFromServer = query_params => {
@@ -148,48 +144,23 @@ export const getChartFromServer = query_params => {
 };
 
 /**
- * @returns {{days: *, since: number, until: number, access_token: (string|*)}}
- * @param since
- * @param until
- * @param accessToken
- */
-const getQueryParams = (since, until, accessToken) => ({
-  since: since.unix(),
-  until: until.unix(),
-  access_token: accessToken,
-});
-
-const weekNumber = date => {
-  const onejan = new Date(date.getFullYear(), 0, 1);
-  return Math.ceil(((date - onejan) / 86400000 + onejan.getDay() + 1) / 7);
-};
-/**
  *
- * @param date
  * @return {{monday: Date, friday: Date, sunday: Date, weekNumber: number}}
  */
-export const weekInfo = date => {
-  const dayOfWeek = date.getDay();
-
-  /**
-   *
-   * @param dateToChange {Date}
-   * @param move {Number} how many days to add
-   * @return {Date} Date after change
-   */
-  const moveFor = (dateToChange, move) =>
-    new Date(new Date(dateToChange.getTime()).setDate(dateToChange.getDate() + move));
-
-  const diff = 0 - dayOfWeek + (dayOfWeek === 0 ? -6 : 1);
-  const monday = moveFor(date, diff);
-  const friday = moveFor(monday, 4);
-  const sunday = moveFor(monday, 6);
-
+export const weekInfo = () => {
+  const today = moment();
+  const number = today.day();
+  const isNewWeek = number >= 0 && number < 5;
+  const monday = moment(today).day(isNewWeek ? -6 : 1);
+  const friday = moment(today).day(isNewWeek ? -2 : 5);
+  const sunday = moment(today).day(isNewWeek ? -7 : 0);
+  const weekNumber = today.week();
   return {
     monday,
     friday,
     sunday,
-    weekNumber: weekNumber(date),
+    weekNumber,
+    year: today.year(),
   };
 };
 export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?height=50`;
@@ -197,8 +168,7 @@ export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?h
 export const UpdateChart = (store, since, until) => {
   store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: true });
   const { user } = store.getState();
-  const query_params = getQueryParams(since, until, user.accessToken);
-  return getChartFromServer(query_params)
+  return fbChart(since.unix(), until.unix(), user.accessToken)
     .then(body => {
       console.info(`chart list witch ${body.chart.length}`);
       store.dispatch({ type: actionTypes.UPDATE_CHART, chart: body.chart });

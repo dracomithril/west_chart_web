@@ -12,7 +12,7 @@ import { chartObjectProps } from './typeDefinitions';
 const copy = require('clipboard-copy');
 // let {sorting} = require('./../utils');
 const create_print_list = (elem, index) => (
-  <div key={elem.id}>{`${index + 1}. ${elem.link.title} ${elem.reactions_num} likes`}</div>
+  <div key={elem.id}>{`${index + 1}. ${elem.link.title} ${elem.reactionsNum} likes`}</div>
 );
 export default class Summary extends React.Component {
   state = {
@@ -36,7 +36,7 @@ export default class Summary extends React.Component {
     const { sp_playlist_info } = store.getState();
     const { selected } = this.props;
     const playList = selected
-      .map((elem, ind) => `${ind + 1}. ${elem.link.title} ${elem.reactions_num} likes`)
+      .map((elem, ind) => `${ind + 1}. ${elem.link.title} ${elem.reactionsNum} likes`)
       .join('\n');
     const text = [
       '[WCS Weekly Westletter]',
@@ -60,8 +60,8 @@ export default class Summary extends React.Component {
       <div className="summary">
         <div className="summary__header">
           <h3 id="summary">Summary</h3>
-          <Button onClick={this.onCopyToClipboard} title="copy to clipboard">
-            <FontAwesomeIcon icon={faClipboard} /> copy
+          <Button onClick={this.onCopyToClipboard} title="copy to clipboard" style={{ padding: 'unset', minWidth: 44 }}>
+            <FontAwesomeIcon icon={faClipboard} />
           </Button>
         </div>
         <h6>[WCS Weekly Westletter]</h6>

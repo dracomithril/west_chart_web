@@ -28,14 +28,7 @@
 }
 
 .songs-per-day {
-    text-align: center;
-    padding-left: 5px;
-    border-radius: 3px;
     border: 1px solid ghostwhite;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
 }
 
 .songs-per-day--err {
@@ -58,15 +51,6 @@
 .songs-per-day__counters {
     display: flex;
     flex-direction: column;
-}
-
-.pick-your-date {
-    padding-top: 10px;
-    padding-left: 10px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #faebcc;
-    border-radius: 3px;
 }
 
 .pick-your-date__button {
@@ -182,6 +166,7 @@
 .chart-row__post-info {
     border-left: 2px solid lightblue;
     padding: 5px;
+    width: 40px;
 }
 
 .chart-row__time-info {
@@ -255,5 +240,4 @@
     .chart-row__user-info__name {
         min-width: 100px;
     }
-
 }
