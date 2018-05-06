@@ -44,7 +44,7 @@ const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime
         value={props.id}
         color="primary"
       />
-      {from != null ? (
+      {from != null && (
         <div className="chart-row__user-info">
           <Avatar src={from.picture_url} />
           <div className="chart-row__user-info__name">
@@ -52,8 +52,11 @@ const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime
             <span>{from.last_name}</span>
           </div>
         </div>
-      ) : (
-        <div style={{ maxWidth: 180 }}>{story}</div>
+      )}
+      {from == null && (
+        <span id="chart-row__story" style={{ maxWidth: 180 }}>
+          {story}
+        </span>
       )}
       <div style={{ display: 'flex' }}>
         <div className="chart-row__post-info">
