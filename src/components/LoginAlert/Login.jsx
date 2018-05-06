@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import Button from 'material-ui/Button';
 import { faFacebookF, faSpotify } from '@fortawesome/fontawesome-free-brands/index';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
@@ -35,9 +35,19 @@ const Login = ({ location }, { store }) => {
           appId={api.fb.apiId}
           language="pl_PL"
           autoLoad
+          fields="id,email,name,first_name,last_name"
           scope="public_profile,email,user_managed_groups,groups_access_member_info,publish_to_groups"
-          buttonStyle={{ width: '100%', height: 48 }}
-          icon={<FontAwesomeIcon icon={faFacebookF} style={{ paddingRight: 5 }} />}
+          render={renderProps => (
+            <Button
+              onClick={renderProps.onClick}
+              variant="raised"
+              color="primary"
+              style={{ height: 48, width: '100%', color: 'white' }}
+            >
+              <FontAwesomeIcon icon={faFacebookF} style={{ paddingRight: 5 }} />
+              Login to facebook
+            </Button>
+          )}
           callback={response => {
             if (!response.error) {
               store.dispatch({
@@ -51,7 +61,6 @@ const Login = ({ location }, { store }) => {
               console.error('login error.', response.error);
             }
           }}
-          fields="id,email,name,first_name,last_name"
         />
       )}
       {spotifyUser.id === undefined && (
