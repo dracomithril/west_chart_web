@@ -54,4 +54,14 @@ storiesOf('ChartRow', module)
         action('select toggled');
       }}
     />
+  ))
+  .add('props one date, no from, no message, last year', () => (
+    <ChartRow
+      id="abcd2"
+      reactionsNum={3}
+      checked={false}
+      story="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      link={{ url: 'my_link', title: 'really long song title' }}
+      createdTime="03/16/2018"
+    />
   ));

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import {
   faCaretRight,
@@ -12,37 +13,16 @@ import {
 import Checkbox from 'material-ui/Checkbox';
 import Avatar from 'material-ui/Avatar';
 
-const dateToLocaleString = (date, options) => date.toLocaleString(navigator.language || 'pl-PL', options);
-
 function shortFormatDate(date) {
   if (date) {
-    const date2 = new Date(date);
-    const yearNow = new Date().getFullYear();
-    const options = {
-      day: 'numeric',
-      month: 'numeric',
-    };
-    if (yearNow === date2.getFullYear()) {
-      return dateToLocaleString(date2, options);
-    }
-    return dateToLocaleString(date2, { year: '2-digit', ...options });
+    const date2 = moment(date);
+    const dateFormat = moment().year() === date2.year() ? 'DD.MM' : 'DD.MM.YY';
+    return date2.format(dateFormat);
   }
   return '';
 }
 
-const fullFormatDate = date => {
-  if (date) {
-    return dateToLocaleString(new Date(date), {
-      day: 'numeric',
-      month: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      year: 'numeric',
-    });
-  }
-  return '';
-};
+const fullFormatDate = date => (date ? moment(date).format() : '');
 
 const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime, story, ...props }) => {
   const showUpdateTime = updatedTime && updatedTime !== createdTime;
@@ -73,7 +53,7 @@ const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime
           </div>
         </div>
       ) : (
-        <div>{story}</div>
+        <span style={{ maxWidth: 180 }}>{story}</span>
       )}
       <div style={{ display: 'flex' }}>
         <div className="chart-row__post-info">
