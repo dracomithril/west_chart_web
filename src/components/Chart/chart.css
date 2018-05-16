@@ -113,20 +113,8 @@
     flex-wrap: wrap;
     margin: 2px 2px 5px;
     padding-top: 3px;
-    justify-content: flex-end;
-}
-
-.chart-row__user-info {
-    display: flex;
     align-items: center;
-    flex-grow: 2;
-}
-
-.chart-row__user-info img {
-    max-height: 50px;
-    border: 1px solid lightgray;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
+    justify-content: space-between;
 }
 
 .chart-row__user-info__name {
@@ -134,11 +122,7 @@
     max-width: 100px;
     word-wrap: break-word;
     text-align: center;
-    flex-direction: column;
-    padding-right: 5px;
-    padding-left: 2px;
     align-items: center;
-    justify-content: center;
 }
 
 .chart-row__user-info__name span {
@@ -149,6 +133,7 @@
     display: flex;
     flex-grow: 2;
     min-width: 200px;
+    max-width: 330px;
     border: 2px solid lightblue;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -165,8 +150,9 @@
 
 .chart-row__post-info {
     border-left: 2px solid lightblue;
+    justify-self: flex-end;
     padding: 5px;
-    width: 40px;
+    max-width: 50px;
 }
 
 .chart-row__time-info {
@@ -210,21 +196,12 @@
         padding-left: 5px;
     }
 
-    .chart-row__user-info {
-        max-width: 250px;
-    }
-
     .update-info {
         flex-flow: row;
     }
 
     .chart-row__link {
-        min-width: 300px;
-        max-width: 400px;
-
-    }
-    .chart-row {
-        justify-content: flex-start;
+        width: 400px;
     }
 
     .chart-table {

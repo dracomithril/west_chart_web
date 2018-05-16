@@ -44,39 +44,33 @@ const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime
         value={props.id}
         color="primary"
       />
-      {from != null && (
-        <div className="chart-row__user-info">
-          <Avatar src={from.picture_url} />
-          <div className="chart-row__user-info__name">
-            <span>{from.first_name}</span>
-            <span>{from.last_name}</span>
-          </div>
-        </div>
-      )}
-      {from == null && (
-        <span id="chart-row__story" style={{ maxWidth: 180, paddingRight: 10, display: 'flex', alignItems: 'center' }}>
+      {from != null ? (
+        <React.Fragment>
+          <Avatar src={from.picture_url} style={{ marginTop: 5 }} />
+          <span className="chart-row__user-info__name">{`${from.first_name} ${from.last_name}`}</span>
+        </React.Fragment>
+      ) : (
+        <span id="chart-row__story" style={{ maxWidth: 150, paddingRight: 5 }}>
           {story}
         </span>
       )}
-      <div style={{ display: 'flex' }}>
-        <div className="chart-row__post-info">
-          <FontAwesomeIcon icon="thumbs-up" color="blue" />
-          {props.reactionsNum}
-          <div title={props.message}>
-            <FontAwesomeIcon {...messageProps} />
-          </div>
+      <div className="chart-row__post-info">
+        <FontAwesomeIcon icon="thumbs-up" color="blue" />
+        {props.reactionsNum}
+        <div title={props.message}>
+          <FontAwesomeIcon {...messageProps} />
         </div>
-        <div className="chart-row__time-info">
-          <FontAwesomeIcon icon={faClock} color="black" style={{ marginBottom: 5 }} />
-          <span style={{ color: 'red' }} title={`creation time: ${fullFormatDate(createdTime)}`}>
-            <FontAwesomeIcon icon={faCaretRight} /> {shortFormatDate(createdTime)}
+      </div>
+      <div className="chart-row__time-info">
+        <FontAwesomeIcon icon={faClock} color="black" style={{ marginBottom: 5 }} />
+        <span style={{ color: 'red' }} title={`creation time: ${fullFormatDate(createdTime)}`}>
+          <FontAwesomeIcon icon={faCaretRight} /> {shortFormatDate(createdTime)}
+        </span>
+        {showUpdateTime && (
+          <span style={{ color: 'green' }} title={`update time: ${fullFormatDate(updatedTime)}`}>
+            <FontAwesomeIcon icon={faCaretUp} /> {shortFormatDate(updatedTime)}
           </span>
-          {showUpdateTime && (
-            <span style={{ color: 'green' }} title={`update time: ${fullFormatDate(updatedTime)}`}>
-              <FontAwesomeIcon icon={faCaretUp} /> {shortFormatDate(updatedTime)}
-            </span>
-          )}
-        </div>
+        )}
       </div>
       <div className="chart-row__link">
         <FontAwesomeIcon icon={faExternalLinkSquareAlt} style={{ color: 'red' }} />
