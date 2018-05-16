@@ -54,7 +54,7 @@ const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime
         </div>
       )}
       {from == null && (
-        <span id="chart-row__story" style={{ maxWidth: 180 }}>
+        <span id="chart-row__story" style={{ maxWidth: 180, paddingRight: 10, display: 'flex', alignItems: 'center' }}>
           {story}
         </span>
       )}

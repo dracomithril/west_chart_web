@@ -85,7 +85,7 @@ function filterChartAndMap({ data }) {
     return {
       createdTime: elem.created_time,
       from,
-      story: elem.story,
+      story: elem.story.replace(/\sshared.*West.*Chart./, ''),
       id: elem.id,
       link,
       message: elem.message,
