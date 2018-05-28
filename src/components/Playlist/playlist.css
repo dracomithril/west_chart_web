@@ -71,10 +71,17 @@
 [class^="row-spotify-search__track-search"] {
     border-radius: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
     margin: 1px;
-    padding: 5px;
+    padding: 10px;
     background-color: snow;
     max-width: 300px;
+    font-weight: 200;
+}
+[class^="row-spotify-search__track-search"] input {
+    font-weight: 600;
+    font-size: medium;
 }
 
 .row-spotify-search__track-search--good {
@@ -83,7 +90,7 @@
 
 .row-spotify-search__track-search--error {
     /*background-color: #ff0e10;*/
-    border: 3px solid #ff0e10;
+    border: 2px solid #ff0e10;
 }
 
 .row-spotify-search__button-group {
@@ -99,11 +106,10 @@
 }
 
 .track-preview {
-    /*border: 1px solid black;*/
-    /*border-radius: 10px;*/
     text-align: center;
     margin: 1px 1px 1px 1px;
     padding: 5px;
+    display: block;
     background-color: inherit;
     max-width: 290px;
 }
@@ -123,7 +129,7 @@
     padding: 5px;
     margin: 1px;
     align-self: stretch;
-    background-color: #d1eec7;
+    max-height: 110px;
 }
 
 /*.row-spotify-search__track_view > div {*/
@@ -144,6 +150,10 @@
 
     .row-spotify-search__track_view {
 
+    }
+
+    .playlist-form {
+        flex-direction: row;
     }
 
     .spotify-search {
