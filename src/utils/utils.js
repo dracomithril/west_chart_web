@@ -177,7 +177,7 @@ export const UpdateChart = (store, since, until) => {
       return Promise.resolve();
     })
     .catch(err => {
-      console.error('Error in fetch chart.');
+      console.error('Error in fetch chart.', err.message);
       store.dispatch({ type: actionTypes.ADD_ERROR, value: err });
       store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
     });

@@ -10,23 +10,38 @@ import createStore from './configureStore';
 
 const store = createStore();
 
-const App = () => (
-  <Provider store={store}>
-    <Router>
-      <div className="App">
-        <div className="wcs_header">
-          <img src="/pic/banner.png" alt="header logo" style={{ width: '100%', height: 'inherit' }} />
-        </div>
-        <CookieBanner
-          message={"Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"}
-          cookie="user-has-accepted-cookies"
-        />
-        <Navigation />
-        <Footer />
-      </div>
-    </Router>
-  </Provider>
-);
+class App extends React.Component {
+  componentDidMount() {
+    fetch('api/info')
+      .then(resp => resp.text())
+      .then(resp => {
+        console.info('response from api:', resp);
+      })
+      .catch(err => {
+        console.error('failed to call api :(', err.message);
+      });
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <div className="wcs_header">
+              <img src="/pic/banner.png" alt="header logo" style={{ width: '100%', height: 'inherit' }} />
+            </div>
+            <CookieBanner
+              message={"Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"}
+              cookie="user-has-accepted-cookies"
+            />
+            <Navigation />
+            <Footer />
+          </div>
+        </Router>
+      </Provider>
+    );
+  }
+}
 
 App.contextTypes = {
   store: PropTypes.object,
