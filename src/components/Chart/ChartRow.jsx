@@ -22,7 +22,7 @@ function shortFormatDate(date) {
   return '';
 }
 
-const fullFormatDate = date => (date ? moment(date).format() : '');
+const fullFormatDate = date => (date ? moment(date).format('dddd, MMMM Do YYYY, HH:mm:ss') : '');
 
 const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime, story, ...props }) => {
   const showUpdateTime = updatedTime && updatedTime !== createdTime;

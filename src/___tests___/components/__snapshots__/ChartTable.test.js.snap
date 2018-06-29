@@ -1392,7 +1392,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-16T01:12:32+01:00"
+            title="creation time: Friday, March 16th 2018, 01:12:32"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -1449,7 +1449,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-16T01:16:21+01:00"
+            title="update time: Friday, March 16th 2018, 01:16:21"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -2002,7 +2002,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-16T01:12:59+01:00"
+            title="creation time: Friday, March 16th 2018, 01:12:59"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -2558,7 +2558,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-16T01:12:39+01:00"
+            title="creation time: Friday, March 16th 2018, 01:12:39"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -2615,7 +2615,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-16T01:12:40+01:00"
+            title="update time: Friday, March 16th 2018, 01:12:40"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -3171,7 +3171,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-16T01:12:36+01:00"
+            title="creation time: Friday, March 16th 2018, 01:12:36"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -3727,7 +3727,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-15T00:10:55+01:00"
+            title="creation time: Thursday, March 15th 2018, 00:10:55"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -3784,7 +3784,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-15T00:47:48+01:00"
+            title="update time: Thursday, March 15th 2018, 00:47:48"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -4340,7 +4340,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-15T00:11:23+01:00"
+            title="creation time: Thursday, March 15th 2018, 00:11:23"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -4893,7 +4893,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-15T00:11:13+01:00"
+            title="creation time: Thursday, March 15th 2018, 00:11:13"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -5449,7 +5449,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-15T00:10:53+01:00"
+            title="creation time: Thursday, March 15th 2018, 00:10:53"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -6005,7 +6005,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-14T11:04:42+01:00"
+            title="creation time: Wednesday, March 14th 2018, 11:04:42"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -6062,7 +6062,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-14T13:04:47+01:00"
+            title="update time: Wednesday, March 14th 2018, 13:04:47"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -6618,7 +6618,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-14T11:04:49+01:00"
+            title="creation time: Wednesday, March 14th 2018, 11:04:49"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -7174,7 +7174,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-14T11:04:49+01:00"
+            title="creation time: Wednesday, March 14th 2018, 11:04:49"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -7732,7 +7732,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-14T11:04:45+01:00"
+            title="creation time: Wednesday, March 14th 2018, 11:04:45"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -8288,7 +8288,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-14T11:04:37+01:00"
+            title="creation time: Wednesday, March 14th 2018, 11:04:37"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -8846,7 +8846,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-13T07:40:04+01:00"
+            title="creation time: Tuesday, March 13th 2018, 07:40:04"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -8903,7 +8903,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-13T09:37:06+01:00"
+            title="update time: Tuesday, March 13th 2018, 09:37:06"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -9457,7 +9457,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-13T07:40:08+01:00"
+            title="creation time: Tuesday, March 13th 2018, 07:40:08"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -10010,7 +10010,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-13T07:39:57+01:00"
+            title="creation time: Tuesday, March 13th 2018, 07:39:57"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -10067,7 +10067,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-13T07:39:58+01:00"
+            title="update time: Tuesday, March 13th 2018, 07:39:58"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -10625,7 +10625,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-13T07:39:53+01:00"
+            title="creation time: Tuesday, March 13th 2018, 07:39:53"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -11181,7 +11181,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-09T10:22:13+01:00"
+            title="creation time: Friday, March 9th 2018, 10:22:13"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -11238,7 +11238,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-12T10:55:02+01:00"
+            title="update time: Monday, March 12th 2018, 10:55:02"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -11791,7 +11791,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-12T10:49:36+01:00"
+            title="creation time: Monday, March 12th 2018, 10:49:36"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -11848,7 +11848,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-12T10:51:51+01:00"
+            title="update time: Monday, March 12th 2018, 10:51:51"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -12401,7 +12401,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-12T10:50:00+01:00"
+            title="creation time: Monday, March 12th 2018, 10:50:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -12959,7 +12959,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-12T10:49:46+01:00"
+            title="creation time: Monday, March 12th 2018, 10:49:46"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -13016,7 +13016,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-12T10:49:47+01:00"
+            title="update time: Monday, March 12th 2018, 10:49:47"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -13569,7 +13569,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-12T10:49:38+01:00"
+            title="creation time: Monday, March 12th 2018, 10:49:38"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -14125,7 +14125,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-09T10:21:49+01:00"
+            title="creation time: Friday, March 9th 2018, 10:21:49"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -14182,7 +14182,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-09T22:35:53+01:00"
+            title="update time: Friday, March 9th 2018, 22:35:53"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -14738,7 +14738,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-09T10:21:51+01:00"
+            title="creation time: Friday, March 9th 2018, 10:21:51"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -14795,7 +14795,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-09T19:59:36+01:00"
+            title="update time: Friday, March 9th 2018, 19:59:36"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -15351,7 +15351,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-09T10:21:51+01:00"
+            title="creation time: Friday, March 9th 2018, 10:21:51"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -15408,7 +15408,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-09T19:59:36+01:00"
+            title="update time: Friday, March 9th 2018, 19:59:36"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -15964,7 +15964,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: 2018-03-09T10:21:51+01:00"
+            title="creation time: Friday, March 9th 2018, 10:21:51"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -16021,7 +16021,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: 2018-03-09T19:59:36+01:00"
+            title="update time: Friday, March 9th 2018, 19:59:36"
           >
             <FontAwesomeIcon$1
               border={false}
