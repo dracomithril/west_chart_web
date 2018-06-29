@@ -816,8 +816,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                         classes={
                                           Object {
                                             "colorAction": "MuiSvgIcon-colorAction-25",
-                                            "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                            "colorError": "MuiSvgIcon-colorError-27",
+                                            "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                            "colorError": "MuiSvgIcon-colorError-26",
                                             "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                             "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                             "root": "MuiSvgIcon-root-22",
@@ -1114,8 +1114,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -1276,11 +1276,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -1304,7 +1304,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -1314,11 +1314,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -1726,8 +1726,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -2280,8 +2280,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -2442,11 +2442,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -2470,7 +2470,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -2480,11 +2480,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -2893,8 +2893,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -3055,11 +3055,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -3083,7 +3083,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -3093,11 +3093,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -3449,8 +3449,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -3611,11 +3611,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -3639,7 +3639,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -3649,11 +3649,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -4062,8 +4062,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -4224,11 +4224,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -4252,7 +4252,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -4262,11 +4262,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -4617,8 +4617,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -5171,8 +5171,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -5333,11 +5333,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -5361,7 +5361,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -5371,11 +5371,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -5727,8 +5727,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -5889,11 +5889,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -5917,7 +5917,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -5927,11 +5927,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -6340,8 +6340,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -6502,11 +6502,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -6530,7 +6530,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -6540,11 +6540,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -6896,8 +6896,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -7058,11 +7058,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -7086,7 +7086,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -7096,11 +7096,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -7453,8 +7453,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -7616,11 +7616,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -7644,7 +7644,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -7654,11 +7654,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -8010,8 +8010,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -8172,11 +8172,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -8200,7 +8200,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -8210,11 +8210,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -8567,8 +8567,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -8730,11 +8730,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -8758,7 +8758,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -8768,11 +8768,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -9179,8 +9179,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -9341,11 +9341,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -9369,7 +9369,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -9379,11 +9379,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -9732,8 +9732,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -9894,11 +9894,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -9922,7 +9922,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -9932,11 +9932,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -10346,8 +10346,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -10509,11 +10509,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -10537,7 +10537,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -10547,11 +10547,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -10903,8 +10903,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -11065,11 +11065,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -11093,7 +11093,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -11103,11 +11103,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -11515,8 +11515,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -12125,8 +12125,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -12679,8 +12679,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -12843,11 +12843,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -12871,7 +12871,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -12881,11 +12881,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -13291,8 +13291,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -13453,11 +13453,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -13481,7 +13481,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -13491,11 +13491,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -13847,8 +13847,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -14009,11 +14009,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -14037,7 +14037,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -14047,11 +14047,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -14460,8 +14460,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -14622,11 +14622,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -14650,7 +14650,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -14660,11 +14660,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -15073,8 +15073,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -15235,11 +15235,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -15263,7 +15263,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -15273,11 +15273,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
@@ -15686,8 +15686,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                                     classes={
                                       Object {
                                         "colorAction": "MuiSvgIcon-colorAction-25",
-                                        "colorDisabled": "MuiSvgIcon-colorDisabled-26",
-                                        "colorError": "MuiSvgIcon-colorError-27",
+                                        "colorDisabled": "MuiSvgIcon-colorDisabled-27",
+                                        "colorError": "MuiSvgIcon-colorError-26",
                                         "colorPrimary": "MuiSvgIcon-colorPrimary-23",
                                         "colorSecondary": "MuiSvgIcon-colorSecondary-24",
                                         "root": "MuiSvgIcon-root-22",
@@ -15848,11 +15848,11 @@ exports[`<ChartTable/> render with objects 1`] = `
               icon={
                 Object {
                   "icon": Array [
-                    512,
+                    576,
                     512,
                     Array [],
                     "f075",
-                    "M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z",
+                    "M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z",
                   ],
                   "iconName": "comment",
                   "prefix": "fas",
@@ -15876,7 +15876,7 @@ exports[`<ChartTable/> render with objects 1`] = `
             >
               <svg
                 aria-hidden="true"
-                className="svg-inline--fa fa-comment fa-w-16 "
+                className="svg-inline--fa fa-comment fa-w-18 "
                 color="green"
                 data-icon="comment"
                 data-prefix="fas"
@@ -15886,11 +15886,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                     "cursor": "pointer",
                   }
                 }
-                viewBox="0 0 512 512"
+                viewBox="0 0 576 512"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
+                  d="M576 240c0 115-129 208-288 208-48.3 0-93.9-8.6-133.9-23.8-40.3 31.2-89.8 50.3-142.4 55.7-5.2.6-10.2-2.8-11.5-7.7-1.3-5 2.7-8.1 6.6-11.8 19.3-18.4 42.7-32.8 51.9-94.6C21.9 330.9 0 287.3 0 240 0 125.1 129 32 288 32s288 93.1 288 208z"
                   fill="currentColor"
                   style={Object {}}
                 />
