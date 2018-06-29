@@ -1,7 +1,18 @@
 language: node_js
 node_js:
-  - "lts/*"
-
+- lts/*
 script:
-  - npm run lint
-  - npm run build
+- yarn run lint
+- yarn test
+- yarn build
+before_install:
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.6.0
+- export PATH="$HOME/.yarn/bin:$PATH"
+deploy:
+  provider: heroku
+  api_key:
+    secure: hyA0iXRm/g+TZxoDxpJTtM1l7dtNlPId3Cgj3kFEyai5LmjR+jYZ7//ASAu05IzkZSw5VGudcigJ491z1UT9SlJmY03cHIGtbk5ENrs+oIPTQfgKqD9Ya18nIKzMPlLKkk2IhO+IK0q5I5DrpBSHJ3IYmKD8w+ccju7O/Kh5JdxRsWCRfGyv7SJz6/60OmgWQwS0uqNwuYAPw4nzC/RHZYx11C6hRAas3gHnOHUcaC6DA4ObPcSUVRm6Of7hjwdDZSmINcH+96m4lvnw4bb5ayGV7UhS2wWVv0+vGAybdZIwmvl29Cfx+WYTm0J09TG+cZWsXe3u2MqbTZ55F4EB99qjpSQt7+OuVwtwUtBVyN2jnu+sKBuWGsybFfAsTPaAvLS5jSdf+/3/OkdPGdQbXbJJMubiioNM6FIrh6Qmo6RSWt2kDabzJzrsueubd3W5UhNs+Vt3yBzu86MB0xpq9QEa31iYupIgSDlOij8FUGNQl2lDW+meI7y2jfS5BeKTZDmocF49AV4Ds8Fc4YbJzKGT/Td0PWqHztTrpT4bq4vSD1Ce3qMViyC6opXz1bBGdmCLfMCqCC6NlvQsHVXFk5SOqfTO00tJ5MOqj8FZtt1mL8KKJKCbTwbj9TKgj8e+0CGiQEMCWzBQVjfswecUprLDlFVPd+XOtN3VDmPJyh4=
+  app: wcs-web32
+  on:
+    repo: dracomithril/west_chart_web
+    tags: true

@@ -4,7 +4,8 @@
 import path from 'path';
 import querystring from 'querystring';
 import { getArtist_Title } from './utils';
-import { facebookGroup } from './../config';
+import { facebookGroup } from '../config';
+import { actionTypes } from '../reducers/actionTypes';
 
 const url = require('url');
 
@@ -32,7 +33,6 @@ const fields = fieldsArr.join(',');
 
 const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?height=50`;
 
-// since=2017-01-15&until=2017-01-16
 /**
  *
  * @param since {string}
@@ -66,26 +66,32 @@ function obtainList(since, until, groupId, accessToken) {
     });
 }
 
+function getAttachment(elem) {
+  return ((elem.attachments || {}).data || []).length > 0 ? elem.attachments.data[0] : {};
+}
+
 function filterChartAndMap({ data }) {
   return data.map(elem => {
-    const attachment = ((elem.attachments || {}).data || []).length > 0 ? elem.attachments.data[0] : {};
+    const attachment = getAttachment(elem);
     let from;
     if (elem.from) {
       const { id } = elem.from;
       from = { ...elem.from, picture_url: getFbPictureUrl(id) };
     }
-
+    let linkFromMessage = (elem.message || '').match(/https?:\/{2}w{3}.youtube.com\/watch\?.*/);
+    linkFromMessage = linkFromMessage !== null ? linkFromMessage[0] : linkFromMessage;
     const link = {
-      url: elem.link,
+      url: elem.link || linkFromMessage,
       name: elem.name,
-      title: attachment.type === 'music_aggregation' ? attachment.description : attachment.title,
+      title: attachment.type === 'music_aggregation' ? attachment.description : attachment.title || linkFromMessage,
       type: attachment.type,
     };
     const entry = getArtist_Title(link.title);
+    const story = (elem.story || '').replace(/\sshared.*West.*Chart./, '');
     return {
       createdTime: elem.created_time,
       from,
-      story: (elem.story || '').replace(/\sshared.*West.*Chart./, ''),
+      story,
       id: elem.id,
       link,
       message: elem.message,
@@ -111,7 +117,7 @@ function filterChartAndMap({ data }) {
  * @param until {string}
  * @param access_token {string}
  */
-function UpdateChart(since, until, access_token) {
+function fbChart(since, until, access_token) {
   return obtainList(since, until, facebookGroup, access_token)
     .then(filterChartAndMap)
     .then(body => {
@@ -122,5 +128,23 @@ function UpdateChart(since, until, access_token) {
       return Promise.resolve(cache);
     });
 }
+
+export const UpdateChart = (store, since, until) => {
+  store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: true });
+  const { user } = store.getState();
+  return fbChart(since.unix(), until.unix(), user.accessToken)
+    .then(body => {
+      console.info(`chart list witch ${body.chart.length}`);
+      store.dispatch({ type: actionTypes.UPDATE_CHART, chart: body.chart });
+      store.dispatch({ type: actionTypes.UPDATE_LAST_UPDATE, date: body.lastUpdateDate });
+      store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
+      return Promise.resolve();
+    })
+    .catch(err => {
+      console.error('Error in fetch chart.', err.message);
+      store.dispatch({ type: actionTypes.ADD_ERROR, value: err });
+      store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
+    });
+};
 
 export default UpdateChart;

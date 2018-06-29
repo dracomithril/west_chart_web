@@ -21,35 +21,36 @@ exports[`<App/> renders without crashing 1`] = `
       >
         <img
           alt="header logo"
-          src="/pic/baner.png"
+          src="/pic/banner.png"
           style={
             Object {
+              "height": "inherit",
               "width": "100%",
             }
           }
         />
-        <CookieBanner
-          buttonMessage="Got it"
-          cookie="user-has-accepted-cookies"
-          cookieExpiration={
-            Object {
-              "years": 1,
-            }
-          }
-          cookies={
-            Cookies {
-              "HAS_DOCUMENT_COOKIE": true,
-              "cookies": Object {},
-              "hooks": undefined,
-            }
-          }
-          dismissOnScroll={true}
-          dismissOnScrollThreshold={0}
-          message="Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"
-          onAccept={[Function]}
-          styles={Object {}}
-        />
       </div>
+      <CookieBanner
+        buttonMessage="Got it"
+        cookie="user-has-accepted-cookies"
+        cookieExpiration={
+          Object {
+            "years": 1,
+          }
+        }
+        cookies={
+          Cookies {
+            "HAS_DOCUMENT_COOKIE": true,
+            "cookies": Object {},
+            "hooks": undefined,
+          }
+        }
+        dismissOnScroll={true}
+        dismissOnScrollThreshold={0}
+        message="Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"
+        onAccept={[Function]}
+        styles={Object {}}
+      />
       <WithStyles(Navigation) />
       <Footer />
     </div>

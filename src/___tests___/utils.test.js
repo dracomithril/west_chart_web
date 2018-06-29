@@ -95,27 +95,6 @@ describe('[utils]', () => {
     });
 
   });
-  describe('[getChartFromServer]', function () {
-    it('get list', function () {
-      const store = mockStore();
-      let fetch = sinon.stub(window, 'fetch');
-      let CookiesMock = require('cookies-js');
-      CookiesMock.set = sinon.spy();
-      const resp = {
-        text: sinon.stub(),
-        json: sinon.stub(),
-        status: 200,
-      };
-      resp.json.returns(Promise.resolve({ chart: chart, lastUpdateDate: 'update' }));
-      fetch.withArgs('/api/fb/get_chart?').returns(Promise.resolve(resp));
-      return getChartFromServer({}, store).then((z) => {
-        expect(store.getActions().length).toBe(0);
-        expect(z.chart.length).toBe(26);
-        expect(z.lastUpdateDate).toBe('update');
-        window.fetch.restore();
-      });
-    });
-  });
   describe('[getArtist_Title]', function () {
     const str1 = {
       description: "Vali - Ain't No Friend Of Mine (Official Video)",

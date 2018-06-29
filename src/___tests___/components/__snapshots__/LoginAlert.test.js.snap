@@ -22,58 +22,23 @@ exports[`<Login/> renders without crashing ChartPresenter 1`] = `
   </h4>
   <t
     appId="1173486879387948"
+    authType=""
     autoLoad={true}
-    buttonStyle={
-      Object {
-        "height": 48,
-        "width": "100%",
-      }
-    }
     callback={[Function]}
-    cssClass="kep-login-facebook"
+    cookie={false}
+    disableMobileRedirect={false}
     fields="id,email,name,first_name,last_name"
-    icon={
-      <FontAwesomeIcon$1
-        border={false}
-        className=""
-        fixedWidth={false}
-        flip={null}
-        icon={
-          Object {
-            "icon": Array [
-              264,
-              512,
-              Array [],
-              "f39e",
-              "M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229",
-            ],
-            "iconName": "facebook-f",
-            "prefix": "fab",
-          }
-        }
-        listItem={false}
-        mask={null}
-        name=""
-        pull={null}
-        pulse={false}
-        rotation={null}
-        size={null}
-        spin={false}
-        style={
-          Object {
-            "paddingRight": 5,
-          }
-        }
-        symbol={false}
-        transform={null}
-      />
-    }
+    isMobile={false}
     language="pl_PL"
+    onFailure={null}
+    redirectUri="http://localhost/"
+    render={[Function]}
+    responseType="code"
+    returnScopes={false}
     scope="public_profile,email,user_managed_groups,groups_access_member_info,publish_to_groups"
-    size="metro"
-    tag="button"
-    textButton="Login with Facebook"
-    typeButton="button"
+    state="facebookdirect"
+    version="2.3"
+    xfbml={false}
   />
   <WithStyles(Button)
     onClick={[Function]}

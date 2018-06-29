@@ -42,6 +42,7 @@ exports[`<RowSpotifySearch/> renders without crashing 1`] = `
           <button
             onClick={[Function]}
             title="swap artist with title"
+            type="button"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -77,6 +78,7 @@ exports[`<RowSpotifySearch/> renders without crashing 1`] = `
             id="button-undefined"
             onClick={[Function]}
             title="search for tracks"
+            type="button"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -111,6 +113,7 @@ exports[`<RowSpotifySearch/> renders without crashing 1`] = `
           <button
             onClick={[Function]}
             title="clear selected"
+            type="button"
           >
             <FontAwesomeIcon$1
               border={false}

@@ -11,9 +11,10 @@ import SongsPerDay from './SongsPerDay';
 import FilteringOptions from '../FilteringOptions';
 import '../components.css';
 import './chart.css';
-import { actionTypes } from './../../reducers/actionTypes';
-import { UpdateChart, weekInfo } from '../../utils/utils';
-import { chartObjectProps, errorDaysObjectProps } from './../typeDefinitions';
+import { actionTypes } from '../../reducers/actionTypes';
+import { weekInfo } from '../../utils/utils';
+import { UpdateChart } from '../../utils/chart';
+import { chartObjectProps, errorDaysObjectProps } from '../typeDefinitions';
 
 function selectedItem(id) {
   return { type: actionTypes.TOGGLE_SELECTED, id, checked: true };
@@ -50,11 +51,12 @@ class ChartHeader extends React.Component {
   quickSummary = () => {
     const { store } = this.context;
     const { since, until } = this.state;
+    const { viewChart } = this.props;
     UpdateChart(store, since, until)
       .then(() => {
         store.dispatch({ type: actionTypes.TOGGLE_FILTER, id: 'create', checked: true });
         store.dispatch({ type: actionTypes.UPDATE_DAYS, id: 'create', value: 5 });
-        this.props.viewChart.forEach(({ id }) => {
+        viewChart.forEach(({ id }) => {
           store.dispatch(selectedItem(id));
         });
         return Promise.resolve();
@@ -143,7 +145,7 @@ class ChartHeader extends React.Component {
 }
 
 ChartHeader.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape,
 };
 
 ChartHeader.propTypes = {

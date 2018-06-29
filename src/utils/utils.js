@@ -2,12 +2,9 @@
  * Created by Gryzli on 28.01.2017.
  */
 
-import qs from 'querystring';
 import { groupBy } from 'lodash';
 import moment from 'moment';
 
-import { actionTypes } from '../reducers/actionTypes';
-import fbChart from './chart';
 import filters_def, { subtractDaysFromDate } from './filters_def';
 
 export { subtractDaysFromDate };
@@ -96,6 +93,9 @@ export const filterChart = (chart, filters, until, songsPerDay) => {
 };
 
 export const getArtist_Title = name => {
+  if (name == null) {
+    return { artist: null, title: null };
+  }
   const spRegex = /^(.*?)(?:,\s.*s.*by)\s(.*?)(?:\son.*[Ss]potify)$/g;
   const removeBrackets = /\W?[([].*[)\]]\W?/g;
   const splitTrack = /^(.*?)\s?[-|]+\s?(.*?)\s?(?:\.?)?\s?(?:ft\.?\s)?(\w+\s?\w+)?$/g;
@@ -112,35 +112,6 @@ export const getArtist_Title = name => {
     };
   }
   return { artist: null, title: name };
-};
-
-export const getChartFromServer = query_params => {
-  const url = `/api/fb/get_chart?${qs.stringify(query_params)}`;
-  console.time('client-obtain-chart');
-  return fetch(url)
-    .then(resp => {
-      console.info('obtained chart list');
-      console.timeEnd('client-obtain-chart');
-      return resp.status === 200 ? resp.json() : Promise.reject(resp);
-    })
-    .then(({ chart, ...other }) =>
-      Promise.resolve({
-        ...other,
-        chart: chart.map(chartEntry => {
-          const entry = getArtist_Title(chartEntry.link.title);
-          return {
-            ...chartEntry,
-            search: {
-              artist: entry.artist,
-              title: entry.title,
-              full_title: chartEntry.link.title,
-              items: [],
-              selected: {},
-            },
-          };
-        }),
-      }),
-    );
 };
 
 /**
@@ -164,21 +135,3 @@ export const weekInfo = () => {
   };
 };
 export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?height=50`;
-
-export const UpdateChart = (store, since, until) => {
-  store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: true });
-  const { user } = store.getState();
-  return fbChart(since.unix(), until.unix(), user.accessToken)
-    .then(body => {
-      console.info(`chart list witch ${body.chart.length}`);
-      store.dispatch({ type: actionTypes.UPDATE_CHART, chart: body.chart });
-      store.dispatch({ type: actionTypes.UPDATE_LAST_UPDATE, date: body.lastUpdateDate });
-      store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
-      return Promise.resolve();
-    })
-    .catch(err => {
-      console.error('Error in fetch chart.', err.message);
-      store.dispatch({ type: actionTypes.ADD_ERROR, value: err });
-      store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
-    });
-};

@@ -13,7 +13,7 @@ import {
 import PlaylistInfo from './PlaylistInfo';
 import UserPlaylist from './UserPlaylist';
 
-import { actionTypes } from './../reducers/actionTypes';
+import { actionTypes } from '../reducers/actionTypes';
 
 const _ = require('lodash');
 // todo add modal to block usage of tool when playlist crating
@@ -41,7 +41,10 @@ export default class PlaylistCombiner extends React.Component {
 
   getUserInformation = user => {
     if (user) {
-      const { state, context: { store } } = this;
+      const {
+        state,
+        context: { store },
+      } = this;
       const { spotifyUser } = store.getState();
       const updateUsers = (users, new_user) => {
         const newUsers = {
@@ -63,6 +66,7 @@ export default class PlaylistCombiner extends React.Component {
     }
     return Promise.resolve();
   };
+
   searchForUser_click = () => {
     const { users, userField } = this.state;
     if (Object.keys(users).length < 3) {
@@ -71,6 +75,7 @@ export default class PlaylistCombiner extends React.Component {
       alert('Sorry you can only combine list from 3 users. Delete one of users to add new one.');
     }
   };
+
   combinePlaylists = () => {
     // todo check if playlist exists
     const { store } = this.context;
@@ -101,7 +106,8 @@ export default class PlaylistCombiner extends React.Component {
 
   deleteUserPlaylist = user_id => {
     console.info(`delete ${user_id}`);
-    const users_new = Object.assign({}, this.state.users);
+    const { users } = this.state;
+    const users_new = Object.assign({}, users);
     delete users_new[user_id];
     this.setState({ users: users_new });
   };
@@ -117,8 +123,9 @@ export default class PlaylistCombiner extends React.Component {
   };
 
   render() {
-    const { spotifyUser } = this.context.store.getState();
-    const { userField, users, sp_playlist_info, createFrom } = this.state;
+    const { store } = this.context;
+    const { userField, users, sp_playlist_info, createFrom, new_playlist } = this.state;
+    const { spotifyUser } = store.getState();
     const users_playlists = Object.keys(users).map(user => (
       <UserPlaylist
         user={users[user]}
@@ -194,7 +201,7 @@ export default class PlaylistCombiner extends React.Component {
                   id={`${cf.new_list}_txt`}
                   disabled={!newList_checked}
                   placeholder="new playlist"
-                  value={this.state.new_playlist}
+                  value={new_playlist}
                   onChange={event => this.setState({ new_playlist: event.target.value })}
                 />
               </label>
@@ -209,6 +216,6 @@ export default class PlaylistCombiner extends React.Component {
   }
 }
 PlaylistCombiner.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape,
 };
 PlaylistCombiner.propTypes = {};

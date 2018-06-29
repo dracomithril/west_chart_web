@@ -16,6 +16,7 @@ class RowSpotifySearch extends React.Component {
       showList: false,
     };
   }
+
   render() {
     const {
       id,
@@ -29,6 +30,7 @@ class RowSpotifySearch extends React.Component {
       onSearchClick,
       onClearClick,
     } = this.props;
+    const { showList } = this.state;
     const tracks_list = items.map(track => (
       <MenuItem
         key={track.id}
@@ -52,16 +54,16 @@ class RowSpotifySearch extends React.Component {
     const condition = selected_track && selected_track.preview_url !== undefined;
     const haveIssue = !artist || !title;
 
+    const selectTrackClass = selected_track ? 'row-spotify-search__root--good' : 'row-spotify-search__root--error';
+    const trackSearchClass = haveIssue
+      ? 'row-spotify-search__track-search--error'
+      : 'row-spotify-search__track-search--good';
     return (
-      <div className={selected_track ? 'row-spotify-search__root--good' : 'row-spotify-search__root--error'}>
+      <div className={selectTrackClass}>
         <span>{full_title || 'No Title'}</span>
         <div>
           <div>
-            <div
-              className={
-                haveIssue ? 'row-spotify-search__track-search--error' : 'row-spotify-search__track-search--good'
-              }
-            >
+            <div className={trackSearchClass}>
               <label htmlFor={`${id}_artist`}>
                 artist:
                 <input
@@ -85,30 +87,34 @@ class RowSpotifySearch extends React.Component {
                 />
               </label>
               <div className="row-spotify-search__button-group">
-                <button onClick={() => onSwap && onSwap(id)} title="swap artist with title">
+                <button type="button" onClick={() => onSwap && onSwap(id)} title="swap artist with title">
                   <FontAwesomeIcon icon={faSync} />
                 </button>
-                <button id={`button-${id}`} onClick={() => onSearchClick && onSearchClick()} title="search for tracks">
+                <button
+                  type="button"
+                  id={`button-${id}`}
+                  onClick={() => onSearchClick && onSearchClick()}
+                  title="search for tracks"
+                >
                   <FontAwesomeIcon icon={faSearch} />
                 </button>
-                <button title="clear selected" onClick={() => onClearClick && onClearClick({ id })}>
+                <button type="button" title="clear selected" onClick={() => onClearClick && onClearClick({ id })}>
                   <FontAwesomeIcon icon={faTimes} />
                 </button>
                 {tracks_list.length !== 0 && (
                   <button
+                    type="button"
                     onClick={() => {
-                      this.setState({ showList: !this.state.showList });
+                      this.setState({ showList: !showList });
                     }}
                     title="show/hide found tracks"
                   >
-                    {tracks_list.length !== 0 && (
-                      <FontAwesomeIcon icon={this.state.showList ? faCaretUp : faCaretDown} />
-                    )}
+                    {tracks_list.length !== 0 && <FontAwesomeIcon icon={showList ? faCaretUp : faCaretDown} />}
                   </button>
                 )}
               </div>
             </div>
-            {this.state.showList && <ol>{tracks_list}</ol>}
+            {showList && <ol>{tracks_list}</ol>}
           </div>
           {condition && (
             <div className="row-spotify-search__track_view">
@@ -127,7 +133,7 @@ class RowSpotifySearch extends React.Component {
 }
 
 RowSpotifySearch.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape,
 };
 
 const trackProps = PropTypes.shape({
