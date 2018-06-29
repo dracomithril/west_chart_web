@@ -12,14 +12,14 @@ before_install:
 stages:
   - test
   - name: deploy
-    if: tag = true
 
 jobs:
   include:
     - stage: test
       script: yarn run lint
       script: yarn test
-    - stage: deploy to production
+    - if: tag IS present
+      stage: deploy to production
       script: yarn build
       deploy: &heroku
         provider: heroku
