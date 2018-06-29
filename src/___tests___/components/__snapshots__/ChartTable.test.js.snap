@@ -1392,7 +1392,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Friday, March 16th 2018, 01:12:32"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -1441,7 +1441,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            16.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -1449,7 +1449,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Friday, March 16th 2018, 01:16:21"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -1498,7 +1498,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            16.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -2002,7 +2002,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Friday, March 16th 2018, 01:12:59"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -2051,7 +2051,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            16.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -2558,7 +2558,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Friday, March 16th 2018, 01:12:39"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -2607,7 +2607,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            16.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -2615,7 +2615,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Friday, March 16th 2018, 01:12:40"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -2664,7 +2664,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            16.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -3171,7 +3171,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Friday, March 16th 2018, 01:12:36"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -3220,7 +3220,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            16.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -3727,7 +3727,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Thursday, March 15th 2018, 00:10:55"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -3776,7 +3776,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            15.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -3784,7 +3784,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Thursday, March 15th 2018, 00:47:48"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -3833,7 +3833,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            15.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -4340,7 +4340,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Thursday, March 15th 2018, 00:11:23"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -4389,7 +4389,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            15.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -4893,7 +4893,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Thursday, March 15th 2018, 00:11:13"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -4942,7 +4942,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            15.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -5449,7 +5449,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Thursday, March 15th 2018, 00:10:53"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -5498,7 +5498,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            15.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -6005,7 +6005,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Wednesday, March 14th 2018, 11:04:42"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -6054,7 +6054,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            14.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -6062,7 +6062,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Wednesday, March 14th 2018, 13:04:47"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -6111,7 +6111,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            14.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -6618,7 +6618,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Wednesday, March 14th 2018, 11:04:49"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -6667,7 +6667,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            14.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -7174,7 +7174,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Wednesday, March 14th 2018, 11:04:49"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -7223,7 +7223,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            14.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -7732,7 +7732,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Wednesday, March 14th 2018, 11:04:45"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -7781,7 +7781,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            14.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -8288,7 +8288,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Wednesday, March 14th 2018, 11:04:37"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -8337,7 +8337,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            14.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -8846,7 +8846,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Tuesday, March 13th 2018, 07:40:04"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -8895,7 +8895,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            13.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -8903,7 +8903,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Tuesday, March 13th 2018, 09:37:06"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -8952,7 +8952,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            13.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -9457,7 +9457,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Tuesday, March 13th 2018, 07:40:08"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -9506,7 +9506,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            13.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -10010,7 +10010,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Tuesday, March 13th 2018, 07:39:57"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -10059,7 +10059,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            13.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -10067,7 +10067,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Tuesday, March 13th 2018, 07:39:58"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -10116,7 +10116,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            13.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -10625,7 +10625,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Tuesday, March 13th 2018, 07:39:53"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -10674,7 +10674,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            13.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -11181,7 +11181,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Friday, March 9th 2018, 10:22:13"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -11230,7 +11230,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            09.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -11238,7 +11238,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Monday, March 12th 2018, 10:55:02"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -11287,7 +11287,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            12.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -11791,7 +11791,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Monday, March 12th 2018, 10:49:36"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -11840,7 +11840,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            12.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -11848,7 +11848,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Monday, March 12th 2018, 10:51:51"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -11897,7 +11897,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            12.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -12401,7 +12401,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Monday, March 12th 2018, 10:50:00"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -12450,7 +12450,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            12.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -12959,7 +12959,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Monday, March 12th 2018, 10:49:46"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -13008,7 +13008,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            12.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -13016,7 +13016,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Monday, March 12th 2018, 10:49:47"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -13065,7 +13065,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            12.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -13569,7 +13569,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Monday, March 12th 2018, 10:49:38"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -13618,7 +13618,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            12.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -14125,7 +14125,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Friday, March 9th 2018, 10:21:49"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -14174,7 +14174,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            09.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -14182,7 +14182,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Friday, March 9th 2018, 22:35:53"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -14231,7 +14231,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            09.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -14738,7 +14738,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Friday, March 9th 2018, 10:21:51"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -14787,7 +14787,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            09.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -14795,7 +14795,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Friday, March 9th 2018, 19:59:36"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -14844,7 +14844,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            09.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -15351,7 +15351,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Friday, March 9th 2018, 10:21:51"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -15400,7 +15400,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            09.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -15408,7 +15408,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Friday, March 9th 2018, 19:59:36"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -15457,7 +15457,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            09.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div
@@ -15964,7 +15964,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "red",
               }
             }
-            title="creation time: Friday, March 9th 2018, 10:21:51"
+            title="creation time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -16013,7 +16013,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            09.03
+            2018–01–30T12:34:56+00:00
           </span>
           <span
             style={
@@ -16021,7 +16021,7 @@ exports[`<ChartTable/> render with objects 1`] = `
                 "color": "green",
               }
             }
-            title="update time: Friday, March 9th 2018, 19:59:36"
+            title="update time: 2018–01–30T12:34:56+00:00"
           >
             <FontAwesomeIcon$1
               border={false}
@@ -16070,7 +16070,7 @@ exports[`<ChartTable/> render with objects 1`] = `
               </svg>
             </FontAwesomeIcon$1>
              
-            09.03
+            2018–01–30T12:34:56+00:00
           </span>
         </div>
         <div

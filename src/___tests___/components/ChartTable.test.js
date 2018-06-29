@@ -9,12 +9,17 @@ import { mountToJson, shallowToJson } from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import ChartTable from '../../components/Chart/ChartTable2';
 
+jest.mock('moment', () => () => ({format: () => '2018–01–30T12:34:56+00:00', year: () => '2018'}));
+
 Enzyme.configure({ adapter: new Adapter() });
 const initial_state = require('../___data___/initial_state.json');
 const data = require('../___data___/response.json').chart;
 const mockStore = configureMockStore([]);
 
 describe('<ChartTable/>', () => {
+  afterAll(()=>{
+    jest.unmock('moment')
+  });
   it('renders without crashing', () => {
     const store = mockStore(initial_state);
     const wrapper = shallow(
