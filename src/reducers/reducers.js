@@ -228,8 +228,8 @@ const sinceDate = (state = moment(), { type, date }) => (type === actionTypes.UP
 
 const untilDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_UNTIL_DATE ? moment(date) : state);
 
-const since = (state = 0, action) => (action.type === actionTypes.UPDATE_SINCE ? action.date : state);
-const until = (state = 0, action) => (action.type === actionTypes.UPDATE_UNTIL ? action.date : state);
+const since = (state = 0, action) => (action.type === actionTypes.UPDATE_SINCE ? action.value : state);
+const until = (state = 0, action) => (action.type === actionTypes.UPDATE_UNTIL ? action.value : state);
 const show_wait = (state = false, action) => (action.type === actionTypes.CHANGE_SHOW_WAIT ? action.show : state);
 
 const songsPerDay = (state = 3, action) => (action.type === actionTypes.UPDATE_SONGS_PER_DAY ? action.days : state);
@@ -263,7 +263,7 @@ const control_state = (control, action) => {
 };
 const filters = (state = {}, action) => ({
   create_control: control_state(
-    state.create_control || { checked: false, id: 'create', days: showDays, type: 'counter' },
+    state.create_control || { checked: true, id: 'create', days: showDays, type: 'counter' },
     action,
   ),
   update_control: control_state(

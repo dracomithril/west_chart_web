@@ -69,7 +69,7 @@ describe('since', function () {
     const date = "2017-06-16T19:54:25.672Z";
     const state = '';
     Object.freeze(state);
-    let resp = reducers.since(state, { type: actionTypes.UPDATE_SINCE, date: date });
+    let resp = reducers.since(state, { type: actionTypes.UPDATE_SINCE, value: date });
     expect(resp).toBe(date);
   });
   it('should return current state if type don\'t match', function () {
@@ -86,7 +86,7 @@ describe('until', function () {
     const date = "2017-06-16T19:54:25.672Z";
     const state = '';
     Object.freeze(state);
-    let resp = reducers.until(state, { type: actionTypes.UPDATE_UNTIL, date: date });
+    let resp = reducers.until(state, { type: actionTypes.UPDATE_UNTIL, value: date });
     expect(resp).toBe(date);
   });
   it('should return current state if type don\'t match', function () {
@@ -175,7 +175,7 @@ describe('filters', function () {
     const state = undefined;
     const result = reducers.filters(state, action);
     const expected = {
-      "create_control": { "checked": false, "days": 7, "id": "create", "type": "counter" },
+      "create_control": { "checked": true, "days": 7, "id": "create", "type": "counter" },
       "less_control": { "checked": false, "days": 15, "id": "less", "type": "counter" },
       "more_control": { "checked": false, "days": 1, "id": "more", "type": "counter" },
       "update_control": { "checked": false, "days": 7, "id": "update", "type": "counter" },
@@ -193,7 +193,7 @@ describe('filters', function () {
     const state = undefined;
     const result = reducers.filters(state, action);
     const expected = {
-      "create_control": { "checked": false, "days": 7, "id": "create", "type": "counter" },
+      "create_control": { "checked": true, "days": 7, "id": "create", "type": "counter" },
       "less_control": { "checked": false, "days": 15, "id": "less", "type": "counter" },
       "more_control": { "checked": false, "days": 1, "id": "more", "type": "counter" },
       "update_control": { "checked": false, "days": 7, "id": "update", "type": "counter" },

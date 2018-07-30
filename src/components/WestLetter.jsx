@@ -57,5 +57,5 @@ WestLetter.propTypes = {
   data: PropTypes.arrayOf(chartObjectProps),
 };
 WestLetter.contextTypes = {
-  store: PropTypes.shape,
+  store: PropTypes.shape(),
 };

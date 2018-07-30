@@ -148,7 +148,7 @@ class ChartPresenter extends React.Component {
 }
 
 ChartPresenter.contextTypes = {
-  store: PropTypes.shape,
+  store: PropTypes.shape(),
 };
 ChartPresenter.propTypes = {
   classes: PropTypes.shape({ root: PropTypes.string }).isRequired,

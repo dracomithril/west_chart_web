@@ -216,6 +216,6 @@ export default class PlaylistCombiner extends React.Component {
   }
 }
 PlaylistCombiner.contextTypes = {
-  store: PropTypes.shape,
+  store: PropTypes.shape(),
 };
 PlaylistCombiner.propTypes = {};

@@ -133,7 +133,7 @@ class RowSpotifySearch extends React.Component {
 }
 
 RowSpotifySearch.contextTypes = {
-  store: PropTypes.shape,
+  store: PropTypes.shape(),
 };
 
 const trackProps = PropTypes.shape({

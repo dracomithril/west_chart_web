@@ -86,7 +86,7 @@ export default class PlaylistForm extends Component {
   }
 }
 PlaylistForm.contextTypes = {
-  store: PropTypes.shape,
+  store: PropTypes.shape(),
 };
 PlaylistForm.propTypes = {
   hasElements: PropTypes.bool,

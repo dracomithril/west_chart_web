@@ -171,7 +171,7 @@ class Navigation extends React.Component {
                   <div>{`Hi, ${user.first_name}`}</div>
                   <div>
                     <FontAwesomeIcon icon={faSpotify} />
-                    {spotifyUser.id}
+                    {spotifyUser.id || <a href="/login">login</a>}
                   </div>
                   <MenuItem onClick={this.handleClose('anchorEl')()}>Profile</MenuItem>
                   <MenuItem onClick={this.onLogoutClick}>Logout</MenuItem>

@@ -44,8 +44,30 @@ class ChartHeader extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const { since, until } = this.state;
+    const { store } = this.context;
+    this.updateDates(since, until, store.dispatch);
+  }
+
   onDateChange = fieldName => date => {
     this.setState({ [fieldName]: moment(date) });
+    const { store } = this.context;
+    store.dispatch({
+      type: actionTypes[`UPDATE_${fieldName.toUpperCase()}`],
+      value: date.valueOf(),
+    });
+  };
+
+  updateDates = (since, until, dispatch) => {
+    dispatch({
+      type: actionTypes.UPDATE_UNTIL,
+      value: until.valueOf(),
+    });
+    dispatch({
+      type: actionTypes.UPDATE_SINCE,
+      value: since.valueOf(),
+    });
   };
 
   quickSummary = () => {
@@ -128,7 +150,7 @@ class ChartHeader extends React.Component {
             Quick summary
           </Button>
         </div>
-        <FilteringOptions />
+        <FilteringOptions siFnce={since} until={until} />
         <SongsPerDay
           errorDays={errorDays}
           songsPerDay={songsPerDay}
@@ -145,7 +167,7 @@ class ChartHeader extends React.Component {
 }
 
 ChartHeader.contextTypes = {
-  store: PropTypes.shape,
+  store: PropTypes.shape(),
 };
 
 ChartHeader.propTypes = {

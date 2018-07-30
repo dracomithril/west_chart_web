@@ -121,7 +121,7 @@ export default class Summary extends React.Component {
   }
 }
 Summary.contextTypes = {
-  store: PropTypes.shape,
+  store: PropTypes.shape(),
 };
 Summary.propTypes = {
   selected: PropTypes.arrayOf(chartObjectProps),

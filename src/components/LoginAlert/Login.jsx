@@ -86,7 +86,7 @@ const Login = ({ location }, { store }) => {
 };
 
 Login.contextTypes = {
-  store: PropTypes.shape,
+  store: PropTypes.shape(),
 };
 Login.propTypes = {
   location: PropTypes.shape({

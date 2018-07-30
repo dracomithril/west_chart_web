@@ -67,7 +67,7 @@ const ChartTable = ({ data }, { store }) => {
 };
 
 ChartTable.contextTypes = {
-  store: PropTypes.shape,
+  store: PropTypes.shape(),
 };
 ChartTable.propTypes = {
   data: PropTypes.arrayOf(chartObjectProps),

@@ -12,7 +12,7 @@ const FilterOption = ({ id, name, days, checked, onChange, onValueChange, descSt
       name={name}
       id={`${id}_checkbox`}
       checked={checked}
-      onChange={target => {
+      onChange={({ target }) => {
         onChange({ checked: target.checked, id });
       }}
     />

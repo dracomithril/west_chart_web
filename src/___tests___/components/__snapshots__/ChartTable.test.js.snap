@@ -748,6 +748,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     <WithStyles(IconButton)
                       className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                       component="span"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <IconButton
@@ -765,6 +767,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                         color="default"
                         component="span"
                         disabled={false}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                       >
                         <WithStyles(ButtonBase)
@@ -773,6 +777,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                           component="span"
                           disabled={false}
                           focusRipple={true}
+                          onBlur={[Function]}
+                          onFocus={[Function]}
                           tabIndex={null}
                         >
                           <ButtonBase
@@ -787,8 +793,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                             }
                             component="span"
                             disableRipple={false}
+                            disableTouchRipple={false}
                             disabled={false}
                             focusRipple={true}
+                            onBlur={[Function]}
+                            onFocus={[Function]}
                             tabIndex={null}
                             type="button"
                           >
@@ -1046,6 +1055,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7 MuiSwitchBase-checked-10 MuiCheckbox-checked-5"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -1063,6 +1074,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -1071,6 +1084,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -1085,8 +1100,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -1658,6 +1676,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -1675,6 +1695,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -1683,6 +1705,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -1697,8 +1721,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -2212,6 +2239,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -2229,6 +2258,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -2237,6 +2268,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -2251,8 +2284,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -2825,6 +2861,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -2842,6 +2880,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -2850,6 +2890,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -2864,8 +2906,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -3381,6 +3426,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -3398,6 +3445,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -3406,6 +3455,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -3420,8 +3471,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -3994,6 +4048,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -4011,6 +4067,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -4019,6 +4077,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -4033,8 +4093,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -4549,6 +4612,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -4566,6 +4631,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -4574,6 +4641,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -4588,8 +4657,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -5103,6 +5175,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -5120,6 +5194,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -5128,6 +5204,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -5142,8 +5220,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -5659,6 +5740,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -5676,6 +5759,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -5684,6 +5769,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -5698,8 +5785,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -6272,6 +6362,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -6289,6 +6381,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -6297,6 +6391,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -6311,8 +6407,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -6828,6 +6927,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -6845,6 +6946,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -6853,6 +6956,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -6867,8 +6972,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -7385,6 +7493,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -7402,6 +7512,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -7410,6 +7522,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -7424,8 +7538,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -7942,6 +8059,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -7959,6 +8078,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -7967,6 +8088,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -7981,8 +8104,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -8499,6 +8625,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -8516,6 +8644,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -8524,6 +8654,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -8538,8 +8670,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -9111,6 +9246,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -9128,6 +9265,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -9136,6 +9275,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -9150,8 +9291,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -9664,6 +9808,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -9681,6 +9827,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -9689,6 +9837,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -9703,8 +9853,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -10278,6 +10431,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -10295,6 +10450,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -10303,6 +10460,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -10317,8 +10476,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -10835,6 +10997,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -10852,6 +11016,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -10860,6 +11026,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -10874,8 +11042,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -11447,6 +11618,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -11464,6 +11637,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -11472,6 +11647,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -11486,8 +11663,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -12057,6 +12237,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -12074,6 +12256,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -12082,6 +12266,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -12096,8 +12282,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -12611,6 +12800,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -12628,6 +12819,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -12636,6 +12829,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -12650,8 +12845,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -13223,6 +13421,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -13240,6 +13440,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -13248,6 +13450,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -13262,8 +13466,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -13779,6 +13986,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -13796,6 +14005,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -13804,6 +14015,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -13818,8 +14031,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -14392,6 +14608,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -14409,6 +14627,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -14417,6 +14637,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -14431,8 +14653,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -15005,6 +15230,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -15022,6 +15249,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -15030,6 +15259,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -15044,8 +15275,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >
@@ -15618,6 +15852,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                 <WithStyles(IconButton)
                   className="MuiSwitchBase-root-9 MuiCheckbox-root-4 MuiCheckbox-colorPrimary-7"
                   component="span"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
                   tabIndex={null}
                 >
                   <IconButton
@@ -15635,6 +15871,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                     color="default"
                     component="span"
                     disabled={false}
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     tabIndex={null}
                   >
                     <WithStyles(ButtonBase)
@@ -15643,6 +15881,8 @@ exports[`<ChartTable/> render with objects 1`] = `
                       component="span"
                       disabled={false}
                       focusRipple={true}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       tabIndex={null}
                     >
                       <ButtonBase
@@ -15657,8 +15897,11 @@ exports[`<ChartTable/> render with objects 1`] = `
                         }
                         component="span"
                         disableRipple={false}
+                        disableTouchRipple={false}
                         disabled={false}
                         focusRipple={true}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
                         tabIndex={null}
                         type="button"
                       >

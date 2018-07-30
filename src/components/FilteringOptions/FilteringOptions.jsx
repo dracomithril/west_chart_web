@@ -44,7 +44,7 @@ const FilteringOptions = ({ classes }, { store }) => {
         onChange={target => {
           store.dispatch({
             type: actionTypes.TOGGLE_FILTER,
-            id: target.value,
+            id: target.id,
             checked: target.checked,
           });
         }}
@@ -92,7 +92,7 @@ const FilteringOptions = ({ classes }, { store }) => {
 };
 
 FilteringOptions.contextTypes = {
-  store: PropTypes.shape,
+  store: PropTypes.shape(),
 };
 FilteringOptions.propTypes = {
   classes: PropTypes.shape({
