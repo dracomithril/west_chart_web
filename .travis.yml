@@ -1,9 +1,11 @@
 language: node_js
 node_js:
-- lts/*
+- "8.11.3"
 before_install:
-- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.6.0
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.2
 - export PATH="$HOME/.yarn/bin:$PATH"
+cache:
+  yarn: true
 
 stages:
   - test
@@ -13,12 +15,12 @@ jobs:
   include:
     - stage: test
       script: yarn run lint
+    -
       script: yarn test
     - if: tag IS present
       stage: deploy to production
       script: yarn build
       deploy: &heroku
-        provider: heroku
         app: wcs-web32
         skip_cleanup: true
         provider: heroku
