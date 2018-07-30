@@ -3,12 +3,12 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Checkbox from 'material-ui/Checkbox';
-import { FormControlLabel } from 'material-ui/Form';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import '../components.css';
-import { chartObjectProps } from './../typeDefinitions';
+import { chartObjectProps } from '../typeDefinitions';
 import ChartRow from './ChartRow';
-import { actionTypes } from './../../reducers/actionTypes';
+import { actionTypes } from '../../reducers/actionTypes';
 
 const ChartTable = ({ data }, { store }) => {
   const ChartRows = data.map(entry => (
@@ -67,7 +67,7 @@ const ChartTable = ({ data }, { store }) => {
 };
 
 ChartTable.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape,
 };
 ChartTable.propTypes = {
   data: PropTypes.arrayOf(chartObjectProps),

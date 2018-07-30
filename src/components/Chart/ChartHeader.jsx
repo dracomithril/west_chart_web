@@ -3,9 +3,9 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
-import { withStyles } from 'material-ui/styles';
-import TextField from 'material-ui/TextField';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 import moment from 'moment/moment';
 import SongsPerDay from './SongsPerDay';
 import FilteringOptions from '../FilteringOptions';

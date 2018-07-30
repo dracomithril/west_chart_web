@@ -3,10 +3,10 @@
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
-import Checkbox from 'material-ui/Checkbox';
-import { FormControlLabel } from 'material-ui/Form';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faSave, faLightbulb } from '@fortawesome/fontawesome-free-solid';
 import { weekInfo } from '../../utils/utils';
@@ -32,9 +32,10 @@ export default class PlaylistForm extends Component {
   };
 
   render() {
+    const { store } = this.context;
+    const { spotifyUser } = store.getState();
     const { onCreatePlaylistClick, onStartClick, hasElements, isUserLogged } = this.props;
     const { playlistName, isPrivate } = this.state;
-    const { spotifyUser } = this.context.store.getState();
     const disable_create = !(playlistName.length > 5 && hasElements && isUserLogged);
     const validatePlaylistName = (str = '') => str.length > 7;
     const isNameValid = validatePlaylistName(playlistName);
@@ -85,7 +86,7 @@ export default class PlaylistForm extends Component {
   }
 }
 PlaylistForm.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape,
 };
 PlaylistForm.propTypes = {
   hasElements: PropTypes.bool,

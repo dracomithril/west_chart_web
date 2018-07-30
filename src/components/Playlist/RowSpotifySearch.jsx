@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MenuItem } from 'material-ui/Menu';
+import { MenuItem } from '@material-ui/core/Menu';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp, faSearch, faSync, faTimes } from '@fortawesome/fontawesome-free-solid';
 import './playlist.css';

@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
-import { withStyles } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import IconButton from 'material-ui/IconButton';
-import Button from 'material-ui/Button';
-import Avatar from 'material-ui/Avatar';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
 import MenuIcon from '@material-ui/icons/Menu';
-import Menu, { MenuItem } from 'material-ui/Menu';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/fontawesome-free-brands';
 import Policy from './components/Policy';
@@ -84,9 +85,11 @@ class Navigation extends React.Component {
     store.dispatch({ type: actionTypes.SIGN_OUT_USER });
     window.location = '/';
   };
+
   handleMenu = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
+
   handleClick = event => {
     this.setState({ anchorEl2: event.currentTarget });
   };
@@ -196,7 +199,7 @@ class Navigation extends React.Component {
 }
 
 Navigation.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape(),
 };
 Navigation.propTypes = {
   classes: PropTypes.shape({

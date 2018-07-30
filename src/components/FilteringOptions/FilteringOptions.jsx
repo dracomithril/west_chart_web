@@ -3,14 +3,16 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import ExpansionPanel, { ExpansionPanelSummary, ExpansionPanelDetails } from 'material-ui/ExpansionPanel';
-import Typography from 'material-ui/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import FilterOption from './FilterOption';
 import './FilteringOptions.css';
 import filters_def from '../../utils/filters_def';
-import { actionTypes } from './../../reducers/actionTypes';
+import { actionTypes } from '../../reducers/actionTypes';
 import MessageControl from './MessageControl';
 
 const styles = theme => ({
@@ -90,7 +92,7 @@ const FilteringOptions = ({ classes }, { store }) => {
 };
 
 FilteringOptions.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape,
 };
 FilteringOptions.propTypes = {
   classes: PropTypes.shape({

@@ -6,9 +6,10 @@ import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faFacebook, faSpotify } from '@fortawesome/fontawesome-free-brands';
 import { faList, faTable } from '@fortawesome/fontawesome-free-solid';
-import { withStyles } from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
-import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
 import Summary from '../Summary';
 import ChartTable from './ChartTable2';
@@ -25,10 +26,10 @@ const styles = theme => ({
   },
 });
 
-function TabContainer(props) {
+function TabContainer({ children }) {
   return (
     <Typography component="div" style={{ paddingTop: 4 * 3 }}>
-      {props.children}
+      {children}
     </Typography>
   );
 }
@@ -74,6 +75,7 @@ class ChartPresenter extends React.Component {
   state = {
     value: tabOptions.posts,
   };
+
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -81,6 +83,7 @@ class ChartPresenter extends React.Component {
   render() {
     const { store } = this.context;
     const { value } = this.state;
+    const { classes } = this.props;
 
     const { listSort, chart, filters, until, songsPerDay, since, lastUpdateDate } = store.getState();
 
@@ -92,7 +95,7 @@ class ChartPresenter extends React.Component {
     const show = !!lastUpdateDate && !!since && !!until;
     const lastUpdateDateString = lastUpdateDate ? new Date(lastUpdateDate).toLocaleString('pl-PL', options) : 'No data';
     return (
-      <div className={this.props.classes.root}>
+      <div className={classes.root}>
         <div style={{ borderBottom: '1px solid' }}>
           <BottomNavigation value={value} showLabels onChange={this.handleChange}>
             {tabsView}
@@ -145,7 +148,7 @@ class ChartPresenter extends React.Component {
 }
 
 ChartPresenter.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape,
 };
 ChartPresenter.propTypes = {
   classes: PropTypes.shape({ root: PropTypes.string }).isRequired,

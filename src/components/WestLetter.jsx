@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Avatar from 'material-ui/Avatar';
+import Avatar from '@material-ui/core/Avatar';
 import { getFbPictureUrl, weekInfo } from '../utils/utils';
 import { chartObjectProps } from './typeDefinitions';
 
@@ -18,7 +18,7 @@ export default class WestLetter extends React.Component {
 
   render() {
     const todayWeek = weekInfo();
-    const { data = [] } = this.props;
+    const { data } = this.props;
     const show = data.map(elem => {
       const create_date = new Date(elem.createdTime);
       const { from } = elem;
@@ -57,5 +57,5 @@ WestLetter.propTypes = {
   data: PropTypes.arrayOf(chartObjectProps),
 };
 WestLetter.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape,
 };

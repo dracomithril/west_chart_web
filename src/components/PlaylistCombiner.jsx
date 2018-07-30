@@ -2,7 +2,7 @@
  * Created by Gryzli on 05.06.2017.
  */
 import React from 'react';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import {
   addTrucksToPlaylistNoRepeats,
@@ -87,7 +87,7 @@ export default class PlaylistCombiner extends React.Component {
     const actions = array.map(el => getTracks(spotifyUser.access_token, ...el));
     Promise.all(actions)
       .then(data => {
-        const flat_tracks = _.flatMap(data, n => n); // [].concat.apply([], data);
+        const flat_tracks = _.flatMap(data, n => n);
         const uniq = _.uniq(flat_tracks);
         const { id, access_token } = spotifyUser;
         return createFrom === cf.existing

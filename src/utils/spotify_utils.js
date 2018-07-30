@@ -2,7 +2,7 @@
  * Created by XKTR67 on 5/11/2017.
  */
 import Spotify from 'spotify-web-api-node';
-import { api, hostname } from './../config';
+import { api, hostname } from '../config';
 
 const spotifyApi = new Spotify();
 const Cookies = require('cookies-js');
@@ -15,7 +15,8 @@ const noCredentials = new Error('No credentials found');
 export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
   if (tracks.length === 0) {
     return Promise.reject(new Error('nothing was updated. Tracks count is 0'));
-  } else if (tracks.length > 100) {
+  }
+  if (tracks.length > 100) {
     /**
      *
      * @param array {Array}
@@ -201,7 +202,8 @@ const getCookies = () => {
       Cookies.expire(acToken);
       return refresh_token ? refresh_auth(refresh_token) : Promise.reject(noCredentials);
     });
-  } else if (refresh_token) {
+  }
+  if (refresh_token) {
     return refresh_auth(refresh_token);
   }
   return Promise.reject(noCredentials);
@@ -210,7 +212,7 @@ const getCookies = () => {
 export const loginToSpotifyAlpha = from =>
   fetch(api.spotify.login, {
     credentials: 'include',
-    redirect: 'fallow',
+    redirect: 'follow',
     accept: 'application/json',
   })
     .then(response => (response.ok ? response.text() : Promise.reject(new Error(' No url to fallow'))))
@@ -246,13 +248,7 @@ export const obtain_credentials = () =>
 export const getCredentials = () =>
   getCookies()
     .catch(() => obtain_credentials())
-    .catch(() => Promise.reject(noCredentials))
-    .then(result =>
-      // global.FB.getLoginStatus(function(response) {
-      //   console.log(response);
-      // });
-      Promise.resolve(result),
-    );
+    .catch(() => Promise.reject(noCredentials));
 
 const exports = {
   createPlaylistAndAddTracks,

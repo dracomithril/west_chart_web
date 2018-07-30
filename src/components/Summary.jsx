@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faClipboard } from '@fortawesome/fontawesome-free-solid';
 import './components.css';
@@ -33,6 +33,7 @@ export default class Summary extends React.Component {
 
   onCopyToClipboard = () => {
     const { store } = this.context;
+    const { introText, riddleText, riddleUrl } = this.state;
     const { sp_playlist_info } = store.getState();
     const { selected } = this.props;
     const playList = selected
@@ -40,12 +41,12 @@ export default class Summary extends React.Component {
       .join('\n');
     const text = [
       '[WCS Weekly Westletter]',
-      this.state.introText,
+      introText,
       playList,
       sp_playlist_info.url ? `Link to spotify playlist:${sp_playlist_info.url}` : 'No link',
       'Riddle:',
-      this.state.riddleText,
-      this.state.riddleUrl,
+      riddleText,
+      riddleUrl,
     ];
     copy(text.join('\n'));
     console.info('Summary was copied to clipboard');
@@ -53,6 +54,7 @@ export default class Summary extends React.Component {
 
   render() {
     const { store } = this.context;
+    const { introText, riddleText, riddleUrl } = this.state;
     const { selected } = this.props;
     const { sp_playlist_info } = store.getState();
     const print_list = (selected || []).map(create_print_list);
@@ -69,7 +71,7 @@ export default class Summary extends React.Component {
           id="textarea_add"
           className="summary__textarea"
           placeholder="Here write what you want"
-          defaultValue={this.state.introText}
+          defaultValue={introText}
           onChange={e => {
             this.setState({ introText: e.target.value });
           }}
@@ -95,7 +97,7 @@ export default class Summary extends React.Component {
           id="riddler"
           className="summary__textarea"
           placeholder="riddle that you have in mind"
-          defaultValue={this.state.riddleText}
+          defaultValue={riddleText}
           onChange={({ target }) => {
             this.setState({ riddleText: target.value });
           }}
@@ -108,7 +110,7 @@ export default class Summary extends React.Component {
             id="link2riddle"
             style={{ paddingLeft: 5, marginLeft: 5 }}
             placeholder="link to riddle"
-            value={this.state.riddleUrl}
+            value={riddleUrl}
             onChange={e => {
               this.setState({ riddleUrl: e.target.value });
             }}
@@ -119,7 +121,7 @@ export default class Summary extends React.Component {
   }
 }
 Summary.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape,
 };
 Summary.propTypes = {
   selected: PropTypes.arrayOf(chartObjectProps),

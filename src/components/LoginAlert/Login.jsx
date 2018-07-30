@@ -5,14 +5,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import { faFacebookF, faSpotify } from '@fortawesome/fontawesome-free-brands/index';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
 import './LoginAlert.css';
 import { getFbPictureUrl } from '../../utils/utils';
-import { api } from './../../config';
-import { actionTypes } from './../../reducers/actionTypes';
+import { api } from '../../config';
+import { actionTypes } from '../../reducers/actionTypes';
 
 const Login = ({ location }, { store }) => {
   const { user, spotifyUser } = store.getState();
@@ -36,7 +36,7 @@ const Login = ({ location }, { store }) => {
           language="pl_PL"
           autoLoad
           fields="id,email,name,first_name,last_name"
-          scope="public_profile,email,user_managed_groups,groups_access_member_info,publish_to_groups"
+          scope="public_profile,email,groups_access_member_info,publish_to_groups"
           render={renderProps => (
             <Button
               onClick={renderProps.onClick}
@@ -86,7 +86,7 @@ const Login = ({ location }, { store }) => {
 };
 
 Login.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape,
 };
 Login.propTypes = {
   location: PropTypes.shape({

@@ -3,8 +3,8 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
-import Avatar from 'material-ui/Avatar';
+import Button from '@material-ui/core/Button';
+import Avatar from '@material-ui/core/Avatar';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faSyncAlt, faMinus } from '@fortawesome/fontawesome-free-solid';
 
@@ -18,12 +18,14 @@ class UserPlaylist extends React.Component {
       </option>
     );
   }
+
   updateSelectList = ({ target }) => {
     const { name, selectedOptions } = target;
     const { onSelect } = this.props;
     const sel = Array.from(selectedOptions).map(({ value }) => [name, value]);
     onSelect(name, sel);
   };
+
   render() {
     const { user, onDelete, erasable, onUpdate } = this.props;
     const { items, id = '', total, pic } = user || {};

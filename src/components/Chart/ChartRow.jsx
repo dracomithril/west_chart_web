@@ -10,8 +10,8 @@ import {
   faExternalLinkSquareAlt,
   faTimesCircle,
 } from '@fortawesome/fontawesome-free-solid';
-import Checkbox from 'material-ui/Checkbox';
-import Avatar from 'material-ui/Avatar';
+import Checkbox from '@material-ui/core/Checkbox';
+import Avatar from '@material-ui/core/Avatar';
 
 function shortFormatDate(date) {
   if (date) {
@@ -24,7 +24,18 @@ function shortFormatDate(date) {
 
 const fullFormatDate = date => (date ? moment(date).format('dddd, MMMM Do YYYY, HH:mm:ss') : '');
 
-const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime, story, ...props }) => {
+const ChartRow = ({
+  from,
+  link = {},
+  checked,
+  createdTime,
+  onChange,
+  updatedTime,
+  story,
+  message,
+  id,
+  reactionsNum,
+}) => {
   const showUpdateTime = updatedTime && updatedTime !== createdTime;
   const withMessage = {
     icon: faComment,
@@ -32,16 +43,16 @@ const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime
     style: { cursor: 'pointer' },
   };
   const noMessage = { icon: faTimesCircle, color: 'red', style: { cursor: 'np-drop' } };
-  const messageProps = props.message ? withMessage : noMessage;
+  const messageProps = message ? withMessage : noMessage;
   return (
     <div className="chart-row">
       <Checkbox
-        id={props.id}
+        id={id}
         checked={checked}
         onChange={({ target }) => {
           onChange && onChange(target);
         }}
-        value={props.id}
+        value={id}
         color="primary"
       />
       {from != null ? (
@@ -56,8 +67,8 @@ const ChartRow = ({ from, link = {}, checked, createdTime, onChange, updatedTime
       )}
       <div className="chart-row__post-info">
         <FontAwesomeIcon icon="thumbs-up" color="blue" />
-        {props.reactionsNum}
-        <div title={props.message}>
+        {reactionsNum}
+        <div title={message}>
           <FontAwesomeIcon {...messageProps} />
         </div>
       </div>
