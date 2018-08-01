@@ -14,7 +14,11 @@ const state = {
 };
 const store = configureStore(state);
 
-addDecorator(story => <Provider store={store}>{story()}</Provider>);
+addDecorator(story => (
+  <Provider store={store}>
+    {story()}
+  </Provider>
+));
 storiesOf('SongsPerDay', module)
   .add('Todo[VR]', () => <SongsPerDay songsPerDay={4} onDaysChange={action('days changed')} />)
   .add('With errors', () => (

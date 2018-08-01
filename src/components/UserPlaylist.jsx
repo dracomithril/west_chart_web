@@ -27,8 +27,12 @@ class UserPlaylist extends React.Component {
   };
 
   render() {
-    const { user, onDelete, erasable, onUpdate } = this.props;
-    const { items, id = '', total, pic } = user || {};
+    const {
+      user, onDelete, erasable, onUpdate,
+    } = this.props;
+    const {
+      items, id = '', total, pic,
+    } = user || {};
     const userPlaylist = (items || []).map(UserPlaylist.mapUserPlaylistToOptions);
 
     return (
@@ -36,9 +40,13 @@ class UserPlaylist extends React.Component {
         <div>
           <div>
             <Avatar src={pic} />
-            <span>{id.length > 12 ? `${id.substr(0, 9)}...` : id}</span>
+            <span>
+              {id.length > 12 ? `${id.substr(0, 9)}...` : id}
+            </span>
           </div>
-          <span>{total}</span>
+          <span>
+            {total}
+          </span>
           <div>
             <Button onClick={() => onUpdate(id)}>
               <FontAwesomeIcon icon={faSyncAlt} />

@@ -25,14 +25,14 @@ export const sorting = {
    * descending
    * @param array
    */
-  reaction: array => {
+  reaction: (array) => {
     array.sort((a, b) => b.reactionsNum - a.reactionsNum);
   },
   /**
    * ascending
    * @param array
    */
-  who: array => {
+  who: (array) => {
     array.sort((a, b) => {
       if (a.from.name < b.from.name) return -1;
       if (a.from.name > b.from.name) return 1;
@@ -43,14 +43,15 @@ export const sorting = {
    * ascending
    * @param array
    */
-  when: array => {
-    array.sort((a, b) => (a.createdTime ? a.createdTime.getTime() : 0) - (b.createdTime ? b.createdTime.getTime() : 0));
+  when: (array) => {
+    array.sort((a, b) => (a.createdTime
+      ? a.createdTime.getTime() : 0) - (b.createdTime ? b.createdTime.getTime() : 0));
   },
   /**
    * ascending
    * @param array
    */
-  what: array => {
+  what: (array) => {
     array.sort((a, b) => {
       if (a.link.name < b.link.name) return -1;
       if (a.link.name > b.link.name) return 1;
@@ -67,21 +68,25 @@ export const sorting = {
  */
 export const filterChart = (chart, filters, until, songsPerDay) => {
   const news_letter_filter = filters_def.text[1];
-  const westLetters = chart.filter(
-    elem => (elem.message !== undefined ? elem.message.toLowerCase().includes(news_letter_filter.text) : false),
-  );
+  const westLetters = chart.filter(elem => (elem.message !== undefined
+    ? elem.message.toLowerCase().includes(news_letter_filter.text) : false));
 
   const filters_defaults = [...filters_def.control, ...filters_def.text];
-  const filtersToUse = filters_defaults.map(e => {
+  const filtersToUse = filters_defaults.map((e) => {
     const filter = filters[e.input.name];
-    return { check: e.check, valueName: e.valueName, until, ...filter };
+    return {
+      check: e.check,
+      valueName: e.valueName,
+      until,
+      ...filter,
+    };
   });
 
   const viewChart = chart.filter(elem => filtersToUse.every(filter => filter.check(elem, filter)));
   const songsPerDay2 = groupBy(viewChart, elem => new Date(elem.createdTime).toDateString());
   const errorDays = Object.keys(songsPerDay2)
     .filter(elem => songsPerDay2[elem].length !== songsPerDay)
-    .map(elem => {
+    .map((elem) => {
       const { length } = songsPerDay2[elem];
       return {
         count: length,
@@ -92,7 +97,7 @@ export const filterChart = (chart, filters, until, songsPerDay) => {
   return { viewChart, errorDays, westLetters };
 };
 
-export const getArtist_Title = name => {
+export const getArtist_Title = (name) => {
   if (name == null) {
     return { artist: null, title: null };
   }

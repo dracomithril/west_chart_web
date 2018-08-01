@@ -7,7 +7,11 @@ import configureStore from '../../configureStore';
 const state = {};
 const store = configureStore(state);
 
-addDecorator(story => <Provider store={store}>{story()}</Provider>);
+addDecorator(story => (
+  <Provider store={store}>
+    {story()}
+  </Provider>
+));
 storiesOf('ChartHeader', module)
   .add('Todo[VR]', () => <ChartHeader />)
   .add('With error days', () => (

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-for */
 /**
  * Created by Gryzli on 05.06.2017.
  */
@@ -41,7 +42,7 @@ export default class PlaylistCombiner extends React.Component {
     this.getUserInformation(spotifyUser.id);
   }
 
-  getUserInformation = user => {
+  getUserInformation = (user) => {
     if (user) {
       const {
         state,
@@ -55,12 +56,12 @@ export default class PlaylistCombiner extends React.Component {
         return { users: Object.assign({}, users, newUsers) };
       };
       return getUserAndPlaylists(spotifyUser.access_token, user)
-        .then(new_user => {
+        .then((new_user) => {
           this.setState(updateUsers(state.users, new_user));
           console.info('Retrieved playlists ', new_user);
           return Promise.resolve(new_user.id);
         })
-        .catch(e => {
+        .catch((e) => {
           store.dispatch({ type: actionTypes.ADD_ERROR, value: e });
           store.dispatch({ type: actionTypes.SIGN_OUT_USER });
           return Promise.resolve();
@@ -88,7 +89,7 @@ export default class PlaylistCombiner extends React.Component {
 
     const actions = array.map(el => getTracks(spotifyUser.access_token, ...el));
     Promise.all(actions)
-      .then(data => {
+      .then((data) => {
         const flat_tracks = _.flatMap(data, n => n);
         const uniq = _.uniq(flat_tracks);
         const { id, access_token } = spotifyUser;
@@ -96,17 +97,17 @@ export default class PlaylistCombiner extends React.Component {
           ? addTrucksToPlaylistNoRepeats(id, createFrom_selected, uniq, access_token)
           : createPlaylistAndAddTracks(access_token, id, newPlaylist, false, uniq);
       })
-      .then(d => {
+      .then((d) => {
         this.setState({ sp_playlist_info: d });
         this.getUserInformation(spotifyUser.id);
         this.forceUpdate();
       })
-      .catch(e => {
+      .catch((e) => {
         store.dispatch({ type: actionTypes.ADD_ERROR, value: e });
       });
   };
 
-  deleteUserPlaylist = user_id => {
+  deleteUserPlaylist = (user_id) => {
     console.info(`delete ${user_id}`);
     const { users } = this.state;
     const users_new = Object.assign({}, users);
@@ -126,7 +127,9 @@ export default class PlaylistCombiner extends React.Component {
 
   render() {
     const { store } = this.context;
-    const { userField, users, sp_playlist_info, createFrom, newPlaylist } = this.state;
+    const {
+      userField, users, sp_playlist_info, createFrom, newPlaylist,
+    } = this.state;
     const { spotifyUser } = store.getState();
     const users_playlists = Object.keys(users).map(user => (
       <UserPlaylist
@@ -138,7 +141,8 @@ export default class PlaylistCombiner extends React.Component {
         erasable={(users[user] || {}).id !== spotifyUser.id}
       />
     ));
-    const user_playlists = ((users[spotifyUser.id] || {}).items || []).map(UserPlaylist.mapUserPlaylistToOptions);
+    const user_playlists = ((users[spotifyUser.id] || {}).items || [])
+      .map(UserPlaylist.mapUserPlaylistToOptions);
     const newList_checked = cf.new_list === createFrom;
     const existing_checked = cf.existing === createFrom;
     const updateSelected = ({ target }) => {
@@ -149,7 +153,10 @@ export default class PlaylistCombiner extends React.Component {
     return (
       <div className="App">
         <h3>
-          Combiner<strong style={{ color: 'red' }}>(BETA)</strong>
+          Combiner
+          <strong style={{ color: 'red' }}>
+(BETA)
+          </strong>
         </h3>
         <div>
           <span>
@@ -182,10 +189,14 @@ export default class PlaylistCombiner extends React.Component {
             <Button type="submit" onClick={this.searchForUser_click} className="btn2">
               <FontAwesomeIcon icon={faSearch} />
             </Button>
-            <div className="playlists_view_conteiner">{users_playlists}</div>
+            <div className="playlists_view_conteiner">
+              {users_playlists}
+            </div>
           </div>
           <div id="destination_panel">
-            <h5>To:</h5>
+            <h5>
+To:
+            </h5>
             <div>
               <input type="radio" id={cf.existing} checked={existing_checked} onChange={updateSelected} />
               <label htmlFor="select_user_playlist">

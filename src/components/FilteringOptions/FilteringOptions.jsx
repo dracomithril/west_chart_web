@@ -46,14 +46,14 @@ const FilteringOptions = ({ classes }, { store }) => {
         descStart={description.start}
         descEnd={description.end}
         key={input.name}
-        onChange={target => {
+        onChange={(target) => {
           store.dispatch({
             type: actionTypes.TOGGLE_FILTER,
             id: target.id,
             checked: target.checked,
           });
         }}
-        onValueChange={target => {
+        onValueChange={(target) => {
           const { id, name, value } = target;
           store.dispatch({
             type: actionTypes.UPDATE_DAYS,
@@ -72,7 +72,7 @@ const FilteringOptions = ({ classes }, { store }) => {
       id={control.id}
       checked={(filters[input.name] || {}).checked}
       key={input.name}
-      onChange={target => {
+      onChange={(target) => {
         store.dispatch({
           type: actionTypes.TOGGLE_FILTER,
           id: target.value,
@@ -84,7 +84,9 @@ const FilteringOptions = ({ classes }, { store }) => {
   return (
     <ExpansionPanel className={classes.root}>
       <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-        <Typography className={classes.heading}>Filters</Typography>
+        <Typography className={classes.heading}>
+Filters
+        </Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails className={classes.details}>
         {map_c}

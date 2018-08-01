@@ -181,7 +181,7 @@ const chart = (state = [], action) => {
       return state;
     }
     case actionTypes.TOGGLE_ALL:
-      return state.map(elem => {
+      return state.map((elem) => {
         const copy = _.clone(elem);
         copy.selected = action.value;
         return copy;
@@ -213,33 +213,41 @@ const chart = (state = [], action) => {
 };
 const listSort = (state = 'reaction', action) => (action.type === actionTypes.UPDATE_LIST_SORT ? action.sort : state);
 
-const sp_playlist_name = (state = '', action) =>
-  action.type === actionTypes.UPDATE_PLAYLIST_NAME ? action.value : state;
+const sp_playlist_name = (state = '', action) => (action.type === actionTypes.UPDATE_PLAYLIST_NAME ? action.value : state);
 /**
  *
  * @param state {string}
  * @param action {object}
  * @returns {string}
  */
-const lastUpdateDate = (state = '', action) => (action.type === actionTypes.UPDATE_LAST_UPDATE ? action.date : state);
-const startDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_START_TIME ? moment(date) : state);
+const lastUpdateDate = (state = '', action) => (action.type === actionTypes.UPDATE_LAST_UPDATE
+  ? action.date : state);
+const startDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_START_TIME
+  ? moment(date) : state);
 
-const sinceDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_SINCE_DATE ? moment(date) : state);
+const sinceDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_SINCE_DATE
+  ? moment(date) : state);
 
-const untilDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_UNTIL_DATE ? moment(date) : state);
+const untilDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_UNTIL_DATE
+  ? moment(date) : state);
 
-const since = (state = 0, action) => (action.type === actionTypes.UPDATE_SINCE ? action.value : state);
-const until = (state = 0, action) => (action.type === actionTypes.UPDATE_UNTIL ? action.value : state);
-const show_wait = (state = false, action) => (action.type === actionTypes.CHANGE_SHOW_WAIT ? action.show : state);
+const since = (state = 0, action) => (action.type === actionTypes.UPDATE_SINCE
+  ? action.value : state);
+const until = (state = 0, action) => (action.type === actionTypes.UPDATE_UNTIL
+  ? action.value : state);
+const show_wait = (state = false, action) => (action.type === actionTypes.CHANGE_SHOW_WAIT
+  ? action.show : state);
 
-const songsPerDay = (state = 3, action) => (action.type === actionTypes.UPDATE_SONGS_PER_DAY ? action.days : state);
+const songsPerDay = (state = 3, action) => (action.type === actionTypes.UPDATE_SONGS_PER_DAY
+  ? action.days : state);
 /**
  * shows days from now or from selected date
  * @param state
  * @param action
  * @returns {number}
  */
-const showLast = (state = 31, action) => (action.type === actionTypes.UPDATE_SHOW_LAST ? action.days : state);
+const showLast = (state = 31, action) => (action.type === actionTypes.UPDATE_SHOW_LAST
+  ? action.days : state);
 
 /**
  *
@@ -263,16 +271,42 @@ const control_state = (control, action) => {
 };
 const filters = (state = {}, action) => ({
   create_control: control_state(
-    state.create_control || { checked: true, id: 'create', days: showDays, type: 'counter' },
+    state.create_control || {
+      checked: true,
+      id: 'create',
+      days: showDays,
+      type: 'counter',
+    },
     action,
   ),
   update_control: control_state(
-    state.update_control || { checked: false, id: 'update', days: showDays, type: 'counter' },
+    state.update_control || {
+      checked: false,
+      id: 'update',
+      days: showDays,
+      type: 'counter',
+    },
     action,
   ),
   // todo less & more should be count or value it shows how many reaction was for post
-  less_control: control_state(state.less_control || { checked: false, id: 'less', days: 15, type: 'counter' }, action),
-  more_control: control_state(state.more_control || { checked: false, id: 'more', days: 1, type: 'counter' }, action),
+  less_control: control_state(
+    state.less_control || {
+      checked: false,
+      id: 'less',
+      days: 15,
+      type: 'counter',
+    },
+    action,
+  ),
+  more_control: control_state(
+    state.more_control || {
+      checked: false,
+      id: 'more',
+      days: 1,
+      type: 'counter',
+    },
+    action,
+  ),
   woc_control: control_state(state.woc_control || { checked: false, id: 'woc', type: 'text' }, action),
   westletter_control: control_state(
     state.westletter_control || { checked: false, id: 'westLetter', type: 'text' },
@@ -290,11 +324,11 @@ const errors = (state = [], action) => {
   }
 };
 
-const isPlaylistPrivate = (state = false, action) =>
-  action.type === actionTypes.TOGGLE_IS_PRIVATE ? action.value : state;
-const sp_playlist_info = (state = { url: null, pl_name: '' }, action) =>
-  action.type === actionTypes.UPDATE_PLAYLIST_INFO ? action.value : state;
-const hasAcCookie = (state = false, action) => (action.type === actionTypes.TOGGLE_HAS_COOKIE ? action.value : state);
+const isPlaylistPrivate = (state = false, action) => (action.type === actionTypes.TOGGLE_IS_PRIVATE
+  ? action.value : state);
+const sp_playlist_info = (state = { url: null, pl_name: '' }, action) => (action.type === actionTypes.UPDATE_PLAYLIST_INFO ? action.value : state);
+const hasAcCookie = (state = false, action) => (action.type === actionTypes.TOGGLE_HAS_COOKIE
+  ? action.value : state);
 export const reducers = {
   filters,
   user,

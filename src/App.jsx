@@ -14,10 +14,10 @@ class App extends React.Component {
   componentDidMount() {
     fetch('api/info')
       .then(resp => resp.text())
-      .then(resp => {
+      .then((resp) => {
         console.info('response from api:', resp);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error('failed to call api :(', err.message);
       });
   }
@@ -44,6 +44,6 @@ class App extends React.Component {
 }
 
 App.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape(),
 };
 export default App;

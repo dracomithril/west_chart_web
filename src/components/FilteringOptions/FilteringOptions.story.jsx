@@ -13,5 +13,9 @@ const state = {
 };
 const store = configureStore(state);
 
-addDecorator(story => <Provider store={store}>{story()}</Provider>);
+addDecorator(story => (
+  <Provider store={store}>
+    {story()}
+  </Provider>
+));
 storiesOf('FilteringOptions', module).add('Todo[VR]', () => <FilteringOptions />);

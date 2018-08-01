@@ -10,7 +10,9 @@ const PlaylistInfo = ({ url, playlistName }) => (
   <div className="spotify_sumary">
     <span>
       {'Created '}
-      <FontAwesomeIcon icon={faSpotify}>Spotify</FontAwesomeIcon>
+      <FontAwesomeIcon icon={faSpotify}>
+Spotify
+      </FontAwesomeIcon>
       {' playlist! name: '}
     </span>
     <a href={url} target="_newtab">

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ChartData from './../___data___/chartData';
-import { actionTypes } from './../reducers/actionTypes';
+import ChartData from '../___data___/chartData';
+import { actionTypes } from '../reducers/actionTypes';
 import ChartPresenter from './Chart/ChartPresenter';
 
 class Demo extends React.Component {
@@ -22,7 +22,7 @@ class Demo extends React.Component {
 }
 
 Demo.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape(),
 };
 
 export default Demo;

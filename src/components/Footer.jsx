@@ -11,7 +11,8 @@ const Footer = () => (
     <span>
       {'site created by '}
       <a href="https://github.com/dracomithril" target="_newtab">
-        dracomithril{' '}
+        dracomithril
+        {' '}
       </a>
       repo on
       <a href="https://github.com/dracomithril/WestChart_ReactApp" target="_newtab">

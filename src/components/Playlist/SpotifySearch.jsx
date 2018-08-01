@@ -22,7 +22,7 @@ class SpotifySearch extends React.Component {
     this.unsubscribe();
   }
 
-  onClearHandler = target => {
+  onClearHandler = (target) => {
     const { store } = this.context;
     store.dispatch({
       type: actionTypes.CLEAR_SELECTED,
@@ -30,7 +30,7 @@ class SpotifySearch extends React.Component {
     });
   };
 
-  onSwap = search_id => {
+  onSwap = (search_id) => {
     const { store } = this.context;
     store.dispatch({
       type: actionTypes.SWAP_FIELDS,
@@ -42,22 +42,19 @@ class SpotifySearch extends React.Component {
     const { store } = this.context;
     const { spotifyUser } = store.getState();
     const { selected, onStartClick } = this.props;
-    selected.forEach(elem => {
-      searchForMusic({ ...elem.search, id: elem.id }, spotifyUser.access_token).then(
-        res =>
-          res &&
-          store.dispatch({
+    selected.forEach((elem) => {
+      searchForMusic({ ...elem.search, id: elem.id }, spotifyUser.access_token).then(res => res
+          && store.dispatch({
             type: actionTypes.UPDATE_SINGLE_SEARCH,
             field: 'items',
             value: res.value,
             id: res.id,
-          }),
-      );
+          }));
     });
     onStartClick && onStartClick();
   };
 
-  onCratePlaylistClick = ({ playlistName, isPrivate }) => {
+  handleCratePlaylistClick = ({ playlistName, isPrivate }) => {
     const { store } = this.context;
     const { spotifyUser } = store.getState();
     const { selected } = this.props;
@@ -70,15 +67,13 @@ class SpotifySearch extends React.Component {
       playlistName,
       isPrivate,
       selectedElements,
-    ).then(info =>
-      store.dispatch({
-        type: actionTypes.UPDATE_PLAYLIST_INFO,
-        value: info,
-      }),
-    );
+    ).then(info => store.dispatch({
+      type: actionTypes.UPDATE_PLAYLIST_INFO,
+      value: info,
+    }));
   };
 
-  updateSingleSearch = target => {
+  updateSingleSearch = (target) => {
     const { store } = this.context;
     store.dispatch({
       type: actionTypes.UPDATE_SINGLE_SEARCH,
@@ -88,10 +83,19 @@ class SpotifySearch extends React.Component {
     });
   };
 
+  handleSearchClick = (search, id) => () => {
+    const { store } = this.context;
+    const { spotifyUser } = store.getState();
+    searchForMusic({ ...search, id }, spotifyUser.access_token).then(({ id: searchId, value }) => {
+      this.updateSingleSearch({ id: searchId, value, field: 'items' });
+    });
+  };
+
   render() {
     const { store } = this.context;
     const { sp_playlist_info, spotifyUser } = store.getState();
     const { selected } = this.props;
+
     const search_list_view = selected.map(({ search = {}, id }) => (
       <RowSpotifySearch
         items={search.items}
@@ -103,11 +107,7 @@ class SpotifySearch extends React.Component {
         key={id}
         onSwap={this.onSwap}
         onUpdateClick={this.updateSingleSearch}
-        onSearchClick={() => {
-          searchForMusic({ ...search, id }, spotifyUser.access_token).then(({ id: searchId, value }) => {
-            this.updateSingleSearch({ id: searchId, value, field: 'items' });
-          });
-        }}
+        onSearchClick={this.handleSearchClick(search, id)}
         onClearClick={this.onClearHandler}
       />
     ));
@@ -122,12 +122,14 @@ class SpotifySearch extends React.Component {
         {sp_playlist_info.url !== null && <PlaylistInfo {...sp_playlist_info} />}
 
         <PlaylistForm
-          onCreatePlaylistClick={this.onCratePlaylistClick}
+          onCreatePlaylistClick={this.handleCratePlaylistClick}
           onStartClick={this.onStartClickHandler}
           hasElements={selected.length > 0}
           isUserLogged={Boolean(spotifyUser.id)}
         />
-        <div className="spotify-search_list">{search_list_view.length > 0 && search_list_view}</div>
+        <div className="spotify-search_list">
+          {search_list_view.length > 0 && search_list_view}
+        </div>
       </div>
     );
   }

@@ -8,17 +8,16 @@ const PrivateRoute = ({ component: Component, path, ...rest }, { store }) => {
   return (
     <Route
       {...rest}
-      render={props =>
-        isAuthenticated ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: '/login',
-              state: { from: path },
-            }}
-          />
-        )
+      render={props => (isAuthenticated ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/login',
+            state: { from: path },
+          }}
+        />
+      ))
       }
     />
   );
@@ -28,7 +27,7 @@ PrivateRoute.propTypes = {
   path: PropTypes.string,
 };
 PrivateRoute.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape(),
 };
 PrivateRoute.defaultProps = {
   path: '/',

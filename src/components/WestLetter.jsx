@@ -19,21 +19,34 @@ export default class WestLetter extends React.Component {
   render() {
     const todayWeek = weekInfo();
     const { data } = this.props;
-    const show = data.map(elem => {
+    const show = data.map((elem) => {
       const create_date = new Date(elem.createdTime);
       const { from } = elem;
       const { weekNumber } = weekInfo();
       return (
         <div style={{ padding: 2, display: 'block', border: '1px black solid' }} key={elem.id}>
           <input type="checkbox" />
-          <span hidden>{elem.id}</span>
-          {from ? <Avatar title={from.name} src={getFbPictureUrl(from.id)} /> : <div>{elem.story}</div>}
+          <span hidden>
+            {elem.id}
+          </span>
+          {from ? <Avatar title={from.name} src={getFbPictureUrl(from.id)} /> : (
+            <div>
+              {elem.story}
+            </div>
+          )}
           <div>
-            <span>{create_date.toLocaleDateString()}</span>
+            <span>
+              {create_date.toLocaleDateString()}
+            </span>
             <br />
-            <span>week:{weekNumber}</span>
+            <span>
+              week:
+              {weekNumber}
+            </span>
             <br />
-            <span>is added</span>
+            <span>
+is added
+            </span>
           </div>
         </div>
       );
@@ -41,14 +54,24 @@ export default class WestLetter extends React.Component {
     return (
       <div className="west-letter">
         <div className="west-letter__beta">
-          <h1>This site is still in beta version</h1>
+          <h1>
+This site is still in beta version
+          </h1>
           😃 Soon we will be able to track WestLetters in each week 😃
         </div>
 
         <h4>
-          We have {todayWeek.weekNumber} week of {todayWeek.year}
+          We have
+          {' '}
+          {todayWeek.weekNumber}
+          {' '}
+week of
+          {' '}
+          {todayWeek.year}
         </h4>
-        <div style={{ display: 'inline-flex' }}>{show}</div>
+        <div style={{ display: 'inline-flex' }}>
+          {show}
+        </div>
       </div>
     );
   }

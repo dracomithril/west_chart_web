@@ -12,7 +12,9 @@ import { chartObjectProps } from './typeDefinitions';
 const copy = require('clipboard-copy');
 // let {sorting} = require('./../utils');
 const create_print_list = (elem, index) => (
-  <div key={elem.id}>{`${index + 1}. ${elem.link.title} ${elem.reactionsNum} likes`}</div>
+  <div key={elem.id}>
+    {`${index + 1}. ${elem.link.title} ${elem.reactionsNum} likes`}
+  </div>
 );
 export default class Summary extends React.Component {
   state = {
@@ -61,24 +63,30 @@ export default class Summary extends React.Component {
     return (
       <div className="summary">
         <div className="summary__header">
-          <h3 id="summary">Summary</h3>
+          <h3 id="summary">
+Summary
+          </h3>
           <Button onClick={this.onCopyToClipboard} title="copy to clipboard" style={{ padding: 'unset', minWidth: 44 }}>
             <FontAwesomeIcon icon={faClipboard} />
           </Button>
         </div>
-        <h6>[WCS Weekly Westletter]</h6>
+        <h6>
+[WCS Weekly Westletter]
+        </h6>
         <textarea
           id="textarea_add"
           className="summary__textarea"
           placeholder="Here write what you want"
           defaultValue={introText}
-          onChange={e => {
+          onChange={(e) => {
             this.setState({ introText: e.target.value });
           }}
         />
         {print_list.length === 0 && (
           <div>
-            <span style={{ color: 'red' }}>Here will be list of tracks your choosing</span>
+            <span style={{ color: 'red' }}>
+Here will be list of tracks your choosing
+            </span>
           </div>
         )}
         <div id="popover-contained" title="Print list">
@@ -91,7 +99,11 @@ export default class Summary extends React.Component {
               {sp_playlist_info.url}
             </a>
           )}
-          {!sp_playlist_info.url && <span style={{ color: 'red' }}>No link</span>}
+          {!sp_playlist_info.url && (
+          <span style={{ color: 'red' }}>
+No link
+          </span>
+          )}
         </h6>
         <textarea
           id="riddler"
@@ -111,7 +123,7 @@ export default class Summary extends React.Component {
             style={{ paddingLeft: 5, marginLeft: 5 }}
             placeholder="link to riddle"
             value={riddleUrl}
-            onChange={e => {
+            onChange={(e) => {
               this.setState({ riddleUrl: e.target.value });
             }}
           />

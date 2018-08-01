@@ -1,6 +1,6 @@
 import { actionTypes } from './actionTypes';
 
-const getFacebookUser = () => next => action => {
+const getFacebookUser = () => next => (action) => {
   switch (action.type) {
     case actionTypes.UPDATE_USER: {
       if (sessionStorage.getItem('facebook_user') !== action.value) {

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Provider } from 'react-redux';
 import ChartPresenter from './ChartPresenter';
 import configureStore from '../../configureStore';
-import response from './../../___data___/chartData';
+import response from '../../___data___/chartData';
 
 const state = {
   filters: {
@@ -37,5 +37,9 @@ storiesOf('ChartPresenter', module)
       <ChartPresenter />
     </Provider>
   ))
-  .addDecorator(story => <Provider store={store}>{story()}</Provider>)
+  .addDecorator(story => (
+    <Provider store={store}>
+      {story()}
+    </Provider>
+  ))
   .add('with data', () => <ChartPresenter />);

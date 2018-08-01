@@ -36,7 +36,7 @@ const ChartTable = ({ data }, { store }) => {
     <div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <FormControlLabel
-          control={
+          control={(
             <Checkbox
               id="selectAll"
               value="selectAll"
@@ -45,7 +45,7 @@ const ChartTable = ({ data }, { store }) => {
                 store.dispatch({ type: actionTypes.TOGGLE_ALL, value: checked });
               }}
             />
-          }
+)}
           label="select all"
         />
       </div>
@@ -65,7 +65,9 @@ const ChartTable = ({ data }, { store }) => {
     </div>
   );
 };
-
+ChartTable.defaultProps = {
+  data: [],
+};
 ChartTable.contextTypes = {
   store: PropTypes.shape(),
 };

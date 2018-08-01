@@ -25,10 +25,12 @@ const Login = ({ location }, { store }) => {
       <h4>
         <span role="img" aria-label="heart">
           ❤️❤️❤️
-        </span>️ To start working witch us you need to login to facebook and spotify.
+        </span>
+        ️ To start working witch us you need to login to facebook and spotify.
         <span role="img" aria-label="heart">
           ❤️❤️❤️
-        </span>️
+        </span>
+        ️
       </h4>
       {user.id === undefined && (
         <FacebookLogin
@@ -48,7 +50,7 @@ const Login = ({ location }, { store }) => {
               Login to facebook
             </Button>
           )}
-          callback={response => {
+          callback={(response) => {
             if (!response.error) {
               store.dispatch({
                 type: actionTypes.UPDATE_USER,
@@ -67,13 +69,18 @@ const Login = ({ location }, { store }) => {
       {spotifyUser.id === undefined && (
         <Button
           variant="raised"
-          style={{ backgroundColor: 'green', height: 48, width: '100%', color: 'white' }}
+          style={{
+            backgroundColor: 'green',
+            height: 48,
+            width: '100%',
+            color: 'white',
+          }}
           onClick={() => {
             loginToSpotifyAlpha(from)
-              .then(url => {
+              .then((url) => {
                 window.location = url;
               })
-              .catch(err => {
+              .catch((err) => {
                 console.error(err.message);
               });
           }}

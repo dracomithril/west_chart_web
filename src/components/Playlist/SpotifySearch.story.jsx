@@ -25,5 +25,9 @@ storiesOf('SpotifySearch', module)
       <SpotifySearch />
     </Provider>
   ))
-  .addDecorator(story => <Provider store={store}>{story()}</Provider>)
+  .addDecorator(story => (
+    <Provider store={store}>
+      {story()}
+    </Provider>
+  ))
   .add('More elements', () => <SpotifySearch selected={selected.list} />);

@@ -87,11 +87,14 @@ class ChartPresenter extends React.Component {
     const { value } = this.state;
     const { classes } = this.props;
 
-    const { listSort, chart, filters, until, songsPerDay, since, lastUpdateDate } = store.getState();
+    const {
+      listSort, chart, filters, until, songsPerDay, since, lastUpdateDate,
+    } = store.getState();
 
     const tabsView = tabs.map(elem => <BottomNavigationAction key={elem.label} {...elem} />);
-    const { viewChart, errorDays, westLetters } =
-      chart.length > 0 ? filterChart(chart, filters, until, songsPerDay) : defaultValue;
+    const { viewChart, errorDays, westLetters } = chart.length > 0
+      ? filterChart(chart, filters, until, songsPerDay)
+      : defaultValue;
     const selected = viewChart.filter(elem => elem.selected);
     sorting[listSort](selected);
     const show = !!lastUpdateDate && !!since && !!until;

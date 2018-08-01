@@ -21,7 +21,9 @@ export const subtractDaysFromDate = (until, days) => {
  * @param elem
  * @param filter
  */
-const countDays = (elem, { valueName, until, days, checked }) => {
+const countDays = (elem, {
+  valueName, until, days, checked,
+}) => {
   if (checked) {
     const date = elem[valueName];
     const cIn1 = new Date(date).getTime();
@@ -66,7 +68,8 @@ const filters = [
   },
 ];
 
-const text_check = text => ({ message }) => (message !== undefined ? !message.toLowerCase().includes(text) : true);
+const text_check = text => ({ message }) => (message !== undefined
+  ? !message.toLowerCase().includes(text) : true);
 
 /**
  * Check for text

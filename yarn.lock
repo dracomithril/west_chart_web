@@ -3386,17 +3386,21 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-airbnb-base@^12.1.0:
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-12.1.0.tgz#386441e54a12ccd957b0a92564a4bafebd747944"
+eslint-config-airbnb-base@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-13.0.0.tgz#2ee6279c4891128e49d6445b24aa13c2d1a21450"
   dependencies:
     eslint-restricted-globals "^0.1.1"
+    object.assign "^4.1.0"
+    object.entries "^1.0.4"
 
-eslint-config-airbnb@^16.1.0:
-  version "16.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-16.1.0.tgz#2546bfb02cc9fe92284bf1723ccf2e87bc45ca46"
+eslint-config-airbnb@^17.0.0:
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-17.0.0.tgz#1bb8c4255483320bb68c3b614f71ae6058b0b2db"
   dependencies:
-    eslint-config-airbnb-base "^12.1.0"
+    eslint-config-airbnb-base "^13.0.0"
+    object.assign "^4.1.0"
+    object.entries "^1.0.4"
 
 eslint-config-prettier@^2.9.0:
   version "2.9.0"
@@ -3438,7 +3442,7 @@ eslint-plugin-flowtype@2.39.1:
   dependencies:
     lodash "^4.15.0"
 
-eslint-plugin-flowtype@^2.46.1:
+eslint-plugin-flowtype@^2.50.0:
   version "2.50.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.50.0.tgz#953e262fa9b5d0fa76e178604892cf60dfb916da"
   dependencies:
@@ -3459,7 +3463,7 @@ eslint-plugin-import@2.8.0:
     minimatch "^3.0.3"
     read-pkg-up "^2.0.0"
 
-eslint-plugin-import@^2.9.0:
+eslint-plugin-import@^2.13.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.13.0.tgz#df24f241175e312d91662dc91ca84064caec14ed"
   dependencies:
@@ -3474,7 +3478,7 @@ eslint-plugin-import@^2.9.0:
     read-pkg-up "^2.0.0"
     resolve "^1.6.0"
 
-eslint-plugin-json@^1.2.0:
+eslint-plugin-json@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-json/-/eslint-plugin-json-1.2.1.tgz#a4d6ecb59b1c3cdc6008d293708e9d57c35c50b0"
   dependencies:
@@ -3492,7 +3496,7 @@ eslint-plugin-jsx-a11y@5.1.1:
     emoji-regex "^6.1.0"
     jsx-ast-utils "^1.4.0"
 
-eslint-plugin-jsx-a11y@^6.0.3:
+eslint-plugin-jsx-a11y@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.1.1.tgz#7bf56dbe7d47d811d14dbb3ddff644aa656ce8e1"
   dependencies:
@@ -3505,9 +3509,9 @@ eslint-plugin-jsx-a11y@^6.0.3:
     has "^1.0.3"
     jsx-ast-utils "^2.0.1"
 
-eslint-plugin-prettier@2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.6.0.tgz#33e4e228bdb06142d03c560ce04ec23f6c767dd7"
+eslint-plugin-prettier@2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.6.2.tgz#71998c60aedfa2141f7bfcbf9d1c459bf98b4fad"
   dependencies:
     fast-diff "^1.1.1"
     jest-docblock "^21.0.0"
@@ -3521,7 +3525,7 @@ eslint-plugin-react@7.4.0:
     jsx-ast-utils "^2.0.0"
     prop-types "^15.5.10"
 
-eslint-plugin-react@^7.7.0:
+eslint-plugin-react@^7.10.0:
   version "7.10.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.10.0.tgz#af5c1fef31c4704db02098f9be18202993828b50"
   dependencies:
@@ -7284,10 +7288,6 @@ prepend-http@^1.0.0, prepend-http@^1.0.1:
 preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
-
-prettier@^1.11.1:
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.14.0.tgz#847c235522035fd988100f1f43cf20a7d24f9372"
 
 pretty-bytes@^4.0.2:
   version "4.0.2"

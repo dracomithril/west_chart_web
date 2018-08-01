@@ -2,7 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const options = { weekday: 'short', month: '2-digit', day: 'numeric' };
-const UpdateInfo = ({ since, until, lastUpdateDateString, allCount, viewedCount }) => (
+const UpdateInfo = ({
+  since, until, lastUpdateDateString, allCount, viewedCount,
+}) => (
   <div className="update-info">
     <div id="time-frame" className="update-info__time-frame">
       {'since: '}
@@ -14,9 +16,17 @@ const UpdateInfo = ({ since, until, lastUpdateDateString, allCount, viewedCount 
         {until !== '' ? new Date(until).toLocaleDateString('pl-PL', options) : 'null'}
       </span>
     </div>
-    <span id="updateDate" className="update-info__span">{` Last update: ${lastUpdateDateString}`}</span>
+    <span id="updateDate" className="update-info__span">
+      {` Last update: ${lastUpdateDateString}`}
+    </span>
     <span className="update-info__span">
-      We did get {allCount} and filtered {viewedCount}
+      We did get
+      {' '}
+      {allCount}
+      {' '}
+and filtered
+      {' '}
+      {viewedCount}
     </span>
   </div>
 );

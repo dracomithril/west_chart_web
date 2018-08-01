@@ -34,7 +34,9 @@ export default class PlaylistForm extends Component {
   render() {
     const { store } = this.context;
     const { spotifyUser } = store.getState();
-    const { onCreatePlaylistClick, onStartClick, hasElements, isUserLogged } = this.props;
+    const {
+      onCreatePlaylistClick: onCreatePlaylist, onStartClick, hasElements, isUserLogged,
+    } = this.props;
     const { playlistName, isPrivate } = this.state;
     const disable_create = !(playlistName.length > 5 && hasElements && isUserLogged);
     const validatePlaylistName = (str = '') => str.length > 7;
@@ -60,14 +62,14 @@ export default class PlaylistForm extends Component {
           <Button
             variant="fab"
             id="crt_pl_button"
-            onClick={() => onCreatePlaylistClick && onCreatePlaylistClick({ playlistName, isPrivate })}
+            onClick={() => onCreatePlaylist && onCreatePlaylist({ playlistName, isPrivate })}
             disabled={!isNameValid && Boolean(spotifyUser.id)}
             title={disable_create ? 'Sorry you need to be logged to spotify to be able to add playlist' : ''}
           >
             <FontAwesomeIcon icon={faSave} />
           </Button>
           <FormControlLabel
-            control={
+            control={(
               <Checkbox
                 id="play_list_is_private"
                 value="private"
@@ -77,7 +79,7 @@ export default class PlaylistForm extends Component {
                   this.setState({ isPrivate: target.checked });
                 }}
               />
-            }
+)}
             label="private"
           />
         </div>

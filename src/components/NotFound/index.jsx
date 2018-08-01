@@ -8,22 +8,35 @@ export default () => (
         <div className="hgroup">
           <h1>
             <span>
-              <strong>4</strong>
+              <strong>
+4
+              </strong>
             </span>
             <span>
-              <strong>0</strong>
+              <strong>
+0
+              </strong>
             </span>
             <span>
-              <strong>4</strong>
+              <strong>
+4
+              </strong>
             </span>
           </h1>
           <h2>
-            Error ! <span>Page Not Found</span>
+            Error !
+            {' '}
+            <span>
+Page Not Found
+            </span>
           </h2>
         </div>
-        <p>For Some Reason The Page You Requested Could Not Be Found On Our Server</p>
+        <p>
+For Some Reason The Page You Requested Could Not Be Found On Our Server
+        </p>
         <p>
           <button
+            type="button"
             onClick={() => {
               window.history.go(-1);
               return false;

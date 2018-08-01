@@ -86,11 +86,11 @@ class Navigation extends React.Component {
     window.location = '/';
   };
 
-  handleMenu = event => {
+  handleMenu = (event) => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
-  handleClick = event => {
+  handleClick = (event) => {
     this.setState({ anchorEl2: event.currentTarget });
   };
 
@@ -168,13 +168,23 @@ class Navigation extends React.Component {
                   open={open}
                   onClose={this.handleClose('anchorEl')()}
                 >
-                  <div>{`Hi, ${user.first_name}`}</div>
+                  <div>
+                    {`Hi, ${user.first_name}`}
+                  </div>
                   <div>
                     <FontAwesomeIcon icon={faSpotify} />
-                    {spotifyUser.id || <a href="/login">login</a>}
+                    {spotifyUser.id || (
+                    <a href="/login">
+login
+                    </a>
+                    )}
                   </div>
-                  <MenuItem onClick={this.handleClose('anchorEl')()}>Profile</MenuItem>
-                  <MenuItem onClick={this.onLogoutClick}>Logout</MenuItem>
+                  <MenuItem onClick={this.handleClose('anchorEl')()}>
+Profile
+                  </MenuItem>
+                  <MenuItem onClick={this.onLogoutClick}>
+Logout
+                  </MenuItem>
                 </Menu>
               </div>
             ) : (

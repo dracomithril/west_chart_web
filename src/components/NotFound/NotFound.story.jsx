@@ -6,5 +6,9 @@ import configureStore from '../../configureStore';
 
 const store = configureStore();
 
-addDecorator(story => <Provider store={store}>{story()}</Provider>);
+addDecorator(story => (
+  <Provider store={store}>
+    {story()}
+  </Provider>
+));
 storiesOf('NotFound', module).add('Todo[VR]', () => <NotFound />);

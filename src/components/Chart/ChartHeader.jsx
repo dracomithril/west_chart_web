@@ -46,7 +46,7 @@ class ChartHeader extends React.Component {
     this.updateDates(since, until, store.dispatch);
   }
 
-  onDateChange = fieldName => date => {
+  onDateChange = fieldName => (date) => {
     this.setState({ [fieldName]: moment(date) });
     const { store } = this.context;
     store.dispatch({
@@ -116,11 +116,10 @@ class ChartHeader extends React.Component {
         <SongsPerDay
           errorDays={errorDays}
           songsPerDay={songsPerDay}
-          onDaysChange={days =>
-            store.dispatch({
-              type: 'UPDATE_SONGS_PER_DAY',
-              days,
-            })
+          onDaysChange={days => store.dispatch({
+            type: 'UPDATE_SONGS_PER_DAY',
+            days,
+          })
           }
         />
       </div>

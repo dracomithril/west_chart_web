@@ -8,5 +8,9 @@ import configureStore from '../configureStore';
 const state = {};
 const store = configureStore(state);
 
-addDecorator(story => <Provider store={store}>{story()}</Provider>);
+addDecorator(story => (
+  <Provider store={store}>
+    {story()}
+  </Provider>
+));
 storiesOf('PlaylistCombiner', module).add('Todo[VR]', () => <PlaylistCombiner />);

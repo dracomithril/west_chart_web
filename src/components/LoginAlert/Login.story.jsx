@@ -7,5 +7,9 @@ import configureStore from '../../configureStore';
 const store = configureStore();
 
 storiesOf('Login', module)
-  .addDecorator(story => <Provider store={store}>{story()}</Provider>)
+  .addDecorator(story => (
+    <Provider store={store}>
+      {story()}
+    </Provider>
+  ))
   .add('Todo[VR]', () => <Login from="/" />);

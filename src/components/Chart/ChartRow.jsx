@@ -8,8 +8,8 @@ import {
   faClock,
   faComment,
   faExternalLinkSquareAlt,
-  faTimesCircle,
   faThumbsUp,
+  faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import Checkbox from '@material-ui/core/Checkbox';
 import Avatar from '@material-ui/core/Avatar';
@@ -59,7 +59,9 @@ const ChartRow = ({
       {from != null ? (
         <React.Fragment>
           <Avatar src={from.picture_url} style={{ marginTop: 5 }} />
-          <span className="chart-row__user-info__name">{`${from.first_name} ${from.last_name}`}</span>
+          <span className="chart-row__user-info__name">
+            {`${from.first_name} ${from.last_name}`}
+          </span>
         </React.Fragment>
       ) : (
         <span id="chart-row__story" style={{ maxWidth: 150, paddingRight: 5 }}>
@@ -76,18 +78,24 @@ const ChartRow = ({
       <div className="chart-row__time-info">
         <FontAwesomeIcon icon={faClock} color="black" style={{ marginBottom: 5 }} />
         <span style={{ color: 'red' }} title={`creation time: ${fullFormatDate(createdTime)}`}>
-          <FontAwesomeIcon icon={faCaretRight} /> {shortFormatDate(createdTime)}
+          <FontAwesomeIcon icon={faCaretRight} />
+          {' '}
+          {shortFormatDate(createdTime)}
         </span>
         {showUpdateTime && (
           <span style={{ color: 'green' }} title={`update time: ${fullFormatDate(updatedTime)}`}>
-            <FontAwesomeIcon icon={faCaretUp} /> {shortFormatDate(updatedTime)}
+            <FontAwesomeIcon icon={faCaretUp} />
+            {' '}
+            {shortFormatDate(updatedTime)}
           </span>
         )}
       </div>
       <div className="chart-row__link">
         <FontAwesomeIcon icon={faExternalLinkSquareAlt} style={{ color: 'red' }} />
         {link.url === undefined ? (
-          <span>{link.title}</span>
+          <span>
+            {link.title}
+          </span>
         ) : (
           <a href={link.url} target="_newtab">
             {link.title}
@@ -97,7 +105,16 @@ const ChartRow = ({
     </div>
   );
 };
-
+ChartRow.defaultProps = {
+  from: {},
+  story: null,
+  checked: false,
+  createdTime: null,
+  updatedTime: null,
+  message: null,
+  reactionsNum: 0,
+  link: {},
+};
 ChartRow.propTypes = {
   id: PropTypes.string.isRequired,
   from: PropTypes.shape({
@@ -115,7 +132,7 @@ ChartRow.propTypes = {
     title: PropTypes.string,
     url: PropTypes.string,
   }),
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default ChartRow;

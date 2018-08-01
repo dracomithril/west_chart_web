@@ -43,12 +43,16 @@ const styles = theme => ({
   },
 });
 
-const SongsPerDay = props => {
-  const { errorDays, songsPerDay, onDaysChange, classes } = props;
+const SongsPerDay = (props) => {
+  const {
+    errorDays, songsPerDay, onDaysChange, classes,
+  } = props;
   const errorDaysMap = errorDays.map(({ org, color }) => (
     <div key={org}>
       <FontAwesomeIcon icon={color === 'blue' ? faArrowCircleDown : faArrowCircleUp} color={color} />
-      <span style={{ color }}>{new Date(org).toDateString()}</span>
+      <span style={{ color }}>
+        {new Date(org).toDateString()}
+      </span>
     </div>
   ));
   const style = errorDays.length !== 0 ? classes.error : classes.good;
@@ -57,7 +61,9 @@ const SongsPerDay = props => {
     <ExpansionPanel className={`${classes.root} ${style}`}>
       <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
         <Typography className={classes.heading}>
-          {songsPerDay} songs per day
+          {songsPerDay}
+          {' '}
+songs per day
           {errorDaysMap.length > 0 && <FontAwesomeIcon icon={faExclamationTriangle} color="red" />}
         </Typography>
       </ExpansionPanelSummary>

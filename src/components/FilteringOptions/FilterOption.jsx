@@ -5,7 +5,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const FilterOption = ({ id, name, days, checked, onChange, onValueChange, descStart, descEnd }) => (
+const FilterOption = ({
+  id, name, days, checked, onChange, onValueChange, descStart, descEnd,
+}) => (
   <div>
     <Checkbox
       color="primary"

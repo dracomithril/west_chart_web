@@ -60,7 +60,7 @@ function obtainList(since, until, groupId, accessToken) {
   // todo modify to use reject errors resolveWithFullResponse: false
   return fetch(url.format(urlObject))
     .then(res => (res.ok ? res.json() : { body: { data: [] } }))
-    .catch(err => {
+    .catch((err) => {
       console.error(`error obtaining chart list. statusCode: ${err.statusCode} body: ${err.sub_error}`);
       return Promise.reject(err);
     });
@@ -71,7 +71,7 @@ function getAttachment(elem) {
 }
 
 function filterChartAndMap({ data }) {
-  return data.map(elem => {
+  return data.map((elem) => {
     const attachment = getAttachment(elem);
     let from;
     if (elem.from) {
@@ -120,7 +120,7 @@ function filterChartAndMap({ data }) {
 function fbChart(since, until, access_token) {
   return obtainList(since, until, facebookGroup, access_token)
     .then(filterChartAndMap)
-    .then(body => {
+    .then((body) => {
       const cache = {
         chart: body,
         lastUpdateDate: new Date().toISOString(),
@@ -133,14 +133,14 @@ export const UpdateChart = (store, since, until) => {
   store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: true });
   const { user } = store.getState();
   return fbChart(since.unix(), until.unix(), user.accessToken)
-    .then(body => {
+    .then((body) => {
       console.info(`chart list witch ${body.chart.length}`);
       store.dispatch({ type: actionTypes.UPDATE_CHART, chart: body.chart });
       store.dispatch({ type: actionTypes.UPDATE_LAST_UPDATE, date: body.lastUpdateDate });
       store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
       return Promise.resolve();
     })
-    .catch(err => {
+    .catch((err) => {
       console.error('Error in fetch chart.', err.message);
       store.dispatch({ type: actionTypes.ADD_ERROR, value: err });
       store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });

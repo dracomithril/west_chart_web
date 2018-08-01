@@ -5,12 +5,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MenuItem from '@material-ui/core/MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretUp, faSearch, faSync, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCaretDown, faCaretUp, faSearch, faSync, faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 import './playlist.css';
 import TrackPreview from './TrackPreview';
 import { trackObjectProps } from '../typeDefinitions';
 
-const RowSearchButtonGroup = ({ onSwap, onSearchClick, onClearClick, onShowList, id, showList, dropDown }) => (
+const RowSearchButtonGroup = ({
+  onSwap, onSearchClick, onClearClick, onShowList, id, showList, dropDown,
+}) => (
   <div className="row-spotify-search__button-group">
     <button type="button" onClick={() => onSwap && onSwap(id)} title="swap artist with title">
       <FontAwesomeIcon icon={faSync} />
@@ -89,7 +93,9 @@ class RowSpotifySearch extends React.Component {
       : 'row-spotify-search__track-search--good';
     return (
       <div className={selectTrackClass}>
-        <span>{full_title || 'No Title'}</span>
+        <span>
+          {full_title || 'No Title'}
+        </span>
         <div>
           <div>
             <div className={trackSearchClass}>
@@ -127,7 +133,11 @@ class RowSpotifySearch extends React.Component {
                 showList={showList}
               />
             </div>
-            {showList && <ol>{tracks_list}</ol>}
+            {showList && (
+            <ol>
+              {tracks_list}
+            </ol>
+            )}
           </div>
           {condition && (
             <div className="row-spotify-search__track_view">
