@@ -8,7 +8,7 @@ exports[`<SpotifySearch/> renders without crashing 1`] = `
     className="spotify-search__header"
   >
     create
-    <FontAwesomeIcon$1
+    <FontAwesomeIcon
       border={false}
       className=""
       fixedWidth={false}
@@ -26,9 +26,9 @@ exports[`<SpotifySearch/> renders without crashing 1`] = `
           "prefix": "fab",
         }
       }
+      inverse={false}
       listItem={false}
       mask={null}
-      name=""
       pull={null}
       pulse={false}
       rotation={null}

@@ -52,7 +52,7 @@ exports[`<Login/> renders without crashing ChartPresenter 1`] = `
     }
     variant="raised"
   >
-    <FontAwesomeIcon$1
+    <FontAwesomeIcon
       border={false}
       className=""
       fixedWidth={false}
@@ -70,9 +70,9 @@ exports[`<Login/> renders without crashing ChartPresenter 1`] = `
           "prefix": "fab",
         }
       }
+      inverse={false}
       listItem={false}
       mask={null}
-      name=""
       pull={null}
       pulse={false}
       rotation={null}

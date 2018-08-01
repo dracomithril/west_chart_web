@@ -18,7 +18,7 @@ exports[`<Footer/> renders without crashing 1`] = `
       href="https://github.com/dracomithril/WestChart_ReactApp"
       target="_newtab"
     >
-      <FontAwesomeIcon$1
+      <FontAwesomeIcon
         border={false}
         className=""
         fixedWidth={false}
@@ -36,9 +36,9 @@ exports[`<Footer/> renders without crashing 1`] = `
             "prefix": "fab",
           }
         }
+        inverse={false}
         listItem={false}
         mask={null}
-        name=""
         pull={null}
         pulse={false}
         rotation={null}
@@ -50,7 +50,7 @@ exports[`<Footer/> renders without crashing 1`] = `
       <br />
     </a>
      v0.6.3
-    <FontAwesomeIcon$1
+    <FontAwesomeIcon
       border={false}
       className=""
       fixedWidth={false}
@@ -68,9 +68,9 @@ exports[`<Footer/> renders without crashing 1`] = `
           "prefix": "fas",
         }
       }
+      inverse={false}
       listItem={false}
       mask={null}
-      name=""
       pull={null}
       pulse={false}
       rotation={null}
@@ -87,7 +87,7 @@ exports[`<Footer/> renders without crashing 1`] = `
     <a
       href="mailto:dracomithril@gmail.com?subject=[WCSChartAdmin]"
     >
-      <FontAwesomeIcon$1
+      <FontAwesomeIcon
         border={false}
         className=""
         fixedWidth={false}
@@ -105,9 +105,9 @@ exports[`<Footer/> renders without crashing 1`] = `
             "prefix": "fas",
           }
         }
+        inverse={false}
         listItem={false}
         mask={null}
-        name=""
         pull={null}
         pulse={false}
         rotation={null}
@@ -123,7 +123,7 @@ exports[`<Footer/> renders without crashing 1`] = `
   <a
     href="/policy"
   >
-    <FontAwesomeIcon$1
+    <FontAwesomeIcon
       border={false}
       className=""
       fixedWidth={false}
@@ -141,9 +141,9 @@ exports[`<Footer/> renders without crashing 1`] = `
           "prefix": "fab",
         }
       }
+      inverse={false}
       listItem={false}
       mask={null}
-      name=""
       pull={null}
       pulse={false}
       rotation={null}

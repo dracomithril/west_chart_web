@@ -10,6 +10,5 @@ exports[`<ChartHeader/> renders without crashing ChartPresenter 1`] = `
     }
   }
   errorDays={Array []}
-  viewChart={Array []}
 />
 `;

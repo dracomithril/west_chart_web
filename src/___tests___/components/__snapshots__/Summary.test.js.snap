@@ -22,7 +22,7 @@ exports[`<Summary/> renders without crashing 1`] = `
       }
       title="copy to clipboard"
     >
-      <FontAwesomeIcon$1
+      <FontAwesomeIcon
         border={false}
         className=""
         fixedWidth={false}
@@ -40,9 +40,9 @@ exports[`<Summary/> renders without crashing 1`] = `
             "prefix": "fas",
           }
         }
+        inverse={false}
         listItem={false}
         mask={null}
-        name=""
         pull={null}
         pulse={false}
         rotation={null}

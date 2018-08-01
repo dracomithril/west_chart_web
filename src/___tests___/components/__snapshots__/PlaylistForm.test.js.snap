@@ -37,7 +37,7 @@ exports[`<PlaylistForm/> createPlaylistAndAddTracks 1`] = `
       onClick={[Function]}
       variant="fab"
     >
-      <FontAwesomeIcon$1
+      <FontAwesomeIcon
         border={false}
         className=""
         fixedWidth={false}
@@ -55,9 +55,9 @@ exports[`<PlaylistForm/> createPlaylistAndAddTracks 1`] = `
             "prefix": "fas",
           }
         }
+        inverse={false}
         listItem={false}
         mask={null}
-        name=""
         pull={null}
         pulse={false}
         rotation={null}
@@ -74,7 +74,7 @@ exports[`<PlaylistForm/> createPlaylistAndAddTracks 1`] = `
       title="Sorry you need to be logged to spotify to be able to add playlist"
       variant="fab"
     >
-      <FontAwesomeIcon$1
+      <FontAwesomeIcon
         border={false}
         className=""
         fixedWidth={false}
@@ -92,9 +92,9 @@ exports[`<PlaylistForm/> createPlaylistAndAddTracks 1`] = `
             "prefix": "fas",
           }
         }
+        inverse={false}
         listItem={false}
         mask={null}
-        name=""
         pull={null}
         pulse={false}
         rotation={null}
@@ -157,7 +157,7 @@ exports[`<PlaylistForm/> renders without crashing 1`] = `
       onClick={[Function]}
       variant="fab"
     >
-      <FontAwesomeIcon$1
+      <FontAwesomeIcon
         border={false}
         className=""
         fixedWidth={false}
@@ -175,9 +175,9 @@ exports[`<PlaylistForm/> renders without crashing 1`] = `
             "prefix": "fas",
           }
         }
+        inverse={false}
         listItem={false}
         mask={null}
-        name=""
         pull={null}
         pulse={false}
         rotation={null}
@@ -194,7 +194,7 @@ exports[`<PlaylistForm/> renders without crashing 1`] = `
       title="Sorry you need to be logged to spotify to be able to add playlist"
       variant="fab"
     >
-      <FontAwesomeIcon$1
+      <FontAwesomeIcon
         border={false}
         className=""
         fixedWidth={false}
@@ -212,9 +212,9 @@ exports[`<PlaylistForm/> renders without crashing 1`] = `
             "prefix": "fas",
           }
         }
+        inverse={false}
         listItem={false}
         mask={null}
-        name=""
         pull={null}
         pulse={false}
         rotation={null}
@@ -278,7 +278,7 @@ exports[`<PlaylistForm/> start_click 1`] = `
       onClick={[Function]}
       variant="fab"
     >
-      <FontAwesomeIcon$1
+      <FontAwesomeIcon
         border={false}
         className=""
         fixedWidth={false}
@@ -296,9 +296,9 @@ exports[`<PlaylistForm/> start_click 1`] = `
             "prefix": "fas",
           }
         }
+        inverse={false}
         listItem={false}
         mask={null}
-        name=""
         pull={null}
         pulse={false}
         rotation={null}
@@ -315,7 +315,7 @@ exports[`<PlaylistForm/> start_click 1`] = `
       title="Sorry you need to be logged to spotify to be able to add playlist"
       variant="fab"
     >
-      <FontAwesomeIcon$1
+      <FontAwesomeIcon
         border={false}
         className=""
         fixedWidth={false}
@@ -333,9 +333,9 @@ exports[`<PlaylistForm/> start_click 1`] = `
             "prefix": "fas",
           }
         }
+        inverse={false}
         listItem={false}
         mask={null}
-        name=""
         pull={null}
         pulse={false}
         rotation={null}

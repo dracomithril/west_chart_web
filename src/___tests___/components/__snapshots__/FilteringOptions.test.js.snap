@@ -5,6 +5,7 @@ exports[`<FilteringOptions/> renders without crashing ChartPresenter 1`] = `
   classes={
     Object {
       "button": "FilteringOptions-button-1",
+      "details": "FilteringOptions-details-4",
       "heading": "FilteringOptions-heading-2",
       "root": "FilteringOptions-root-3",
     }
