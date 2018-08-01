@@ -7,8 +7,8 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faSave, faLightbulb } from '@fortawesome/fontawesome-free-solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSave, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { weekInfo } from '../../utils/utils';
 import './playlist.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCaretRight,
   faCaretUp,
@@ -9,7 +9,8 @@ import {
   faComment,
   faExternalLinkSquareAlt,
   faTimesCircle,
-} from '@fortawesome/fontawesome-free-solid';
+  faThumbsUp,
+} from '@fortawesome/free-solid-svg-icons';
 import Checkbox from '@material-ui/core/Checkbox';
 import Avatar from '@material-ui/core/Avatar';
 
@@ -66,7 +67,7 @@ const ChartRow = ({
         </span>
       )}
       <div className="chart-row__post-info">
-        <FontAwesomeIcon icon="thumbs-up" color="blue" />
+        <FontAwesomeIcon icon={faThumbsUp} color="blue" />
         {reactionsNum}
         <div title={message}>
           <FontAwesomeIcon {...messageProps} />
@@ -106,14 +107,14 @@ ChartRow.propTypes = {
   }),
   story: PropTypes.string,
   checked: PropTypes.bool,
-  createdTime: PropTypes.string.isRequired,
+  createdTime: PropTypes.string,
   updatedTime: PropTypes.string,
   message: PropTypes.string,
   reactionsNum: PropTypes.number,
   link: PropTypes.shape({
     title: PropTypes.string,
     url: PropTypes.string,
-  }).isRequired,
+  }),
   onChange: PropTypes.func,
 };
 

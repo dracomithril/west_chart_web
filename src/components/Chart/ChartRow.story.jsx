@@ -7,7 +7,7 @@ import { user1, user2 } from '../../___data___/chartData';
 let checkedState = true;
 
 storiesOf('ChartRow', module)
-  .add('no props', () => <ChartRow />)
+  .add('no props', () => <ChartRow id="dgajsgd" />)
   .add('props one date', () => (
     <ChartRow
       id="abcd"

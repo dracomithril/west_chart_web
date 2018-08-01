@@ -3,11 +3,46 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MenuItem } from '@material-ui/core/Menu';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretUp, faSearch, faSync, faTimes } from '@fortawesome/fontawesome-free-solid';
+import MenuItem from '@material-ui/core/MenuItem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown, faCaretUp, faSearch, faSync, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './playlist.css';
 import TrackPreview from './TrackPreview';
+import { trackObjectProps } from '../typeDefinitions';
+
+const RowSearchButtonGroup = ({ onSwap, onSearchClick, onClearClick, onShowList, id, showList, dropDown }) => (
+  <div className="row-spotify-search__button-group">
+    <button type="button" onClick={() => onSwap && onSwap(id)} title="swap artist with title">
+      <FontAwesomeIcon icon={faSync} />
+    </button>
+    <button
+      type="button"
+      id={`button-${id}`}
+      onClick={() => onSearchClick && onSearchClick()}
+      title="search for tracks"
+    >
+      <FontAwesomeIcon icon={faSearch} />
+    </button>
+    <button type="button" title="clear selected" onClick={() => onClearClick && onClearClick({ id })}>
+      <FontAwesomeIcon icon={faTimes} />
+    </button>
+    {dropDown && (
+      <button type="button" onClick={onShowList} title="show/hide found tracks">
+        <FontAwesomeIcon icon={showList ? faCaretUp : faCaretDown} />
+      </button>
+    )}
+  </div>
+);
+
+RowSearchButtonGroup.propTypes = {
+  onSwap: PropTypes.func,
+  id: PropTypes.string,
+  onSearchClick: PropTypes.func,
+  onClearClick: PropTypes.func,
+  onShowList: PropTypes.func,
+  dropDown: PropTypes.bool,
+  showList: PropTypes.bool,
+};
 
 class RowSpotifySearch extends React.Component {
   constructor(props) {
@@ -24,7 +59,7 @@ class RowSpotifySearch extends React.Component {
       title,
       full_title,
       selected: selected_track,
-      items = [],
+      items,
       onSwap,
       onUpdateClick,
       onSearchClick,
@@ -41,13 +76,7 @@ class RowSpotifySearch extends React.Component {
         }}
         style={{ backgroundColor: 'snow', height: 'unset' }}
       >
-        <TrackPreview
-          artists={track.artists}
-          external_urls={track.external_urls}
-          preview_url={track.preview_url}
-          trackName={track.name}
-          noLink
-        />
+        <TrackPreview {...track} noLink />
       </MenuItem>
     ));
 
@@ -86,44 +115,23 @@ class RowSpotifySearch extends React.Component {
                   onChange={({ target }) => onUpdateClick && onUpdateClick({ id, value: target.value, field: 'title' })}
                 />
               </label>
-              <div className="row-spotify-search__button-group">
-                <button type="button" onClick={() => onSwap && onSwap(id)} title="swap artist with title">
-                  <FontAwesomeIcon icon={faSync} />
-                </button>
-                <button
-                  type="button"
-                  id={`button-${id}`}
-                  onClick={() => onSearchClick && onSearchClick()}
-                  title="search for tracks"
-                >
-                  <FontAwesomeIcon icon={faSearch} />
-                </button>
-                <button type="button" title="clear selected" onClick={() => onClearClick && onClearClick({ id })}>
-                  <FontAwesomeIcon icon={faTimes} />
-                </button>
-                {tracks_list.length !== 0 && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      this.setState({ showList: !showList });
-                    }}
-                    title="show/hide found tracks"
-                  >
-                    {tracks_list.length !== 0 && <FontAwesomeIcon icon={showList ? faCaretUp : faCaretDown} />}
-                  </button>
-                )}
-              </div>
+              <RowSearchButtonGroup
+                onSwap={onSwap}
+                id={id}
+                onSearchClick={onSearchClick}
+                onClearClick={onClearClick}
+                onShowList={() => {
+                  this.setState({ showList: !showList });
+                }}
+                dropDown={tracks_list.length !== 0}
+                showList={showList}
+              />
             </div>
             {showList && <ol>{tracks_list}</ol>}
           </div>
           {condition && (
             <div className="row-spotify-search__track_view">
-              <TrackPreview
-                artists={selected_track.artists}
-                external_urls={selected_track.external_urls}
-                preview_url={selected_track.preview_url}
-                trackName={selected_track.name}
-              />
+              <TrackPreview {...selected_track} />
             </div>
           )}
         </div>
@@ -136,25 +144,17 @@ RowSpotifySearch.contextTypes = {
   store: PropTypes.shape(),
 };
 
-const trackProps = PropTypes.shape({
-  id: PropTypes.string,
-  artist: PropTypes.string,
-  preview_url: PropTypes.string,
-  external_urls: PropTypes.object,
-  name: PropTypes.string,
-});
-
 RowSpotifySearch.propTypes = {
-  onSwap: PropTypes.func,
-  id: PropTypes.string,
-  items: PropTypes.arrayOf(trackProps),
   artist: PropTypes.string,
-  title: PropTypes.string,
+  id: PropTypes.string,
+  items: PropTypes.arrayOf(trackObjectProps),
   full_title: PropTypes.string,
-  selected: trackProps,
-  onUpdateClick: PropTypes.func,
-  onSearchClick: PropTypes.func,
+  selected: trackObjectProps,
+  title: PropTypes.string,
   onClearClick: PropTypes.func,
+  onSearchClick: PropTypes.func,
+  onSwap: PropTypes.func,
+  onUpdateClick: PropTypes.func,
 };
 RowSpotifySearch.defaultProps = {
   items: [],

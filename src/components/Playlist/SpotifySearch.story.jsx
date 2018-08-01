@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Provider } from 'react-redux';
 import SpotifySearch from './SpotifySearch';
 import configureStore from '../../configureStore';
-import selected from './../../___tests___/___data___/serach-list.json';
+import selected from '../../___tests___/___data___/serach-list.json';
 
 const state = {
   sp_playlist_info: {
@@ -19,9 +19,7 @@ const state = {
 const emptyStore = configureStore();
 const store = configureStore(state);
 
-// addDecorator(story => <Provider store={store}>{story()}</Provider>);
 storiesOf('SpotifySearch', module)
-  // .addDecorator(story => <Provider store={emptyStore}>{story()}</Provider>)
   .add('empty store', () => (
     <Provider store={emptyStore}>
       <SpotifySearch />

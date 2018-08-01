@@ -5,8 +5,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Avatar from '@material-ui/core/Avatar';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faSyncAlt, faMinus } from '@fortawesome/fontawesome-free-solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSyncAlt, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 // todo add modal to block usage of tool when playlist crating
 class UserPlaylist extends React.Component {

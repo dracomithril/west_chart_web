@@ -1,6 +1,6 @@
 import React from 'react';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faStepBackward } from '@fortawesome/fontawesome-free-solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStepBackward } from '@fortawesome/free-solid-svg-icons';
 import './components.css';
 
 const webAddress = window.location.hostname;
@@ -10,7 +10,7 @@ const onClick = () => {
 };
 export default () => (
   <div className="policy">
-    <button onClick={onClick}>
+    <button type="button" onClick={onClick}>
       <FontAwesomeIcon icon={faStepBackward} /> Go back
     </button>
     <h1> PRIVACY POLICY</h1>
@@ -127,7 +127,7 @@ export default () => (
     </p>
 
     <p>This document was last updated on June 21, 2017</p>
-    <button onClick={onClick}>
+    <button type="button" onClick={onClick}>
       <FontAwesomeIcon icon={faStepBackward} /> Go back
     </button>
   </div>

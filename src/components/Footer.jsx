@@ -2,9 +2,9 @@
  * Created by Gryzli on 12.02.2017.
  */
 import React from 'react';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faFacebookSquare, faGithub } from '@fortawesome/fontawesome-free-brands';
-import { faEnvelope, faCopyright } from '@fortawesome/fontawesome-free-solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookSquare, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faCopyright } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => (
   <footer className="footer">

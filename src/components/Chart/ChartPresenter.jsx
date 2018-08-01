@@ -3,9 +3,9 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faFacebook, faSpotify } from '@fortawesome/fontawesome-free-brands';
-import { faList, faTable } from '@fortawesome/fontawesome-free-solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { faList, faTable } from '@fortawesome/free-solid-svg-icons';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
@@ -17,6 +17,7 @@ import ChartHeader from './ChartHeader';
 import SpotifySearch from '../Playlist/SpotifySearch';
 import WestLetter from '../WestLetter';
 import { filterChart, sorting } from '../../utils/utils';
+import UpdateInfo from './UpdateInfo';
 
 const styles = theme => ({
   root: {
@@ -71,6 +72,7 @@ const defaultValue = {
   errorDays: [],
   westLetters: [],
 };
+
 class ChartPresenter extends React.Component {
   state = {
     value: tabOptions.posts,
@@ -94,6 +96,8 @@ class ChartPresenter extends React.Component {
     sorting[listSort](selected);
     const show = !!lastUpdateDate && !!since && !!until;
     const lastUpdateDateString = lastUpdateDate ? new Date(lastUpdateDate).toLocaleString('pl-PL', options) : 'No data';
+    const allCount = chart.length;
+    const viewedCount = viewChart.length;
     return (
       <div className={classes.root}>
         <div style={{ borderBottom: '1px solid' }}>
@@ -106,22 +110,13 @@ class ChartPresenter extends React.Component {
             <div className="chart-presenter__tab-content">
               <ChartHeader errorDays={errorDays} viewChart={viewChart} />
               {show && (
-                <div className="update-info">
-                  <div id="time-frame" className="update-info__time-frame">
-                    {'since: '}
-                    <span style={{ color: 'blue' }}>
-                      {since !== '' ? new Date(since).toLocaleDateString('pl-PL', options) : 'null'}
-                    </span>
-                    {' to '}
-                    <span style={{ color: 'red' }}>
-                      {until !== '' ? new Date(until).toLocaleDateString('pl-PL', options) : 'null'}
-                    </span>
-                  </div>
-                  <span id="updateDate" className="update-info__span">{` Last update: ${lastUpdateDateString}`}</span>
-                  <span className="update-info__span">
-                    We did get {chart.length} and filtered {viewChart.length}
-                  </span>
-                </div>
+                <UpdateInfo
+                  since={since}
+                  until={until}
+                  lastUpdateDateString={lastUpdateDateString}
+                  allCount={allCount}
+                  viewedCount={viewedCount}
+                />
               )}
               <ChartTable data={viewChart} />
             </div>

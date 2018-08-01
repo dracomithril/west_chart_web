@@ -3,14 +3,14 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faSpotify } from '@fortawesome/fontawesome-free-brands';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 import PlaylistForm from './PlaylistForm';
 import RowSpotifySearch from './RowSpotifySearch';
-import PlaylistInfo from './../PlaylistInfo';
+import PlaylistInfo from '../PlaylistInfo';
 import { actionTypes } from '../../reducers/actionTypes';
 import { createPlaylistAndAddTracks, searchForMusic } from '../../utils/spotify_utils';
-import { chartObjectProps } from './../typeDefinitions';
+import { chartObjectProps } from '../typeDefinitions';
 
 class SpotifySearch extends React.Component {
   componentDidMount() {
@@ -92,7 +92,6 @@ class SpotifySearch extends React.Component {
     const { store } = this.context;
     const { sp_playlist_info, spotifyUser } = store.getState();
     const { selected } = this.props;
-
     const search_list_view = selected.map(({ search = {}, id }) => (
       <RowSpotifySearch
         items={search.items}
@@ -125,7 +124,7 @@ class SpotifySearch extends React.Component {
         <PlaylistForm
           onCreatePlaylistClick={this.onCratePlaylistClick}
           onStartClick={this.onStartClickHandler}
-          hasElements={(selected || []).length > 0}
+          hasElements={selected.length > 0}
           isUserLogged={Boolean(spotifyUser.id)}
         />
         <div className="spotify-search_list">{search_list_view.length > 0 && search_list_view}</div>
@@ -135,7 +134,7 @@ class SpotifySearch extends React.Component {
 }
 
 SpotifySearch.contextTypes = {
-  store: PropTypes.object,
+  store: PropTypes.shape(),
 };
 SpotifySearch.propTypes = {
   selected: PropTypes.arrayOf(chartObjectProps),

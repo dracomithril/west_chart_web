@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import Button from '@material-ui/core/Button';
-import { faFacebookF, faSpotify } from '@fortawesome/fontawesome-free-brands/index';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faFacebookF, faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
 import './LoginAlert.css';
 import { getFbPictureUrl } from '../../utils/utils';
@@ -57,6 +57,7 @@ const Login = ({ location }, { store }) => {
                   picture_url: getFbPictureUrl(response.id),
                 },
               });
+              window.location = from;
             } else {
               console.error('login error.', response.error);
             }

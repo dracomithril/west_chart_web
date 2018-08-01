@@ -15,21 +15,19 @@ storiesOf('RowSpotifySearch', module)
       onUpdateClick={action('Update click')}
       onSwap={action('Swap action')}
       onSearchClick={action('searchClick')}
-      search_id={2}
     />
   ))
   .add('With props', () => (
     <RowSpotifySearch
-      id="crazy_id"
       artist="Bono"
-      title="Everywhere"
-      full_title="Bono - Everywhere"
-      onUpdateClick={action('Update click')}
-      onSwap={action('Swap action')}
-      onSearchClick={action('searchClick')}
-      onClearClick={action('clearClick')}
-      search_id={1}
-      selected={items[1]}
+      id="crazy_id"
       items={items}
+      full_title="Bono - Everywhere"
+      selected={items[1]}
+      title="Everywhere"
+      onClearClick={action('clearClick')}
+      onSearchClick={action('searchClick')}
+      onSwap={action('Swap action')}
+      onUpdateClick={action('Update click')}
     />
   ));

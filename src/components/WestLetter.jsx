@@ -56,6 +56,9 @@ export default class WestLetter extends React.Component {
 WestLetter.propTypes = {
   data: PropTypes.arrayOf(chartObjectProps),
 };
+WestLetter.defaultProps = {
+  data: [],
+};
 WestLetter.contextTypes = {
   store: PropTypes.shape(),
 };

@@ -26,6 +26,11 @@ const styles = theme => ({
   root: {
     width: '100%',
   },
+  details: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'self-start',
+  },
 });
 
 const FilteringOptions = ({ classes }, { store }) => {
@@ -81,11 +86,9 @@ const FilteringOptions = ({ classes }, { store }) => {
       <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
         <Typography className={classes.heading}>Filters</Typography>
       </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
-        <div>
-          {map_c}
-          {map_t}
-        </div>
+      <ExpansionPanelDetails className={classes.details}>
+        {map_c}
+        {map_t}
       </ExpansionPanelDetails>
     </ExpansionPanel>
   );

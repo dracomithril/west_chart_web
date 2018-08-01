@@ -18,7 +18,7 @@
         "full_title": "The Chainsmokers - Sick Boy",
         "items": [],
         "selected": {
-          "id": 1,
+          "id": "1",
           "preview_url": "",
           "artists": [
             {
@@ -38,7 +38,7 @@
         "full_title": "Bruno Mars - Finesse (Remix) [Feat. Cardi B] [Official Video]",
         "items": [
           {
-            "id": 1,
+            "id": "1",
             "artists": [
               {
                 "name": "Albert"
@@ -52,7 +52,7 @@
             "name": "Zocha pokaż coś"
           },
           {
-            "id": 2,
+            "id": "2",
             "artists": [
               {
                 "name": "Albert"
@@ -61,7 +61,7 @@
                 "name": "Ryszard"
               }
             ],
-            "external_urls": "",
+            "external_urls": null,
             "preview_url": null,
             "name": "Zocha pokaż coś innego"
           }
@@ -77,7 +77,7 @@
         "full_title": "Marshmello & Anne-Marie - FRIENDS (Lyric Video) *OFFICIAL FRIENDZONE ANTHEM*",
         "items": [
           {
-            "id": 1,
+            "id": "1",
             "artists": [
               {
                 "name": "Albert"
@@ -91,7 +91,7 @@
             "name": "Zocha pokaż coś"
           },
           {
-            "id": 2,
+            "id": "2",
             "artists": [
               {
                 "name": "Albert"
@@ -106,7 +106,7 @@
           }
         ],
         "selected": {
-          "id": 1,
+          "id": "1",
           "preview_url": "",
           "artists": [
             {
@@ -125,7 +125,7 @@
         "title": "The Middle",
         "full_title": "Zedd, Maren Morris, Grey - The Middle (Lyric Video) - YouTube",
         "items": [{
-          "id": 2,
+          "id": "2",
           "artists": [
             {
               "name": "Albert"
@@ -134,12 +134,12 @@
               "name": "Ryszard"
             }
           ],
-          "external_urls": "",
+          "external_urls": null,
           "preview_url": null,
           "name": "Zocha pokaż coś innego"
         }],
         "selected": {
-          "id": 2,
+          "id": "2",
           "artists": [
             {
               "name": "Albert"
@@ -148,7 +148,7 @@
               "name": "Ryszard"
             }
           ],
-          "external_urls": "",
+          "external_urls": null,
           "preview_url": null,
           "name": "Zocha pokaż coś innego"
         }

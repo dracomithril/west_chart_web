@@ -4,6 +4,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import {
   addTrucksToPlaylistNoRepeats,
   createPlaylistAndAddTracks,
@@ -27,7 +29,7 @@ export default class PlaylistCombiner extends React.Component {
     userField: '',
     users: {},
     createFrom: cf.existing,
-    new_playlist: '',
+    newPlaylist: '',
     sp_playlist_info: {
       url: null,
     },
@@ -81,7 +83,7 @@ export default class PlaylistCombiner extends React.Component {
     const { store } = this.context;
     const createFrom_selected = document.getElementById('select_user_playlist').value;
     const { spotifyUser } = store.getState();
-    const { selected, new_playlist, createFrom } = this.state;
+    const { selected, newPlaylist, createFrom } = this.state;
     const array = _.flatMap(selected, n => n);
 
     const actions = array.map(el => getTracks(spotifyUser.access_token, ...el));
@@ -92,7 +94,7 @@ export default class PlaylistCombiner extends React.Component {
         const { id, access_token } = spotifyUser;
         return createFrom === cf.existing
           ? addTrucksToPlaylistNoRepeats(id, createFrom_selected, uniq, access_token)
-          : createPlaylistAndAddTracks(access_token, id, new_playlist, false, uniq);
+          : createPlaylistAndAddTracks(access_token, id, newPlaylist, false, uniq);
       })
       .then(d => {
         this.setState({ sp_playlist_info: d });
@@ -124,7 +126,7 @@ export default class PlaylistCombiner extends React.Component {
 
   render() {
     const { store } = this.context;
-    const { userField, users, sp_playlist_info, createFrom, new_playlist } = this.state;
+    const { userField, users, sp_playlist_info, createFrom, newPlaylist } = this.state;
     const { spotifyUser } = store.getState();
     const users_playlists = Object.keys(users).map(user => (
       <UserPlaylist
@@ -177,7 +179,9 @@ export default class PlaylistCombiner extends React.Component {
                 }}
               />
             </label>
-            <Button type="submit" onClick={this.searchForUser_click} className="far fa-search btn2" />
+            <Button type="submit" onClick={this.searchForUser_click} className="btn2">
+              <FontAwesomeIcon icon={faSearch} />
+            </Button>
             <div className="playlists_view_conteiner">{users_playlists}</div>
           </div>
           <div id="destination_panel">
@@ -201,12 +205,12 @@ export default class PlaylistCombiner extends React.Component {
                   id={`${cf.new_list}_txt`}
                   disabled={!newList_checked}
                   placeholder="new playlist"
-                  value={new_playlist}
-                  onChange={event => this.setState({ new_playlist: event.target.value })}
+                  value={newPlaylist}
+                  onChange={event => this.setState({ newPlaylist: event.target.value })}
                 />
               </label>
             </div>
-            <Button onClick={this.combinePlaylists} bsStyle="danger">
+            <Button onClick={this.combinePlaylists} color="secondary" variant="raised">
               Combine
             </Button>
           </div>

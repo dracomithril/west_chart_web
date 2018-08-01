@@ -16,10 +16,27 @@ export const chartObjectProps = PropTypes.shape({
   search: PropTypes.object,
 });
 
+export const trackObjectProps = PropTypes.shape({
+  id: PropTypes.string,
+  artists: PropTypes.arrayOf(
+    PropTypes.shape({
+      external_urls: PropTypes.shape({ spotify: PropTypes.string }),
+      href: PropTypes.string,
+      id: PropTypes.string,
+      name: PropTypes.string,
+      type: PropTypes.string,
+      uri: PropTypes.string,
+    }),
+  ),
+  preview_url: PropTypes.string,
+  external_urls: PropTypes.object,
+  name: PropTypes.string,
+});
+
 export const errorDaysObjectProps = PropTypes.shape({
   count: PropTypes.number,
   color: PropTypes.string,
   org: PropTypes.string,
 });
 
-export default { chartObjectProps, errorDaysObjectProps };
+export default { chartObjectProps, errorDaysObjectProps, trackObjectProps };

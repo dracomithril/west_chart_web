@@ -14,11 +14,7 @@ import './chart.css';
 import { actionTypes } from '../../reducers/actionTypes';
 import { weekInfo } from '../../utils/utils';
 import { UpdateChart } from '../../utils/chart';
-import { chartObjectProps, errorDaysObjectProps } from '../typeDefinitions';
-
-function selectedItem(id) {
-  return { type: actionTypes.TOGGLE_SELECTED, id, checked: true };
-}
+import { errorDaysObjectProps } from '../typeDefinitions';
 
 const styles = theme => ({
   button: {
@@ -70,29 +66,6 @@ class ChartHeader extends React.Component {
     });
   };
 
-  quickSummary = () => {
-    const { store } = this.context;
-    const { since, until } = this.state;
-    const { viewChart } = this.props;
-    UpdateChart(store, since, until)
-      .then(() => {
-        store.dispatch({ type: actionTypes.TOGGLE_FILTER, id: 'create', checked: true });
-        store.dispatch({ type: actionTypes.UPDATE_DAYS, id: 'create', value: 5 });
-        viewChart.forEach(({ id }) => {
-          store.dispatch(selectedItem(id));
-        });
-        return Promise.resolve();
-      })
-      .then(() => {
-        const startSpotifyButton = document.getElementById('start_sp_button');
-        startSpotifyButton.click();
-        const generatePlaylistName = document.getElementById('genName_sp_button');
-        generatePlaylistName.click();
-        const tab = document.getElementById('chart_tabs-tab-1');
-        tab.click();
-      });
-  };
-
   render() {
     const { store } = this.context;
     const { songsPerDay } = store.getState();
@@ -128,28 +101,17 @@ class ChartHeader extends React.Component {
             }}
           />
         </div>
-        <div className={classes.container}>
-          <Button
-            id="updateChartB"
-            variant="raised"
-            className={classes.button}
-            onClick={() => {
-              UpdateChart(store, since, until);
-            }}
-            color="primary"
-          >
-            Update
-          </Button>
-          <Button
-            id="quickSummary"
-            variant="raised"
-            onClick={this.quickSummary}
-            className={classes.button}
-            color="secondary"
-          >
-            Quick summary
-          </Button>
-        </div>
+        <Button
+          id="updateChartB"
+          variant="raised"
+          className={classes.button}
+          onClick={() => {
+            UpdateChart(store, since, until);
+          }}
+          color="primary"
+        >
+          Update
+        </Button>
         <FilteringOptions siFnce={since} until={until} />
         <SongsPerDay
           errorDays={errorDays}
@@ -173,12 +135,10 @@ ChartHeader.contextTypes = {
 ChartHeader.propTypes = {
   classes: PropTypes.shape({ button: PropTypes.string }).isRequired,
   errorDays: PropTypes.arrayOf(errorDaysObjectProps),
-  viewChart: PropTypes.arrayOf(chartObjectProps),
 };
 
 ChartHeader.defaultProps = {
   errorDays: [],
-  viewChart: [],
 };
 
 export default withStyles(styles)(ChartHeader);
