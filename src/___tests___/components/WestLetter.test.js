@@ -10,7 +10,7 @@ import configureMockStore from 'redux-mock-store';
 import NewsLetter from "../../components/WestLetter";
 
 const initial_state = require('../___data___/initial_state.json');
-const westletters_state = require('../___data___/WestLetter.json');
+const westLettersState = require('../___data___/WestLetter.json');
 
 Enzyme.configure({ adapter: new Adapter() });
 const mockStore = configureMockStore([]);
@@ -18,7 +18,7 @@ describe('<WestLetter/>', () => {
   it('renders without crashing ChartPresenter', () => {
     const store = mockStore(initial_state);
     const wrapper = shallow(
-      <NewsLetter data={[]} />, {
+      <NewsLetter data={[]} week={{weekNumber:31, year:2018}} />, {
         context: { store },
         childContextTypes: { store: PropTypes.object },
       },
@@ -29,9 +29,9 @@ describe('<WestLetter/>', () => {
   it('renders users', () => {
     const store = mockStore(initial_state);
     const wrapper = shallow(
-      <NewsLetter data={westletters_state} />, {
+      <NewsLetter data={westLettersState} week={{weekNumber:31, year:2018}} />, {
         context: { store },
-        childContextTypes: { store: PropTypes.object },
+        childContextTypes: { store: PropTypes.shape() },
       },
     );
     expect(shallowToJson(wrapper)).toMatchSnapshot();

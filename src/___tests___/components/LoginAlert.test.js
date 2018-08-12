@@ -16,7 +16,7 @@ describe('<Login/>', () => {
   it('renders without crashing ChartPresenter', () => {
     const store = mockStore(initial_state);
     const wrapper = shallow(
-      <LoginAlert location={{state:'some_path'}} />, {
+      <LoginAlert location={{state:{frm:'some_path'}}} />, {
         context: { store },
         childContextTypes: { store: PropTypes.object }
       }

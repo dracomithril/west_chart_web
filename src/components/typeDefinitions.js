@@ -6,7 +6,7 @@ export const chartObjectProps = PropTypes.shape({
   full_picture: PropTypes.string,
   id: PropTypes.string,
   likes_num: PropTypes.number,
-  link: PropTypes.object,
+  link: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   message: PropTypes.string,
   reactionsNum: PropTypes.number,
   selected: PropTypes.bool,

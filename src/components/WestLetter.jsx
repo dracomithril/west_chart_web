@@ -17,12 +17,10 @@ export default class WestLetter extends React.Component {
   }
 
   render() {
-    const todayWeek = weekInfo();
-    const { data } = this.props;
+    const { data, week } = this.props;
     const show = data.map((elem) => {
       const create_date = new Date(elem.createdTime);
       const { from } = elem;
-      const { weekNumber } = weekInfo();
       return (
         <div style={{ padding: 2, display: 'block', border: '1px black solid' }} key={elem.id}>
           <input type="checkbox" />
@@ -41,7 +39,7 @@ export default class WestLetter extends React.Component {
             <br />
             <span>
               week:
-              {weekNumber}
+              {week.weekNumber}
             </span>
             <br />
             <span>
@@ -63,11 +61,11 @@ This site is still in beta version
         <h4>
           We have
           {' '}
-          {todayWeek.weekNumber}
+          {week.weekNumber}
           {' '}
 week of
           {' '}
-          {todayWeek.year}
+          {week.year}
         </h4>
         <div style={{ display: 'inline-flex' }}>
           {show}
@@ -78,9 +76,17 @@ week of
 }
 WestLetter.propTypes = {
   data: PropTypes.arrayOf(chartObjectProps),
+  week: PropTypes.shape({
+    monday: PropTypes.object,
+    friday: PropTypes.object,
+    sunday: PropTypes.object,
+    weekNumber: PropTypes.number,
+    year: PropTypes.number,
+  }),
 };
 WestLetter.defaultProps = {
   data: [],
+  week: weekInfo(),
 };
 WestLetter.contextTypes = {
   store: PropTypes.shape(),

@@ -24,7 +24,7 @@ describe('[sp_utils]', () => {
     });
     describe('[createPlaylistAndAddTracks]', function () {
         it('should react if no body from spotify', function (done) {
-            sp_mock.createPlaylist.returns(Promise.resolve({}));
+            sp_mock.createPlaylist.resolves({});
             sp_utils.createPlaylistAndAddTracks({}, '', false, [])
               .then(()=>{
                   done(new Error('Should throw error'));

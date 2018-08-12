@@ -56,7 +56,7 @@ const ChartRow = ({
         value={id}
         color="primary"
       />
-      {from != null ? (
+      {from.first_name != null ? (
         <React.Fragment>
           <Avatar src={from.picture_url} style={{ marginTop: 5 }} />
           <span className="chart-row__user-info__name">
