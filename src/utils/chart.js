@@ -3,13 +3,11 @@
  */
 import path from 'path';
 import querystring from 'querystring';
-import urlRegex from 'url-regex';
 import { getArtist_Title } from './utils';
 import { getTrack } from './spotify_utils';
 
 import { facebookGroup } from '../config';
 import { actionTypes } from '../reducers/actionTypes';
-
 
 const url = require('url');
 
@@ -74,17 +72,13 @@ function getAttachment(elem) {
   return ((elem.attachments || {}).data || []).length > 0 ? elem.attachments.data[0] : {};
 }
 
-function getFrom(elem) {
-  if (elem.from) {
-    const { id } = elem.from;
-    return { ...elem.from, picture_url: getFbPictureUrl(id) };
-  }
-  return {};
+function getFrom(from) {
+  return from ? { ...from, picture_url: getFbPictureUrl(from.id) } : {};
 }
 
-function getLinkFromMessage(elem) {
-  const linkFromMessage = (elem.message || '').match(urlRegex());
-  return linkFromMessage !== null ? linkFromMessage[0] : linkFromMessage;
+export function getLinkFromMessage(message) {
+  const [linkFromMessage] = message.match(/\bhttps?:\/\/\S+/gi);
+  return linkFromMessage !== null ? linkFromMessage : linkFromMessage;
 }
 
 const getSpotifyTrackInfo = async (linkFromMessage) => {
@@ -103,9 +97,9 @@ function getLink(elem, linkFromMessage, body, attachment) {
 
 const formatResponse = async ({ data }) => Promise.all(data.map((elem) => {
   const attachment = getAttachment(elem);
-  const from = getFrom(elem);
+  const from = getFrom(elem.from);
   const story = (elem.story || '').replace(/\sshared.*West.*Chart./, '');
-  const linkFromMessage = getLinkFromMessage(elem);
+  const linkFromMessage = getLinkFromMessage(elem.message);
   const reactionsNum = elem.reactions.summary.total_count;
   const assemble = ({ body = {} }) => {
     const link = getLink(elem, linkFromMessage, body, attachment);
