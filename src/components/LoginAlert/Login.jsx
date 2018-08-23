@@ -38,7 +38,7 @@ const Login = ({ location }, { store }) => {
           language="pl_PL"
           autoLoad
           fields="id,email,name,first_name,last_name"
-          scope="public_profile,email,groups_access_member_info,publish_to_groups"
+          scope="public_profile,email"
           render={renderProps => (
             <Button
               onClick={renderProps.onClick}

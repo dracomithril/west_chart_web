@@ -151,6 +151,8 @@ export const getTracks = (accessToken, user, playlist_name) => {
     return Promise.resolve(tracks);
   });
 };
+
+export const getTrack = trackId => spotifyApi.getTrack(trackId);
 /**
  * serach for matching music in spotify library
  * @param artist {string}

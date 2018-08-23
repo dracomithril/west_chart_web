@@ -3,9 +3,13 @@
  */
 import path from 'path';
 import querystring from 'querystring';
+import urlRegex from 'url-regex';
 import { getArtist_Title } from './utils';
+import { getTrack } from './spotify_utils';
+
 import { facebookGroup } from '../config';
 import { actionTypes } from '../reducers/actionTypes';
+
 
 const url = require('url');
 
@@ -70,46 +74,71 @@ function getAttachment(elem) {
   return ((elem.attachments || {}).data || []).length > 0 ? elem.attachments.data[0] : {};
 }
 
-function filterChartAndMap({ data }) {
-  return data.map((elem) => {
-    const attachment = getAttachment(elem);
-    let from;
-    if (elem.from) {
-      const { id } = elem.from;
-      from = { ...elem.from, picture_url: getFbPictureUrl(id) };
-    }
-    let linkFromMessage = (elem.message || '').match(/https?:\/{2}w{3}.youtube.com\/watch\?.*/);
-    linkFromMessage = linkFromMessage !== null ? linkFromMessage[0] : linkFromMessage;
-    const link = {
-      url: elem.link || linkFromMessage,
-      name: elem.name,
-      title: attachment.type === 'music_aggregation' ? attachment.description : attachment.title || linkFromMessage,
-      type: attachment.type,
-    };
+function getFrom(elem) {
+  if (elem.from) {
+    const { id } = elem.from;
+    return { ...elem.from, picture_url: getFbPictureUrl(id) };
+  }
+  return {};
+}
+
+function getLinkFromMessage(elem) {
+  const linkFromMessage = (elem.message || '').match(urlRegex());
+  return linkFromMessage !== null ? linkFromMessage[0] : linkFromMessage;
+}
+
+const getSpotifyTrackInfo = async (linkFromMessage) => {
+  const trackId = /https?:\/\/open\.spotify.com\/track\/(.*)\?(.*)/g.exec(linkFromMessage || '');
+  return trackId ? getTrack(trackId[1]) : {};
+};
+
+function getLink(elem, linkFromMessage, body, attachment) {
+  return {
+    url: elem.link || linkFromMessage,
+    name: elem.name || body.name,
+    title: attachment.type === 'music_aggregation' ? attachment.description : attachment.title || body.name || linkFromMessage,
+    type: attachment.type,
+  };
+}
+
+const formatResponse = async ({ data }) => Promise.all(data.map((elem) => {
+  const attachment = getAttachment(elem);
+  const from = getFrom(elem);
+  const story = (elem.story || '').replace(/\sshared.*West.*Chart./, '');
+  const linkFromMessage = getLinkFromMessage(elem);
+  const reactionsNum = elem.reactions.summary.total_count;
+  const assemble = ({ body = {} }) => {
+    const link = getLink(elem, linkFromMessage, body, attachment);
     const entry = getArtist_Title(link.title);
-    const story = (elem.story || '').replace(/\sshared.*West.*Chart./, '');
-    return {
+    const searchElement = {
+      artist: entry.artist || ((body.artists || [])[0] || {}).name,
+      title: entry.title || body.name,
+      full_title: link.title || body.name,
+      items: [],
+      selected: {},
+    };
+    return ({
       createdTime: elem.created_time,
       from,
       story,
       id: elem.id,
       link,
       message: elem.message,
-      reactionsNum: elem.reactions.summary.total_count,
+      reactionsNum,
       selected: false,
       source: elem.source,
       type: elem.type,
       updatedTime: elem.updated_time,
-      search: {
-        artist: entry.artist,
-        title: entry.title,
-        full_title: link.title,
-        items: [],
-        selected: {},
-      },
-    };
-  });
-}
+      search: searchElement,
+    });
+  };
+  return getSpotifyTrackInfo(linkFromMessage)
+    .catch((err) => {
+      console.error(err.message);
+      return Promise.resolve({});
+    })
+    .then(assemble);
+}));
 
 /**
  *
@@ -119,7 +148,7 @@ function filterChartAndMap({ data }) {
  */
 function fbChart(since, until, access_token) {
   return obtainList(since, until, facebookGroup, access_token)
-    .then(filterChartAndMap)
+    .then(formatResponse)
     .then((body) => {
       const cache = {
         chart: body,
