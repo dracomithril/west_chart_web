@@ -38,7 +38,7 @@ const Login = ({ location }, { store }) => {
           language="pl_PL"
           autoLoad
           fields="id,email,name,first_name,last_name"
-          scope="public_profile,email"
+          scope={api.fb.scope}
           render={renderProps => (
             <Button
               onClick={renderProps.onClick}

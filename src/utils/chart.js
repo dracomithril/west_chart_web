@@ -76,13 +76,13 @@ function getFrom(from) {
   return from ? { ...from, picture_url: getFbPictureUrl(from.id) } : {};
 }
 
-export function getLinkFromMessage(message) {
-  const [linkFromMessage] = message.match(/\bhttps?:\/\/\S+/gi);
-  return linkFromMessage !== null ? linkFromMessage : linkFromMessage;
+export function getLinkFromMessage(message = '') {
+  const [result] = message.match(/\bhttps?:\/\/\S+/gi) || [];
+  return result;
 }
 
-const getSpotifyTrackInfo = async (linkFromMessage) => {
-  const trackId = /https?:\/\/open\.spotify.com\/track\/(.*)\?(.*)/g.exec(linkFromMessage || '');
+const getSpotifyTrackInfo = async (linkFromMessage = '') => {
+  const trackId = /https?:\/\/open\.spotify.com\/track\/(.*)\?(.*)/g.exec(linkFromMessage);
   return trackId ? getTrack(trackId[1]) : {};
 };
 
