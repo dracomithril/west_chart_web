@@ -32,8 +32,8 @@ and filtered
 );
 
 UpdateInfo.propTypes = {
-  since: PropTypes.string,
-  until: PropTypes.string,
+  since: PropTypes.number,
+  until: PropTypes.number,
   lastUpdateDateString: PropTypes.string,
   allCount: PropTypes.number,
   viewedCount: PropTypes.number,
