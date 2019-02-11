@@ -1,5 +1,5 @@
 /**
- * Created by Gryzli on 05.04.2017.
+ * Created by michal.grezel on 05.04.2017.
  */
 const westletter = 'WCS Weekly Westletter';
 const woc_string = 'Wielkie Ogarnianie Charta';

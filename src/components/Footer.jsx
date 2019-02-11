@@ -1,5 +1,5 @@
 /**
- * Created by Gryzli on 12.02.2017.
+ * Created by michal.grezel on 12.02.2017.
  */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,8 +12,8 @@ const Footer = () => (
       {'site created by '}
       <a href="https://github.com/dracomithril" target="_newtab">
         dracomithril
-        {' '}
       </a>
+      {' '}
       repo on
       <a href="https://github.com/dracomithril/WestChart_ReactApp" target="_newtab">
         <FontAwesomeIcon icon={faGithub} />

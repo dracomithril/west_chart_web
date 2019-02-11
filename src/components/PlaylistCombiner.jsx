@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-for */
 /**
- * Created by Gryzli on 05.06.2017.
+ * Created by michal.grezel on 05.06.2017.
  */
 import React from 'react';
 import Button from '@material-ui/core/Button';

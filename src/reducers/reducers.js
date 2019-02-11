@@ -1,5 +1,5 @@
 /**
- * Created by Gryzli on 05.04.2017.
+ * Created by michal.grezel on 05.04.2017.
  */
 
 import moment from 'moment';
@@ -222,6 +222,7 @@ const sp_playlist_name = (state = '', action) => (action.type === actionTypes.UP
  */
 const lastUpdateDate = (state = '', action) => (action.type === actionTypes.UPDATE_LAST_UPDATE
   ? action.date : state);
+
 const startDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_START_TIME
   ? moment(date) : state);
 

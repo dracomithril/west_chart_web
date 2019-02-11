@@ -1,5 +1,5 @@
 /*
- * Created by Gryzli on 24.01.2017.
+ * Created by michal.grezel on 24.01.2017.
  */
 import path from 'path';
 import querystring from 'querystring';
@@ -95,7 +95,7 @@ function getLink(elem, linkFromMessage, body, attachment) {
   };
 }
 
-const formatResponse = async ({ data }) => Promise.all(data.map((elem) => {
+const formatResponse = async ({ data = [] }) => Promise.all(data.map((elem) => {
   const attachment = getAttachment(elem);
   const from = getFrom(elem.from);
   const story = (elem.story || '').replace(/\sshared.*West.*Chart./, '');
