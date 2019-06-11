@@ -3,13 +3,14 @@
  */
 
 import moment from 'moment';
+import { combineReducers } from 'redux';
 import { actionTypes } from './actionTypes';
+import filters from './filters';
 
 const Joi = require('joi-browser');
 
 const _ = require('lodash');
 
-const showDays = 7;
 const userSchema = Joi.object().keys({
   id: Joi.string(),
   email: Joi.string(),
@@ -250,70 +251,6 @@ const songsPerDay = (state = 3, action) => (action.type === actionTypes.UPDATE_S
 const showLast = (state = 31, action) => (action.type === actionTypes.UPDATE_SHOW_LAST
   ? action.days : state);
 
-/**
- *
- * @param control {Object}
- * @param action {Action}
- * @returns {*}
- */
-const control_state = (control, action) => {
-  if (control.id === action.id) {
-    switch (action.type) {
-      case actionTypes.TOGGLE_FILTER:
-        return Object.assign({}, control, { checked: action.checked });
-      case actionTypes.UPDATE_DAYS:
-        return Object.assign({}, control, { days: action.value });
-      default:
-        return control;
-    }
-  } else {
-    return control;
-  }
-};
-const filters = (state = {}, action) => ({
-  create_control: control_state(
-    state.create_control || {
-      checked: true,
-      id: 'create',
-      days: showDays,
-      type: 'counter',
-    },
-    action,
-  ),
-  update_control: control_state(
-    state.update_control || {
-      checked: false,
-      id: 'update',
-      days: showDays,
-      type: 'counter',
-    },
-    action,
-  ),
-  // todo less & more should be count or value it shows how many reaction was for post
-  less_control: control_state(
-    state.less_control || {
-      checked: false,
-      id: 'less',
-      days: 15,
-      type: 'counter',
-    },
-    action,
-  ),
-  more_control: control_state(
-    state.more_control || {
-      checked: false,
-      id: 'more',
-      days: 1,
-      type: 'counter',
-    },
-    action,
-  ),
-  woc_control: control_state(state.woc_control || { checked: false, id: 'woc', type: 'text' }, action),
-  westletter_control: control_state(
-    state.westletter_control || { checked: false, id: 'westLetter', type: 'text' },
-    action,
-  ),
-});
 const errors = (state = [], action) => {
   switch (action.type) {
     case actionTypes.ADD_ERROR:

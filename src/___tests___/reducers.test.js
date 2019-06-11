@@ -228,6 +228,32 @@ describe('filters', function () {
     };
     expect(result).toEqual(expected);
   });
+  it('should only change selected action control [TOGGLE_FILTER] westletter_cb', function () {
+    const action = {
+      type: actionTypes.TOGGLE_FILTER,
+      id: "westLetter",
+      checked: true,
+    };
+    const state = {
+      "create_control": { "checked": true, "days": 7, "id": "create" },
+      "less_control": { "checked": false, "days": 15, "id": "less" },
+      "more_control": { "checked": false, "days": 1, "id": "more" },
+      "update_control": { "checked": false, "days": 7, "id": "update" },
+      "woc_control": { "checked": true, "id": "woc" },
+      "westletter_control": { "checked": false, "id": "westLetter" },
+    };
+    Object.freeze(state);
+    const result = reducers.filters(state, action);
+    const expected = {
+      "create_control": { "checked": true, "days": 7, "id": "create" },
+      "less_control": { "checked": false, "days": 15, "id": "less" },
+      "more_control": { "checked": false, "days": 1, "id": "more" },
+      "update_control": { "checked": false, "days": 7, "id": "update" },
+      "woc_control": { "checked": true, "id": "woc" },
+      "westletter_control": { "checked": true, "id": "westLetter" },
+    };
+    expect(result).toEqual(expected);
+  });
   it('should return current state if type don\'t match', function () {
     const action = {
       type: actionTypes.UPDATE_USER,

@@ -84,6 +84,7 @@ exports[`<Login/> renders without crashing ChartPresenter 1`] = `
         }
       }
       symbol={false}
+      title=""
       transform={null}
     />
     Login to spotify

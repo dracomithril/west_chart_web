@@ -7,40 +7,37 @@
     "yarn": "1.x"
   },
   "description": "web client side",
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:3001/"
-    }
-  },
+  "proxy": "http://localhost:3001/",
   "author": "dracomithril",
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.2",
-    "@fortawesome/free-brands-svg-icons": "^5.2.0",
-    "@fortawesome/free-solid-svg-icons": "^5.2.0",
-    "@fortawesome/react-fontawesome": "^0.1.1",
-    "@material-ui/core": "^1.4.3",
-    "@material-ui/icons": "^2.0.1",
-    "clipboard-copy": "2.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.9.0",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "babel-eslint": "10.0.1",
+    "clipboard-copy": "3.0.0",
     "cookies-js": "^1.2.3",
-    "history": "^4.7.2",
+    "history": "^4.9.0",
     "joi-browser": "^13.4.0",
-    "lodash": "^4.17.10",
-    "moment": "^2.22.2",
-    "normalize.css": "^8.0.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.1",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
     "react-cookie-banner": "4.0.0",
-    "react-dom": "^16.4.1",
-    "react-facebook-login": "4.0.1",
+    "react-dom": "^16.8.6",
+    "react-facebook-login": "4.1.1",
     "react-redux": "5.0.7",
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
     "react-router-redux": "4.0.8",
-    "react-scripts": "1.1.4",
-    "redux": "4.0.0",
-    "redux-devtools-extension": "^2.13.5",
-    "spotify-web-api-node": "3.1.1"
+    "react-scripts": "3.0.1",
+    "redux": "4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "spotify-web-api-node": "4.0.0"
   },
   "scripts": {
     "lint": "eslint \"**/*.@(js|jsx)\"",
@@ -53,29 +50,29 @@
     "build-storybook": "build-storybook -s public"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.4.10",
-    "@storybook/addon-links": "^3.4.10",
-    "@storybook/addon-viewport": "^3.4.10",
-    "@storybook/addons": "^3.3.15",
-    "@storybook/react": "^3.4.10",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3 ",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.1.3",
+    "@storybook/addon-links": "^5.1.3",
+    "@storybook/addon-viewport": "^5.1.3",
+    "@storybook/addons": "^5.1.3",
+    "@storybook/react": "^5.1.3",
     "babel-preset-react-app": "^3.1.2",
     "enzyme": "^3.4.1",
     "enzyme-adapter-react-16": "^1.2.0",
     "enzyme-to-json": "^3.3.4",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-flowtype": "^2.50.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-json": "^1.2.1",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-prettier": "2.6.2",
-    "eslint-plugin-react": "^7.10.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-flowtype": "^3.9.1",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-json": "^1.4.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-react": "^7.13.0",
     "redux-mock-store": "^1.5.3",
-    "sinon": "^6.1.5"
+    "sinon": "^7.3.2"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -84,7 +81,7 @@
   },
   "babel": {
     "presets": [
-      "latest",
+      "@babel/preset-env",
       "react-app"
     ]
   },
@@ -94,5 +91,17 @@
   },
   "bugs": {
     "url": "https://github.com/dracomithril/west_chart_web/issues"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

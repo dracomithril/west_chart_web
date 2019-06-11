@@ -35,6 +35,7 @@ exports[`<SpotifySearch/> renders without crashing 1`] = `
       size={null}
       spin={false}
       symbol={false}
+      title=""
       transform={null}
     />
     spotify playlist:

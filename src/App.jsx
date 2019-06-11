@@ -27,9 +27,6 @@ class App extends React.Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <div className="wcs_header">
-              <img src="/pic/banner.png" alt="header logo" style={{ width: '100%', height: 'inherit' }} />
-            </div>
             <CookieBanner
               message={"Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"}
               cookie="user-has-accepted-cookies"

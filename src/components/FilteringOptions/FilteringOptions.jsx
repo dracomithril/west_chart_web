@@ -75,7 +75,7 @@ const FilteringOptions = ({ classes }, { store }) => {
       onChange={(target) => {
         store.dispatch({
           type: actionTypes.TOGGLE_FILTER,
-          id: target.value,
+          id: target.id,
           checked: target.checked,
         });
       }}
