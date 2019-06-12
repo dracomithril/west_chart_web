@@ -17,7 +17,7 @@ import LoginAlert from './components/LoginAlert';
 import Demo from './components/Demo';
 import PrivateRoute from './PrivateRoute';
 import { getCredentials } from './utils/spotify_utils';
-import { actionTypes } from './reducers/actionTypes';
+import actionTypes from './reducers/actionTypes';
 
 const styles = {
   root: {

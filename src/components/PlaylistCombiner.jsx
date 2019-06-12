@@ -16,7 +16,7 @@ import {
 import PlaylistInfo from './PlaylistInfo';
 import UserPlaylist from './UserPlaylist';
 
-import { actionTypes } from '../reducers/actionTypes';
+import actionTypes from '../reducers/actionTypes';
 
 const _ = require('lodash');
 // todo add modal to block usage of tool when playlist crating

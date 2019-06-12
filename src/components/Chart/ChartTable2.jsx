@@ -8,7 +8,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import '../components.css';
 import { chartObjectProps } from '../typeDefinitions';
 import ChartRow from './ChartRow';
-import { actionTypes } from '../../reducers/actionTypes';
+import actionTypes from '../../reducers/actionTypes';
 
 const ChartTable = ({ data }, { store }) => {
   const ChartRows = data.map(entry => (

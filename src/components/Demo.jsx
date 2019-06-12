@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ChartData from '../___data___/chartData';
-import { actionTypes } from '../reducers/actionTypes';
+import actionTypes from '../reducers/actionTypes';
 import ChartPresenter from './Chart/ChartPresenter';
 
 class Demo extends React.Component {

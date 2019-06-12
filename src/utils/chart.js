@@ -7,7 +7,7 @@ import { getArtist_Title } from './utils';
 import { getTrack } from './spotify_utils';
 
 import { facebookGroup } from '../config';
-import { actionTypes } from '../reducers/actionTypes';
+import actionTypes from '../reducers/actionTypes';
 
 const url = require('url');
 

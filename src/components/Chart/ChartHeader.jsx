@@ -11,7 +11,7 @@ import SongsPerDay from './SongsPerDay';
 import FilteringOptions from '../FilteringOptions';
 import '../components.css';
 import './chart.css';
-import { actionTypes } from '../../reducers/actionTypes';
+import actionTypes from '../../reducers/actionTypes';
 import { weekInfo } from '../../utils/utils';
 import { UpdateChart } from '../../utils/chart';
 import { errorDaysObjectProps } from '../typeDefinitions';

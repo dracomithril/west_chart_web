@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { actionTypes } from './actionTypes';
+import actionTypes from './actionTypes';
 
 const showDays = 7;
 

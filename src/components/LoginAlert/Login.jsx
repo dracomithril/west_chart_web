@@ -12,7 +12,7 @@ import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
 import './LoginAlert.css';
 import { getFbPictureUrl } from '../../utils/utils';
 import { api } from '../../config';
-import { actionTypes } from '../../reducers/actionTypes';
+import actionTypes from '../../reducers/actionTypes';
 
 const Login = ({ location }, { store }) => {
   const { user, spotifyUser } = store.getState();
