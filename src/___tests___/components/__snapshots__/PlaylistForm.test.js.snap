@@ -7,7 +7,7 @@ exports[`<PlaylistForm/> createPlaylistAndAddTracks 1`] = `
   <WithStyles(Button)
     color="primary"
     id="start_sp_button"
-    variant="raised"
+    variant="contained"
   >
     start
   </WithStyles(Button)>
@@ -130,7 +130,7 @@ exports[`<PlaylistForm/> renders without crashing 1`] = `
   <WithStyles(Button)
     color="primary"
     id="start_sp_button"
-    variant="raised"
+    variant="contained"
   >
     start
   </WithStyles(Button)>
@@ -254,7 +254,7 @@ exports[`<PlaylistForm/> start_click 1`] = `
     color="primary"
     id="start_sp_button"
     onClick={[Function]}
-    variant="raised"
+    variant="contained"
   >
     start
   </WithStyles(Button)>

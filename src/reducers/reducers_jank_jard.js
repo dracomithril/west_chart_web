@@ -1,7 +1,7 @@
 /**
  * Created by michal.grezel on 05.04.2017.
  */
-
+import { routerReducer } from 'react-router-redux';
 import moment from 'moment';
 import Joi from 'joi-browser';
 import { combineReducers } from 'redux';
@@ -111,7 +111,7 @@ const sp_playlist_info = (state = { url: null, pl_name: '' }, action) => (action
 const hasAcCookie = (state = false, action) => (action.type === actionTypes.TOGGLE_HAS_COOKIE
   ? action.value || state : state);
 
-export const reducers = combineReducers({
+const reducers = combineReducers({
   filters,
   user,
   chart,
@@ -131,5 +131,6 @@ export const reducers = combineReducers({
   sp_playlist_info,
   errors,
   hasAcCookie,
+  routing: routerReducer,
 });
 export default reducers;

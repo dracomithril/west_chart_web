@@ -42,7 +42,7 @@ const Login = ({ location }, { store }) => {
           render={renderProps => (
             <Button
               onClick={renderProps.onClick}
-              variant="raised"
+              variant="contained"
               color="primary"
               style={{ height: 48, width: '100%', color: 'white' }}
             >
@@ -68,7 +68,7 @@ const Login = ({ location }, { store }) => {
       )}
       {spotifyUser.id === undefined && (
         <Button
-          variant="raised"
+          variant="contained"
           style={{
             backgroundColor: 'green',
             height: 48,

@@ -68,7 +68,7 @@ class ChartHeader extends React.Component {
 
   render() {
     const { store } = this.context;
-    const { songsPerDay } = store.getState();
+    const { songsPerDay, user } = store.getState();
     const { since, until } = this.state;
     const { errorDays, classes } = this.props;
     return (
@@ -103,10 +103,22 @@ class ChartHeader extends React.Component {
         </div>
         <Button
           id="updateChartB"
-          variant="raised"
+          variant="contained"
           className={classes.button}
           onClick={() => {
-            UpdateChart(store, since, until);
+            store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: true });
+            UpdateChart(user.accessToken).then((body) => {
+              console.info(`chart list witch ${body.chart.length}`);
+              store.dispatch({ type: actionTypes.UPDATE_CHART, chart: body.chart });
+              store.dispatch({ type: actionTypes.UPDATE_LAST_UPDATE, date: body.lastUpdateDate });
+              store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
+              return Promise.resolve();
+            })
+              .catch((err) => {
+                console.error('Error in fetch chart.', err.message);
+                store.dispatch({ type: actionTypes.ADD_ERROR, value: err });
+                store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
+              });
           }}
           color="primary"
         >

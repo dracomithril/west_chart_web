@@ -221,7 +221,7 @@ To:
                 />
               </label>
             </div>
-            <Button onClick={this.combinePlaylists} color="secondary" variant="raised">
+            <Button onClick={this.combinePlaylists} color="secondary" variant="contained">
               Combine
             </Button>
           </div>
