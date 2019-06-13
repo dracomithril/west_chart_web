@@ -36,5 +36,4 @@ describe('<WestLetter/>', () => {
     );
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
-
 });
