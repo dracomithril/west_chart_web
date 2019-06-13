@@ -10,7 +10,7 @@ import { chartObjectProps } from '../typeDefinitions';
 import ChartRow from './ChartRow';
 import actionTypes from '../../reducers/actionTypes';
 
-const ChartTable = ({ data }, { store }) => {
+const ChartTable = ({ data, tableInfo }, { store }) => {
   const ChartRows = data.map(entry => (
     <ChartRow
       id={entry.id}
@@ -61,18 +61,20 @@ const ChartTable = ({ data }, { store }) => {
         alignItems: 'center',
       }}
     >
-      No data
+      {tableInfo}
     </div>
   );
 };
 ChartTable.defaultProps = {
   data: [],
+  tableInfo: 'No data',
 };
 ChartTable.contextTypes = {
   store: PropTypes.shape(),
 };
 ChartTable.propTypes = {
   data: PropTypes.arrayOf(chartObjectProps),
+  tableInfo: PropTypes.oneOfType([PropTypes.string, PropTypes.shape()]),
 };
 
 export default ChartTable;

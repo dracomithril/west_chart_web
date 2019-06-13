@@ -73,7 +73,7 @@ class ChartHeader extends React.Component {
     const { errorDays, classes } = this.props;
     return (
       <div className="chart-header">
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'none' }}>
           <TextField
             id="date"
             label="starting from"
@@ -107,6 +107,7 @@ class ChartHeader extends React.Component {
           className={classes.button}
           onClick={() => {
             store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: true });
+            store.dispatch({ type: actionTypes.UPDATE_CHART, chart: [] });
             UpdateChart(user.accessToken).then((body) => {
               console.info(`chart list witch ${body.chart.length}`);
               store.dispatch({ type: actionTypes.UPDATE_CHART, chart: body.chart });

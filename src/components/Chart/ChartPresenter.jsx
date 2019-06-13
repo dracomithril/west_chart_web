@@ -7,9 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faSpotify } from '@fortawesome/free-brands-svg-icons';
 import { faList, faTable } from '@fortawesome/free-solid-svg-icons';
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  CircularProgress,
+  Typography,
+} from '@material-ui/core';
 
 import Summary from '../Summary';
 import ChartTable from './ChartTable2';
@@ -38,6 +41,20 @@ function TabContainer({ children }) {
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+const WaitForResult = ({ text = 'Please wait' }) => (
+  <div style={{
+    display: 'flex', flexDirection: 'column', alignItems: 'center', flexFlow: 'column-reverse',
+  }}
+  >
+    <span style={{ padding: 10 }}>{text}</span>
+    <CircularProgress />
+  </div>
+);
+WaitForResult.propTypes = {
+  text: PropTypes.string,
+};
+
 const tabOptions = {
   posts: 'posts',
   playlist: 'playlist',
@@ -73,73 +90,108 @@ const defaultValue = {
   westLetters: [],
 };
 
+function PostsContainer(props) {
+  const {
+    until, show, lastUpdateDateString, since, showWait, allCount, viewChart, viewedCount, errorDays,
+  } = props;
+  return (
+    <TabContainer>
+      <div className="chart-presenter__tab-content">
+        <ChartHeader errorDays={errorDays} viewChart={viewChart} />
+        {show && (
+        <UpdateInfo
+          since={since}
+          until={until}
+          lastUpdateDateString={lastUpdateDateString}
+          allCount={allCount}
+          viewedCount={viewedCount}
+        />
+        )}
+        <ChartTable
+          data={viewChart}
+          tableInfo={showWait ? <WaitForResult /> : undefined}
+        />
+      </div>
+    </TabContainer>
+  );
+}
+
+PostsContainer.propTypes = {
+  errorDays: PropTypes.arrayOf(PropTypes.shape()),
+  viewChart: PropTypes.arrayOf(PropTypes.shape),
+  show: PropTypes.bool,
+  since: PropTypes.number,
+  until: PropTypes.number,
+  lastUpdateDateString: PropTypes.string,
+  allCount: PropTypes.number,
+  viewedCount: PropTypes.number,
+  showWait: PropTypes.bool,
+};
+
 class ChartPresenter extends React.Component {
   state = {
-    value: tabOptions.posts,
+    selectedTab: tabOptions.posts,
   };
 
   handleChange = (event, value) => {
-    this.setState({ value });
+    this.setState({ selectedTab: value });
   };
 
   render() {
     const { store } = this.context;
-    const { value } = this.state;
+    const { selectedTab } = this.state;
     const { classes } = this.props;
 
     const {
-      listSort, chart, filters, until, songsPerDay, since, lastUpdateDate,
+      listSort, chart, filters, until, songsPerDay, since, lastUpdateDate, show_wait,
     } = store.getState();
 
-    const tabsView = tabs.map(elem => <BottomNavigationAction key={elem.label} {...elem} />);
     const { viewChart, errorDays, westLetters } = chart.length > 0
       ? filterChart(chart, filters, until, songsPerDay)
       : defaultValue;
-    const selected = viewChart.filter(elem => elem.selected);
-    sorting[listSort](selected);
+    const selectedPosts = viewChart.filter(elem => elem.selected);
+    sorting[listSort](selectedPosts);
     const show = !!lastUpdateDate && !!since && !!until;
     const lastUpdateDateString = lastUpdateDate ? new Date(lastUpdateDate).toLocaleString('pl-PL', options) : 'No data';
     const allCount = chart.length;
     const viewedCount = viewChart.length;
+    const selectableTabs = {
+      [tabOptions.posts]:
+  ((
+    <PostsContainer
+      errorDays={errorDays}
+      viewChart={viewChart}
+      show={show}
+      since={since}
+      until={until}
+      lastUpdateDateString={lastUpdateDateString}
+      allCount={allCount}
+      viewedCount={viewedCount}
+      showWait={show_wait}
+    />
+  )),
+      [tabOptions.playlist]: (
+        <TabContainer>
+          <SpotifySearch selected={selectedPosts} />
+        </TabContainer
+      >),
+      [tabOptions.summary]: (
+        <TabContainer>
+          <Summary selected={selectedPosts} />
+        </TabContainer>),
+      [tabOptions.westLetter]: (
+        <TabContainer>
+          <WestLetter data={westLetters} />
+        </TabContainer>),
+    };
     return (
       <div className={classes.root}>
         <div style={{ borderBottom: '1px solid' }}>
-          <BottomNavigation value={value} showLabels onChange={this.handleChange}>
-            {tabsView}
+          <BottomNavigation value={selectedTab} showLabels onChange={this.handleChange}>
+            {tabs.map(elem => <BottomNavigationAction key={elem.label} {...elem} />)}
           </BottomNavigation>
         </div>
-        {value === tabOptions.posts && (
-          <TabContainer>
-            <div className="chart-presenter__tab-content">
-              <ChartHeader errorDays={errorDays} viewChart={viewChart} />
-              {show && (
-                <UpdateInfo
-                  since={since}
-                  until={until}
-                  lastUpdateDateString={lastUpdateDateString}
-                  allCount={allCount}
-                  viewedCount={viewedCount}
-                />
-              )}
-              <ChartTable data={viewChart} />
-            </div>
-          </TabContainer>
-        )}
-        {value === tabOptions.playlist && (
-          <TabContainer>
-            <SpotifySearch selected={selected} />
-          </TabContainer>
-        )}
-        {value === tabOptions.summary && (
-          <TabContainer>
-            <Summary selected={selected} />
-          </TabContainer>
-        )}
-        {value === tabOptions.westLetter && (
-          <TabContainer>
-            <WestLetter data={westLetters} />
-          </TabContainer>
-        )}
+        {selectableTabs[selectedTab]}
       </div>
     );
   }
