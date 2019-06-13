@@ -1,6 +1,6 @@
 {
   "name": "west_chart_web",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "private": true,
   "engines": {
     "node": "10.x",
