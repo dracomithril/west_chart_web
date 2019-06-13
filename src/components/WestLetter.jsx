@@ -34,7 +34,7 @@ export default class WestLetter extends React.Component {
           )}
           <div>
             <span>
-              {create_date.toLocaleDateString()}
+              {create_date.toLocaleDateString('pl-PL')}
             </span>
             <br />
             <span>
