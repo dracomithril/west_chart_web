@@ -49,6 +49,7 @@ exports[`<Summary/> renders without crashing 1`] = `
         size={null}
         spin={false}
         symbol={false}
+        title=""
         transform={null}
       />
     </WithStyles(Button)>

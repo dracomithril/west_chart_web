@@ -12,7 +12,7 @@ import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
 import './LoginAlert.css';
 import { getFbPictureUrl } from '../../utils/utils';
 import { api } from '../../config';
-import { actionTypes } from '../../reducers/actionTypes';
+import actionTypes from '../../reducers/actionTypes';
 
 const Login = ({ location }, { store }) => {
   const { user, spotifyUser } = store.getState();
@@ -42,7 +42,7 @@ const Login = ({ location }, { store }) => {
           render={renderProps => (
             <Button
               onClick={renderProps.onClick}
-              variant="raised"
+              variant="contained"
               color="primary"
               style={{ height: 48, width: '100%', color: 'white' }}
             >
@@ -68,7 +68,7 @@ const Login = ({ location }, { store }) => {
       )}
       {spotifyUser.id === undefined && (
         <Button
-          variant="raised"
+          variant="contained"
           style={{
             backgroundColor: 'green',
             height: 48,

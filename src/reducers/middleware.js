@@ -1,4 +1,4 @@
-import { actionTypes } from './actionTypes';
+import actionTypes from './actionTypes';
 
 const getFacebookUser = () => next => (action) => {
   switch (action.type) {

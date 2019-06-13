@@ -1,4 +1,4 @@
-export const actionTypes = {
+export default {
   ADD_ERROR: 'ADD_ERROR',
   CLEAR_ERRORS: 'CLEAR_ERRORS',
   CLEAR_SELECTED: 'CLEAR_SELECTED',
@@ -31,4 +31,3 @@ export const actionTypes = {
   UPDATE_SONGS_PER_DAY: 'UPDATE_SONGS_PER_DAY',
   UPDATE_SHOW_LAST: 'UPDATE_SHOW_LAST',
 };
-export default actionTypes;

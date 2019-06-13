@@ -2,15 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
+import {
+  AppBar, Toolbar, Typography, IconButton, Button, Avatar, Menu, MenuItem,
+} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 import Policy from './components/Policy';
@@ -22,7 +17,7 @@ import LoginAlert from './components/LoginAlert';
 import Demo from './components/Demo';
 import PrivateRoute from './PrivateRoute';
 import { getCredentials } from './utils/spotify_utils';
-import { actionTypes } from './reducers/actionTypes';
+import actionTypes from './reducers/actionTypes';
 
 const styles = {
   root: {

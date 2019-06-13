@@ -12,7 +12,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import FilterOption from './FilterOption';
 import './FilteringOptions.css';
 import filters_def from '../../utils/filters_def';
-import { actionTypes } from '../../reducers/actionTypes';
+import actionTypes from '../../reducers/actionTypes';
 import MessageControl from './MessageControl';
 
 const styles = theme => ({
@@ -75,7 +75,7 @@ const FilteringOptions = ({ classes }, { store }) => {
       onChange={(target) => {
         store.dispatch({
           type: actionTypes.TOGGLE_FILTER,
-          id: target.value,
+          id: target.id,
           checked: target.checked,
         });
       }}

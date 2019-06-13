@@ -50,7 +50,7 @@ exports[`<Login/> renders without crashing ChartPresenter 1`] = `
         "width": "100%",
       }
     }
-    variant="raised"
+    variant="contained"
   >
     <FontAwesomeIcon
       border={false}
@@ -84,6 +84,7 @@ exports[`<Login/> renders without crashing ChartPresenter 1`] = `
         }
       }
       symbol={false}
+      title=""
       transform={null}
     />
     Login to spotify

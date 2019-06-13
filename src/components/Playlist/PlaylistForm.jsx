@@ -43,7 +43,7 @@ export default class PlaylistForm extends Component {
     const isNameValid = validatePlaylistName(playlistName);
     return (
       <div className="playlist-form">
-        <Button variant="raised" color="primary" onClick={onStartClick} id="start_sp_button">
+        <Button variant="contained" color="primary" onClick={onStartClick} id="start_sp_button">
           start
         </Button>
         <TextField

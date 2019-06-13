@@ -12,7 +12,7 @@ const MessageControl = ({
       className="filter-option"
       id={`${id}_checkbox`}
       checked={checked}
-      onChange={(target) => {
+      onChange={({ target }) => {
         onChange({ id, checked: target.checked });
       }}
     />

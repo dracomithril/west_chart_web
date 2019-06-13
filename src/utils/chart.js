@@ -1,18 +1,12 @@
 /*
  * Created by michal.grezel on 24.01.2017.
  */
-import path from 'path';
-import querystring from 'querystring';
 import { getArtist_Title } from './utils';
 import { getTrack } from './spotify_utils';
 
 import { facebookGroup } from '../config';
-import { actionTypes } from '../reducers/actionTypes';
 
-const url = require('url');
-
-const apiVer = process.env.FB_API_VERSION || 'v3.0';
-const limit = 100;
+const limit = 50;
 const fieldsArr = [
   'story',
   'from{first_name,last_name,name,id}',
@@ -35,37 +29,24 @@ const fields = fieldsArr.join(',');
 
 const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?height=50`;
 
-/**
- *
- * @param since {string}
- * @param until {string}
- * @param groupId {string}
- * @param accessToken {string}
- */
-function obtainList(since, until, groupId, accessToken) {
-  const address = 'https://graph.facebook.com';
-
+function obtainList(groupId, accessToken) {
   const query = {
     fields,
     limit,
     access_token: accessToken,
-    since,
-    until,
   };
-  const pathname = path.resolve('/', apiVer, groupId, 'feed');
-  const addr = url.resolve(address, pathname);
-  const urlObject = url.parse(addr);
-  urlObject.port = '443';
-  urlObject.protocol = 'https';
-  urlObject.search = querystring.stringify(query);
-
-  // todo modify to use reject errors resolveWithFullResponse: false
-  return fetch(url.format(urlObject))
-    .then(res => (res.ok ? res.json() : { body: { data: [] } }))
-    .catch((err) => {
-      console.error(`error obtaining chart list. statusCode: ${err.statusCode} body: ${err.sub_error}`);
-      return Promise.reject(err);
-    });
+  if (window.FB) {
+    return new Promise(((resolve, reject) => {
+      window.FB.api(`/${groupId}/feed`, query, (response) => {
+        if (response.error) {
+          reject(response.error);
+        }
+        resolve(response.data);
+      });
+    }));
+  }
+  console.error('No FB SDK');
+  return [];
 }
 
 function getAttachment(elem) {
@@ -95,7 +76,7 @@ function getLink(elem, linkFromMessage, body, attachment) {
   };
 }
 
-const formatResponse = async ({ data = [] }) => Promise.all(data.map((elem) => {
+const formatResponse = async (data = []) => Promise.all(data.map((elem) => {
   const attachment = getAttachment(elem);
   const from = getFrom(elem.from);
   const story = (elem.story || '').replace(/\sshared.*West.*Chart./, '');
@@ -134,40 +115,14 @@ const formatResponse = async ({ data = [] }) => Promise.all(data.map((elem) => {
     .then(assemble);
 }));
 
-/**
- *
- * @param since {string}
- * @param until {string}
- * @param access_token {string}
- */
-function fbChart(since, until, access_token) {
-  return obtainList(since, until, facebookGroup, access_token)
-    .then(formatResponse)
-    .then((body) => {
-      const cache = {
-        chart: body,
-        lastUpdateDate: new Date().toISOString(),
-      };
-      return Promise.resolve(cache);
-    });
-}
-
-export const UpdateChart = (store, since, until) => {
-  store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: true });
-  const { user } = store.getState();
-  return fbChart(since.unix(), until.unix(), user.accessToken)
-    .then((body) => {
-      console.info(`chart list witch ${body.chart.length}`);
-      store.dispatch({ type: actionTypes.UPDATE_CHART, chart: body.chart });
-      store.dispatch({ type: actionTypes.UPDATE_LAST_UPDATE, date: body.lastUpdateDate });
-      store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
-      return Promise.resolve();
-    })
-    .catch((err) => {
-      console.error('Error in fetch chart.', err.message);
-      store.dispatch({ type: actionTypes.ADD_ERROR, value: err });
-      store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
-    });
-};
+export const UpdateChart = accessToken => obtainList(facebookGroup, accessToken)
+  .then(formatResponse)
+  .then((chart) => {
+    const cache = {
+      chart,
+      lastUpdateDate: new Date().toISOString(),
+    };
+    return Promise.resolve(cache);
+  });
 
 export default UpdateChart;
