@@ -21,7 +21,7 @@ exports[`<Login/> renders without crashing ChartPresenter 1`] = `
     ️
   </h4>
   <t
-    appId="1173486879387948"
+    appId="1173483302721639"
     authType=""
     autoLoad={true}
     callback={[Function]}
@@ -35,7 +35,7 @@ exports[`<Login/> renders without crashing ChartPresenter 1`] = `
     render={[Function]}
     responseType="code"
     returnScopes={false}
-    scope="public_profile,email"
+    scope="public_profile,email,groups_access_member_info"
     state="facebookdirect"
     version="2.3"
     xfbml={false}

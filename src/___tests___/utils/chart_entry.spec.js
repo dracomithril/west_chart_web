@@ -1,4 +1,4 @@
-import { getLinkFromMessage } from '../utils/chart';
+import { getLinkFromMessage } from '../../utils/chart_entry';
 const assert = require('assert');
 
 describe('[chart]', () => {

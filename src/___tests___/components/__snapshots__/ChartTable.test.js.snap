@@ -939,25 +939,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                         center={true}
                                         classes={
                                           Object {
-                                            "child": "MuiTouchRipple-child-78",
-                                            "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                            "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                            "ripple": "MuiTouchRipple-ripple-75",
-                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                            "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                            "root": "MuiTouchRipple-root-74",
+                                            "child": "MuiTouchRipple-child-75",
+                                            "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                            "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                            "ripple": "MuiTouchRipple-ripple-72",
+                                            "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                            "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                            "root": "MuiTouchRipple-root-71",
                                           }
                                         }
                                       >
                                         <TransitionGroup
                                           childFactory={[Function]}
-                                          className="MuiTouchRipple-root-74"
+                                          className="MuiTouchRipple-root-71"
                                           component="span"
                                           enter={true}
                                           exit={true}
                                         >
                                           <span
-                                            className="MuiTouchRipple-root-74"
+                                            className="MuiTouchRipple-root-71"
                                           />
                                         </TransitionGroup>
                                       </TouchRipple>
@@ -1681,25 +1681,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -1715,43 +1715,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Absolutio Messor
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -2379,25 +2342,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -2413,43 +2376,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Gabalium  Tunał
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -3018,25 +2944,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -3052,43 +2978,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Paweł Zubrycki
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -3716,25 +3605,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -3750,43 +3639,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Joanna Brud
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -4355,25 +4207,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -4389,43 +4241,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Joanna Brud
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -5053,25 +4868,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -5087,43 +4902,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Przemysław Przemysł
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -5692,25 +5470,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -5726,43 +5504,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Agnieszka Orzeł
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -6331,25 +6072,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -6365,43 +6106,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Patryk Kret
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -6970,25 +6674,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -7004,43 +6708,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Mateusz Lech
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -7668,25 +7335,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -7702,43 +7369,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Andrei-Sebastian Petrescu
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -8307,25 +7937,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -8341,43 +7971,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Andrei-Sebastian Petrescu asdfjhjldfadsafhljkadsfjl
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -8947,25 +8540,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -8981,43 +8574,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Ulrike Nowak
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -9587,25 +9143,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -9621,43 +9177,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Gabriela Młyńska
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -10227,25 +9746,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -10261,43 +9780,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Bogumiła Niedziałek
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -10924,25 +10406,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -10958,43 +10440,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Izabela Szewczyk
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -11560,25 +11005,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -11594,43 +11039,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR",
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Artur Sójka
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -12259,25 +11667,25 @@ Spotify: https://open.spotify.com/track/637yH6Qs3wXdgjPjO7QGdr?si=WBuud54NSUWuEJ
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -12293,43 +11701,6 @@ Spotify: https://open.spotify.com/track/637yH6Qs3wXdgjPjO7QGdr?si=WBuud54NSUWuEJ
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Rafał Cibor
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -12899,25 +12270,25 @@ Spotify: https://open.spotify.com/track/637yH6Qs3wXdgjPjO7QGdr?si=WBuud54NSUWuEJ
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -12933,43 +12304,6 @@ Spotify: https://open.spotify.com/track/637yH6Qs3wXdgjPjO7QGdr?si=WBuud54NSUWuEJ
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Mateusz Lech
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -13597,25 +12931,25 @@ Spotify: https://open.spotify.com/track/637yH6Qs3wXdgjPjO7QGdr?si=WBuud54NSUWuEJ
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -13631,43 +12965,6 @@ Spotify: https://open.spotify.com/track/637yH6Qs3wXdgjPjO7QGdr?si=WBuud54NSUWuEJ
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Agnieszka Orzeł
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -14295,25 +13592,25 @@ Spotify: https://open.spotify.com/track/637yH6Qs3wXdgjPjO7QGdr?si=WBuud54NSUWuEJ
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -14329,43 +13626,6 @@ Spotify: https://open.spotify.com/track/637yH6Qs3wXdgjPjO7QGdr?si=WBuud54NSUWuEJ
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Anna Ratajczak
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -14934,25 +14194,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -14968,43 +14228,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Anca Lasc
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -15631,25 +14854,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -15665,43 +14888,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Przemysław Przemysł
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -16270,25 +15456,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -16304,43 +15490,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Christian Kaller
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -16968,25 +16117,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -17002,43 +16151,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Paweł Zubrycki
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -17666,25 +16778,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -17700,43 +16812,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          Paweł Zubrycki
-        </span>
         <div
           className="chart-row__post-info"
         >
@@ -18364,25 +17439,25 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
                                   center={true}
                                   classes={
                                     Object {
-                                      "child": "MuiTouchRipple-child-78",
-                                      "childLeaving": "MuiTouchRipple-childLeaving-79",
-                                      "childPulsate": "MuiTouchRipple-childPulsate-80",
-                                      "ripple": "MuiTouchRipple-ripple-75",
-                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-77",
-                                      "rippleVisible": "MuiTouchRipple-rippleVisible-76",
-                                      "root": "MuiTouchRipple-root-74",
+                                      "child": "MuiTouchRipple-child-75",
+                                      "childLeaving": "MuiTouchRipple-childLeaving-76",
+                                      "childPulsate": "MuiTouchRipple-childPulsate-77",
+                                      "ripple": "MuiTouchRipple-ripple-72",
+                                      "ripplePulsate": "MuiTouchRipple-ripplePulsate-74",
+                                      "rippleVisible": "MuiTouchRipple-rippleVisible-73",
+                                      "root": "MuiTouchRipple-root-71",
                                     }
                                   }
                                 >
                                   <TransitionGroup
                                     childFactory={[Function]}
-                                    className="MuiTouchRipple-root-74"
+                                    className="MuiTouchRipple-root-71"
                                     component="span"
                                     enter={true}
                                     exit={true}
                                   >
                                     <span
-                                      className="MuiTouchRipple-root-74"
+                                      className="MuiTouchRipple-root-71"
                                     />
                                   </TransitionGroup>
                                 </TouchRipple>
@@ -18398,43 +17473,6 @@ https://open.spotify.com/track/6ixsUZpQuPSqMmNVKMYXQR"
             </WithStyles(WithFormControlContext(SwitchBase))>
           </Checkbox>
         </WithStyles(Checkbox)>
-        <WithStyles(Avatar)
-          style={
-            Object {
-              "marginTop": 5,
-            }
-          }
-        >
-          <Avatar
-            classes={
-              Object {
-                "colorDefault": "MuiAvatar-colorDefault-72",
-                "img": "MuiAvatar-img-73",
-                "root": "MuiAvatar-root-71",
-              }
-            }
-            component="div"
-            style={
-              Object {
-                "marginTop": 5,
-              }
-            }
-          >
-            <div
-              className="MuiAvatar-root-71 MuiAvatar-colorDefault-72"
-              style={
-                Object {
-                  "marginTop": 5,
-                }
-              }
-            />
-          </Avatar>
-        </WithStyles(Avatar)>
-        <span
-          className="chart-row__user-info__name"
-        >
-          zzzz aaaaa
-        </span>
         <div
           className="chart-row__post-info"
         >

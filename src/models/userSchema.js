@@ -10,7 +10,7 @@ const userSchema = Joi.object().keys({
   signedRequest: Joi.string().strip(),
   last_name: Joi.string(),
   picture_url: Joi.string(),
-  userID: Joi.any().strip(),
+  userID: Joi.string(),
 });
 
 export default userSchema;

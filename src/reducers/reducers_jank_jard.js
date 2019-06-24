@@ -3,13 +3,12 @@
  */
 import { routerReducer } from 'react-router-redux';
 import moment from 'moment';
-import Joi from 'joi-browser';
 import { combineReducers } from 'redux';
 import { takeRight } from 'lodash';
 import actionTypes from './actionTypes';
 import filters from './filters';
 import chart from './chart';
-import userSchema from './userSchema';
+import createUser from '../models/facebookUser';
 
 /**
  * @typedef {Object} FacebookUserObject
@@ -29,13 +28,10 @@ import userSchema from './userSchema';
 const user = (state, action) => {
   switch (action.type) {
     case actionTypes.UPDATE_USER: {
-      const { error, value } = Joi.validate(action.value, userSchema);
-      return error === null ? value : state;
+      return createUser(action.value) || state;
     }
     case actionTypes.SIGN_OUT_USER:
       return {};
-    case actionTypes.UPDATE_USER_LS:
-      return Object.assign({}, state, action.value);
     default:
       return state || {};
   }
