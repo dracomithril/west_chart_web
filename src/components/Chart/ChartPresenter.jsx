@@ -1,26 +1,18 @@
-/**
- * Created by michal.grezel on 06.04.2017.
- */
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faSpotify } from '@fortawesome/free-brands-svg-icons';
 import { faList, faTable } from '@fortawesome/free-solid-svg-icons';
 import { withStyles } from '@material-ui/core/styles';
-import {
-  BottomNavigation,
-  BottomNavigationAction,
-  CircularProgress,
-  Typography,
-} from '@material-ui/core';
-
-import Summary from '../Summary';
-import ChartTable from './ChartTable2';
-import ChartHeader from './ChartHeader';
-import SpotifySearch from '../Playlist/SpotifySearch';
-import WestLetter from '../WestLetter';
-import { filterChart, sorting } from '../../utils/utils';
-import UpdateInfo from './UpdateInfo';
+import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
+import SummaryComponent from '../Summary';
+import SpotifySearchComponent from '../Playlist/SpotifySearch';
+import WestLetterComponent from '../WestLetter';
+import filterChart from '../../utils/filtering';
+import sorting from '../../utils/sorting';
+import { TabContainer } from './TabContainer';
+import { PostsContainer } from './PostsContainer';
 
 const styles = theme => ({
   root: {
@@ -29,31 +21,6 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
   },
 });
-
-function TabContainer({ children }) {
-  return (
-    <Typography component="div" style={{ paddingTop: 4 * 3 }}>
-      {children}
-    </Typography>
-  );
-}
-
-TabContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-const WaitForResult = ({ text = 'Please wait' }) => (
-  <div style={{
-    display: 'flex', flexDirection: 'column', alignItems: 'center', flexFlow: 'column-reverse',
-  }}
-  >
-    <span style={{ padding: 10 }}>{text}</span>
-    <CircularProgress />
-  </div>
-);
-WaitForResult.propTypes = {
-  text: PropTypes.string,
-};
 
 const tabOptions = {
   posts: 'posts',
@@ -90,45 +57,7 @@ const defaultValue = {
   westLetters: [],
 };
 
-function PostsContainer(props) {
-  const {
-    until, show, lastUpdateDateString, since, showWait, allCount, viewChart, viewedCount, errorDays,
-  } = props;
-  return (
-    <TabContainer>
-      <div className="chart-presenter__tab-content">
-        <ChartHeader errorDays={errorDays} viewChart={viewChart} />
-        {show && (
-        <UpdateInfo
-          since={since}
-          until={until}
-          lastUpdateDateString={lastUpdateDateString}
-          allCount={allCount}
-          viewedCount={viewedCount}
-        />
-        )}
-        <ChartTable
-          data={viewChart}
-          tableInfo={showWait ? <WaitForResult /> : undefined}
-        />
-      </div>
-    </TabContainer>
-  );
-}
-
-PostsContainer.propTypes = {
-  errorDays: PropTypes.arrayOf(PropTypes.shape()),
-  viewChart: PropTypes.arrayOf(PropTypes.shape),
-  show: PropTypes.bool,
-  since: PropTypes.number,
-  until: PropTypes.number,
-  lastUpdateDateString: PropTypes.string,
-  allCount: PropTypes.number,
-  viewedCount: PropTypes.number,
-  showWait: PropTypes.bool,
-};
-
-class ChartPresenter extends React.Component {
+export class ChartPresenter extends React.Component {
   state = {
     selectedTab: tabOptions.posts,
   };
@@ -138,16 +67,13 @@ class ChartPresenter extends React.Component {
   };
 
   render() {
-    const { store } = this.context;
     const { selectedTab } = this.state;
-    const { classes } = this.props;
-
     const {
-      listSort, chart, filters, until, songsPerDay, since, lastUpdateDate, show_wait,
-    } = store.getState();
+      classes, listSort, chart, filters, until, songsPerDay, since, lastUpdateDate, show_wait,
+    } = this.props;
 
     const { viewChart, errorDays, westLetters } = chart.length > 0
-      ? filterChart(chart, filters, until, songsPerDay)
+      ? filterChart(chart, filters, since, until, songsPerDay)
       : defaultValue;
     const selectedPosts = viewChart.filter(elem => elem.selected);
     sorting[listSort](selectedPosts);
@@ -172,16 +98,16 @@ class ChartPresenter extends React.Component {
   )),
       [tabOptions.playlist]: (
         <TabContainer>
-          <SpotifySearch selected={selectedPosts} />
+          <SpotifySearchComponent selected={selectedPosts} />
         </TabContainer
       >),
       [tabOptions.summary]: (
         <TabContainer>
-          <Summary selected={selectedPosts} />
+          <SummaryComponent selected={selectedPosts} />
         </TabContainer>),
       [tabOptions.westLetter]: (
         <TabContainer>
-          <WestLetter data={westLetters} />
+          <WestLetterComponent data={westLetters} />
         </TabContainer>),
     };
     return (
@@ -197,10 +123,26 @@ class ChartPresenter extends React.Component {
   }
 }
 
-ChartPresenter.contextTypes = {
-  store: PropTypes.shape(),
-};
 ChartPresenter.propTypes = {
   classes: PropTypes.shape({ root: PropTypes.string }).isRequired,
+  listSort: PropTypes.string,
+  chart: PropTypes.arrayOf(PropTypes.shape()),
+  filters: PropTypes.shape(),
+  until: PropTypes.number,
+  songsPerDay: PropTypes.number,
+  since: PropTypes.number,
+  lastUpdateDate: PropTypes.string,
+  show_wait: PropTypes.bool,
 };
-export default withStyles(styles)(ChartPresenter);
+
+const mapStateToProps = (state) => {
+  const {
+    listSort, chart, filters, until, songsPerDay, since, lastUpdateDate, show_wait,
+  } = state;
+  return {
+    listSort, chart, filters, until, songsPerDay, since, lastUpdateDate, show_wait,
+  };
+};
+
+export const componentWithStyles = withStyles(styles)(ChartPresenter);
+export default connect(mapStateToProps)(componentWithStyles);

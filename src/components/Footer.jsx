@@ -1,6 +1,3 @@
-/**
- * Created by michal.grezel on 12.02.2017.
- */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare, faGithub } from '@fortawesome/free-brands-svg-icons';

@@ -1,6 +1,3 @@
-/**
- * Created by michal.grezel on 07.09.2017.
- */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';

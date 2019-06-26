@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilteringOptions/> renders without crashing FilteringOptions 1`] = `
+<FilteringOptions
+  classes={
+    Object {
+      "button": "FilteringOptions-button-1",
+      "details": "FilteringOptions-details-4",
+      "heading": "FilteringOptions-heading-2",
+      "root": "FilteringOptions-root-3",
+    }
+  }
+/>
+`;

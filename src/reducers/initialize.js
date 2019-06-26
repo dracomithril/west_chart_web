@@ -15,7 +15,6 @@ function getStartDate() {
   const untilDate = moment();
   const sinceDate = moment(untilDate).subtract(14, 'days');
   return {
-    startDate: moment(),
     untilDate,
     sinceDate,
   };

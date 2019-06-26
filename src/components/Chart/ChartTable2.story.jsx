@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 // import { action } from '@storybook/addon-actions';
 import { Provider } from 'react-redux';
-import ChartTable from './ChartTable2';
+import ChartTableContainer from './ChartTable2';
 import configureStore from '../../configureStore';
 import chart from '../../___data___/chartData';
 
@@ -24,5 +24,5 @@ storiesOf('ChartTable2', module)
       {story()}
     </Provider>
   ))
-  .add('No data', () => <ChartTable data={[]} />)
-  .add('with elements', () => <ChartTable data={chart} />);
+  .add('No data', () => <ChartTableContainer data={[]} />)
+  .add('with elements', () => <ChartTableContainer data={chart} />);

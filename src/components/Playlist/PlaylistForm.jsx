@@ -1,9 +1,7 @@
-/**
- * Created by michal.grezel on 10.04.2017.
- */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
+import { Button, Fab } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -12,7 +10,7 @@ import { faSave, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { weekInfo } from '../../utils/utils';
 import './playlist.css';
 
-export default class PlaylistForm extends Component {
+export class PlaylistForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,10 +30,8 @@ export default class PlaylistForm extends Component {
   };
 
   render() {
-    const { store } = this.context;
-    const { spotifyUser } = store.getState();
     const {
-      onCreatePlaylistClick: onCreatePlaylist, onStartClick, hasElements, isUserLogged,
+      onCreatePlaylistClick: onCreatePlaylist, onStartClick, hasElements, isUserLogged, spotifyUser,
     } = this.props;
     const { playlistName, isPrivate } = this.state;
     const disable_create = !(playlistName.length > 5 && hasElements && isUserLogged);
@@ -56,18 +52,17 @@ export default class PlaylistForm extends Component {
           }}
         />
         <div style={{ alignSelf: 'center' }}>
-          <Button variant="fab" color="secondary" onClick={this.onGenPlaylistName} id="genName_sp_button">
+          <Fab color="secondary" onClick={this.onGenPlaylistName} id="genName_sp_button">
             <FontAwesomeIcon icon={faLightbulb} />
-          </Button>
-          <Button
-            variant="fab"
+          </Fab>
+          <Fab
             id="crt_pl_button"
             onClick={() => onCreatePlaylist && onCreatePlaylist({ playlistName, isPrivate })}
             disabled={!isNameValid && Boolean(spotifyUser.id)}
             title={disable_create ? 'Sorry you need to be logged to spotify to be able to add playlist' : ''}
           >
             <FontAwesomeIcon icon={faSave} />
-          </Button>
+          </Fab>
           <FormControlLabel
             control={(
               <Checkbox
@@ -87,12 +82,17 @@ export default class PlaylistForm extends Component {
     );
   }
 }
-PlaylistForm.contextTypes = {
-  store: PropTypes.shape(),
-};
+
 PlaylistForm.propTypes = {
   hasElements: PropTypes.bool,
   isUserLogged: PropTypes.bool,
   onStartClick: PropTypes.func,
   onCreatePlaylistClick: PropTypes.func,
+  spotifyUser: PropTypes.shape(),
 };
+
+const mapStateToProps = ({ spotifyUser }) => ({
+  spotifyUser,
+});
+
+export default connect(mapStateToProps)(PlaylistForm);

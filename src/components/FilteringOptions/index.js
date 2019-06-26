@@ -1,1 +1,1 @@
-export { default } from './FilteringOptions';
+export { default, componentWithStyles } from './FilteringOptions';

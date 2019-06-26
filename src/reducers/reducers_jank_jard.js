@@ -1,6 +1,3 @@
-/**
- * Created by michal.grezel on 05.04.2017.
- */
 import { routerReducer } from 'react-router-redux';
 import moment from 'moment';
 import { combineReducers } from 'redux';
@@ -66,9 +63,6 @@ const sp_playlist_name = (state = '', action) => (action.type === actionTypes.UP
 const lastUpdateDate = (state = '', action) => (action.type === actionTypes.UPDATE_LAST_UPDATE
   ? action.date : state);
 
-const startDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_START_TIME
-  ? moment(date) : state);
-
 const sinceDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_SINCE_DATE
   ? moment(date) : state);
 
@@ -103,7 +97,7 @@ const errors = (state = [], action) => {
 
 const isPlaylistPrivate = (state = false, action) => (action.type === actionTypes.TOGGLE_IS_PRIVATE
   ? action.value : state);
-const sp_playlist_info = (state = { url: null, pl_name: '' }, action) => (action.type === actionTypes.UPDATE_PLAYLIST_INFO ? action.value : state);
+const spotifyPlaylistInfo = (state = { url: null, pl_name: '' }, action) => (action.type === actionTypes.UPDATE_PLAYLIST_INFO ? action.value : state);
 const hasAcCookie = (state = false, action) => (action.type === actionTypes.TOGGLE_HAS_COOKIE
   ? action.value || state : state);
 
@@ -112,7 +106,6 @@ const reducers = combineReducers({
   user,
   chart,
   lastUpdateDate,
-  startDate,
   showLast,
   since,
   sinceDate,
@@ -124,7 +117,7 @@ const reducers = combineReducers({
   sp_playlist_name,
   show_wait,
   isPlaylistPrivate,
-  sp_playlist_info,
+  spotifyPlaylistInfo,
   errors,
   hasAcCookie,
   routing: routerReducer,

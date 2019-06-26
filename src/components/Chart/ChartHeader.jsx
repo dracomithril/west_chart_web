@@ -1,12 +1,9 @@
-/**
- * Created by XKTR67 on 5/25/2017.
- */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import moment from 'moment/moment';
+import moment from 'moment';
 import SongsPerDay from './SongsPerDay';
 import FilteringOptions from '../FilteringOptions';
 import '../components.css';
@@ -15,6 +12,15 @@ import actionTypes from '../../reducers/actionTypes';
 import { weekInfo } from '../../utils/utils';
 import { UpdateChart } from '../../utils/chart';
 import { errorDaysObjectProps } from '../typeDefinitions';
+import {
+  showWait,
+  updateChartAction,
+  updateLastUpdate,
+  updateSince,
+  updateSongsParDay,
+  updateUntil,
+} from '../../reducers/actions';
+import FilterDate from './FilterDate';
 
 const styles = theme => ({
   button: {
@@ -30,7 +36,7 @@ const styles = theme => ({
   },
 });
 
-class ChartHeader extends React.Component {
+export class ChartHeader extends React.Component {
   constructor(props) {
     super(props);
     const { monday, friday } = weekInfo();
@@ -42,85 +48,44 @@ class ChartHeader extends React.Component {
 
   componentDidMount() {
     const { since, until } = this.state;
-    const { store } = this.context;
-    this.updateDates(since, until, store.dispatch);
+    const { updateSinceDate, updateUntilDate } = this.props;
+    updateSinceDate(since);
+    updateUntilDate(until);
   }
 
   onDateChange = fieldName => (date) => {
     this.setState({ [fieldName]: moment(date) });
-    const { store } = this.context;
-    store.dispatch({
-      type: actionTypes[`UPDATE_${fieldName.toUpperCase()}`],
-      value: date.valueOf(),
-    });
-  };
-
-  updateDates = (since, until, dispatch) => {
-    dispatch({
-      type: actionTypes.UPDATE_UNTIL,
-      value: until.valueOf(),
-    });
-    dispatch({
-      type: actionTypes.UPDATE_SINCE,
-      value: since.valueOf(),
-    });
+    const { updateUntilDate, updateSinceDate } = this.props;
+    const handlers = {
+      since: updateSinceDate,
+      until: updateUntilDate,
+    };
+    handlers[fieldName](moment(date));
   };
 
   render() {
-    const { store } = this.context;
-    const { songsPerDay, user } = store.getState();
     const { since, until } = this.state;
-    const { errorDays, classes } = this.props;
+    const {
+      errorDays, songsPerDay, user, classes, changeDays, updateChart,
+    } = this.props;
     return (
       <div className="chart-header">
-        <div style={{ display: 'none' }}>
-          <TextField
-            id="date"
-            label="starting from"
-            type="date"
-            value={since.format('YYYY-MM-DD')}
-            className={classes.textField}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            onChange={({ target }) => {
-              this.onDateChange('since')(target.value);
-            }}
-          />
-          <TextField
-            id="date"
-            label="until"
-            type="date"
-            className={classes.textField}
-            value={until.format('YYYY-MM-DD')}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            onChange={({ target }) => {
-              this.onDateChange('until')(target.value);
-            }}
-          />
-        </div>
+        <FilterDate
+          since={since}
+          classes={classes}
+          onSinceChange={({ target }) => {
+            this.onDateChange('since')(target.value);
+          }}
+          until={until}
+          onUntilChange={({ target }) => {
+            this.onDateChange('until')(target.value);
+          }}
+        />
         <Button
           id="updateChartB"
           variant="contained"
           className={classes.button}
-          onClick={() => {
-            store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: true });
-            store.dispatch({ type: actionTypes.UPDATE_CHART, chart: [] });
-            UpdateChart(user.accessToken).then((body) => {
-              console.info(`chart list witch ${body.chart.length}`);
-              store.dispatch({ type: actionTypes.UPDATE_CHART, chart: body.chart });
-              store.dispatch({ type: actionTypes.UPDATE_LAST_UPDATE, date: body.lastUpdateDate });
-              store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
-              return Promise.resolve();
-            })
-              .catch((err) => {
-                console.error('Error in fetch chart.', err.message);
-                store.dispatch({ type: actionTypes.ADD_ERROR, value: err });
-                store.dispatch({ type: actionTypes.CHANGE_SHOW_WAIT, show: false });
-              });
-          }}
+          onClick={() => updateChart(user.accessToken)}
           color="primary"
         >
           Update
@@ -129,28 +94,60 @@ class ChartHeader extends React.Component {
         <SongsPerDay
           errorDays={errorDays}
           songsPerDay={songsPerDay}
-          onDaysChange={days => store.dispatch({
-            type: 'UPDATE_SONGS_PER_DAY',
-            days,
-          })
-          }
+          onDaysChange={changeDays}
         />
       </div>
     );
   }
 }
 
-ChartHeader.contextTypes = {
-  store: PropTypes.shape(),
-};
-
 ChartHeader.propTypes = {
+  songsPerDay: PropTypes.number,
+  changeDays: PropTypes.func,
+  user: PropTypes.shape(),
   classes: PropTypes.shape({ button: PropTypes.string }).isRequired,
   errorDays: PropTypes.arrayOf(errorDaysObjectProps),
+  updateChart: PropTypes.func,
+  updateSinceDate: PropTypes.func,
+  updateUntilDate: PropTypes.func,
 };
 
 ChartHeader.defaultProps = {
   errorDays: [],
 };
 
-export default withStyles(styles)(ChartHeader);
+const mapStateToProps = (state /* , ownProps */) => {
+  const {
+    songsPerDay, user,
+  } = state;
+  return {
+    songsPerDay, user,
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  changeDays: (value) => { dispatch(updateSongsParDay(value)); },
+  updateSinceDate: (value) => { dispatch(updateSince(value)); },
+  updateUntilDate: (value) => { dispatch(updateUntil(value)); },
+  updateChart: (accessToken) => {
+    dispatch(showWait(true));
+    dispatch(updateChartAction());
+    UpdateChart(accessToken)
+      .then((body) => {
+        console.info(`chart list witch ${body.chart.length}`);
+        dispatch(updateChartAction(body.chart));
+        dispatch(updateLastUpdate(body));
+        dispatch(showWait(false));
+        return Promise.resolve();
+      })
+      .catch((err) => {
+        console.error('Error in fetch chart.', err.message);
+        dispatch({ type: actionTypes.ADD_ERROR, value: err });
+        dispatch(showWait(false));
+      });
+  },
+});
+
+
+export const containerWithStyles = withStyles(styles)(ChartHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(containerWithStyles);

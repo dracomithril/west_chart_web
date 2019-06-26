@@ -12,7 +12,7 @@ import Policy from './components/Policy';
 import About from './components/About';
 import Combiner from './components/PlaylistCombiner';
 import NotFound from './components/NotFound';
-import ChartPresenter from './components/Chart/ChartPresenter';
+import ChartPresenterContainer from './components/Chart/ChartPresenter';
 import LoginAlert from './components/LoginAlert';
 import Demo from './components/Demo';
 import PrivateRoute from './PrivateRoute';
@@ -193,7 +193,7 @@ Logout
           <Route exact path="/" component={About} />
           <Route path="/policy" exact component={Policy} />
           <Route path="/login" component={LoginAlert} />
-          <PrivateRoute path="/chart" exact component={ChartPresenter} />
+          <PrivateRoute path="/chart" exact component={ChartPresenterContainer} />
           {spotifyUser.id && <PrivateRoute path="/combiner" exact component={Combiner} />}
           <Route path="/demo" component={Demo} />
           <Route component={NotFound} />

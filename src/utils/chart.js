@@ -43,16 +43,18 @@ function obtainList(groupId, accessToken) {
   return [];
 }
 
-const formatResponse = async (data = []) => Promise.all(data.map(getChartEntry));
+const formatChartEntries = async (data = []) => Promise.all(data.map(getChartEntry));
+
+const formatResponse = (chart) => {
+  const cache = {
+    chart,
+    lastUpdateDate: new Date().toISOString(),
+  };
+  return Promise.resolve(cache);
+};
 
 export const UpdateChart = accessToken => obtainList(facebookGroup, accessToken)
-  .then(formatResponse)
-  .then((chart) => {
-    const cache = {
-      chart,
-      lastUpdateDate: new Date().toISOString(),
-    };
-    return Promise.resolve(cache);
-  });
+  .then(formatChartEntries)
+  .then(formatResponse);
 
 export default UpdateChart;

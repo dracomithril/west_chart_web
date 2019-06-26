@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SongsPerDay/> renders without crashing SongsPerDay 1`] = `
+<SongsPerDay
+  classes={
+    Object {
+      "button": "SongsPerDay-button-1",
+      "error": "SongsPerDay-error-6",
+      "good": "SongsPerDay-good-7",
+      "heading": "SongsPerDay-heading-3",
+      "root": "SongsPerDay-root-4",
+      "textField": "SongsPerDay-textField-5",
+      "typography": "SongsPerDay-typography-2",
+    }
+  }
+  errorDays={Array []}
+/>
+`;

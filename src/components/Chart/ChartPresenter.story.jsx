@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-// import { action } from '@storybook/addon-actions';
 import { Provider } from 'react-redux';
-import ChartPresenter from './ChartPresenter';
+import ChartPresenterContainer from './ChartPresenter';
 import configureStore from '../../configureStore';
 import response from '../../___data___/chartData';
 
@@ -34,7 +33,7 @@ const store = configureStore(state);
 storiesOf('ChartPresenter', module)
   .add('no data', () => (
     <Provider store={storeNo}>
-      <ChartPresenter />
+      <ChartPresenterContainer />
     </Provider>
   ))
   .addDecorator(story => (
@@ -42,4 +41,4 @@ storiesOf('ChartPresenter', module)
       {story()}
     </Provider>
   ))
-  .add('with data', () => <ChartPresenter />);
+  .add('with data', () => <ChartPresenterContainer />);

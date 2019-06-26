@@ -1,41 +1,28 @@
-/**
- * Created by XKTR67 on 4/19/2017.
- */
-const sinon = require('sinon');
-// import configureMockStore from 'redux-mock-store';
-// const mockStore = configureMockStore([]);
+import sp_apiMock from 'spotify-web-api-node';
+import { createPlaylistAndAddTracks } from '../utils/spotify_utils';
+
+jest.mock('spotify-web-api-node');
+jest.mock('cookies-js');
+
 describe('[sp_utils]', () => {
-    let sp_utils,
-        sp_mock = {
-            setAccessToken: sinon.spy(),
-            createPlaylist: sinon.stub()
-        };
-
-    beforeAll(() => {
-        jest.mock('cookies-js');
-        jest.mock("spotify-web-api-node");
-        const sp_apiMock = require("spotify-web-api-node");
-        sp_apiMock.mockImplementation(() => sp_mock);
-        sp_utils = require('../utils/spotify_utils');
-    });
-    afterAll(() => {
-        jest.unmock('cookies-js');
-        jest.unmock("spotify-web-api-node")
-    });
-    describe('[createPlaylistAndAddTracks]', function () {
-        it('should react if no body from spotify', function (done) {
-            sp_mock.createPlaylist.resolves({});
-            sp_utils.createPlaylistAndAddTracks({}, '', false, [])
-              .then(()=>{
-                  done(new Error('Should throw error'));
-              })
-              .catch(err => {
-                expect(err.message).toBe('missing body');
-                done();
-            });
-
-
+  beforeAll(() => {
+  });
+  afterAll(() => {
+    jest.unmock('cookies-js');
+    jest.unmock('spotify-web-api-node');
+  });
+  describe('[createPlaylistAndAddTracks]', () => {
+    it('should react if no body from spotify', (done) => {
+      sp_apiMock.prototype.createPlaylist.mockResolvedValue({});
+      createPlaylistAndAddTracks({}, '', false, [])
+        .then(() => {
+          done(new Error('Should throw error'));
+        })
+        .catch((err) => {
+          expect(err.message).toBe('missing body');
+          expect(sp_apiMock.prototype.createPlaylist).toBeCalled();
+          done();
         });
     });
-
+  });
 });

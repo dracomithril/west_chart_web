@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-for */
-/**
- * Created by michal.grezel on 05.06.2017.
- */
+
 import React from 'react';
+import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { flatMap, uniq } from 'lodash';
 import {
   addTrucksToPlaylistNoRepeats,
   createPlaylistAndAddTracks,
@@ -15,55 +15,51 @@ import {
 } from '../utils/spotify_utils';
 import PlaylistInfo from './PlaylistInfo';
 import UserPlaylist from './UserPlaylist';
-
 import actionTypes from '../reducers/actionTypes';
 
-const _ = require('lodash');
 // todo add modal to block usage of tool when playlist crating
 const cf = {
   existing: 'existing',
   new_list: 'new_list',
 };
-export default class PlaylistCombiner extends React.Component {
+export class PlaylistCombiner extends React.Component {
   state = {
     selected: [],
     userField: '',
     users: {},
     createFrom: cf.existing,
     newPlaylist: '',
-    sp_playlist_info: {
+    spotifyPlaylistInfo: {
       url: null,
     },
   };
 
   componentDidMount() {
-    const { store } = this.context;
-    const { spotifyUser } = store.getState();
+    const { spotifyUser } = this.props;
     this.getUserInformation(spotifyUser.id);
   }
 
+  updateUsers = (usersList, new_user) => {
+    const newUsers = {
+      [new_user.id]: Object.assign({}, usersList[new_user.id], new_user),
+    };
+    return { users: Object.assign({}, usersList, newUsers) };
+  };
+
   getUserInformation = (user) => {
     if (user) {
-      const {
-        state,
-        context: { store },
-      } = this;
-      const { spotifyUser } = store.getState();
-      const updateUsers = (users, new_user) => {
-        const newUsers = {
-          [new_user.id]: Object.assign({}, users[new_user.id], new_user),
-        };
-        return { users: Object.assign({}, users, newUsers) };
-      };
+      const { users } = this.state;
+      const { spotifyUser, addError, signOutUser } = this.props;
+
       return getUserAndPlaylists(spotifyUser.access_token, user)
         .then((new_user) => {
-          this.setState(updateUsers(state.users, new_user));
+          this.setState(this.updateUsers(users, new_user));
           console.info('Retrieved playlists ', new_user);
           return Promise.resolve(new_user.id);
         })
         .catch((e) => {
-          store.dispatch({ type: actionTypes.ADD_ERROR, value: e });
-          store.dispatch({ type: actionTypes.SIGN_OUT_USER });
+          addError(e);
+          signOutUser();
           return Promise.resolve();
         });
     }
@@ -73,7 +69,8 @@ export default class PlaylistCombiner extends React.Component {
   searchForUser_click = () => {
     const { users, userField } = this.state;
     if (Object.keys(users).length < 3) {
-      this.getUserInformation(userField).then(() => this.setState({ userField: '' }));
+      this.getUserInformation(userField)
+        .then(() => this.setState({ userField: '' }));
     } else {
       alert('Sorry you can only combine list from 3 users. Delete one of users to add new one.');
     }
@@ -81,30 +78,27 @@ export default class PlaylistCombiner extends React.Component {
 
   combinePlaylists = () => {
     // todo check if playlist exists
-    const { store } = this.context;
     const createFrom_selected = document.getElementById('select_user_playlist').value;
-    const { spotifyUser } = store.getState();
     const { selected, newPlaylist, createFrom } = this.state;
-    const array = _.flatMap(selected, n => n);
+    const { addError, spotifyUser } = this.props;
+    const array = flatMap(selected, n => n);
+    const { id, access_token } = spotifyUser;
 
-    const actions = array.map(el => getTracks(spotifyUser.access_token, ...el));
+    const actions = array.map(el => getTracks(access_token, ...el));
     Promise.all(actions)
       .then((data) => {
-        const flat_tracks = _.flatMap(data, n => n);
-        const uniq = _.uniq(flat_tracks);
-        const { id, access_token } = spotifyUser;
+        const flat_tracks = flatMap(data, n => n);
+        const uniqTracks = uniq(flat_tracks);
         return createFrom === cf.existing
-          ? addTrucksToPlaylistNoRepeats(id, createFrom_selected, uniq, access_token)
-          : createPlaylistAndAddTracks(access_token, id, newPlaylist, false, uniq);
+          ? addTrucksToPlaylistNoRepeats(id, createFrom_selected, uniqTracks, access_token)
+          : createPlaylistAndAddTracks(access_token, id, newPlaylist, false, uniqTracks);
       })
-      .then((d) => {
-        this.setState({ sp_playlist_info: d });
+      .then((playlistInfo) => {
+        this.setState({ spotifyPlaylistInfo: playlistInfo });
         this.getUserInformation(spotifyUser.id);
         this.forceUpdate();
       })
-      .catch((e) => {
-        store.dispatch({ type: actionTypes.ADD_ERROR, value: e });
-      });
+      .catch(addError);
   };
 
   deleteUserPlaylist = (user_id) => {
@@ -126,11 +120,10 @@ export default class PlaylistCombiner extends React.Component {
   };
 
   render() {
-    const { store } = this.context;
     const {
-      userField, users, sp_playlist_info, createFrom, newPlaylist,
+      userField, users, spotifyPlaylistInfo, createFrom, newPlaylist,
     } = this.state;
-    const { spotifyUser } = store.getState();
+    const { spotifyUser } = this.props;
     const users_playlists = Object.keys(users).map(user => (
       <UserPlaylist
         user={users[user]}
@@ -167,7 +160,7 @@ export default class PlaylistCombiner extends React.Component {
             number that is hard to obtain. Sorry we will work on it.`}
           </span>
         </div>
-        {sp_playlist_info.url !== null && <PlaylistInfo {...sp_playlist_info} />}
+        {spotifyPlaylistInfo.url !== null && <PlaylistInfo {...spotifyPlaylistInfo} />}
         <div style={{ display: 'inline-block' }}>
           <div id="from_playlist">
             <label htmlFor="user_id_input">
@@ -230,7 +223,24 @@ To:
     );
   }
 }
-PlaylistCombiner.contextTypes = {
-  store: PropTypes.shape(),
+
+PlaylistCombiner.propTypes = {
+  addError: PropTypes.func,
+  signOutUser: PropTypes.func,
+  spotifyUser: PropTypes.shape(),
 };
-PlaylistCombiner.propTypes = {};
+
+const mapStateToProps = ({ spotifyUser } /* , ownProps */) => ({
+  spotifyUser,
+});
+
+const mapDispatchToProps = dispatch => ({
+  addError: (error) => {
+    dispatch({ type: actionTypes.ADD_ERROR, value: error });
+  },
+  signOutUser: () => {
+    dispatch({ type: actionTypes.SIGN_OUT_USER });
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistCombiner);

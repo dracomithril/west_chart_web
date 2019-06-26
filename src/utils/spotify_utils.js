@@ -1,6 +1,3 @@
-/**
- * Created by XKTR67 on 5/11/2017.
- */
 import Spotify from 'spotify-web-api-node';
 import { api, hostname } from '../config';
 

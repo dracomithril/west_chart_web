@@ -1,6 +1,3 @@
-/**
- * Created by xktr67 on 6/21/2017.
- */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

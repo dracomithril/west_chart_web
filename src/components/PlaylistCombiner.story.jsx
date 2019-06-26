@@ -2,7 +2,7 @@ import React from 'react';
 import { addDecorator, storiesOf } from '@storybook/react';
 // import { action } from '@storybook/addon-actions';
 import { Provider } from 'react-redux';
-import PlaylistCombiner from './PlaylistCombiner';
+import PlaylistCombinerContainer from './PlaylistCombiner';
 import configureStore from '../configureStore';
 
 const state = {};
@@ -13,4 +13,4 @@ addDecorator(story => (
     {story()}
   </Provider>
 ));
-storiesOf('PlaylistCombiner', module).add('Todo[VR]', () => <PlaylistCombiner />);
+storiesOf('PlaylistCombiner', module).add('Todo[VR]', () => <PlaylistCombinerContainer />);

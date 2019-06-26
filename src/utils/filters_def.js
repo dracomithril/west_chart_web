@@ -1,19 +1,5 @@
-/**
- * Created by michal.grezel on 05.04.2017.
- */
-const westletter = 'WCS Weekly Westletter';
-const woc_string = 'Wielkie Ogarnianie Charta';
-/**
- *
- * @param until {Date}
- * @param days {number}
- * @returns {Date}
- */
-export const subtractDaysFromDate = (until, days) => {
-  const sinceDate = new Date(until);
-  sinceDate.setDate(new Date(until).getDate() - days);
-  return sinceDate;
-};
+import { westletter, woc_string } from './consts';
+import { subtractDaysFromDate } from './date';
 
 /**
  *
@@ -102,9 +88,9 @@ const text_filters = [
     check: textCheck(regexWestletter),
   },
 ];
-const exp = {
+
+export default {
   control: filters,
   text: text_filters,
   subtractDaysFromDate,
 };
-export default exp;

@@ -23,6 +23,7 @@ const MessageControl = ({
     </span>
   </div>
 );
+
 MessageControl.propTypes = {
   id: PropTypes.string,
   checked: PropTypes.bool,

@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Summary/> renders without crashing Summary 1`] = `
+<div
+  className="summary"
+>
+  <div
+    className="summary__header"
+  >
+    <h3
+      id="summary"
+    >
+      Summary
+    </h3>
+    <WithStyles(Button)
+      onClick={[Function]}
+      style={
+        Object {
+          "minWidth": 44,
+          "padding": "unset",
+        }
+      }
+      title="copy to clipboard"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className=""
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              384,
+              512,
+              Array [],
+              "f328",
+              "M384 112v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h80c0-35.29 28.71-64 64-64s64 28.71 64 64h80c26.51 0 48 21.49 48 48zM192 40c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m96 114v-20a6 6 0 0 0-6-6H102a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h180a6 6 0 0 0 6-6z",
+            ],
+            "iconName": "clipboard",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </WithStyles(Button)>
+  </div>
+  <h6>
+    [WCS Weekly Westletter]
+  </h6>
+  <textarea
+    className="summary__textarea"
+    defaultValue=""
+    id="textarea_add"
+    onChange={[Function]}
+    placeholder="Here write what you want"
+  />
+  <div>
+    <span
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    >
+      Here will be list of tracks your choosing
+    </span>
+  </div>
+  <div
+    id="popover-contained"
+    title="Print list"
+  />
+  <h6>
+    Link to spotify playlist: 
+    <span
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    >
+      No link
+    </span>
+  </h6>
+  <textarea
+    className="summary__textarea"
+    defaultValue=""
+    id="riddler"
+    onChange={[Function]}
+    placeholder="riddle that you have in mind"
+  />
+  <br />
+  <label
+    htmlFor="link2riddle"
+  >
+    Link for Riddle
+    <input
+      id="link2riddle"
+      onChange={[Function]}
+      placeholder="link to riddle"
+      style={
+        Object {
+          "marginLeft": 5,
+          "paddingLeft": 5,
+        }
+      }
+      type="text"
+      value=""
+    />
+  </label>
+</div>
+`;
