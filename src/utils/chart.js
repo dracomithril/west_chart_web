@@ -2,7 +2,7 @@ import getChartEntry from './chart_entry';
 
 import { facebookGroup } from '../config';
 
-const limit = 50;
+const limit = 100;
 const fieldsArr = [
   'story',
   'from{first_name,last_name,name,id}',
@@ -21,11 +21,10 @@ const fieldsArr = [
   'reactions.limit(1).summary(true)',
   'comments.limit(50).summary(true){message,from}',
 ];
-const fields = fieldsArr.join(',');
 
 function obtainList(groupId, accessToken) {
   const query = {
-    fields,
+    fields: fieldsArr.join(','),
     limit,
     access_token: accessToken,
   };
