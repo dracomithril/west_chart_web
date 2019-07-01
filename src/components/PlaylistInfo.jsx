@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
-const PlaylistInfo = ({ url, playlistName }) => (
+const PlaylistInfo = ({ url, name }) => (
   <div className="spotify_sumary">
     <span>
       {'Created '}
@@ -13,7 +13,7 @@ Spotify
       {' playlist! name: '}
     </span>
     <a href={url} target="_newtab">
-      {playlistName}
+      {name}
     </a>
     <br />
     <a href={url} target="_newtab">
@@ -24,7 +24,7 @@ Spotify
 
 PlaylistInfo.propTypes = {
   url: PropTypes.string,
-  playlistName: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default PlaylistInfo;

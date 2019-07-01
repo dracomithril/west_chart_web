@@ -7,8 +7,9 @@ import actionTypes from '../reducers/actionTypes';
 import ChartPresenterContainer from './Chart/ChartPresenter';
 
 class Demo extends React.Component {
-  componentWillMount() {
-    const { updateChart, chart } = this.props;
+  constructor(props) {
+    super(props);
+    const { updateChart, chart } = props;
     if (chart.length === 0) {
       updateChart(fakeChartData);
     }

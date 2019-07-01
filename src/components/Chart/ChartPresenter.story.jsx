@@ -12,7 +12,7 @@ const state = {
     },
   },
   show_wait: false,
-  user: {},
+  facebookUser: {},
   chart: response,
 };
 const state2 = {
@@ -22,7 +22,7 @@ const state2 = {
     },
   },
   show_wait: false,
-  user: {},
+  facebookUser: {},
   chart: [],
   lastUpdateDate: '2017-06-16T19:54:25.672Z',
 };

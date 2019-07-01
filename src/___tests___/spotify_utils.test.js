@@ -19,7 +19,7 @@ describe('[sp_utils]', () => {
           done(new Error('Should throw error'));
         })
         .catch((err) => {
-          expect(err.message).toBe('missing body');
+          expect(err.message).toBe('missing playlist');
           expect(sp_apiMock.prototype.createPlaylist).toBeCalled();
           done();
         });

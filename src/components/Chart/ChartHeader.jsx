@@ -66,7 +66,7 @@ export class ChartHeader extends React.Component {
   render() {
     const { since, until } = this.state;
     const {
-      errorDays, songsPerDay, user, classes, changeDays, updateChart,
+      errorDays, songsPerDay, accessToken, classes, changeDays, updateChart,
     } = this.props;
     return (
       <div className="chart-header">
@@ -85,7 +85,7 @@ export class ChartHeader extends React.Component {
           id="updateChartB"
           variant="contained"
           className={classes.button}
-          onClick={() => updateChart(user.accessToken)}
+          onClick={() => updateChart(accessToken)}
           color="primary"
         >
           Update
@@ -104,7 +104,7 @@ export class ChartHeader extends React.Component {
 ChartHeader.propTypes = {
   songsPerDay: PropTypes.number,
   changeDays: PropTypes.func,
-  user: PropTypes.shape(),
+  accessToken: PropTypes.string,
   classes: PropTypes.shape({ button: PropTypes.string }).isRequired,
   errorDays: PropTypes.arrayOf(errorDaysObjectProps),
   updateChart: PropTypes.func,
@@ -118,10 +118,10 @@ ChartHeader.defaultProps = {
 
 const mapStateToProps = (state /* , ownProps */) => {
   const {
-    songsPerDay, user,
+    songsPerDay, facebookUser,
   } = state;
   return {
-    songsPerDay, user,
+    songsPerDay, accessToken: facebookUser.accessToken,
   };
 };
 

@@ -25,7 +25,7 @@
   },
   "isPlaylistPrivate":false,
   "songsPerDay":2,
-  "user":{},
+  "facebookUser":{},
   "until":"2017-03-11T13:46:00.570Z",
   "spotifyUser":{},
   "listSort":"reaction",

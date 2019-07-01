@@ -96,8 +96,8 @@ Login.propTypes = {
     }),
   }),
 };
-const mapStateToProps = ({ user, spotifyUser }) => ({
-  facebookUser: user,
+const mapStateToProps = ({ facebookUser, spotifyUser }) => ({
+  facebookUser,
   spotifyUser,
 });
 

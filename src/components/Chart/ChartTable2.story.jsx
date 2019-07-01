@@ -13,7 +13,7 @@ const state = {
     },
   },
   show_wait: false,
-  user: {},
+  facebookUser: {},
   chart,
 };
 const store = configureStore(state);

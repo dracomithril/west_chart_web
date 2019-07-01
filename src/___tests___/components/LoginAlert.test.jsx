@@ -13,7 +13,7 @@ describe('<Login/>', () => {
       <LoginAlert
         location={{ state: { frm: 'some_path' } }}
         spotifyUser={state.spotifyUser}
-        facebookUser={state.user}
+        facebookUser={state.facebookUser}
       />,
     );
     expect(shallowToJson(wrapper)).toMatchSnapshot();

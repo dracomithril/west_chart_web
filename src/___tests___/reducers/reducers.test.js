@@ -102,13 +102,13 @@ describe('showLast', () => {
   });
   // todo  improve to check if it's date string
 });
-describe('user', () => {
+describe('facebookUser', () => {
   it('should return current state if response have error', () => {
     const user = {
       error: { message: 'error' },
     };
     const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_USER, value: user });
-    expect(resp).toHaveProperty('user', {});
+    expect(resp).toHaveProperty('facebookUser', {});
   });
   it('should return current state if different type used', () => {
     const user = {
@@ -118,9 +118,9 @@ describe('user', () => {
       type: actionTypes.UPDATE_SHOW_LAST,
       value: user,
     });
-    expect(resp).toHaveProperty('user', {});
+    expect(resp).toHaveProperty('facebookUser', {});
   });
-  it('should return updated user', () => {
+  it('should return updated facebookUser', () => {
     const user = {
       accessToken: 'zzzzz',
       email: 'email',
@@ -144,7 +144,7 @@ describe('user', () => {
       userID: 'zzzz1',
     };
     const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_USER, value: user });
-    expect(resp).toHaveProperty('user', expected);
+    expect(resp).toHaveProperty('facebookUser', expected);
   });
 });
 describe('spotifyUser', () => {
@@ -231,7 +231,7 @@ describe('spotifyPlaylistInfo', () => {
   it('should replace current state by new value', () => {
     const action = {
       type: actionTypes.UPDATE_PLAYLIST_INFO,
-      value: { url: 'new_url', pl_name: 'new_playlist' },
+      value: { url: 'new_url', name: 'new_playlist' },
     };
     const resp = reducers_jank_jard(defaultState, action);
     expect(resp).toHaveProperty('spotifyPlaylistInfo', action.value);

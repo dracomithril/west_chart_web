@@ -22,7 +22,7 @@ import createUser from '../models/facebookUser';
  * @param action
  * @returns {*}
  */
-const user = (state, action) => {
+const facebookUser = (state, action) => {
   switch (action.type) {
     case actionTypes.UPDATE_USER: {
       return createUser(action.value) || state;
@@ -97,13 +97,13 @@ const errors = (state = [], action) => {
 
 const isPlaylistPrivate = (state = false, action) => (action.type === actionTypes.TOGGLE_IS_PRIVATE
   ? action.value : state);
-const spotifyPlaylistInfo = (state = { url: null, pl_name: '' }, action) => (action.type === actionTypes.UPDATE_PLAYLIST_INFO ? action.value : state);
+const spotifyPlaylistInfo = (state = { url: null, name: '' }, action) => (action.type === actionTypes.UPDATE_PLAYLIST_INFO ? action.value : state);
 const hasAcCookie = (state = false, action) => (action.type === actionTypes.TOGGLE_HAS_COOKIE
   ? action.value || state : state);
 
 const reducers = combineReducers({
   filters,
-  user,
+  facebookUser,
   chart,
   lastUpdateDate,
   showLast,
