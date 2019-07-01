@@ -3,16 +3,24 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import {
-  AppBar, Toolbar, Typography, IconButton, Button, Avatar, Menu, MenuItem,
+  AppBar,
+  Avatar,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { connect } from 'react-redux';
 import Policy from './components/Policy';
 import About from './components/About';
 import Combiner from './components/PlaylistCombiner';
 import NotFound from './components/NotFound';
-import ChartPresenter from './components/Chart/ChartPresenter';
+import ChartPresenterContainer from './components/Chart/ChartPresenter';
 import LoginAlert from './components/LoginAlert';
 import Demo from './components/Demo';
 import PrivateRoute from './PrivateRoute';
@@ -48,36 +56,20 @@ class Navigation extends React.Component {
     anchorEl2: null,
   };
 
-  componentWillMount() {
-    const { store } = this.context;
+  componentDidMount() {
+    const { updateSpotifyUser } = this.props;
     getCredentials()
       .then(({ userData, accessToken }) => {
-        store.dispatch({
-          type: actionTypes.UPDATE_SP_USER,
-          user: userData,
-          access_token: accessToken,
-        });
+        updateSpotifyUser(userData, accessToken);
         return Promise.resolve(true);
       })
       .catch(() => Promise.resolve(false));
   }
 
-  componentDidMount() {
-    const { store } = this.context;
-    this.unsubscribe = store.subscribe(() => this.forceUpdate());
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  // handleChange = (event, checked) => {
-  //   this.setState({ auth: checked });
-  // };
   onLogoutClick = () => {
     this.setState({ anchorEl: null });
-    const { store } = this.context;
-    store.dispatch({ type: actionTypes.SIGN_OUT_USER });
+    const { signOutUser } = this.props;
+    signOutUser();
     window.location = '/';
   };
 
@@ -95,11 +87,12 @@ class Navigation extends React.Component {
   };
 
   render() {
-    const { store } = this.context;
-    const { classes } = this.props;
+    const { classes, spotifyUser, facebookUser } = this.props;
     const { anchorEl, anchorEl2 } = this.state;
-    const { spotifyUser, user } = store.getState();
     const open = Boolean(anchorEl);
+    const {
+      picture_url, id, name, first_name,
+    } = facebookUser;
     return (
       <div className={classes.root}>
         <AppBar position="static">
@@ -139,7 +132,7 @@ class Navigation extends React.Component {
             <Typography variant="title" color="inherit" className={classes.flex}>
               WCS Music Chart
             </Typography>
-            {user.id ? (
+            {id ? (
               <div>
                 <IconButton
                   aria-owns={open ? 'menu-appbar' : null}
@@ -147,7 +140,7 @@ class Navigation extends React.Component {
                   onClick={this.handleMenu}
                   color="inherit"
                 >
-                  <Avatar alt={user.name} src={user.picture_url} />
+                  <Avatar alt={name} src={picture_url} />
                 </IconButton>
                 <Menu
                   id="menu-appbar"
@@ -164,7 +157,7 @@ class Navigation extends React.Component {
                   onClose={this.handleClose('anchorEl')()}
                 >
                   <div>
-                    {`Hi, ${user.first_name}`}
+                    {`Hi, ${first_name}`}
                   </div>
                   <div>
                     <FontAwesomeIcon icon={faSpotify} />
@@ -193,7 +186,7 @@ Logout
           <Route exact path="/" component={About} />
           <Route path="/policy" exact component={Policy} />
           <Route path="/login" component={LoginAlert} />
-          <PrivateRoute path="/chart" exact component={ChartPresenter} />
+          <PrivateRoute path="/chart" exact component={ChartPresenterContainer} />
           {spotifyUser.id && <PrivateRoute path="/combiner" exact component={Combiner} />}
           <Route path="/demo" component={Demo} />
           <Route component={NotFound} />
@@ -207,6 +200,10 @@ Navigation.contextTypes = {
   store: PropTypes.shape(),
 };
 Navigation.propTypes = {
+  facebookUser: PropTypes.shape(),
+  spotifyUser: PropTypes.shape(),
+  signOutUser: PropTypes.func,
+  updateSpotifyUser: PropTypes.func,
   classes: PropTypes.shape({
     root: PropTypes.string,
     flex: PropTypes.string,
@@ -214,4 +211,22 @@ Navigation.propTypes = {
   }).isRequired,
 };
 
-export default withStyles(styles)(Navigation);
+const mapStateToProps = ({ facebookUser, spotifyUser } /* , ownProps */) => ({
+  facebookUser, spotifyUser,
+});
+
+const mapDispatchToProps = dispatch => ({
+  signOutUser: () => {
+    dispatch({ type: actionTypes.SIGN_OUT_USER });
+  },
+  updateSpotifyUser: (userData, accessToken) => {
+    dispatch({
+      type: actionTypes.UPDATE_SP_USER,
+      user: userData,
+      access_token: accessToken,
+    });
+  },
+});
+
+const componentWithStyles = withStyles(styles)(Navigation);
+export default connect(mapStateToProps, mapDispatchToProps)(componentWithStyles);

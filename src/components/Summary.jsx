@@ -1,43 +1,30 @@
-/**
- * Created by michal.grezel on 09.04.2017.
- */
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboard } from '@fortawesome/free-solid-svg-icons';
+import copy from 'clipboard-copy';
 import './components.css';
 import { chartObjectProps } from './typeDefinitions';
-
-const copy = require('clipboard-copy');
 // let {sorting} = require('./../utils');
-const create_print_list = (elem, index) => (
+
+
+const createPrintList = (elem, index) => (
   <div key={elem.id}>
     {`${index + 1}. ${elem.link.title} ${elem.reactionsNum} likes`}
   </div>
 );
-export default class Summary extends React.Component {
+export class Summary extends React.Component {
   state = {
     introText: '',
     riddleText: '',
     riddleUrl: '',
   };
 
-  /* istanbul ignore next */
-  componentDidMount() {
-    console.info('component Summary did mount');
-  }
-
-  /* istanbul ignore next */
-  componentWillUnmount() {
-    console.info('component Summary unmounted');
-  }
-
   onCopyToClipboard = () => {
-    const { store } = this.context;
     const { introText, riddleText, riddleUrl } = this.state;
-    const { sp_playlist_info } = store.getState();
-    const { selected } = this.props;
+    const { selected, spotifyPlaylistInfo } = this.props;
     const playList = selected
       .map((elem, ind) => `${ind + 1}. ${elem.link.title} ${elem.reactionsNum} likes`)
       .join('\n');
@@ -45,7 +32,7 @@ export default class Summary extends React.Component {
       '[WCS Weekly Westletter]',
       introText,
       playList,
-      sp_playlist_info.url ? `Link to spotify playlist:${sp_playlist_info.url}` : 'No link',
+      spotifyPlaylistInfo.url ? `Link to spotify playlist:${spotifyPlaylistInfo.url}` : 'No link',
       'Riddle:',
       riddleText,
       riddleUrl,
@@ -55,11 +42,9 @@ export default class Summary extends React.Component {
   };
 
   render() {
-    const { store } = this.context;
     const { introText, riddleText, riddleUrl } = this.state;
-    const { selected } = this.props;
-    const { sp_playlist_info } = store.getState();
-    const print_list = (selected || []).map(create_print_list);
+    const { selected, spotifyPlaylistInfo } = this.props;
+    const print_list = (selected || []).map(createPrintList);
     return (
       <div className="summary">
         <div className="summary__header">
@@ -94,12 +79,12 @@ Here will be list of tracks your choosing
         </div>
         <h6>
           {'Link to spotify playlist: '}
-          {sp_playlist_info.url && (
-            <a href={sp_playlist_info.url} target="_newtab">
-              {sp_playlist_info.url}
+          {spotifyPlaylistInfo.url && (
+            <a href={spotifyPlaylistInfo.url} target="_newtab">
+              {spotifyPlaylistInfo.url}
             </a>
           )}
-          {!sp_playlist_info.url && (
+          {!spotifyPlaylistInfo.url && (
           <span style={{ color: 'red' }}>
 No link
           </span>
@@ -132,9 +117,14 @@ No link
     );
   }
 }
-Summary.contextTypes = {
-  store: PropTypes.shape(),
-};
+
 Summary.propTypes = {
   selected: PropTypes.arrayOf(chartObjectProps),
+  spotifyPlaylistInfo: PropTypes.shape(),
 };
+
+const mapStateToProps = ({ spotifyPlaylistInfo } /* , ownProps */) => ({
+  spotifyPlaylistInfo,
+});
+
+export default connect(mapStateToProps)(Summary);

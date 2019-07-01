@@ -1,7 +1,5 @@
-/**
- * Created by michal.grezel on 26.01.2017.
- */
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -10,7 +8,10 @@ import { chartObjectProps } from '../typeDefinitions';
 import ChartRow from './ChartRow';
 import actionTypes from '../../reducers/actionTypes';
 
-const ChartTable = ({ data, tableInfo }, { store }) => {
+
+export const ChartTable = ({
+  data, tableInfo, selectAll, toggleSelected,
+}) => {
   const ChartRows = data.map(entry => (
     <ChartRow
       id={entry.id}
@@ -24,11 +25,7 @@ const ChartTable = ({ data, tableInfo }, { store }) => {
       reactionsNum={entry.reactionsNum}
       message={entry.message}
       onChange={({ checked, id }) => {
-        store.dispatch({
-          type: 'TOGGLE_SELECTED',
-          id,
-          checked,
-        });
+        toggleSelected(id, checked);
       }}
     />
   ));
@@ -42,7 +39,7 @@ const ChartTable = ({ data, tableInfo }, { store }) => {
               value="selectAll"
               color="primary"
               onChange={({ target: { checked } }) => {
-                store.dispatch({ type: actionTypes.TOGGLE_ALL, value: checked });
+                selectAll(checked);
               }}
             />
 )}
@@ -69,12 +66,23 @@ ChartTable.defaultProps = {
   data: [],
   tableInfo: 'No data',
 };
-ChartTable.contextTypes = {
-  store: PropTypes.shape(),
-};
+
 ChartTable.propTypes = {
   data: PropTypes.arrayOf(chartObjectProps),
   tableInfo: PropTypes.oneOfType([PropTypes.string, PropTypes.shape()]),
+  selectAll: PropTypes.func,
+  toggleSelected: PropTypes.func,
 };
 
-export default ChartTable;
+const mapDispatchToProps = dispatch => ({
+  selectAll: (checked) => { dispatch({ type: actionTypes.TOGGLE_ALL, value: checked }); },
+  toggleSelected: (id, checked) => {
+    dispatch({
+      type: 'TOGGLE_SELECTED',
+      id,
+      checked,
+    });
+  },
+});
+
+export default connect(null, mapDispatchToProps)(ChartTable);

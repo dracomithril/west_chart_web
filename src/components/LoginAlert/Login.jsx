@@ -1,7 +1,5 @@
-/**
- * Created by michal.grezel on 28.01.2017.
- */
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
@@ -14,10 +12,11 @@ import { getFbPictureUrl } from '../../utils/utils';
 import { api } from '../../config';
 import actionTypes from '../../reducers/actionTypes';
 
-const Login = ({ location }, { store }) => {
-  const { user, spotifyUser } = store.getState();
+export const Login = ({
+  location, facebookUser, spotifyUser, updateFacebookUser,
+}) => {
   const { from } = (location || {}).state || { from: '/' };
-  if (user.id && spotifyUser.id) {
+  if (facebookUser.id && spotifyUser.id) {
     return <Redirect to={from} />;
   }
   return (
@@ -32,7 +31,7 @@ const Login = ({ location }, { store }) => {
         </span>
         ️
       </h4>
-      {user.id === undefined && (
+      {facebookUser.id === undefined && (
         <FacebookLogin
           appId={api.fb.apiId}
           language="pl_PL"
@@ -52,13 +51,7 @@ const Login = ({ location }, { store }) => {
           )}
           callback={(response) => {
             if (!response.error) {
-              store.dispatch({
-                type: actionTypes.UPDATE_USER,
-                value: {
-                  ...response,
-                  picture_url: getFbPictureUrl(response.id),
-                },
-              });
+              updateFacebookUser(response);
               window.location = from;
             } else {
               console.error('login error.', response.error);
@@ -93,14 +86,31 @@ const Login = ({ location }, { store }) => {
   );
 };
 
-Login.contextTypes = {
-  store: PropTypes.shape(),
-};
 Login.propTypes = {
+  facebookUser: PropTypes.shape(),
+  spotifyUser: PropTypes.shape(),
+  updateFacebookUser: PropTypes.func,
   location: PropTypes.shape({
     state: PropTypes.shape({
       from: PropTypes.string,
     }),
   }),
 };
-export default Login;
+const mapStateToProps = ({ facebookUser, spotifyUser }) => ({
+  facebookUser,
+  spotifyUser,
+});
+
+const mapDispatchToProps = dispatch => ({
+  updateFacebookUser: (userData) => {
+    dispatch({
+      type: actionTypes.UPDATE_USER,
+      value: {
+        ...userData,
+        picture_url: getFbPictureUrl(userData.id),
+      },
+    });
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

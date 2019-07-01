@@ -1,15 +1,11 @@
-/**
- * Created by michal.grezel on 05.04.2017.
- */
 import { routerReducer } from 'react-router-redux';
 import moment from 'moment';
-import Joi from 'joi-browser';
 import { combineReducers } from 'redux';
 import { takeRight } from 'lodash';
 import actionTypes from './actionTypes';
 import filters from './filters';
 import chart from './chart';
-import userSchema from './userSchema';
+import createUser from '../models/facebookUser';
 
 /**
  * @typedef {Object} FacebookUserObject
@@ -26,16 +22,13 @@ import userSchema from './userSchema';
  * @param action
  * @returns {*}
  */
-const user = (state, action) => {
+const facebookUser = (state, action) => {
   switch (action.type) {
     case actionTypes.UPDATE_USER: {
-      const { error, value } = Joi.validate(action.value, userSchema);
-      return error === null ? value : state;
+      return createUser(action.value) || state;
     }
     case actionTypes.SIGN_OUT_USER:
       return {};
-    case actionTypes.UPDATE_USER_LS:
-      return Object.assign({}, state, action.value);
     default:
       return state || {};
   }
@@ -69,9 +62,6 @@ const sp_playlist_name = (state = '', action) => (action.type === actionTypes.UP
 
 const lastUpdateDate = (state = '', action) => (action.type === actionTypes.UPDATE_LAST_UPDATE
   ? action.date : state);
-
-const startDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_START_TIME
-  ? moment(date) : state);
 
 const sinceDate = (state = moment(), { type, date }) => (type === actionTypes.UPDATE_SINCE_DATE
   ? moment(date) : state);
@@ -107,16 +97,15 @@ const errors = (state = [], action) => {
 
 const isPlaylistPrivate = (state = false, action) => (action.type === actionTypes.TOGGLE_IS_PRIVATE
   ? action.value : state);
-const sp_playlist_info = (state = { url: null, pl_name: '' }, action) => (action.type === actionTypes.UPDATE_PLAYLIST_INFO ? action.value : state);
+const spotifyPlaylistInfo = (state = { url: null, name: '' }, action) => (action.type === actionTypes.UPDATE_PLAYLIST_INFO ? action.value : state);
 const hasAcCookie = (state = false, action) => (action.type === actionTypes.TOGGLE_HAS_COOKIE
   ? action.value || state : state);
 
 const reducers = combineReducers({
   filters,
-  user,
+  facebookUser,
   chart,
   lastUpdateDate,
-  startDate,
   showLast,
   since,
   sinceDate,
@@ -128,7 +117,7 @@ const reducers = combineReducers({
   sp_playlist_name,
   show_wait,
   isPlaylistPrivate,
-  sp_playlist_info,
+  spotifyPlaylistInfo,
   errors,
   hasAcCookie,
   routing: routerReducer,

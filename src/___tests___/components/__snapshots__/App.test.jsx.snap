@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> renders without crashing 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <div
+      className="App"
+    >
+      <CookieBanner
+        buttonMessage="Got it"
+        cookie="user-has-accepted-cookies"
+        cookieExpiration={
+          Object {
+            "years": 1,
+          }
+        }
+        cookies={
+          Cookies {
+            "HAS_DOCUMENT_COOKIE": true,
+            "changeListeners": Array [],
+            "cookies": Object {},
+            "hooks": undefined,
+          }
+        }
+        dismissOnScroll={true}
+        dismissOnScrollThreshold={0}
+        message="Yes, we use cookies. If you don't like it change website, we won't miss you! ;)"
+        onAccept={[Function]}
+        styles={Object {}}
+      />
+      <Connect(WithStyles(Navigation)) />
+      <Footer />
+    </div>
+  </BrowserRouter>
+</Provider>
+`;

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilteringOption/> renders without crashing FilteringOption 1`] = `
+<div>
+  <WithStyles(Checkbox)
+    color="primary"
+    id="create_checkbox"
+    name="date_create_control"
+    onChange={[Function]}
+  />
+  created in last 
+  <input
+    className="filter-option__days"
+    id="create_input"
+    min={0}
+    onChange={[Function]}
+    step={1}
+    type="number"
+  />
+   days
+</div>
+`;
+
+exports[`<FilteringOption/> should be able to change state of woc checkbox 1`] = `
+<div>
+  <WithStyles(Checkbox)
+    checked={true}
+    color="primary"
+    id="create_checkbox"
+    name="date_create_control"
+    onChange={[Function]}
+  />
+  created in last 
+  <input
+    className="filter-option__days"
+    id="create_input"
+    min={0}
+    onChange={[Function]}
+    step={1}
+    type="number"
+  />
+   days
+</div>
+`;

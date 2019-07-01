@@ -1,6 +1,4 @@
-/**
- * Created by michal.grezel on 23.04.2017.
- */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -31,6 +29,7 @@ const FilterOption = ({
     {descEnd}
   </div>
 );
+
 FilterOption.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
@@ -41,4 +40,5 @@ FilterOption.propTypes = {
   descStart: PropTypes.string,
   descEnd: PropTypes.string,
 };
+
 export default FilterOption;

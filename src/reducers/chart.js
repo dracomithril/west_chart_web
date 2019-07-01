@@ -89,6 +89,7 @@ const updateSearch = (searchElem = {}, action) => {
     }
   }
 };
+
 /**
  *
  * @param state {ChartEntry[]}

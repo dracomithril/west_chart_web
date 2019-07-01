@@ -1,7 +1,6 @@
-/**
- * Created by michal.grezel on 28.01.2017.
- */
+
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -33,8 +32,9 @@ const styles = theme => ({
   },
 });
 
-const FilteringOptions = ({ classes }, { store }) => {
-  const { filters } = store.getState();
+const FilteringOptions = ({
+  classes, filters, toggleFilter, updateDays,
+}) => {
   const map_c = filters_def.control.map(({ input, description, control }) => {
     const { days, checked } = filters[input.name] || {};
     return (
@@ -47,20 +47,10 @@ const FilteringOptions = ({ classes }, { store }) => {
         descEnd={description.end}
         key={input.name}
         onChange={(target) => {
-          store.dispatch({
-            type: actionTypes.TOGGLE_FILTER,
-            id: target.id,
-            checked: target.checked,
-          });
+          toggleFilter(target);
         }}
         onValueChange={(target) => {
-          const { id, name, value } = target;
-          store.dispatch({
-            type: actionTypes.UPDATE_DAYS,
-            id,
-            name,
-            value: Number(value),
-          });
+          updateDays(target);
         }}
       />
     );
@@ -73,11 +63,7 @@ const FilteringOptions = ({ classes }, { store }) => {
       checked={(filters[input.name] || {}).checked}
       key={input.name}
       onChange={(target) => {
-        store.dispatch({
-          type: actionTypes.TOGGLE_FILTER,
-          id: target.id,
-          checked: target.checked,
-        });
+        toggleFilter(target);
       }}
     />
   ));
@@ -96,13 +82,36 @@ Filters
   );
 };
 
-FilteringOptions.contextTypes = {
-  store: PropTypes.shape(),
-};
 FilteringOptions.propTypes = {
+  filters: PropTypes.shape(),
+  toggleFilter: PropTypes.func,
+  updateDays: PropTypes.func,
   classes: PropTypes.shape({
     button: PropTypes.string,
   }).isRequired,
 };
 
-export default withStyles(styles)(FilteringOptions);
+const mapStateToProps = ({ filters }) => ({
+  filters,
+});
+
+const mapDispatchToProps = dispatch => ({
+  toggleFilter: (target) => {
+    dispatch({
+      type: actionTypes.TOGGLE_FILTER,
+      id: target.id,
+      checked: target.checked,
+    });
+  },
+  updateDays: (target) => {
+    dispatch({
+      type: actionTypes.UPDATE_DAYS,
+      id: target.id,
+      name: target.name,
+      value: Number(target.value),
+    });
+  },
+});
+
+export const componentWithStyles = withStyles(styles)(FilteringOptions);
+export default connect(mapStateToProps, mapDispatchToProps)(componentWithStyles);

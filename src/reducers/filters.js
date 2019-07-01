@@ -20,7 +20,7 @@ const control_state = defaultState => (state = defaultState, action) => {
 const filters = combineReducers({
   create_control: control_state(
     {
-      checked: true,
+      checked: false,
       id: 'create',
       days: showDays,
       type: 'counter',

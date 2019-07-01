@@ -2,7 +2,7 @@ import React from 'react';
 import { addDecorator, storiesOf } from '@storybook/react';
 // import { action } from '@storybook/addon-actions';
 import { Provider } from 'react-redux';
-import Summary from './Summary';
+import SummaryContainer from './Summary';
 import configureStore from '../configureStore';
 import chart from '../___data___/chartData';
 
@@ -15,5 +15,5 @@ addDecorator(story => (
   </Provider>
 ));
 storiesOf('Summary', module)
-  .add('Todo[VR]', () => <Summary />)
-  .add('With selected', () => <Summary selected={chart} />);
+  .add('Todo[VR]', () => <SummaryContainer />)
+  .add('With selected', () => <SummaryContainer selected={chart} />);

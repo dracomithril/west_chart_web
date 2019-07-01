@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WestLetter/> renders users 1`] = `
+<div
+  className="west-letter"
+>
+  <div
+    className="west-letter__beta"
+  >
+    <h1>
+      This site is still in beta version
+    </h1>
+    😃 Soon we will be able to track WestLetters in each week 😃
+  </div>
+  <h4>
+    We have
+     
+    31
+     
+    week of
+     
+    2018
+  </h4>
+  <div
+    style={
+      Object {
+        "display": "inline-flex",
+      }
+    }
+  >
+    <div
+      key="1707149242852457_1938133309754048"
+      style={
+        Object {
+          "border": "1px black solid",
+          "display": "block",
+          "padding": 2,
+        }
+      }
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        hidden={true}
+      >
+        1707149242852457_1938133309754048
+      </span>
+      <WithStyles(Avatar)
+        src="https://graph.facebook.com/10202921980928649/picture?height=50"
+        title="Joanna Kozieńska"
+      />
+      <div>
+        <span>
+          24/2/2017
+        </span>
+        <br />
+        <span>
+          week:
+          31
+        </span>
+        <br />
+        <span>
+          is added
+        </span>
+      </div>
+    </div>
+    <div
+      key="1707149242852457_1941491366084909"
+      style={
+        Object {
+          "border": "1px black solid",
+          "display": "block",
+          "padding": 2,
+        }
+      }
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        hidden={true}
+      >
+        1707149242852457_1941491366084909
+      </span>
+      <WithStyles(Avatar)
+        src="https://graph.facebook.com/10202921980928649/picture?height=50"
+        title="Joanna Kozieńska"
+      />
+      <div>
+        <span>
+          3/3/2017
+        </span>
+        <br />
+        <span>
+          week:
+          31
+        </span>
+        <br />
+        <span>
+          is added
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<WestLetter/> renders without crashing WestLetter 1`] = `
+<div
+  className="west-letter"
+>
+  <div
+    className="west-letter__beta"
+  >
+    <h1>
+      This site is still in beta version
+    </h1>
+    😃 Soon we will be able to track WestLetters in each week 😃
+  </div>
+  <h4>
+    We have
+     
+    31
+     
+    week of
+     
+    2018
+  </h4>
+  <div
+    style={
+      Object {
+        "display": "inline-flex",
+      }
+    }
+  />
+</div>
+`;

@@ -1,123 +1,126 @@
-import moment from 'moment';
-import reducers_jank_jard from "../../reducers/reducers_jank_jard";
+import reducers_jank_jard from '../../reducers/reducers_jank_jard';
 import actionTypes from '../../reducers/actionTypes';
 
-beforeAll(() => {
-});
 afterAll(() => {
   jest.unmock('moment');
 });
-beforeEach(function () {
-});
-afterEach(function () {
-});
 
-const defaultState = reducers_jank_jard(undefined,{id:'something'});
-describe('lastUpdateDate', function () {
+const defaultState = reducers_jank_jard(undefined, { id: 'something' });
+describe('lastUpdateDate', () => {
   Object.freeze(defaultState);
-  it("should replace current state by new value", function () {
-    const date = "2017-06-16T19:54:25.672Z";
-    const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_LAST_UPDATE, date: date });
+  it('should replace current state by new value', () => {
+    const date = '2017-06-16T19:54:25.672Z';
+    const resp = reducers_jank_jard(defaultState, {
+      type: actionTypes.UPDATE_LAST_UPDATE,
+      date,
+    });
     expect(resp).toHaveProperty('lastUpdateDate', date);
   });
-  it('should return current state if type don\'t match', function () {
-    const date = "2017-06-16T19:54:25.672Z";
-    const resp = reducers_jank_jard(defaultState, { type: actionTypes.TOGGLE_HAS_COOKIE, date: date });
+  it('should return current state if type don\'t match', () => {
+    const date = '2017-06-16T19:54:25.672Z';
+    const resp = reducers_jank_jard(defaultState, {
+      type: actionTypes.TOGGLE_HAS_COOKIE,
+      date,
+    });
     expect(resp).toHaveProperty('lastUpdateDate');
   });
-  //todo  improve to check if it's date string
+  // todo  improve to check if it's date string
 });
-describe('show_wait', function () {
-  it('should replace current state by new value', function () {
+describe('show_wait', () => {
+  it('should replace current state by new value', () => {
     const show_wait = false;
-    const resp = reducers_jank_jard(defaultState, { type: actionTypes.CHANGE_SHOW_WAIT, show: show_wait });
-    expect(resp).toHaveProperty('show_wait',false);
+    const resp = reducers_jank_jard(defaultState, {
+      type: actionTypes.CHANGE_SHOW_WAIT,
+      show: show_wait,
+    });
+    expect(resp).toHaveProperty('show_wait', false);
   });
-  it('should return current state if type don\'t match', function () {
-    const date = "zzz";
-    const resp = reducers_jank_jard(defaultState, { type: actionTypes.TOGGLE_HAS_COOKIE, show: date });
-    expect(resp).toHaveProperty('show_wait',false);
-  });
-});
-describe('startDate', function () {
-  //todo type check
-  it("should replace current state by new value", function () {
-    const date = moment("2017-06-16T19:54:25.672Z");
-    const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_START_TIME, date: date });
-    expect(resp).toHaveProperty('startDate',date);
-  });
-  it('should return current state if type don\'t match', function () {
-    const date = "2017-06-16T19:54:25.672Z";
-    const resp = reducers_jank_jard(defaultState, { type: actionTypes.TOGGLE_HAS_COOKIE, date: date });
-    expect(resp).not.toHaveProperty('startDate',date);
+  it('should return current state if type don\'t match', () => {
+    const date = 'zzz';
+    const resp = reducers_jank_jard(defaultState, {
+      type: actionTypes.TOGGLE_HAS_COOKIE,
+      show: date,
+    });
+    expect(resp).toHaveProperty('show_wait', false);
   });
 });
-describe('since', function () {
-  it("should replace current state by new value", function () {
-    const date = "2017-06-16T19:54:25.672Z";
+
+describe('since', () => {
+  it('should replace current state by new value', () => {
+    const date = '2017-06-16T19:54:25.672Z';
     const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_SINCE, value: date });
-    expect(resp).toHaveProperty('since',date);
+    expect(resp).toHaveProperty('since', date);
   });
-  it('should return current state if type don\'t match', function () {
-    const date = "2017-06-16T19:54:25.672Z";
-    const resp = reducers_jank_jard(defaultState, { type: actionTypes.TOGGLE_HAS_COOKIE, date: date });
-    expect(resp).toHaveProperty('since',0);
+  it('should return current state if type don\'t match', () => {
+    const date = '2017-06-16T19:54:25.672Z';
+    const resp = reducers_jank_jard(defaultState, {
+      type: actionTypes.TOGGLE_HAS_COOKIE,
+      date,
+    });
+    expect(resp).toHaveProperty('since', 0);
   });
-  //todo  improve to check if it's date string
+  // todo  improve to check if it's date string
 });
-describe('until', function () {
-  it("should replace current state by new value", function () {
-    const date = "2017-06-16T19:54:25.672Z";
+describe('until', () => {
+  it('should replace current state by new value', () => {
+    const date = '2017-06-16T19:54:25.672Z';
     const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_UNTIL, value: date });
-    expect(resp).toHaveProperty('until',date);
+    expect(resp).toHaveProperty('until', date);
   });
-  it('should return current state if type don\'t match', function () {
-    const date = "2017-06-16T19:54:25.672Z";
-    const resp = reducers_jank_jard(defaultState, { type: actionTypes.TOGGLE_HAS_COOKIE, date: date });
-    expect(resp).toHaveProperty('until',0);
+  it('should return current state if type don\'t match', () => {
+    const date = '2017-06-16T19:54:25.672Z';
+    const resp = reducers_jank_jard(defaultState, {
+      type: actionTypes.TOGGLE_HAS_COOKIE,
+      date,
+    });
+    expect(resp).toHaveProperty('until', 0);
   });
-  //todo  improve to check if it's date string
+  // todo  improve to check if it's date string
 });
-describe('songsPerDay', function () {
-  it("should replace current state by new value", function () {
-    const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_SONGS_PER_DAY, days: 3 });
-    expect(resp).toHaveProperty('songsPerDay',3);
+describe('songsPerDay', () => {
+  it('should replace current state by new value', () => {
+    const resp = reducers_jank_jard(defaultState, {
+      type: actionTypes.UPDATE_SONGS_PER_DAY,
+      days: 3,
+    });
+    expect(resp).toHaveProperty('songsPerDay', 3);
   });
-  it('should return current state if type don\'t match', function () {
-
+  it('should return current state if type don\'t match', () => {
     const resp = reducers_jank_jard(defaultState, { type: actionTypes.TOGGLE_HAS_COOKIE, days: 3 });
-    expect(resp).toHaveProperty('songsPerDay',3);
+    expect(resp).toHaveProperty('songsPerDay', 3);
   });
-  //todo  improve to check if it's date string
+  // todo  improve to check if it's date string
 });
-describe('showLast', function () {
-  it("should replace current state by new value", function () {
+describe('showLast', () => {
+  it('should replace current state by new value', () => {
     const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_SHOW_LAST, days: 33 });
-    expect(resp).toHaveProperty('showLast',33);
+    expect(resp).toHaveProperty('showLast', 33);
   });
-  it('should return current state if type don\'t match', function () {
-
+  it('should return current state if type don\'t match', () => {
     const resp = reducers_jank_jard(defaultState, { type: actionTypes.TOGGLE_HAS_COOKIE, days: 3 });
-    expect(resp).toHaveProperty('showLast',31);
+    expect(resp).toHaveProperty('showLast', 31);
   });
-  //todo  improve to check if it's date string
+  // todo  improve to check if it's date string
 });
-describe('user', function () {
-  it("should return current state if response have error", function () {
+describe('facebookUser', () => {
+  it('should return current state if response have error', () => {
     const user = {
       error: { message: 'error' },
     };
     const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_USER, value: user });
-    expect(resp).toHaveProperty('user',{});
+    expect(resp).toHaveProperty('facebookUser', {});
   });
-  it("should return current state if different type used", function () {
+  it('should return current state if different type used', () => {
     const user = {
       error: { message: 'error' },
     };
-    const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_SHOW_LAST, value: user });
-    expect(resp).toHaveProperty('user',{});
+    const resp = reducers_jank_jard(defaultState, {
+      type: actionTypes.UPDATE_SHOW_LAST,
+      value: user,
+    });
+    expect(resp).toHaveProperty('facebookUser', {});
   });
-  it("should return updated user", function () {
+  it('should return updated facebookUser', () => {
     const user = {
       accessToken: 'zzzzz',
       email: 'email',
@@ -127,16 +130,25 @@ describe('user', function () {
       id: 'zzzz1',
       name: 'Zuza Graba',
       signedRequest: 'dgaskdashd',
-      userID: "zzzzz",
+      userID: 'zzzz1',
       picture_url: 'http://zzzz1',
     };
-    const { userID, signedRequest, ...expected } = user;
+    const expected = {
+      accessToken: 'zzzzz',
+      email: 'email',
+      firstName: 'Zuza',
+      id: 'zzzz1',
+      lastName: 'Graba',
+      name: 'Zuza Graba',
+      pictureUrl: 'http://zzzz1',
+      userID: 'zzzz1',
+    };
     const resp = reducers_jank_jard(defaultState, { type: actionTypes.UPDATE_USER, value: user });
-    expect(resp).toHaveProperty('user',expected);
+    expect(resp).toHaveProperty('facebookUser', expected);
   });
 });
-describe('spotifyUser', function () {
-  it('should be able to update spotifyUser', function () {
+describe('spotifyUser', () => {
+  it('should be able to update spotifyUser', () => {
     const action = {
       type: actionTypes.UPDATE_SP_USER,
       access_token: 'asdf',
@@ -155,9 +167,9 @@ describe('spotifyUser', function () {
       id: 'zebra',
       uri: 'spotify::uri::zebra',
     };
-    expect(result).toHaveProperty('spotifyUser',expected);
+    expect(result).toHaveProperty('spotifyUser', expected);
   });
-  it('should be able to update spotifyUser playlist', function () {
+  it('should be able to update spotifyUser playlist', () => {
     const action = {
       type: actionTypes.UPDATE_SP_USER_PLAYLIST,
       playlists: [{}, {}],
@@ -168,22 +180,22 @@ describe('spotifyUser', function () {
     const expected = {
       playlists: [{}, {}],
     };
-    expect(result).toHaveProperty('spotifyUser',expected);
+    expect(result).toHaveProperty('spotifyUser', expected);
   });
 });
-describe('errors', function () {
-  it('should be able to add errors to list', function () {
+describe('errors', () => {
+  it('should be able to add errors to list', () => {
     const action = {
       type: actionTypes.ADD_ERROR,
-      value: "NEW_ERROR",
+      value: 'NEW_ERROR',
     };
 
     const result = reducers_jank_jard(defaultState, action);
 
     const expected = [action.value];
-    expect(result).toHaveProperty('errors',expected);
+    expect(result).toHaveProperty('errors', expected);
   });
-  it('should be able to clear errors', function () {
+  it('should be able to clear errors', () => {
     const action = {
       type: actionTypes.CLEAR_ERRORS,
     };
@@ -191,84 +203,79 @@ describe('errors', function () {
     const result = reducers_jank_jard(defaultState, action);
 
     const expected = [];
-    expect(result).toHaveProperty('errors',expected);
+    expect(result).toHaveProperty('errors', expected);
   });
-  it('should return default on different action', function () {
+  it('should return default on different action', () => {
     const action = {
       type: actionTypes.TOGGLE_FILTER,
     };
 
     const result = reducers_jank_jard(defaultState, action);
 
-    expect(result).toHaveProperty('errors',defaultState.errors);
+    expect(result).toHaveProperty('errors', defaultState.errors);
   });
-
-
 });
-describe('isPlaylistPrivate', function () {
-  it("should replace current state by new value", function () {
-
+describe('isPlaylistPrivate', () => {
+  it('should replace current state by new value', () => {
     const action = { type: actionTypes.TOGGLE_IS_PRIVATE, value: true };
     const resp = reducers_jank_jard(defaultState, action);
-    expect(resp).toHaveProperty('isPlaylistPrivate',true);
+    expect(resp).toHaveProperty('isPlaylistPrivate', true);
   });
-  it('should return current state if type don\'t match', function () {
+  it('should return current state if type don\'t match', () => {
     const action = { type: actionTypes.TOGGLE_FILTER, value: true };
     const resp = reducers_jank_jard(defaultState, action);
-    expect(resp).toHaveProperty('isPlaylistPrivate',defaultState.isPlaylistPrivate);
+    expect(resp).toHaveProperty('isPlaylistPrivate', defaultState.isPlaylistPrivate);
   });
 });
-describe('sp_playlist_info', function () {
-  it("should replace current state by new value", function () {
-
-    const action = { type: actionTypes.UPDATE_PLAYLIST_INFO, value: { url: "new_url", pl_name: "new_playlist" } };
+describe('spotifyPlaylistInfo', () => {
+  it('should replace current state by new value', () => {
+    const action = {
+      type: actionTypes.UPDATE_PLAYLIST_INFO,
+      value: { url: 'new_url', name: 'new_playlist' },
+    };
     const resp = reducers_jank_jard(defaultState, action);
-    expect(resp).toHaveProperty('sp_playlist_info',action.value);
+    expect(resp).toHaveProperty('spotifyPlaylistInfo', action.value);
   });
-  it('should return current state if type don\'t match', function () {
+  it('should return current state if type don\'t match', () => {
     const action = { type: actionTypes.TOGGLE_FILTER, value: true };
     const resp = reducers_jank_jard(defaultState, action);
-    expect(resp).toHaveProperty('sp_playlist_info',defaultState.sp_playlist_info);
+    expect(resp).toHaveProperty('spotifyPlaylistInfo', defaultState.spotifyPlaylistInfo);
   });
 });
-describe('hasAcCookie', function () {
-  it("should replace current state by new value", function () {
+describe('hasAcCookie', () => {
+  it('should replace current state by new value', () => {
     const action = { type: actionTypes.TOGGLE_HAS_COOKIE, value: true };
     const resp = reducers_jank_jard(defaultState, action);
-    expect(resp).toHaveProperty('hasAcCookie',true);
+    expect(resp).toHaveProperty('hasAcCookie', true);
   });
-  it('should return current state if type don\'t match', function () {
+  it('should return current state if type don\'t match', () => {
     const action = { type: actionTypes.TOGGLE_FILTER, value: true };
     const resp = reducers_jank_jard(defaultState, action);
-    expect(resp).toHaveProperty('hasAcCookie',defaultState.hasAcCookie);
+    expect(resp).toHaveProperty('hasAcCookie', defaultState.hasAcCookie);
   });
 });
 
-describe('sp_playlist_name', function () {
-  it("should replace current state by new value", function () {
-
-    const action = { type: actionTypes.UPDATE_PLAYLIST_NAME, value: "new_Name" };
+describe('sp_playlist_name', () => {
+  it('should replace current state by new value', () => {
+    const action = { type: actionTypes.UPDATE_PLAYLIST_NAME, value: 'new_Name' };
     const resp = reducers_jank_jard(defaultState, action);
-    expect(resp).toHaveProperty('sp_playlist_name',action.value);
+    expect(resp).toHaveProperty('sp_playlist_name', action.value);
   });
-  it('should return current state if type don\'t match', function () {
-    const action = { type: actionTypes.TOGGLE_FILTER, value: "zebra" };
+  it('should return current state if type don\'t match', () => {
+    const action = { type: actionTypes.TOGGLE_FILTER, value: 'zebra' };
     const resp = reducers_jank_jard(defaultState, action);
-    expect(resp).toHaveProperty('sp_playlist_name',defaultState.sp_playlist_name);
-  });
-});
-describe('listSort', function () {
-  it("should replace current state by new value", function () {
-
-    const action = { type: actionTypes.UPDATE_LIST_SORT, sort: "new_Name" };
-    const resp = reducers_jank_jard(defaultState, action);
-    expect(resp).toHaveProperty('listSort',action.sort);
-  });
-  it('should return current state if type don\'t match', function () {
-    const action = { type: actionTypes.TOGGLE_FILTER, value: "zebra" };
-    const resp = reducers_jank_jard(defaultState, action);
-    expect(resp).toHaveProperty('listSort',defaultState.listSort);
+    expect(resp).toHaveProperty('sp_playlist_name', defaultState.sp_playlist_name);
   });
 });
-
-
+describe('listSort', () => {
+  it('should replace current state by new value', () => {
+    const action = { type: actionTypes.UPDATE_LIST_SORT, sort: 'new_Name' };
+    const resp = reducers_jank_jard(defaultState, action);
+    expect(resp).toHaveProperty('listSort', action.sort);
+  });
+  it('should return current state if type don\'t match', () => {
+    const action = { type: actionTypes.TOGGLE_FILTER, value: 'zebra' };
+    const resp = reducers_jank_jard(defaultState, action);
+    expect(resp).toHaveProperty('listSort', defaultState.listSort);
+  });
+});

@@ -1,12 +1,9 @@
-/**
- * Created by XKTR67 on 5/11/2017.
- */
 import Spotify from 'spotify-web-api-node';
 import { api, hostname } from '../config';
 
 const spotifyApi = new Spotify();
 const Cookies = require('cookies-js');
-const _ = require('lodash');
+const { drop, take, difference } = require('lodash');
 
 const acToken = 'client-sp_user_access_token';
 const rfToken = 'client-sp_user_refresh_token';
@@ -25,8 +22,8 @@ export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
      */
     const sliceCount = (array, count) => {
       if (array.length > count) {
-        const t1 = _.take(array, count);
-        const d1 = _.drop(array, count);
+        const t1 = take(array, count);
+        const d1 = drop(array, count);
         if (d1.length > 100) {
           const sliceCount2 = sliceCount(d1, count);
           return [t1, ...sliceCount2];
@@ -35,20 +32,24 @@ export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
       }
       return tracks;
     };
-
     const tz = sliceCount(tracks, 100);
-    const actions = tz.map(el => spotifyApi.addTracksToPlaylist(user_id, playlist_id, el));
+    const actions = tz.map(el => spotifyApi
+      .addTracksToPlaylist(playlist_id, el)
+      .catch((err) => {
+        console.error(err);
+        return Promise.reject(err);
+      }));
     return Promise.all(actions)
-      .then((/* d5 */) => {
-        // console.info(d5.length);
-        console.info('all adding done?');
+      .then((d5) => {
+        console.info(d5.length);
+        console.info('all adding done?', d5);
       })
       .catch((e) => {
-        console.error(e);
+        console.error('Promise all adding tracks', e);
       });
   }
 
-  return spotifyApi.addTracksToPlaylist(user_id, playlist_id, tracks);
+  return spotifyApi.addTracksToPlaylist(playlist_id, tracks);
 };
 
 /**
@@ -64,15 +65,14 @@ const validateCredentials = (access_token) => {
 
 export const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks, accessToken) => {
   spotifyApi.setAccessToken(accessToken);
-  return spotifyApi.getPlaylist(user_id, playlist_id, { limit: 100 }).then(({ body }) => {
+  return spotifyApi.getPlaylist(user_id, playlist_id, { limit: 100 }).then(({ body: playlist }) => {
     // todo is there more  tracks in playlist?
-    const pl_tracks = body.tracks.items.map(item => item.track.uri);
-    const dif_tracks = _.difference(tracks, pl_tracks);
-    const spotify_url = body.external_urls.spotify;
-    const playlist_name = body.name;
-    console.info(`Created playlist! name: ${playlist_name} url: ${spotify_url}`);
-    const playlist_info = { url: spotify_url, pl_name: playlist_name };
-    return addTrucksToPlaylist(user_id, body.id, dif_tracks).then((data) => {
+    const pl_tracks = playlist.tracks.items.map(item => item.track.uri);
+    const diffTracks = difference(tracks, pl_tracks);
+    const spotify_url = playlist.external_urls.spotify;
+    console.info(`Created playlist! name: ${playlist.name} url: ${spotify_url}`);
+    const playlist_info = { url: spotify_url, name: playlist.name };
+    return addTrucksToPlaylist(user_id, playlist.id, diffTracks).then((data) => {
       console.info('Added tracks to playlist! ', data);
       return Promise.resolve(playlist_info);
     });
@@ -82,35 +82,33 @@ export const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks, acces
  *
  * @param accessToken
  * @param userId
- * @param sp_playlist_name
+ * @param spotifyPlaylistName
  * @param isPlaylistPrivate
  * @param tracks
  */
 export const createPlaylistAndAddTracks = (
   accessToken,
   userId,
-  sp_playlist_name,
+  spotifyPlaylistName,
   isPlaylistPrivate,
   tracks,
 ) => {
   spotifyApi.setAccessToken(accessToken);
   return spotifyApi
-    .createPlaylist(userId, sp_playlist_name, { public: !isPlaylistPrivate })
-    .then(({ body }) => {
-      if (body) {
-        const spotify_url = body.external_urls.spotify;
-        const playlist_name = body.name;
-        console.info(`Created playlist! name: ${playlist_name} url: ${spotify_url}`);
-        const playlist_info = { url: spotify_url, pl_name: playlist_name };
-        const playlist_id = body.id;
-        // todo there is some problem if there is more then 100 tracks
-        return addTrucksToPlaylist(userId, playlist_id, tracks).then((data) => {
-          console.info('Added tracks to playlist! ', data);
-          return Promise.resolve(playlist_info);
-        });
+    .createPlaylist(userId, spotifyPlaylistName, { public: !isPlaylistPrivate })
+    .then(({ body: playlist }) => {
+      if (!playlist) {
+        return Promise.reject(new Error('missing playlist'));
       }
-
-      return Promise.reject(new Error('missing body'));
+      const spotifyUrl = playlist.external_urls.spotify;
+      console.info(`Created playlist! name: ${playlist.name} url: ${spotifyUrl}`, playlist);
+      const playlist_info = { url: spotifyUrl, name: playlist.name };
+      const playlist_id = playlist.id;
+      // todo there is some problem if there is more then 100 tracks
+      return addTrucksToPlaylist(userId, playlist_id, tracks).then((data) => {
+        console.info('Added tracks to playlist! ', data);
+        return Promise.resolve(playlist_info);
+      });
     })
     .catch((err) => {
       console.error('Something went wrong!', err);

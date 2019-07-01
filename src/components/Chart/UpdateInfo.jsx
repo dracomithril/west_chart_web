@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { getFormattedDate } from '../../utils/utils';
 
-const options = { weekday: 'short', month: '2-digit', day: 'numeric' };
 const UpdateInfo = ({
   since, until, lastUpdateDateString, allCount, viewedCount,
 }) => (
@@ -9,11 +9,11 @@ const UpdateInfo = ({
     <div id="time-frame" className="update-info__time-frame">
       {'since: '}
       <span style={{ color: 'blue' }}>
-        {since !== '' ? new Date(since).toLocaleDateString('pl-PL', options) : 'null'}
+        { getFormattedDate(since, 'ddd, DD/MM') || 'null'}
       </span>
       {' to '}
       <span style={{ color: 'red' }}>
-        {until !== '' ? new Date(until).toLocaleDateString('pl-PL', options) : 'null'}
+        { getFormattedDate(until, 'ddd, DD/MM') || 'null'}
       </span>
     </div>
     <span id="updateDate" className="update-info__span">

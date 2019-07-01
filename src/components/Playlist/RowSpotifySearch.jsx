@@ -1,52 +1,10 @@
-/**
- * Created by XKTR67 on 5/11/2017.
- */
 import React from 'react';
 import PropTypes from 'prop-types';
 import MenuItem from '@material-ui/core/MenuItem';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCaretDown, faCaretUp, faSearch, faSync, faTimes,
-} from '@fortawesome/free-solid-svg-icons';
 import './playlist.css';
 import TrackPreview from './TrackPreview';
 import { trackObjectProps } from '../typeDefinitions';
-
-const RowSearchButtonGroup = ({
-  onSwap, onSearchClick, onClearClick, onShowList, id, showList, dropDown,
-}) => (
-  <div className="row-spotify-search__button-group">
-    <button type="button" onClick={() => onSwap && onSwap(id)} title="swap artist with title">
-      <FontAwesomeIcon icon={faSync} />
-    </button>
-    <button
-      type="button"
-      id={`button-${id}`}
-      onClick={() => onSearchClick && onSearchClick()}
-      title="search for tracks"
-    >
-      <FontAwesomeIcon icon={faSearch} />
-    </button>
-    <button type="button" title="clear selected" onClick={() => onClearClick && onClearClick({ id })}>
-      <FontAwesomeIcon icon={faTimes} />
-    </button>
-    {dropDown && (
-      <button type="button" onClick={onShowList} title="show/hide found tracks">
-        <FontAwesomeIcon icon={showList ? faCaretUp : faCaretDown} />
-      </button>
-    )}
-  </div>
-);
-
-RowSearchButtonGroup.propTypes = {
-  onSwap: PropTypes.func,
-  id: PropTypes.string,
-  onSearchClick: PropTypes.func,
-  onClearClick: PropTypes.func,
-  onShowList: PropTypes.func,
-  dropDown: PropTypes.bool,
-  showList: PropTypes.bool,
-};
+import { RowSearchButtonGroup } from './RowSearchButtonGroup';
 
 class RowSpotifySearch extends React.Component {
   constructor(props) {
@@ -150,10 +108,6 @@ class RowSpotifySearch extends React.Component {
   }
 }
 
-RowSpotifySearch.contextTypes = {
-  store: PropTypes.shape(),
-};
-
 RowSpotifySearch.propTypes = {
   artist: PropTypes.string,
   id: PropTypes.string,
@@ -166,7 +120,9 @@ RowSpotifySearch.propTypes = {
   onSwap: PropTypes.func,
   onUpdateClick: PropTypes.func,
 };
+
 RowSpotifySearch.defaultProps = {
   items: [],
 };
+
 export default RowSpotifySearch;

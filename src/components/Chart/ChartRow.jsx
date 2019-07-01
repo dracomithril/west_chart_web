@@ -12,7 +12,6 @@ import {
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import Checkbox from '@material-ui/core/Checkbox';
-import Avatar from '@material-ui/core/Avatar';
 
 function shortFormatDate(date) {
   if (date) {
@@ -26,13 +25,11 @@ function shortFormatDate(date) {
 const fullFormatDate = date => (date ? moment(date).format('dddd, MMMM Do YYYY, HH:mm:ss') : '');
 
 const ChartRow = ({
-  from,
   link = {},
   checked,
   createdTime,
   onChange,
   updatedTime,
-  story,
   message,
   id,
   reactionsNum,
@@ -56,18 +53,6 @@ const ChartRow = ({
         value={id}
         color="primary"
       />
-      {from.first_name != null ? (
-        <React.Fragment>
-          <Avatar src={from.picture_url} style={{ marginTop: 5 }} />
-          <span className="chart-row__user-info__name">
-            {`${from.first_name} ${from.last_name}`}
-          </span>
-        </React.Fragment>
-      ) : (
-        <span id="chart-row__story" style={{ maxWidth: 150, paddingRight: 5 }}>
-          {story}
-        </span>
-      )}
       <div className="chart-row__post-info">
         <FontAwesomeIcon icon={faThumbsUp} color="blue" />
         {reactionsNum}
