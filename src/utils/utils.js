@@ -1,9 +1,6 @@
 import moment from 'moment';
 
-export const getFormattedDate = (date, locales = 'pl-PL') => {
-  const create_date = new Date(date);
-  return create_date.toLocaleDateString(locales);
-};
+export const getFormattedDate = (date, format = 'D/M/YYYY') => (date ? moment(date).format(format) : null);
 
 export const getArtist_Title = (name) => {
   if (name == null) {
