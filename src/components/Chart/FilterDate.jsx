@@ -1,8 +1,26 @@
-import TextField from '@material-ui/core/TextField';
-import PropTypes from 'prop-types';
+// @flow
 import React from 'react';
+import PropTypes from 'prop-types';
+import TextField from '@material-ui/core/TextField';
+import { withStyles } from '@material-ui/core';
+import type { Moment } from 'moment';
 
-function FilterDate(props) {
+const styles = theme => ({
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+  },
+});
+
+type Props = {
+  classes: any,
+  onSinceChange(SyntheticInputEvent<EventTarget>): mixed,
+  since: Moment,
+  until: Moment,
+  onUntilChange(SyntheticInputEvent<EventTarget>): mixed,
+}
+
+function FilterDate(props: Props) {
   const {
     classes, onSinceChange, onUntilChange, until, since,
   } = props;
@@ -42,4 +60,4 @@ FilterDate.propTypes = {
   onUntilChange: PropTypes.func,
 };
 
-export default FilterDate;
+export default withStyles(styles)(FilterDate);

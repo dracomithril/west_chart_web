@@ -1,9 +1,9 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
-const PlaylistInfo = ({ url, name }) => (
+const PlaylistInfo = ({ url, name }: {url: string, name: string}) => (
   <div className="spotify_sumary">
     <span>
       {'Created '}
@@ -21,10 +21,5 @@ Spotify
     </a>
   </div>
 );
-
-PlaylistInfo.propTypes = {
-  url: PropTypes.string,
-  name: PropTypes.string,
-};
 
 export default PlaylistInfo;

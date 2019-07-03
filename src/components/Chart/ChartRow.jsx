@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
@@ -24,16 +25,29 @@ function shortFormatDate(date) {
 
 const fullFormatDate = date => (date ? moment(date).format('dddd, MMMM Do YYYY, HH:mm:ss') : '');
 
+type Props = {
+  id: string,
+  checked?: boolean,
+  createdTime?: string,
+  updatedTime?: string,
+  message?: string,
+  reactionsNum?: number,
+  link?: {
+    title: string,
+    url: string,
+  },
+  onChange: PropTypes.func.isRequired,
+}
 const ChartRow = ({
   link = {},
   checked,
   createdTime,
-  onChange,
   updatedTime,
+  onChange,
   message,
   id,
   reactionsNum,
-}) => {
+}: Props) => {
   const showUpdateTime = updatedTime && updatedTime !== createdTime;
   const withMessage = {
     icon: faComment,
@@ -91,33 +105,12 @@ const ChartRow = ({
   );
 };
 ChartRow.defaultProps = {
-  from: {},
-  story: null,
   checked: false,
   createdTime: null,
   updatedTime: null,
   message: null,
   reactionsNum: 0,
   link: {},
-};
-ChartRow.propTypes = {
-  id: PropTypes.string.isRequired,
-  from: PropTypes.shape({
-    first_name: PropTypes.string,
-    last_name: PropTypes.string,
-    picture_url: PropTypes.string,
-  }),
-  story: PropTypes.string,
-  checked: PropTypes.bool,
-  createdTime: PropTypes.string,
-  updatedTime: PropTypes.string,
-  message: PropTypes.string,
-  reactionsNum: PropTypes.number,
-  link: PropTypes.shape({
-    title: PropTypes.string,
-    url: PropTypes.string,
-  }),
-  onChange: PropTypes.func.isRequired,
 };
 
 export default ChartRow;

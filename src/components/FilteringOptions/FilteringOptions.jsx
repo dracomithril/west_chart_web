@@ -1,7 +1,6 @@
-
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -13,6 +12,7 @@ import './FilteringOptions.css';
 import filters_def from '../../utils/filters_def';
 import actionTypes from '../../reducers/actionTypes';
 import MessageControl from './MessageControl';
+import type { FiltersDefinition } from '../../types';
 
 const styles = theme => ({
   button: {
@@ -32,9 +32,22 @@ const styles = theme => ({
   },
 });
 
+
+type Props = {
+  filters: FiltersDefinition,
+  toggleFilter({id: string, checked: boolean}): mixed,
+  updateDays({id: string, value: string}): mixed,
+  classes: {
+    button: string,
+    root: string,
+    details: string,
+    heading: string,
+  },
+};
+
 const FilteringOptions = ({
   classes, filters, toggleFilter, updateDays,
-}) => {
+}: Props) => {
   const map_c = filters_def.control.map(({ input, description, control }) => {
     const { days, checked } = filters[input.name] || {};
     return (
@@ -46,12 +59,8 @@ const FilteringOptions = ({
         descStart={description.start}
         descEnd={description.end}
         key={input.name}
-        onChange={(target) => {
-          toggleFilter(target);
-        }}
-        onValueChange={(target) => {
-          updateDays(target);
-        }}
+        onChange={toggleFilter}
+        onValueChange={updateDays}
       />
     );
   });
@@ -80,15 +89,6 @@ Filters
       </ExpansionPanelDetails>
     </ExpansionPanel>
   );
-};
-
-FilteringOptions.propTypes = {
-  filters: PropTypes.shape(),
-  toggleFilter: PropTypes.func,
-  updateDays: PropTypes.func,
-  classes: PropTypes.shape({
-    button: PropTypes.string,
-  }).isRequired,
 };
 
 const mapStateToProps = ({ filters }) => ({

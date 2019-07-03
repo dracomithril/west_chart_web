@@ -1,12 +1,12 @@
-import React from 'react';
+// @flow
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboard } from '@fortawesome/free-solid-svg-icons';
 import copy from 'clipboard-copy';
 import './components.css';
-import { chartObjectProps } from './typeDefinitions';
+import type { ChartEntry } from '../types';
 // let {sorting} = require('./../utils');
 
 
@@ -15,7 +15,18 @@ const createPrintList = (elem, index) => (
     {`${index + 1}. ${elem.link.title} ${elem.reactionsNum} likes`}
   </div>
 );
-export class Summary extends React.Component {
+type Props = {
+  selected: ChartEntry[],
+  spotifyPlaylistInfo: {
+    url: string,
+  }
+}
+type SummaryState ={
+  introText: string,
+  riddleText: string,
+  riddleUrl: string,
+}
+export class Summary extends Component<Props, SummaryState> {
   state = {
     introText: '',
     riddleText: '',
@@ -118,10 +129,12 @@ No link
   }
 }
 
-Summary.propTypes = {
-  selected: PropTypes.arrayOf(chartObjectProps),
-  spotifyPlaylistInfo: PropTypes.shape(),
-};
+// Summary.propTypes = {
+//   selected: PropTypes.arrayOf(chartObjectProps),
+//   spotifyPlaylistInfo: PropTypes.shape({
+//     url: PropTypes.string,
+//   }),
+// };
 
 const mapStateToProps = ({ spotifyPlaylistInfo } /* , ownProps */) => ({
   spotifyPlaylistInfo,

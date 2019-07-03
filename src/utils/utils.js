@@ -1,8 +1,17 @@
+// @flow
 import moment from 'moment';
 
-export const getFormattedDate = (date, format = 'D/M/YYYY') => (date ? moment(date).format(format) : null);
+export const getFormattedDate = (
+  date: number,
+  format: string = 'D/M/YYYY',
+): ?string => (date ? moment(date).format(format) : null);
 
-export const getArtist_Title = (name) => {
+type ArtistTitle = {
+  artist: ?string,
+  title: ?string
+}
+
+export const getArtist_Title = (name: ?string): ArtistTitle => {
   if (name == null) {
     return { artist: null, title: null };
   }
@@ -24,14 +33,17 @@ export const getArtist_Title = (name) => {
   return { artist: null, title: name };
 };
 
-/**
- *
- * @return {{monday: Date, friday: Date, sunday: Date, weekNumber: number}}
- */
-export const weekInfo = () => {
+type WeekInfo = {
+  monday: moment,
+  friday: moment,
+  sunday: moment,
+  weekNumber: number,
+  year: number,
+}
+export const weekInfo = (): WeekInfo => {
   const today = moment();
-  const number = today.day();
-  const isNewWeek = number >= 0 && number < 5;
+  const dayNumber = today.day();
+  const isNewWeek = dayNumber >= 0 && dayNumber < 5;
   const monday = moment(today).day(isNewWeek ? -6 : 1);
   const friday = moment(today).day(isNewWeek ? -2 : 5);
   const sunday = moment(today).day(isNewWeek ? -7 : 0);
@@ -45,4 +57,4 @@ export const weekInfo = () => {
   };
 };
 
-export const getFbPictureUrl = id => `https://graph.facebook.com/${id}/picture?height=50`;
+export const getFbPictureUrl = (id: string) => `https://graph.facebook.com/${id}/picture?height=50`;

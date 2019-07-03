@@ -1,18 +1,28 @@
-
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
+
+type Props = {
+  id: string,
+  name?: string,
+  onChange({id: string, checked: boolean}): mixed,
+  onValueChange({id: string, value: string}): mixed,
+  days?: number,
+  checked: boolean,
+  descStart: ?string,
+  descEnd: ?string,
+};
 
 const FilterOption = ({
   id, name, days, checked, onChange, onValueChange, descStart, descEnd,
-}) => (
+}: Props) => (
   <div>
     <Checkbox
       color="primary"
       name={name}
       id={`${id}_checkbox`}
       checked={checked}
-      onChange={({ target }) => {
+      onChange={({ target }: SyntheticInputEvent<Checkbox>) => {
         onChange({ checked: target.checked, id });
       }}
     />
@@ -24,21 +34,15 @@ const FilterOption = ({
       step={1}
       id={`${id}_input`}
       value={days}
-      onChange={({ target }) => onValueChange({ value: target.value, id })}
+      onChange={({ target }: SyntheticInputEvent<HTMLInputElement>) => onValueChange(
+        {
+          value: target.value,
+          id,
+        },
+      )}
     />
     {descEnd}
   </div>
 );
-
-FilterOption.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  onValueChange: PropTypes.func,
-  days: PropTypes.number,
-  checked: PropTypes.bool,
-  descStart: PropTypes.string,
-  descEnd: PropTypes.string,
-};
 
 export default FilterOption;

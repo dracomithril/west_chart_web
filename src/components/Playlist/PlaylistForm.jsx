@@ -1,32 +1,41 @@
+// @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Button, Fab } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSave, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb, faSave } from '@fortawesome/free-solid-svg-icons';
 import { weekInfo } from '../../utils/utils';
 import './playlist.css';
 
-export class PlaylistForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      playlistName: '',
-      isPrivate: false,
-    };
-  }
+type Props = {
+  hasElements: boolean,
+  isUserLogged: boolean,
+  onStartClick(): mixed,
+  onCreatePlaylistClick({ playlistName: string, isPrivate: boolean }): mixed,
+  spotifyUser: {
+    id: string
+  },
+};
 
-  onGenPlaylistName = () => {
-    const { monday, friday } = weekInfo();
+type State = {
+  playlistName: string,
+  isPrivate: boolean,
+}
+const getPlaylistName = () => {
+  const { monday, friday } = weekInfo();
 
-    const mondayStr = monday.format('MMM_D').toUpperCase();
-    const fridayStr = friday.format('MMM_D').toUpperCase();
+  const mondayStr = monday.format('MMM_D').toUpperCase();
+  const fridayStr = friday.format('MMM_D').toUpperCase();
 
-    const playlistName = `Chart_${mondayStr}-${fridayStr}`;
-    this.setState({ playlistName });
+  return `Chart_${mondayStr}-${fridayStr}`;
+};
+export class PlaylistForm extends Component<Props, State> {
+  state = {
+    playlistName: '',
+    isPrivate: false,
   };
 
   render() {
@@ -52,7 +61,14 @@ export class PlaylistForm extends Component {
           }}
         />
         <div style={{ alignSelf: 'center' }}>
-          <Fab color="secondary" onClick={this.onGenPlaylistName} id="genName_sp_button">
+          <Fab
+            color="secondary"
+            onClick={() => {
+              const name = getPlaylistName();
+              this.setState({ playlistName: name });
+            }}
+            id="genName_sp_button"
+          >
             <FontAwesomeIcon icon={faLightbulb} />
           </Fab>
           <Fab
@@ -82,14 +98,6 @@ export class PlaylistForm extends Component {
     );
   }
 }
-
-PlaylistForm.propTypes = {
-  hasElements: PropTypes.bool,
-  isUserLogged: PropTypes.bool,
-  onStartClick: PropTypes.func,
-  onCreatePlaylistClick: PropTypes.func,
-  spotifyUser: PropTypes.shape(),
-};
 
 const mapStateToProps = ({ spotifyUser }) => ({
   spotifyUser,

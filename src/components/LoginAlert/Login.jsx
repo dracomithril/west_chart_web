@@ -1,6 +1,6 @@
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import Button from '@material-ui/core/Button';
@@ -12,9 +12,25 @@ import { getFbPictureUrl } from '../../utils/utils';
 import { api } from '../../config';
 import actionTypes from '../../reducers/actionTypes';
 
+// todo User objects spotify and facebook
+type Props = {
+  facebookUser: {
+    id: string
+  },
+  spotifyUser: {
+    id: string
+  },
+  updateFacebookUser({}): mixed,
+  location: {
+    state: {
+      from: string,
+    },
+  },
+};
+
 export const Login = ({
   location, facebookUser, spotifyUser, updateFacebookUser,
-}) => {
+}: Props) => {
   const { from } = (location || {}).state || { from: '/' };
   if (facebookUser.id && spotifyUser.id) {
     return <Redirect to={from} />;
@@ -86,16 +102,6 @@ export const Login = ({
   );
 };
 
-Login.propTypes = {
-  facebookUser: PropTypes.shape(),
-  spotifyUser: PropTypes.shape(),
-  updateFacebookUser: PropTypes.func,
-  location: PropTypes.shape({
-    state: PropTypes.shape({
-      from: PropTypes.string,
-    }),
-  }),
-};
 const mapStateToProps = ({ facebookUser, spotifyUser }) => ({
   facebookUser,
   spotifyUser,

@@ -1,9 +1,12 @@
+// @flow
 import { combineReducers } from 'redux';
 import actionTypes from './actionTypes';
+import type { Action, Filter, Filters } from '../types';
 
 const showDays = 7;
 
-const control_state = defaultState => (state = defaultState, action) => {
+const control_state = (defaultState: Filter) => (state: Filter = defaultState,
+  action: Action): Filter => {
   if (state.id === action.id) {
     switch (action.type) {
       case actionTypes.TOGGLE_FILTER:
@@ -17,7 +20,8 @@ const control_state = defaultState => (state = defaultState, action) => {
     return state;
   }
 };
-const filters = combineReducers({
+
+const filters: Filters = combineReducers({
   create_control: control_state(
     {
       checked: false,

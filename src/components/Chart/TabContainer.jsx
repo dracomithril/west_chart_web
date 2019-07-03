@@ -1,17 +1,17 @@
+// @flow
+import * as React from 'react';
 import { Typography } from '@material-ui/core';
-import PropTypes from 'prop-types';
-import React from 'react';
 
-export function TabContainer({ children }) {
+type Props = {
+  children?: React.Node,
+}
+
+export function TabContainer({ children }: Props) {
   return (
     <Typography component="div" style={{ paddingTop: 4 * 3 }}>
       {children}
     </Typography>
   );
 }
-
-TabContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default TabContainer;

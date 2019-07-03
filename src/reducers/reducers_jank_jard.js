@@ -1,3 +1,4 @@
+// @flow
 import { routerReducer } from 'react-router-redux';
 import moment from 'moment';
 import { combineReducers } from 'redux';
@@ -6,6 +7,7 @@ import actionTypes from './actionTypes';
 import filters from './filters';
 import chart from './chart';
 import createUser from '../models/facebookUser';
+import type { Action } from '../types';
 
 /**
  * @typedef {Object} FacebookUserObject
@@ -58,7 +60,7 @@ const spotifyUser = (state, action) => {
 };
 const listSort = (state = 'reaction', action) => (action.type === actionTypes.UPDATE_LIST_SORT ? action.sort : state);
 
-const sp_playlist_name = (state = '', action) => (action.type === actionTypes.UPDATE_PLAYLIST_NAME ? action.value : state);
+const sp_playlist_name = (state: string = '', action: Action): string => (action.type === actionTypes.UPDATE_PLAYLIST_NAME ? action.value : state);
 
 const lastUpdateDate = (state = '', action) => (action.type === actionTypes.UPDATE_LAST_UPDATE
   ? action.date : state);

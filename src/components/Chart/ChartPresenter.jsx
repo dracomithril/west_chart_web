@@ -1,6 +1,6 @@
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faSpotify } from '@fortawesome/free-brands-svg-icons';
 import { faList, faTable } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +13,7 @@ import filterChart from '../../utils/filtering';
 import sorting from '../../utils/sorting';
 import { TabContainer } from './TabContainer';
 import { PostsContainer } from './PostsContainer';
+import type { ChartEntry, Filters } from '../../types';
 
 const styles = theme => ({
   root: {
@@ -50,19 +51,32 @@ const tabs = [
     icon: <FontAwesomeIcon icon={faTable} />,
   },
 ];
+type Props ={
+  classes: { root: string },
+  listSort: string,
+  chart: ChartEntry[],
+  filters: Filters,
+  until: number,
+  songsPerDay: number,
+  since: number,
+  lastUpdateDate: string,
+  show_wait: boolean,
+}
+type State = {
+  selectedTab: string,
+}
 const options = { weekday: 'short', month: '2-digit', day: 'numeric' };
 const defaultValue = {
   viewChart: [],
   errorDays: [],
   westLetters: [],
 };
-
-export class ChartPresenter extends React.Component {
+export class ChartPresenter extends React.Component<Props, State> {
   state = {
     selectedTab: tabOptions.posts,
   };
 
-  handleChange = (event, value) => {
+  handleChange = (event: SyntheticInputEvent<BottomNavigation>, value: string) => {
     this.setState({ selectedTab: value });
   };
 
@@ -114,7 +128,7 @@ export class ChartPresenter extends React.Component {
       <div className={classes.root}>
         <div style={{ borderBottom: '1px solid' }}>
           <BottomNavigation value={selectedTab} showLabels onChange={this.handleChange}>
-            {tabs.map(elem => <BottomNavigationAction key={elem.label} {...elem} />)}
+            {tabs.map(tab => <BottomNavigationAction key={tab.label} {...tab} />)}
           </BottomNavigation>
         </div>
         {selectableTabs[selectedTab]}
@@ -122,18 +136,6 @@ export class ChartPresenter extends React.Component {
     );
   }
 }
-
-ChartPresenter.propTypes = {
-  classes: PropTypes.shape({ root: PropTypes.string }).isRequired,
-  listSort: PropTypes.string,
-  chart: PropTypes.arrayOf(PropTypes.shape()),
-  filters: PropTypes.shape(),
-  until: PropTypes.number,
-  songsPerDay: PropTypes.number,
-  since: PropTypes.number,
-  lastUpdateDate: PropTypes.string,
-  show_wait: PropTypes.bool,
-};
 
 const mapStateToProps = (state) => {
   const {

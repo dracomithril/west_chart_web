@@ -1,10 +1,18 @@
-import PropTypes from 'prop-types';
+// @flow
 import React from 'react';
 import { getFormattedDate } from '../../utils/utils';
 
+type Props = {
+  since: number,
+  until: number,
+  lastUpdateDateString: string,
+  allCount: number,
+  viewedCount: number,
+};
+
 const UpdateInfo = ({
   since, until, lastUpdateDateString, allCount, viewedCount,
-}) => (
+}: Props) => (
   <div className="update-info">
     <div id="time-frame" className="update-info__time-frame">
       {'since: '}
@@ -30,13 +38,5 @@ and filtered
     </span>
   </div>
 );
-
-UpdateInfo.propTypes = {
-  since: PropTypes.number,
-  until: PropTypes.number,
-  lastUpdateDateString: PropTypes.string,
-  allCount: PropTypes.number,
-  viewedCount: PropTypes.number,
-};
 
 export default UpdateInfo;

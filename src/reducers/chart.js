@@ -1,5 +1,8 @@
+// @flow
 import { clone } from 'lodash';
 import actionTypes from './actionTypes';
+import type { Action, ChartEntry, Search } from '../types';
+
 
 /**
  * @typedef {Object} ChartEntry
@@ -63,8 +66,7 @@ import actionTypes from './actionTypes';
     },
  */
 
-
-const updateSearch = (searchElem = {}, action) => {
+const updateSearch = (searchElem: Search = {}, action: Action) => {
   const search = { ...searchElem };
   switch (action.type) {
     case actionTypes.CLEAR_SELECTED: {
@@ -90,16 +92,18 @@ const updateSearch = (searchElem = {}, action) => {
   }
 };
 
+const changeSelection = (selected: boolean) => (elem: ChartEntry): ChartEntry => Object
+  .assign({}, elem, { selected });
 /**
  *
  * @param state {ChartEntry[]}
  * @param action
  * @return {*}
  */
-const chart = (state = [], action) => {
+const chart = (state: ChartEntry[] = [], action: Action) => {
   switch (action.type) {
     case actionTypes.UPDATE_CHART:
-      return [...action.chart];
+      return [...action.value];
     case actionTypes.TOGGLE_SELECTED: {
       const l = clone(state);
       const findIndex = l.findIndex(elem => elem.id === action.id);
@@ -109,12 +113,9 @@ const chart = (state = [], action) => {
       }
       return state;
     }
-    case actionTypes.TOGGLE_ALL:
-      return state.map((elem) => {
-        const copy = clone(elem);
-        copy.selected = action.value;
-        return copy;
-      });
+    case actionTypes.TOGGLE_ALL: {
+      return state.map<ChartEntry>(changeSelection(action.value));
+    }
     case actionTypes.CLEAR_SELECTED: {
       const entry = clone(state);
       const findIndex = entry.findIndex(elem => elem.id === action.id);

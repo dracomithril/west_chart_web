@@ -36,5 +36,3 @@ export const errorDaysObjectProps = PropTypes.shape({
   color: PropTypes.string,
   org: PropTypes.string,
 });
-
-export default { chartObjectProps, errorDaysObjectProps, trackObjectProps };

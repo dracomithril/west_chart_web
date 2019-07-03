@@ -22,7 +22,7 @@ export function updateSongsParDay(days) {
 }
 
 export function updateChartAction(value = []) {
-  return { type: actionTypes.UPDATE_CHART, chart: value };
+  return { type: actionTypes.UPDATE_CHART, value };
 }
 
 export function showWait(state = true) {

@@ -1,10 +1,18 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
 
+
+type Props = {
+  id: string,
+  checked: boolean,
+  text: string,
+  name: string,
+  onChange({id: string, checked: boolean}): mixed,
+};
 const MessageControl = ({
   id, text, name, checked, onChange,
-}) => (
+}: Props) => (
   <div>
     <Checkbox
       name={name}
@@ -12,7 +20,7 @@ const MessageControl = ({
       className="filter-option"
       id={`${id}_checkbox`}
       checked={checked}
-      onChange={({ target }) => {
+      onChange={({ target }: SyntheticInputEvent<Checkbox>) => {
         onChange({ id, checked: target.checked });
       }}
     />
@@ -23,13 +31,5 @@ const MessageControl = ({
     </span>
   </div>
 );
-
-MessageControl.propTypes = {
-  id: PropTypes.string,
-  checked: PropTypes.bool,
-  text: PropTypes.string,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-};
 
 export default MessageControl;

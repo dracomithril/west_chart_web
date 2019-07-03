@@ -1,18 +1,25 @@
+// @flow
 import { groupBy } from 'lodash';
 import moment from 'moment';
 import filters_def from './filters_def';
+import type { ChartEntry, FilteringReturn, Filters } from '../types';
 
-const filterChart = (chart, filters, since, until, songsPerDay) => {
+const filterChart = (
+  chart: ChartEntry[],
+  filters: Filters,
+  since: number,
+  until: number,
+  songsPerDay: number,
+): FilteringReturn => {
   const news_letter_filter = filters_def.text[1];
-  const westLetters = chart.filter(elem => (elem.message !== undefined
-    ? elem.message.toLowerCase().includes(news_letter_filter.text) : false));
+  const westLetters = chart.filter(news_letter_filter.check);
 
   const filters_defaults = [...filters_def.control, ...filters_def.text];
-  const filtersToUse = filters_defaults.map((e) => {
-    const filter = filters[e.input.name];
+  const filtersToUse = filters_defaults.map((filterDef) => {
+    const filter = filters[filterDef.input.name];
     return {
-      check: e.check,
-      valueName: e.valueName,
+      check: filterDef.check,
+      valueName: filterDef.valueName,
       until,
       ...filter,
     };

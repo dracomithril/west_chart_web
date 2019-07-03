@@ -1,8 +1,8 @@
+// @flow
 import { CircularProgress } from '@material-ui/core';
-import PropTypes from 'prop-types';
 import React from 'react';
 
-export const WaitForResult = ({ text = 'Please wait' }) => (
+export const WaitForResult = ({ text = 'Please wait' }: { text?: string }) => (
   <div style={{
     display: 'flex', flexDirection: 'column', alignItems: 'center', flexFlow: 'column-reverse',
   }}
@@ -11,8 +11,5 @@ export const WaitForResult = ({ text = 'Please wait' }) => (
     <CircularProgress />
   </div>
 );
-WaitForResult.propTypes = {
-  text: PropTypes.string,
-};
 
 export default WaitForResult;

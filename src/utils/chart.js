@@ -1,5 +1,6 @@
+// @flow
+import type { ChartEntry, fbEntry, Response } from '../types';
 import getChartEntry from './chart_entry';
-
 import { facebookGroup } from '../config';
 
 const limit = 100;
@@ -22,7 +23,7 @@ const fieldsArr = [
   'comments.limit(50).summary(true){message,from}',
 ];
 
-function obtainList(groupId, accessToken) {
+function obtainList(groupId: string, accessToken: string): Promise<fbEntry[]> {
   const query = {
     fields: fieldsArr.join(','),
     limit,
@@ -39,12 +40,14 @@ function obtainList(groupId, accessToken) {
     }));
   }
   console.error('No FB SDK');
-  return [];
+  return Promise.resolve([]);
 }
 
-const formatChartEntries = async (data = []) => Promise.all(data.map(getChartEntry));
+const formatChartEntries = async (data: fbEntry[] = []): Promise<ChartEntry[]> => Promise
+  .all(data
+    .map(getChartEntry));
 
-const formatResponse = (chart) => {
+const formatResponse = async (chart): Promise<Response> => {
   const cache = {
     chart,
     lastUpdateDate: new Date().toISOString(),
@@ -52,7 +55,10 @@ const formatResponse = (chart) => {
   return Promise.resolve(cache);
 };
 
-export const UpdateChart = accessToken => obtainList(facebookGroup, accessToken)
+export const UpdateChart = (accessToken: string): Promise<Response> => obtainList(
+  facebookGroup,
+  accessToken,
+)
   .then(formatChartEntries)
   .then(formatResponse);
 

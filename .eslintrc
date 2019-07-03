@@ -1,7 +1,7 @@
 {
-  "extends": ["airbnb"],
+  "extends": ["airbnb","plugin:flowtype/recommended"],
   "parser": "babel-eslint",
-  "plugins": ["json", "import"],
+  "plugins": ["json", "import", "flowtype"],
   "env": {
     "browser": true,
     "node": true,

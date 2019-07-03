@@ -1,7 +1,31 @@
+// @flow
 import Joi from 'joi-browser';
 import userSchema from './userSchema';
 
-const createUser = function createUser(fbUser) {
+type FacebookResponse = {
+  id: string,
+  email: string,
+  name: string,
+  first_name: string,
+  accessToken: string,
+  expiresIn: number,
+  signedRequest: string,
+  last_name: string,
+  picture_url: string,
+  userID: string,
+}
+type FacebookUser ={
+  id: string,
+  email: string,
+  name: string,
+  firstName: string,
+  accessToken: string,
+  lastName: string,
+  pictureUrl: string,
+  userID: string,
+}
+
+const createUser = function createUser(fbUser: FacebookResponse): FacebookUser | null {
   const { error, value } = Joi.validate(fbUser, userSchema);
   if (error) {
     return null;

@@ -1,26 +1,30 @@
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import '../components.css';
-import { chartObjectProps } from '../typeDefinitions';
 import ChartRow from './ChartRow';
 import actionTypes from '../../reducers/actionTypes';
+import type { ChartEntry } from '../../types';
 
+type Props = {
+  data?: ChartEntry[],
+  tableInfo?: string | Object,
+  selectAll(boolean): mixed,
+  toggleSelected(string, boolean): mixed,
+};
 
 export const ChartTable = ({
   data, tableInfo, selectAll, toggleSelected,
-}) => {
-  const ChartRows = data.map(entry => (
+}: Props) => {
+  const ChartRows = data ? data.map(entry => (
     <ChartRow
       id={entry.id}
       checked={entry.selected}
       createdTime={entry.createdTime}
       updatedTime={entry.updatedTime}
       link={entry.link}
-      from={entry.from}
-      story={entry.story}
       key={entry.id}
       reactionsNum={entry.reactionsNum}
       message={entry.message}
@@ -28,8 +32,10 @@ export const ChartTable = ({
         toggleSelected(id, checked);
       }}
     />
-  ));
-  return ChartRows.length > 0 ? (
+  )) : null;
+
+
+  return ChartRows && ChartRows.length > 0 ? (
     <div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <FormControlLabel
@@ -65,13 +71,6 @@ export const ChartTable = ({
 ChartTable.defaultProps = {
   data: [],
   tableInfo: 'No data',
-};
-
-ChartTable.propTypes = {
-  data: PropTypes.arrayOf(chartObjectProps),
-  tableInfo: PropTypes.oneOfType([PropTypes.string, PropTypes.shape()]),
-  selectAll: PropTypes.func,
-  toggleSelected: PropTypes.func,
 };
 
 const mapDispatchToProps = dispatch => ({
