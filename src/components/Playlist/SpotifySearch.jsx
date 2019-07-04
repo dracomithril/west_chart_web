@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 import PlaylistFormContainer from './PlaylistForm';
 import RowSpotifySearch from './RowSpotifySearch';
-import PlaylistInfo from '../PlaylistInfo';
+import PlaylistInfo from './PlaylistInfo';
 import actionTypes from '../../reducers/actionTypes';
 import { createPlaylistAndAddTracks, searchForMusic } from '../../utils/spotify_utils';
 import { chartObjectProps } from '../typeDefinitions';

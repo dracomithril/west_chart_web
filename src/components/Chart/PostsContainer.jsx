@@ -3,7 +3,7 @@ import React from 'react';
 import { TabContainer } from './TabContainer';
 import ChartHeaderContainer from './ChartHeader';
 import UpdateInfo from './UpdateInfo';
-import ChartTableContainer from './ChartTable2';
+import ChartTableContainer from './ChartTable';
 import { WaitForResult } from './WaitForResult';
 import type { ChartEntry, ErrorDay } from '../../types';
 

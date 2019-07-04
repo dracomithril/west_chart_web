@@ -1,4 +1,4 @@
-import sp_apiMock from 'spotify-web-api-node';
+import Spotify_apiMock from 'spotify-web-api-node';
 import { createPlaylistAndAddTracks } from '../utils/spotify_utils';
 
 jest.mock('spotify-web-api-node');
@@ -13,14 +13,14 @@ describe('[sp_utils]', () => {
   });
   describe('[createPlaylistAndAddTracks]', () => {
     it('should react if no body from spotify', (done) => {
-      sp_apiMock.prototype.createPlaylist.mockResolvedValue({});
+      Spotify_apiMock.prototype.createPlaylist.mockResolvedValue({});
       createPlaylistAndAddTracks({}, '', false, [])
         .then(() => {
           done(new Error('Should throw error'));
         })
         .catch((err) => {
           expect(err.message).toBe('missing playlist');
-          expect(sp_apiMock.prototype.createPlaylist).toBeCalled();
+          expect(Spotify_apiMock.prototype.createPlaylist).toBeCalled();
           done();
         });
     });

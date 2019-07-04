@@ -22,7 +22,8 @@
     "import/no-extraneous-dependencies": ["error", {
       "devDependencies": [
         "**/___tests___/**",
-        "**/*.story.jsx"
+        "**/*.story.jsx",
+        "**/*.test.jsx"
       ],
       "optionalDependencies": false
     }],

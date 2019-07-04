@@ -1,6 +1,6 @@
 import filterChart from '../../utils/filtering';
 
-const { chart } = require('../___data___/response.json');
+const { chart } = require('../../___data___/response.json');
 
 describe('[filterChartWithStore]', () => {
   it('should be able to filter', () => {

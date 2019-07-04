@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { addDecorator, storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';

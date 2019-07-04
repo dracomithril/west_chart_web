@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChartHeader/> renders without crashing ChartHeader 1`] = `
+<ChartHeader
+  classes={
+    Object {
+      "button": "ChartHeader-button-1",
+      "container": "ChartHeader-container-2",
+    }
+  }
+  errorDays={Array []}
+/>
+`;

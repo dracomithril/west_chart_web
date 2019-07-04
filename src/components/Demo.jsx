@@ -1,12 +1,23 @@
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { noop } from 'lodash';
 import fakeChartData from '../___data___/chartData';
-import actionTypes from '../reducers/actionTypes';
 import ChartPresenterContainer from './Chart/ChartPresenter';
+import type { ChartEntry } from '../types';
+import { updateChartAction } from '../reducers/actions';
 
-class Demo extends React.Component {
+
+type Props ={
+  updateChart?: ()=>mixed,
+  chart?: ChartEntry[],
+}
+class Demo extends React.Component<Props> {
+  static defaultProps = {
+    updateChart: noop,
+    chart: [],
+  };
+
   constructor(props) {
     super(props);
     const { updateChart, chart } = props;
@@ -20,26 +31,13 @@ class Demo extends React.Component {
   }
 }
 
-Demo.defaultProps = {
-  updateChart: noop,
-  chart: [],
-};
-
-Demo.propTypes = {
-  updateChart: PropTypes.func,
-  chart: PropTypes.arrayOf(PropTypes.shape()),
-};
-
 const mapStateToProps = ({ chart } /* , ownProps */) => ({
   chart,
 });
 
 const mapDispatchToProps = dispatch => ({
   updateChart: (chartData) => {
-    dispatch({
-      type: actionTypes.UPDATE_CHART,
-      chart: chartData,
-    });
+    dispatch(updateChartAction(chartData));
   },
 });
 

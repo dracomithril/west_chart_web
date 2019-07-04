@@ -27,18 +27,7 @@ html{
     justify-items: flex-start;
 }
 
-.wcs_header {
-    display: none;
-}
-
 @media screen and (min-width: 640px) {
-    .wcs_header {
-        display: block;
-        height: 180px;
-        color: white;
-        background: #898e8e no-repeat center;
-        margin-bottom: 10px;
-    }
     .App {
         text-align: center;
         margin-left: 5px;

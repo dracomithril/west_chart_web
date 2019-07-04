@@ -16,47 +16,15 @@
     z-index: 9;
 }
 
-.chart-header__group-buttons {
-    text-align: center;
-    padding-top: 15px;
-}
-
 .chart-presenter__tab-content {
     display: flex;
     flex-direction: column;
     align-items: stretch;
 }
 
-.songs-per-day {
-    border: 1px solid ghostwhite;
-}
-
-.songs-per-day--err {
-    color: #a94442;
-    background-color: #f2dede;
-    border-color: #ebccd1;
-}
-
-.songs-per-day--good {
-    color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-}
-
 .songs-per-day__label input {
     text-align: center;
     margin-left: 5px;
-}
-
-.songs-per-day__counters {
-    display: flex;
-    flex-direction: column;
-}
-
-.pick-your-date__button {
-    margin-left: 5px;
-    background-color: white;
-    border: 1px solid lightgray;
 }
 
 .update-info {
@@ -85,27 +53,6 @@
     margin-left: 10px;
 }
 
-.chart-table__checkbox {
-    position: relative;
-    display: block;
-    /*margin-top: 10px;*/
-    /*margin-bottom: 10px;*/
-}
-
-.less_days {
-    color: blue;
-    /*margin-left: 5px;*/
-}
-
-.more_days {
-    color: red;
-    /*margin-left: 5px;*/
-}
-
-.chart-table {
-
-}
-
 .chart-row {
     border: 1px solid lightgray;
     border-radius: 5px;
@@ -115,14 +62,6 @@
     padding-top: 3px;
     align-items: center;
     justify-content: space-between;
-}
-
-.chart-row__user-info__name {
-    display: flex;
-    max-width: 100px;
-    word-wrap: break-word;
-    text-align: center;
-    align-items: center;
 }
 
 .chart-row__user-info__name span {
@@ -171,21 +110,7 @@
     align-items: center;
 }
 
-.checkbox-one {
-    margin: 5px;
-    display: flex;
-    align-items: center;
-    font-weight: unset;
-}
-
-.checkbox-one__input {
-    margin-right: 5px;
-}
-
 @media screen and (min-width: 375px) {
-    .chart-row__user-info__name {
-        max-width: none;
-    }
 }
 
 @media screen and (min-width: 700px) {
@@ -204,17 +129,9 @@
         width: 400px;
     }
 
-    .chart-table {
-        min-width: 700px;
-        align-self: stretch;
-    }
-
     .chart-presenter__tab-content {
         min-width: 700px;
         align-items: center;
     }
 
-    .chart-row__user-info__name {
-        min-width: 100px;
-    }
 }

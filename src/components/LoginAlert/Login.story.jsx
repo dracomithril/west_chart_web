@@ -1,15 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Provider } from 'react-redux';
-import LoginComponent from './Login';
-import configureStore from '../../configureStore';
-
-const store = configureStore();
+import { Login as LoginComponent } from './Login';
 
 storiesOf('Login', module)
-  .addDecorator(story => (
-    <Provider store={store}>
-      {story()}
-    </Provider>
-  ))
-  .add('Todo[VR]', () => <LoginComponent from="/" />);
+  .add('Todo[VR]', () => (
+    <LoginComponent
+      location="/"
+      autoLoad={false}
+    />
+  ));

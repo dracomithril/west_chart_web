@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChartTable/> render with objects 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+      }
+    }
+  >
+    <WithStyles(WithFormControlContext(FormControlLabel))
+      control={
+        <WithStyles(Checkbox)
+          color="primary"
+          id="selectAll"
+          onChange={[Function]}
+          value="selectAll"
+        />
+      }
+      label="select all"
+    />
+  </div>
+  <ChartRow
+    checked={true}
+    createdTime="2018-03-16T00:12:32+0000"
+    id="1707149242852457_2150864795147564"
+    key="1707149242852457_2150864795147564"
+    link={
+      Object {
+        "name": "EZA - Shape of You",
+        "title": "EZA - Shape of You",
+        "type": "share",
+        "url": "https://www.youtube.com/watch?v=ALIBUPY_UEc",
+      }
+    }
+    message="Ship of a black madness, trade the power! "
+    onChange={[Function]}
+    reactionsNum={4}
+    updatedTime="2018-03-16T00:16:21+0000"
+  />
+  <ChartRow
+    checked={false}
+    createdTime="2018-03-16T00:12:59+0000"
+    id="1707149242852457_2139869112913799"
+    key="1707149242852457_2139869112913799"
+    link={
+      Object {
+        "name": "Sam Smith - Too Good At Goodbyes (Sofia Karlberg Cover)",
+        "title": "Sam Smith - Too Good At Goodbyes (Sofia Karlberg Cover)",
+        "type": "share",
+        "url": "https://www.youtube.com/watch?v=rLKreFwTSYs",
+      }
+    }
+    message={null}
+    onChange={[Function]}
+    reactionsNum={0}
+    updatedTime="2018-03-16T00:12:59+0000"
+  />
+  <ChartRow
+    checked={false}
+    createdTime="2018-03-16T00:12:39+0000"
+    id="1707149242852457_2151609491739761"
+    key="1707149242852457_2151609491739761"
+    link={
+      Object {
+        "name": "Iggy Azalea - Savior (Lyric Video) ft. Quavo",
+        "title": "Iggy Azalea - Savior (Lyric Video) ft. Quavo",
+        "type": "share",
+        "url": "https://youtu.be/LxoGNkLpgZk",
+      }
+    }
+    message="https://youtu.be/LxoGNkLpgZk"
+    onChange={[Function]}
+    reactionsNum={2}
+    updatedTime="2018-03-16T00:12:40+0000"
+  />
+  <ChartRow
+    checked={false}
+    createdTime="2018-03-16T00:12:36+0000"
+    id="1707149242852457_2150975431803167"
+    key="1707149242852457_2150975431803167"
+    link={
+      Object {
+        "name": "Calum Scott - Only You (Audio)",
+        "title": "Calum Scott - Only You (Audio)",
+        "type": "share",
+        "url": "https://www.youtube.com/watch?v=WX_0qCyFaeM",
+      }
+    }
+    message="https://www.youtube.com/watch?v=WX_0qCyFaeM"
+    onChange={[Function]}
+    reactionsNum={3}
+    updatedTime="2018-03-16T00:12:36+0000"
+  />
+  <ChartRow
+    checked={false}
+    createdTime="2018-03-14T23:10:55+0000"
+    id="1707149242852457_2149545078612869"
+    key="1707149242852457_2149545078612869"
+    link={
+      Object {
+        "name": "Dolly Parton - Nine to Five",
+        "title": "Dolly Parton - Nine to Five",
+        "type": "share",
+        "url": "https://www.youtube.com/watch?v=LwDMFOLIHxU",
+      }
+    }
+    message="https://www.youtube.com/watch?v=LwDMFOLIHxU"
+    onChange={[Function]}
+    reactionsNum={1}
+    updatedTime="2018-03-14T23:47:48+0000"
+  />
+</div>
+`;
+
+exports[`<ChartTable/> renders without crashing 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "justifyContent": "center",
+      "minHeight": 300,
+      "textAlign": "center",
+    }
+  }
+>
+  No data
+</div>
+`;

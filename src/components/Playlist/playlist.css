@@ -59,15 +59,6 @@
     color: lightgray;
 }
 
-.row-spotify-search__root--good {
-    border: solid lightgray;
-}
-
-.row-spotify-search__root--error {
-    border: double red;
-    background-color: #ffe2e7;
-}
-
 [class^="row-spotify-search__track-search"] {
     border-radius: 10px;
     text-align: center;
@@ -82,15 +73,6 @@
 [class^="row-spotify-search__track-search"] input {
     font-weight: 600;
     font-size: medium;
-}
-
-.row-spotify-search__track-search--good {
-    border: 1px solid green;
-}
-
-.row-spotify-search__track-search--error {
-    /*background-color: #ff0e10;*/
-    border: 2px solid #ff0e10;
 }
 
 .row-spotify-search__button-group {

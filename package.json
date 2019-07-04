@@ -84,6 +84,7 @@
       "src/*.{js,jsx}",
       "!src/{___data___,___tests___,__mocks__}/**",
       "!src/components/**/*.story.{js,jsx}",
+      "!src/components/**/*.test.{js,jsx}",
       "src/**/*.{js,jsx}",
       "!src/registerServiceWorker.js"
     ]

@@ -11,13 +11,11 @@ import { weekInfo } from '../../utils/utils';
 import './playlist.css';
 
 type Props = {
-  hasElements: boolean,
-  isUserLogged: boolean,
-  onStartClick(): mixed,
-  onCreatePlaylistClick({ playlistName: string, isPrivate: boolean }): mixed,
-  spotifyUser: {
-    id: string
-  },
+  hasElements?: boolean,
+  isUserLogged?: boolean,
+  onStartClick?: ()=> mixed,
+  onCreatePlaylistClick?: ({ playlistName: string, isPrivate: boolean })=> mixed,
+  spotifyUserId?: string,
 };
 
 type State = {
@@ -40,7 +38,11 @@ export class PlaylistForm extends Component<Props, State> {
 
   render() {
     const {
-      onCreatePlaylistClick: onCreatePlaylist, onStartClick, hasElements, isUserLogged, spotifyUser,
+      onCreatePlaylistClick: onCreatePlaylist,
+      onStartClick,
+      hasElements,
+      isUserLogged,
+      spotifyUserId,
     } = this.props;
     const { playlistName, isPrivate } = this.state;
     const disable_create = !(playlistName.length > 5 && hasElements && isUserLogged);
@@ -74,7 +76,7 @@ export class PlaylistForm extends Component<Props, State> {
           <Fab
             id="crt_pl_button"
             onClick={() => onCreatePlaylist && onCreatePlaylist({ playlistName, isPrivate })}
-            disabled={!isNameValid && Boolean(spotifyUser.id)}
+            disabled={!isNameValid && Boolean(spotifyUserId)}
             title={disable_create ? 'Sorry you need to be logged to spotify to be able to add playlist' : ''}
           >
             <FontAwesomeIcon icon={faSave} />
@@ -100,7 +102,7 @@ export class PlaylistForm extends Component<Props, State> {
 }
 
 const mapStateToProps = ({ spotifyUser }) => ({
-  spotifyUser,
+  spotifyUserId: spotifyUser.id,
 });
 
 export default connect(mapStateToProps)(PlaylistForm);

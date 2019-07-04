@@ -7,20 +7,17 @@ import Button from '@material-ui/core/Button';
 import { faFacebookF, faSpotify } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
-import './LoginAlert.css';
+import './Login.css';
 import { getFbPictureUrl } from '../../utils/utils';
 import { api } from '../../config';
 import actionTypes from '../../reducers/actionTypes';
 
 // todo User objects spotify and facebook
 type Props = {
-  facebookUser: {
-    id: string
-  },
-  spotifyUser: {
-    id: string
-  },
-  updateFacebookUser({}): mixed,
+  facebookUserId?: string,
+  spotifyUserId?: string,
+  autoLoad?: boolean,
+  updateFacebookUser?: ({})=> mixed,
   location: {
     state: {
       from: string,
@@ -29,10 +26,10 @@ type Props = {
 };
 
 export const Login = ({
-  location, facebookUser, spotifyUser, updateFacebookUser,
+  location, facebookUserId, spotifyUserId, updateFacebookUser, autoLoad = true,
 }: Props) => {
   const { from } = (location || {}).state || { from: '/' };
-  if (facebookUser.id && spotifyUser.id) {
+  if (facebookUserId && spotifyUserId) {
     return <Redirect to={from} />;
   }
   return (
@@ -47,11 +44,11 @@ export const Login = ({
         </span>
         ️
       </h4>
-      {facebookUser.id === undefined && (
+      {facebookUserId === undefined && (
         <FacebookLogin
           appId={api.fb.apiId}
           language="pl_PL"
-          autoLoad
+          autoLoad={autoLoad}
           fields="id,email,name,first_name,last_name"
           scope={api.fb.scope}
           render={renderProps => (
@@ -67,7 +64,7 @@ export const Login = ({
           )}
           callback={(response) => {
             if (!response.error) {
-              updateFacebookUser(response);
+              updateFacebookUser && updateFacebookUser(response);
               window.location = from;
             } else {
               console.error('login error.', response.error);
@@ -75,7 +72,7 @@ export const Login = ({
           }}
         />
       )}
-      {spotifyUser.id === undefined && (
+      {spotifyUserId === undefined && (
         <Button
           variant="contained"
           style={{
@@ -103,8 +100,8 @@ export const Login = ({
 };
 
 const mapStateToProps = ({ facebookUser, spotifyUser }) => ({
-  facebookUser,
-  spotifyUser,
+  facebookUserId: facebookUser.id,
+  spotifyUserId: spotifyUser.id,
 });
 
 const mapDispatchToProps = dispatch => ({

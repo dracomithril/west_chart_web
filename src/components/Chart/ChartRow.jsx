@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -36,7 +35,7 @@ type Props = {
     title: string,
     url: string,
   },
-  onChange: PropTypes.func.isRequired,
+  onChange?: (SyntheticInputEvent<Checkbox>) => mixed,
 }
 const ChartRow = ({
   link = {},
@@ -61,9 +60,7 @@ const ChartRow = ({
       <Checkbox
         id={id}
         checked={checked}
-        onChange={({ target }) => {
-          onChange && onChange(target);
-        }}
+        onChange={onChange}
         value={id}
         color="primary"
       />
