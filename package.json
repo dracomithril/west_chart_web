@@ -22,7 +22,7 @@
     "cookies-js": "^1.2.3",
     "history": "^4.9.0",
     "joi-browser": "^13.4.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "moment": "^2.24.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
