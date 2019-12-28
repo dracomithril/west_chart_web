@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { addDecorator, storiesOf } from '@storybook/react';
 import { Provider } from 'react-redux';

@@ -26,6 +26,7 @@ import Demo from './Demo';
 import PrivateRoute from './PrivateRoute';
 import { getCredentials } from '../utils/spotify_utils';
 import actionTypes from '../reducers/actionTypes';
+import type { SpotifyUser } from '../types/spotify';
 
 const styles = {
   root: {
@@ -48,14 +49,18 @@ const options = [
   { name: 'Combiner(BETA)', href: '/combiner' },
   { name: 'Demo', href: '/demo' },
 ];
+
+type FacebookUser= {
+  id: string,
+  picture_url: string,
+  id: string,
+  name: string,
+  first_name: string,
+}
+
 type Props = {
-  facebookUser: {
-    id: string,
-    picture_url: string,
-    id: string,
-    name: string,
-    first_name: string, },
-  spotifyUser: {id: string},
+  facebookUser: $Exact<FacebookUser>,
+  spotifyUser: $Exact<SpotifyUser>,
   signOutUser: ()=>mixed,
   updateSpotifyUser: ({}, string)=>mixed,
   classes: {

@@ -41,7 +41,7 @@ describe('<FilteringOption/>', () => {
     const wocCheckbox = findWhere.first();
     const props = wocCheckbox.props();
     expect(props.checked).toBeTruthy();
-    wocCheckbox.simulate('change', { target: { id: 'create', checked: false } });
+    wocCheckbox.simulate('change', { currentTarget: { id: 'create', checked: false } });
     expect(onChange).toBeCalledTimes(1);
   });
 });

@@ -2,7 +2,7 @@
 import moment from 'moment';
 
 export const getFormattedDate = (
-  date: number,
+  date: number | string,
   format: string = 'D/M/YYYY',
 ): ?string => (date ? moment(date).format(format) : null);
 

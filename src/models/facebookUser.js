@@ -1,6 +1,7 @@
 // @flow
 import Joi from 'joi-browser';
 import userSchema from './userSchema';
+import type { FacebookUser } from '../types';
 
 type FacebookResponse = {
   id: string,
@@ -12,16 +13,6 @@ type FacebookResponse = {
   signedRequest: string,
   last_name: string,
   picture_url: string,
-  userID: string,
-}
-type FacebookUser ={
-  id: string,
-  email: string,
-  name: string,
-  firstName: string,
-  accessToken: string,
-  lastName: string,
-  pictureUrl: string,
   userID: string,
 }
 

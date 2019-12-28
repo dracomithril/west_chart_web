@@ -1,11 +1,19 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
+import type { SpotifyTrack } from '../../types/spotify';
+
+
+type Props = {
+  noLink?: boolean,
+  ...SpotifyTrack,
+  preview_url: string,
+};
 
 const TrackPreview = ({
-  artists, preview_url, external_urls, trackName, noLink,
-}) => {
+  artists, preview_url, external_urls, name, noLink,
+}: Props) => {
   const artistsList = (artists || []).map(elem => elem.name).join(' & ');
   const audio = preview_url !== null ? (
     <audio controls preload="none">
@@ -26,7 +34,7 @@ const TrackPreview = ({
   return (
     <div className="track-preview">
       <strong>
-        {trackName}
+        {name}
       </strong>
       <br />
       {audio}
@@ -40,17 +48,6 @@ by:
       </div>
     </div>
   );
-};
-TrackPreview.propTypes = {
-  noLink: PropTypes.bool,
-  artists: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-  })),
-  preview_url: PropTypes.string,
-  external_urls: PropTypes.shape({
-    spotify: PropTypes.string,
-  }),
-  trackName: PropTypes.string,
 };
 
 export default TrackPreview;

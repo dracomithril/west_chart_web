@@ -8,18 +8,7 @@ export type Filter = {
 export type Filters = {
   [string]: Filter,
 }
-type SpotifyArtist = {
-  external_urls: { spotify: string },
-  href: string,
-  id: string,
-  name: string,
-  type: string,
-  uri: string,
-}
-export type SpotifyTrack = {
-  name: string,
-  artists: Array<SpotifyArtist>
-}
+
 export type Link = {
   url: string,
   name: string,
@@ -121,3 +110,14 @@ export type FiltersDefinition = {
   control: FilterValue[],
   text: FilterText[],
 }
+export type FacebookUser = {
+  id: string,
+  email: string,
+  name: string,
+  firstName: string,
+  accessToken: string,
+  lastName: string,
+  pictureUrl: string,
+  userID: string,
+}
+export type PlaylistInfoType = { url?: string, name?: string };

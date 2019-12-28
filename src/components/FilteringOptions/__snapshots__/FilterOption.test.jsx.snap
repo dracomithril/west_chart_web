@@ -3,6 +3,7 @@
 exports[`<FilteringOption/> renders without crashing FilteringOption 1`] = `
 <div>
   <WithStyles(Checkbox)
+    checked={false}
     color="primary"
     id="create_checkbox"
     name="date_create_control"

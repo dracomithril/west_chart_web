@@ -5,43 +5,12 @@ import type {
   ChartEntry, FiltersDefinition, FilterText, FilterValue,
 } from '../types';
 
-
-const countDays = (elem: ChartEntry, {
-  valueName, until, days, checked,
-}) => {
-  if (checked) {
-    const date = elem[valueName];
-    const cIn1 = new Date(date).getTime();
-    const time = subtractDaysFromDate(until, days).getTime();
-    const timeLeft = cIn1 - time;
-    // what if its newer then until
-    return timeLeft > 0;
-  }
-  return true;
-};
-
 const isItMore = ({ reactionsNum }: ChartEntry,
   { days, checked }) => (checked ? reactionsNum > days : true);
 const isItLess = ({ reactionsNum }: ChartEntry,
   { days, checked }) => (checked ? reactionsNum < days : true);
 
 const filters: FilterValue[] = [
-  {
-    control: { name: 'date_create_control', id: 'create' },
-    input: { max: 31, name: 'create_control' },
-    valueName: 'createdTime',
-    description: { start: 'created in last', end: 'days' },
-    type: 'countDays',
-    check: countDays,
-  },
-  {
-    control: { name: 'date_update_control', id: 'update' },
-    input: { max: 31, name: 'update_control' },
-    valueName: 'updatedTime',
-    description: { start: 'updated in last', end: 'days' },
-    type: 'countDays',
-    check: countDays,
-  },
   {
     control: { name: 'more_then_control', id: 'more' },
     input: { name: 'more_control' },

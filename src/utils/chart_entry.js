@@ -1,9 +1,8 @@
 // @flow
 import { getArtist_Title } from './utils';
 import { getTrack } from './spotify_utils';
-import type {
-  ChartEntry, fbEntry, Link, SpotifyTrack,
-} from '../types';
+import type { ChartEntry, fbEntry, Link } from '../types';
+import type { SpotifyTrack } from '../types/spotify';
 
 function getAttachment({ data = [] } = {}) {
   return data[0] || {};

@@ -16,8 +16,8 @@ class UserPlaylist extends React.Component {
     );
   }
 
-  updateSelectList = ({ target }) => {
-    const { name, selectedOptions } = target;
+  updateSelectList = ({ currentTarget }) => {
+    const { name, selectedOptions } = currentTarget;
     const { onSelect } = this.props;
     const sel = Array.from(selectedOptions).map(({ value }) => [name, value]);
     onSelect(name, sel);

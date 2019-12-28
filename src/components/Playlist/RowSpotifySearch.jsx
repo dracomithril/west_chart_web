@@ -1,18 +1,37 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import MenuItem from '@material-ui/core/MenuItem';
 import './playlist.css';
 import TrackPreview from './TrackPreview';
-import { trackObjectProps } from '../typeDefinitions';
 import { RowSearchButtonGroup } from './RowSearchButtonGroup';
+import type { SpotifyTrack } from '../../types/spotify';
 
-class RowSpotifySearch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showList: false,
-    };
-  }
+type Props = {
+  artist: string,
+  id: string,
+  items?: SpotifyTrack[],
+  full_title: string,
+  selected: SpotifyTrack,
+  title: string,
+  onClearClick: () => mixed,
+  onSearchClick: () => mixed,
+  onSwap: () => mixed,
+  onUpdateClick: ({ id: string, value: SpotifyTrack, field: string }) => mixed,
+};
+
+type State = {
+  showList: boolean,
+}
+
+
+class RowSpotifySearch extends React.Component<Props, State> {
+  state ={
+    showList: false,
+  };
+
+  static defaultProps = {
+    items: [],
+  };
 
   render() {
     const {
@@ -28,7 +47,7 @@ class RowSpotifySearch extends React.Component {
       onClearClick,
     } = this.props;
     const { showList } = this.state;
-    const tracks_list = items.map(track => (
+    const tracks_list = items && items.map(track => (
       <MenuItem
         key={track.id}
         id={`mi_select_track_${id}`}
@@ -76,7 +95,12 @@ class RowSpotifySearch extends React.Component {
                   id={`${id}_title`}
                   value={title || ''}
                   placeholder="song title"
-                  onChange={({ target }) => onUpdateClick && onUpdateClick({ id, value: target.value, field: 'title' })}
+                  onChange={({ currentTarget }) => onUpdateClick
+                    && onUpdateClick({
+                      id,
+                      value: currentTarget.value,
+                      field: 'title',
+                    })}
                 />
               </label>
               <RowSearchButtonGroup
@@ -87,7 +111,7 @@ class RowSpotifySearch extends React.Component {
                 onShowList={() => {
                   this.setState({ showList: !showList });
                 }}
-                dropDown={tracks_list.length !== 0}
+                dropDown={tracks_list && tracks_list.length !== 0}
                 showList={showList}
               />
             </div>
@@ -107,22 +131,5 @@ class RowSpotifySearch extends React.Component {
     );
   }
 }
-
-RowSpotifySearch.propTypes = {
-  artist: PropTypes.string,
-  id: PropTypes.string,
-  items: PropTypes.arrayOf(trackObjectProps),
-  full_title: PropTypes.string,
-  selected: trackObjectProps,
-  title: PropTypes.string,
-  onClearClick: PropTypes.func,
-  onSearchClick: PropTypes.func,
-  onSwap: PropTypes.func,
-  onUpdateClick: PropTypes.func,
-};
-
-RowSpotifySearch.defaultProps = {
-  items: [],
-};
 
 export default RowSpotifySearch;

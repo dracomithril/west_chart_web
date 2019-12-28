@@ -3,12 +3,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faSpotify } from '@fortawesome/free-brands-svg-icons';
-import { faList, faTable } from '@fortawesome/free-solid-svg-icons';
+import { faList } from '@fortawesome/free-solid-svg-icons';
 import { withStyles } from '@material-ui/core/styles';
 import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 import SummaryComponent from '../Summary';
 import SpotifySearchComponent from '../Playlist/SpotifySearch';
-import WestLetterComponent from '../WestLetter';
 import filterChart from '../../utils/filtering';
 import sorting from '../../utils/sorting';
 import { TabContainer } from './TabContainer';
@@ -44,11 +43,6 @@ const tabs = [
     label: 'Summary',
     value: tabOptions.summary,
     icon: <FontAwesomeIcon icon={faList} />,
-  },
-  {
-    label: 'West Letter',
-    value: tabOptions.westLetter,
-    icon: <FontAwesomeIcon icon={faTable} />,
   },
 ];
 type Props ={
@@ -86,7 +80,7 @@ export class ChartPresenter extends React.Component<Props, State> {
       classes, listSort, chart, filters, until, songsPerDay, since, lastUpdateDate, show_wait,
     } = this.props;
 
-    const { viewChart, errorDays, westLetters } = chart.length > 0
+    const { viewChart, errorDays } = chart.length > 0
       ? filterChart(chart, filters, since, until, songsPerDay)
       : defaultValue;
     const selectedPosts = viewChart.filter(elem => elem.selected);
@@ -118,10 +112,6 @@ export class ChartPresenter extends React.Component<Props, State> {
       [tabOptions.summary]: (
         <TabContainer>
           <SummaryComponent selected={selectedPosts} />
-        </TabContainer>),
-      [tabOptions.westLetter]: (
-        <TabContainer>
-          <WestLetterComponent data={westLetters} />
         </TabContainer>),
     };
     return (

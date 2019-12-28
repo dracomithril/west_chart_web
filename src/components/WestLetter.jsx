@@ -1,14 +1,24 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
-import Avatar from '@material-ui/core/Avatar';
-import { getFbPictureUrl, getFormattedDate, weekInfo } from '../utils/utils';
-import { chartObjectProps } from './typeDefinitions';
+import moment from 'moment';
+import { getFormattedDate, weekInfo } from '../utils/utils';
+import type { ChartEntry } from '../types';
 
-export function WestLetter(props) {
-  const { data, week } = props;
+type Props = {
+  data?: ChartEntry[],
+  week?: {
+    monday: moment,
+    friday: moment,
+    sunday: moment,
+    weekNumber: number,
+    year: number,
+  },
+};
+
+export function WestLetter({ data = [], week = weekInfo() }: Props) {
   const show = data.map((elem) => {
     const {
-      from, createdTime, id, story,
+      createdTime, id,
     } = elem;
     return (
       <div style={{ padding: 2, display: 'block', border: '1px black solid' }} key={id}>
@@ -16,11 +26,6 @@ export function WestLetter(props) {
         <span hidden>
           {id}
         </span>
-        {from ? <Avatar title={from.name} src={getFbPictureUrl(from.id)} /> : (
-          <div>
-            {story}
-          </div>
-        )}
         <div>
           <span>
             {getFormattedDate(createdTime)}
@@ -62,20 +67,5 @@ is added
     </div>
   );
 }
-
-WestLetter.propTypes = {
-  data: PropTypes.arrayOf(chartObjectProps),
-  week: PropTypes.shape({
-    monday: PropTypes.object,
-    friday: PropTypes.object,
-    sunday: PropTypes.object,
-    weekNumber: PropTypes.number,
-    year: PropTypes.number,
-  }),
-};
-WestLetter.defaultProps = {
-  data: [],
-  week: weekInfo(),
-};
 
 export default WestLetter;

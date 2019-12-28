@@ -2,8 +2,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
+import type { PlaylistInfoType } from '../../types';
 
-const PlaylistInfo = ({ url = '', name = '' }: {url?: string, name?: string}) => (
+const PlaylistInfo = ({ url = '', name = '' }: PlaylistInfoType) => (
   <div className="spotify_sumary">
     <span>
       {'Created '}

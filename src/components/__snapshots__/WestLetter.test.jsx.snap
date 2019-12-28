@@ -46,10 +46,6 @@ exports[`<WestLetter/> renders users 1`] = `
       >
         1707149242852457_1938133309754048
       </span>
-      <WithStyles(Avatar)
-        src="https://graph.facebook.com/10202921980928649/picture?height=50"
-        title="Joanna Kozieńska"
-      />
       <div>
         <span>
           24/2/2017
@@ -83,10 +79,6 @@ exports[`<WestLetter/> renders users 1`] = `
       >
         1707149242852457_1941491366084909
       </span>
-      <WithStyles(Avatar)
-        src="https://graph.facebook.com/10202921980928649/picture?height=50"
-        title="Joanna Kozieńska"
-      />
       <div>
         <span>
           3/3/2017

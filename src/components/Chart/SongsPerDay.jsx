@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -11,7 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import './chart.css';
-import { errorDaysObjectProps } from '../typeDefinitions';
+import type { ErrorDay } from '../../types';
 
 const styles = theme => ({
   button: {},
@@ -41,9 +40,17 @@ const styles = theme => ({
   },
 });
 
-const SongsPerDay = (props) => {
+type Props = {
+  classes: {
+    [string]: string,
+  },
+  errorDays?: ErrorDay[],
+  songsPerDay: number,
+  onDaysChange: (number) => mixed,
+};
+const SongsPerDay = (props: Props) => {
   const {
-    errorDays, songsPerDay, onDaysChange, classes,
+    errorDays = [], songsPerDay, onDaysChange, classes,
   } = props;
   const errorDaysMap = errorDays.map(({ org, color }) => (
     <div key={org}>
@@ -86,19 +93,6 @@ songs per day
       </ExpansionPanelDetails>
     </ExpansionPanel>
   );
-};
-SongsPerDay.defaultProps = {
-  errorDays: [],
-};
-
-SongsPerDay.propTypes = {
-  classes: PropTypes.shape({
-    button: PropTypes.string,
-    typography: PropTypes.string,
-  }).isRequired,
-  errorDays: PropTypes.arrayOf(errorDaysObjectProps),
-  songsPerDay: PropTypes.number,
-  onDaysChange: PropTypes.func,
 };
 
 export default withStyles(styles)(SongsPerDay);

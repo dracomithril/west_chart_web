@@ -6,7 +6,7 @@ import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props
 import Button from '@material-ui/core/Button';
 import { faFacebookF, faSpotify } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { loginToSpotifyAlpha } from '../../utils/spotify_utils';
+import { loginToSpotify } from '../../utils/spotify_utils';
 import './Login.css';
 import { getFbPictureUrl } from '../../utils/utils';
 import { api } from '../../config';
@@ -82,7 +82,7 @@ export const Login = ({
             color: 'white',
           }}
           onClick={() => {
-            loginToSpotifyAlpha(from)
+            loginToSpotify(from)
               .then((url) => {
                 window.location = url;
               })

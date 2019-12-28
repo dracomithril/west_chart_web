@@ -10,7 +10,7 @@ Enzyme.configure({ adapter: new Adapter() });
 const data = require('../../___data___/response.json').chart;
 const state = require('../../___data___/initial_state.json');
 
-const sp_utils = require('../../utils/spotify_utils');
+const spotifyUtils = require('../../utils/spotify_utils');
 
 describe('<PlaylistForm/>', () => {
   it('renders without crashing', () => {
@@ -21,7 +21,7 @@ describe('<PlaylistForm/>', () => {
   });
   it('start_click', (done) => {
     const onStart = sinon.spy();
-    sp_utils.searchForMusic.mockReturnValue(Promise.resolve({ id: 'zzz', value: {} }));
+    spotifyUtils.searchForMusic.mockReturnValue(Promise.resolve({ id: 'zzz', value: {} }));
     const wrapper = shallow(
       <PlaylistForm selected={data} onStartClick={onStart} spotifyUserId={state.spotifyUser.id} />,
     );
@@ -33,7 +33,7 @@ describe('<PlaylistForm/>', () => {
   });
   it('createPlaylistAndAddTracks', () => {
     const onCreate = sinon.spy();
-    sp_utils.createPlaylistAndAddTracks.mockReturnValue(Promise.resolve({ mock: 'mock' }));
+    spotifyUtils.createPlaylistAndAddTracks.mockReturnValue(Promise.resolve({ mock: 'mock' }));
     // const state = Object.assign({}, state, { sp_playlist_name: 'test_list_zzzz' });
     const wrapper = shallow(
       <PlaylistForm

@@ -52,6 +52,10 @@ export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
   return spotifyApi.addTracksToPlaylist(playlist_id, tracks);
 };
 
+type SpotifyAccess = {
+  userData: SpotifyUser,
+  accessToken: string
+};
 /**
  * @param access_token
  */
@@ -102,7 +106,7 @@ export const createPlaylistAndAddTracks = (
       }
       const spotifyUrl = playlist.external_urls.spotify;
       console.info(`Created playlist! name: ${playlist.name} url: ${spotifyUrl}`, playlist);
-      const playlist_info = { url: spotifyUrl, name: playlist.name };
+      const playlist_info: PlaylistInfoType = { url: spotifyUrl, name: playlist.name };
       const playlist_id = playlist.id;
       // todo there is some problem if there is more then 100 tracks
       return addTrucksToPlaylist(userId, playlist_id, tracks).then((data) => {
@@ -128,12 +132,11 @@ export const getUserAndPlaylists = (accessToken, user) => {
       };
       return spotifyApi.getUserPlaylists(userInfo.id, { limit: 50 });
     })
-    .then(({ body }) => {
-      new_user.items = body.items.filter(el => el.owner.id === new_user.id);
-      new_user.total = body.total;
-      const message = `user: ${new_user.id} have ${new_user.items.length}(his own)/ total ${body.items.length}`;
+    .then((userInfo) => {
+      const { id, items, all } = userInfo;
+      const message = `user: ${id} have ${items.length}(his own)/ total ${all.length}`;
       console.info(message);
-      return Promise.resolve(new_user);
+      return userInfo;
     })
     .catch((err) => {
       const error = err.message === 'Not Found' ? new Error(`No user named ${user}`) : err;
@@ -171,7 +174,7 @@ export const searchForMusic = ({ artist, title, id }) => spotifyApi
     console.error('error obtaining track', e.message);
   });
 /**
- * @param refresh_token
+ * @param refreshToken
  * @return {Promise<Spotify_credentials>}
  */
 const refresh_auth = (refresh_token) => {
@@ -229,15 +232,7 @@ export const loginToSpotifyAlpha = from => fetch(api.spotify.login, {
     return Promise.resolve(url);
   });
 
-export const obtain_credentials = () => fetch(api.spotify.obtainCredentials, {
-  method: 'GET',
-  credentials: 'include',
-  accept: 'application/json',
-})
-  .then((response) => {
-    console.info('response ok:', response.ok);
-    return response.ok ? response.json() : Promise.reject(new Error(`Error in request ${response.url}`));
-  })
+export const obtain_credentials = () => obtainCredentials()
   .then((body) => {
     const { access_token, refresh_token } = body;
     return validateCredentials(access_token).then(({ accessToken, userData }) => {
@@ -247,7 +242,7 @@ export const obtain_credentials = () => fetch(api.spotify.obtainCredentials, {
     });
   });
 
-export const getCredentials = () => getCookies()
+export const getCredentials = async (): Promise<SpotifyAccess> => getCookies()
   .catch(() => obtain_credentials())
   .catch(() => Promise.reject(noCredentials));
 
