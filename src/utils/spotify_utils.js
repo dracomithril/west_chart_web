@@ -1,15 +1,18 @@
+// @flow
 import Spotify from 'spotify-web-api-node';
-import { api, hostname } from '../config';
+import { hostname } from '../config';
+import { cookieAccessToken, cookieRefreshToken } from './consts';
+import type { PlaylistInfoType } from '../types';
+import { login, obtainCredentials, refreshAuth } from '../providers/wcs_api';
+import type { SpotifyUser } from '../types/spotify';
 
 const spotifyApi = new Spotify();
 const Cookies = require('cookies-js');
 const { drop, take, difference } = require('lodash');
 
-const acToken = 'client-sp_user_access_token';
-const rfToken = 'client-sp_user_refresh_token';
 const noCredentials = new Error('No credentials found');
 
-export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
+export const addTrucksToPlaylist = (userId: string, playlistId: string, tracks: string[]) => {
   if (tracks.length === 0) {
     return Promise.reject(new Error('nothing was updated. Tracks count is 0'));
   }
@@ -34,7 +37,7 @@ export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
     };
     const tz = sliceCount(tracks, 100);
     const actions = tz.map(el => spotifyApi
-      .addTracksToPlaylist(playlist_id, el)
+      .addTracksToPlaylist(playlistId, el)
       .catch((err) => {
         console.error(err);
         return Promise.reject(err);
@@ -49,7 +52,7 @@ export const addTrucksToPlaylist = (user_id, playlist_id, tracks) => {
       });
   }
 
-  return spotifyApi.addTracksToPlaylist(playlist_id, tracks);
+  return spotifyApi.addTracksToPlaylist(playlistId, tracks);
 };
 
 type SpotifyAccess = {
@@ -59,7 +62,7 @@ type SpotifyAccess = {
 /**
  * @param access_token
  */
-const validateCredentials = (access_token) => {
+const validateCredentials = async (access_token: string): Promise<SpotifyAccess> => {
   spotifyApi.setAccessToken(access_token);
   return spotifyApi.getMe().then((data) => {
     console.info('you logged as :', data.body.id);
@@ -67,20 +70,26 @@ const validateCredentials = (access_token) => {
   });
 };
 
-export const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks, accessToken) => {
+export const addTrucksToPlaylistNoRepeats = (
+  userId: string,
+  playlistId: string,
+  tracks: string [],
+  accessToken: string,
+) => {
   spotifyApi.setAccessToken(accessToken);
-  return spotifyApi.getPlaylist(user_id, playlist_id, { limit: 100 }).then(({ body: playlist }) => {
+  return spotifyApi.getPlaylist(userId, playlistId, { limit: 100 })
+    .then(({ body: playlist }) => {
     // todo is there more  tracks in playlist?
-    const pl_tracks = playlist.tracks.items.map(item => item.track.uri);
-    const diffTracks = difference(tracks, pl_tracks);
-    const spotify_url = playlist.external_urls.spotify;
-    console.info(`Created playlist! name: ${playlist.name} url: ${spotify_url}`);
-    const playlist_info = { url: spotify_url, name: playlist.name };
-    return addTrucksToPlaylist(user_id, playlist.id, diffTracks).then((data) => {
-      console.info('Added tracks to playlist! ', data);
-      return Promise.resolve(playlist_info);
+      const pl_tracks = playlist.tracks.items.map(item => item.track.uri);
+      const diffTracks = difference(tracks, pl_tracks);
+      const spotify_url = playlist.external_urls.spotify;
+      console.info(`Created playlist! name: ${playlist.name} url: ${spotify_url}`);
+      const playlist_info = { url: spotify_url, name: playlist.name };
+      return addTrucksToPlaylist(userId, playlist.id, diffTracks).then((data) => {
+        console.info('Added tracks to playlist! ', data);
+        return Promise.resolve(playlist_info);
+      });
     });
-  });
 };
 /**
  *
@@ -91,11 +100,11 @@ export const addTrucksToPlaylistNoRepeats = (user_id, playlist_id, tracks, acces
  * @param tracks
  */
 export const createPlaylistAndAddTracks = (
-  accessToken,
-  userId,
-  spotifyPlaylistName,
-  isPlaylistPrivate,
-  tracks,
+  accessToken: string,
+  userId: string,
+  spotifyPlaylistName: string,
+  isPlaylistPrivate: boolean,
+  tracks: string[],
 ) => {
   spotifyApi.setAccessToken(accessToken);
   return spotifyApi
@@ -120,17 +129,25 @@ export const createPlaylistAndAddTracks = (
     });
 };
 
-export const getUserAndPlaylists = (accessToken, user) => {
+export const getUserAndPlaylists = async (accessToken: string, user: string) => {
   spotifyApi.setAccessToken(accessToken);
-  let new_user;
   return spotifyApi
     .getUser(user)
     .then(({ body: userInfo = {} }) => {
-      new_user = {
+      const new_user = {
         pic: (userInfo.images[0] || {}).url,
         id: userInfo.id,
       };
-      return spotifyApi.getUserPlaylists(userInfo.id, { limit: 50 });
+      return spotifyApi.getUserPlaylists(userInfo.id, { limit: 50 })
+        .then(({ body }) => {
+          const userPlaylists = body.items.filter(el => el.owner.id === new_user.id);
+          return {
+            ...new_user,
+            items: userPlaylists,
+            all: body.items,
+            total: body.total,
+          };
+        });
     })
     .then((userInfo) => {
       const { id, items, all } = userInfo;
@@ -144,26 +161,31 @@ export const getUserAndPlaylists = (accessToken, user) => {
       return Promise.reject(error);
     });
 };
-export const getTracks = (accessToken, user, playlist_name) => {
+
+export const getTracks = (accessToken: string, user: string, playlistName: string) => {
   spotifyApi.setAccessToken(accessToken);
-  return spotifyApi.getPlaylist(user, playlist_name).then((data) => {
-    const tracks = data.body.tracks.items.map(item => item.track.uri);
-    console.info('Some information about this playlist', data.body);
-    return Promise.resolve(tracks);
-  });
+  return spotifyApi.getPlaylist(user, playlistName)
+    .then(({ body }) => {
+      const tracks = body.tracks.items.map(item => item.track.uri);
+      console.info('Some information about this playlist', body);
+      return Promise.resolve(tracks);
+    });
 };
 
-export const getTrack = trackId => spotifyApi.getTrack(trackId);
+export const getTrack = (trackId: string) => spotifyApi.getTrack(trackId);
+
 /**
  * serach for matching music in spotify library
  * @param artist {string}
  * @param title {string}
  * @param search_id
  */
-export const searchForMusic = ({ artist, title, id }) => spotifyApi
-  .searchTracks(`${artist} ${title}`)
+export const searchForMusic = ({ artist, title, id }: {
+  artist?: string, title?: string, id: string
+}) => spotifyApi
+  .searchTracks(`${artist || ''} ${title || ''}`)
   .catch((resp) => {
-    Cookies.expire(acToken);
+    Cookies.expire(cookieAccessToken);
     return Promise.reject(resp);
   })
   .then(data => Promise.resolve({
@@ -173,22 +195,17 @@ export const searchForMusic = ({ artist, title, id }) => spotifyApi
   .catch((e) => {
     console.error('error obtaining track', e.message);
   });
+
 /**
  * @param refreshToken
  * @return {Promise<Spotify_credentials>}
  */
-const refresh_auth = (refresh_token) => {
+const refresh_auth = (refreshToken: string): Promise<SpotifyAccess> => {
   console.info('refreshing token');
-  return fetch(api.spotify.refreshToken, {
-    method: 'POST',
-    // mode: 'cors',
-    body: JSON.stringify({ refresh_token }),
-    headers: new Headers({ 'Content-Type': 'application/json' }),
-  })
-    .then(response => response.text())
-    .then((auth_token) => {
-      Cookies.set(acToken, auth_token, { expires: 360000 });
-      return validateCredentials(auth_token);
+  return refreshAuth(refreshToken)
+    .then((authToken) => {
+      Cookies.set(cookieAccessToken, authToken, { expires: 360000 });
+      return validateCredentials(authToken);
     });
 };
 
@@ -200,14 +217,17 @@ const refresh_auth = (refresh_token) => {
  * obtains cookies for spotify
  * @return {Promise<Spotify_credentials>}
  */
-const getCookies = () => {
-  const accessToken = Cookies.get(acToken);
-  const refresh_token = Cookies.get(rfToken);
+const getCookies = async (): Promise<SpotifyAccess> => {
+  const accessToken = Cookies.get(cookieAccessToken);
+  const refresh_token = Cookies.get(cookieRefreshToken);
   if (accessToken) {
-    return validateCredentials(accessToken).catch(() => {
-      Cookies.expire(acToken);
-      return refresh_token ? refresh_auth(refresh_token) : Promise.reject(noCredentials);
-    });
+    return validateCredentials(accessToken)
+      .catch(() => {
+        Cookies.expire(accessToken);
+        return refresh_token
+          ? refresh_auth(refresh_token)
+          : Promise.reject(noCredentials);
+      });
   }
   if (refresh_token) {
     return refresh_auth(refresh_token);
@@ -215,16 +235,10 @@ const getCookies = () => {
   return Promise.reject(noCredentials);
 };
 
-export const loginToSpotifyAlpha = from => fetch(api.spotify.login, {
-  credentials: 'include',
-  redirect: 'follow',
-  accept: 'application/json',
-})
-  .then(response => (response.ok ? response.text() : Promise.reject(new Error(' No url to fallow'))))
+export const loginToSpotify = (address: string) => login()
   .then((url) => {
-    console.info(url);
-    if (from) {
-      Cookies.set('spotify_redirect_to', from, {
+    if (address) {
+      Cookies.set('spotify_redirect_to', address, {
         expires: 60000,
         domain: hostname || undefined,
       });
@@ -236,8 +250,8 @@ export const obtain_credentials = () => obtainCredentials()
   .then((body) => {
     const { access_token, refresh_token } = body;
     return validateCredentials(access_token).then(({ accessToken, userData }) => {
-      accessToken && Cookies.set(acToken, accessToken, { expires: 360000 });
-      refresh_token && Cookies.set(rfToken, refresh_token);
+      accessToken && Cookies.set(accessToken, accessToken, { expires: 360000 });
+      refresh_token && Cookies.set(cookieRefreshToken, refresh_token);
       return Promise.resolve({ accessToken, userData });
     });
   });
@@ -246,13 +260,13 @@ export const getCredentials = async (): Promise<SpotifyAccess> => getCookies()
   .catch(() => obtain_credentials())
   .catch(() => Promise.reject(noCredentials));
 
-const exports = {
+const spotifyUtils = {
   createPlaylistAndAddTracks,
   searchForMusic,
-  loginToSpotifyAlpha,
+  loginToSpotify,
   getCredentials,
   addTrucksToPlaylistNoRepeats,
   getUserAndPlaylists,
   getTracks,
 };
-export default exports;
+export default spotifyUtils;
